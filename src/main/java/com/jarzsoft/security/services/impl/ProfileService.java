@@ -13,6 +13,7 @@ import com.jarzsoft.entities.W_Bas_T_Perfil;
 import com.jarzsoft.mapper.IProfileMapper;
 import com.jarzsoft.repository.W_Bas_T_PerfilRepository;
 import com.jarzsoft.service.IProfileService;
+import com.jarzsoft.service.IUserService;
 import com.jarzsoft.util.Constantes;
 
 @Service
@@ -22,11 +23,11 @@ public class ProfileService implements IProfileService {
 
 	private final IProfileMapper mapper;
 
-	private final UsuariosService usuarioService;
+	private final IUserService usuarioService;
 
 	@Autowired
 	public ProfileService(W_Bas_T_PerfilRepository perfilRepository, IProfileMapper mapper,
-			UsuariosService usuarioService) {
+			IUserService usuarioService) {
 		super();
 		this.dao = perfilRepository;
 		this.mapper = mapper;

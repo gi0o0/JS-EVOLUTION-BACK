@@ -22,7 +22,8 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, Lo
 	W_Bas_Usuario loadUserByUsername(@Param("usuario") String usuario);
 
 	@Query(value = "SELECT us.Nom_usuario,ter.mailter FROM W_Bas_Usuario us,terceros ter WHERE us.usuario = :usuario AND clave_global=:clave_global AND us.codter=ter.codter", nativeQuery = true)
-	List<Object[]> findByUsuarioAndPassword(@Param("usuario") String usuario, @Param("clave_global") String clave_global);
+	List<Object[]> findByUsuarioAndPassword(@Param("usuario") String usuario,
+			@Param("clave_global") String clave_global);
 
 	@Query(value = "SELECT LTRIM(RTRIM(Usuario)) as Usuario FROM W_Bas_Usuario WHERE clave_link = :clave_link", nativeQuery = true)
 	Object[] findByUsuarioAndClaveLink(@Param("clave_link") String clave_link);
@@ -37,10 +38,15 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, Lo
 
 	@Transactional
 	@Modifying
+	@Query(value = "UPDATE W_Bas_Usuario SET codperfil = :codperfil,USU_ULT_MOD =:usuMod,FEC_ULT_MOD = GETDATE()  WHERE Usuario= :usuario ", nativeQuery = true)
+	public void modificarCodperfil(@Param("usuario") String usuario, @Param("codperfil") String codperfil,
+			@Param("usuMod") String usuMod);
+
+	@Transactional
+	@Modifying
 	@Query(value = "UPDATE W_Bas_Usuario SET clave_umbral= :clave_umbral WHERE Usuario= :usuario", nativeQuery = true)
 	public void modificarClaveumbral(@Param("clave_umbral") String clave_umbral, @Param("usuario") String usuario);
-	
-	
+
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE W_Bas_Usuario SET clave_global = :clave_global,clave_global_his =:clave_global,clave_link='' WHERE Usuario= :usuario ", nativeQuery = true)

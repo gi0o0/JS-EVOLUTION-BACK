@@ -17,4 +17,7 @@ public interface W_Men_OpcionRepository extends JpaRepository<W_Men_Opcion, Inte
 			+ " AND po.cod_opcion = mo.cod_opcion" + " ORDER BY s.nombre_sistema, mo.nom_opcion", nativeQuery = true)
 	List<Object[]> findByCodPerfil(@Param("codperfil") int codperfil);
 
+	@Query(value = "SELECT OP.COD_OPCION ,LTRIM(RTRIM(OP.NOM_OPCION)) as NOM_OPCION,PER.CODPERFIL FROM W_MEN_OPCION OP LEFT JOIN W_BAS_T_PER_OPCION PER ON OP.COD_OPCION = PER.COD_OPCION AND PER.CODPERFIL =:codperfil WHERE NUMERO_SISTEMA =:numsistema", nativeQuery = true)
+	List<Object[]> findOpcionesBySystem(@Param("numsistema") String numsistema,@Param("codperfil") String codperfil);
+
 }
