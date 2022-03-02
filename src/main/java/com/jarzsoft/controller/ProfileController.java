@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jarzsoft.config.JwtTokenUtil;
 import com.jarzsoft.dto.DTOProfile;
 import com.jarzsoft.service.IProfileService;
 import com.jarzsoft.util.Constantes;
@@ -27,13 +26,10 @@ public class ProfileController {
 
 	private final IProfileService profileService;
 
-	private final JwtTokenUtil jwtTokenUtil;
-
 	@Autowired
-	public ProfileController(IProfileService profileService, JwtTokenUtil jwtTokenUtil) {
+	public ProfileController(IProfileService profileService) {
 		super();
 		this.profileService = profileService;
-		this.jwtTokenUtil = jwtTokenUtil;
 
 	}
 
@@ -43,14 +39,14 @@ public class ProfileController {
 	}
 
 	@PostMapping(produces = "application/json", consumes = "application/json")
-	public DTOProfile create(@RequestBody DTOProfile profile, @RequestHeader(name = "Authorization") String token) {
-		profile.setUsuCrea(jwtTokenUtil.getUsernameFromToken(token.substring(7)).trim());
+	public DTOProfile create(@RequestBody DTOProfile profile, @RequestAttribute(name = "user") String user) {
+		profile.setUsuCrea(user);
 		return profileService.create(profile);
 	}
 
 	@PutMapping(produces = "application/json", consumes = "application/json")
-	public DTOProfile update(@RequestBody DTOProfile profile, @RequestHeader(name = "Authorization") String token) {
-		profile.setUsuCrea(jwtTokenUtil.getUsernameFromToken(token.substring(7)).trim());
+	public DTOProfile update(@RequestBody DTOProfile profile, @RequestAttribute(name = "user") String user) {
+		profile.setUsuCrea(user);
 		return profileService.update(profile);
 	}
 

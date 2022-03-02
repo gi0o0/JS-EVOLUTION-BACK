@@ -1,4 +1,4 @@
-package com.jarzsoft.security.services.impl;
+package com.jarzsoft.services.impl;
 
 import java.util.Date;
 import java.util.List;

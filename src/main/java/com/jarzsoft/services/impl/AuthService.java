@@ -1,20 +1,28 @@
-package com.jarzsoft.security.services.impl;
+package com.jarzsoft.services.impl;
 
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import com.jarzsoft.config.JwtTokenUtil;
+import com.jarzsoft.dto.UserDto;
 import com.jarzsoft.entities.W_Bas_Usuario;
 import com.jarzsoft.exception.ForbiddenException;
 import com.jarzsoft.exception.PageNoFoundException;
@@ -24,7 +32,6 @@ import com.jarzsoft.model.FuncionalidadSeccionDTO;
 import com.jarzsoft.payload.request.LoginRequest;
 import com.jarzsoft.payload.request.SignupRequest;
 import com.jarzsoft.payload.request.SignupTokenRequest;
-import com.jarzsoft.payload.response.JwtResponse;
 import com.jarzsoft.repository.ParametroRepository;
 import com.jarzsoft.repository.TercerosRepository;
 import com.jarzsoft.repository.W_Bas_UsuarioRepository;
@@ -52,14 +59,15 @@ public class AuthService implements IAuthService {
 
 	private final W_Men_OpcionRepository opcionRepository;
 
-	private final JwtTokenUtil jwtTokenUtil;
-
 	private final Ldap ldap;
+
+	@Value("${security.jwt.token.secret-key:secret-key}")
+	private String secretKey;
 
 	@Autowired
 	public AuthService(W_Bas_UsuarioRepository usuarioRepository, W_Men_OpcionRepository opcionRepository,
-			Comunes comunes, SendEmail sendEmail, ParametroRepository parametroRepository, JwtTokenUtil jwtTokenUtil,
-			TercerosRepository terceros, Ldap ldap) {
+			Comunes comunes, SendEmail sendEmail, ParametroRepository parametroRepository, TercerosRepository terceros,
+			Ldap ldap) {
 		super();
 		this.usuarioRepository = usuarioRepository;
 
@@ -70,8 +78,6 @@ public class AuthService implements IAuthService {
 		this.sendEmail = sendEmail;
 
 		this.parametroRepository = parametroRepository;
-
-		this.jwtTokenUtil = jwtTokenUtil;
 
 		this.terceros = terceros;
 
@@ -111,7 +117,7 @@ public class AuthService implements IAuthService {
 	}
 
 	@Override
-	public ResponseEntity<Object> authenticateUser(LoginRequest loginRequest) {
+	public UserDto authenticateUser(LoginRequest loginRequest) {
 
 		String username = loginRequest.getUsuario();
 
@@ -149,13 +155,8 @@ public class AuthService implements IAuthService {
 
 		usuarioRepository.modificarClaveumbral(Constantes.STATE_UMBRAL_0, username);
 
-		final UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUsuario(),
-				user.getClave_umbral(), new ArrayList<>());
-
-		final String token = jwtTokenUtil.generateToken(userDetails);
-
-		return ResponseEntity.ok(
-				new JwtResponse(token, username, user.getNom_Usuario(), funcionalidadesByPerfil(user.getCodPerfil())));
+		return new UserDto(loginRequest.getUsuario(), user.getNom_Usuario(), "", "", "",
+				funcionalidadesByPerfil(user.getCodPerfil()));
 
 	}
 
@@ -243,6 +244,40 @@ public class AuthService implements IAuthService {
 				comunes.generarHashPassword(signupTokenRequest.getPassword()));
 
 		return ResponseEntity.ok(Constantes.MESSAGE_OK_REGISTER_CLAVE);
+	}
+
+	public String createToken(UserDto user) {
+		return user.getId() + "&" + calculateHmac(user.getId());
+	}
+
+	public UserDto findByToken(String userId, String hmac) {
+
+		W_Bas_Usuario user = usuarioRepository.loadUserByUsername(userId);
+
+		if (user == null)
+			throw new RuntimeException("Invalid Cookie value");
+
+		if (!hmac.equals(calculateHmac(userId)) || !userId.equals(user.getUsuario().trim())) {
+			throw new RuntimeException("Invalid Cookie value");
+		}
+
+		return new UserDto(userId, "", "", "", "", null);
+	}
+
+	private String calculateHmac(String userId) {
+		byte[] secretKeyBytes = Objects.requireNonNull(secretKey).getBytes(StandardCharsets.UTF_8);
+		byte[] valueBytes = Objects.requireNonNull(userId).getBytes(StandardCharsets.UTF_8);
+
+		try {
+			Mac mac = Mac.getInstance("HmacSHA512");
+			SecretKeySpec secretKeySpec = new SecretKeySpec(secretKeyBytes, "HmacSHA512");
+			mac.init(secretKeySpec);
+			byte[] hmacBytes = mac.doFinal(valueBytes);
+			return Base64.getEncoder().encodeToString(hmacBytes);
+
+		} catch (NoSuchAlgorithmException | InvalidKeyException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }

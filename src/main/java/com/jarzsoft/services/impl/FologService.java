@@ -1,6 +1,7 @@
-package com.jarzsoft.security.services.impl;
+package com.jarzsoft.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.entities.Folog;
@@ -21,6 +22,7 @@ public class FologService implements IFologService {
 
 	}
 
+	@Async
 	@Override
 	public Folog create(Folog log) {
 
