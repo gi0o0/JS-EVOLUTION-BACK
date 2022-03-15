@@ -7,6 +7,7 @@ public class Constantes {
 	public static final String PATH_USER = "/user";
 	public static final String PATH_SYSTEM = "/system";
 	public static final String PATH_PARAMETER = "/parameter";
+	public static final String PATH_ECONOMICSECTOR = "/economicsector";
 
 	public static final String ERROR_USUARIO_EXISTENTE = "El usuario que quieres crear ya existe.";
 	public static final String ERROR_TOKEN_INVALIDO = "Token invaalido";
