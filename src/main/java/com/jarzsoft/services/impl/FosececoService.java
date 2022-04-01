@@ -61,7 +61,8 @@ public class FosececoService implements IFosececoService {
 
 	@Override
 	public List<DTOFosececo> listAll() {
-		return mapper.mapperList(dao.findAll());
+		//return mapper.mapperList(dao.findAll());
+		return mapper.mapperList(dao.findComplete());
 	}
 
 	@Override

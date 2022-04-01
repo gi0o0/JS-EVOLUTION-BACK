@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jarzsoft.dto.DTOFosececo;
-import com.jarzsoft.dto.DTOProfile;
 import com.jarzsoft.service.IFosececoService;
 import com.jarzsoft.util.Constantes;
 

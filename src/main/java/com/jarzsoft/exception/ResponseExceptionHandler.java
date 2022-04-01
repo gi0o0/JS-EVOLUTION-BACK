@@ -2,10 +2,13 @@ package com.jarzsoft.exception;
 
 import java.util.Date;
 
+import javax.persistence.RollbackException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +27,11 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> manejarTodasExcepciones(Exception ex, WebRequest request) {
 
+		if (ex instanceof TransactionSystemException) {
+			System.out.println(ex.getMessage());
+		}
+
+		// se valida el tipo de exception con if .. se presenta el mensaje.
 		logger.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
 				ex.getMessage(), "", "", "", "").toString());
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
