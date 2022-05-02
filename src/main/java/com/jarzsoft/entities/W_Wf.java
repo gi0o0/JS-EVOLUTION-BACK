@@ -7,25 +7,25 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "fosececo")
-public class Fosececo implements Serializable {
+@Table(name = "web.w_wf")
+public class W_Wf implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@NotBlank
-	@Size(max = 5)
-	@Column(name = "codSec")
-	private String codSec;
+	@Column(name = "id_wf")
+	private Long idWf;
 
-	@NotBlank
 	@Size(max = 100)
-	@Column(name = "nomSec")
-	private String nomSec;
+	@Column(name = "nom_wf")
+	private String nomWf;
+
+	@Size(max = 1)
+	@Column(name = "tip_wf")
+	private String tipWf;
 
 	@Size(max = 10)
 	@Column(name = "USU_ULT_MOD")
@@ -41,41 +41,43 @@ public class Fosececo implements Serializable {
 	@Column(name = "usu_crea")
 	private String usuCrea;
 
-	public Fosececo() {
+	public W_Wf() {
 	}
 
-	public Fosececo(String codSec, String nomSec, @Size(max = 10) String usuUltMod, Date fecUltMod, Date fecCrea,
-			@Size(max = 10) String usuCrea) {
+	public W_Wf(Long idWf, @Size(max = 100) String nomWf, @Size(max = 1) String tipWf, @Size(max = 10) String usuUltMod,
+			Date fecUltMod, Date fecCrea, @Size(max = 10) String usuCrea) {
 		super();
-		this.codSec = codSec;
-		this.nomSec = nomSec;
+		this.idWf = idWf;
+		this.nomWf = nomWf;
+		this.tipWf = tipWf;
 		this.usuUltMod = usuUltMod;
 		this.fecUltMod = fecUltMod;
 		this.fecCrea = fecCrea;
 		this.usuCrea = usuCrea;
-
-	}
-	
-	public Fosececo(String codSec, String nomSec) {
-		super();
-		this.codSec = codSec;
-		this.nomSec = nomSec;
 	}
 
-	public String getcodSec() {
-		return codSec;
+	public Long getIdWf() {
+		return idWf;
 	}
 
-	public void setcodSec(String codSec) {
-		this.codSec = codSec;
+	public void setIdWf(Long idWf) {
+		this.idWf = idWf;
 	}
 
-	public String getnomSec() {
-		return nomSec;
+	public String getNomWf() {
+		return nomWf;
 	}
 
-	public void setnomSec(String nomSec) {
-		this.nomSec = nomSec;
+	public void setNomWf(String nomWf) {
+		this.nomWf = nomWf;
+	}
+
+	public String getTipWf() {
+		return tipWf;
+	}
+
+	public void setTipWf(String tipWf) {
+		this.tipWf = tipWf;
 	}
 
 	public String getUsuUltMod() {

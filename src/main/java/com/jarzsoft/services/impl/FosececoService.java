@@ -8,12 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOFosececo;
-import com.jarzsoft.dto.DTOProfile;
 import com.jarzsoft.entities.Fosececo;
-import com.jarzsoft.entities.W_Bas_T_Perfil;
 import com.jarzsoft.mapper.IFosececoMapper;
 import com.jarzsoft.repository.FosececoRepository;
-import com.jarzsoft.repository.ParametroRepository;
 import com.jarzsoft.service.IFosececoService;
 import com.jarzsoft.service.IUserService;
 import com.jarzsoft.util.Constantes;

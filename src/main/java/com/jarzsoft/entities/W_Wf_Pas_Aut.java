@@ -4,28 +4,19 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "fosececo")
-public class Fosececo implements Serializable {
+@Table(name = "web.w_wf_pas_aut")
+public class W_Wf_Pas_Aut implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@NotBlank
-	@Size(max = 5)
-	@Column(name = "codSec")
-	private String codSec;
-
-	@NotBlank
-	@Size(max = 100)
-	@Column(name = "nomSec")
-	private String nomSec;
+	@EmbeddedId
+	private W_Wf_Pas_AutPK w_Wf_Pas_AutPK;
 
 	@Size(max = 10)
 	@Column(name = "USU_ULT_MOD")
@@ -41,41 +32,25 @@ public class Fosececo implements Serializable {
 	@Column(name = "usu_crea")
 	private String usuCrea;
 
-	public Fosececo() {
+	public W_Wf_Pas_Aut() {
 	}
 
-	public Fosececo(String codSec, String nomSec, @Size(max = 10) String usuUltMod, Date fecUltMod, Date fecCrea,
+	public W_Wf_Pas_Aut(W_Wf_Pas_AutPK w_Wf_Pas_AutPK, @Size(max = 10) String usuUltMod, Date fecUltMod, Date fecCrea,
 			@Size(max = 10) String usuCrea) {
 		super();
-		this.codSec = codSec;
-		this.nomSec = nomSec;
+		this.w_Wf_Pas_AutPK = w_Wf_Pas_AutPK;
 		this.usuUltMod = usuUltMod;
 		this.fecUltMod = fecUltMod;
 		this.fecCrea = fecCrea;
 		this.usuCrea = usuCrea;
-
-	}
-	
-	public Fosececo(String codSec, String nomSec) {
-		super();
-		this.codSec = codSec;
-		this.nomSec = nomSec;
 	}
 
-	public String getcodSec() {
-		return codSec;
+	public W_Wf_Pas_AutPK getW_Wf_Pas_AutPK() {
+		return w_Wf_Pas_AutPK;
 	}
 
-	public void setcodSec(String codSec) {
-		this.codSec = codSec;
-	}
-
-	public String getnomSec() {
-		return nomSec;
-	}
-
-	public void setnomSec(String nomSec) {
-		this.nomSec = nomSec;
+	public void setW_Wf_Pas_AutPK(W_Wf_Pas_AutPK w_Wf_Pas_AutPK) {
+		this.w_Wf_Pas_AutPK = w_Wf_Pas_AutPK;
 	}
 
 	public String getUsuUltMod() {

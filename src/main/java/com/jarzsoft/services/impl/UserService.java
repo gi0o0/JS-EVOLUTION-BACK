@@ -27,16 +27,12 @@ public class UserService implements IUserService {
 		this.usuarioRepository = usuarioRepository;
 		this.usuario = usuario;
 		this.mapper = mapper;
-
 	}
 
 	@Override
 	public String getInternalUser(String id) {
-
 		List<Object[]> externalUser = usuarioRepository.findByUsuario(id);
-
 		Usuarios internalUser = usuario.loadUserByCodter(externalUser.get(0)[2] + "");
-
 		return internalUser.getUsuario();
 	}
 
@@ -47,9 +43,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public DTOUser updateProfile(DTOUser user) {
-
 		usuarioRepository.modificarCodperfil(user.getId(), user.getIdProfile(), user.getUsuCrea());
-
 		return user;
 	}
 
