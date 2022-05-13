@@ -20,7 +20,7 @@ import com.jarzsoft.util.EnumUtils;
 @RestController
 public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 
-	Logger logger = LogManager.getLogger(ResponseExceptionHandler.class);
+	private static final Logger LOGGER = LogManager.getLogger(ResponseExceptionHandler.class);
 
 	private final IDefineExceptionMapper mapper;
 
@@ -47,7 +47,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 		 * HttpStatus.INTERNAL_SERVER_ERROR);
 		 */
 
-		logger.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
+		 LOGGER.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
 				defineMessage, "", "", "", "").toString());
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), defineMessage,
 				request.getDescription(true));
@@ -59,7 +59,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 	public final ResponseEntity<Object> manejarModeloExcepciones(ModeloNotFoundException ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
 				request.getDescription(false));
-		logger.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
+		 LOGGER.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
 				ex.getMessage(), "", "", "", "").toString());
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
@@ -68,7 +68,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 	public final ResponseEntity<Object> manejarPageNofoundExcepciones(PageNoFoundException ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
 				request.getDescription(false));
-		logger.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
+		 LOGGER.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
 				ex.getMessage(), "", "", "", "").toString());
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.NOT_FOUND);
 	}
@@ -77,7 +77,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 	public final ResponseEntity<Object> manejarForbiddenExceptions(ForbiddenException ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
 				request.getDescription(false));
-		logger.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
+		 LOGGER.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
 				ex.getMessage(), "", "", "", "").toString());
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.FORBIDDEN);
 	}
@@ -86,7 +86,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 	public final ResponseEntity<Object> manejarUnauthorizedExceptions(UnauthorizedException ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
 				request.getDescription(false));
-		logger.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
+		 LOGGER.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
 				ex.getMessage(), "", "", "", "").toString());
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.UNAUTHORIZED);
 	}
