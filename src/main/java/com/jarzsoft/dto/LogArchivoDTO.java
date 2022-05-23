@@ -26,8 +26,8 @@ public class LogArchivoDTO {
 		super();
 
 		this.timestamp = FechaUtils.getFechaStringTimestamp(new Date());
-		this.solucion = "MC";
-		this.aplicacion = "ADMIN_MAUC";
+		this.solucion = "JARZ";
+		this.aplicacion = "JARZ_SOFT";
 		this.componente = componente;
 		this.idTransaccion = RequestContextHolder.currentRequestAttributes().getSessionId();
 		this.tipo = tipo;

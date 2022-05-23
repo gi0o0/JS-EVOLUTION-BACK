@@ -6,6 +6,7 @@ public class Constantes {
 	public static final String PATH_PROFILE = "/profile";
 	public static final String PATH_USER = "/user";
 	public static final String PATH_SYSTEM = "/system";
+	public static final String PATH_REPORTONLINE = "/reportonline";
 	public static final String PATH_PARAMETER = "/parameter";
 	public static final String PATH_ECONOMICSECTOR = "/economicsector";
 	public static final String PATH_WFPARAMETER = "/wfparameter";
@@ -45,6 +46,45 @@ public class Constantes {
 	public static String HEADER_DEFAULT_NAME = "MENU PRINCIPAL";
 	public static String HEADER_DEFAULT_URL = "/dashboard";
 	public static String HEADER_DEFAULT_ICON = "icon-speedometer";
+	
+  	//Documento
+  	public static final String PA_NOMBRE_SOLI = "PA_NOMBRE_SOLI";
+  	public static final String PA_MUT_INFO_HEADER = "PA_MUT_INFO_HEADER";
+  	public static final String PA_TIPOIDENT   = "PA_TIPOIDENT";
+  	public static final String PA_MATRI       = "PA_MATRI";
+  	public static final String PA_TEXT_FOOTER = "PA_TEXT_FOOTER";
+  	public static final String PA_REGISTRO    = "PA_REGISTRO";
+  	public static final String PA_MUT_DBASIC_DIR_JU = "PA_MUT_DBASIC_DIR_JU";
+  	public static final String PA_MUT_DBASIC_CODP_JU = "PA_MUT_DBASIC_CODP_JU";
+  	public static final String PA_MUT_DBASIC_CIUD_JU = "PA_MUT_DBASIC_CIUD_JU";
+  	public static final String PA_MUT_DBASIC_DEP_JU = "PA_MUT_DBASIC_DEP_JU";
+  	public static final String PA_MUT_DBASIC_BAR_JU = "PA_MUT_DBASIC_BAR_JU";
+  	public static final String PA_MUT_DBASIC_TEL_1_JU = "PA_MUT_DBASIC_TEL_1_JU";
+  	public static final String PA_MUT_DBASIC_TEL_2_JU = "PA_MUT_DBASIC_TEL_2_JU";
+  	public static final String PA_MUT_DBASIC_TEL_3_JU = "PA_MUT_DBASIC_TEL_3_JU";
+  	public static final String PA_MUT_DBASIC_EMAIL_JU = "PA_MUT_DBASIC_EMAIL_JU";
+  	public static final String PA_MUT_DBASIC_DIR = "PA_MUT_DBASIC_DIR";
+  	public static final String PA_MUT_DBASIC_CODP = "PA_MUT_DBASIC_CODP";
+  	public static final String PA_MUT_DBASIC_CIUD = "PA_MUT_DBASIC_CIUD";
+  	public static final String PA_MUT_DBASIC_DEP = "PA_MUT_DBASIC_DEP";
+  	public static final String PA_MUT_DBASIC_BAR = "PA_MUT_DBASIC_BAR";
+  	public static final String PA_MUT_DBASIC_TEL_1 = "PA_MUT_DBASIC_TEL_1";
+  	public static final String PA_MUT_DBASIC_TEL_2 = "PA_MUT_DBASIC_TEL_2";
+  	public static final String PA_MUT_DBASIC_TEL_3 = "PA_MUT_DBASIC_TEL_3";
+  	public static final String PA_MUT_DBASIC_EMAIL = "PA_MUT_DBASIC_EMAIL";
+  	public static final String PA_MUT_DBASIC_PREG_JU = "PA_MUT_DBASIC_PREG_JU";
+  	public static final String PA_MUT_DBASIC = "PA_MUT_DBASIC";
+  	public static final String PA_MUT_NOM = "PA_MUT_NOM";
+  	public static final String PA_MUT_NOM_TITU = "PA_MUT_NOM_TITU";
+  	public static final String PA_MUT_NOM_TEXT = "PA_MUT_NOM_TEXT";
+  	public static final String PA_MUT_CIUU_TIP = "PA_MUT_CIUU_TIP";
+  	public static final String PA_MUT_CIUU_TIP2 = "PA_MUT_CIUU_TIP2";
+  	public static final String PA_MUT_CIUU_TIP3 = "PA_MUT_CIUU_TIP3";
+  	public static final String PA_MUT_CIUU_TIP4 = "PA_MUT_CIUU_TIP4";
+  	public static final String PA_MUT_DESCRIP_CIIU = "PA_MUT_DESCRIP_CIIU";
+  	public static final String PA_MUT_CIUU = "PA_MUT_CIUU";
+  	public static final String PA_MUT_CIUU_TEXT = "PA_MUT_CIUU_TEXT";
+  	public static final String TIPO_REPORTE = "cae.jasper";
 
 	private Constantes() {
 	}
