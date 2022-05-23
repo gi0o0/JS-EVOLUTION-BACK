@@ -16,7 +16,7 @@ public class UserMapper implements IUserMapper {
 	public List<DTOUser> mapperList(List<W_Bas_Usuario> list) {
 		List<DTOUser> response = new ArrayList<DTOUser>();
 		list.stream().forEach(o -> {
-			response.add(new DTOUser(o.getUsuario(), o.getNom_Usuario(), o.getCodPerfil() + ""));
+			response.add(new DTOUser(o.getUsuario(), o.getNom_usuario(), o.getCodPerfil() + ""));
 		});
 
 		return response;
@@ -24,7 +24,7 @@ public class UserMapper implements IUserMapper {
 
 	@Override
 	public DTOUser mapperDaoToDto(W_Bas_Usuario o) {
-		return new DTOUser(o.getUsuario(), o.getNom_Usuario(), o.getCodPerfil() + "");
+		return new DTOUser(o.getUsuario(), o.getNom_usuario(), o.getCodPerfil() + "");
 	}
 
 }

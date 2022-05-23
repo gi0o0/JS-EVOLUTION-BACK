@@ -155,7 +155,7 @@ public class AuthService implements IAuthService {
 
 		usuarioRepository.modificarClaveumbral(Constantes.STATE_UMBRAL_0, username);
 
-		return new UserDto(loginRequest.getUsuario(), user.getNom_Usuario(), "", "", "",
+		return new UserDto(loginRequest.getUsuario(), user.getNom_usuario(), "", "", "",
 				funcionalidadesByPerfil(user.getCodPerfil()));
 
 	}

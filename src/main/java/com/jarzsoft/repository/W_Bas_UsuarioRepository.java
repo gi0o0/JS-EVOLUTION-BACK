@@ -1,6 +1,7 @@
 package com.jarzsoft.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -31,6 +32,18 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, Lo
 	@Query(value = "SELECT * FROM W_Bas_Usuario us,terceros ter WHERE us.usuario = :usuario AND clave_global_his=:clave_his AND us.codter=ter.codter", nativeQuery = true)
 	W_Bas_Usuario findByUsuarioAndClaveHis(@Param("usuario") String usuario, @Param("clave_his") String clave_his);
 
+	@Query(value = " select wb.usuario, LTRIM(RTRIM(wb.nom_usuario)) as nom_usuario, wb.codter, wb.estado, wp.codperfil, LTRIM(RTRIM(wp.nomperfil)) as nomperfil from w_bas_usuario wb , w_bas_T_Perfil  wp where wb.codperfil = wp.codperfil and us.usuario = :usuario ", nativeQuery = true)
+	List<Object[]> findByUser(@Param("usuario") String usuario);
+	
+	@Query(value = "SELECT * FROM W_Bas_Usuario WHERE usuario = :usuario", nativeQuery = true)
+	Optional<W_Bas_Usuario> findByUserWeb(@Param("usuario") String usuario);
+
+	@Query(value = "select wb.usuario, LTRIM(RTRIM(wb.nom_usuario)) as nom_usuario, wb.clave, wb.codter, wb.clave1, wb.estado, wp.codperfil, LTRIM(RTRIM(wp.nomperfil)) as nomperfil, wb.clave_link, wb.clave_global,wb.date_mod, wb.clave_umbral,wb.clave_global_his,wb.tipoAut, wp.usu_ult_mod, wp.fec_ult_mod, wp.fec_crea, wp.usu_crea from w_bas_usuario wb , w_bas_T_Perfil  wp where wb.codperfil = wp.codperfil order by wb.nom_usuario", nativeQuery = true)
+	List<W_Bas_Usuario> findUserComplete();
+
+	@Query(value = "select wb.usuario, LTRIM(RTRIM(wb.nom_usuario)) as nom_usuario, wb.clave, wb.codter, wb.clave1, wb.estado, wp.codperfil, LTRIM(RTRIM(wp.nomperfil)) as nomperfil, wb.clave_link, wb.clave_global,wb.date_mod, wb.clave_umbral,wb.clave_global_his,wb.tipoAut, wp.usu_ult_mod, wp.fec_ult_mod, wp.fec_crea, wp.usu_crea from w_bas_usuario wb , w_bas_T_Perfil  wp where wb.codperfil = wp.codperfil order by wb.nom_usuario", nativeQuery = true)
+	List<Object[]> findUserCompleteObj();
+	
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE W_Bas_Usuario SET clave_link = :clave_link WHERE Usuario= :usuario ", nativeQuery = true)
@@ -52,4 +65,10 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, Lo
 	@Query(value = "UPDATE W_Bas_Usuario SET clave_global = :clave_global,clave_global_his =:clave_global,clave_link='' WHERE Usuario= :usuario ", nativeQuery = true)
 	public void modificarClaveGlobal(@Param("usuario") String usuario, @Param("clave_global") String clave_global);
 
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE W_Bas_Usuario SET estado = :estado, codperfil =:codperfil WHERE Usuario= :usuario ", nativeQuery = true)
+	public void modifyUserCreate(@Param("usuario") String usuario, @Param("codperfil") String codperfil, @Param("estado") String estado);
+
+	
 }
