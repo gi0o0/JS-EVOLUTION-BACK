@@ -45,14 +45,20 @@ public class ParameterService implements IParameterService {
 		return null;
 	}
 
+	@Override
+	public DTOParameter delete(DTOParameter t) {
+		dao.delete(mapper.mapperDtoToDao(t));
+		return t;
+	}
+
+	@Override
 	public DTOParameter listById(int id) {
 		return null;
 	}
 
 	@Override
-	public DTOParameter delete(DTOParameter t) {
-		dao.delete(mapper.mapperDtoToDao(t));
-		return t;
+	public List<DTOParameter> getById(String paramId) {
+		return mapper.mapperList(dao.findByParamId(paramId));
 	}
 
 }

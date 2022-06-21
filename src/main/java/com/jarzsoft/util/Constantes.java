@@ -3,6 +3,7 @@ package com.jarzsoft.util;
 public class Constantes {
 
 	public static final String PATH_AUTH = "/auth";
+	public static final String PATH_SECURITY = "/security";
 	public static final String PATH_PROFILE = "/profile";
 	public static final String PATH_USER = "/user";
 	public static final String PATH_SYSTEM = "/system";
