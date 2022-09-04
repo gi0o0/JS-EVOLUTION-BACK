@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().deleteCookies(CookieAuthenticationFilter.COOKIE_NAME)
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/auth/signin", "/auth/signup", "/auth/signup/token").permitAll()
+                .antMatchers(HttpMethod.POST, "/auth/signin", "/auth/signup", "/auth/signup/token","/auth/token/check").permitAll()
                 .anyRequest().authenticated();
     }
 

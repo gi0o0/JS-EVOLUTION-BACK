@@ -1,0 +1,38 @@
+package com.jarzsoft.repository;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.jarzsoft.entities.SolCredito;
+
+@Repository
+public interface SolCreditoRepository extends JpaRepository<SolCredito, Integer> {
+
+	@Query(value = "SELECT * FROM SOL_CREDITO WHERE codter = :codTer AND tipo_credito= :tipoCredito", nativeQuery = true)
+	SolCredito findByNiter(@Param("codTer") String codTer, @Param("tipoCredito") String tipoCredito);
+	
+	@Query(value = "SELECT * FROM SOL_CREDITO WHERE NUMERO_RADICACION = :NumRad", nativeQuery = true)
+	SolCredito findByNumRad(@Param("NumRad") String NumRad);
+
+	@Query(value = "SELECT CASE WHEN max(NUMERO_RADICACION) IS NULL THEN 1 ELSE  max (NUMERO_RADICACION )+1 END FROM SOL_CREDITO", nativeQuery = true)
+	int getKey();
+
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE SOL_CREDITO SET estado = :estado WHERE NUMERO_RADICACION= :numeroRadicacion ", nativeQuery = true)
+	public void modificarEstado(@Param("numeroRadicacion") Integer numeroRadicacion, @Param("estado") String estado);
+	
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE SOL_CREDITO SET clave_link= :hash WHERE NUMERO_RADICACION= :numeroRadicacion", nativeQuery = true)
+	public void modificarClaveLink(@Param("numeroRadicacion") String numeroRadicacion, @Param("hash") String hash);
+	
+	@Query(value = "SELECT * FROM SOL_CREDITO WHERE clave_link = :hash", nativeQuery = true)
+	SolCredito findByHash(@Param("hash") String hash);
+
+}

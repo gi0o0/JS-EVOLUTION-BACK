@@ -3,6 +3,7 @@ package com.jarzsoft.config;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.stream.Stream;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -26,12 +27,18 @@ public class CookieAuthenticationFilter extends OncePerRequestFilter {
 
 		if (cookieAuth.isPresent()) {
 			SecurityContextHolder.getContext().setAuthentication(
-					new PreAuthenticatedAuthenticationToken(cookieAuth.get().getValue(), httpServletRequest));		
+					new PreAuthenticatedAuthenticationToken(cookieAuth.get().getValue(), httpServletRequest));
 			String cookie = (String) cookieAuth.get().getValue();
 			String[] parts = cookie.split("&");
 			httpServletRequest.setAttribute("user", parts[0]);
-		}
+		} else {
 
+			String path = httpServletRequest.getServletPath();
+			if ("/auth/token/check".equals(path) || "/auth/signin".equals(path) || "/auth/signup".equals(path)
+					|| "/auth/signup/token".equals(path)) {
+				httpServletRequest.setAttribute("user", "default");
+			}
+		}
 		filterChain.doFilter(httpServletRequest, httpServletResponse);
 	}
 }

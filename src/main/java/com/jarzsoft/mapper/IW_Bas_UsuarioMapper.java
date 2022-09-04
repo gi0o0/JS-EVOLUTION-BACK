@@ -3,8 +3,8 @@ package com.jarzsoft.mapper;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
 import com.jarzsoft.dto.DTOW_Bas_Usuario;
-import com.jarzsoft.entities.Fosececo;
 import com.jarzsoft.entities.W_Bas_Usuario;
 
 @Service

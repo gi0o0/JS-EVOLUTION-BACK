@@ -23,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.UserDto;
+import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.entities.W_Bas_Usuario;
 import com.jarzsoft.exception.ForbiddenException;
 import com.jarzsoft.exception.PageNoFoundException;
@@ -110,7 +111,7 @@ public class AuthService implements IAuthService {
 		String codeLink = comunes.generarHashPassword(numId);
 
 		usuarioRepository.modificarClaveLink(numId, codeLink);
-		sendEmail.Send(email, codeLink);
+		sendEmail(email, codeLink);
 
 		return ResponseEntity.ok(Constantes.MESSAGE_OK_REGISTER_EMAIL + email);
 
@@ -279,5 +280,29 @@ public class AuthService implements IAuthService {
 			throw new RuntimeException(e);
 		}
 	}
+
+	private void sendEmail(String email, String hash) {
+
+		String asunto_email = "";
+		String text_email = "";
+		String link_email = "";
+
+		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL");
+
+		for (Parametro parametro : parametroList) {
+			String value = parametro.getParametroKey().getParam_text();
+			if ("ASUNTO".equals(value)) {
+				asunto_email = parametro.getValue();
+			} else if ("TEXT".equals(value)) {
+				text_email = parametro.getValue();
+			} else if ("LINK".equals(value)) {
+				link_email = parametro.getValue();
+			}
+		}
+
+		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash);
+	}
+
+
 
 }

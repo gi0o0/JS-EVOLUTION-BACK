@@ -20,5 +20,14 @@ public interface TercerosRepository extends JpaRepository<Terceros, Long> {
 	@Query(value = "UPDATE terceros SET mailter= :mailter WHERE codter= :codter", nativeQuery = true)
 	public void modificarEmail(@Param("codter") BigDecimal codter, @Param("mailter") String mailter);
 
+	@Query(value = "SELECT * FROM Terceros WHERE nitter = :nitter", nativeQuery = true)
+	Terceros findByNiter(@Param("nitter") String nitter);
+	
+	@Query(value = "SELECT * FROM Terceros WHERE codter = :codter", nativeQuery = true)
+	Terceros findByCodter(@Param("codter") String codter);
+	
+	@Query(value = "SELECT  max (codter ) +1 FROM Terceros", nativeQuery = true)
+	int getKey();
+	
 
 }

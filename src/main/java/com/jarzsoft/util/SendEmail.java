@@ -29,7 +29,7 @@ public class SendEmail {
 		this.parametroRepository = parametroRepository;
 	}
 
-	public String Send(String emailTo, String hash) {
+	public String Send(String emailTo,String asunto_email, String text_email) {
 
 		String resultado = "NOK";
 		String user_server_email = "";
@@ -37,9 +37,8 @@ public class SendEmail {
 		String server_email = "";
 		String port_email = "";
 		String from_email = "";
-		String asunto_email = "";
-		String text_email = "";
-		String link_email = "";
+
+
 
 		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL");
 
@@ -55,13 +54,7 @@ public class SendEmail {
 				port_email = parametro.getValue();
 			} else if ("FROM".equals(value)) {
 				from_email = parametro.getValue();
-			} else if ("ASUNTO".equals(value)) {
-				asunto_email = parametro.getValue();
-			} else if ("TEXT".equals(value)) {
-				text_email = parametro.getValue();
-			} else if ("LINK".equals(value)) {
-				link_email = parametro.getValue();
-			}
+			} 
 		}
 
 		final String username = user_server_email;
@@ -69,9 +62,10 @@ public class SendEmail {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.starttls.enable", "true");
+		//props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.host", server_email);
 		props.put("mail.smtp.port", port_email);
+		
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
@@ -84,7 +78,7 @@ public class SendEmail {
 			message.setFrom(new InternetAddress(from_email));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));
 			message.setSubject(asunto_email);
-			message.setText(text_email + "\n\n" + link_email + hash);
+			message.setText(text_email);
 			Transport.send(message);
 			resultado = "OK";
 		} catch (MessagingException e) {

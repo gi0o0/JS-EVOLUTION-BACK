@@ -5,12 +5,22 @@ public class Constantes {
 	public static final String PATH_AUTH = "/auth";
 	public static final String PATH_SECURITY = "/security";
 	public static final String PATH_PROFILE = "/profile";
+	public static final String PATH_FOCLAASO = "/foclaaso";
+	public static final String PATH_FOTIPCRE = "/fotipcre";
+	public static final String PATH_CLADOC = "/cladoc";
+	public static final String PATH_COUNTRIES = "/countries";
 	public static final String PATH_USER = "/user";
 	public static final String PATH_SYSTEM = "/system";
 	public static final String PATH_REPORTONLINE = "/reportonline";
 	public static final String PATH_PARAMETER = "/parameter";
+	public static final String PATH_DEPTOS = "/deptos";
+	public static final String PATH_CITIES = "/cities";
 	public static final String PATH_ECONOMICSECTOR = "/economicsector";
+	public static final String PATH_FOTABPRO = "/fotabpro";
+	public static final String PATH_BAENTIDAD = "/baentidad";
+	public static final String PATH_ACCOUNT_TYPE = "account_type";
 	public static final String PATH_WFPARAMETER = "/wfparameter";
+	public static final String PATH_WF = "/wf";
 	public static final String PATH_FILESUSERS = "/filesusers";
 	public static final String PATH_USERWEB = "/webuser";
 
@@ -87,6 +97,9 @@ public class Constantes {
   	public static final String PA_MUT_CIUU_TEXT = "PA_MUT_CIUU_TEXT";
   	public static final String TIPO_REPORTE = "cae.jasper";
 
+  	public static final String isOK = "S";
+  	public static final String isNOK = "N";
+  	
 	private Constantes() {
 	}
 }

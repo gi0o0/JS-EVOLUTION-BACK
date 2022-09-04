@@ -1,16 +1,11 @@
 package com.jarzsoft.mapper.impl;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.jarzsoft.dto.DTOOpciones;
 import com.jarzsoft.dto.DTOW_Bas_Usuario;
-import com.jarzsoft.entities.Fosececo;
 import com.jarzsoft.entities.W_Bas_Usuario;
 import com.jarzsoft.mapper.IW_Bas_UsuarioMapper;
 
@@ -35,7 +30,7 @@ public class W_Bas_UsuarioMapper implements IW_Bas_UsuarioMapper {
 	public List<DTOW_Bas_Usuario> mapperListObj(List<Object[]> list) {
 		List<DTOW_Bas_Usuario> response = new ArrayList<DTOW_Bas_Usuario>();
 		list.stream().forEach(o -> {
-			BigDecimal x = null;
+		
 			//x = new BigDecimal((BigInteger) o[3] );
 			//x = new BigDecimal(o[3].toString() );
 			

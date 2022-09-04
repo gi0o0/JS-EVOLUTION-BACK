@@ -32,6 +32,7 @@ public class SecurityController {
 		super();
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@PostMapping("/signalrefresh")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<?> signOut(HttpServletRequest request, HttpServletResponse servletResponse) {

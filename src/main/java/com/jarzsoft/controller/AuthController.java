@@ -9,15 +9,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jarzsoft.config.CookieAuthenticationFilter;
+import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.UserDto;
 import com.jarzsoft.payload.request.SignupRequest;
 import com.jarzsoft.payload.request.SignupTokenRequest;
 import com.jarzsoft.service.IAuthService;
+import com.jarzsoft.service.IWFService;
 import com.jarzsoft.util.Constantes;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -33,10 +36,13 @@ public class AuthController {
 	@Value("${auth.cookie.secure}")
 	private boolean authCookieSecure;
 
+	private final IWFService service;
+
 	@Autowired
-	public AuthController(IAuthService authService) {
+	public AuthController(IAuthService authService, IWFService service) {
 		super();
 		this.authService = authService;
+		this.service = service;
 	}
 
 	@PostMapping("/signin")
@@ -58,6 +64,11 @@ public class AuthController {
 	@PostMapping("/signup/token")
 	public ResponseEntity<?> registerUserByToken(@RequestBody SignupTokenRequest signupTokenRequest) {
 		return ResponseEntity.ok(authService.signUpBytoken(signupTokenRequest));
+	}
+
+	@PostMapping("/token/check")
+	public DTOWF checkTokenSol(@RequestBody DTOWF o, @RequestAttribute(name = "user") String user) {
+		return service.create(o, user);
 	}
 
 	@PostMapping("/signout")
