@@ -61,7 +61,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setAntiEmpresa(o.getAntiEmpresa());
 		out.setBarrio(o.getBarrio());
 		out.setBarrioTra(o.getBarrioTra());
-		out.setCiuDirTrabajo(o.getCodiciuDirTrabajoCiud());
+		out.setCiuDirTrabajo(o.getCiuDirTrabajo());
 		out.setCodiCiud(o.getCodiCiud());
 		out.setCodiDept(o.getCodiDept());
 		out.setDeptDirTrabajo(o.getDeptDirTrabajo());
@@ -102,7 +102,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setAntiEmpresa(o.getCodeu().getAntiEmpresa());
 		out.setBarrio(o.getCodeu().getBarrio());
 		out.setBarrioTra(o.getCodeu().getBarrioTra());
-		out.setCiuDirTrabajo(o.getCodeu().getCodiciuDirTrabajoCiud());
+		out.setCiuDirTrabajo(o.getCodeu().getCiuDirTrabajo());
 		out.setCodiCiud(o.getCodeu().getCodiCiud());
 		out.setCodiDept(o.getCodeu().getCodiDept());
 		out.setDeptDirTrabajo(o.getCodeu().getDeptDirTrabajo());

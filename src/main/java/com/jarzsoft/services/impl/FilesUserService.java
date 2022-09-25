@@ -2,6 +2,10 @@ package com.jarzsoft.services.impl;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -56,7 +60,7 @@ public class FilesUserService implements IFilesUserService {
 											new DTOFilesUser(name, encodedString, nameIds[0], nameIds[1], nameIds[2]));
 								}
 							} else {
-								files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1],nameIds[2]));
+								files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2]));
 							}
 						}
 					} else {
@@ -67,6 +71,24 @@ public class FilesUserService implements IFilesUserService {
 			}
 		}
 		return files;
+	}
+
+	@Override
+	public Boolean create(String user, String solicitud, String id, String encode) {
+		Boolean out = false;
+
+		try {
+			id=id.replace(" ", "-");
+			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+			byte[] decodedImg = Base64.getDecoder().decode(encode.split(",")[1].getBytes(StandardCharsets.UTF_8));
+			Path destinationFile = Paths.get(path, user+"_"+solicitud+"_"+id);
+			Files.write(destinationFile, decodedImg);
+			out = true;
+		} catch (IOException e) {		
+			throw new RuntimeException(e.getMessage());
+		}
+
+		return out;
 	}
 
 }

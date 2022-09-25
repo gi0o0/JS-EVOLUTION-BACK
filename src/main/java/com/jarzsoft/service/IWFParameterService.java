@@ -27,9 +27,9 @@ public interface IWFParameterService {
 	DTOWFParameterEst createEst(DTOWFParameterEst o);
 
 	DTOWFParameterStep update(DTOWFParameterStep o);
-	
+
 	DTOWFParameterEst updateEst(DTOWFParameterEst o);
-	
+
 	DTOWFParameterEst deleteEst(String id, String ipEst);
 
 	DTOWFParameterStepDoc deleteDoc(String id, String ipStep, String idDoc);
@@ -37,5 +37,7 @@ public interface IWFParameterService {
 	DTOWFParameterStepAut deleteAut(String id, String ipStep, String idAut);
 
 	DTOWFParameterStep delete(DTOWFParameterStep o);
+
+	List<DTOWFParameterStep> stepsbyNumRad(Integer numRad);
 
 }

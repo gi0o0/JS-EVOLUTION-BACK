@@ -72,6 +72,41 @@ public class DTOSolCredito {
 	private String tasaInt;
 	private String observa;
 	private Date fechaSoli;
+	private String sueldo;
+	private String recargos;
+	private String bonos;
+	private String compensatorios;
+	private String bonificacion;
+	private String horasExtras;
+	private String otrosPagos1;
+	private String otrosPagos2;
+	private String otrosPagos3;
+	private String salud;
+	private String pension;
+	private String libranza;
+	private String cuotaSindical;
+	private String cuotaInterna;
+	private String otrosDecuentos1;
+	private String otrosDecuentos2;
+	private String otrosDecuentos3;
+	private String compraCartera1;
+	private String entidadCartera1;
+	private String obligacionCartera1;
+	private String compraNit1;
+	private String compraCartera2;
+	private String entidadCartera2;
+	private String compraNit2;
+	private String obligacionCartera2;
+	private String compraCartera3;
+	private String entidadCartera3;
+	private String compraNit3;
+	private String obligacionCartera3;
+	private String compraCartera4;
+	private String entidadCartera4;
+	private String compraNit4;
+	private String obligacionCartera4;
+	private String perCuota;
+	
 
 	public DTOSolCredito() {
 		super();
@@ -621,5 +656,279 @@ public class DTOSolCredito {
 	public void setTipSolcredito(String tipSolcredito) {
 		this.tipSolcredito = tipSolcredito;
 	}
+
+	public String getSueldo() {
+		return sueldo;
+	}
+
+	public void setSueldo(String sueldo) {
+		this.sueldo = sueldo;
+	}
+
+	public String getRecargos() {
+		return recargos;
+	}
+
+	public void setRecargos(String recargos) {
+		this.recargos = recargos;
+	}
+
+	public String getBonos() {
+		return bonos;
+	}
+
+	public void setBonos(String bonos) {
+		this.bonos = bonos;
+	}
+
+	public String getCompensatorios() {
+		return compensatorios;
+	}
+
+	public void setCompensatorios(String compensatorios) {
+		this.compensatorios = compensatorios;
+	}
+
+	public String getBonificacion() {
+		return bonificacion;
+	}
+
+	public void setBonificacion(String bonificacion) {
+		this.bonificacion = bonificacion;
+	}
+
+	public String getHorasExtras() {
+		return horasExtras;
+	}
+
+	public void setHorasExtras(String horasExtras) {
+		this.horasExtras = horasExtras;
+	}
+
+	public String getOtrosPagos1() {
+		return otrosPagos1;
+	}
+
+	public void setOtrosPagos1(String otrosPagos1) {
+		this.otrosPagos1 = otrosPagos1;
+	}
+
+	public String getOtrosPagos2() {
+		return otrosPagos2;
+	}
+
+	public void setOtrosPagos2(String otrosPagos2) {
+		this.otrosPagos2 = otrosPagos2;
+	}
+
+	public String getOtrosPagos3() {
+		return otrosPagos3;
+	}
+
+	public void setOtrosPagos3(String otrosPagos3) {
+		this.otrosPagos3 = otrosPagos3;
+	}
+
+	public String getSalud() {
+		return salud;
+	}
+
+	public void setSalud(String salud) {
+		this.salud = salud;
+	}
+
+	public String getPension() {
+		return pension;
+	}
+
+	public void setPension(String pension) {
+		this.pension = pension;
+	}
+
+	public String getLibranza() {
+		return libranza;
+	}
+
+	public void setLibranza(String libranza) {
+		this.libranza = libranza;
+	}
+
+	public String getCuotaSindical() {
+		return cuotaSindical;
+	}
+
+	public void setCuotaSindical(String cuotaSindical) {
+		this.cuotaSindical = cuotaSindical;
+	}
+
+	public String getCuotaInterna() {
+		return cuotaInterna;
+	}
+
+	public void setCuotaInterna(String cuotaInterna) {
+		this.cuotaInterna = cuotaInterna;
+	}
+
+	public String getOtrosDecuentos1() {
+		return otrosDecuentos1;
+	}
+
+	public void setOtrosDecuentos1(String otrosDecuentos1) {
+		this.otrosDecuentos1 = otrosDecuentos1;
+	}
+
+	public String getOtrosDecuentos2() {
+		return otrosDecuentos2;
+	}
+
+	public void setOtrosDecuentos2(String otrosDecuentos2) {
+		this.otrosDecuentos2 = otrosDecuentos2;
+	}
+
+	public String getOtrosDecuentos3() {
+		return otrosDecuentos3;
+	}
+
+	public void setOtrosDecuentos3(String otrosDecuentos3) {
+		this.otrosDecuentos3 = otrosDecuentos3;
+	}
+
+	public String getCompraCartera1() {
+		return compraCartera1;
+	}
+
+	public void setCompraCartera1(String compraCartera1) {
+		this.compraCartera1 = compraCartera1;
+	}
+
+	public String getEntidadCartera1() {
+		return entidadCartera1;
+	}
+
+	public void setEntidadCartera1(String entidadCartera1) {
+		this.entidadCartera1 = entidadCartera1;
+	}
+
+	public String getObligacionCartera1() {
+		return obligacionCartera1;
+	}
+
+	public void setObligacionCartera1(String obligacionCartera1) {
+		this.obligacionCartera1 = obligacionCartera1;
+	}
+
+	public String getCompraNit1() {
+		return compraNit1;
+	}
+
+	public void setCompraNit1(String compraNit1) {
+		this.compraNit1 = compraNit1;
+	}
+
+	public String getCompraCartera2() {
+		return compraCartera2;
+	}
+
+	public void setCompraCartera2(String compraCartera2) {
+		this.compraCartera2 = compraCartera2;
+	}
+
+	public String getEntidadCartera2() {
+		return entidadCartera2;
+	}
+
+	public void setEntidadCartera2(String entidadCartera2) {
+		this.entidadCartera2 = entidadCartera2;
+	}
+
+	public String getCompraNit2() {
+		return compraNit2;
+	}
+
+	public void setCompraNit2(String compraNit2) {
+		this.compraNit2 = compraNit2;
+	}
+
+	public String getObligacionCartera2() {
+		return obligacionCartera2;
+	}
+
+	public void setObligacionCartera2(String obligacionCartera2) {
+		this.obligacionCartera2 = obligacionCartera2;
+	}
+
+	public String getCompraCartera3() {
+		return compraCartera3;
+	}
+
+	public void setCompraCartera3(String compraCartera3) {
+		this.compraCartera3 = compraCartera3;
+	}
+
+	public String getEntidadCartera3() {
+		return entidadCartera3;
+	}
+
+	public void setEntidadCartera3(String entidadCartera3) {
+		this.entidadCartera3 = entidadCartera3;
+	}
+
+	public String getCompraNit3() {
+		return compraNit3;
+	}
+
+	public void setCompraNit3(String compraNit3) {
+		this.compraNit3 = compraNit3;
+	}
+
+	public String getObligacionCartera3() {
+		return obligacionCartera3;
+	}
+
+	public void setObligacionCartera3(String obligacionCartera3) {
+		this.obligacionCartera3 = obligacionCartera3;
+	}
+
+	public String getCompraCartera4() {
+		return compraCartera4;
+	}
+
+	public void setCompraCartera4(String compraCartera4) {
+		this.compraCartera4 = compraCartera4;
+	}
+
+	public String getEntidadCartera4() {
+		return entidadCartera4;
+	}
+
+	public void setEntidadCartera4(String entidadCartera4) {
+		this.entidadCartera4 = entidadCartera4;
+	}
+
+	public String getCompraNit4() {
+		return compraNit4;
+	}
+
+	public void setCompraNit4(String compraNit4) {
+		this.compraNit4 = compraNit4;
+	}
+
+	public String getObligacionCartera4() {
+		return obligacionCartera4;
+	}
+
+	public void setObligacionCartera4(String obligacionCartera4) {
+		this.obligacionCartera4 = obligacionCartera4;
+	}
+
+	public String getPerCuota() {
+		return perCuota;
+	}
+
+	public void setPerCuota(String perCuota) {
+		this.perCuota = perCuota;
+	}
+	
+	
 
 }

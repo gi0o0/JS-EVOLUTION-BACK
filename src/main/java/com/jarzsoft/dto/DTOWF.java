@@ -1,8 +1,11 @@
 package com.jarzsoft.dto;
 
+import java.util.List;
+
 public class DTOWF {
 
 	private String idWf;
+	private Boolean isUpdate;
 	private String idStep;
 	private String idSubStep;
 	private String nextStep;
@@ -35,7 +38,7 @@ public class DTOWF {
 	private String barrioTra;
 	private String paisDirTrabajo;
 	private String deptDirTrabajo;
-	private String codiciuDirTrabajoCiud;
+	private String ciuDirTrabajo;
 	private String faxTer;
 	private String codProfe;
 	private String indContrato;
@@ -76,6 +79,9 @@ public class DTOWF {
 	private String comments;
 	private String token;
 	private String estado;
+	private List<String> files;
+	private List<String> filesNames;
+	private DTOWFFinancialInfo financial;
 
 	public DTOWF() {
 		super();
@@ -87,7 +93,7 @@ public class DTOWF {
 			String mailTer, String dirTerpal, String telTer, String telTer1, String telTer2, String paisCodigo,
 			String codiDept, String codiCiud, String barrio, String fecIngEmpresa, String antiEmpresa, String fecCump,
 			String tipVivienda, String dirTeralt, String barrioTra, String paisDirTrabajo, String deptDirTrabajo,
-			String codiciuDirTrabajoCiud, String faxTer, String codProfe, String indContrato, String paramText,
+			String ciuDirTrabajo, String faxTer, String codProfe, String indContrato, String paramText,
 			String entBan, String tipCta, String numCta, String idConyuge, String nomCony, String emailConyuge,
 			String celConyuge, String nroCuotas, String refNombre1, String refParen1, String refMail1, String refCel1,
 			String refNombre2, String refParen2, String refMail2, String refCel2, String refNombre3, String refParen3,
@@ -125,7 +131,7 @@ public class DTOWF {
 		this.barrioTra = barrioTra;
 		this.paisDirTrabajo = paisDirTrabajo;
 		this.deptDirTrabajo = deptDirTrabajo;
-		this.codiciuDirTrabajoCiud = codiciuDirTrabajoCiud;
+		this.ciuDirTrabajo = ciuDirTrabajo;
 		this.faxTer = faxTer;
 		this.codProfe = codProfe;
 		this.indContrato = indContrato;
@@ -396,14 +402,6 @@ public class DTOWF {
 
 	public void setDeptDirTrabajo(String deptDirTrabajo) {
 		this.deptDirTrabajo = deptDirTrabajo;
-	}
-
-	public String getCodiciuDirTrabajoCiud() {
-		return codiciuDirTrabajoCiud;
-	}
-
-	public void setCodiciuDirTrabajoCiud(String codiciuDirTrabajoCiud) {
-		this.codiciuDirTrabajoCiud = codiciuDirTrabajoCiud;
 	}
 
 	public String getFaxTer() {
@@ -757,5 +755,47 @@ public class DTOWF {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+	public List<String> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<String> files) {
+		this.files = files;
+	}
+
+	public List<String> getFilesNames() {
+		return filesNames;
+	}
+
+	public void setFilesNames(List<String> filesNames) {
+		this.filesNames = filesNames;
+	}
+
+	public DTOWFFinancialInfo getFinancial() {
+		return financial;
+	}
+
+	public void setFinancial(DTOWFFinancialInfo financial) {
+		this.financial = financial;
+	}
+
+	public Boolean getIsUpdate() {
+		return isUpdate;
+	}
+
+	public void setIsUpdate(Boolean isUpdate) {
+		this.isUpdate = isUpdate;
+	}
+
+	public String getCiuDirTrabajo() {
+		return ciuDirTrabajo;
+	}
+
+	public void setCiuDirTrabajo(String ciuDirTrabajo) {
+		this.ciuDirTrabajo = ciuDirTrabajo;
+	}
+	
+	
 
 }

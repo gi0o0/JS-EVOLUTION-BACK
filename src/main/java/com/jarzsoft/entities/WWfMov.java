@@ -145,6 +145,19 @@ public class WWfMov implements Serializable {
 		this.usuario3Task = "N";
 		this.usuario4Vobo = "N";
 		this.usuario4Task = "N";
+		
+		if(this.usuario1==null) {
+			this.usuario1= "N";
+		}
+		if(this.usuario2==null) {
+			this.usuario2= "N";
+		}
+		if(this.usuario3==null) {
+			this.usuario3= "N";
+		}	
+		if(this.usuario4==null) {
+			this.usuario4= "N";
+		}		
 
 	}
 
@@ -164,6 +177,19 @@ public class WWfMov implements Serializable {
 		this.usuario3Task = "N";
 		this.usuario4Vobo = "N";
 		this.usuario4Task = "N";
+		
+		if(this.usuario1==null) {
+			this.usuario1= "N";
+		}
+		if(this.usuario2==null) {
+			this.usuario2= "N";
+		}
+		if(this.usuario3==null) {
+			this.usuario3= "N";
+		}	
+		if(this.usuario4==null) {
+			this.usuario4= "N";
+		}	
 	}
 
 	public Integer getIdWfMov() {

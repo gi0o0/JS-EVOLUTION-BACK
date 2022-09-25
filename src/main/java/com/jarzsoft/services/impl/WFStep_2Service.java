@@ -10,15 +10,8 @@ import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.entities.WWfMov;
-import com.jarzsoft.mapper.IFodatasoMapper;
-import com.jarzsoft.mapper.ISolCreditoMapper;
-import com.jarzsoft.mapper.ITercerosMapper;
 import com.jarzsoft.mapper.IWWfMovMapper;
 import com.jarzsoft.repository.ParametroRepository;
-import com.jarzsoft.repository.W_Bas_UsuarioRepository;
-import com.jarzsoft.repository.W_Wf_Pas_AutRepository;
-import com.jarzsoft.repository.W_Wf_PasosRepository;
-import com.jarzsoft.service.IFodatasoService;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
 import com.jarzsoft.service.ITercerosService;
@@ -35,19 +28,7 @@ public class WFStep_2Service implements IStepStrategy {
 
 	private final ITercerosService tercerosService;
 
-	private final ITercerosMapper tercerosMapper;
-
 	private final ISolCreditoService solCreditoService;
-
-	private final ISolCreditoMapper solCreditoMapper;
-
-	private final W_Bas_UsuarioRepository usuarioRepository;
-
-	private final IFodatasoService fodatasoService;
-
-	private final IFodatasoMapper fodatasoMapper;
-
-	private final W_Wf_PasosRepository wWfPasosRepository;
 
 	private final SendEmail sendEmail;
 
@@ -55,32 +36,21 @@ public class WFStep_2Service implements IStepStrategy {
 
 	private final IWWfMovMapper wWfMovMapper;
 
-	private final W_Wf_Pas_AutRepository w_Wf_Pas_AutRepository;
-
 	private final ParametroRepository parametroRepository;
 
 	private final Comunes comunes;
 
 	@Autowired
-	public WFStep_2Service(ITercerosService tercerosService, ITercerosMapper tercerosMapper,
-			ISolCreditoService solCreditoService, ISolCreditoMapper solCreditoMapper,
-			W_Bas_UsuarioRepository usuarioRepository, IFodatasoService fodatasoService, IFodatasoMapper fodatasoMapper,
-			W_Wf_PasosRepository wWfPasosRepository, SendEmail sendEmail, IWWfMovService wWfMovService,
-			IWWfMovMapper wWfMovMapper, W_Wf_Pas_AutRepository w_Wf_Pas_AutRepository,
+	public WFStep_2Service(ITercerosService tercerosService, ISolCreditoService solCreditoService,
+
+			SendEmail sendEmail, IWWfMovService wWfMovService, IWWfMovMapper wWfMovMapper,
 			ParametroRepository parametroRepository, Comunes comunes) {
 		super();
 		this.tercerosService = tercerosService;
-		this.tercerosMapper = tercerosMapper;
 		this.solCreditoService = solCreditoService;
-		this.solCreditoMapper = solCreditoMapper;
-		this.usuarioRepository = usuarioRepository;
-		this.fodatasoService = fodatasoService;
-		this.fodatasoMapper = fodatasoMapper;
-		this.wWfPasosRepository = wWfPasosRepository;
 		this.sendEmail = sendEmail;
 		this.wWfMovService = wWfMovService;
 		this.wWfMovMapper = wWfMovMapper;
-		this.w_Wf_Pas_AutRepository = w_Wf_Pas_AutRepository;
 		this.parametroRepository = parametroRepository;
 		this.comunes = comunes;
 
@@ -103,7 +73,7 @@ public class WFStep_2Service implements IStepStrategy {
 		DTOSolCredito externalUser = solCreditoService.findBynumeroRadicacion(o.getNumeroRadicacion());
 
 		if (null != externalUser) {
-			DTOTerceros ter=tercerosService.findByCodter(externalUser.getCodTer());
+			DTOTerceros ter = tercerosService.findByCodter(externalUser.getCodTer());
 			String codeLink = comunes.generarHashPassword(numRad + "");
 			solCreditoService.modificarClaveLink(numRad, codeLink);
 			sendEmail(ter.getMailTer().trim(), codeLink);

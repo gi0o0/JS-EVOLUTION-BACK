@@ -83,12 +83,13 @@ public class WFStep_1Service implements IStepStrategy {
 	public DTOWF apply(DTOWF o, String user) {
 		DTOTerceros userCredit = tercerosService.create(tercerosMapper.mapperDaoToDtoUser(o), user);
 		String idCodeudor = "";
+		fodatasoService.create(fodatasoMapper.mapperDaoToDto(o, userCredit.getCodTer().toString()));
 
 		if (null != o.getCodeu()) {
 			DTOTerceros userCodeo = tercerosService.create(tercerosMapper.mapperDaoToDtoCodeo(o), user);
 			idCodeudor = userCodeo.getCodTer().toString();
 
-			fodatasoService.create(fodatasoMapper.mapperDaoToDto(o, idCodeudor));
+			fodatasoService.create(fodatasoMapper.mapperDaoToDtoCodeo(o, idCodeudor));
 		}
 		List<Object[]> usuario = usuarioRepository.findByUsuario(user);
 
@@ -98,47 +99,17 @@ public class WFStep_1Service implements IStepStrategy {
 
 		o.setNumeroRadicacion(out.getNumeroRadicacion());
 
-		if (EnumStates.TIPO_ESTADO.STATE_S.getName().equals(out.getEstado())) {
-			W_Wf_Pasos step = wWfPasosRepository.findByIdStep(EnumSteps.TIPO_PASO.STEP_1.getName());
-			String state = "";
-			if (null != step) {
-				if (Constantes.isOK.equals(step.getEnvCorreoPaso())) {
-					sendEmail.Send(step.getEmail1(), step.getAsuntoCorreo(), step.getTextoCorreo());
-					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo());
-				}
-				if (Constantes.isOK.equals(step.getEnvCorreoAutoriza())) {
-					sendEmail.Send(step.getEmail3(), step.getAsuntoCorreo(), step.getTextoCorreo());
-					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo());
-					state = EnumStates.TIPO_ESTADO.STATE_2.getName();
-				} else {
-					state = EnumStates.TIPO_ESTADO.STATE_1.getName();
-				}
-				solCreditoService.updateState(out.getNumeroRadicacion(), state);
-				out.setEstado(state);
-				List<W_Wf_Pas_Aut> auts = w_Wf_Pas_AutRepository.findByWfAndStep(EnumWF.TIPO_WF.IDWF_4.getName(),
-						EnumSteps.TIPO_PASO.STEP_1.getName());
-				HashMap<String, String> users = new HashMap<String, String>();
-
-				for (int i = 0; i < auts.size(); i++) {
-					int j = i + 1;
-					users.put("user" + j, auts.get(i).getW_Wf_Pas_AutPK().getUsuario());
-				}
-
-				DTOWWfMov mov = wWfMovService.create(
-						wWfMovMapper.mapperDaoToDto(out, step, user, Integer.parseInt(EnumWF.TIPO_WF.IDWF_4.getName()),
-								null, EnumSteps.TIPO_PASO.STEP_1.getName(), users));
-				if (null != mov) {
-					state = EnumStates.TIPO_ESTADO.STATE_3.getName();
-					solCreditoService.updateState(out.getNumeroRadicacion(), state);
-					out.setEstado(state);
-					mov = wWfMovService.create(wWfMovMapper.mapperDaoToDto(out, step, user,
-							Integer.parseInt(EnumWF.TIPO_WF.IDWF_4.getName()), null,
-							EnumSteps.TIPO_PASO.STEP_2.getName(), users));
-				}
-			}
+		
+		if (EnumStates.TIPO_ESTADO.STATE_S.getName().equals(out.getEstado()) && !o.getIsUpdate()) {
+			out.setEstado(EnumStates.TIPO_ESTADO.STATE_2.getName());
+			wWfMovService.createMovWithSteps(out, user, EnumSteps.TIPO_PASO.STEP_1.getName(),o.getIsUpdate());
+			String state = EnumStates.TIPO_ESTADO.STATE_3.getName();
+			solCreditoService.updateState(out.getNumeroRadicacion(), state);
+			out.setEstado(state);
+			wWfMovService.createMovWithSteps(out, user, EnumSteps.TIPO_PASO.STEP_2.getName(),o.getIsUpdate());
 		}
 
-		o.setNextStep( EnumSteps.TIPO_PASO.STEP_2.getName());
+		o.setNextStep(EnumSteps.TIPO_PASO.STEP_2.getName());
 		return o;
 	}
 

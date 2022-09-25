@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "web.Parametro")
+@Table(name = "Parametro")
 public class Parametro implements Serializable {
 
 	private static final long serialVersionUID = 1L;

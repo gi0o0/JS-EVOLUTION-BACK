@@ -19,7 +19,7 @@ public class WfStepDocParameterMapper implements IWfStepDocParameterMapper {
 		list.stream().forEach(o -> {
 			response.add(new DTOWFParameterStepDoc(o.getW_Wf_Pas_DocPK().getIdWf(), o.getW_Wf_Pas_DocPK().getIdPaso(),
 					o.getW_Wf_Pas_DocPK().getIdDocumento(), o.getNomDocumento(), o.getEnvRec(), o.getUsuUltMod(),
-					o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea()));
+					o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea(),o.getIndObligatorio()));
 		});
 
 		return response;
@@ -29,7 +29,7 @@ public class WfStepDocParameterMapper implements IWfStepDocParameterMapper {
 	public DTOWFParameterStepDoc mapperDaoToDto(W_Wf_Pas_Doc o) {
 		return new DTOWFParameterStepDoc(o.getW_Wf_Pas_DocPK().getIdWf(), o.getW_Wf_Pas_DocPK().getIdPaso(),
 				o.getW_Wf_Pas_DocPK().getIdDocumento(), o.getNomDocumento(), o.getEnvRec(), o.getUsuUltMod(),
-				o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea());
+				o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea(),o.getIndObligatorio());
 	}
 
 	@Override

@@ -39,13 +39,16 @@ public class Fodataso implements Serializable {
 
 	@Column(name = "ind_contrato")
 	private String indContrato;
-	
+
 	@Column(name = "cod_emple")
 	private String codEmple;
 
+	@Column(name = "Cla_asoci")
+	private String claAsoci;
+
 	public Fodataso() {
 	}
-	
+
 	@PrePersist
 	public void prePersist() {
 
@@ -120,6 +123,22 @@ public class Fodataso implements Serializable {
 
 	public void setIndContrato(String indContrato) {
 		this.indContrato = indContrato;
+	}
+
+	public String getCodEmple() {
+		return codEmple;
+	}
+
+	public void setCodEmple(String codEmple) {
+		this.codEmple = codEmple;
+	}
+
+	public String getClaAsoci() {
+		return claAsoci;
+	}
+
+	public void setClaAsoci(String claAsoci) {
+		this.claAsoci = claAsoci;
 	}
 
 }

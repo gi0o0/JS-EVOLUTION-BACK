@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "web.w_bas_T_Perfil")
+@Table(name = "w_bas_T_Perfil")
 public class W_Bas_T_Perfil implements Serializable {
 
 	private static final long serialVersionUID = 1L;

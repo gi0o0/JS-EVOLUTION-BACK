@@ -1,5 +1,7 @@
 package com.jarzsoft.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -68,6 +70,11 @@ public class SolCreditoService implements ISolCreditoService {
 	@Override
 	public DTOSolCredito findByHash(String hash) {
 		return mapper.mapperEntitieToDao(solCreditoRepository.findByHash(hash));
+	}
+
+	@Override
+	public List<DTOSolCredito> findByUser(String user) {
+		return mapper.mapperEntitiesToDaos(solCreditoRepository.findByUser(user));
 	}
 
 }

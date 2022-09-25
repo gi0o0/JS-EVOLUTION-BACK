@@ -1,6 +1,7 @@
 package com.jarzsoft.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -53,6 +54,12 @@ public class Foclaaso implements Serializable {
 
 	@Column(name = "monto4")
 	private BigInteger monto4;
+
+	@Column(name = "valor_respeta")
+	private BigDecimal valorRespeta;
+
+	@Column(name = "porcentaje_respeta")
+	private BigDecimal porcentajeRespeta;
 
 	@Column(name = "indcodeudormonto1")
 	private String indCodeudorMonto1;
@@ -195,6 +202,22 @@ public class Foclaaso implements Serializable {
 
 	public void setIndCodeudorMonto4(String indCodeudorMonto4) {
 		this.indCodeudorMonto4 = indCodeudorMonto4;
+	}
+
+	public BigDecimal getValorRespeta() {
+		return valorRespeta;
+	}
+
+	public void setValorRespeta(BigDecimal valorRespeta) {
+		this.valorRespeta = valorRespeta;
+	}
+
+	public BigDecimal getPorcentajeRespeta() {
+		return porcentajeRespeta;
+	}
+
+	public void setPorcentajeRespeta(BigDecimal porcentajeRespeta) {
+		this.porcentajeRespeta = porcentajeRespeta;
 	}
 
 }

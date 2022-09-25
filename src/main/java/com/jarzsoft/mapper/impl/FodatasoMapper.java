@@ -21,12 +21,14 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setFecIngEmpresa(o.getFecIngEmpresa());
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
+		out.setClaAsoci(o.getClaAsoci());
 		return out;
 	}
 
 	@Override
 	public DTOFodataso mapperEntitieToDao(Fodataso o) {
 		DTOFodataso out = new DTOFodataso();
+		if(o!=null) {
 		out.setCelConyuge(o.getCelConyuge());
 		out.setCodProfe(o.getCodProfe());
 		out.setCodTer(o.getCodTer());
@@ -35,6 +37,8 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setFecIngEmpresa(o.getFecIngEmpresa());
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
+		out.setClaAsoci(o.getClaAsoci());
+		}
 		return out;
 	}
 
@@ -49,6 +53,20 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setFecIngEmpresa(o.getFecIngEmpresa());
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
+		out.setClaAsoci(o.getEntitie());
+		return out;
+	}
+
+	@Override
+	public DTOFodataso mapperDaoToDtoCodeo(DTOWF o, String codTer) {
+		DTOFodataso out = new DTOFodataso();
+		out.setCelConyuge(o.getCodeu().getCelConyuge());
+		out.setCodProfe(o.getCodeu().getCodProfe());
+		out.setCodTer(codTer);
+		out.setEmailConyuge(o.getCodeu().getEmailConyuge());
+		out.setFec_cump(o.getCodeu().getFeExp());
+		out.setIndContrato(o.getCodeu().getIndContrato());
+		out.setNomCony(o.getCodeu().getNomCony());		
 		return out;
 	}
 

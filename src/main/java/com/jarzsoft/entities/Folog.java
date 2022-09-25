@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "web.folog")
+@Table(name = "folog")
 public class Folog implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -1,5 +1,7 @@
 package com.jarzsoft.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOSolCredito;
@@ -9,10 +11,14 @@ import com.jarzsoft.entities.SolCredito;
 @Service
 public interface ISolCreditoMapper {
 
-	public SolCredito mapperDtoToEntitie(DTOSolCredito o);
+	SolCredito mapperDtoToEntitie(DTOSolCredito o);
 
-	public DTOSolCredito mapperEntitieToDao(SolCredito o);
+	DTOSolCredito mapperEntitieToDao(SolCredito o);
 
-	public DTOSolCredito mapperDaoToDto(DTOWF o, String codTer, String codeudor,String user,String state);
+	DTOSolCredito mapperDaoToDto(DTOWF o, String codTer, String codeudor, String user, String state);
+
+	DTOSolCredito mapperDaoToDtoFinancial(DTOWF o, DTOSolCredito credito);
+
+	List<DTOSolCredito> mapperEntitiesToDaos(List<Object[]> o);
 
 }

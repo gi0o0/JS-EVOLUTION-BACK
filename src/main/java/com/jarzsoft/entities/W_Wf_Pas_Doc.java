@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "web.w_wf_pas_doc")
+@Table(name = "w_wf_pas_doc")
 public class W_Wf_Pas_Doc implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -25,6 +25,10 @@ public class W_Wf_Pas_Doc implements Serializable {
 	@Size(max = 5)
 	@Column(name = "env_rec")
 	private String envRec;
+
+	@Size(max = 1)
+	@Column(name = "Ind_obligatorio")
+	private String indObligatorio;
 
 	@Size(max = 10)
 	@Column(name = "USU_ULT_MOD")
@@ -110,6 +114,14 @@ public class W_Wf_Pas_Doc implements Serializable {
 
 	public void setUsuCrea(String usuCrea) {
 		this.usuCrea = usuCrea;
+	}
+
+	public String getIndObligatorio() {
+		return indObligatorio;
+	}
+
+	public void setIndObligatorio(String indObligatorio) {
+		this.indObligatorio = indObligatorio;
 	}
 
 }

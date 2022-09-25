@@ -10,7 +10,7 @@ import com.jarzsoft.entities.Fodataso;
 @Repository
 public interface FodatasoRepository extends JpaRepository<Fodataso, String> {
 
-	@Query(value = "SELECT * FROM FODATASO WHERE codter = :codTer", nativeQuery = true)
+	@Query(value = "SELECT * FROM FODATASO WHERE cod_ter = :codTer", nativeQuery = true)
 	Fodataso findByCodTer(@Param("codTer") String codTer);
 
 }

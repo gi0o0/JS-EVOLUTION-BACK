@@ -10,6 +10,7 @@ public class DTOFodataso {
 	private String emailConyuge;
 	private String celConyuge;
 	private String indContrato;
+	private String claAsoci;
 
 	public DTOFodataso() {
 		super();
@@ -77,6 +78,14 @@ public class DTOFodataso {
 
 	public void setIndContrato(String indContrato) {
 		this.indContrato = indContrato;
+	}
+
+	public String getClaAsoci() {
+		return claAsoci;
+	}
+
+	public void setClaAsoci(String claAsoci) {
+		this.claAsoci = claAsoci;
 	}
 
 }

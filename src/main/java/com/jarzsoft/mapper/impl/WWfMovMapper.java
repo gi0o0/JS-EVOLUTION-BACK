@@ -60,6 +60,7 @@ public class WWfMovMapper implements IWWfMovMapper {
 	@Override
 	public DTOWWfMov mapperEntitieToDao(WWfMov o) {
 		DTOWWfMov out = new DTOWWfMov();
+		if(null!=o) {
 		out.setAdjDocumentos(o.getAdjDocumentos());
 		out.setCieSigPaso(o.getCieSigPaso());
 		out.setCifin(o.getCifin());
@@ -96,7 +97,7 @@ public class WWfMovMapper implements IWWfMovMapper {
 		out.setUsuComercialTask(o.getUsuComercialTask());
 		out.setUsuComercialVobo(o.getUsuComercialVobo());
 		out.setUsuMovimiento(o.getUsuMovimiento());
-
+		}
 		return out;
 	}
 

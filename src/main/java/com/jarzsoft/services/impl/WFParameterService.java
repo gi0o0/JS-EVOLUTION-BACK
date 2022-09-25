@@ -168,7 +168,7 @@ public class WFParameterService implements IWFParameterService {
 	@Override
 	public DTOWFParameterStepDoc deleteDoc(String id, String ipStep, String idDoc) {
 		DTOWFParameterStepDoc doc = new DTOWFParameterStepDoc(Long.parseLong(id), Long.parseLong(ipStep),
-				Long.parseLong(idDoc), "", "", "", null, null, "");
+				Long.parseLong(idDoc), "", "", "", null, null, "", "");
 		daoStepDoc.delete(mapperStepDoc.mapperDtoToDao(doc));
 		return doc;
 	}
@@ -209,10 +209,16 @@ public class WFParameterService implements IWFParameterService {
 
 	@Override
 	public DTOWFParameterEst deleteEst(String id, String ipEst) {
-		DTOWFParameterEst est = new DTOWFParameterEst(Long.parseLong(id), Long.parseLong(ipEst),  "", false, false, null, "",
-				null, null, "");
+		DTOWFParameterEst est = new DTOWFParameterEst(Long.parseLong(id), Long.parseLong(ipEst), "", false, false, null,
+				"", null, null, "");
 		daoEst.delete(mapperEst.mapperDtoToDao(est));
 		return est;
+	}
+
+	@Override
+	public List<DTOWFParameterStep> stepsbyNumRad(Integer numRad) {
+		return mapperStep.mapperList(daoStep.findByWfByNumRad(numRad));
+
 	}
 
 }

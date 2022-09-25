@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "web.usuarios")
+@Table(name = "usuarios")
 public class Usuarios implements Serializable {
 
 	private static final long serialVersionUID = 1L;

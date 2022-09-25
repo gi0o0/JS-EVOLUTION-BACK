@@ -1,6 +1,7 @@
 package com.jarzsoft.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,6 +26,9 @@ public class Fotipcre implements Serializable {
 	@Column(name = "nom_evolution")
 	private String nomEvolution;
 
+	@Column(name = "ran_int_1")
+	private BigDecimal ranInt1;
+
 	public Fotipcre() {
 	}
 
@@ -48,6 +52,14 @@ public class Fotipcre implements Serializable {
 
 	public void setNomEvolution(String nomEvolution) {
 		this.nomEvolution = nomEvolution;
+	}
+
+	public BigDecimal getRanInt1() {
+		return ranInt1;
+	}
+
+	public void setRanInt1(BigDecimal ranInt1) {
+		this.ranInt1 = ranInt1;
 	}
 
 }

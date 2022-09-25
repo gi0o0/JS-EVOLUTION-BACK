@@ -31,4 +31,9 @@ public class FodatasoService implements IFodatasoService {
 		return mapper.mapperEntitieToDao(fodataso);
 	}
 
+	@Override
+	public DTOFodataso getByCodTer(String codTer) {
+		return mapper.mapperEntitieToDao(fodatasoRepository.findByCodTer(codTer));
+	}
+
 }

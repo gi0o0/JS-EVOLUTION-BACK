@@ -38,6 +38,9 @@ public class SendEmail {
 		String port_email = "";
 		String from_email = "";
 
+		if(emailTo==null||"".equals(emailTo)||asunto_email==null||"".equals(asunto_email)||text_email==null||"".equals(text_email)) {
+			return "";
+		}
 
 
 		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL");

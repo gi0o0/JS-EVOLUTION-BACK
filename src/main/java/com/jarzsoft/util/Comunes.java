@@ -1,5 +1,6 @@
 package com.jarzsoft.util;
 
+import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
@@ -123,6 +124,30 @@ public class Comunes {
 		}
 		System.out.println("SALE del metodo generarHashPassword");
 		return hashGenerate;
+	}
+
+	public static String validIsNullNumber(BigDecimal value) {
+
+		return (value != null) ? value.toString() : "0";
+	}
+
+	public static String stringToInt(String value) {
+		if (value == null || value.equals(""))
+			return "0";
+
+		return String.valueOf((int) Double.parseDouble(value));
+	}
+	
+	public static String stringClean(String value) {
+		if (value == null || value.equals(""))
+			return "";
+
+		return value.trim();
+	}
+	
+	public static BigDecimal validIsNullStringTonumber(String value) {
+
+		return (value != null) ? new BigDecimal(value) :new BigDecimal("0");
 	}
 
 }

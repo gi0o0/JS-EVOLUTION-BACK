@@ -8,4 +8,6 @@ public interface IFilesUserService {
 
 	List<DTOFilesUser> listAll(String user, String solicitud, String id);
 
+	Boolean create(String user, String solicitud, String id, String encode);
+
 }

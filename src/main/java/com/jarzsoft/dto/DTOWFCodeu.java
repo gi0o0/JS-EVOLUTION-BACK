@@ -22,7 +22,7 @@ public class DTOWFCodeu {
 	private String barrioTra;
 	private String paisDirTrabajo;
 	private String deptDirTrabajo;
-	private String codiciuDirTrabajoCiud;
+	private String ciuDirTrabajo;
 	private String faxTer;
 	private String codProfe;
 	private String indContrato;
@@ -59,11 +59,11 @@ public class DTOWFCodeu {
 	public DTOWFCodeu(String doctip, String nitter, String nomTer, String priApellido, String segApellido,
 			String lugarDoc, String mailTer, String dirTerpal, String telTer, String feExp, String paisCodigo,
 			String codiDept, String codiCiud, String barrio, String antiEmpresa, String tipVivienda, String dirTeralt,
-			String barrioTra, String paisDirTrabajo, String deptDirTrabajo, String codiciuDirTrabajoCiud, String faxTer,
+			String barrioTra, String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo, String faxTer,
 			String codProfe, String indContrato, String paramText, String idConyuge, String nomCony,
 			String emailConyuge, String celConyuge, String refNombre1, String refParen1, String refMail1,
 			String refCel1, String refNombre2, String refParen2, String refMail2, String refCel2, String refNombre3,
-			String refParen3, String refMail3, String refCel13, String bienNombre, String bienValor, String bienAfecta,
+			String refParen3, String refMail3, String refCel3, String bienNombre, String bienValor, String bienAfecta,
 			String bienHipoteca, String bienHipAFavor, String vehMarca, String vehClase, String vehModelo,
 			String vehPlaca, String vehPignorado, String vehPigAFavor, String vehValVomercial) {
 		super();
@@ -87,7 +87,7 @@ public class DTOWFCodeu {
 		this.barrioTra = barrioTra;
 		this.paisDirTrabajo = paisDirTrabajo;
 		this.deptDirTrabajo = deptDirTrabajo;
-		this.codiciuDirTrabajoCiud = codiciuDirTrabajoCiud;
+		this.ciuDirTrabajo = ciuDirTrabajo;
 		this.faxTer = faxTer;
 		this.codProfe = codProfe;
 		this.indContrato = indContrato;
@@ -291,13 +291,19 @@ public class DTOWFCodeu {
 		this.deptDirTrabajo = deptDirTrabajo;
 	}
 
-	public String getCodiciuDirTrabajoCiud() {
-		return codiciuDirTrabajoCiud;
+
+
+	public String getCiuDirTrabajo() {
+		return ciuDirTrabajo;
 	}
 
-	public void setCodiciuDirTrabajoCiud(String codiciuDirTrabajoCiud) {
-		this.codiciuDirTrabajoCiud = codiciuDirTrabajoCiud;
+
+
+	public void setCiuDirTrabajo(String ciuDirTrabajo) {
+		this.ciuDirTrabajo = ciuDirTrabajo;
 	}
+
+
 
 	public String getFaxTer() {
 		return faxTer;
@@ -451,13 +457,19 @@ public class DTOWFCodeu {
 		this.refMail3 = refMail3;
 	}
 
+
+
 	public String getRefCel3() {
 		return refCel3;
 	}
 
-	public void setRefCel13(String refCel3) {
+
+
+	public void setRefCel3(String refCel3) {
 		this.refCel3 = refCel3;
 	}
+
+
 
 	public String getBienNombre() {
 		return bienNombre;

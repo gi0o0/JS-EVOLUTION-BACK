@@ -13,13 +13,14 @@ public class DTOWFParameterStepDoc {
 	private Date fecUltMod;
 	private Date fecCrea;
 	private String usuCrea;
+	private String indObligatorio;
 
 	public DTOWFParameterStepDoc() {
 		super();
 	}
 
 	public DTOWFParameterStepDoc(Long idWf, Long idPaso, Long idDocumento, String nomDocumento, String envRec,
-			String usuUltMod, Date fecUltMod, Date fecCrea, String usuCrea) {
+			String usuUltMod, Date fecUltMod, Date fecCrea, String usuCrea, String indObligatorio) {
 		super();
 		this.idWf = idWf;
 		this.idPaso = idPaso;
@@ -30,6 +31,7 @@ public class DTOWFParameterStepDoc {
 		this.fecUltMod = fecUltMod;
 		this.fecCrea = fecCrea;
 		this.usuCrea = usuCrea;
+		this.indObligatorio = indObligatorio;
 	}
 
 	public Long getIdWf() {
@@ -102,6 +104,14 @@ public class DTOWFParameterStepDoc {
 
 	public void setUsuCrea(String usuCrea) {
 		this.usuCrea = usuCrea;
+	}
+
+	public String getIndObligatorio() {
+		return indObligatorio;
+	}
+
+	public void setIndObligatorio(String indObligatorio) {
+		this.indObligatorio = indObligatorio;
 	}
 
 }
