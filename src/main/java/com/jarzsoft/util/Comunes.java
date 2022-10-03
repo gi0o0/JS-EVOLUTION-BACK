@@ -138,6 +138,13 @@ public class Comunes {
 		return String.valueOf((int) Double.parseDouble(value));
 	}
 	
+	public static int stringToInteger(String value) {
+		if (value == null || value.equals(""))
+			return 0;
+
+		return (int) Double.parseDouble(value);
+	}
+	
 	public static String stringClean(String value) {
 		if (value == null || value.equals(""))
 			return "";

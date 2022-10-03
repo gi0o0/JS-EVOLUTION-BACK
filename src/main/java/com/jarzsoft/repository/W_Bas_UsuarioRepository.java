@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.jarzsoft.entities.W_Bas_Usuario;
 
 @Repository
-public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, Long> {
+public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, String> {
 
 	@Query(value = "SELECT us.Nom_usuario,LTRIM(RTRIM(ter.mailter)) as mailter ,us.CodTer FROM W_Bas_Usuario us,terceros ter WHERE us.usuario = :usuario AND us.codter=ter.codter", nativeQuery = true)
 	List<Object[]> findByUsuario(@Param("usuario") String usuario);
@@ -25,6 +25,13 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, Lo
 	@Query(value = "SELECT us.Nom_usuario,ter.mailter FROM W_Bas_Usuario us,terceros ter WHERE us.usuario = :usuario AND clave_global=:clave_global AND us.codter=ter.codter", nativeQuery = true)
 	List<Object[]> findByUsuarioAndPassword(@Param("usuario") String usuario,
 			@Param("clave_global") String clave_global);
+	
+	@Query(value = "SELECT ter.nitter ,t1.cod_ter,ter.nomter, ter.pri_apellido ,ter.seg_apellido FROM fodataso t1 inner join terceros ter on t1.cod_ter =ter.codter"
+			+ " WHERE NOT EXISTS (SELECT NULL FROM w_bas_usuario t2 WHERE t2.CodTer = t1.cod_ter )", nativeQuery = true)
+	List<Object[]> findUsersFodataso();
+	
+	
+	
 
 	@Query(value = "SELECT LTRIM(RTRIM(Usuario)) as Usuario FROM W_Bas_Usuario WHERE clave_link = :clave_link", nativeQuery = true)
 	Object[] findByUsuarioAndClaveLink(@Param("clave_link") String clave_link);

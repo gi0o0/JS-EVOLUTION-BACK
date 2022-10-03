@@ -11,5 +11,6 @@ public interface IUserMapper {
 
 	public DTOUser mapperDaoToDto(W_Bas_Usuario o);
 
+	public W_Bas_Usuario mapperDtoToDao(DTOUser o);
 
 }

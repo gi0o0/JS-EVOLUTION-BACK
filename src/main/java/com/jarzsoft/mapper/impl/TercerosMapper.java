@@ -5,7 +5,10 @@ import org.springframework.stereotype.Service;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.entities.Terceros;
+import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.ITercerosMapper;
+import com.jarzsoft.util.Comunes;
+import com.jarzsoft.util.Constantes;
 
 @Service
 public class TercerosMapper implements ITercerosMapper {
@@ -134,39 +137,45 @@ public class TercerosMapper implements ITercerosMapper {
 
 	@Override
 	public DTOTerceros mapperEntitieToDao(Terceros o) {
+		
+
+		if (null == o) {
+			throw new PageNoFoundException(Constantes.MESSAGE_USER_NO_FOUND);
+		}
+		
 		DTOTerceros out = new DTOTerceros();
 		out.setCodTer(o.getCodTer());
 		out.setAntiEmpresa(o.getAntiEmpresa());
-		out.setBarrio(o.getBarrio());
-		out.setBarrioTra(o.getBarrioTra());
+		out.setBarrio(Comunes.stringClean(o.getBarrio()));
+		out.setBarrioTra(Comunes.stringClean(o.getBarrioTra()));
 		out.setCiuDirTrabajo(o.getCiuDirTrabajo());
-		out.setCodiCiud(o.getCodiCiud());
+		out.setCodiCiud(Comunes.stringClean(o.getCodiCiud()));
 		out.setCodiDept(o.getCodiDept());
 		out.setCodTer(o.getCodTer());
-		out.setDeptDirTrabajo(o.getDeptDirTrabajo());
-		out.setDirTeralt(o.getDirTeralt());
-		out.setDirTerpal(o.getDirTerpal());
+		out.setDeptDirTrabajo(Comunes.stringClean(o.getDeptDirTrabajo()));
+		out.setDirTeralt(Comunes.stringClean(o.getDirTeralt()));
+		out.setDirTerpal(Comunes.stringClean(o.getDirTerpal()));
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxter());
 		out.setFeExp(o.getFeExp());
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
-		out.setLugarDoc(o.getLugarDoc());
-		out.setMailTer(o.getMailTer());
-		out.setNomTercero(o.getNomTercero());
+		out.setLugarDoc(Comunes.stringClean(o.getLugarDoc()));
+		out.setMailTer(Comunes.stringClean(o.getMailTer()));
+		out.setNomTercero(Comunes.stringClean(o.getNomTercero()));
 		out.setNumCta(o.getNumCta());
 		out.setPaisCodigo(o.getPaisCodigo());
 		out.setPaisDirTrabajo(o.getPaisDirTrabajo());
 		out.setParamText(o.getParamText());
-		out.setPriApellido(o.getPriApellido());
-		out.setSegApellido(o.getSegApellido());
-		out.setTelter(o.getTelter());
-		out.setTelter1(o.getTelter1());
-		out.setTelter2(o.getTelter2());
+		out.setPriApellido(Comunes.stringClean(o.getPriApellido()));
+		out.setSegApellido(Comunes.stringClean(o.getSegApellido()));
+		out.setTelter(Comunes.stringClean(o.getTelter()));
+		out.setTelter1(Comunes.stringClean(o.getTelter1()));
+		out.setTelter2(Comunes.stringClean(o.getTelter2()));
 		out.setTipCta(o.getTipCta());
 		out.setTipVivienda(o.getTipVivienda());
 		out.setDocTip(o.getDocTip());
-		out.setNitTer(o.getNitTer());
+		out.setNitTer(Comunes.stringClean(o.getNitTer()));
 		out.setIndSecEconomico(o.getIndSecEconomico());
 		return out;
 	}

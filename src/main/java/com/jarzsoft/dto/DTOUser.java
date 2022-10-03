@@ -7,6 +7,8 @@ public class DTOUser {
 	private String id;
 	private String name;
 	private String idProfile;
+	private String estado;
+	private int codTer;
 	private String usuUltMod;
 	private Date fecUltMod;
 	private Date fecCrea;
@@ -28,11 +30,12 @@ public class DTOUser {
 		this.usuCrea = usuCrea;
 	}
 
-	public DTOUser(String id, String name, String idProfile) {
+	public DTOUser(String id, String name, String idProfile, String estado) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.idProfile = idProfile;
+		this.estado = estado;
 
 	}
 
@@ -91,5 +94,23 @@ public class DTOUser {
 	public void setUsuCrea(String usuCrea) {
 		this.usuCrea = usuCrea;
 	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public int getCodTer() {
+		return codTer;
+	}
+
+	public void setCodTer(int codTer) {
+		this.codTer = codTer;
+	}
+	
+	
 
 }

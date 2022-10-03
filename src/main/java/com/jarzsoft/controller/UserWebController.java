@@ -33,11 +33,6 @@ public class UserWebController {
 
 	}
 
-	/*
-	 * @GetMapping(produces = "application/json") public List<DTOW_Bas_Usuario>
-	 * listar() { return UserWebService.listAll(); }
-	 */
-
 	@GetMapping(produces = "application/json")
 	public List<DTOW_Bas_Usuario> listar() {
 		return UserWebService.listAllObj();
