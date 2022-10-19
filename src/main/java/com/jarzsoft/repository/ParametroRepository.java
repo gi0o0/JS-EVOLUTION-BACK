@@ -13,7 +13,7 @@ import com.jarzsoft.entities.ParametroKey;
 @Repository
 public interface ParametroRepository extends JpaRepository<Parametro, ParametroKey> {
 
-	@Query(value = "SELECT * FROM parametro WHERE param_id = :param_id", nativeQuery = true)
+	@Query(value = "SELECT * FROM parametro WHERE param_id = :param_id order by value", nativeQuery = true)
 	public List<Parametro> findByParamId(@Param("param_id") String param_id);
 	
 	@Query(value = "SELECT * FROM parametro WHERE param_id = :param_id AND param_text = :param_text", nativeQuery = true)

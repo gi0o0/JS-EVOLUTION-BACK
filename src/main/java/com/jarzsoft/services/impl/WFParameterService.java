@@ -135,6 +135,7 @@ public class WFParameterService implements IWFParameterService {
 					doc.setIdWf(o.getIdWf());
 					doc.setIdPaso(o.getIdPaso());
 					doc.setUsuCrea((o.getUsuCrea()));
+					doc.setIndObligatorio((null!=doc.getIndObligatorio()&&doc.getIndObligatorio().equals("true"))?"S":"N");
 					daoStepDoc.save(mapperStepDoc.mapperDtoToDao(doc));
 				}
 			}

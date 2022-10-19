@@ -22,6 +22,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getClaAsoci());
+		out.setCodEmple(o.getCodEmple());
 		return out;
 	}
 
@@ -54,6 +55,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getEntitie());
+		out.setCodEmple(o.getNitter());
 		return out;
 	}
 
@@ -67,6 +69,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setFec_cump(o.getCodeu().getFeExp());
 		out.setIndContrato(o.getCodeu().getIndContrato());
 		out.setNomCony(o.getCodeu().getNomCony());		
+		out.setCodEmple(o.getCodeu().getNitter());
 		return out;
 	}
 

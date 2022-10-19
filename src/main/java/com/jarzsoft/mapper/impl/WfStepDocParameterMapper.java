@@ -36,7 +36,7 @@ public class WfStepDocParameterMapper implements IWfStepDocParameterMapper {
 	public W_Wf_Pas_Doc mapperDtoToDao(DTOWFParameterStepDoc o) {
 
 		return new W_Wf_Pas_Doc(new W_Wf_Pas_DocPK(o.getIdWf(), o.getIdPaso(), o.getIdDocumento()), o.getNomDocumento(),
-				o.getEnvRec(), o.getUsuUltMod(), o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea());
+				o.getEnvRec(), o.getUsuUltMod(), o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea(),o.getIndObligatorio());
 	}
 
 }

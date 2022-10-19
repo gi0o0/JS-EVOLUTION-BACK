@@ -49,7 +49,7 @@ public class W_Wf_Pas_Doc implements Serializable {
 
 	public W_Wf_Pas_Doc(W_Wf_Pas_DocPK w_Wf_Pas_DocPK, @Size(max = 100) String nomDocumento,
 			@Size(max = 5) String envRec, @Size(max = 10) String usuUltMod, Date fecUltMod, Date fecCrea,
-			@Size(max = 10) String usuCrea) {
+			@Size(max = 10) String usuCrea, String indObligatorio) {
 		super();
 		this.w_Wf_Pas_DocPK = w_Wf_Pas_DocPK;
 		this.nomDocumento = nomDocumento;
@@ -58,6 +58,7 @@ public class W_Wf_Pas_Doc implements Serializable {
 		this.fecUltMod = fecUltMod;
 		this.fecCrea = fecCrea;
 		this.usuCrea = usuCrea;
+		this.indObligatorio = indObligatorio;
 	}
 
 	public W_Wf_Pas_DocPK getW_Wf_Pas_DocPK() {

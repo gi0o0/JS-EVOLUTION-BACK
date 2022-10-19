@@ -11,6 +11,7 @@ public class DTOFodataso {
 	private String celConyuge;
 	private String indContrato;
 	private String claAsoci;
+	private String codEmple;
 
 	public DTOFodataso() {
 		super();
@@ -86,6 +87,14 @@ public class DTOFodataso {
 
 	public void setClaAsoci(String claAsoci) {
 		this.claAsoci = claAsoci;
+	}
+
+	public String getCodEmple() {
+		return codEmple;
+	}
+
+	public void setCodEmple(String codEmple) {
+		this.codEmple = codEmple;
 	}
 
 }

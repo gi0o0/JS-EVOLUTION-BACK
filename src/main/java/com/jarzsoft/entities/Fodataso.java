@@ -52,13 +52,13 @@ public class Fodataso implements Serializable {
 	@PrePersist
 	public void prePersist() {
 
-		this.codEmple = "0";
+		// this.codEmple = "0";
 
 	}
 
 	@PreUpdate
 	public void preUpdate() {
-		this.codEmple = "0";
+		// this.codEmple = "0";
 	}
 
 	public String getCodTer() {

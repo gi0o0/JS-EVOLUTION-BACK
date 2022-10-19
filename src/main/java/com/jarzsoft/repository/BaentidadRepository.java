@@ -11,6 +11,6 @@ import com.jarzsoft.entities.Baentida;
 @Repository
 public interface BaentidadRepository extends JpaRepository<Baentida, String> {
 
-	@Query(value = "select codent,noment from baentida", nativeQuery = true)
+	@Query(value = "select codent,noment from baentida order by noment", nativeQuery = true)
 	List<Baentida> findAll();
 }
