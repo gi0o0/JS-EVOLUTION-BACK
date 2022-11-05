@@ -130,6 +130,11 @@ public class Comunes {
 
 		return (value != null) ? value.toString() : "0";
 	}
+	
+	public static BigDecimal validIsNullNumberEmpty(BigDecimal value) {
+
+		return (value != null) ? value: new BigDecimal("0");
+	}
 
 	public static String stringToInt(String value) {
 		if (value == null || value.equals(""))

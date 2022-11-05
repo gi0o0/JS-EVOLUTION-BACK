@@ -48,7 +48,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setTipVivienda(o.getTipVivienda());
 		out.setDocTip(o.getDocTip());
 		out.setNitTer(o.getNitTer());
-		out.setNomTer(o.getNomTercero());
+		out.setNomTer(o.getPriApellido()+" "+o.getSegApellido()+" "+o.getNomTercero() );
 		out.setParamId(o.getParamId());
 		out.setNomCony(o.getNomCony());
 		out.setCelConyuge(o.getCelConyuge());
@@ -77,7 +77,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(o.getLugarDoc());
 		out.setMailTer(o.getMailTer());
-		out.setNomTercero(o.getNomTer());
+		out.setNomTercero(o.getNomTer() );
 		out.setNumCta(o.getNumCta());
 		out.setPaisCodigo(o.getPaisCodigo());
 		out.setPaisDirTrabajo(o.getPaisDirTrabajo());

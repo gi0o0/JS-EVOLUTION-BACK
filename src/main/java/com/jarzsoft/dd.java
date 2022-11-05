@@ -10,17 +10,28 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.TimeZone;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import org.apache.commons.lang.LocaleUtils;
 
 import com.itextpdf.text.log.SysoCounter;
+import com.jarzsoft.entities.Parametro;
 
 public class dd {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
 		/*
 		 * String FORMAT_UTC = "yyyy-MM-dd'T'HH:mm:ss.SSS-ssss"; //RES
@@ -65,30 +76,73 @@ public class dd {
 		 * int b=(int) Double.parseDouble(a);
 		 */
 		// System.out.println(b);
-		
-		ArrayList<String> key=new ArrayList<>();
-		
-		File doc = new File("C:\\\\Users\\\\PC\\\\Desktop\\\\b.txt");
 
-		  BufferedReader obj = new BufferedReader(new FileReader(doc));
-		 
-		  int i =1;
-		  String strng;
-		  while ((strng = obj.readLine()) != null) {
-			  
-			  String values[]=strng.split(";");
-			 String keyy=values[4]+","+values[6]+","+values[8]+","+values[9];
-			 if(!key.contains(keyy)) {
-				  key.add(keyy);
-			 }else {
-				  System.out.println(values[4]+","+values[6]+","+values[8]+","+values[9]);
-			 }
-			
-			
-		    i++;
-		  }
+		/*
+		 * ArrayList<String> key=new ArrayList<>();
+		 * 
+		 * File doc = new File("C:\\\\Users\\\\PC\\\\Desktop\\\\b.txt");
+		 * 
+		 * BufferedReader obj = new BufferedReader(new FileReader(doc));
+		 * 
+		 * int i =1; String strng; while ((strng = obj.readLine()) != null) {
+		 * 
+		 * String values[]=strng.split(";"); String
+		 * keyy=values[4]+","+values[6]+","+values[8]+","+values[9];
+		 * if(!key.contains(keyy)) { key.add(keyy); }else {
+		 * System.out.println(values[4]+","+values[6]+","+values[8]+","+values[9]); }
+		 * 
+		 * 
+		 * i++; }
+		 * 
+		 * 
+		 * 
+		 * }
+		 */
 
-	
+		String user_server_email = "";
+		String pass_server_email = "";
+		String server_email = "";
+		String port_email = "";
+		String from_email = "";
+
+		user_server_email = "joseagus@jarzsoft.com";
+
+		pass_server_email = "Jarz2018";
+
+		server_email = "smtp.office365.com";
+
+		port_email = "587";
+
+		from_email = "joseagus@jarzsoft.com";
+
+		final String username = user_server_email;
+		final String password = pass_server_email;
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		 props.put("mail.smtp.starttls.enable", "true");
+		 props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+		props.put("mail.smtp.host", server_email);
+		props.put("mail.smtp.port", port_email);
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
+
+		try {
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(from_email));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("martinzodiacal1000@gmail.com"));
+			message.setSubject("mi sunto");
+			message.setText("pruebbaaaa");
+			Transport.send(message);
+	;
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+
 
 	}
 

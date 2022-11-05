@@ -285,7 +285,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setRefParen2Cod(o.getCodeu().getRefParen2());
 		out.setRefParen3(o.getRefParen3());
 		out.setRefParen3Cod(o.getCodeu().getRefParen3());
-		out.setTipoCredito(o.getTipSolCredito());
+		out.setTipoCredito(o.getFoticrep());
 		out.setTipSolcredito(o.getTipSolCredito());
 		out.setValorPres(o.getValorPress());
 		out.setVehClase(o.getVehClase());

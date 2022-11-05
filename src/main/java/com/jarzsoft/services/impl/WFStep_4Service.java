@@ -23,6 +23,7 @@ import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
 import com.jarzsoft.service.IWWfMovService;
+import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
 import com.jarzsoft.util.EnumSubSteps;
@@ -99,33 +100,34 @@ public class WFStep_4Service implements IStepStrategy {
 
 		BigDecimal montoSolicitado = new BigDecimal(o.getValorPress());
 		BigDecimal numCuotas = new BigDecimal(o.getNroCuotas());
-		Fotipcre fotipcre = fotipcreRepository.findByCod("0" + entitie);
 
-		valor1 = montoSolicitado.multiply(fotipcre.getRanInt1()).round(new MathContext(500, RoundingMode.HALF_UP));
+		BigDecimal ranInt1 = new BigDecimal("0");
+		Fotipcre fotipcre = fotipcreRepository.findByCod(o.getFoticrep());
+		if (null != fotipcre) {
+			ranInt1 = fotipcre.getRanInt1();
+		}
+
+		valor1 = montoSolicitado.multiply(ranInt1).round(new MathContext(500, RoundingMode.HALF_UP));
 		valor2 = montoSolicitado.divide(numCuotas, RoundingMode.HALF_UP);
 		valorCuotaEstimada = valor1.add(valor2);
 		DesCuota = valorCuotaEstimada.multiply(new BigDecimal(o.getPerCuota()));
 		valorFuturo = DesCuota.multiply(numCuotas);
-		List<Object[]> rangos = fotipcreRepository.findRangueByEntitie("0" + entitie, montoSolicitado);
+		List<Object[]> rangos = fotipcreRepository.findRangueByEntitie(o.getFoticrep(), montoSolicitado);
 
-		String rangoValue = String.valueOf(rangos.get(0));
+		String rangoValue = "0";
+		if (rangos.size() > 0) {
+			rangoValue = String.valueOf(rangos.get(0));
+		}
+
 		BigDecimal ran_valor = new BigDecimal(rangoValue);
 
-		BigDecimal compra_cartera1 = o.getFinancial().getCompra_cartera1() != null
-				? o.getFinancial().getCompra_cartera1()
-				: new BigDecimal("0");
+		BigDecimal compra_cartera1 = Comunes.validIsNullNumberEmpty(o.getFinancial().getCompra_cartera1());
 
-		BigDecimal compra_cartera2 = o.getFinancial().getCompra_cartera2() != null
-				? o.getFinancial().getCompra_cartera2()
-				: new BigDecimal("0");
+		BigDecimal compra_cartera2 = Comunes.validIsNullNumberEmpty(o.getFinancial().getCompra_cartera2());
 
-		BigDecimal compra_cartera3 = o.getFinancial().getCompra_cartera3() != null
-				? o.getFinancial().getCompra_cartera3()
-				: new BigDecimal("0");
+		BigDecimal compra_cartera3 = Comunes.validIsNullNumberEmpty(o.getFinancial().getCompra_cartera3());
 
-		BigDecimal compra_cartera4 = o.getFinancial().getCompra_cartera4() != null
-				? o.getFinancial().getCompra_cartera4()
-				: new BigDecimal("0");
+		BigDecimal compra_cartera4 = Comunes.validIsNullNumberEmpty(o.getFinancial().getCompra_cartera4());
 
 		valorDesembolso = montoSolicitado.subtract(compra_cartera1).subtract(compra_cartera2).subtract(compra_cartera3)
 				.subtract(compra_cartera4).subtract(ran_valor);
@@ -175,7 +177,7 @@ public class WFStep_4Service implements IStepStrategy {
 			solCreditoService.create(credito);
 			credito.setEstado(stateMov);
 			credito.setObserva(o.getComments());
-			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_4.getName(),o.getIsUpdate());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_4.getName(), o.getIsUpdate());
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_5.getName());
 
 		} else {

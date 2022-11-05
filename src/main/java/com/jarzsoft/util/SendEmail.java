@@ -65,7 +65,8 @@ public class SendEmail {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
-		//props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.ssl.protocols", "TLSv1.2");
 		props.put("mail.smtp.host", server_email);
 		props.put("mail.smtp.port", port_email);
 		

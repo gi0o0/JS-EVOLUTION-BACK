@@ -21,13 +21,13 @@ public interface W_Wf_PasosRepository extends JpaRepository<W_Wf_Pasos, W_Wf_Pas
 			+ " LTRIM(RTRIM(asunto_correo)) as asunto_correo,LTRIM(RTRIM(texto_correo)) as texto_correo,tiempo_alerta1,tiempo_alerta2,tiempo_alerta3,usu_ult_mod,fec_ult_mod,usu_crea,fec_crea FROM w_wf_pasos WHERE id_wf = :id order by ord_paso ASC ", nativeQuery = true)
 	public W_Wf_Pasos findByIdPaso(@Param("id") String idWf);
 
-	@Query(value = "SELECT id_wf,id_paso, LTRIM(RTRIM(nom_paso)) as nom_paso," + " LTRIM(RTRIM(email1)) as email1, "
-			+ "LTRIM(RTRIM(email2)) as email2, " + "LTRIM(RTRIM(email3)) as email3,"
-			+ "LTRIM(RTRIM(sol_autoriza)) as sol_autoriza," + "LTRIM(RTRIM(sol_documentos)) as sol_documentos,ord_paso,"
+	@Query(value = "SELECT id_wf,id_paso, LTRIM(RTRIM(nom_paso)) as nom_paso,LTRIM(RTRIM(email1)) as email1, "
+			+ "LTRIM(RTRIM(email2)) as email2, LTRIM(RTRIM(email3)) as email3,"
+			+ "LTRIM(RTRIM(sol_autoriza)) as sol_autoriza,LTRIM(RTRIM(sol_documentos)) as sol_documentos,ord_paso,"
 			+ "LTRIM(RTRIM(env_correo_paso)) as env_correo_paso,"
 			+ "LTRIM(RTRIM(env_correo_autoriza)) as env_correo_autoriza,"
-			+ "LTRIM(RTRIM(asunto_correo)) as asunto_correo,LTRIM(RTRIM(texto_correo)) as texto_correo,tiempo_alerta1,tiempo_alerta2,tiempo_alerta3,usu_ult_mod,fec_ult_mod,usu_crea,fec_crea FROM w_wf_pasos WHERE id_paso = :idStep order by ord_paso ASC ", nativeQuery = true)
-	public W_Wf_Pasos findByIdStep(@Param("idStep") String idStep);
+			+ "LTRIM(RTRIM(asunto_correo)) as asunto_correo,LTRIM(RTRIM(texto_correo)) as texto_correo,tiempo_alerta1,tiempo_alerta2,tiempo_alerta3,usu_ult_mod,fec_ult_mod,usu_crea,fec_crea FROM w_wf_pasos WHERE id_paso = :id order by ord_paso ASC ", nativeQuery = true)
+	public W_Wf_Pasos findByIdStep(@Param("id") String idStep);
 
 	@Query(value = "SELECT  max (id_paso ) +1 FROM w_wf_pasos", nativeQuery = true)
 	int getKey();

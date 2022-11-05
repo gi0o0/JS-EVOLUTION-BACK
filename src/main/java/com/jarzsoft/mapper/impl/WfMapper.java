@@ -180,7 +180,7 @@ public class WfMapper implements IWfMapper {
 			out.setComments(mov.getComentarios());
 		}
 		out.setPerCuota(o.getPerCuota());
-		out.setFoticrep(Comunes.stringClean("0"+o.getTipoCredito()));
+		out.setFoticrep(Comunes.stringClean(o.getTipoCredito()));
 		
 		
 		
