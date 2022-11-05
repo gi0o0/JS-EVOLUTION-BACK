@@ -73,13 +73,13 @@ public class WFStep_4Service implements IStepStrategy {
 	private DTOWF calculateCapacity(DTOWF o, String user) {
 
 		BigDecimal capacidad = new BigDecimal("0");
+		capacidad = getTotalIngresos(o.getFinancial()).subtract(getTotalDescuentos(o.getFinancial()));
 		String entitie = o.getEntitie();
 		Optional<Foclaaso> foclaaso = foclaasoRepository.findById(new BigInteger(entitie));
 		if (null != foclaaso.get()) {
 			BigDecimal valorRespeta = foclaaso.get().getValorRespeta();
 			if (null != valorRespeta && valorRespeta.compareTo(new BigDecimal("0")) > 0) {
-				capacidad = getTotalIngresos(o.getFinancial()).subtract(valorRespeta)
-						.subtract(getTotalDescuentos(o.getFinancial()));
+				capacidad = capacidad.subtract(valorRespeta);
 			} else {
 				BigDecimal porcentajeRespeta = foclaaso.get().getPorcentajeRespeta();
 				if (null != porcentajeRespeta && porcentajeRespeta.compareTo(new BigDecimal("0")) > 0) {
@@ -104,7 +104,7 @@ public class WFStep_4Service implements IStepStrategy {
 		BigDecimal ranInt1 = new BigDecimal("0");
 		Fotipcre fotipcre = fotipcreRepository.findByCod(o.getFoticrep());
 		if (null != fotipcre) {
-			ranInt1 = fotipcre.getRanInt1();
+			ranInt1 = fotipcre.getRanInt1().divide(new BigDecimal("100"));
 		}
 
 		valor1 = montoSolicitado.multiply(ranInt1).round(new MathContext(500, RoundingMode.HALF_UP));
@@ -131,7 +131,7 @@ public class WFStep_4Service implements IStepStrategy {
 
 		valorDesembolso = montoSolicitado.subtract(compra_cartera1).subtract(compra_cartera2).subtract(compra_cartera3)
 				.subtract(compra_cartera4).subtract(ran_valor);
-		CapacidadEndeudamiento = capacidad.subtract(valorDesembolso);
+		CapacidadEndeudamiento = capacidad.subtract(DesCuota);
 
 		o.getFinancial().setCapacidadEndeudamiento(CapacidadEndeudamiento.toString());
 		o.getFinancial().setValorFuturo(valorFuturo.toString());

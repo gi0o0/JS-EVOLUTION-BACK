@@ -27,6 +27,22 @@ public class FechaUtils {
 		return sdf.format(new Date());
 	}
 	
+	public static String getFechaActualStringAStringYYYYDDMM(String fecha) {
+		if(null==fecha) 
+			return null;
+		SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat formateador = new SimpleDateFormat("yyyy-dd-MM");
+		Date date = null;
+		String response = "";
+		try {
+            date = parseador.parse(fecha);
+            response = formateador.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+		return response;
+	}
+	
 	public static String getFechaActualStringAStringYYYYMMDD(String fecha) {
 		SimpleDateFormat parseador = new SimpleDateFormat("dd-MM-yy");
 		SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");

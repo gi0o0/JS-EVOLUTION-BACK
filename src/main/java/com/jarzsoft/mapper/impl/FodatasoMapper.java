@@ -6,6 +6,7 @@ import com.jarzsoft.dto.DTOFodataso;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.entities.Fodataso;
 import com.jarzsoft.mapper.IFodatasoMapper;
+import com.jarzsoft.util.FechaUtils;
 
 @Service
 public class FodatasoMapper implements IFodatasoMapper {
@@ -17,8 +18,8 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setCodProfe(o.getCodProfe());
 		out.setCodTer(o.getCodTer());
 		out.setEmailConyuge(o.getEmailConyuge());
-		out.setFec_cump(o.getFec_cump());
-		out.setFecIngEmpresa(o.getFecIngEmpresa());
+		out.setFec_cump(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFec_cump()));
+		out.setFecIngEmpresa(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFecIngEmpresa()));
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getClaAsoci());
@@ -29,16 +30,16 @@ public class FodatasoMapper implements IFodatasoMapper {
 	@Override
 	public DTOFodataso mapperEntitieToDao(Fodataso o) {
 		DTOFodataso out = new DTOFodataso();
-		if(o!=null) {
-		out.setCelConyuge(o.getCelConyuge());
-		out.setCodProfe(o.getCodProfe());
-		out.setCodTer(o.getCodTer());
-		out.setEmailConyuge(o.getEmailConyuge());
-		out.setFec_cump(o.getFec_cump());
-		out.setFecIngEmpresa(o.getFecIngEmpresa());
-		out.setIndContrato(o.getIndContrato());
-		out.setNomCony(o.getNomCony());
-		out.setClaAsoci(o.getClaAsoci());
+		if (o != null) {
+			out.setCelConyuge(o.getCelConyuge());
+			out.setCodProfe(o.getCodProfe());
+			out.setCodTer(o.getCodTer());
+			out.setEmailConyuge(o.getEmailConyuge());
+			out.setFec_cump(o.getFec_cump());
+			out.setFecIngEmpresa(o.getFecIngEmpresa());
+			out.setIndContrato(o.getIndContrato());
+			out.setNomCony(o.getNomCony());
+			out.setClaAsoci(o.getClaAsoci());
 		}
 		return out;
 	}
@@ -68,7 +69,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setEmailConyuge(o.getCodeu().getEmailConyuge());
 		out.setFec_cump(o.getCodeu().getFeExp());
 		out.setIndContrato(o.getCodeu().getIndContrato());
-		out.setNomCony(o.getCodeu().getNomCony());		
+		out.setNomCony(o.getCodeu().getNomCony());
 		out.setCodEmple(o.getCodeu().getNitter());
 		return out;
 	}
