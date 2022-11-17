@@ -20,6 +20,8 @@ import com.jarzsoft.util.EnumUtils;
 @RestController
 public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 
+
+	
 	private static final Logger LOGGER = LogManager.getLogger(ResponseExceptionHandler.class);
 
 	private final IDefineExceptionMapper mapper;
@@ -33,9 +35,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> manejarTodasExcepciones(Exception ex, WebRequest request) {
 
-		String defineMessage;
-
-		defineMessage = mapper.mapperExToString(ex);
+		String defineMessage = mapper.mapperExToString(ex);
 
 		// se valida el tipo de exception con if .. se presenta el mensaje.
 		/*
@@ -48,7 +48,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 		 */
 
 		 LOGGER.error(new LogArchivoDTO(request.getDescription(true), EnumUtils.TIPO_TRAZABILIDAD.ERROR + "",
-				defineMessage, "", "", "", "").toString());
+				ex.getMessage(), "", "", "", "").toString());
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), defineMessage,
 				request.getDescription(true));
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);

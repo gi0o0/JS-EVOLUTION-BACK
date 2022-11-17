@@ -8,10 +8,16 @@ import java.text.SimpleDateFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 import org.springframework.stereotype.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Service
 public class Comunes {
+
+	
+	private static final Logger LOGGER = LogManager.getLogger(Comunes.class);
 
 	public static boolean validarNumerico(String cadena) {
 		if (cadena.matches("[0-9]*")) {
@@ -71,14 +77,14 @@ public class Comunes {
 			FechaConvertida = FechaConvertida.replace(" ", "_");
 			FechaConvertida = FechaConvertida.replace(":", "");
 		} catch (ParseException e) {
-			e.printStackTrace();
+			LOGGER.info("EXCEPTION:" + e.getMessage());
 		}
 
 		return FechaConvertida;
 	}
 
 	public static String getStringMessageDigest(String message, String algorithm) {
-		System.out.println("ENTRA Metodo getStringMessageDigest");
+
 		String respuesta = "";
 		byte[] digest = null;
 		try {
@@ -89,16 +95,16 @@ public class Comunes {
 			messageDigest.update(buffer);
 			digest = messageDigest.digest();
 			respuesta = toHexadecimal(digest);
-		} catch (NoSuchAlgorithmException ex) {
-			System.out.println("EXCEPTION: " + ex.getMessage());
+		} catch (NoSuchAlgorithmException e) {
+			LOGGER.info("EXCEPTION:" + e.getMessage());
 		}
-		System.out.println("SALE del metodo getStringMessageDigest");
+
 		return respuesta;
 
 	}
 
 	private static String toHexadecimal(byte[] digest) {
-		System.out.println("ENTRA Metodo toHexadecimal");
+
 		String hash = "";
 		try {
 			for (byte aux : digest) {
@@ -108,21 +114,21 @@ public class Comunes {
 				hash += Integer.toHexString(b);
 			}
 		} catch (Exception e) {
-			System.out.println("EXCEPTION: " + e.getMessage());
+
+			LOGGER.info("EXCEPTION:" + e.getMessage());
+
 		}
-		System.out.println("SALE del metodo toHexadecimal");
+
 		return hash;
 	}
 
 	public String generarHashPassword(String passwordActual) {
-		System.out.println("ENTRA Metodo generarHashPassword");
 		String hashGenerate = "";
 		try {
 			hashGenerate = (getStringMessageDigest(passwordActual, Constantes.SHA256));
 		} catch (Exception e) {
-			System.out.println("EXCEPTION: " + e.getMessage());
+			LOGGER.info("EXCEPTION:" + e.getMessage());
 		}
-		System.out.println("SALE del metodo generarHashPassword");
 		return hashGenerate;
 	}
 
@@ -130,10 +136,10 @@ public class Comunes {
 
 		return (value != null) ? value.toString() : "0";
 	}
-	
+
 	public static BigDecimal validIsNullNumberEmpty(BigDecimal value) {
 
-		return (value != null) ? value: new BigDecimal("0");
+		return (value != null) ? value : new BigDecimal("0");
 	}
 
 	public static String stringToInt(String value) {
@@ -142,24 +148,24 @@ public class Comunes {
 
 		return String.valueOf((int) Double.parseDouble(value));
 	}
-	
+
 	public static int stringToInteger(String value) {
 		if (value == null || value.equals(""))
 			return 0;
 
 		return (int) Double.parseDouble(value);
 	}
-	
+
 	public static String stringClean(String value) {
 		if (value == null || value.equals(""))
 			return "";
 
 		return value.trim();
 	}
-	
+
 	public static BigDecimal validIsNullStringTonumber(String value) {
 
-		return (value != null) ? new BigDecimal(value) :new BigDecimal("0");
+		return (value != null) ? new BigDecimal(value) : new BigDecimal("0");
 	}
 
 }

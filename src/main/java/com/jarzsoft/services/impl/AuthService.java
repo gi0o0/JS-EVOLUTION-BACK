@@ -15,8 +15,7 @@ import java.util.Objects;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -42,11 +41,13 @@ import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.Constantes;
 import com.jarzsoft.util.Ldap;
 import com.jarzsoft.util.SendEmail;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Service
 public class AuthService implements IAuthService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AuthService.class);
+	private static final Logger LOGGER = LogManager.getLogger(AuthService.class);
 
 	private final Comunes comunes;
 
@@ -119,6 +120,11 @@ public class AuthService implements IAuthService {
 
 	@Override
 	public UserDto authenticateUser(LoginRequest loginRequest) {
+		
+		LOGGER.info("authenticateUser:" +  loginRequest.getUsuario());
+		LOGGER.info("Info level log message");
+        LOGGER.debug("Debug level log message");
+        LOGGER.error("Error level log message");
 
 		String username = loginRequest.getUsuario();
 
@@ -302,7 +308,5 @@ public class AuthService implements IAuthService {
 
 		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash);
 	}
-
-
 
 }

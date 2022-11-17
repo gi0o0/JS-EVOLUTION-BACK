@@ -98,22 +98,31 @@ public class dd {
 		 * 
 		 * }
 		 */
-
+	/*	EMAIL	ASUNTO	REGISTRO WEB
+		EMAIL	FROM	juridico@tecnicasygestiones.com.co
+		EMAIL	LINK	http://localhost:4200/#/register-user?token=
+		EMAIL	PASS_SERVER	5m4iW&*T89nZ
+		EMAIL	PORT	465
+		EMAIL	SERVER	mail.tecnicasygestiones.com.co
+		EMAIL	TEXT	texttoooo
+		EMAIL	TO	jarzsoftgfi@gmail.com
+		EMAIL	USER_SERVER	 juridico@tecnicasygestiones.com.co*/
+		
 		String user_server_email = "";
 		String pass_server_email = "";
 		String server_email = "";
 		String port_email = "";
 		String from_email = "";
 
-		user_server_email = "joseagus@jarzsoft.com";
+		user_server_email = "validaciones@tecnicasygestiones.com.co";
 
-		pass_server_email = "Jarz2018";
+		pass_server_email = "87@P&fc66%BF";
 
-		server_email = "smtp.office365.com";
+		server_email = "mail.tecnicasygestiones.com.co";
 
 		port_email = "587";
 
-		from_email = "joseagus@jarzsoft.com";
+		from_email = "validaciones@tecnicasygestiones.com.co";
 
 		final String username = user_server_email;
 		final String password = pass_server_email;
@@ -124,6 +133,7 @@ public class dd {
 		 props.put("mail.smtp.ssl.protocols", "TLSv1.2");
 		props.put("mail.smtp.host", server_email);
 		props.put("mail.smtp.port", port_email);
+		 props.put("mail.smtp.ssl.trust", "*");
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
@@ -137,9 +147,12 @@ public class dd {
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("martinzodiacal1000@gmail.com"));
 			message.setSubject("mi sunto");
 			message.setText("pruebbaaaa");
+			System.out.println("Antes");
 			Transport.send(message);
+			System.out.println("Despoues");
 	;
 		} catch (MessagingException e) {
+			System.out.println("Antes error");
 			throw new RuntimeException(e);
 		}
 

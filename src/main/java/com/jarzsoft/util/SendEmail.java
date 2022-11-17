@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.repository.ParametroRepository;
 
-
 @Service
 public class SendEmail {
 
@@ -29,7 +28,7 @@ public class SendEmail {
 		this.parametroRepository = parametroRepository;
 	}
 
-	public String Send(String emailTo,String asunto_email, String text_email) {
+	public String Send(String emailTo, String asunto_email, String text_email) {
 
 		String resultado = "NOK";
 		String user_server_email = "";
@@ -38,10 +37,10 @@ public class SendEmail {
 		String port_email = "";
 		String from_email = "";
 
-		if(emailTo==null||"".equals(emailTo)||asunto_email==null||"".equals(asunto_email)||text_email==null||"".equals(text_email)) {
+		if (emailTo == null || "".equals(emailTo) || asunto_email == null || "".equals(asunto_email)
+				|| text_email == null || "".equals(text_email)) {
 			return "";
 		}
-
 
 		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL");
 
@@ -57,7 +56,7 @@ public class SendEmail {
 				port_email = parametro.getValue();
 			} else if ("FROM".equals(value)) {
 				from_email = parametro.getValue();
-			} 
+			}
 		}
 
 		final String username = user_server_email;
@@ -69,7 +68,7 @@ public class SendEmail {
 		props.put("mail.smtp.ssl.protocols", "TLSv1.2");
 		props.put("mail.smtp.host", server_email);
 		props.put("mail.smtp.port", port_email);
-		
+		props.put("mail.smtp.ssl.trust", "*");
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
