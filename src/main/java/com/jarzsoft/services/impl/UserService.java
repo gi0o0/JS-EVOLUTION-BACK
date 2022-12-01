@@ -44,7 +44,11 @@ public class UserService implements IUserService {
 	public String getInternalUser(String id) {
 		List<Object[]> externalUser = usuarioRepository.findByUsuario(id);
 		Usuarios internalUser = usuario.loadUserByCodter(externalUser.get(0)[2] + "");
-		return internalUser.getUsuario();
+		if (null != internalUser)
+			return internalUser.getUsuario();
+
+		return "";
+
 	}
 
 	@Override

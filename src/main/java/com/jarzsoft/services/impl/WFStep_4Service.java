@@ -109,7 +109,7 @@ public class WFStep_4Service implements IStepStrategy {
 
 		valor1 = montoSolicitado.multiply(ranInt1).round(new MathContext(500, RoundingMode.HALF_UP));
 		valor2 = montoSolicitado.divide(numCuotas, RoundingMode.HALF_UP);
-		valorCuotaEstimada = valor1.add(valor2);
+		valorCuotaEstimada = valor1.add(valor2);//Valor cuota
 		DesCuota = valorCuotaEstimada.multiply(new BigDecimal(o.getPerCuota()));
 		valorFuturo = DesCuota.multiply(numCuotas);
 		List<Object[]> rangos = fotipcreRepository.findRangueByEntitie(o.getFoticrep(), montoSolicitado);
@@ -135,6 +135,8 @@ public class WFStep_4Service implements IStepStrategy {
 
 		o.getFinancial().setCapacidadEndeudamiento(CapacidadEndeudamiento.toString());
 		o.getFinancial().setValorFuturo(valorFuturo.toString());
+		o.getFinancial().setValorCuotaEstimada(valorCuotaEstimada.toString());
+		
 		return o;
 	}
 
@@ -167,9 +169,11 @@ public class WFStep_4Service implements IStepStrategy {
 				stateSol = EnumStates.TIPO_ESTADO.STATE_I.getName();
 			}
 
+			if(null!=o.getFiles()) {
 			for (int i = 0; i < o.getFiles().size(); i++) {
 				serviceFile.create(o.getNitter(), o.getNumeroRadicacion() + "", o.getFilesNames().get(i),
 						o.getFiles().get(i));
+			}
 			}
 
 			credito.setEstado(stateSol);

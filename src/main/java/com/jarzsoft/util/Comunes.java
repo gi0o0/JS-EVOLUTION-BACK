@@ -18,6 +18,9 @@ public class Comunes {
 
 	
 	private static final Logger LOGGER = LogManager.getLogger(Comunes.class);
+	
+	public static String FORMAT_YYY_MM_DD = "yyyy-MM-dd";
+	public static String FORMAT_MM_DD_YYYY = "yyyy-MM-dd";
 
 	public static boolean validarNumerico(String cadena) {
 		if (cadena.matches("[0-9]*")) {
@@ -76,6 +79,19 @@ public class Comunes {
 			FechaConvertida = sdf2.format(sdf1.parse(dateSample)).replace("-", "");
 			FechaConvertida = FechaConvertida.replace(" ", "_");
 			FechaConvertida = FechaConvertida.replace(":", "");
+		} catch (ParseException e) {
+			LOGGER.info("EXCEPTION:" + e.getMessage());
+		}
+
+		return FechaConvertida;
+	}
+	
+	public static String cambiarFormatoFechaDinamic(String date,String oldFormat,String newFormat) {
+		String FechaConvertida = "";
+		SimpleDateFormat sdf1 = new SimpleDateFormat(oldFormat);
+		SimpleDateFormat sdf2 = new SimpleDateFormat(newFormat);
+		try {
+			FechaConvertida = sdf2.format(sdf1.parse(date));
 		} catch (ParseException e) {
 			LOGGER.info("EXCEPTION:" + e.getMessage());
 		}

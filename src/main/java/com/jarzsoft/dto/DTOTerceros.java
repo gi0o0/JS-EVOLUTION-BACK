@@ -15,6 +15,7 @@ public class DTOTerceros {
 	private String telter1;
 	private String telter2;
 	private String feExp;
+	private String fecExpDoc;
 	private String paisCodigo;
 	private String codiDept;
 	private String codiCiud;
@@ -372,5 +373,15 @@ public class DTOTerceros {
 	public void setIndSecEconomico(String indSecEconomico) {
 		this.indSecEconomico = indSecEconomico;
 	}
+
+	public String getFecExpDoc() {
+		return fecExpDoc;
+	}
+
+	public void setFecExpDoc(String fecExpDoc) {
+		this.fecExpDoc = fecExpDoc;
+	}
+	
+	
 
 }

@@ -45,6 +45,14 @@ public class Fodataso implements Serializable {
 
 	@Column(name = "Cla_asoci")
 	private String claAsoci;
+	
+	@Column(name = "cargo_deu_wf")
+	private String cargoDeuWf;
+	
+	@Column(name = "cargo_cod_wf")
+	private String cargoCodWf;
+	
+	
 
 	public Fodataso() {
 	}
@@ -140,5 +148,23 @@ public class Fodataso implements Serializable {
 	public void setClaAsoci(String claAsoci) {
 		this.claAsoci = claAsoci;
 	}
+
+	public String getCargoDeuWf() {
+		return cargoDeuWf;
+	}
+
+	public void setCargoDeuWf(String cargoDeuWf) {
+		this.cargoDeuWf = cargoDeuWf;
+	}
+
+	public String getCargoCodWf() {
+		return cargoCodWf;
+	}
+
+	public void setCargoCodWf(String cargoCodWf) {
+		this.cargoCodWf = cargoCodWf;
+	}
+	
+	
 
 }

@@ -55,6 +55,7 @@ public class DTOWFCodeu {
 	private String vehPignorado;
 	private String vehPigAFavor;
 	private String vehValVomercial;
+	private String cargoWf;
 
 	public DTOWFCodeu(String doctip, String nitter, String nomTer, String priApellido, String segApellido,
 			String lugarDoc, String mailTer, String dirTerpal, String telTer, String feExp, String paisCodigo,
@@ -122,14 +123,10 @@ public class DTOWFCodeu {
 		this.vehValVomercial = vehValVomercial;
 	}
 
-	
-	
 	public DTOWFCodeu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public String getDoctip() {
 		return doctip;
@@ -291,19 +288,13 @@ public class DTOWFCodeu {
 		this.deptDirTrabajo = deptDirTrabajo;
 	}
 
-
-
 	public String getCiuDirTrabajo() {
 		return ciuDirTrabajo;
 	}
 
-
-
 	public void setCiuDirTrabajo(String ciuDirTrabajo) {
 		this.ciuDirTrabajo = ciuDirTrabajo;
 	}
-
-
 
 	public String getFaxTer() {
 		return faxTer;
@@ -457,19 +448,13 @@ public class DTOWFCodeu {
 		this.refMail3 = refMail3;
 	}
 
-
-
 	public String getRefCel3() {
 		return refCel3;
 	}
 
-
-
 	public void setRefCel3(String refCel3) {
 		this.refCel3 = refCel3;
 	}
-
-
 
 	public String getBienNombre() {
 		return bienNombre;
@@ -565,6 +550,14 @@ public class DTOWFCodeu {
 
 	public void setVehValVomercial(String vehValVomercial) {
 		this.vehValVomercial = vehValVomercial;
+	}
+
+	public String getCargoWf() {
+		return cargoWf;
+	}
+
+	public void setCargoWf(String cargoWf) {
+		this.cargoWf = cargoWf;
 	}
 
 }

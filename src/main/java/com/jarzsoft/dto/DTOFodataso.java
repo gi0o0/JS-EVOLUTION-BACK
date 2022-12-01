@@ -12,6 +12,8 @@ public class DTOFodataso {
 	private String indContrato;
 	private String claAsoci;
 	private String codEmple;
+	private String cargoDeuWf;
+	private String cargoCodWf;
 
 	public DTOFodataso() {
 		super();
@@ -95,6 +97,22 @@ public class DTOFodataso {
 
 	public void setCodEmple(String codEmple) {
 		this.codEmple = codEmple;
+	}
+
+	public String getCargoDeuWf() {
+		return cargoDeuWf;
+	}
+
+	public void setCargoDeuWf(String cargoDeuWf) {
+		this.cargoDeuWf = cargoDeuWf;
+	}
+
+	public String getCargoCodWf() {
+		return cargoCodWf;
+	}
+
+	public void setCargoCodWf(String cargoCodWf) {
+		this.cargoCodWf = cargoCodWf;
 	}
 
 }

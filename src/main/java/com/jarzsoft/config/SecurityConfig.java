@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/auth/signin", "/auth/signup", "/auth/signup/token","/auth/token/check").permitAll()
+                .antMatchers(HttpMethod.GET, "/ping").permitAll()
                 .anyRequest().authenticated();
     }
 

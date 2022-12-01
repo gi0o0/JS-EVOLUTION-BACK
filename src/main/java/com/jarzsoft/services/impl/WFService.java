@@ -1,5 +1,6 @@
 package com.jarzsoft.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFParameterStep;
+import com.jarzsoft.dto.DTOWFParameterStepAut;
 import com.jarzsoft.dto.DTOWWfMov;
 import com.jarzsoft.mapper.IWfMapper;
 import com.jarzsoft.service.IFodatasoService;
@@ -65,12 +67,19 @@ public class WFService implements IWFService {
 	@Override
 	public DTOWF getById(Integer id) {
 		DTOSolCredito solCredito = solCreditoService.findBynumeroRadicacion(id);
-		return mapper.mapperDaoToDto(solCredito, null, null, null, null, null);
+		return mapper.mapperDaoToDto(solCredito, null, null, null, null, null,null);
 	}
 
 	@Override
 	public List<DTOWF> listAllByUser(String user) {
-		return mapper.mapperDaosToDtos(solCreditoService.findByUser(user));
+		
+		List<DTOWF> out = new ArrayList<>();
+		List<DTOSolCredito> o =  solCreditoService.findByUser(user);
+		for (DTOSolCredito in : o) {
+			out.add(getByNumRadAndStep(in.getNumeroRadicacion(),1,true));
+		}
+		
+		return out;
 
 	}
 
@@ -81,27 +90,34 @@ public class WFService implements IWFService {
 	}
 
 	@Override
-	public DTOWF getByNumRadAndStep(Integer numRad, Integer idStep) {
+	public DTOWF getByNumRadAndStep(Integer numRad, Integer idStep,Boolean isLight) {
 
 		DTOSolCredito solCredito = solCreditoService.findBynumeroRadicacion(numRad);
-		DTOWWfMov move = wWfMovService.findMovByNumRadAndStep(numRad, EnumWF.TIPO_WF.IDWF_4.getName(),
-				idStep.toString());
+		DTOWWfMov move =null;
+		
+		if(!isLight)
+		move = wWfMovService.findMovByNumRadAndStep(numRad, EnumWF.TIPO_WF.IDWF_4.getName(),idStep.toString());
 
 		DTOTerceros client = null;
 		DTOFodataso foda = null;
 		if (null != solCredito.getCodTer()) {
 			client = tercerosService.findByCodter(solCredito.getCodTer());
+			if(!isLight)
 			foda = fodatasoService.getByCodTer(solCredito.getCodTer());
 		}
 
 		DTOTerceros codeo = null;
 		DTOFodataso fodaCodeo = null;
 		if (null != solCredito.getCodeudor1()) {
+			if(!isLight)
 			codeo = tercerosService.findByCodter(solCredito.getCodeudor1());
+			if(!isLight)
 			fodaCodeo = fodatasoService.getByCodTer(solCredito.getCodeudor1());
 		}
-
-		return mapper.mapperDaoToDto(solCredito, client, codeo, move, foda, fodaCodeo);
+		
+		Integer StepNow = wWfMovService.findMaxMovByNumRad(numRad, EnumWF.TIPO_WF.IDWF_4.getName());
+		
+		return mapper.mapperDaoToDto(solCredito, client, codeo, move, foda, fodaCodeo,StepNow);
 	}
 
 	@Override

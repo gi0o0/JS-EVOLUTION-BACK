@@ -24,6 +24,8 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getClaAsoci());
 		out.setCodEmple(o.getCodEmple());
+		out.setCargoDeuWf(o.getCargoDeuWf());
+		out.setCargoCodWf(o.getCargoCodWf());
 		return out;
 	}
 
@@ -40,6 +42,8 @@ public class FodatasoMapper implements IFodatasoMapper {
 			out.setIndContrato(o.getIndContrato());
 			out.setNomCony(o.getNomCony());
 			out.setClaAsoci(o.getClaAsoci());
+			out.setCargoDeuWf(o.getCargoDeuWf());
+			out.setCargoCodWf(o.getCargoCodWf());
 		}
 		return out;
 	}
@@ -48,15 +52,16 @@ public class FodatasoMapper implements IFodatasoMapper {
 	public DTOFodataso mapperDaoToDto(DTOWF o, String codTer) {
 		DTOFodataso out = new DTOFodataso();
 		out.setCelConyuge(o.getCelConyuge());
-		out.setCodProfe(o.getCodProfe());
+	//	out.setCodProfe(o.getCodProfe());
 		out.setCodTer(codTer);
 		out.setEmailConyuge(o.getEmailConyuge());
-		out.setFec_cump(o.getFecCump());
-		out.setFecIngEmpresa(o.getFecIngEmpresa());
+		out.setFec_cump(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFecCump()));
+		out.setFecIngEmpresa(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFecIngEmpresa()));
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getEntitie());
 		out.setCodEmple(o.getNitter());
+		out.setCargoDeuWf(o.getCargoWf());		
 		return out;
 	}
 
@@ -64,13 +69,14 @@ public class FodatasoMapper implements IFodatasoMapper {
 	public DTOFodataso mapperDaoToDtoCodeo(DTOWF o, String codTer) {
 		DTOFodataso out = new DTOFodataso();
 		out.setCelConyuge(o.getCodeu().getCelConyuge());
-		out.setCodProfe(o.getCodeu().getCodProfe());
+	//	out.setCodProfe(o.getCodeu().getCodProfe());
 		out.setCodTer(codTer);
 		out.setEmailConyuge(o.getCodeu().getEmailConyuge());
-		out.setFec_cump(o.getCodeu().getFeExp());
+		out.setFec_cump(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getCodeu().getFeExp()));
 		out.setIndContrato(o.getCodeu().getIndContrato());
 		out.setNomCony(o.getCodeu().getNomCony());
 		out.setCodEmple(o.getCodeu().getNitter());
+		out.setCargoCodWf(o.getCodeu().getCargoWf());
 		return out;
 	}
 

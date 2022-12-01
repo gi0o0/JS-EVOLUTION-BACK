@@ -21,7 +21,7 @@ public class WfMapper implements IWfMapper {
 
 	@Override
 	public DTOWF mapperDaoToDto(DTOSolCredito o, DTOTerceros u, DTOTerceros cod, DTOWWfMov mov, DTOFodataso foda,
-			DTOFodataso fodaCodeo) {
+			DTOFodataso fodaCodeo,Integer stepNow) {
 		DTOWF out = new DTOWF();
 		if (null != u) {
 			out.setAntiEmpresa(Comunes.stringClean(u.getAntiEmpresa()));
@@ -35,7 +35,12 @@ public class WfMapper implements IWfMapper {
 			out.setDirTerpal(Comunes.stringClean(u.getDirTerpal()));
 			out.setEntBan(Comunes.stringClean(u.getEntBan()));
 			out.setFaxTer(Comunes.stringClean(u.getFaxter()));
-			out.setFecCump(Comunes.stringClean(u.getFeExp()));
+			
+			String fecExpDoc=Comunes.stringClean(u.getFecExpDoc());
+			String feExp=Comunes.stringClean(u.getFeExp());
+
+			out.setFecCump(fecExpDoc.length()>=10?Comunes.cambiarFormatoFechaDinamic(fecExpDoc.substring(0, 10),Comunes.FORMAT_YYY_MM_DD,Comunes.FORMAT_MM_DD_YYYY):fecExpDoc);
+			out.setFeExp(feExp.length()>=10?Comunes.cambiarFormatoFechaDinamic(feExp.substring(0, 10),Comunes.FORMAT_YYY_MM_DD,Comunes.FORMAT_MM_DD_YYYY):feExp);
 			out.setIdConyuge(Comunes.stringClean(u.getIdConyuge()));
 			out.setIndContrato(Comunes.stringClean(u.getIndContrato()));
 			out.setLugarDoc(Comunes.stringClean(u.getLugarDoc()));
@@ -87,14 +92,15 @@ public class WfMapper implements IWfMapper {
 			codeu.setNomCony(Comunes.stringClean(cod.getNomCony()));
 			codeu.setCelConyuge(Comunes.stringClean(cod.getCelConyuge()));
 			codeu.setEmailConyuge(Comunes.stringClean(cod.getEmailConyuge()));
-
+			codeu.setFeExp(cod.getFeExp());
 			if (null != fodaCodeo) {
 
-				codeu.setFeExp(fodaCodeo.getFec_cump().substring(0, 10));
+				
 				codeu.setCodProfe(Comunes.stringToInt((fodaCodeo.getCodProfe())));
 				codeu.setNomCony(Comunes.stringClean(fodaCodeo.getNomCony()));
 				codeu.setEmailConyuge(Comunes.stringClean(fodaCodeo.getEmailConyuge()));
 				codeu.setCelConyuge(Comunes.stringClean(fodaCodeo.getCelConyuge()));
+				codeu.setCargoWf(Comunes.stringClean(fodaCodeo.getCargoCodWf()));
 			}
 
 			codeu.setRefCel1(Comunes.stringClean(o.getRefCel1Cod()));
@@ -135,6 +141,7 @@ public class WfMapper implements IWfMapper {
 			out.setNomCony(Comunes.stringClean(foda.getNomCony()));
 			out.setEmailConyuge(Comunes.stringClean(foda.getEmailConyuge()));
 			out.setCelConyuge(Comunes.stringClean(foda.getCelConyuge()));
+			out.setCargoWf(Comunes.stringClean(foda.getCargoDeuWf()));
 		}
 
 		out.setNumeroRadicacion(o.getNumeroRadicacion());
@@ -169,7 +176,7 @@ public class WfMapper implements IWfMapper {
 		out.setVehValVomercial(Comunes.stringToInt(o.getVehValComercial()));
 		out.setNumCta(Comunes.stringClean(o.getNroCuenta()));
 		out.setComments(o.getObserva());
-		
+		out.setIdStepNow(stepNow+"");
 		
 
 		if (mov != null) {
@@ -223,13 +230,6 @@ public class WfMapper implements IWfMapper {
 		return out;
 	}
 
-	@Override
-	public List<DTOWF> mapperDaosToDtos(List<DTOSolCredito> o) {
-		List<DTOWF> out = new ArrayList<>();
-		for (DTOSolCredito in : o) {
-			out.add(mapperDaoToDto(in, null, null, null, null, null));
-		}
-		return out;
-	}
+
 
 }

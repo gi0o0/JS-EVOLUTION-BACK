@@ -30,6 +30,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxter());
 		out.setFeExp(o.getFeExp());
+		out.setFecExpDoc(o.getFecExpDoc());
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(o.getLugarDoc());
@@ -72,7 +73,8 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setDirTerpal(o.getDirTerpal());
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxTer());
-		out.setFeExp(o.getFecCump());
+		out.setFeExp(o.getFeExp());		
+		out.setFecExpDoc(o.getFecCump());	
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(o.getLugarDoc());
@@ -131,6 +133,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setNomCony(o.getCodeu().getNomCony());
 		out.setCelConyuge(o.getCodeu().getCelConyuge());
 		out.setEmailConyuge(o.getCodeu().getEmailConyuge());
+		out.setFeExp(o.getCodeu().getFeExp());
 		
 		return out;
 	}
@@ -158,6 +161,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxter());
 		out.setFeExp(o.getFeExp());
+		out.setFecExpDoc(o.getFecExpDoc());
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(Comunes.stringClean(o.getLugarDoc()));

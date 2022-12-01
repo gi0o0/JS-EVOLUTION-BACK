@@ -94,7 +94,10 @@ public class Terceros implements Serializable {
 
 	@Column(name = "faxter")
 	private String faxter;
-
+	
+	@Column(name = "fec_exp_doc")
+	private String fecExpDoc;
+	
 	@Column(name = "ind_contrato")
 	private String indContrato;
 
@@ -466,5 +469,15 @@ public class Terceros implements Serializable {
 	public void setIndSecEconomico(String indSecEconomico) {
 		this.indSecEconomico = indSecEconomico;
 	}
+
+	public String getFecExpDoc() {
+		return fecExpDoc;
+	}
+
+	public void setFecExpDoc(String fecExpDoc) {
+		this.fecExpDoc = fecExpDoc;
+	}
+	
+	
 
 }

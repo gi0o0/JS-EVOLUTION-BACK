@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFParameterStep;
+import com.jarzsoft.dto.DTOWFParameterStepAut;
 import com.jarzsoft.service.IWFService;
 import com.jarzsoft.util.Constantes;
 
@@ -29,7 +30,6 @@ public class WFController {
 	public WFController(IWFService service) {
 		super();
 		this.service = service;
-
 	}
 
 	@PostMapping(produces = "application/json", consumes = "application/json")
@@ -45,7 +45,7 @@ public class WFController {
 
 	@GetMapping(value = "/{num_rad}/step/{id_step}", produces = "application/json")
 	public DTOWF getByNumRadAndStep(@PathVariable("num_rad") Integer numTad, @PathVariable("id_step") Integer idStep) {
-		return service.getByNumRadAndStep(numTad, idStep);
+		return service.getByNumRadAndStep(numTad, idStep,false);
 	}
 
 	@GetMapping(produces = "application/json")
@@ -62,5 +62,6 @@ public class WFController {
 	public List<DTOWFParameterStep> stepsbyNumRad(@PathVariable("num_rad") Integer numRad) {
 		return service.stepsbyNumRad(numRad);
 	}
+	
 
 }

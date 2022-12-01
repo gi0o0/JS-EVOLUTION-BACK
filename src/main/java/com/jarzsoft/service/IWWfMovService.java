@@ -12,6 +12,8 @@ public interface IWWfMovService {
 
 	DTOWWfMov findMovByNumRadAndStep(Integer numero_radicacion, String id_wf, String id_paso);
 
-	DTOWWfMov createMovWithSteps(DTOSolCredito out, String user, String stepValue, Boolean isUpdate );
+	DTOWWfMov createMovWithSteps(DTOSolCredito out, String user, String stepValue, Boolean isUpdate);
+
+	Integer findMaxMovByNumRad(Integer numero_radicacion, String id_wf);
 
 }

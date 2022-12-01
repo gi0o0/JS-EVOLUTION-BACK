@@ -40,6 +40,7 @@ public class DTOWFFinancialInfo {
 
 	private String valorFuturo;
 	private String capacidadEndeudamiento;
+	private String valorCuotaEstimada;
 
 	public DTOWFFinancialInfo(BigDecimal sueldo, BigDecimal recargos, BigDecimal bonos, BigDecimal compensatorios,
 			BigDecimal bonificacion, BigDecimal horas_extras, BigDecimal otros_pagos1, BigDecimal otros_pagos2,
@@ -368,5 +369,15 @@ public class DTOWFFinancialInfo {
 	public void setObligacion_cartera4(BigDecimal obligacion_cartera4) {
 		this.obligacion_cartera4 = obligacion_cartera4;
 	}
+
+	public String getValorCuotaEstimada() {
+		return valorCuotaEstimada;
+	}
+
+	public void setValorCuotaEstimada(String valorCuotaEstimada) {
+		this.valorCuotaEstimada = valorCuotaEstimada;
+	}
+	
+	
 
 }

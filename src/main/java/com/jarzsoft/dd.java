@@ -108,7 +108,7 @@ public class dd {
 		EMAIL	TO	jarzsoftgfi@gmail.com
 		EMAIL	USER_SERVER	 juridico@tecnicasygestiones.com.co*/
 		
-		String user_server_email = "";
+	/*	String user_server_email = "";
 		String pass_server_email = "";
 		String server_email = "";
 		String port_email = "";
@@ -157,6 +157,15 @@ public class dd {
 		}
 
 
+	}*/
+		String nameFile="COD_asas";
+		
+		if(nameFile.indexOf("COD_")==0) {
+			System.out.println("ok");
+		}else {
+			System.out.println("nok"+nameFile.indexOf("COD_"));
+		}
+		
 	}
 
 }

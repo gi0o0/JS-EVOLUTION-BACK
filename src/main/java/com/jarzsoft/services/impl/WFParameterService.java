@@ -17,6 +17,7 @@ import com.jarzsoft.entities.W_Wf_Est;
 import com.jarzsoft.entities.W_Wf_EstPK;
 import com.jarzsoft.entities.W_Wf_Pasos;
 import com.jarzsoft.entities.W_Wf_PasosPK;
+import com.jarzsoft.exception.UnauthorizedException;
 import com.jarzsoft.mapper.IWfEstParameterMapper;
 import com.jarzsoft.mapper.IWfParameterMapper;
 import com.jarzsoft.mapper.IWfStepAutParameterMapper;
@@ -29,6 +30,7 @@ import com.jarzsoft.repository.W_Wf_Pas_DocRepository;
 import com.jarzsoft.repository.W_Wf_PasosRepository;
 import com.jarzsoft.service.IUserService;
 import com.jarzsoft.service.IWFParameterService;
+import com.jarzsoft.util.Constantes;
 
 @Service
 public class WFParameterService implements IWFParameterService {
@@ -221,6 +223,14 @@ public class WFParameterService implements IWFParameterService {
 	public List<DTOWFParameterStep> stepsbyNumRad(Integer numRad) {
 		return mapperStep.mapperList(daoStep.findByWfByNumRad(numRad));
 
+	}
+
+	@Override
+	public DTOWFParameterStepAut validStepByUser(String wf, String step, String user) {
+		Boolean userHasStep=daoStepAut.findByUserByStep(wf, step, user);
+		if(null==userHasStep)
+			throw new UnauthorizedException(Constantes.MESSAGE_USER_NO_FOUND);
+		return new DTOWFParameterStepAut();
 	}
 
 }

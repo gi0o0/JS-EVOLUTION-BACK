@@ -105,4 +105,11 @@ public class WWfMovService implements IWWfMovService {
 		return mapper.mapperEntitieToDao(wWfMovRepository.findMovByNumRad(numero_radicacion, id_wf, id_paso));
 	}
 
+	@Override
+	public Integer findMaxMovByNumRad(Integer numero_radicacion, String id_wf) {
+		return wWfMovRepository.findMaxMovByNumRad(numero_radicacion, id_wf);
+	}
+	
+	
+
 }

@@ -15,5 +15,8 @@ public interface WWfMovRepository extends JpaRepository<WWfMov, Integer> {
 
 	@Query(value = "SELECT * FROM w_wf_mov WHERE numero_radicacion = :idRad AND id_wf= :idWf AND  id_paso= :idPaso", nativeQuery = true)
 	WWfMov findMovByNumRad(@Param("idRad") Integer idRad, @Param("idWf") String idWf, @Param("idPaso") String idPaso);
+	
+	@Query(value = "SELECT MAX(id_paso) FROM w_wf_mov WHERE numero_radicacion = :idRad AND id_wf= :idWf", nativeQuery = true)
+	Integer findMaxMovByNumRad(@Param("idRad") Integer idRad, @Param("idWf") String idWf);
 
 }

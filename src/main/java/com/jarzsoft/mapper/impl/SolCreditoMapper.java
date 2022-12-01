@@ -255,8 +255,10 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setBienHipotecaCod(o.getCodeu().getBienHipoteca());
 		out.setBienNombre(o.getBienNombre());
 		out.setBienNombreCod(o.getCodeu().getBienNombre());
-		out.setBienValor(o.getBienValor());
-		out.setBienValorCod(o.getCodeu().getBienValor());
+	
+		out.setBienValor(Comunes.stringToInt(o.getBienValor()));
+		out.setBienValorCod(Comunes.stringToInt(o.getCodeu().getBienValor()));
+	
 		out.setCodeudor1(codeudor);
 		out.setCodTer(codTer);
 		out.setNroCuotas(o.getNroCuotas());
@@ -300,8 +302,8 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setVehPignoradoCod(o.getCodeu().getVehPignorado());
 		out.setVehPlaca(o.getVehPlaca());
 		out.setVehPlacaCod(o.getCodeu().getVehPlaca());
-		out.setVehValComercial(o.getVehValVomercial());
-		out.setVehValComercialCod(o.getCodeu().getVehValVomercial());
+		out.setVehValComercial(Comunes.stringToInt(o.getVehValVomercial()));
+		out.setVehValComercialCod(Comunes.stringToInt(o.getCodeu().getVehValVomercial()));
 		out.setObsCentrales(o.getComments());
 		out.setNroCuenta(o.getNumCta());
 		out.setValorAdmo("0");

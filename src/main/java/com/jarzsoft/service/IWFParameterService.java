@@ -40,4 +40,6 @@ public interface IWFParameterService {
 
 	List<DTOWFParameterStep> stepsbyNumRad(Integer numRad);
 
+	DTOWFParameterStepAut validStepByUser(String wf,String step,String user);
+
 }

@@ -42,13 +42,18 @@ public class WFStep_3Service implements IStepStrategy {
 		if (null != credito) {
 
 			for (int i = 0; i < o.getFiles().size(); i++) {
-				serviceFile.create(o.getNitter(), o.getNumeroRadicacion() + "", o.getFilesNames().get(i),
-						o.getFiles().get(i));
+
+				String idUser = o.getNitter();
+				String nameFile = o.getFilesNames().get(i);
+				if (nameFile.indexOf("COD_") == 0)
+					idUser = o.getCodeu().getNitter();
+
+				serviceFile.create(idUser, o.getNumeroRadicacion() + "", nameFile, o.getFiles().get(i));
 			}
 			String state = EnumStates.TIPO_ESTADO.STATE_6.getName();
 			credito.setEstado(state);
-
-			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_3.getName(),o.getIsUpdate());
+			credito.setObserva(o.getComments());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_3.getName(), o.getIsUpdate());
 
 			solCreditoService.updateState(o.getNumeroRadicacion(), state);
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_4.getName());

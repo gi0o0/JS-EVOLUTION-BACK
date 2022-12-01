@@ -7,6 +7,7 @@ public class DTOWF {
 	private String idWf;
 	private Boolean isUpdate;
 	private String idStep;
+	private String idStepNow;
 	private String idSubStep;
 	private String nextStep;
 	private Integer numeroRadicacion;
@@ -21,6 +22,7 @@ public class DTOWF {
 	private String priApellido;
 	private String segApellido;
 	private String lugarDoc;
+	private String feExp;
 	private String mailTer;
 	private String dirTerpal;
 	private String telTer;
@@ -75,12 +77,15 @@ public class DTOWF {
 	private String vehPignorado;
 	private String vehPigAFavor;
 	private String vehValVomercial;
+	private String cargoWf;
 	private DTOWFCodeu codeu;
 	private String comments;
 	private String token;
 	private String estado;
 	private List<String> files;
 	private List<String> filesNames;
+	private Boolean isRequiredFiles;
+	private String prefixFile;
 	private DTOWFFinancialInfo financial;
 
 	public DTOWF() {
@@ -93,14 +98,13 @@ public class DTOWF {
 			String mailTer, String dirTerpal, String telTer, String telTer1, String telTer2, String paisCodigo,
 			String codiDept, String codiCiud, String barrio, String fecIngEmpresa, String antiEmpresa, String fecCump,
 			String tipVivienda, String dirTeralt, String barrioTra, String paisDirTrabajo, String deptDirTrabajo,
-			String ciuDirTrabajo, String faxTer, String codProfe, String indContrato, String paramText,
-			String entBan, String tipCta, String numCta, String idConyuge, String nomCony, String emailConyuge,
-			String celConyuge, String nroCuotas, String refNombre1, String refParen1, String refMail1, String refCel1,
-			String refNombre2, String refParen2, String refMail2, String refCel2, String refNombre3, String refParen3,
-			String refMail3, String refCel13, String bienNombre, String bienValor, String bienAfecta,
-			String bienHipoteca, String bienHipAFavor, String vehMarca, String vehClase, String vehModelo,
-			String vehPlaca, String vehPignorado, String vehPigAFavor, String vehValVomercial, DTOWFCodeu codeu,
-			String comments) {
+			String ciuDirTrabajo, String faxTer, String codProfe, String indContrato, String paramText, String entBan,
+			String tipCta, String numCta, String idConyuge, String nomCony, String emailConyuge, String celConyuge,
+			String nroCuotas, String refNombre1, String refParen1, String refMail1, String refCel1, String refNombre2,
+			String refParen2, String refMail2, String refCel2, String refNombre3, String refParen3, String refMail3,
+			String refCel13, String bienNombre, String bienValor, String bienAfecta, String bienHipoteca,
+			String bienHipAFavor, String vehMarca, String vehClase, String vehModelo, String vehPlaca,
+			String vehPignorado, String vehPigAFavor, String vehValVomercial, DTOWFCodeu codeu, String comments) {
 		super();
 		this.idWf = idWf;
 		this.entitie = entitie;
@@ -794,6 +798,46 @@ public class DTOWF {
 
 	public void setCiuDirTrabajo(String ciuDirTrabajo) {
 		this.ciuDirTrabajo = ciuDirTrabajo;
+	}
+
+	public String getCargoWf() {
+		return cargoWf;
+	}
+
+	public void setCargoWf(String cargoWf) {
+		this.cargoWf = cargoWf;
+	}
+
+	public String getFeExp() {
+		return feExp;
+	}
+
+	public void setFeExp(String feExp) {
+		this.feExp = feExp;
+	}
+
+	public String getIdStepNow() {
+		return idStepNow;
+	}
+
+	public void setIdStepNow(String idStepNow) {
+		this.idStepNow = idStepNow;
+	}
+
+	public Boolean getIsRequiredFiles() {
+		return isRequiredFiles;
+	}
+
+	public void setIsRequiredFiles(Boolean isRequiredFiles) {
+		this.isRequiredFiles = isRequiredFiles;
+	}
+
+	public String getPrefixFile() {
+		return prefixFile;
+	}
+
+	public void setPrefixFile(String prefixFile) {
+		this.prefixFile = prefixFile;
 	}
 	
 	

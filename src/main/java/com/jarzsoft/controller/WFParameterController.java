@@ -33,7 +33,6 @@ public class WFParameterController {
 	public WFParameterController(IWFParameterService service) {
 		super();
 		this.service = service;
-
 	}
 
 	@GetMapping(produces = "application/json")
@@ -123,6 +122,11 @@ public class WFParameterController {
 		o.setIdWf(new Long(id));
 		o.setIdPaso(new Long(idpaso));
 		return service.createAut(o);
+	}
+	
+	@GetMapping(value = "/wf/{id_wf}/step/{id_step}/security", produces = "application/json")
+	public DTOWFParameterStepAut validStepByUser( @PathVariable("id_wf") String wf, @PathVariable("id_step") String step,@RequestAttribute(name = "user") String user) {
+		return service.validStepByUser(wf,step,user);
 	}
 
 }
