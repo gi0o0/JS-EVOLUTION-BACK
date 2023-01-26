@@ -130,7 +130,7 @@ public class WFStep_2Service implements IStepStrategy {
 			}
 		}
 
-		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash);
+		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash,null);
 	}
 
 }

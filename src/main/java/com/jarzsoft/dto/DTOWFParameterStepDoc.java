@@ -15,9 +15,7 @@ public class DTOWFParameterStepDoc {
 	private String usuCrea;
 	private String indObligatorio;
 
-	public DTOWFParameterStepDoc() {
-		super();
-	}
+
 
 	public DTOWFParameterStepDoc(Long idWf, Long idPaso, Long idDocumento, String nomDocumento, String envRec,
 			String usuUltMod, Date fecUltMod, Date fecCrea, String usuCrea, String indObligatorio) {

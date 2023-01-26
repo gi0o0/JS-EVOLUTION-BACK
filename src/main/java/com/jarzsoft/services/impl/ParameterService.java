@@ -61,4 +61,9 @@ public class ParameterService implements IParameterService {
 		return mapper.mapperList(dao.findByParamId(paramId));
 	}
 
+	@Override
+	public DTOParameter getSingleById(String paramId, String paramText) {
+		return mapper.mapperDaoToDto(dao.getOne(new ParametroKey(paramId, paramText)));
+	}
+
 }

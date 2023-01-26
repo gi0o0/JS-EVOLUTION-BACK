@@ -1,15 +1,22 @@
 package com.jarzsoft.util;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +35,8 @@ public class SendEmail {
 		this.parametroRepository = parametroRepository;
 	}
 
-	public String Send(String emailTo, String asunto_email, String text_email) {
+
+	public String Send(String emailTo, String asunto_email, String text_email, ArrayList<String> adjuntos) {
 
 		String resultado = "NOK";
 		String user_server_email = "";
@@ -82,6 +90,19 @@ public class SendEmail {
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));
 			message.setSubject(asunto_email);
 			message.setText(text_email);
+
+			if (null != adjuntos && adjuntos.size() > 0) {
+				Multipart multipart = new MimeMultipart();
+				for (String pathFile : adjuntos) {
+					MimeBodyPart messageBodyPart = new MimeBodyPart();
+					DataSource source = new FileDataSource(pathFile);
+					messageBodyPart.setDataHandler(new DataHandler(source));
+					messageBodyPart.setFileName(pathFile);
+					multipart.addBodyPart(messageBodyPart);
+				}
+				message.setContent(multipart);
+			}
+
 			Transport.send(message);
 			resultado = "OK";
 		} catch (MessagingException e) {

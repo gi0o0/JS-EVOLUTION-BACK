@@ -9,4 +9,6 @@ public interface IDeptosMapper {
 
 	public List<DTODeptos> mapperList(List<Deptos> list);
 
+	public DTODeptos mapperEntitieToDto(Deptos o);
+
 }

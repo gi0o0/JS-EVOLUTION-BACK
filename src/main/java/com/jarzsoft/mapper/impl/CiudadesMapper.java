@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.jarzsoft.dto.DTOCiudades;
+import com.jarzsoft.dto.DTOCiudad;
 import com.jarzsoft.entities.Ciudades;
 import com.jarzsoft.mapper.ICiudadesMapper;
 
@@ -13,14 +13,20 @@ import com.jarzsoft.mapper.ICiudadesMapper;
 public class CiudadesMapper implements ICiudadesMapper {
 
 	@Override
-	public List<DTOCiudades> mapperList(List<Ciudades> list) {
-		List<DTOCiudades> response = new ArrayList<DTOCiudades>();
+	public List<DTOCiudad> mapperList(List<Ciudades> list) {
+		List<DTOCiudad> response = new ArrayList<DTOCiudad>();
 		list.stream().forEach(o -> {
-			response.add(new DTOCiudades(o.getCodiCiud() + "", null != o.getNombCiud() ? o.getNombCiud().trim() : ""));
+			response.add(new DTOCiudad(o.getCodiCiud() + "", null != o.getNombCiud() ? o.getNombCiud().trim() : ""));
 
 		});
 
 		return response;
+	}
+
+	@Override
+	public DTOCiudad mapperEntitieToDto(Ciudades o) {
+	
+		return new DTOCiudad(o.getCodiCiud() + "", null != o.getNombCiud() ? o.getNombCiud().trim() : "");
 	}
 
 }

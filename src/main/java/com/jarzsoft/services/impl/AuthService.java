@@ -306,7 +306,7 @@ public class AuthService implements IAuthService {
 			}
 		}
 
-		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash);
+		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash,null);
 	}
 
 }

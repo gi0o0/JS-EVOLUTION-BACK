@@ -179,6 +179,10 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setTipCta(o.getTipCta());
 		out.setTipVivienda(o.getTipVivienda());
 		out.setDocTip(o.getDocTip());
+		if(o.getDocTip().indexOf(".")>0) {
+			out.setDocTip(o.getDocTip().substring(0,o.getDocTip().indexOf(".")));
+		}
+		
 		out.setNitTer(Comunes.stringClean(o.getNitTer()));
 		out.setIndSecEconomico(o.getIndSecEconomico());
 		return out;

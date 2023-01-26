@@ -1,15 +1,15 @@
 package com.jarzsoft.dto;
 
-public class DTOCiudades {
+public class DTOCiudad {
 
 	private String id;
 	private String name;
 
-	public DTOCiudades() {
+	public DTOCiudad() {
 		super();
 	}
 
-	public DTOCiudades(String id, String name) {
+	public DTOCiudad(String id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

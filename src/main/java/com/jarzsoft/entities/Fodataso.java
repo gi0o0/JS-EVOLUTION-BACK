@@ -45,14 +45,15 @@ public class Fodataso implements Serializable {
 
 	@Column(name = "Cla_asoci")
 	private String claAsoci;
-	
+
 	@Column(name = "cargo_deu_wf")
 	private String cargoDeuWf;
-	
+
 	@Column(name = "cargo_cod_wf")
 	private String cargoCodWf;
-	
-	
+
+	@Column(name = "activo")
+	private String activo;
 
 	public Fodataso() {
 	}
@@ -60,13 +61,13 @@ public class Fodataso implements Serializable {
 	@PrePersist
 	public void prePersist() {
 
-		// this.codEmple = "0";
+		this.activo = "0";
 
 	}
 
 	@PreUpdate
 	public void preUpdate() {
-		// this.codEmple = "0";
+		 this.activo = "0";
 	}
 
 	public String getCodTer() {
@@ -164,7 +165,13 @@ public class Fodataso implements Serializable {
 	public void setCargoCodWf(String cargoCodWf) {
 		this.cargoCodWf = cargoCodWf;
 	}
-	
-	
+
+	public String getActivo() {
+		return activo;
+	}
+
+	public void setActivo(String activo) {
+		this.activo = activo;
+	}
 
 }

@@ -54,24 +54,10 @@ public class ReportOnlineService implements IReportOnlineService {
 
 		DTOReportDetalle archivoDetalleDto = new DTOReportDetalle();
 		Map param = new HashMap<String, Object>();
-		param.put(Constantes.PA_MUT_CIUU, false);
-		param.put(Constantes.PA_MUT_DBASIC, false);
-		param.put(Constantes.PA_MUT_NOM, false);
-		param.put(Constantes.PA_MUT_INFO_HEADER, "213");
-		param.put(Constantes.PA_NOMBRE_SOLI, "23");
-		param.put(Constantes.PA_TIPOIDENT, "dsf");
-		param.put(Constantes.PA_MATRI, "12");
-		param.put(Constantes.PA_TEXT_FOOTER, "footer");
-		param.put(Constantes.PA_REGISTRO, "header");
-		param.put(Constantes.PA_MUT_NOM, true);
-		param.put(Constantes.PA_MUT_NOM_TITU, "sds");
-		param.put(Constantes.PA_MUT_NOM_TEXT, "dfdsf");
-		param.put(Constantes.PA_MUT_CIUU_TIP, "");
-		param.put(Constantes.PA_MUT_CIUU_TIP2, "");
-		param.put(Constantes.PA_MUT_CIUU_TIP3, "");
-		param.put(Constantes.PA_MUT_CIUU_TIP4, "");
 
-		Resource resource = new ClassPathResource(Constantes.TIPO_REPORTE);
+		param.put("numeroRadicacion", "12345");
+
+		Resource resource = new ClassPathResource(Constantes.REPORTE_CREDITO_SOL);
 		InputStream input;
 		try {
 			input = resource.getInputStream();

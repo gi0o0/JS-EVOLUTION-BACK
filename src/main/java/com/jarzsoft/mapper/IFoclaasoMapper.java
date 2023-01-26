@@ -9,4 +9,6 @@ public interface IFoclaasoMapper {
 
 	public List<DTOFoclaaso> mapperList(List<Foclaaso> list);
 
+	public DTOFoclaaso mapperEntitieToDto(Foclaaso foclaaso);
+
 }

@@ -1,5 +1,6 @@
 package com.jarzsoft.services.impl;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,11 @@ public class FoclaasoService implements IFoclaasoService {
 
 		return foclaasoMapper.mapperList(foclaasoRepository.findByUsuario(String.valueOf(adviser.getCodTer())));
 
+	}
+
+	@Override
+	public DTOFoclaaso getCompaniesByID(BigInteger id) {
+		return foclaasoMapper.mapperEntitieToDto(foclaasoRepository.findById(id).get());
 	}
 
 }

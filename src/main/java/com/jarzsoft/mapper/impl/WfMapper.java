@@ -59,6 +59,7 @@ public class WfMapper implements IWfMapper {
 			out.setTipVivienda(Comunes.stringClean(u.getTipVivienda()));
 			out.setDoctip(Comunes.stringToInt((u.getDocTip())));
 			out.setNitter(Comunes.stringClean(u.getNitTer()));
+			out.setCodTer(Comunes.stringClean(u.getCodTer()+""));
 			out.setNomCony(Comunes.stringClean(u.getNomCony()));
 			out.setCelConyuge(Comunes.stringClean(u.getCelConyuge()));
 			out.setEmailConyuge(Comunes.stringClean(u.getEmailConyuge()));
@@ -89,6 +90,7 @@ public class WfMapper implements IWfMapper {
 			codeu.setTipVivienda(Comunes.stringClean(cod.getTipVivienda()));
 			codeu.setDoctip(Comunes.stringToInt(cod.getDocTip()));
 			codeu.setNitter(Comunes.stringClean(cod.getNitTer()));
+			codeu.setCodTer(Comunes.stringClean(cod.getCodTer()+""));
 			codeu.setNomCony(Comunes.stringClean(cod.getNomCony()));
 			codeu.setCelConyuge(Comunes.stringClean(cod.getCelConyuge()));
 			codeu.setEmailConyuge(Comunes.stringClean(cod.getEmailConyuge()));

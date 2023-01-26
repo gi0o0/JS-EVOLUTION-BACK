@@ -8,4 +8,6 @@ public interface IBasTTipCtaService {
 
 	List<DTOBasTTipCta> getAll();
 
+	DTOBasTTipCta getBasTTipCta(String id);
+
 }

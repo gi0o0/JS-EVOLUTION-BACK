@@ -32,5 +32,13 @@ public class FilesUserController {
 			@PathVariable("idapplication") String idapplication, @PathVariable("id") String id) {
 		return service.listAll(user, idapplication, id);
 	}
+	
+	
+	@GetMapping(value = "/{id}/application/{step}", produces = "application/json")
+	public List<DTOFilesUser> listFilesByStep(@PathVariable("id") String id, @PathVariable("step") String step) {
+		return service.listAllByIdRedAndStep(id,step);
+	}
+	
+
 
 }

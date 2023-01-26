@@ -8,4 +8,6 @@ public interface IDeptosService {
 
 	List<DTODeptos> getAll(Integer id);
 
+	DTODeptos getDep(Integer id);
+
 }

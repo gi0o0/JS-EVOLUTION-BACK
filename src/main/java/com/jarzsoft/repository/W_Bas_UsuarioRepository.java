@@ -25,13 +25,10 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, St
 	@Query(value = "SELECT us.Nom_usuario,ter.mailter FROM W_Bas_Usuario us,terceros ter WHERE us.usuario = :usuario AND clave_global=:clave_global AND us.codter=ter.codter", nativeQuery = true)
 	List<Object[]> findByUsuarioAndPassword(@Param("usuario") String usuario,
 			@Param("clave_global") String clave_global);
-	
+
 	@Query(value = "SELECT ter.nitter ,t1.cod_ter,ter.nomter, ter.pri_apellido ,ter.seg_apellido FROM fodataso t1 inner join terceros ter on t1.cod_ter =ter.codter"
 			+ " WHERE NOT EXISTS (SELECT NULL FROM w_bas_usuario t2 WHERE t2.CodTer = t1.cod_ter )", nativeQuery = true)
 	List<Object[]> findUsersFodataso();
-	
-	
-	
 
 	@Query(value = "SELECT LTRIM(RTRIM(Usuario)) as Usuario FROM W_Bas_Usuario WHERE clave_link = :clave_link", nativeQuery = true)
 	Object[] findByUsuarioAndClaveLink(@Param("clave_link") String clave_link);
@@ -41,7 +38,7 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, St
 
 	@Query(value = " select wb.usuario, LTRIM(RTRIM(wb.nom_usuario)) as nom_usuario, wb.codter, wb.estado, wp.codperfil, LTRIM(RTRIM(wp.nomperfil)) as nomperfil from w_bas_usuario wb , w_bas_T_Perfil  wp where wb.codperfil = wp.codperfil and us.usuario = :usuario ", nativeQuery = true)
 	List<Object[]> findByUser(@Param("usuario") String usuario);
-	
+
 	@Query(value = "SELECT * FROM W_Bas_Usuario WHERE usuario = :usuario", nativeQuery = true)
 	Optional<W_Bas_Usuario> findByUserWeb(@Param("usuario") String usuario);
 
@@ -50,7 +47,7 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, St
 
 	@Query(value = "select wb.usuario, LTRIM(RTRIM(wb.nom_usuario)) as nom_usuario, wb.clave, wb.codter, wb.clave1, wb.estado, wp.codperfil, LTRIM(RTRIM(wp.nomperfil)) as nomperfil, wb.clave_link, wb.clave_global,wb.date_mod, wb.clave_umbral,wb.clave_global_his,wb.tipoAut, wp.usu_ult_mod, wp.fec_ult_mod, wp.fec_crea, wp.usu_crea from w_bas_usuario wb , w_bas_T_Perfil  wp where wb.codperfil = wp.codperfil order by wb.nom_usuario", nativeQuery = true)
 	List<Object[]> findUserCompleteObj();
-	
+
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE W_Bas_Usuario SET clave_link = :clave_link WHERE Usuario= :usuario ", nativeQuery = true)
@@ -75,7 +72,7 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, St
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE W_Bas_Usuario SET estado = :estado, codperfil =:codperfil WHERE Usuario= :usuario ", nativeQuery = true)
-	public void modifyUserCreate(@Param("usuario") String usuario, @Param("codperfil") String codperfil, @Param("estado") String estado);
+	public void modifyUserCreate(@Param("usuario") String usuario, @Param("codperfil") String codperfil,
+			@Param("estado") String estado);
 
-	
 }

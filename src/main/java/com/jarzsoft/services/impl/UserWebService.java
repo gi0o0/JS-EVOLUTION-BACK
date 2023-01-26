@@ -11,9 +11,9 @@ import com.jarzsoft.dto.DTOW_Bas_Usuario;
 import com.jarzsoft.entities.W_Bas_Usuario;
 import com.jarzsoft.mapper.IW_Bas_UsuarioMapper;
 import com.jarzsoft.repository.W_Bas_UsuarioRepository;
+import com.jarzsoft.service.IUserService;
 import com.jarzsoft.service.IUserWebService;
 import com.jarzsoft.util.Constantes;
-import com.jarzsoft.service.IUserService;
 
 @Service
 public class UserWebService implements IUserWebService {
@@ -39,7 +39,7 @@ public class UserWebService implements IUserWebService {
 		t.setFecCrea(new Date());
 		t.setFecUltMod(new Date());
 		t.setUsuUltMod(t.getUsuCrea());
-		W_Bas_Usuario usuario = mapper.mapperDtoToDao(t); 
+		W_Bas_Usuario usuario = mapper.mapperDtoToDao(t);
 
 		return mapper.mapperDaoToDto(dao.save(usuario));
 
@@ -63,7 +63,7 @@ public class UserWebService implements IUserWebService {
 
 		return null;
 	}
-	
+
 	@Override
 	public ResponseEntity<Object> delete(String usuario) {
 		dao.delete(mapper.mapperDtoToDao(usuario));
@@ -75,18 +75,21 @@ public class UserWebService implements IUserWebService {
 		// return mapper.mapperList(dao.findAll());
 		return mapper.mapperList(dao.findUserComplete());
 	}
-	
+
 	@Override
 	public List<DTOW_Bas_Usuario> listAllObj() {
 		// return mapper.mapperList(dao.findAll());
 		return mapper.mapperListObj(dao.findUserCompleteObj());
 	}
 
-
 	@Override
 	public DTOW_Bas_Usuario listById(int id) {
-		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public DTOW_Bas_Usuario getUserById(String user) {
+		return mapper.mapperDaoToDto(dao.findByUserWeb(user).get());
 	}
 
 }

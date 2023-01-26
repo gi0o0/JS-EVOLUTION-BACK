@@ -9,4 +9,6 @@ public interface IBaentidadMapper {
 
 	public List<DTOBaentidad> mapperList(List<Baentida> list);
 
+	public DTOBaentidad mapperEntitieToDto(Baentida o);
+
 }

@@ -8,4 +8,6 @@ public interface IBaEntidadService {
 
 	List<DTOBaentidad> getAll();
 
+	DTOBaentidad getBaentidad(String id);
+
 }

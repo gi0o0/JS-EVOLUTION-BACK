@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="autorizaciondescuento" pageWidth="612" pageHeight="1120" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="13"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="nomTer" class="java.lang.String"/>
+	<parameter name="nitter" class="java.lang.String"/>
+	<parameter name="codiCiud" class="java.lang.String"/>
+	<parameter name="nomTer_codeu" class="java.lang.String"/>
+	<parameter name="nitter_codeu" class="java.lang.String"/>
+	<parameter name="codiCiud2" class="java.lang.String"/>
+	<parameter name="año" class="java.lang.String"/>
+	<parameter name="empresa" class="java.lang.String"/>
+	<parameter name="dia" class="java.lang.String"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="ciudadautoriza" class="java.lang.String"/>
+	<parameter name="pagare" class="java.lang.String"/>
+	<parameter name="calidad" class="java.lang.String"/>
+	<parameter name="valorletras" class="java.lang.String"/>
+	<parameter name="valor" class="java.lang.String"/>
+	<parameter name="meses" class="java.lang.String"/>
+	<parameter name="mesesletras" class="java.lang.String"/>
+	<parameter name="fechainicio" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="limite" class="java.lang.String"/>
+	<field name="deducible" class="java.lang.String"/>
+	<field name="prima" class="java.lang.String"/>
+	<group name="SOL"/>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="985" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="62" y="124" width="218" height="11" uuid="e6bb17e5-3654-4a19-8603-b05d1017a262"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="166" y="137" width="69" height="11" uuid="b31c7e20-1c1d-4aae-a1b7-928d6e4e0be7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="250" y="105" width="25" height="11" uuid="41e9d3f9-daab-452e-84f4-6842e53a6780"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="310" y="122" width="235" height="11" uuid="dd64451f-fc21-43d6-8480-ffb225bf667a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="361" y="137" width="83" height="11" uuid="4d97e779-1f56-4527-bf87-c5e7e86ce6a4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="42" y="444" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ac7a5949-87d3-473c-b3e4-d012d2d56ac1"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="55" y="135" width="488" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a2af3626-7bc7-48d1-ad49-faaad19b94bb"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="269" y="138" width="71" height="11" uuid="7ab37079-49a5-4030-8bcb-05eee3eba82f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="272" y="147" width="71" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="47adda2a-7cb6-4409-8366-85c3c8a8ff67"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="466" y="137" width="71" height="11" uuid="d2d01936-a093-440c-9a61-c6dd63b04049"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="190" width="533" height="53" uuid="ed6d05c0-fb8d-4ce6-9429-27a1c566cd7b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Retenga de mi (nuestra) asignación mensual por razón de los siguientes conceptos: Sueldos, salaries, pensiones, vacaciones, mesadas, honorarios, prima e indemnizaciones, comisiones, cesantías, bonificaciones, auxilios y demás prestaciones sociales. Así mismo autoriza expresamente a la entidad pagadora que en caso de mora, retiro o fallecimiento retenga y cobre de mi liquidación final de prestación social, salaries, primas e indemnizaciones o de otros conceptos, los saldos que este adeudando si llegase a Finalizar mi contrato de trabajo antes de completar el pago total de este préstamo, la suma de:	]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="251" y="120" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="125" width="47" height="11" uuid="038e5ca2-afe7-44f5-b3a2-ddc3c0fc1108"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Yo/nosotros]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="387" y="105" width="24" height="11" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{año}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="268" y="176" width="269" height="11" uuid="9b6c1fe4-c4fc-40f0-a2c0-61934b988310"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="450" width="46" height="11" uuid="2bcb7fa0-27c0-4639-ba47-dc753cbf2835"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="213" y="418" width="57" height="63" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="434" width="28" height="11" uuid="0517ee37-7a94-4683-b710-d4083e6c302d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="49" y="459" width="158" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="308" y="444" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="280" y="436" width="28" height="10" uuid="f06689b9-a937-444f-9ac3-5b1a0467eb34"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="418" width="28" height="11" uuid="8b0bdb51-aa27-4e17-b4de-af96f2ad9e5b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="316" y="459" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<rectangle>
+				<reportElement x="482" y="419" width="55" height="58" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement key="line-1" x="42" y="428" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bc02d0ed-8ae2-4c2b-841e-a77c3f61d636"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="280" y="419" width="28" height="11" uuid="ffce0f45-4cbb-490b-8723-287b58bf5a34"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="280" y="450" width="46" height="11" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="310" y="429" width="163" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3486364a-227a-470c-ba82-2314ea5cacd0"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="136" width="146" height="11" uuid="6f817950-a37e-47d2-aabd-9e2eae5a28ac"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[identificados con cedula de ciudadanía número]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="166" y="146" width="83" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0bc30c25-12e5-4eaf-96c8-8a14160609cf"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="243" y="136" width="20" height="11" uuid="08b66d7a-f7f0-456a-84c0-0c3be653e7d9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="290" y="121" width="14" height="11" uuid="42f564f2-0c52-4393-aa03-04af3106124c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[y]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="360" y="147" width="83" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b17e8485-17f5-47dd-9b6b-b27e93911363"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="445" y="136" width="20" height="11" uuid="962ef7a3-ed5e-4881-95df-f1cade329fa9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="466" y="147" width="71" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="77bd3c26-d573-4a5e-aecc-1fa78deb49e0"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="149" width="367" height="11" uuid="c9d218c8-7ebb-4d9b-8528-503ae9bc88e5"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[autorizo (amos), como fuente de pago de las obligaciones incorporadas en título valor documento No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="11" y="175" width="249" height="11" uuid="ec756a8d-93ad-4d1c-8eab-361b5789e8b7"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[(amos) de manera permanente e irrevocable que la entidad pagadora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="273" width="533" height="139" uuid="a3aceff9-7c99-4747-927c-ad401d4e4ede"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AVALTÍTULOS S.A.S. de acuerdo con el Art. 7 del Oficio 220-0002840 del 19 de enero de 2015 de la Superintendencia de Sociedades enfocado a la ley 1527 de 2012 (art. 6 y 7)y Código Sustantivo del trabajo art. 150. Adicionalmente en caso de retiro de esta entidad según Art. 7 de la ley 1527 de 2012, faculto a. AVALTÍTULOS S.A.S. o su endosatario solicite a cualquier empleador futuro la deducción de la cuota de mi nómina.
+En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones y/o responsable por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido de acuerdo con el Art. 6 de la ley Estatutaria 1266 de 2008 y el art. 6 de la ley 1527 de 2012.
+De conformidad con el art. 622 del Código de comercio, autorizo (amos) expresa e irrevocablemente al representante legal de AVALTÍTULOS S.A.S. para diligenciar los espacios en blanco de este documento a la orden / documento que he (mos) otorgado a su favor, el cual será diligenciado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones: 1) El monto será igual el valor, de todas las obligaciones exigibles a mi (nuestro) cargo y en favor de. AVALTÍTULOS S.A.S. que exista al momento de ser diligenciados los espacios en blanco. 2) La fecha de vencimiento será aquella cuando se diligencien los espacios en blanco. 3) La tasa de interés moratoria será la máxima autorizada por la ley en la fecha en que se haya diligenciado el documento. 4) Los espacios en blanco se diligenciaran cuando el tenedor del documento lo considere pertinente.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="105" width="50" height="11" uuid="65afb593-c4e9-46dd-b6d7-ec8abda58135"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="305" y="120" width="41" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="485f5103-a9f9-489b-b48a-19c1fb74bacd"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="308" y="105" width="41" height="11" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="353" y="105" width="29" height="11" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="386" y="120" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="343" y="136" width="14" height="11" uuid="17715a9b-54a4-43e0-95f4-6af8d77c4fd9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[y]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="384" y="148" width="61" height="11" uuid="647c2615-6416-4a42-b668-eef2c55583b1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pagare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="458" y="149" width="85" height="11" uuid="1c227f65-bc95-42c4-8763-2337624ddfa3"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[en mi  (nuestra) calidad]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="12" y="173" width="467" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="35d522ef-33ff-47fa-98f4-67741997c3c2"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="12" y="163" width="317" height="11" uuid="eec52545-e7a5-4856-936f-865f6fe478de"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{calidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="507" y="163" width="34" height="11" uuid="c2c13f32-94ae-4cde-98a9-06afdeccdbd4"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[solicito]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="12" y="257" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="072b9420-24c0-485a-80e7-0014e679433e"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="11" y="245" width="217" height="11" uuid="0d6fa789-c0bb-49c7-a905-1e862efbce98"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorletras}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="228" y="245" width="14" height="11" uuid="fccf52f1-9a20-4b9b-8cb3-e5c7afe1f10a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[$(]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="245" y="257" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0b029891-de61-4100-930c-a52509d00d32"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="248" y="245" width="94" height="12" uuid="0fbf0115-b463-4d0d-bcd3-ae6655b9a026"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="348" y="245" width="5" height="11" uuid="08363303-a710-4b03-b77e-2129664817ab"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="358" y="245" width="32" height="11" uuid="f2196630-f40e-4e66-a4fa-5492bfcab2a3"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[durante ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="393" y="245" width="100" height="11" uuid="04b95198-dd3e-4fb7-887c-362e41249b91"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mesesletras}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="397" y="257" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4e63ec2c-5c86-4323-8c7f-f25c643354d8"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="503" y="245" width="5" height="11" uuid="c5c596e1-7538-4cf0-927a-21ddbddf80fa"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="535" y="245" width="5" height="11" uuid="65e20a70-3cda-4463-acf2-4da940a684a2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="512" y="245" width="16" height="11" uuid="ca5f82da-a3ab-48ba-837b-bb3bd042f65d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{meses}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="513" y="257" width="19" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="25a0783b-726d-415c-a9e1-ea33a511bf63"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="273" y="187" width="259" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d9372981-054b-46f1-903c-7164f5ba8c10"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="259" width="108" height="11" uuid="0200e79f-16f5-4573-acd5-a445d7120bd0"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[meses contados a partir de]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="123" y="270" width="84" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="791cb6da-5abf-45f1-9014-5edfc249b588"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="126" y="259" width="81" height="11" uuid="273ef115-c499-44f0-8ead-e45478fe4bfe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechainicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="207" y="259" width="212" height="11" uuid="081cb1e9-d952-4692-8d22-b217ba7c7b31"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[y que los dineros así retenidos sean pagados a la sociedad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="466" width="85" height="11" uuid="96244973-fade-4934-a202-be8e4fc5423f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Lugar de Expedición ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="280" y="466" width="85" height="11" uuid="c34af8c9-c12d-472c-adc3-ac91979b3db6"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Lugar de Expedición ]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="100" y="475" width="107" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ea83dc4b-8d29-4358-8060-c5f33c047036"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="366" y="474" width="107" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="590cb5bc-1119-452d-8b8d-7e811df1b454"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="72" y="105" width="156" height="11" uuid="d5a1f167-b5b7-47be-8257-b81d7fb5d7af"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ciudadautoriza}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="75" y="120" width="153" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="78d2ed23-e4a5-4cdf-a9f4-c6eb9d63ceb1"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="231" y="105" width="14" height="11" uuid="f0e3d5ad-3054-4dda-aad5-b93295584ec3"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Día]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="281" y="105" width="24" height="11" uuid="ecf780e6-d065-4d32-910d-d612571510d1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-49" x="10" y="82" width="118" height="13" uuid="b67eed20-01fb-4b3c-beac-9c6ff8e23e72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[NIT. 901.184.952 - 4]]></text>
+			</staticText>
+			<image>
+				<reportElement key="image-1" x="6" y="9" width="128" height="63" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
+				<imageExpression><![CDATA["logo1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText-3" x="182" y="20" width="355" height="22" forecolor="#000000" uuid="3631b0f0-062e-4e68-8fe7-711ff5aa19f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[AUTORIZACION DE DESCUENTO
+]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="326" y="951" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="040ed97e-e9fc-42b1-ad8b-ed338d162fc4"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-49" x="20" y="574" width="118" height="13" uuid="1e489d3d-5b3f-44c6-adef-169e3c73c800"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[NIT. 901.184.952 - 4]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="82" y="597" width="156" height="11" uuid="4072c4cd-f1ca-4f26-8483-78bef34cf518"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ciudadautoriza}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="545" y="737" width="5" height="11" uuid="b8385504-2f3c-48a3-ad08-009b9c3c2a5d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="290" y="942" width="46" height="11" uuid="e35401b9-38e8-4aef-a4cf-22d5201f64ec"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="255" y="749" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="8acf7021-e438-4553-b8e6-678f8d70e15d"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="407" y="749" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d2dde4d5-ccde-4bb1-89f7-d5cf2681262d"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<rectangle>
+				<reportElement x="223" y="910" width="57" height="63" uuid="5f69b507-293a-4a33-876e-a70ac94f8dbf"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-4" x="363" y="597" width="29" height="11" uuid="e13bbc7b-8607-44ba-b162-d19528d7be33"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="133" y="762" width="84" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e20ec9e2-6696-4fc9-8ca0-c767f04c8aad"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="397" y="597" width="24" height="11" uuid="5261aa7c-036e-4588-b5d8-84f4a77f7794"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{año}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="371" y="629" width="83" height="11" uuid="9da3091e-5e92-40ba-828d-bb8a64ddf532"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="176" y="638" width="83" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6d3d5977-b62a-4c55-8123-eaf1e805b274"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="318" y="597" width="41" height="11" uuid="3c56acba-291f-4e24-9da8-c0dd5f13b829"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="24" y="958" width="85" height="11" uuid="a40fbf84-b6dc-4c33-9bc0-42578cf2022a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Lugar de Expedición ]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="283" y="679" width="259" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="89653c45-1527-4ea6-9c3a-985bb620e6e9"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="22" y="751" width="108" height="11" uuid="09416eea-3f6c-4e84-a712-46afab67b5ef"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[meses contados a partir de]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="279" y="630" width="71" height="11" uuid="c9d14b8e-37c7-4d27-91a4-931f8998197f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="315" y="612" width="41" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="81afa541-ef3f-4de2-a964-c83417c41b68"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="22" y="665" width="467" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="30730dd9-180b-4f20-90c0-4e89e8675dc3"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="394" y="640" width="61" height="11" uuid="26a0f610-9c32-46b2-8519-b5d3d43e257c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pagare}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="85" y="612" width="153" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f9b06700-dced-4189-9b26-3b3197c5c4a8"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="24" y="910" width="28" height="11" uuid="7e9cf372-ca7d-4526-98af-5ab41a1013b8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="358" y="737" width="5" height="11" uuid="8aa86d00-dde3-4601-b76d-15de4eefcd1b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="217" y="751" width="212" height="11" uuid="d5b531f6-8873-4edb-bab6-3bf8ad8334bf"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[y que los dineros así retenidos sean pagados a la sociedad.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="21" y="737" width="217" height="11" uuid="af97f0b4-9b64-46c2-9d97-d92e99651874"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valorletras}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="238" y="737" width="14" height="11" uuid="26ae6962-179f-4e13-b508-98492fa47a0b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[$(]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="59" y="951" width="158" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7076c378-53d5-4c3c-8647-ca7e015bf065"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="320" y="921" width="163" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ff68514a-4591-40b5-b1a1-e08d87be5910"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="368" y="737" width="32" height="11" uuid="ba951ca0-363a-4a1b-8e2a-48c705daab6e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[durante ]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="318" y="936" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="91386368-be47-4d5a-a393-ff7875fe641c"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="290" y="928" width="28" height="10" uuid="e1495d4c-6466-4c97-b74d-ac89b42e549a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="353" y="628" width="14" height="11" uuid="3ce50d56-9e3b-402a-8262-a9f39ad1b629"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[y]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="517" y="655" width="34" height="11" uuid="9c168a7d-b81d-4825-b1d0-1c97da2cc690"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[solicito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="20" y="597" width="50" height="11" uuid="9390a812-132f-4c5e-a05f-1ca7e2965dd3"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" x="192" y="535" width="355" height="22" forecolor="#000000" uuid="4dac82c0-b1aa-47c3-8bfc-3484c16c0fce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[AUTORIZACION DE DESCUENTO
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="22" y="655" width="317" height="11" uuid="f6c9ef5f-2c7d-4a88-a83e-91190cdb4a1f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{calidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="24" y="926" width="28" height="11" uuid="1bc3b345-a25e-4a11-8d1f-62b223d0aab6"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="20" y="628" width="146" height="11" uuid="a1bd08f9-7279-424c-8505-a0ed1c8e7800"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[identificados con cedula de ciudadanía número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="241" y="597" width="14" height="11" uuid="c52407a2-4edd-4d44-a71d-68842881cbca"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Día]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="22" y="749" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7932b215-535c-4feb-8a88-4c68307a5314"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="320" y="614" width="235" height="11" uuid="039f30e7-60c6-4053-87f7-2365c9b4e177"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="291" y="597" width="24" height="11" uuid="b3478d53-994f-4e84-b880-44228031a6c8"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="110" y="967" width="107" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a2dea14d-a517-4d78-a93b-d32f7ff004cc"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<rectangle>
+				<reportElement x="492" y="911" width="55" height="58" uuid="8ce5ac59-3f19-4502-8537-d3b0a6c29d4e"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-4" x="24" y="942" width="46" height="11" uuid="8a797af4-7045-4e33-9356-9acbfd3c3654"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="751" width="81" height="11" uuid="96c1ad12-4e98-466d-a220-5754c446c024"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechainicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="513" y="737" width="5" height="11" uuid="3930cf7f-3634-4fd9-b66d-8f4317e2b834"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="52" y="936" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2d22624e-0db2-4ae0-b9bb-1918e0668177"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="455" y="628" width="20" height="11" uuid="ac4657bc-d759-411e-80d2-5196f18c8a32"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="290" y="911" width="28" height="11" uuid="c6fd6232-feff-4160-8f08-e145008c54c1"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="52" y="920" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="86201891-a633-4192-990f-4dc45acc8b73"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="290" y="958" width="85" height="11" uuid="fd39db95-2f73-47aa-bc01-94fd13546f46"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Lugar de Expedición ]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="282" y="639" width="71" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="44579679-4b7f-47ce-bdb5-1ac84cbeb17a"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="258" y="737" width="94" height="12" uuid="8dbbef79-7ab9-4352-b868-a75828dfa34f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="523" y="749" width="19" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="61db8ffd-d7ec-400a-bddf-8c2f8570da5c"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="21" y="667" width="249" height="11" uuid="b2dee18a-9e6e-4a7b-aa39-fff040590f77"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[(amos) de manera permanente e irrevocable que la entidad pagadora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="20" y="682" width="533" height="53" uuid="ecf0d440-0e8b-46b1-91dc-4953a985a78c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Retenga de mi (nuestra) asignación mensual por razón de los siguientes conceptos: Sueldos, salaries, pensiones, vacaciones, mesadas, honorarios, prima e indemnizaciones, comisiones, cesantías, bonificaciones, auxilios y demás prestaciones sociales. Así mismo autoriza expresamente a la entidad pagadora que en caso de mora, retiro o fallecimiento retenga y cobre de mi liquidación final de prestación social, salaries, primas e indemnizaciones o de otros conceptos, los saldos que este adeudando si llegase a Finalizar mi contrato de trabajo antes de completar el pago total de este préstamo, la suma de:	]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="176" y="629" width="69" height="11" uuid="3b6bf833-af7f-4a88-85d1-26882ab718a1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="476" y="629" width="71" height="11" uuid="c3d2d835-e5d0-4bb7-b539-0b0d70a77d89"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="396" y="612" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="109635ea-07ab-4016-8147-08122d230e3a"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="72" y="616" width="218" height="11" uuid="16ef8c87-9839-43b7-b0ac-4b7963965ec8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="253" y="628" width="20" height="11" uuid="3ef04060-7430-4124-b6b3-851fbae61806"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="261" y="612" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ebc8bdac-797b-463f-a128-68a326a6a03c"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="20" y="617" width="47" height="11" uuid="c198ad80-3e6f-4224-9671-3817333ea1f2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Yo/nosotros]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="370" y="639" width="83" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="db61bd58-b0ba-4a8e-a161-0c13dca0b737"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="522" y="737" width="16" height="11" uuid="392e1da7-8f84-46ca-acc5-2581428bd0ed"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{meses}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="468" y="641" width="85" height="11" uuid="c7b3e570-962e-491e-a5e2-59a840191b8b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[en mi  (nuestra) calidad]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="278" y="668" width="269" height="11" uuid="c34a6537-1e1c-4ca2-883b-9e5582eca5be"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="20" y="641" width="367" height="11" uuid="0f8cb8ee-ad62-4514-a53c-8b6d1a6cd5b8"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[autorizo (amos), como fuente de pago de las obligaciones incorporadas en título valor documento No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="737" width="100" height="11" uuid="fb12a6bd-1bfe-4e31-a5b8-45653ea78928"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mesesletras}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="476" y="639" width="71" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f1dd7549-8bd1-42f2-8469-ab562b0c9385"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="300" y="613" width="14" height="11" uuid="12a9313b-8610-4439-af4c-5cb08f432777"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[y]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="20" y="765" width="533" height="139" uuid="a54761de-1f76-40e3-99f2-2b5f7ac4db6c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AVALTÍTULOS S.A.S. de acuerdo con el Art. 7 del Oficio 220-0002840 del 19 de enero de 2015 de la Superintendencia de Sociedades enfocado a la ley 1527 de 2012 (art. 6 y 7)y Código Sustantivo del trabajo art. 150. Adicionalmente en caso de retiro de esta entidad según Art. 7 de la ley 1527 de 2012, faculto a. AVALTÍTULOS S.A.S. o su endosatario solicite a cualquier empleador futuro la deducción de la cuota de mi nómina.
+En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones y/o responsable por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido de acuerdo con el Art. 6 de la ley Estatutaria 1266 de 2008 y el art. 6 de la ley 1527 de 2012.
+De conformidad con el art. 622 del Código de comercio, autorizo (amos) expresa e irrevocablemente al representante legal de AVALTÍTULOS S.A.S. para diligenciar los espacios en blanco de este documento a la orden / documento que he (mos) otorgado a su favor, el cual será diligenciado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones: 1) El monto será igual el valor, de todas las obligaciones exigibles a mi (nuestro) cargo y en favor de. AVALTÍTULOS S.A.S. que exista al momento de ser diligenciados los espacios en blanco. 2) La fecha de vencimiento será aquella cuando se diligencien los espacios en blanco. 3) La tasa de interés moratoria será la máxima autorizada por la ley en la fecha en que se haya diligenciado el documento. 4) Los espacios en blanco se diligenciaran cuando el tenedor del documento lo considere pertinente.
+]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="260" y="597" width="25" height="11" uuid="bacb41b1-2b32-40a6-ad6a-3f493954235b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="376" y="966" width="107" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9074d69f-97a1-4661-8dae-142fdd286286"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="65" y="627" width="488" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2a5c0deb-4e7a-4d8d-8ff8-9f312deccfd4"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement key="image-1" x="10" y="506" width="128" height="63" uuid="b926981c-a168-470f-acb3-aa9bd8f928e9"/>
+				<imageExpression><![CDATA["logo1.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement key="line-1" x="15" y="495" width="523" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9641a2d0-caba-4166-96df-bd93d3cfc7c5"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+</jasperReport>

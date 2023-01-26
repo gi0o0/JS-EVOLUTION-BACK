@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOWFParameterStep;
+import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Pasos;
 import com.jarzsoft.entities.W_Wf_PasosPK;
 import com.jarzsoft.mapper.IWfStepParameterMapper;
@@ -44,6 +45,18 @@ public class WfStepParameterMapper implements IWfStepParameterMapper {
 				o.getEnvCorreoPaso(), o.getEnvCorreoAutoriza(), o.getAsuntoCorreo(), o.getTextoCorreo(),
 				o.getTiempoAlerta1(), o.getTiempoAlerta2(), o.getTiempoAlerta3(), o.getUsuUltMod(), o.getFecUltMod(),
 				o.getFecCrea(), o.getUsuCrea());
+	}
+
+	@Override
+	public List<DTOWalletUser> mapperEntitiePortafolioToDto(List<Object[]> o) {
+	
+		List<DTOWalletUser> response = new ArrayList<DTOWalletUser>();
+		
+		o.stream().forEach(obj -> {
+			response.add(new DTOWalletUser(String.valueOf(obj[3]),String.valueOf(obj[40]),String.valueOf(obj[127]),String.valueOf(obj[128]),String.valueOf(obj[110]),String.valueOf(obj[118]),String.valueOf(obj[121]),String.valueOf(obj[119]),String.valueOf(obj[120])));
+		});
+		
+		return response;
 	}
 
 }

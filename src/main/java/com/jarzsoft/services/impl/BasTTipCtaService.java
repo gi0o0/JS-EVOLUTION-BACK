@@ -1,5 +1,6 @@
 package com.jarzsoft.services.impl;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,7 @@ public class BasTTipCtaService implements IBasTTipCtaService {
 	private final IBasTTipCtaMapper bas_T_Tip_CtaMapper;
 
 	@Autowired
-	public BasTTipCtaService(Bas_T_Tip_CtaRepository bas_T_Tip_CtaRepository,
-			IBasTTipCtaMapper bas_T_Tip_CtaMapper) {
+	public BasTTipCtaService(Bas_T_Tip_CtaRepository bas_T_Tip_CtaRepository, IBasTTipCtaMapper bas_T_Tip_CtaMapper) {
 		super();
 		this.bas_T_Tip_CtaRepository = bas_T_Tip_CtaRepository;
 		this.bas_T_Tip_CtaMapper = bas_T_Tip_CtaMapper;
@@ -29,6 +29,11 @@ public class BasTTipCtaService implements IBasTTipCtaService {
 	@Override
 	public List<DTOBasTTipCta> getAll() {
 		return bas_T_Tip_CtaMapper.mapperList(bas_T_Tip_CtaRepository.findAll());
+	}
+
+	@Override
+	public DTOBasTTipCta getBasTTipCta(String id) {
+		return bas_T_Tip_CtaMapper.mapperEntitieToDto(bas_T_Tip_CtaRepository.findById(new BigInteger(id)).get());
 	}
 
 }

@@ -3,6 +3,7 @@ package com.jarzsoft.mapper;
 import java.util.List;
 
 import com.jarzsoft.dto.DTOWFParameterStep;
+import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Pasos;
 
 public interface IWfStepParameterMapper {
@@ -12,5 +13,7 @@ public interface IWfStepParameterMapper {
 	public DTOWFParameterStep mapperDaoToDto(W_Wf_Pasos o);
 
 	public W_Wf_Pasos mapperDtoToDao(DTOWFParameterStep o);
+
+	public List<DTOWalletUser> mapperEntitiePortafolioToDto(List<Object[]> o);
 
 }

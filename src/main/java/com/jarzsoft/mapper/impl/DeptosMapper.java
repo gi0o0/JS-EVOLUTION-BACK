@@ -23,4 +23,10 @@ public class DeptosMapper implements IDeptosMapper {
 		return response;
 	}
 
+	@Override
+	public DTODeptos mapperEntitieToDto(Deptos o) {
+
+		return new DTODeptos(o.getCodiDept() + "", null != o.getNombDept() ? o.getNombDept().trim() : "");
+	}
+
 }

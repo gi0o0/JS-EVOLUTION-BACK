@@ -7,6 +7,7 @@ import com.jarzsoft.dto.DTOWFParameterEst;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWFParameterStepAut;
 import com.jarzsoft.dto.DTOWFParameterStepDoc;
+import com.jarzsoft.dto.DTOWalletUser;
 
 public interface IWFParameterService {
 
@@ -41,5 +42,7 @@ public interface IWFParameterService {
 	List<DTOWFParameterStep> stepsbyNumRad(Integer numRad);
 
 	DTOWFParameterStepAut validStepByUser(String wf,String step,String user);
+	
+	List<DTOWalletUser> getPortafolio(String codTer);
 
 }

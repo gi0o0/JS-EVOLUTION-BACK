@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solicitud" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.6105100000000119"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="598"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="priApellido" class="java.lang.String"/>
+	<parameter name="nomTer" class="java.lang.String"/>
+	<parameter name="nitter" class="java.lang.String"/>
+	<parameter name="priApellido_codeu" class="java.lang.String"/>
+	<parameter name="nomTer_codeu" class="java.lang.String"/>
+	<parameter name="lugarDoc_codeu" class="java.lang.String"/>
+	<parameter name="nitter_codeu" class="java.lang.String"/>
+	<parameter name="telTer_codeu" class="java.lang.String"/>
+	<parameter name="mailTer_codeu" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="limite" class="java.lang.String"/>
+	<field name="deducible" class="java.lang.String"/>
+	<field name="prima" class="java.lang.String"/>
+	<group name="SOL"/>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-49" x="0" y="59" width="118" height="13" uuid="b67eed20-01fb-4b3c-beac-9c6ff8e23e72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[NIT. 901.184.952 - 4]]></text>
+			</staticText>
+			<image>
+				<reportElement key="image-1" x="2" y="0" width="116" height="59" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
+				<imageExpression><![CDATA["logo1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="672" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="78" y="15" width="296" height="9" uuid="e6bb17e5-3654-4a19-8603-b05d1017a262"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="390" y="15" width="147" height="9" uuid="b31c7e20-1c1d-4aae-a1b7-928d6e4e0be7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="29" y="26" width="345" height="9" uuid="dd64451f-fc21-43d6-8480-ffb225bf667a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="391" y="26" width="146" height="9" uuid="4d97e779-1f56-4527-bf87-c5e7e86ce6a4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="14" y="557" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ac7a5949-87d3-473c-b3e4-d012d2d56ac1"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="14" width="64" height="11" uuid="cbfafb4b-cbf4-4c08-9a43-d78eed77fe22"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Yo (Nosotros), ]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="76" y="24" width="298" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a2af3626-7bc7-48d1-ad49-faaad19b94bb"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="374" y="15" width="17" height="11" uuid="35b70301-7e83-4167-ab89-525b21e4d239"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[C.C]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="391" y="23" width="146" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="75063b0c-e89a-47d3-8b84-57289976fe91"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="25" width="17" height="11" uuid="e5575a58-4945-4394-b788-628c00ac8586"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[y]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="29" y="34" width="345" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="cd48ec49-b09b-43e7-a515-4ee4562989fd"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="391" y="34" width="146" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="dcfae0e4-355b-4392-a5c4-a0d4c85cd95b"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="558" width="104" height="11" uuid="2bcb7fa0-27c0-4639-ba47-dc753cbf2835"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Nombre deudor solidario]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="213" y="598" width="55" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="612" width="104" height="11" uuid="0517ee37-7a94-4683-b710-d4083e6c302d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[C.C. deudor solidario]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="14" y="611" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="14" y="659" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9314d12a-35e0-4154-8c4e-44808140990c"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="14" y="660" width="104" height="11" uuid="0c4b9fa9-dfb3-4987-a854-c74b381934da"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Firma deudor solidario]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="482" y="598" width="55" height="71" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="14" y="548" width="165" height="9" uuid="6e0d15d5-9041-429b-9d4f-8a295f0349ec"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="14" y="602" width="165" height="9" uuid="a70b4b45-8fd8-4690-8e24-eddad8eb3c39"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="374" y="25" width="17" height="11" uuid="6a4b4071-394b-407c-b795-004e9df4e603"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[C.C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="35" width="525" height="43" uuid="38a8d7cd-aabc-4d2c-9d52-0c7ea26b236f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dejo (amos) constancia que la empresa AVALTÍTULOS S.A.S. con N.I.T . 900.181.152-1 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de AVALTÍTULOS S.A.S. ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="284" y="658" width="104" height="11" uuid="24011df2-87dc-4794-ba5a-76c1a53d0965"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Firma deudor solidario]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="284" y="657" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3916c25a-bd58-489b-90cb-e8ece6095ca0"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="284" y="612" width="104" height="11" uuid="c4136ba9-2f03-409d-9502-d571a11e29dd"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[C.C. deudor solidario]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="284" y="610" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="370e2eff-eb75-4bda-aa48-0826d000057c"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="284" y="601" width="165" height="9" uuid="bc949ccc-6f9d-48e2-8860-36fabf2269ea"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="284" y="558" width="104" height="11" uuid="b3285c6d-ac4b-43ed-bf48-7fd7d47b2a6a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Nombre deudor solidario]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="284" y="557" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b881093e-2ca7-454a-a35f-3d5463b9c4ec"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="284" y="548" width="165" height="9" uuid="fb76c9bd-006a-4711-b82c-2f1f5011526a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="126" width="525" height="168" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[	Fui informado de la exigencia del afianzamiento de mi crédito, y así mismo del funcionamiento de la fianza, teniendo claro que en ningún caso me podrán exigir una determinada empresa de afianzamiento, ya que soy libre de escoger la entidad.
+	Monto total del crédito solicitado y aprobado
+	Forma de pago
+	Modalidad de la cuota
+	Valor de la cuota
+	Plazo y sistema de amortización
+	Tasa de interés remuneratoria y moratoria
+	Acceso a información Consulta a centrales de riesgos y listas vinculantes
+	autorización de recaudo 
+	Condiciones de refinanciación
+	Sistema en notificacion según manual de crédito y cartera
+	Valores por concepto de Libranza 
+
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+</jasperReport>

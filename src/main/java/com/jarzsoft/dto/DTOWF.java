@@ -17,6 +17,7 @@ public class DTOWF {
 	private String foticrep;
 	private String perCuota;
 	private String doctip;
+	private String codTer;
 	private String nitter;
 	private String nomTer;
 	private String priApellido;
@@ -82,8 +83,7 @@ public class DTOWF {
 	private String comments;
 	private String token;
 	private String estado;
-	private List<String> files;
-	private List<String> filesNames;
+	private List<DTOWfDocs> files;
 	private Boolean isRequiredFiles;
 	private String prefixFile;
 	private DTOWFFinancialInfo financial;
@@ -760,20 +760,12 @@ public class DTOWF {
 		this.estado = estado;
 	}
 
-	public List<String> getFiles() {
+	public List<DTOWfDocs> getFiles() {
 		return files;
 	}
 
-	public void setFiles(List<String> files) {
+	public void setFiles(List<DTOWfDocs> files) {
 		this.files = files;
-	}
-
-	public List<String> getFilesNames() {
-		return filesNames;
-	}
-
-	public void setFilesNames(List<String> filesNames) {
-		this.filesNames = filesNames;
 	}
 
 	public DTOWFFinancialInfo getFinancial() {
@@ -839,7 +831,13 @@ public class DTOWF {
 	public void setPrefixFile(String prefixFile) {
 		this.prefixFile = prefixFile;
 	}
-	
-	
+
+	public String getCodTer() {
+		return codTer;
+	}
+
+	public void setCodTer(String codTer) {
+		this.codTer = codTer;
+	}
 
 }

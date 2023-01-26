@@ -8,6 +8,8 @@ public interface IParameterService extends ICRUD<DTOParameter> {
 
 	DTOParameter delete(DTOParameter id);
 
-	List<DTOParameter>  getById(String paramId);
+	List<DTOParameter> getById(String paramId);
+
+	DTOParameter getSingleById(String paramId, String paramText);
 
 }

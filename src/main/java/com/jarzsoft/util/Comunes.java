@@ -1,24 +1,33 @@
 package com.jarzsoft.util;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-import org.springframework.stereotype.Service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
+
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperRunManager;
 
 @Service
 public class Comunes {
 
-	
 	private static final Logger LOGGER = LogManager.getLogger(Comunes.class);
-	
+
 	public static String FORMAT_YYY_MM_DD = "yyyy-MM-dd";
 	public static String FORMAT_MM_DD_YYYY = "yyyy-MM-dd";
 
@@ -85,8 +94,8 @@ public class Comunes {
 
 		return FechaConvertida;
 	}
-	
-	public static String cambiarFormatoFechaDinamic(String date,String oldFormat,String newFormat) {
+
+	public static String cambiarFormatoFechaDinamic(String date, String oldFormat, String newFormat) {
 		String FechaConvertida = "";
 		SimpleDateFormat sdf1 = new SimpleDateFormat(oldFormat);
 		SimpleDateFormat sdf2 = new SimpleDateFormat(newFormat);
@@ -182,6 +191,40 @@ public class Comunes {
 	public static BigDecimal validIsNullStringTonumber(String value) {
 
 		return (value != null) ? new BigDecimal(value) : new BigDecimal("0");
+	}
+
+	public static void construirGuardarArchivo(String path, byte[] archivo) {
+		FileOutputStream out = null;
+		try {
+			out = new FileOutputStream(path);
+			try {
+				out.write(archivo);
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static boolean crearJasperReport(String path, String pathReport, Map<String, Object> param, String name,
+			String id) {
+		Resource resource = new ClassPathResource(pathReport);
+		InputStream input;
+		try {
+			input = resource.getInputStream();
+			byte[] bytes = JasperRunManager.runReportToPdf(input, param, new JREmptyDataSource());
+			String nombreArchivo = name + "_" + id + ".pdf";
+			construirGuardarArchivo(path + nombreArchivo, bytes);
+		} catch (IOException | JRException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 }

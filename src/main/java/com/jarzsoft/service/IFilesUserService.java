@@ -3,11 +3,14 @@ package com.jarzsoft.service;
 import java.util.List;
 
 import com.jarzsoft.dto.DTOFilesUser;
+import com.jarzsoft.dto.DTOWfDocs;
 
 public interface IFilesUserService {
 
 	List<DTOFilesUser> listAll(String user, String solicitud, String id);
 
-	Boolean create(String user, String solicitud, String id, String encode);
+	List<DTOFilesUser> listAllByIdRedAndStep(String solicitud, String step);
+
+	Boolean create(String idSolicitud, String step, String cedula, DTOWfDocs documento);
 
 }

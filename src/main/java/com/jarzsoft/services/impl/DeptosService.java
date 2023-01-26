@@ -30,4 +30,9 @@ public class DeptosService implements IDeptosService {
 		return deptosMapper.mapperList(deptosRepository.findAll(id));
 	}
 
+	@Override
+	public DTODeptos getDep(Integer id) {
+		return deptosMapper.mapperEntitieToDto(deptosRepository.findById(id).get());
+	}
+
 }

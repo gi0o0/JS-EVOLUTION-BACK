@@ -16,11 +16,17 @@ public class BasTTipCtaMapper implements IBasTTipCtaMapper {
 	public List<DTOBasTTipCta> mapperList(List<Bas_T_Tip_Cta> list) {
 		List<DTOBasTTipCta> response = new ArrayList<DTOBasTTipCta>();
 		list.stream().forEach(o -> {
-			response.add(new DTOBasTTipCta(o.getIdTipCta().toString(),
-					null != o.getNomCta() ? o.getNomCta().trim() : ""));
+			response.add(
+					new DTOBasTTipCta(o.getIdTipCta().toString(), null != o.getNomCta() ? o.getNomCta().trim() : ""));
 		});
 
 		return response;
+	}
+
+	@Override
+	public DTOBasTTipCta mapperEntitieToDto(Bas_T_Tip_Cta o) {
+
+		return new DTOBasTTipCta(o.getIdTipCta().toString(), null != o.getNomCta() ? o.getNomCta().trim() : "");
 	}
 
 }

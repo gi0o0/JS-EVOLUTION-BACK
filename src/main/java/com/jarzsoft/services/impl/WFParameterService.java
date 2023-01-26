@@ -13,6 +13,7 @@ import com.jarzsoft.dto.DTOWFParameterEst;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWFParameterStepAut;
 import com.jarzsoft.dto.DTOWFParameterStepDoc;
+import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Est;
 import com.jarzsoft.entities.W_Wf_EstPK;
 import com.jarzsoft.entities.W_Wf_Pasos;
@@ -137,8 +138,9 @@ public class WFParameterService implements IWFParameterService {
 					doc.setIdWf(o.getIdWf());
 					doc.setIdPaso(o.getIdPaso());
 					doc.setUsuCrea((o.getUsuCrea()));
-					doc.setIndObligatorio((null!=doc.getIndObligatorio()&&doc.getIndObligatorio().equals("true"))?"S":"N");
-					doc.setEnvRec((null!=doc.getEnvRec()&&doc.getEnvRec().equals("true"))?"S":"N");
+					doc.setIndObligatorio(
+							(null != doc.getIndObligatorio() && doc.getIndObligatorio().equals("true")) ? "S" : "N");
+					doc.setEnvRec((null != doc.getEnvRec() && doc.getEnvRec().equals("true")) ? "S" : "N");
 					daoStepDoc.save(mapperStepDoc.mapperDtoToDao(doc));
 				}
 			}
@@ -227,10 +229,16 @@ public class WFParameterService implements IWFParameterService {
 
 	@Override
 	public DTOWFParameterStepAut validStepByUser(String wf, String step, String user) {
-		Boolean userHasStep=daoStepAut.findByUserByStep(wf, step, user);
-		if(null==userHasStep)
+		Boolean userHasStep = daoStepAut.findByUserByStep(wf, step, user);
+		if (null == userHasStep)
 			throw new UnauthorizedException(Constantes.MESSAGE_USER_NO_FOUND);
 		return new DTOWFParameterStepAut();
+	}
+
+	@Override
+	public List<DTOWalletUser> getPortafolio(String codTer) {
+		return mapperStep.mapperEntitiePortafolioToDto(dao.findPortafolio(codTer));
+
 	}
 
 }

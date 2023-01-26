@@ -3,6 +3,7 @@ package com.jarzsoft.dto;
 public class DTOWFCodeu {
 
 	private String doctip;
+	private String codTer;
 	private String nitter;
 	private String nomTer;
 	private String priApellido;
@@ -558,6 +559,14 @@ public class DTOWFCodeu {
 
 	public void setCargoWf(String cargoWf) {
 		this.cargoWf = cargoWf;
+	}
+
+	public String getCodTer() {
+		return codTer;
+	}
+
+	public void setCodTer(String codTer) {
+		this.codTer = codTer;
 	}
 
 }

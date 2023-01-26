@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOFilesUser;
+import com.jarzsoft.dto.DTOWfDocs;
 import com.jarzsoft.repository.ParametroRepository;
 import com.jarzsoft.service.IFilesUserService;
 
@@ -74,21 +75,52 @@ public class FilesUserService implements IFilesUserService {
 	}
 
 	@Override
-	public Boolean create(String user, String solicitud, String id, String encode) {
+	public Boolean create(String idSolicitud, String step, String cedula, DTOWfDocs doc) {
 		Boolean out = false;
 
 		try {
-			id=id.replace(" ", "-");
+
 			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
-			byte[] decodedImg = Base64.getDecoder().decode(encode.split(",")[1].getBytes(StandardCharsets.UTF_8));
-			Path destinationFile = Paths.get(path, user+"_"+solicitud+"_"+id);
+			byte[] decodedImg = Base64.getDecoder()
+					.decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
+			Path destinationFile = Paths.get(path, idSolicitud + "_" + step + "_" + cedula + "_" + doc.getIdDocumento()
+					+ "_" + doc.getNomDocumento() + ".pdf");
 			Files.write(destinationFile, decodedImg);
 			out = true;
-		} catch (IOException e) {		
+		} catch (IOException e) {
 			throw new RuntimeException(e.getMessage());
 		}
 
 		return out;
 	}
+
+	@Override
+	public List<DTOFilesUser> listAllByIdRedAndStep(String solicitud, String step) {
+		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+		File folder = new File(path);
+		List<DTOFilesUser> files = new ArrayList<>();
+		for (File file : folder.listFiles()) {
+			String name = file.getName();
+			String nameIds[] = name.split("_");
+			if (!file.isDirectory()) {
+				if (nameIds[0].startsWith(solicitud)) {
+					if (nameIds[1].equals(step)) {
+						byte[] fileContent = null;
+						try {
+							fileContent = FileUtils.readFileToByteArray(new File(file.getAbsolutePath()));
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						String encodedString = Base64.getEncoder().encodeToString(fileContent);
+						files.add(new DTOFilesUser(name,encodedString, nameIds[0], nameIds[1], nameIds[2]));
+					}
+				}
+			}
+		}
+		return files;
+
+	}
+
+
 
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jarzsoft.dto.DTOCiudades;
+import com.jarzsoft.dto.DTOCiudad;
 import com.jarzsoft.service.ICiudadesService;
 import com.jarzsoft.util.Constantes;
 
@@ -28,7 +28,7 @@ public class CiudadesController {
 	}
 
 	@GetMapping(value = "/{id_pais}/{id_deptos}", produces = "application/json")
-	public List<DTOCiudades> listarById(@PathVariable("id_pais") Integer idPais,
+	public List<DTOCiudad> listarById(@PathVariable("id_pais") Integer idPais,
 			@PathVariable("id_deptos") Integer idDeptos) {
 		return ciudadesService.getAll(idPais, idDeptos);
 	}

@@ -22,4 +22,10 @@ public class BaentidadMapper implements IBaentidadMapper {
 		return response;
 	}
 
+	@Override
+	public DTOBaentidad mapperEntitieToDto(Baentida o) {
+
+		return new DTOBaentidad(o.getCodEnt(), null != o.getNoment() ? o.getNoment().trim() : "");
+	}
+
 }

@@ -30,4 +30,9 @@ public class BaentidadService implements IBaEntidadService {
 		return baentidadMapper.mapperList(baentidadRepository.findAll());
 	}
 
+	@Override
+	public DTOBaentidad getBaentidad(String id) {
+		return baentidadMapper.mapperEntitieToDto(baentidadRepository.findById(id).get());
+	}
+
 }

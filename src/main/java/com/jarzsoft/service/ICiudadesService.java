@@ -2,10 +2,12 @@ package com.jarzsoft.service;
 
 import java.util.List;
 
-import com.jarzsoft.dto.DTOCiudades;
+import com.jarzsoft.dto.DTOCiudad;
 
 public interface ICiudadesService {
 
-	List<DTOCiudades> getAll(Integer idPais, Integer idDeptos);
+	List<DTOCiudad> getAll(Integer idPais, Integer idDeptos);
+	
+	DTOCiudad getCiudad(Integer idCiudad);
 
 }
