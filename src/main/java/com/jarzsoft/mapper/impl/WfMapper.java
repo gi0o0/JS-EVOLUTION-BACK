@@ -138,7 +138,7 @@ public class WfMapper implements IWfMapper {
 
 		if (null != foda) {
 			out.setEntitie(Comunes.stringToInt((foda.getClaAsoci())));
-			out.setFecIngEmpresa(foda.getFecIngEmpresa().substring(0, 10));
+			out.setFecIngEmpresa(foda.getFecIngEmpresa()!=null&&!"".equals(foda.getFecIngEmpresa())?foda.getFecIngEmpresa().substring(0, 10):"");
 			out.setCodProfe(Comunes.stringToInt((foda.getCodProfe())));
 			out.setNomCony(Comunes.stringClean(foda.getNomCony()));
 			out.setEmailConyuge(Comunes.stringClean(foda.getEmailConyuge()));

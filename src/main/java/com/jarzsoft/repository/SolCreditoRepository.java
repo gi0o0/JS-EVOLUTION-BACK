@@ -15,7 +15,7 @@ import com.jarzsoft.entities.SolCredito;
 @Repository
 public interface SolCreditoRepository extends JpaRepository<SolCredito, Integer> {
 
-	@Query(value = "SELECT * FROM SOL_CREDITO WHERE codter = :codTer AND tipo_credito= :tipoCredito", nativeQuery = true)
+	@Query(value = "SELECT * FROM SOL_CREDITO WHERE codter = :codTer AND tipo_credito= :tipoCredito And estado IN ('S','P','I','E')", nativeQuery = true)
 	SolCredito findByNiter(@Param("codTer") String codTer, @Param("tipoCredito") String tipoCredito);
 	
 	@Query(value = "SELECT * FROM SOL_CREDITO WHERE NUMERO_RADICACION = :NumRad", nativeQuery = true)

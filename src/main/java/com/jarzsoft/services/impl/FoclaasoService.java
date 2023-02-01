@@ -46,4 +46,9 @@ public class FoclaasoService implements IFoclaasoService {
 		return foclaasoMapper.mapperEntitieToDto(foclaasoRepository.findById(id).get());
 	}
 
+	@Override
+	public List<DTOFoclaaso> getAllCompanies() {
+		return foclaasoMapper.mapperList(foclaasoRepository.findAll());
+	}
+
 }

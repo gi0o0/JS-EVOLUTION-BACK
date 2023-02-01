@@ -49,7 +49,7 @@ public class Constantes {
 	public static final String MESSAGE_DEFAULT_ERROR = "Error General. Contactar al Administrador del Sistema.";
 	public static final String MESSAGE_PERSIST_ERROR = "Error Actualizando información. Verifique la información ingresada o contactar al Administrador del Sistema.";
 	
-	public static final String MESSAGE_USER_WITH_SANCTION = "Se ha encontrado registros en las listas negras";
+	public static final String MESSAGE_USER_WITH_SANCTION = "El solicitante se encuentra registrado en listas internas solicitud queda bloqueada. ";
 
 	public static String SHA256 = "SHA-256";
 

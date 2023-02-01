@@ -32,4 +32,9 @@ public class FoclaasoController {
 		return foclaasoService.getCompaniesByUser(user);
 	}
 
+	@GetMapping(value = "/all", produces = "application/json")
+	public List<DTOFoclaaso> getAllcompanies() {
+		return foclaasoService.getAllCompanies();
+	}
+
 }

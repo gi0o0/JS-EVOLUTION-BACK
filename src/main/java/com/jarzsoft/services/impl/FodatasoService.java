@@ -2,7 +2,6 @@ package com.jarzsoft.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.jarzsoft.dto.DTOFodataso;
 import com.jarzsoft.entities.Fodataso;
 import com.jarzsoft.mapper.IFodatasoMapper;

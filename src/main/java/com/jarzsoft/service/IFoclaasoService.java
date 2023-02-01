@@ -11,4 +11,6 @@ public interface IFoclaasoService {
 
 	DTOFoclaaso getCompaniesByID(BigInteger id);
 
+	List<DTOFoclaaso> getAllCompanies();
+
 }

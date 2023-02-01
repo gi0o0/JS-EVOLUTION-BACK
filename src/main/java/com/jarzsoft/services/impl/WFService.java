@@ -158,7 +158,14 @@ public class WFService implements IWFService {
 	/*	if (null != f.getEmpresa() && !"".equals(f.getEmpresa())) {
 			consulta += " AND fecha_soli = '" + f.getFechaInit() + "'";
 		}*/
+		
+		if (null != f.getEstado() && !"".equals(f.getEstado())) {
+			consulta += " AND estado = '" + f.getEstado() + "'";
+		}
 
+
+		
+		
 		Query query = entityManager.createNativeQuery(consulta);
 
 		List<DTOWF> out = new ArrayList<>();
