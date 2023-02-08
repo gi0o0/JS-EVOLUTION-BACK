@@ -1,5 +1,8 @@
 package com.jarzsoft.mapper.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOTerceros;
@@ -49,7 +52,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setTipVivienda(o.getTipVivienda());
 		out.setDocTip(o.getDocTip());
 		out.setNitTer(o.getNitTer());
-		out.setNomTer(o.getPriApellido()+" "+o.getSegApellido()+" "+o.getNomTercero() );
+		out.setNomTer(o.getPriApellido() + " " + o.getSegApellido() + " " + o.getNomTercero());
 		out.setParamId(o.getParamId());
 		out.setNomCony(o.getNomCony());
 		out.setCelConyuge(o.getCelConyuge());
@@ -61,7 +64,7 @@ public class TercerosMapper implements ITercerosMapper {
 
 	@Override
 	public DTOTerceros mapperDaoToDtoUser(DTOWF o) {
-		DTOTerceros out=new DTOTerceros();
+		DTOTerceros out = new DTOTerceros();
 		out.setAntiEmpresa(o.getAntiEmpresa());
 		out.setBarrio(o.getBarrio());
 		out.setBarrioTra(o.getBarrioTra());
@@ -73,13 +76,13 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setDirTerpal(o.getDirTerpal());
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxTer());
-		out.setFeExp(o.getFeExp());		
-		out.setFecExpDoc(o.getFecCump());	
+		out.setFeExp(o.getFeExp());
+		out.setFecExpDoc(o.getFecCump());
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(o.getLugarDoc());
 		out.setMailTer(o.getMailTer());
-		out.setNomTercero(o.getNomTer() );
+		out.setNomTercero(o.getNomTer());
 		out.setNumCta(o.getNumCta());
 		out.setPaisCodigo(o.getPaisCodigo());
 		out.setPaisDirTrabajo(o.getPaisDirTrabajo());
@@ -103,7 +106,7 @@ public class TercerosMapper implements ITercerosMapper {
 
 	@Override
 	public DTOTerceros mapperDaoToDtoCodeo(DTOWF o) {
-		DTOTerceros out=new DTOTerceros();
+		DTOTerceros out = new DTOTerceros();
 		out.setAntiEmpresa(o.getCodeu().getAntiEmpresa());
 		out.setBarrio(o.getCodeu().getBarrio());
 		out.setBarrioTra(o.getCodeu().getBarrioTra());
@@ -112,13 +115,13 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setCodiDept(o.getCodeu().getCodiDept());
 		out.setDeptDirTrabajo(o.getCodeu().getDeptDirTrabajo());
 		out.setDirTeralt(o.getCodeu().getDirTeralt());
-		out.setDirTerpal(o.getCodeu().getDirTerpal());		
+		out.setDirTerpal(o.getCodeu().getDirTerpal());
 		out.setFaxter(o.getCodeu().getFaxTer());
 		out.setIdConyuge(o.getCodeu().getIdConyuge());
 		out.setIndContrato(o.getCodeu().getIndContrato());
 		out.setLugarDoc(o.getCodeu().getLugarDoc());
 		out.setMailTer(o.getCodeu().getMailTer());
-		out.setNomTercero(o.getCodeu().getNomTer());		
+		out.setNomTercero(o.getCodeu().getNomTer());
 		out.setPaisCodigo(o.getCodeu().getPaisCodigo());
 		out.setPaisDirTrabajo(o.getCodeu().getPaisDirTrabajo());
 		out.setParamText(o.getCodeu().getParamText());
@@ -126,7 +129,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setIndSecEconomico("10");
 		out.setPriApellido(o.getCodeu().getPriApellido());
 		out.setSegApellido(o.getCodeu().getSegApellido());
-		out.setTelter(o.getCodeu().getTelTer());		
+		out.setTelter(o.getCodeu().getTelTer());
 		out.setTipVivienda(o.getCodeu().getTipVivienda());
 		out.setDocTip(o.getCodeu().getDoctip());
 		out.setNitTer(o.getCodeu().getNitter());
@@ -134,18 +137,17 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setCelConyuge(o.getCodeu().getCelConyuge());
 		out.setEmailConyuge(o.getCodeu().getEmailConyuge());
 		out.setFeExp(o.getCodeu().getFeExp());
-		
+
 		return out;
 	}
 
 	@Override
 	public DTOTerceros mapperEntitieToDao(Terceros o) {
-		
 
 		if (null == o) {
 			throw new PageNoFoundException(Constantes.MESSAGE_USER_NO_FOUND);
 		}
-		
+
 		DTOTerceros out = new DTOTerceros();
 		out.setCodTer(o.getCodTer());
 		out.setAntiEmpresa(o.getAntiEmpresa());
@@ -179,13 +181,28 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setTipCta(o.getTipCta());
 		out.setTipVivienda(o.getTipVivienda());
 		out.setDocTip(o.getDocTip());
-		if(o.getDocTip().indexOf(".")>0) {
-			out.setDocTip(o.getDocTip().substring(0,o.getDocTip().indexOf(".")));
+		if (o.getDocTip().indexOf(".") > 0) {
+			out.setDocTip(o.getDocTip().substring(0, o.getDocTip().indexOf(".")));
 		}
-		
+
 		out.setNitTer(Comunes.stringClean(o.getNitTer()));
 		out.setIndSecEconomico(o.getIndSecEconomico());
 		return out;
+	}
+
+	@Override
+	public List<DTOTerceros> mapperList(List<Terceros> list) {
+
+		List<DTOTerceros> response = new ArrayList<DTOTerceros>();
+		list.stream().forEach(o -> {
+			response.add(new DTOTerceros(o.getCodTer(), o.getNomTercero(), o.getPriApellido(), o.getSegApellido(),
+					o.getLugarDoc(), o.getMailTer(), o.getDirTerpal(), o.getTelter(), o.getTelter1(), o.getTelter2(),
+					o.getFeExp(), o.getPaisCodigo(), o.getCodiDept(), o.getCodiCiud(), o.getBarrio(),
+					o.getAntiEmpresa(), o.getTipVivienda(), "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
+
+		});
+
+		return response;
 	}
 
 }

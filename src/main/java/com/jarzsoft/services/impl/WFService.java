@@ -149,23 +149,31 @@ public class WFService implements IWFService {
 
 		String consulta = "select DISTINCT s.numero_radicacion,s.estado from w_wf_mov w, SOL_CREDITO s where w.id_wf = 4 and w.numero_radicacion = s.numero_radicacion ";
 
+	
+		if (null != f.getEntitie() && !"".equals(f.getEntitie())) {
+			consulta = " select s.* from SOL_CREDITO s ,FODATASO f WHERE s.codter = f.cod_ter  and f.cla_asoci ='"
+					+ f.getEntitie() + "'";
+		}
+
 		if (null != f.getFechaInit() && !"".equals(f.getFechaInit()) && null != f.getFechaFin()
 				&& !"".equals(f.getFechaFin())) {
 			consulta += " AND fecha_soli BETWEEN CONVERT(DATETIME, '" + f.getFechaInit()
 					+ " 00:00:00')  and CONVERT(DATETIME, '" + f.getFechaFin() + " 23:59:59') ";
 		}
 
-	/*	if (null != f.getEmpresa() && !"".equals(f.getEmpresa())) {
-			consulta += " AND fecha_soli = '" + f.getFechaInit() + "'";
-		}*/
-		
 		if (null != f.getEstado() && !"".equals(f.getEstado())) {
 			consulta += " AND estado = '" + f.getEstado() + "'";
 		}
 
+		if (null != f.getAsesor() && !"".equals(f.getAsesor())) {
+			consulta += " AND codter_asesor = '" + f.getAsesor() + "'";
+		}
+		
+		if (null != f.getSector() && !"".equals(f.getSector())) {
+			consulta = " select s.* from SOL_CREDITO s ,FODATASO f where s.codter = f.cod_ter  and f.cla_asoci in (select cod_inter from foclaaso where codsec ='"+ f.getSector() + "')";
+		}
 
-		
-		
+
 		Query query = entityManager.createNativeQuery(consulta);
 
 		List<DTOWF> out = new ArrayList<>();

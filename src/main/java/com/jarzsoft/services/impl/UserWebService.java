@@ -7,10 +7,12 @@ import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOW_Bas_Usuario;
 import com.jarzsoft.entities.W_Bas_Usuario;
 import com.jarzsoft.mapper.IW_Bas_UsuarioMapper;
 import com.jarzsoft.repository.W_Bas_UsuarioRepository;
+import com.jarzsoft.service.ITercerosService;
 import com.jarzsoft.service.IUserService;
 import com.jarzsoft.service.IUserWebService;
 import com.jarzsoft.util.Constantes;
@@ -24,11 +26,15 @@ public class UserWebService implements IUserWebService {
 
 	private final IUserService usuarioService;
 
-	public UserWebService(W_Bas_UsuarioRepository dao, IW_Bas_UsuarioMapper mapper, IUserService usuarioService) {
+	private final ITercerosService tercerosService;
+
+	public UserWebService(W_Bas_UsuarioRepository dao, IW_Bas_UsuarioMapper mapper, IUserService usuarioService,
+			ITercerosService tercerosService) {
 		super();
 		this.dao = dao;
 		this.mapper = mapper;
 		this.usuarioService = usuarioService;
+		this.tercerosService = tercerosService;
 
 	}
 
@@ -90,6 +96,12 @@ public class UserWebService implements IUserWebService {
 	@Override
 	public DTOW_Bas_Usuario getUserById(String user) {
 		return mapper.mapperDaoToDto(dao.findByUserWeb(user).get());
+	}
+
+	@Override
+	public List<DTOTerceros> getAsesores() {
+		return this.tercerosService.getAsesores();
+
 	}
 
 }

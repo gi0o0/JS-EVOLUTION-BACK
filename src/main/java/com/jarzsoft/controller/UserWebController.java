@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOW_Bas_Usuario;
 import com.jarzsoft.service.IUserWebService;
 import com.jarzsoft.util.Constantes;
@@ -36,6 +37,11 @@ public class UserWebController {
 	@GetMapping(produces = "application/json")
 	public List<DTOW_Bas_Usuario> listar() {
 		return UserWebService.listAllObj();
+	}
+
+	@GetMapping(value = "/advisers", produces = "application/json")
+	public List<DTOTerceros> getByNumRadAndStep() {
+		return UserWebService.getAsesores();
 	}
 
 	@PostMapping(produces = "application/json", consumes = "application/json")

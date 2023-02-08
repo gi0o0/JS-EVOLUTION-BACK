@@ -1,6 +1,7 @@
 package com.jarzsoft.repository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -22,12 +23,14 @@ public interface TercerosRepository extends JpaRepository<Terceros, Long> {
 
 	@Query(value = "SELECT * FROM Terceros WHERE nitter = :nitter", nativeQuery = true)
 	Terceros findByNiter(@Param("nitter") String nitter);
-	
+
 	@Query(value = "SELECT * FROM Terceros WHERE codter = :codter", nativeQuery = true)
 	Terceros findByCodter(@Param("codter") String codter);
-	
+
 	@Query(value = "SELECT  max (codter ) +1 FROM Terceros", nativeQuery = true)
 	int getKey();
-	
+
+	@Query(value = "SELECT * FROM terceros , fotabase f WHERE codter =f.codter_asesor ", nativeQuery = true)
+	List<Terceros> getAsesores();
 
 }

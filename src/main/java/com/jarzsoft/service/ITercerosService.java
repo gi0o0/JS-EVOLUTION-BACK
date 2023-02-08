@@ -1,5 +1,7 @@
 package com.jarzsoft.service;
 
+import java.util.List;
+
 import com.jarzsoft.dto.DTOTerceros;
 
 public interface ITercerosService {
@@ -7,7 +9,9 @@ public interface ITercerosService {
 	DTOTerceros create(DTOTerceros o, String user);
 
 	DTOTerceros findByNiter(String nitTer);
-	
+
 	DTOTerceros findByCodter(String codTer);
+
+	List<DTOTerceros> getAsesores();
 
 }

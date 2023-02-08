@@ -19,6 +19,7 @@ import com.jarzsoft.service.IWWfMovService;
 import com.jarzsoft.util.Constantes;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
+import com.jarzsoft.util.EnumSubSteps;
 import com.jarzsoft.util.SendEmail;
 
 @Component
@@ -63,12 +64,24 @@ public class WFStep_8Service implements IStepStrategy {
 	@Override
 	public DTOWF apply(DTOWF o, String user) {
 
+		if (o.getIdSubStep().equals(EnumSubSteps.TIPO_SUB_PASO.SUB_STEP_1.getName())) {
+			return callReports(o, user);
+		}
+		if (o.getIdSubStep().equals(EnumSubSteps.TIPO_SUB_PASO.SUB_STEP_2.getName())) {
+			return createStep(o, user);
+		}
+
+		return o;
+
+	}
+
+	private DTOWF createStep(DTOWF o, String user) {
 		DTOSolCredito credito = solCreditoService.findBynumeroRadicacion(o.getNumeroRadicacion());
 		if (null != credito) {
 
 			if (null != o.getFiles()) {
 				for (int i = 0; i < o.getFiles().size(); i++) {
-					serviceFile.create(o.getNumeroRadicacion() + "", getType() , o.getNitter(), o.getFiles().get(i));
+					serviceFile.create(o.getNumeroRadicacion() + "", getType(), o.getNitter(), o.getFiles().get(i));
 				}
 			}
 
@@ -76,15 +89,13 @@ public class WFStep_8Service implements IStepStrategy {
 			credito.setEstado(EnumStates.TIPO_ESTADO.STATE_18.getName());
 			credito.setObserva(o.getComments());
 			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_8.getName(), o.getIsUpdate());
-			o.setNextStep(EnumSteps.TIPO_PASO.STEP_8.getName());
-			callReports(o, user);
+			o.setNextStep(EnumSteps.TIPO_PASO.STEP_END.getName());
 
 		} else {
 			throw new PageNoFoundException("Solicitud no Existe");
 		}
 
 		return o;
-
 	}
 
 	@Override
@@ -92,7 +103,7 @@ public class WFStep_8Service implements IStepStrategy {
 		return EnumSteps.TIPO_PASO.STEP_8.getName();
 	}
 
-	private Boolean callReports(DTOWF o, String user) {
+	private DTOWF callReports(DTOWF o, String user) {
 		String path = parameterService.getSingleById("PATH", "FILES_USERS").getValue();
 		ArrayList<String> reportes = new ArrayList<>();
 		Constantes constantes = new Constantes();
@@ -105,7 +116,7 @@ public class WFStep_8Service implements IStepStrategy {
 		List<Object[]> usuario = usuarioRepository.findByUsuario(user);
 		sendEmail.Send((String) usuario.get(0)[1], Constantes.EMAIL_ASUNTO, Constantes.EMAIL_TEXTO, reportes);
 
-		return true;
+		return o;
 	}
 
 }

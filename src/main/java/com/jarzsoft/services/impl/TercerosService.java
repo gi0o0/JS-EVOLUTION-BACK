@@ -69,4 +69,9 @@ public class TercerosService implements ITercerosService {
 		return mapper.mapperEntitieToDao(tercerosRepository.findByCodter(codTer));
 	}
 
+	@Override
+	public List<DTOTerceros> getAsesores() {
+		return mapper.mapperList(tercerosRepository.getAsesores());
+	}
+
 }
