@@ -10,11 +10,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.jarzsoft.dto.DTOBaentidad;
 import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFFinancialInfo;
+import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.Foclaaso;
 import com.jarzsoft.entities.Fotipcre;
+import com.jarzsoft.entities.WWfMov;
 import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.ISolCreditoMapper;
 import com.jarzsoft.repository.FoclaasoRepository;
@@ -22,11 +25,13 @@ import com.jarzsoft.repository.FotipcreRepository;
 import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
+import com.jarzsoft.service.IWFParameterService;
 import com.jarzsoft.service.IWWfMovService;
 import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
 import com.jarzsoft.util.EnumSubSteps;
+import com.jarzsoft.util.EnumWF;
 
 @Component
 public class WFStep_3Service implements IStepStrategy {
@@ -43,10 +48,12 @@ public class WFStep_3Service implements IStepStrategy {
 
 	private final IFilesUserService serviceFile;
 
+	private final IWFParameterService wFParameterService;
+
 	@Autowired
 	public WFStep_3Service(IWWfMovService wWfMovService, FotipcreRepository fotipcreRepository,
 			FoclaasoRepository foclaasoRepository, ISolCreditoService solCreditoService, IFilesUserService serviceFile,
-			ISolCreditoMapper solCreditoMapper) {
+			ISolCreditoMapper solCreditoMapper, IWFParameterService wFParameterService) {
 		super();
 
 		this.wWfMovService = wWfMovService;
@@ -56,6 +63,7 @@ public class WFStep_3Service implements IStepStrategy {
 		this.solCreditoService = solCreditoService;
 		this.serviceFile = serviceFile;
 		this.solCreditoMapper = solCreditoMapper;
+		this.wFParameterService = wFParameterService;
 	}
 
 	@Override
@@ -207,6 +215,20 @@ public class WFStep_3Service implements IStepStrategy {
 
 			String stateMov = EnumStates.TIPO_ESTADO.STATE_9.getName();
 			String stateSol = EnumStates.TIPO_ESTADO.STATE_P.getName();
+
+			List<DTOWalletUser> getPortafolio = wFParameterService.getPortafolio(o.getCodTer());
+			Optional<Object> isWallet = getPortafolio.stream()
+					.filter(c -> c.getEstCredito().equals(EnumStates.TIPO_ESTADO.STATE_C.getName())
+							|| c.getEstCredito().equals(EnumStates.TIPO_ESTADO.STATE_P.getName()))
+					.findFirst().map(c -> true);
+
+			if (isWallet.isPresent()) {
+				if ((Boolean) isWallet.get()) {
+					stateMov = EnumStates.TIPO_ESTADO.STATE_8.getName();
+					stateSol = EnumStates.TIPO_ESTADO.STATE_I.getName();
+				}
+			}
+
 			if (new BigDecimal(o.getFinancial().getCapacidadEndeudamiento()).compareTo(new BigDecimal("0")) < 0) {
 				stateMov = EnumStates.TIPO_ESTADO.STATE_8.getName();
 				stateSol = EnumStates.TIPO_ESTADO.STATE_I.getName();
@@ -218,13 +240,22 @@ public class WFStep_3Service implements IStepStrategy {
 				}
 			}
 
+			WWfMov mov = wWfMovService.findMovByNumRad(o.getNumeroRadicacion(), EnumWF.TIPO_WF.IDWF_4.getName(),
+					EnumSteps.TIPO_PASO.STEP_3.getName());
+			if (null != mov && o.getIsUpdate() && !credito.getEstado().equals(EnumStates.TIPO_ESTADO.STATE_I.getName()))
+				stateSol = credito.getEstado();
+
 			credito.setEstado(stateSol);
 			credito = solCreditoMapper.mapperDaoToDtoFinancial(o, credito);
 			solCreditoService.create(credito);
+
 			credito.setEstado(stateMov);
 			credito.setObserva(o.getComments());
 			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_3.getName(), o.getIsUpdate());
+
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_4.getName());
+			if (stateSol.equals(EnumStates.TIPO_ESTADO.STATE_I.getName()))
+				o.setNextStep(EnumSteps.TIPO_PASO.STEP_I.getName());
 
 		} else {
 			throw new PageNoFoundException("Solicitud no Existe");

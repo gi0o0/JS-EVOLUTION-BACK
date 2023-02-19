@@ -11,13 +11,14 @@ public class DTOWalletUser {
 	private String marcacionn;
 	private String estPersonaDeu;
 	private String estPersonaCoDeu;
+	private String estCredito;
 
 	public DTOWalletUser() {
 		super();
 	}
 
 	public DTOWalletUser(String numeroCredito, String saldoCapital, String saldoK, String indicador, String nomClaaso,
-			String nomClaasoCod, String marcacionn, String estPersonaDeu, String estPersonaCoDeu) {
+			String nomClaasoCod, String marcacionn, String estPersonaDeu, String estPersonaCoDeu, String estCredito) {
 		super();
 		this.numeroCredito = numeroCredito;
 		this.saldoCapital = saldoCapital;
@@ -28,6 +29,7 @@ public class DTOWalletUser {
 		this.marcacionn = marcacionn;
 		this.estPersonaDeu = estPersonaDeu;
 		this.estPersonaCoDeu = estPersonaCoDeu;
+		this.estCredito = estCredito;
 	}
 
 	public String getNumeroCredito() {
@@ -100,6 +102,14 @@ public class DTOWalletUser {
 
 	public void setEstPersonaCoDeu(String estPersonaCoDeu) {
 		this.estPersonaCoDeu = estPersonaCoDeu;
+	}
+
+	public String getEstCredito() {
+		return estCredito;
+	}
+
+	public void setEstCredito(String estCredito) {
+		this.estCredito = estCredito;
 	}
 
 }
