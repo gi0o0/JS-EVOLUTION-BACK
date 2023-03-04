@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import com.jarzsoft.dto.DTOWF;
@@ -31,7 +30,7 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 		return EnumReport.TIPO_REPORTE.REPORT_DECLARACION_JURA.getName();
 	}
 
-	@Async
+	
 	@Override
 	public Boolean create(DTOWF o, String user, String path) {
 

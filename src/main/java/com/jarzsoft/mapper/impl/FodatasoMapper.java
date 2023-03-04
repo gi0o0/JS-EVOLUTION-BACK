@@ -26,6 +26,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setCodEmple(o.getCodEmple());
 		out.setCargoDeuWf(o.getCargoDeuWf());
 		out.setCargoCodWf(o.getCargoCodWf());
+		out.setSexo(o.getSexo());
 		return out;
 	}
 
@@ -44,6 +45,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 			out.setClaAsoci(o.getClaAsoci());
 			out.setCargoDeuWf(o.getCargoDeuWf());
 			out.setCargoCodWf(o.getCargoCodWf());
+			out.setSexo(o.getSexo());
 		}
 		return out;
 	}
@@ -61,7 +63,8 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getEntitie());
 		out.setCodEmple(o.getNitter());
-		out.setCargoDeuWf(o.getCargoWf());		
+		out.setCargoDeuWf(o.getCargoWf());	
+		out.setSexo(o.getSexo());
 		return out;
 	}
 
@@ -77,6 +80,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setNomCony(o.getCodeu().getNomCony());
 		out.setCodEmple(o.getCodeu().getNitter());
 		out.setCargoCodWf(o.getCodeu().getCargoWf());
+		out.setSexo(o.getSexo());
 		return out;
 	}
 

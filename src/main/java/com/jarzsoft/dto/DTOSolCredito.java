@@ -106,6 +106,7 @@ public class DTOSolCredito {
 	private String compraNit4;
 	private String obligacionCartera4;
 	private String perCuota;
+	private String indSolCredito;
 	
 
 	public DTOSolCredito() {
@@ -927,6 +928,14 @@ public class DTOSolCredito {
 
 	public void setPerCuota(String perCuota) {
 		this.perCuota = perCuota;
+	}
+
+	public String getIndSolCredito() {
+		return indSolCredito;
+	}
+
+	public void setIndSolCredito(String indSolCredito) {
+		this.indSolCredito = indSolCredito;
 	}
 	
 	

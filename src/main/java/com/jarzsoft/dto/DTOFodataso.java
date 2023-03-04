@@ -14,6 +14,7 @@ public class DTOFodataso {
 	private String codEmple;
 	private String cargoDeuWf;
 	private String cargoCodWf;
+	private String sexo;
 
 	public DTOFodataso() {
 		super();
@@ -113,6 +114,14 @@ public class DTOFodataso {
 
 	public void setCargoCodWf(String cargoCodWf) {
 		this.cargoCodWf = cargoCodWf;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
 }

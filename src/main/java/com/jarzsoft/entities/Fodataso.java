@@ -54,6 +54,11 @@ public class Fodataso implements Serializable {
 
 	@Column(name = "activo")
 	private String activo;
+	
+	@Column(name = "sexo")
+	private String sexo;
+	
+	
 
 	public Fodataso() {
 	}
@@ -173,5 +178,15 @@ public class Fodataso implements Serializable {
 	public void setActivo(String activo) {
 		this.activo = activo;
 	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	
+	
 
 }

@@ -27,7 +27,15 @@ public class SolCreditoService implements ISolCreditoService {
 
 	@Override
 	public DTOSolCredito create(DTOSolCredito o) {
-		SolCredito credito = findTerByNiter(o.getCodTer(), o.getTipoCredito());
+		
+		SolCredito credito =null;
+		
+		if(o.getNumeroRadicacion()!=null && o.getNumeroRadicacion()>0) {
+			credito = findTerByNumRad(o.getNumeroRadicacion());			
+		}else {
+			credito = findTerByNiter(o.getCodTer(), o.getTipoCredito());
+		}
+		
 
 		if (credito == null) {
 			o.setNumeroRadicacion(solCreditoRepository.getKey());
@@ -48,6 +56,10 @@ public class SolCreditoService implements ISolCreditoService {
 
 	private SolCredito findTerByNiter(String nitTer, String tipoCredito) {
 		return solCreditoRepository.findByNiter(nitTer, tipoCredito);
+	}
+	
+	private SolCredito findTerByNumRad(Integer numRad) {
+		return solCreditoRepository.findByNumRad(numRad+"");
 	}
 
 	@Override

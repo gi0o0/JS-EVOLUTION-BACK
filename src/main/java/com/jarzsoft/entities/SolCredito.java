@@ -379,6 +379,11 @@ public class SolCredito implements Serializable {
 
 	@Column(name = "num_web")
 	private String numWeb;
+	
+	@Column(name = "ind_sol_credito")
+	private String indSolCredito;
+	
+	
 
 	public SolCredito() {
 	}
@@ -1462,5 +1467,15 @@ public class SolCredito implements Serializable {
 	public void setNumWeb(String numWeb) {
 		this.numWeb = numWeb;
 	}
+
+	public String getIndSolCredito() {
+		return indSolCredito;
+	}
+
+	public void setIndSolCredito(String indSolCredito) {
+		this.indSolCredito = indSolCredito;
+	}
+	
+	
 
 }

@@ -146,15 +146,10 @@ public class dd {
 		 * 
 		 * }
 		 */
-		Date now = new Date();
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(now);
-		String year = calendar.get(Calendar.YEAR) + "";
-
-		System.out.println(year.charAt(year.length() - 1));
-
-		System.out.println(calendar.get(Calendar.DAY_OF_MONTH) + "");
-		System.out.println(calendar.get(Calendar.MONTH) + 1 + "");
+		  String s = "/100,00";
+		  
+	        boolean isNumeric = (s != null && s.matches("^\\d+[\\d.]*,?[\\d.]*\\d*$"));
+	        System.out.println("IsNumeric: " + isNumeric);
 
 	}
 

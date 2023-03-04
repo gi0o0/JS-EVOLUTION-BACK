@@ -120,7 +120,7 @@ public class WFService implements IWFService {
 
 		DTOTerceros codeo = null;
 		DTOFodataso fodaCodeo = null;
-		if (null != solCredito.getCodeudor1()) {
+		if (null != solCredito.getCodeudor1() && !solCredito.getCodeudor1().equals("0.0")) {
 			if (!isLight)
 				codeo = tercerosService.findByCodter(solCredito.getCodeudor1());
 			if (!isLight)

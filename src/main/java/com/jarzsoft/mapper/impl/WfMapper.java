@@ -1,7 +1,5 @@
 package com.jarzsoft.mapper.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -144,6 +142,7 @@ public class WfMapper implements IWfMapper {
 			out.setEmailConyuge(Comunes.stringClean(foda.getEmailConyuge()));
 			out.setCelConyuge(Comunes.stringClean(foda.getCelConyuge()));
 			out.setCargoWf(Comunes.stringClean(foda.getCargoDeuWf()));
+			out.setSexo(foda.getSexo()!=null&&!foda.getSexo().equals("0")?foda.getSexo():null);
 		}
 
 		out.setNumeroRadicacion(o.getNumeroRadicacion());
@@ -178,6 +177,7 @@ public class WfMapper implements IWfMapper {
 		out.setVehValVomercial(Comunes.stringToInt(o.getVehValComercial()));
 		out.setNumCta(Comunes.stringClean(o.getNroCuenta()));
 		out.setComments(o.getObserva());
+		out.setIndSolCredito(o.getIndSolCredito());
 		out.setIdStepNow(stepNow+"");
 		
 
@@ -211,22 +211,22 @@ public class WfMapper implements IWfMapper {
 		financial.setOtros_decuentos1(Comunes.validIsNullStringTonumber(o.getOtrosDecuentos1()));
 		financial.setOtros_decuentos2(Comunes.validIsNullStringTonumber(o.getOtrosDecuentos2()));
 		financial.setOtros_decuentos3(Comunes.validIsNullStringTonumber(o.getOtrosDecuentos3()));
-		financial.setCompra_cartera1(Comunes.validIsNullStringTonumber(o.getCompraCartera1()));
-		financial.setEntidad_cartera1(Comunes.validIsNullStringTonumber(o.getEntidadCartera1()));
-		financial.setObligacion_cartera1(Comunes.validIsNullStringTonumber(o.getObligacionCartera1()));
-		financial.setCompra_nit1(Comunes.validIsNullStringTonumber(o.getCompraNit1()));
-		financial.setCompra_cartera2(Comunes.validIsNullStringTonumber(o.getCompraCartera2()));
-		financial.setEntidad_cartera2(Comunes.validIsNullStringTonumber(o.getEntidadCartera2()));
-		financial.setObligacion_cartera2(Comunes.validIsNullStringTonumber(o.getObligacionCartera2()));
-		financial.setCompra_nit2(Comunes.validIsNullStringTonumber(o.getCompraNit2()));
-		financial.setCompra_cartera3(Comunes.validIsNullStringTonumber(o.getCompraCartera3()));
-		financial.setEntidad_cartera3(Comunes.validIsNullStringTonumber(o.getEntidadCartera3()));
-		financial.setObligacion_cartera3(Comunes.validIsNullStringTonumber(o.getObligacionCartera3()));
-		financial.setCompra_nit3(Comunes.validIsNullStringTonumber(o.getCompraNit3()));
-		financial.setCompra_cartera4(Comunes.validIsNullStringTonumber(o.getCompraCartera4()));
-		financial.setEntidad_cartera4(Comunes.validIsNullStringTonumber(o.getEntidadCartera4()));
-		financial.setObligacion_cartera4(Comunes.validIsNullStringTonumber(o.getObligacionCartera4()));
-		financial.setCompra_nit4(Comunes.validIsNullStringTonumber(o.getCompraNit4()));
+		financial.setCompra_cartera1(Comunes.validIsNullNumber(o.getCompraCartera1()));
+		financial.setEntidad_cartera1(Comunes.validIsNullNumber(o.getEntidadCartera1()));
+		financial.setObligacion_cartera1(Comunes.validIsNullNumber(o.getObligacionCartera1()));
+		financial.setCompra_nit1(Comunes.validIsNullNumber(o.getCompraNit1()));
+		financial.setCompra_cartera2(Comunes.validIsNullNumber(o.getCompraCartera2()));
+		financial.setEntidad_cartera2(Comunes.validIsNullNumber(o.getEntidadCartera2()));
+		financial.setObligacion_cartera2(Comunes.validIsNullNumber(o.getObligacionCartera2()));
+		financial.setCompra_nit2(Comunes.validIsNullNumber(o.getCompraNit2()));
+		financial.setCompra_cartera3(Comunes.validIsNullNumber(o.getCompraCartera3()));
+		financial.setEntidad_cartera3(Comunes.validIsNullNumber(o.getEntidadCartera3()));
+		financial.setObligacion_cartera3(Comunes.validIsNullNumber(o.getObligacionCartera3()));
+		financial.setCompra_nit3(Comunes.validIsNullNumber(o.getCompraNit3()));
+		financial.setCompra_cartera4(Comunes.validIsNullNumber(o.getCompraCartera4()));
+		financial.setEntidad_cartera4(Comunes.validIsNullNumber(o.getEntidadCartera4()));
+		financial.setObligacion_cartera4(Comunes.validIsNullNumber(o.getObligacionCartera4()));
+		financial.setCompra_nit4(Comunes.validIsNullNumber(o.getCompraNit4()));
 		out.setFinancial(financial);
 
 		return out;

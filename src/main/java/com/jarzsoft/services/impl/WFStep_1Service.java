@@ -64,7 +64,7 @@ public class WFStep_1Service implements IStepStrategy {
 		String idCodeudor = "";
 		fodatasoService.create(fodatasoMapper.mapperDaoToDto(o, userCredit.getCodTer().toString()));
 
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && o.getCodeu().getNitter()!=null) {
 			DTOTerceros userCodeo = tercerosService.create(tercerosMapper.mapperDaoToDtoCodeo(o), user);
 			idCodeudor = userCodeo.getCodTer().toString();
 			o.getCodeu().setCodTer(idCodeudor);

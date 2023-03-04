@@ -161,10 +161,11 @@ public class WFStep_3Service implements IStepStrategy {
 
 	private BigDecimal getTotalDescuentos(DTOWFFinancialInfo info) {
 		BigDecimal total = new BigDecimal("0");
+		
 		total = info.getSalud().add(info.getPension()).add(info.getLibranza()).add(info.getCuota_sindical())
 				.add(info.getCuota_interna()).add(info.getOtros_decuentos1()).add(info.getOtros_decuentos2())
-				.add(info.getOtros_decuentos3()).add(info.getCompra_cartera1()).add(info.getEntidad_cartera1())
-				.add(info.getObligacion_cartera1());
+				.add(info.getOtros_decuentos3()).add(Comunes.validIsNullNumberEmpty(info.getCompra_cartera1())).add(Comunes.validIsNullNumberEmpty(info.getEntidad_cartera1()))
+				.add(Comunes.validIsNullNumberEmpty(info.getObligacion_cartera1()));
 		return total;
 	}
 
@@ -188,22 +189,22 @@ public class WFStep_3Service implements IStepStrategy {
 		info.setOtros_decuentos1(info.getOtros_decuentos1() != null ? info.getOtros_decuentos1() : ValueDefault);
 		info.setOtros_decuentos2(info.getOtros_decuentos2() != null ? info.getOtros_decuentos2() : ValueDefault);
 		info.setOtros_decuentos3(info.getOtros_decuentos3() != null ? info.getOtros_decuentos3() : ValueDefault);
-		info.setCompra_cartera1(info.getCompra_cartera1() != null ? info.getCompra_cartera1() : ValueDefault);
-		info.setCompra_cartera2(info.getCompra_cartera2() != null ? info.getCompra_cartera2() : ValueDefault);
-		info.setCompra_cartera3(info.getCompra_cartera3() != null ? info.getCompra_cartera3() : ValueDefault);
-		info.setCompra_cartera4(info.getCompra_cartera4() != null ? info.getCompra_cartera4() : ValueDefault);
+		info.setCompra_cartera1(info.getCompra_cartera1() != null ? info.getCompra_cartera1() : ValueDefault+"");
+		info.setCompra_cartera2(info.getCompra_cartera2() != null ? info.getCompra_cartera2() : ValueDefault+"");
+		info.setCompra_cartera3(info.getCompra_cartera3() != null ? info.getCompra_cartera3() : ValueDefault+"");
+		info.setCompra_cartera4(info.getCompra_cartera4() != null ? info.getCompra_cartera4() : ValueDefault+"");
 		info.setObligacion_cartera1(
-				info.getObligacion_cartera1() != null ? info.getObligacion_cartera1() : ValueDefault);
+				info.getObligacion_cartera1() != null ? info.getObligacion_cartera1() : ValueDefault+"");
 		info.setObligacion_cartera2(
-				info.getObligacion_cartera2() != null ? info.getObligacion_cartera2() : ValueDefault);
+				info.getObligacion_cartera2() != null ? info.getObligacion_cartera2() : ValueDefault+"");
 		info.setObligacion_cartera3(
-				info.getObligacion_cartera3() != null ? info.getObligacion_cartera3() : ValueDefault);
+				info.getObligacion_cartera3() != null ? info.getObligacion_cartera3() : ValueDefault+"");
 		info.setObligacion_cartera4(
-				info.getObligacion_cartera4() != null ? info.getObligacion_cartera4() : ValueDefault);
-		info.setEntidad_cartera1(info.getEntidad_cartera1() != null ? info.getEntidad_cartera1() : ValueDefault);
-		info.setEntidad_cartera2(info.getEntidad_cartera2() != null ? info.getEntidad_cartera2() : ValueDefault);
-		info.setEntidad_cartera3(info.getEntidad_cartera3() != null ? info.getEntidad_cartera3() : ValueDefault);
-		info.setEntidad_cartera4(info.getEntidad_cartera4() != null ? info.getEntidad_cartera4() : ValueDefault);
+				info.getObligacion_cartera4() != null ? info.getObligacion_cartera4() : ValueDefault+"");
+		info.setEntidad_cartera1(info.getEntidad_cartera1() != null ? info.getEntidad_cartera1() : ValueDefault+"");
+		info.setEntidad_cartera2(info.getEntidad_cartera2() != null ? info.getEntidad_cartera2() : ValueDefault+"");
+		info.setEntidad_cartera3(info.getEntidad_cartera3() != null ? info.getEntidad_cartera3() : ValueDefault+"");
+		info.setEntidad_cartera4(info.getEntidad_cartera4() != null ? info.getEntidad_cartera4() : ValueDefault+"");
 
 		return info;
 	}

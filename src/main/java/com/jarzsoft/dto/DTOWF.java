@@ -83,6 +83,8 @@ public class DTOWF {
 	private String comments;
 	private String token;
 	private String estado;
+	private String indSolCredito;
+	private String sexo;
 	private List<DTOWfDocs> files;
 	private Boolean isRequiredFiles;
 	private String prefixFile;
@@ -839,5 +841,23 @@ public class DTOWF {
 	public void setCodTer(String codTer) {
 		this.codTer = codTer;
 	}
+
+	public String getIndSolCredito() {
+		return indSolCredito;
+	}
+
+	public void setIndSolCredito(String indSolCredito) {
+		this.indSolCredito = indSolCredito;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	
+	
 
 }
