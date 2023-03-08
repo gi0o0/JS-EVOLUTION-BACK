@@ -42,6 +42,8 @@ public class DTOWFFinancialInfo {
 	private String valorFuturo;
 	private String capacidadEndeudamiento;
 	private String valorCuotaEstimada;
+	private String disponible;
+	private String valorDesembolso;
 
 	public DTOWFFinancialInfo(BigDecimal sueldo, BigDecimal recargos, BigDecimal bonos, BigDecimal compensatorios,
 			BigDecimal bonificacion, BigDecimal horas_extras, BigDecimal otros_pagos1, BigDecimal otros_pagos2,
@@ -52,7 +54,7 @@ public class DTOWFFinancialInfo {
 			String compra_nit2, String obligacion_cartera2, String compra_cartera3, String entidad_cartera3,
 			String compra_nit3, String obligacion_cartera3, String compra_cartera4, String entidad_cartera4,
 			String compra_nit4, String obligacion_cartera4, String valorFuturo, String capacidadEndeudamiento,
-			String valorCuotaEstimada) {
+			String valorCuotaEstimada, String disponible, String valorDesembolso) {
 		super();
 		this.sueldo = sueldo;
 		this.recargos = recargos;
@@ -90,6 +92,8 @@ public class DTOWFFinancialInfo {
 		this.valorFuturo = valorFuturo;
 		this.capacidadEndeudamiento = capacidadEndeudamiento;
 		this.valorCuotaEstimada = valorCuotaEstimada;
+		this.disponible = disponible;
+		this.valorDesembolso = valorDesembolso;
 	}
 
 	public DTOWFFinancialInfo() {
@@ -383,6 +387,22 @@ public class DTOWFFinancialInfo {
 
 	public void setValorCuotaEstimada(String valorCuotaEstimada) {
 		this.valorCuotaEstimada = valorCuotaEstimada;
+	}
+
+	public String getDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(String disponible) {
+		this.disponible = disponible;
+	}
+
+	public String getValorDesembolso() {
+		return valorDesembolso;
+	}
+
+	public void setValorDesembolso(String valorDesembolso) {
+		this.valorDesembolso = valorDesembolso;
 	}
 
 }

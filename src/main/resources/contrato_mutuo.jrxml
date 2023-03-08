@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="598"/>
+	<property name="ireport.y" value="602"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -786,6 +786,20 @@ Es reentendido que la presente orden de LIBRANZA no me (nos) libera de la obliga
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{telTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="309" y="602" width="161" height="9" uuid="4b3f029e-fc6a-4624-8430-af6bd3e77cf3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="308" y="613" width="76" height="9" uuid="2176d5b8-2de6-4cfd-9279-261628c6ba08"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>
