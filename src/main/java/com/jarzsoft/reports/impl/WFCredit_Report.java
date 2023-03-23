@@ -55,7 +55,6 @@ public class WFCredit_Report implements IReportStrategy {
 		return EnumReport.TIPO_REPORTE.REPORT_CREDIT.getName();
 	}
 
-
 	@Override
 	public Boolean create(DTOWF o, String user, String path) {
 		if (createPage1(o, user, path) && createPage2(o, user, path)) {
@@ -67,37 +66,39 @@ public class WFCredit_Report implements IReportStrategy {
 	private Boolean createPage2(DTOWF o, String user, String path) {
 
 		Map<String, Object> param = new HashMap<String, Object>();
-		param.put("idConyuge_codeu", o.getCodeu().getIdConyuge());
-		param.put("nomCony_codeu", o.getCodeu().getNomCony());
-		param.put("emailConyuge_codeu", o.getCodeu().getEmailConyuge());
-		param.put("celConyuge_codeu", o.getCodeu().getCelConyuge());
-		param.put("refNombre1_codeu", o.getCodeu().getRefNombre1());
-		param.put("refNombre2_codeu", o.getCodeu().getRefNombre2());
-		param.put("refNombre3_codeu", o.getCodeu().getRefNombre3());
-		param.put("refParen1_codeu", o.getCodeu().getRefParen1());
-		param.put("refParen2_codeu", o.getCodeu().getRefParen2());
-		param.put("refParen3_codeu", o.getCodeu().getRefParen3());
-		param.put("refMail1_codeu", o.getCodeu().getRefMail1());
-		param.put("refMail2_codeu", o.getCodeu().getRefMail2());
-		param.put("refMail3_codeu", o.getCodeu().getRefMail3());
-		param.put("refCel1_codeu", o.getCodeu().getRefCel1());
-		param.put("refCel2_codeu", o.getCodeu().getRefCel2());
-		param.put("refCel3_codeu", o.getCodeu().getRefCel3());
-		param.put("bienNombre_codeu", o.getCodeu().getBienNombre());
-		param.put("bienValor_codeu", o.getCodeu().getBienValor());
-		param.put("bienAfecta_codeu", "0".equals(o.getCodeu().getBienAfecta()) ? "X" : "");
-		param.put("bienAfecta_codeuNo", "1".equals(o.getCodeu().getBienAfecta()) ? "X" : "");
-		param.put("bienHipoteca_codeu", "0".equals(o.getCodeu().getBienHipoteca()) ? "X" : "");
-		param.put("bienHipoteca_codeuNo", "1".equals(o.getCodeu().getBienHipoteca()) ? "X" : "");
-		param.put("bienHipAFavor_codeu", o.getCodeu().getBienHipAFavor());
-		param.put("vehMarca_codeu", o.getCodeu().getVehMarca());
-		param.put("vehClase_codeu", o.getCodeu().getVehClase());
-		param.put("vehModelo_codeu", o.getCodeu().getVehModelo());
-		param.put("vehPlaca_codeu", o.getCodeu().getVehPlaca());
-		param.put("vehPignorado_codeu", "o".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
-		param.put("vehPignorado_codeuNo", "1".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
-		param.put("vehPigAFavor_codeu", o.getCodeu().getVehPigAFavor());
-		param.put("vehValVomercial_codeu", o.getCodeu().getVehValVomercial());
+		if (null != o.getCodeu()) {
+			param.put("idConyuge_codeu", o.getCodeu().getIdConyuge());
+			param.put("nomCony_codeu", o.getCodeu().getNomCony());
+			param.put("emailConyuge_codeu", o.getCodeu().getEmailConyuge());
+			param.put("celConyuge_codeu", o.getCodeu().getCelConyuge());
+			param.put("refNombre1_codeu", o.getCodeu().getRefNombre1());
+			param.put("refNombre2_codeu", o.getCodeu().getRefNombre2());
+			param.put("refNombre3_codeu", o.getCodeu().getRefNombre3());
+			param.put("refParen1_codeu", o.getCodeu().getRefParen1());
+			param.put("refParen2_codeu", o.getCodeu().getRefParen2());
+			param.put("refParen3_codeu", o.getCodeu().getRefParen3());
+			param.put("refMail1_codeu", o.getCodeu().getRefMail1());
+			param.put("refMail2_codeu", o.getCodeu().getRefMail2());
+			param.put("refMail3_codeu", o.getCodeu().getRefMail3());
+			param.put("refCel1_codeu", o.getCodeu().getRefCel1());
+			param.put("refCel2_codeu", o.getCodeu().getRefCel2());
+			param.put("refCel3_codeu", o.getCodeu().getRefCel3());
+			param.put("bienNombre_codeu", o.getCodeu().getBienNombre());
+			param.put("bienValor_codeu", o.getCodeu().getBienValor());
+			param.put("bienAfecta_codeu", "0".equals(o.getCodeu().getBienAfecta()) ? "X" : "");
+			param.put("bienAfecta_codeuNo", "1".equals(o.getCodeu().getBienAfecta()) ? "X" : "");
+			param.put("bienHipoteca_codeu", "0".equals(o.getCodeu().getBienHipoteca()) ? "X" : "");
+			param.put("bienHipoteca_codeuNo", "1".equals(o.getCodeu().getBienHipoteca()) ? "X" : "");
+			param.put("bienHipAFavor_codeu", o.getCodeu().getBienHipAFavor());
+			param.put("vehMarca_codeu", o.getCodeu().getVehMarca());
+			param.put("vehClase_codeu", o.getCodeu().getVehClase());
+			param.put("vehModelo_codeu", o.getCodeu().getVehModelo());
+			param.put("vehPlaca_codeu", o.getCodeu().getVehPlaca());
+			param.put("vehPignorado_codeu", "o".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
+			param.put("vehPignorado_codeuNo", "1".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
+			param.put("vehPigAFavor_codeu", o.getCodeu().getVehPigAFavor());
+			param.put("vehValVomercial_codeu", o.getCodeu().getVehValVomercial());
+		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL_PAGE_2, param,
 				EnumReport.TIPO_REPORTE.REPORT_CREDIT2.getName(), o.getNumeroRadicacion() + "");
@@ -180,29 +181,31 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("vehPignoradoNo", "1".equals(o.getVehPignorado()) ? "X" : "");
 		param.put("vehPigAFavor", String.valueOf(o.getVehPigAFavor()));
 		param.put("vehValVomercial", String.valueOf(o.getVehValVomercial()));
-		param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-		param.put("nomTer_codeu", String.valueOf(o.getCodeu().getNomTer()));
-		param.put("lugarDoc_codeu", String.valueOf(o.getCodeu().getFeExp()));
-		param.put("nitter_codeu", String.valueOf(o.getCodeu().getNitter()));
-		param.put("telTer_codeu", String.valueOf(o.getCodeu().getTelTer()));
-		param.put("mailTer_codeu", String.valueOf(o.getCodeu().getMailTer()));
-		param.put("dirTerpal_codeu", String.valueOf(o.getCodeu().getDirTerpal()));
-		param.put("barrio_codeu", String.valueOf(o.getCodeu().getBarrio()));
-		param.put("tipVivienda_codeu", constantes.tipoVivienda.get(o.getCodeu().getTipVivienda()));
-		param.put("antiEmpresa_codeu", String.valueOf(o.getCodeu().getAntiEmpresa()));
-		param.put("telTer_codeu_resi", String.valueOf(o.getCodeu().getTelTer()));
-		param.put("dirTeralt_codeu", String.valueOf(o.getCodeu().getDirTeralt()));
-		param.put("barrioTra_codeu", String.valueOf(o.getCodeu().getBarrioTra()));
-		param.put("deptDirTrabajo_codeu",
-				deptosService.getDep(Integer.parseInt(o.getCodeu().getDeptDirTrabajo())).getName());
-		param.put("ciuDirTrabajo_codeu",
-				ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCiuDirTrabajo())).getName());
-		param.put("faxTer_codeu", String.valueOf(o.getCodeu().getFaxTer()));
-		param.put("cargoWf_codeu", String.valueOf(o.getCodeu().getCargoWf()));
-		param.put("indContrato_codeu",
-				parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getCodeu().getIndContrato()).getValue());
-		param.put("paramText_codeu",
-				parameterService.getSingleById(Constantes.EPS, o.getCodeu().getParamText()).getValue());
+		if (null != o.getCodeu()) {
+			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("nomTer_codeu", String.valueOf(o.getCodeu().getNomTer()));
+			param.put("lugarDoc_codeu", String.valueOf(o.getCodeu().getFeExp()));
+			param.put("nitter_codeu", String.valueOf(o.getCodeu().getNitter()));
+			param.put("telTer_codeu", String.valueOf(o.getCodeu().getTelTer()));
+			param.put("mailTer_codeu", String.valueOf(o.getCodeu().getMailTer()));
+			param.put("dirTerpal_codeu", String.valueOf(o.getCodeu().getDirTerpal()));
+			param.put("barrio_codeu", String.valueOf(o.getCodeu().getBarrio()));
+			param.put("tipVivienda_codeu", constantes.tipoVivienda.get(o.getCodeu().getTipVivienda()));
+			param.put("antiEmpresa_codeu", String.valueOf(o.getCodeu().getAntiEmpresa()));
+			param.put("telTer_codeu_resi", String.valueOf(o.getCodeu().getTelTer()));
+			param.put("dirTeralt_codeu", String.valueOf(o.getCodeu().getDirTeralt()));
+			param.put("barrioTra_codeu", String.valueOf(o.getCodeu().getBarrioTra()));
+			param.put("deptDirTrabajo_codeu",
+					deptosService.getDep(Integer.parseInt(o.getCodeu().getDeptDirTrabajo())).getName());
+			param.put("ciuDirTrabajo_codeu",
+					ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCiuDirTrabajo())).getName());
+			param.put("faxTer_codeu", String.valueOf(o.getCodeu().getFaxTer()));
+			param.put("cargoWf_codeu", String.valueOf(o.getCodeu().getCargoWf()));
+			param.put("indContrato_codeu",
+					parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getCodeu().getIndContrato()).getValue());
+			param.put("paramText_codeu",
+					parameterService.getSingleById(Constantes.EPS, o.getCodeu().getParamText()).getValue());
+		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL, param,
 				EnumReport.TIPO_REPORTE.REPORT_CREDIT.getName(), o.getNumeroRadicacion() + "");

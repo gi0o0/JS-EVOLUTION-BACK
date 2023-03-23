@@ -47,10 +47,13 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 	//	param.put("mailTer", o.getMailTer());
 	//	param.put("dirTerpal", o.getDirTerpal());
 	//	param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());
-		param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-		param.put("nomTer_codeu", o.getCodeu().getNomTer()+" "+ o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+		if (null != o.getCodeu()) {
+			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("nomTer_codeu", o.getCodeu().getNomTer()+" "+ o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("nitter_codeu", o.getCodeu().getNitter());
+		}
+				
 		param.put("lugarDoc_codeu", "");
-		param.put("nitter_codeu", o.getCodeu().getNitter());
 	//	param.put("telTer_codeu", o.getCodeu().getTelTer());
 	//	param.put("mailTer_codeu", o.getCodeu().getMailTer());
 	//	param.put("dirTerpal_codeu", o.getCodeu().getDirTerpal());

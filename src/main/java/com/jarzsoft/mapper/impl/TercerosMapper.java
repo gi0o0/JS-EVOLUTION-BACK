@@ -12,6 +12,7 @@ import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.ITercerosMapper;
 import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.Constantes;
+import com.jarzsoft.util.FechaUtils;
 
 @Service
 public class TercerosMapper implements ITercerosMapper {
@@ -77,7 +78,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxTer());
 		out.setFeExp(o.getFeExp());
-		out.setFecExpDoc(o.getFecCump());
+		out.setFecExpDoc(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFecCump()));
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(o.getLugarDoc());

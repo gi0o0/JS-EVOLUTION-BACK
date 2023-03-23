@@ -30,7 +30,6 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 		return EnumReport.TIPO_REPORTE.REPORT_DECLARACION_RECEP.getName();
 	}
 
-	
 	@Override
 	public Boolean create(DTOWF o, String user, String path) {
 
@@ -39,12 +38,15 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer() + " ");
 		param.put("nitter", o.getNitter());
-		param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-		param.put("nomTer_codeu", o.getCodeu().getNomTer());
-		param.put("lugarDoc_codeu", ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
-		param.put("nitter_codeu", o.getCodeu().getNitter());
-		param.put("telTer_codeu", o.getCodeu().getTelTer());
-		param.put("mailTer_codeu", o.getCodeu().getMailTer());
+		if (null != o.getCodeu()) {
+			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("nomTer_codeu", o.getCodeu().getNomTer());
+			param.put("lugarDoc_codeu",
+					ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
+			param.put("nitter_codeu", o.getCodeu().getNitter());
+			param.put("telTer_codeu", o.getCodeu().getTelTer());
+			param.put("mailTer_codeu", o.getCodeu().getMailTer());
+		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_DECLARACION_RECEPCION, param,
 				EnumReport.TIPO_REPORTE.REPORT_DECLARACION_RECEP.getName(), o.getNumeroRadicacion() + "");

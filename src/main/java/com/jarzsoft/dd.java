@@ -146,10 +146,9 @@ public class dd {
 		 * 
 		 * }
 		 */
-		  String s = "/100,00";
-		  
-	        boolean isNumeric = (s != null && s.matches("^\\d+[\\d.]*,?[\\d.]*\\d*$"));
-	        System.out.println("IsNumeric: " + isNumeric);
+		  Integer s = 1032888511;
+	
+		  System.out.println(new Long(s));
 
 	}
 

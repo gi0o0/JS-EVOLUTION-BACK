@@ -39,8 +39,10 @@ public class WFCorretaje_Report implements IReportStrategy {
 		Map<String, Object> param = new HashMap<String, Object>();
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
-		param.put("nomTer_codeu",
-				o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+		if (null != o.getCodeu()) {
+			param.put("nomTer_codeu",o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+		}
+
 		param.put("año", calendar.get(Calendar.YEAR) + "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
 		param.put("mes", calendar.get(Calendar.MONTH) + 1 + "");

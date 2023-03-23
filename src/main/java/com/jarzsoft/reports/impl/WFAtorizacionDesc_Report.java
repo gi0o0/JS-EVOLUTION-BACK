@@ -32,7 +32,6 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 		return EnumReport.TIPO_REPORTE.REPORT_AUTO_DESC.getName();
 	}
 
-
 	@Override
 	public Boolean create(DTOWF o, String user, String path) {
 
@@ -45,10 +44,13 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
 		param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());
-		param.put("nomTer_codeu",
-				o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-		param.put("nitter_codeu", o.getCodeu().getNitter());
-		param.put("codiCiud2", ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
+		if (null != o.getCodeu()) {
+			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
+					+ o.getCodeu().getSegApellido());
+			param.put("nitter_codeu", o.getCodeu().getNitter());
+			param.put("codiCiud2", ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
+		}
+
 		param.put("año", calendar.get(Calendar.YEAR) + "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
 		param.put("mes", calendar.get(Calendar.MONTH) + 1 + "");

@@ -45,11 +45,13 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
-		param.put("nomTer_codeu",
-				o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-		param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());
-		param.put("nitter_codeu", o.getCodeu().getNitter());
-		param.put("codiCiud2", ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
+		if (null != o.getCodeu()) {
+			param.put("nomTer_codeu",o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("codiCiud2", ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
+			param.put("nitter_codeu", o.getCodeu().getNitter());			
+		}
+	
+		param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());		
 		param.put("año", year.charAt(year.length() - 1) + "");
 		param.put("empresa", "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
