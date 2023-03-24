@@ -138,11 +138,11 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[NIT. 901.184.952 - 4]]></text>
+				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
 			</staticText>
 			<image>
 				<reportElement key="image-1" x="2" y="0" width="153" height="73" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
-				<imageExpression><![CDATA["logo1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement key="staticText-3" x="435" y="0" width="101" height="21" forecolor="#000000" uuid="ea41dc13-04f7-4cde-9bd2-d039dade60c2"/>
