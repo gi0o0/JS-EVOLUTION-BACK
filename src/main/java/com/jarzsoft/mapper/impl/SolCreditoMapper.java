@@ -131,6 +131,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setCompraNit4(o.getCompraNit4());
 		out.setPerCuota(o.getPerCuota());
 		out.setIndSolCredito(o.getIndSolCredito());
+		out.setSolPagare(o.getSolPagare());
 		return out;
 	}
 
@@ -245,7 +246,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 	}
 
 	@Override
-	public DTOSolCredito mapperDaoToDto(DTOWF o, String codTer, String codeudor, String user, String state) {
+	public DTOSolCredito mapperDaoToDto(DTOWF o, String codTer, String codeudor, String user, String state,String solPagare) {
 
 		DTOSolCredito out = new DTOSolCredito();
 
@@ -280,6 +281,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setVehPigAfavor(o.getVehPigAFavor());
 		out.setVehPignorado(o.getVehPignorado());
 		out.setVehPlaca(o.getVehPlaca());
+		out.setSolPagare(solPagare);
 
 		out.setVehValComercial(Comunes.stringToInt(o.getVehValVomercial()));
 

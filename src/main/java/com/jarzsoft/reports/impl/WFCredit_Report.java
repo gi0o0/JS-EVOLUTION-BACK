@@ -117,11 +117,11 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("entitie", foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName());
 		param.put("sol_fe_sol", now);
 		param.put("valorPress", String.valueOf(o.getValorPress()));
-		param.put("perCuota", String.valueOf(o.getPerCuota()));
+		param.put("perCuota", parameterService.getSingleById(Constantes.PERIODICIDAD,o.getPerCuota()).getValue());
 		param.put("is_cod", "X");
 		param.put("no_cod", "");
 		param.put("nroCuotas", String.valueOf(o.getNroCuotas()));
-		param.put("monto_aprob", String.valueOf(o.getNumeroRadicacion()));
+		param.put("monto_aprob", String.valueOf(o.getValorPress()));
 		param.put("is_soli", "X");
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer());

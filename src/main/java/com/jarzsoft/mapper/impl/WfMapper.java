@@ -179,6 +179,7 @@ public class WfMapper implements IWfMapper {
 		out.setComments(o.getObserva());
 		out.setIndSolCredito(o.getIndSolCredito());
 		out.setIdStepNow(stepNow+"");
+		out.setSolPagare(o.getSolPagare());
 		
 
 		if (mov != null) {

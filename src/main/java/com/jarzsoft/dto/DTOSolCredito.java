@@ -107,7 +107,7 @@ public class DTOSolCredito {
 	private String obligacionCartera4;
 	private String perCuota;
 	private String indSolCredito;
-	
+	private String solPagare;
 
 	public DTOSolCredito() {
 		super();
@@ -937,7 +937,13 @@ public class DTOSolCredito {
 	public void setIndSolCredito(String indSolCredito) {
 		this.indSolCredito = indSolCredito;
 	}
-	
-	
+
+	public String getSolPagare() {
+		return solPagare;
+	}
+
+	public void setSolPagare(String solPagare) {
+		this.solPagare = solPagare;
+	}
 
 }

@@ -379,32 +379,61 @@ public class SolCredito implements Serializable {
 
 	@Column(name = "num_web")
 	private String numWeb;
-	
+
 	@Column(name = "ind_sol_credito")
 	private String indSolCredito;
-	
-	
+
+	@Column(name = "sol_pagare")
+	private String solPagare;
 
 	public SolCredito() {
 	}
 
-	public SolCredito(Integer numeroRadicacion, String bienAfecta, String bienHipoteca, String vehPignorado,
-			String valorPres, String nroCuotas, String refNombre1, String refParen1, String refMail1, String refCel1,
-			String refNombre2, String refParen2, String refMail2, String refCel2, String refNombre3, String refParen3,
-			String refMail3, String refCel3, String bienNombre, String bienValor, String bienHipAfavor, String vehMarca,
-			String vehClase, String vehModelo, String vehPlaca, String vehPigAfavor, String vehValComercial,
+	public SolCredito(Integer numeroRadicacion, String saldo, String tipo, String tasaInt, String estado,
+			String valorAdmo, String valorCuot, String valorInte, String valorNeto, String obsCentrales,
+			String codterAsesor, String tipoCredito, String tipSolcredito, String bienAfecta, String bienHipoteca,
+			String vehPignorado, String valorPres, String nroCuotas, String nroCuenta, String refNombre1,
+			String refParen1, String refMail1, String refCel1, String refNombre2, String refParen2, String refMail2,
+			String refCel2, String refNombre3, String refParen3, String refMail3, String refCel3, String bienNombre,
+			String bienValor, String bienHipAfavor, String vehMarca, String vehMarcaCod, String vehClase,
+			String vehModelo, String vehModeloCod, String vehPlaca, String vehPigAfavor, String vehValComercial,
 			String bienHipotecaCod, String bienAfectaCod, String vehPignoradoCod, String refNombre1Cod,
 			String refParen1Cod, String refMail1Cod, String refCel1Cod, String refNombre2Cod, String refParen2Cod,
 			String refMail2Cod, String refCel2Cod, String refNombre3Cod, String refParen3Cod, String refMail3Cod,
 			String refCel3Cod, String bienNombreCod, String bienValorCod, String bienHipAfavorCod, String vehClaseCod,
-			String vehPlacaCod, String vehValComercialCod, String vehPigAfavorCod, String codTer, String codeudor1) {
+			String vehPlacaCod, String vehValComercialCod, String vehPigAfavorCod, String codTer, String codeudor1,
+			Date fechaSoli, Date fechaIni, Date fechaFin, String modalidad, String codeudor2, String codeudor3,
+			String codeudor4, String vSolicita, Date fechaApr, String maxSoli, String prometri, String porAdmin,
+			String creditoMinimo, String creditoMaximo, String formaPago, String nroOficina, String observa,
+			String garantias, String tipGarantia, String claveLink, String sueldo, String recargos, String bonos,
+			String compensatorios, String bonificacion, String horasExtras, String otrosPagos1, String otrosPagos2,
+			String otrosPagos3, String salud, String pension, String libranza, String cuotaSindical,
+			String cuotaInterna, String otrosDecuentos1, String otrosDecuentos2, String otrosDecuentos3,
+			String compraCartera1, String entidadCartera1, String obligacionCartera1, String compraNit1,
+			String compraCartera2, String entidadCartera2, String compraNit2, String obligacionCartera2,
+			String compraCartera3, String entidadCartera3, String compraNit3, String obligacionCartera3,
+			String compraCartera4, String entidadCartera4, String compraNit4, String obligacionCartera4,
+			String perCuota, String numWeb, String indSolCredito, String solPagare) {
 		super();
 		this.numeroRadicacion = numeroRadicacion;
+		this.saldo = saldo;
+		this.tipo = tipo;
+		this.tasaInt = tasaInt;
+		this.estado = estado;
+		this.valorAdmo = valorAdmo;
+		this.valorCuot = valorCuot;
+		this.valorInte = valorInte;
+		this.valorNeto = valorNeto;
+		this.obsCentrales = obsCentrales;
+		this.codterAsesor = codterAsesor;
+		this.tipoCredito = tipoCredito;
+		this.tipSolcredito = tipSolcredito;
 		this.bienAfecta = bienAfecta;
 		this.bienHipoteca = bienHipoteca;
 		this.vehPignorado = vehPignorado;
 		this.valorPres = valorPres;
 		this.nroCuotas = nroCuotas;
+		this.nroCuenta = nroCuenta;
 		this.refNombre1 = refNombre1;
 		this.refParen1 = refParen1;
 		this.refMail1 = refMail1;
@@ -421,8 +450,10 @@ public class SolCredito implements Serializable {
 		this.bienValor = bienValor;
 		this.bienHipAfavor = bienHipAfavor;
 		this.vehMarca = vehMarca;
+		this.vehMarcaCod = vehMarcaCod;
 		this.vehClase = vehClase;
 		this.vehModelo = vehModelo;
+		this.vehModeloCod = vehModeloCod;
 		this.vehPlaca = vehPlaca;
 		this.vehPigAfavor = vehPigAfavor;
 		this.vehValComercial = vehValComercial;
@@ -450,7 +481,63 @@ public class SolCredito implements Serializable {
 		this.vehPigAfavorCod = vehPigAfavorCod;
 		this.codTer = codTer;
 		this.codeudor1 = codeudor1;
-
+		this.fechaSoli = fechaSoli;
+		this.fechaIni = fechaIni;
+		this.fechaFin = fechaFin;
+		this.modalidad = modalidad;
+		this.codeudor2 = codeudor2;
+		this.codeudor3 = codeudor3;
+		this.codeudor4 = codeudor4;
+		this.vSolicita = vSolicita;
+		this.fechaApr = fechaApr;
+		this.maxSoli = maxSoli;
+		this.prometri = prometri;
+		this.porAdmin = porAdmin;
+		this.creditoMinimo = creditoMinimo;
+		this.creditoMaximo = creditoMaximo;
+		this.formaPago = formaPago;
+		this.nroOficina = nroOficina;
+		this.observa = observa;
+		this.garantias = garantias;
+		this.tipGarantia = tipGarantia;
+		this.claveLink = claveLink;
+		this.sueldo = sueldo;
+		this.recargos = recargos;
+		this.bonos = bonos;
+		this.compensatorios = compensatorios;
+		this.bonificacion = bonificacion;
+		this.horasExtras = horasExtras;
+		this.otrosPagos1 = otrosPagos1;
+		this.otrosPagos2 = otrosPagos2;
+		this.otrosPagos3 = otrosPagos3;
+		this.salud = salud;
+		this.pension = pension;
+		this.libranza = libranza;
+		this.cuotaSindical = cuotaSindical;
+		this.cuotaInterna = cuotaInterna;
+		this.otrosDecuentos1 = otrosDecuentos1;
+		this.otrosDecuentos2 = otrosDecuentos2;
+		this.otrosDecuentos3 = otrosDecuentos3;
+		this.compraCartera1 = compraCartera1;
+		this.entidadCartera1 = entidadCartera1;
+		this.obligacionCartera1 = obligacionCartera1;
+		this.compraNit1 = compraNit1;
+		this.compraCartera2 = compraCartera2;
+		this.entidadCartera2 = entidadCartera2;
+		this.compraNit2 = compraNit2;
+		this.obligacionCartera2 = obligacionCartera2;
+		this.compraCartera3 = compraCartera3;
+		this.entidadCartera3 = entidadCartera3;
+		this.compraNit3 = compraNit3;
+		this.obligacionCartera3 = obligacionCartera3;
+		this.compraCartera4 = compraCartera4;
+		this.entidadCartera4 = entidadCartera4;
+		this.compraNit4 = compraNit4;
+		this.obligacionCartera4 = obligacionCartera4;
+		this.perCuota = perCuota;
+		this.numWeb = numWeb;
+		this.indSolCredito = indSolCredito;
+		this.solPagare = solPagare;
 	}
 
 	@PrePersist
@@ -498,6 +585,14 @@ public class SolCredito implements Serializable {
 		this.garantias = " ";
 		this.tipGarantia = "P";
 
+	}
+
+	public String getSolPagare() {
+		return solPagare;
+	}
+
+	public void setSolPagare(String solPagare) {
+		this.solPagare = solPagare;
 	}
 
 	public Integer getNumeroRadicacion() {
@@ -1475,7 +1570,5 @@ public class SolCredito implements Serializable {
 	public void setIndSolCredito(String indSolCredito) {
 		this.indSolCredito = indSolCredito;
 	}
-	
-	
 
 }

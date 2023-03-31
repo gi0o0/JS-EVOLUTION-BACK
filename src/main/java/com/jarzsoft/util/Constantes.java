@@ -116,6 +116,10 @@ public class Constantes {
 	public static final String isNOK = "N";
 
 	public static final String TIPO_CONTRATO = "TIPO_CONTRATO";
+	
+	public static final String PERIODICIDAD = "PERIODICIDAD";
+	
+	
 	public static final String EPS = "EPS";
 
 	public static final String EMAIL_ASUNTO = "REPORTES WORK FLOW";

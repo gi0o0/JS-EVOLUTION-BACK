@@ -15,7 +15,7 @@ public interface ISolCreditoMapper {
 
 	DTOSolCredito mapperEntitieToDao(SolCredito o);
 
-	DTOSolCredito mapperDaoToDto(DTOWF o, String codTer, String codeudor, String user, String state);
+	DTOSolCredito mapperDaoToDto(DTOWF o, String codTer, String codeudor, String user, String state, String solPagare);
 
 	DTOSolCredito mapperDaoToDtoFinancial(DTOWF o, DTOSolCredito credito);
 

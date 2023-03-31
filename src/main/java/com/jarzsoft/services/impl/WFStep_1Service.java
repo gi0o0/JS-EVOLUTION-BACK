@@ -8,9 +8,11 @@ import org.springframework.stereotype.Component;
 import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
+import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.mapper.IFodatasoMapper;
 import com.jarzsoft.mapper.ISolCreditoMapper;
 import com.jarzsoft.mapper.ITercerosMapper;
+import com.jarzsoft.repository.ParametroRepository;
 import com.jarzsoft.repository.W_Bas_UsuarioRepository;
 import com.jarzsoft.service.IFodatasoService;
 import com.jarzsoft.service.ISolCreditoService;
@@ -38,12 +40,14 @@ public class WFStep_1Service implements IStepStrategy {
 	private final IFodatasoMapper fodatasoMapper;
 
 	private final IWWfMovService wWfMovService;
+	
+	private final ParametroRepository parametroRepository;
 
 	@Autowired
 	public WFStep_1Service(ITercerosService tercerosService, ITercerosMapper tercerosMapper,
 			ISolCreditoService solCreditoService, ISolCreditoMapper solCreditoMapper,
 			W_Bas_UsuarioRepository usuarioRepository, IFodatasoService fodatasoService, IFodatasoMapper fodatasoMapper,
-			IWWfMovService wWfMovService) {
+			IWWfMovService wWfMovService,ParametroRepository parametroRepository) {
 		super();
 		this.tercerosService = tercerosService;
 		this.tercerosMapper = tercerosMapper;
@@ -53,6 +57,7 @@ public class WFStep_1Service implements IStepStrategy {
 		this.fodatasoService = fodatasoService;
 		this.fodatasoMapper = fodatasoMapper;
 		this.wWfMovService = wWfMovService;
+		this.parametroRepository = parametroRepository;
 
 	}
 
@@ -71,14 +76,21 @@ public class WFStep_1Service implements IStepStrategy {
 			fodatasoService.create(fodatasoMapper.mapperDaoToDtoCodeo(o, idCodeudor));
 		}
 		List<Object[]> usuario = usuarioRepository.findByUsuario(user);
+		
+		String solPagare="0";
+		
+		if(!o.getIsUpdate()) {
+			Parametro parametroList = parametroRepository.findByParamIdAndParamtext("CONSEC_PAGARE","1");
+			solPagare=parametroList.getValue();
+		}
+		
 
 		DTOSolCredito out = solCreditoService
 				.create(solCreditoMapper.mapperDaoToDto(o, userCredit.getCodTer().toString(), idCodeudor,
-						usuario.get(0)[2].toString(), EnumStates.TIPO_ESTADO.STATE_S.getName()));
-
-		o.setNumeroRadicacion(out.getNumeroRadicacion());
+						usuario.get(0)[2].toString(), EnumStates.TIPO_ESTADO.STATE_S.getName(),solPagare));
 
 		if (EnumStates.TIPO_ESTADO.STATE_S.getName().equals(out.getEstado()) && !o.getIsUpdate()) {
+			parametroRepository.aumentarConsecutivoPagare("CONSEC_PAGARE","1");
 			out.setEstado(EnumStates.TIPO_ESTADO.STATE_2.getName());
 			wWfMovService.createMovWithSteps(out, user, EnumSteps.TIPO_PASO.STEP_1.getName(), o.getIsUpdate());
 			String state = EnumStates.TIPO_ESTADO.STATE_3.getName();

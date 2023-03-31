@@ -39,9 +39,10 @@ public class SolCreditoService implements ISolCreditoService {
 
 		if (credito == null) {
 			o.setNumeroRadicacion(solCreditoRepository.getKey());
-		} else {
+		} else {			
 			o.setNumeroRadicacion(credito.getNumeroRadicacion());
 			o.setFechaSoli(credito.getFechaSoli());
+			o.setSolPagare(credito.getSolPagare());
 		}
 
 		credito = solCreditoRepository.save(mapper.mapperDtoToEntitie(o));
