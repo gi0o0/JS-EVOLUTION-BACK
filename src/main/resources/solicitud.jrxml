@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="598"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -2180,7 +2180,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[LUGAR DE TRABAJO]]></text>
+				<text><![CDATA[EMPRESA DONDE TRABAJA]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="16" y="599" width="128" height="9" uuid="9cf840bf-5ac2-4523-b6e3-9baeebdd1ef1"/>

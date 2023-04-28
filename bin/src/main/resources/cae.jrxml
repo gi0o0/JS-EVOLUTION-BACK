@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PolizaHogar" pageWidth="612" pageHeight="792" columnWidth="542" leftMargin="35" rightMargin="35" topMargin="35" bottomMargin="35" uuid="f9b2aeab-5365-459c-a38d-2854fbbee887">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0000000000000007"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="259"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="PA_REGISTRO" class="java.lang.String"/>
+	<parameter name="PA_MUT_NOM" class="java.lang.Boolean"/>
+	<parameter name="PA_MUT_DBASIC" class="java.lang.Boolean"/>
+	<parameter name="PA_MUT_CIUU" class="java.lang.Boolean"/>
+	<parameter name="PA_MUT_NOM_TITU" class="java.lang.String"/>
+	<parameter name="PA_MUT_NOM_TEXT" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_DIR" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_CODP" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_CIUD" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_DEP" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_BAR" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_TEL_1" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_TEL_2" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_TEL_3" class="java.lang.String"/>
+	<parameter name="PA_NOMBRE_SOLI" class="java.lang.String"/>
+	<parameter name="PA_TIPOIDENT" class="java.lang.String"/>
+	<parameter name="PA_MATRI" class="java.lang.String"/>
+	<parameter name="PA_TEXT_FOOTER" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_EMAIL" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_DIR_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_CODP_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_CIUD_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_DEP_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_BAR_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_TEL_1_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_TEL_2_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_TEL_3_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_EMAIL_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_DBASIC_PREG_JU" class="java.lang.String"/>
+	<parameter name="PA_MUT_CIUU_TIP" class="java.lang.String"/>
+	<parameter name="PA_MUT_CIUU_TIP2" class="java.lang.String"/>
+	<parameter name="PA_MUT_CIUU_TIP3" class="java.lang.String"/>
+	<parameter name="PA_MUT_CIUU_TIP4" class="java.lang.String"/>
+	<parameter name="PA_MUT_CIUU_TEXT" class="java.lang.String"/>
+	<parameter name="PA_MUT_INFO_HEADER" class="java.lang.String"/>
+	<parameter name="PA_MUT_DESCRIP_CIIU" class="java.lang.String"/>
+	<parameter name="PA_MUT_TITULO_DESCRIP_CIIU" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="542" height="45" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="aa4caa21-cd5d-4b7e-8d72-dbf512ef009c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_REGISTRO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="75" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="42" width="541" height="30" isRemoveLineWhenBlank="true" uuid="8f340fcf-b70d-40de-9951-24a535b66158">
+					<printWhenExpression><![CDATA[$P{PA_MUT_NOM}]]></printWhenExpression>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="541" height="15" isRemoveLineWhenBlank="true" uuid="b7fb1586-0d73-43a1-b00a-57a5216eaa87"/>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{PA_MUT_NOM_TITU}]]></textFieldExpression>
+				</textField>
+				<elementGroup/>
+				<textField>
+					<reportElement x="0" y="15" width="541" height="15" isRemoveLineWhenBlank="true" uuid="92e6b835-6bcf-4cb3-be8d-b28f4435c903"/>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{PA_MUT_NOM_TEXT}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="2" y="2" width="540" height="40" uuid="f70f5263-1a2a-43fe-b520-9b74f3a53796"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_MUT_INFO_HEADER}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="83">
+			<printWhenExpression><![CDATA[!($P{PA_MUT_DBASIC_DIR}.equals( "" ) && 
+$P{PA_MUT_DBASIC_EMAIL}.equals( "" ) && 
+$P{PA_MUT_DBASIC_CODP}.equals( "" ) && 
+$P{PA_MUT_DBASIC_CIUD}.equals( "" ) && 
+$P{PA_MUT_DBASIC_DEP}.equals( "" ) && 
+$P{PA_MUT_DBASIC_BAR}.equals( "" ) && 
+$P{PA_MUT_DBASIC_TEL_1}.equals( "" ) && 
+$P{PA_MUT_DBASIC_TEL_2}.equals( "" ) && 
+$P{PA_MUT_DBASIC_TEL_3}.equals( "" ))]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="542" height="83" isRemoveLineWhenBlank="true" uuid="f8563a6d-b2b9-44f6-b6f4-7db6691b4dcd">
+					<printWhenExpression><![CDATA[$P{PA_MUT_DBASIC}]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement x="0" y="0" width="542" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="249d67a2-a4e4-49f5-a1d9-dfbe67d9e7f8"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Nueva información de los Datos Generales: ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="1" y="15" width="541" height="68" isRemoveLineWhenBlank="true" uuid="0d5869f0-8530-4288-843d-9c50f3c8c731"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{PA_MUT_DBASIC_CODP}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="111">
+			<printWhenExpression><![CDATA[!($P{PA_MUT_DBASIC_DIR_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_EMAIL_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_CODP_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_CIUD_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_DEP_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_BAR_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_TEL_1_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_TEL_2_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_TEL_3_JU}.equals( "" ) &&  $P{PA_MUT_DBASIC_PREG_JU}.equals( "" ) )]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="2" width="542" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="0b48406a-bb37-4539-9e8a-70fa66680a21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Nueva información para notificación judicial y administrativa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="17" width="541" height="68" isRemoveLineWhenBlank="true" uuid="9f9360dd-66b5-4d5c-b9ad-d9a05823fce2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_MUT_DBASIC_CODP_JU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="84" width="541" height="27" isRemoveLineWhenBlank="true" uuid="3ffc6e8e-27c8-4ee7-8bb3-9c6601900fcb"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_MUT_DBASIC_PREG_JU}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="235">
+			<printWhenExpression><![CDATA[$P{PA_MUT_CIUU}]]></printWhenExpression>
+			<frame>
+				<reportElement x="1" y="17" width="541" height="216" isRemoveLineWhenBlank="true" uuid="ab82b849-3f5a-4754-8055-ec45ca911fae">
+					<printWhenExpression><![CDATA[$P{PA_MUT_CIUU}]]></printWhenExpression>
+				</reportElement>
+			</frame>
+			<staticText>
+				<reportElement x="1" y="2" width="541" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="8bc7f2b3-79c1-4f3e-8adb-088311415ce1">
+					<printWhenExpression><![CDATA[$P{PA_MUT_CIUU}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Actualización, cambio o ajuste en las actividades económicas (Códigos CIIU):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="21" width="540" height="212" isRemoveLineWhenBlank="true" uuid="5c4f4491-5385-437e-bd0c-1323b7d7c860"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_MUT_CIUU_TIP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="114" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="47" width="542" height="17" uuid="4362b5eb-3726-468f-a091-3c5a26a35689"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_NOMBRE_SOLI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="64" width="541" height="17" uuid="28abfc6b-e05e-4b3b-bce0-e74320e945b1"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_TIPOIDENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="81" width="541" height="17" uuid="d7927e6e-ef48-4d9d-930d-f3284486160f"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9" isBold="true" isItalic="false"/>
+					<paragraph tabStopWidth="100"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_MATRI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="98" width="535" height="15" uuid="06afcc0f-daac-4d74-aaf8-980c7350a466"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[De conformidad con el artículo 7 de Ley 527 de 1999 y el Decreto 2364 de 2012.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="1" width="542" height="26" isRemoveLineWhenBlank="true" uuid="0e9c9c46-9aac-4086-85a5-f7ba6d7a7226"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PA_TEXT_FOOTER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="27" width="542" height="18" uuid="2f153bc9-ab66-40c6-91d7-fb4092c17603"/>
+				<textElement verticalAlignment="Bottom" markup="html">
+					<font fontName="SansSerif" size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(Documento Firmado Electrónicamente) <sup>1</sup>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="45" width="194" height="1" uuid="b5179ed0-d19d-47e0-b43b-cf0dc71ba4d8"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="98" width="65" height="15" uuid="dfdfb7b7-ea23-44a1-b59f-63c2063f2e3b"/>
+				<textElement verticalAlignment="Bottom" markup="html">
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[<sup>1</sup>]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement x="417" y="0" width="139" height="54" uuid="9ae99c6f-d5b6-4cfe-8f60-8f145da25785"/>
+				<imageExpression><![CDATA["logo1.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="1" y="13" width="116" height="20" uuid="d0e39b80-2f66-4f49-9555-42c0556f4385"/>
+				<imageExpression><![CDATA["logo2.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

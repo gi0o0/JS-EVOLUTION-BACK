@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="602"/>
+	<property name="ireport.y" value="931"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -772,20 +772,6 @@ Es reentendido que la presente orden de LIBRANZA no me (nos) libera de la obliga
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="79" y="624" width="128" height="9" uuid="53faf7cc-d6f3-48d9-a886-881a9c4d437b"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{dirTerpal}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="61" y="634" width="146" height="9" uuid="cbb64fc8-1b73-4d46-ae89-4ba2285ae2b3"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{telTer}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="309" y="602" width="161" height="9" uuid="4b3f029e-fc6a-4624-8430-af6bd3e77cf3"/>

@@ -66,6 +66,14 @@ public class WFCredit_Report implements IReportStrategy {
 	private Boolean createPage2(DTOWF o, String user, String path) {
 
 		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("nitter", String.valueOf(o.getNitter()));
+		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
+		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
+		
+		param.put("name_asesor", userWebService.getUserById((user)).getNom_usuario());
+		param.put("id_asesor", user);
+		
+		
 		if (null != o.getCodeu()) {
 			param.put("idConyuge_codeu", o.getCodeu().getIdConyuge());
 			param.put("nomCony_codeu", o.getCodeu().getNomCony());
@@ -98,6 +106,13 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("vehPignorado_codeuNo", "1".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
 			param.put("vehPigAFavor_codeu", o.getCodeu().getVehPigAFavor());
 			param.put("vehValVomercial_codeu", o.getCodeu().getVehValVomercial());
+			param.put("vehValVomercial", String.valueOf(o.getVehValVomercial()));
+			
+		 	param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("lugarDoc_codeu", String.valueOf(o.getCodeu().getFeExp()));
+			param.put("nitter_codeu", String.valueOf(o.getCodeu().getNitter()));
+			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			
 		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL_PAGE_2, param,
@@ -121,7 +136,7 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("is_cod", "X");
 		param.put("no_cod", "");
 		param.put("nroCuotas", String.valueOf(o.getNroCuotas()));
-		param.put("monto_aprob", String.valueOf(o.getValorPress()));
+		param.put("monto_aprob", String.valueOf(o.getValorPress()));  
 		param.put("is_soli", "X");
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer());

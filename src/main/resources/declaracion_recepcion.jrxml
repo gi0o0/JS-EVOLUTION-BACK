@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="598"/>
+	<property name="ireport.y" value="336"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -188,7 +188,7 @@
 				<text><![CDATA[C.C]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="35" width="525" height="43" uuid="38a8d7cd-aabc-4d2c-9d52-0c7ea26b236f"/>
+				<reportElement key="staticText-4" x="12" y="35" width="525" height="50" uuid="38a8d7cd-aabc-4d2c-9d52-0c7ea26b236f"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
@@ -248,7 +248,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="126" width="525" height="168" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
+				<reportElement key="staticText-4" x="12" y="111" width="525" height="189" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>

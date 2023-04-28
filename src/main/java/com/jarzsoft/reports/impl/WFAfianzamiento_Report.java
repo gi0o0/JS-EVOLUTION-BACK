@@ -71,9 +71,12 @@ public class WFAfianzamiento_Report implements IReportStrategy {
 		param.put("refCel1", o.getRefCel1());
 		param.put("refCel2", o.getRefCel2());
 		param.put("refCel3", o.getRefCel3());
+		//dir_ciu  dir_dep  dir_pais
 		param.put("lugar_nacimiento", "");
-		param.put("sex_m", "");
-		param.put("sex_f", "");
+		
+		param.put("sex_m", "1".equals(o.getSexo()) ? "X" : "");
+		param.put("sex_f", "2".equals(o.getSexo()) ? "X" : "");
+		
 		param.put("empresa", foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName());
 		param.put("telTers", o.getFaxTer());
 		param.put("dirTerpalref1", "");

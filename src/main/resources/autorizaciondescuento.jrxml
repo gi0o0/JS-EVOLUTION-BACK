@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="13"/>
+	<property name="ireport.y" value="624"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -47,7 +47,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="166" y="137" width="69" height="11" uuid="b31c7e20-1c1d-4aae-a1b7-928d6e4e0be7"/>
+				<reportElement key="textField" x="166" y="136" width="69" height="11" uuid="b31c7e20-1c1d-4aae-a1b7-928d6e4e0be7"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
@@ -87,7 +87,7 @@
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="269" y="138" width="71" height="11" uuid="7ab37079-49a5-4030-8bcb-05eee3eba82f"/>
+				<reportElement key="textField" x="266" y="137" width="71" height="11" uuid="7ab37079-49a5-4030-8bcb-05eee3eba82f"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
@@ -1087,6 +1087,90 @@ De conformidad con el art. 622 del Código de comercio, autorizo (amos) expresa 
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="51" y="447" width="156" height="11" uuid="ce89e2ea-faca-4b8f-b38f-cd5d584e95ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="51" y="431" width="69" height="11" uuid="b8dc976b-dc74-4502-8bfe-e33d3c7e8b7d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="320" y="448" width="145" height="11" uuid="510af9e9-4582-440a-9c06-93131c5c2f13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="318" y="431" width="66" height="11" uuid="4326ca26-62ca-4da2-9e74-7748947bd8a2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="103" y="462" width="71" height="11" uuid="24cc1bc0-3c1a-4051-8e8f-ecc9f2e9b831"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="369" y="461" width="71" height="11" uuid="67fb8ebf-027a-4982-b750-b7e7a081aa77"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="61" y="925" width="69" height="11" uuid="614992cc-d84f-48e6-99b3-3429403041d0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="379" y="955" width="71" height="11" uuid="d023c35f-cff7-4d2c-bb3b-a7608f665455"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="330" y="942" width="145" height="11" uuid="a287df21-32c5-4028-8563-1770ba558ebb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="61" y="941" width="156" height="11" uuid="e0aededb-e7df-41bf-b0b3-cfe03e61b4a6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="113" y="956" width="71" height="11" uuid="6154987b-11b3-41fe-8b09-0bb739ce8fb5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="328" y="925" width="66" height="11" uuid="ba1691d0-b099-4a1c-8e6b-c5fbd84c7ece"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 </jasperReport>

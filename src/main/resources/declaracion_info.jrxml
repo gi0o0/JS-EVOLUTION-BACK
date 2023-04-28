@@ -4,13 +4,17 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.853116706110023"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1607"/>
+	<property name="ireport.y" value="1553"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
 	<parameter name="nomTer" class="java.lang.String"/>
 	<parameter name="mandante" class="java.lang.String"/>
 	<parameter name="nitter" class="java.lang.String"/>
+	<parameter name="año" class="java.lang.String"/>
+	<parameter name="dia" class="java.lang.String"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="codiCiud" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="limite" class="java.lang.String"/>
 	<field name="deducible" class="java.lang.String"/>
@@ -160,6 +164,60 @@ Autorizo que del crédito solicitado y aprobado a mi favor sea descontado y paga
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="11" y="660" width="196" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="42bc8caa-9b49-454b-a56e-f7162d9e74d9"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="10" y="533" width="208" height="9" uuid="6b66a8d8-2343-4893-8172-b2d9830662a2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="577" width="100" height="15" uuid="de9d71e2-3133-4296-87d7-802cce078bad"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="482" width="71" height="14" uuid="177bdabb-c3e1-4b06-ba82-c927108acb89"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="480" width="14" height="15" uuid="6b2da690-ce7d-4e5e-904d-92ad0f07cf66"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="480" width="14" height="15" uuid="0bc559b1-d07f-493b-b3ca-d05a21468e8b"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="480" width="18" height="15" uuid="acdbb1b8-e14d-41f0-a2bf-aef2b3e40d6c"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{año}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="106" y="484" width="6" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e29e2d83-eb4d-4949-990a-3aef3fbe4c98"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="134" y="484" width="6" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3a374230-2dc1-4828-8a8f-2f98b46fa50d"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>

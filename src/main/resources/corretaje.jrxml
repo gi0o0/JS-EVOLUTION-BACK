@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.7715610000000137"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="769"/>
+	<property name="ireport.y" value="104"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -14,6 +14,10 @@
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
 	<parameter name="mandante" class="java.lang.String"/>
+	<parameter name="Nitter" class="java.lang.String"/>
+	<parameter name="name_asesor" class="java.lang.String"/>
+	<parameter name="id_asesor" class="java.lang.String"/>
+	<parameter name="codiCiud" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="limite" class="java.lang.String"/>
 	<field name="deducible" class="java.lang.String"/>
@@ -47,25 +51,18 @@
 	<columnHeader>
 		<band height="671" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="97" y="18" width="446" height="9" uuid="e6bb17e5-3654-4a19-8603-b05d1017a262"/>
+				<reportElement key="textField" x="97" y="18" width="211" height="9" uuid="e6bb17e5-3654-4a19-8603-b05d1017a262"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="28" y="441" width="25" height="9" uuid="41e9d3f9-daab-452e-84f4-6842e53a6780"/>
+				<reportElement key="textField" x="28" y="473" width="25" height="9" uuid="41e9d3f9-daab-452e-84f4-6842e53a6780"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="108" y="30" width="435" height="9" uuid="dd64451f-fc21-43d6-8480-ffb225bf667a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement key="line-1" x="10" y="615" width="197" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ac7a5949-87d3-473c-b3e4-d012d2d56ac1"/>
@@ -86,7 +83,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="28" y="450" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
+				<reportElement key="line-1" x="28" y="482" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -99,7 +96,7 @@
 				<text><![CDATA[Entre nosotros a saber: ]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="120" y="441" width="23" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
+				<reportElement key="textField" x="120" y="473" width="23" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -133,14 +130,14 @@ C.C.]]></text>
 				<text><![CDATA[Mayor de edad y vecino de ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="40" width="533" height="22" uuid="82bc1045-a479-47f2-b489-abeb7d049162"/>
+				<reportElement key="staticText-4" x="10" y="40" width="533" height="38" uuid="82bc1045-a479-47f2-b489-abeb7d049162"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[identificado como aparece al pie de mi firma, quien adelante se denomina EL CORREDOR , se  ha celebrado un contrato de corretaje que se regirá por las siguientes Clausulas:]]></text>
+				<text><![CDATA[identificado como aparece al pie de mi firma, quien se denominara el mandante y por otro lado  ___________________________________________ quien adelante denominara el corredor EL CORREDOR , se  ha celebrado un contrato de corretaje que se regirá por las siguientes Clausulas:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="61" width="533" height="378" uuid="5556cba4-8181-4ff4-8f4f-9733f8ffc058"/>
+				<reportElement key="staticText-4" x="10" y="78" width="533" height="378" uuid="5556cba4-8181-4ff4-8f4f-9733f8ffc058"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
@@ -171,41 +168,41 @@ SEXTA -DURACIÓN: el presente contrato estará vigente hasta la culminación del
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="440" width="18" height="11" uuid="65afb593-c4e9-46dd-b6d7-ec8abda58135"/>
+				<reportElement key="staticText-4" x="10" y="472" width="18" height="11" uuid="65afb593-c4e9-46dd-b6d7-ec8abda58135"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[día]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="54" y="441" width="11" height="10" uuid="8ec07b5c-1063-4ad7-840d-b2a650a5256c"/>
+				<reportElement key="staticText-4" x="54" y="473" width="11" height="10" uuid="8ec07b5c-1063-4ad7-840d-b2a650a5256c"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="67" y="450" width="41" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="485f5103-a9f9-489b-b48a-19c1fb74bacd"/>
+				<reportElement key="line-1" x="67" y="482" width="41" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="485f5103-a9f9-489b-b48a-19c1fb74bacd"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="67" y="441" width="41" height="9" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
+				<reportElement key="textField" x="67" y="473" width="41" height="9" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="107" y="441" width="13" height="10" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
+				<reportElement key="staticText-4" x="107" y="473" width="13" height="10" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="120" y="450" width="23" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>
+				<reportElement key="line-1" x="120" y="482" width="23" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -218,6 +215,48 @@ SEXTA -DURACIÓN: el presente contrato estará vigente hasta la culminación del
 				<text><![CDATA[CORREDOR
 C.C.]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="15" y="597" width="192" height="19" uuid="aa414838-2b5d-4a25-97dd-7c39bafdc576"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name_asesor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="631" width="100" height="19" uuid="b4c2554c-38ec-4860-a037-e6ab2974d4cf"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id_asesor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="597" width="177" height="19" uuid="7f1c2c59-9902-47af-be3d-5eb3d753a652"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="631" width="100" height="19" uuid="1e71b906-5f89-4802-8b1f-89598a6abf18"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Nitter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="31" width="147" height="8" uuid="8ee05655-3a6b-421e-8e60-83e9cd42f4c7"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="41" width="131" height="10" uuid="d1fda0b0-6d1e-4c09-9024-d43a3460ee3c"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name_asesor}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 </jasperReport>

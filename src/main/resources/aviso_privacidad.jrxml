@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="598"/>
+	<property name="ireport.y" value="118"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -305,7 +305,7 @@
 				<text><![CDATA[autorizo (amos) expresa, e IRREVOCABLEMENTE.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-3" x="0" y="7" width="552" height="22" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
+				<reportElement key="staticText-3" x="0" y="7" width="552" height="34" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
