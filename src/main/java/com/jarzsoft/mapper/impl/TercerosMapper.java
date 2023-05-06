@@ -33,8 +33,10 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setDirTerpal(o.getDirTerpal());
 		out.setEntBan(o.getEntBan());
 		out.setFaxter(o.getFaxter());
+		
 		out.setFeExp(o.getFeExp());
-		out.setFecExpDoc(o.getFecExpDoc());
+		out.setFecExpDoc(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFecExpDoc()));
+		
 		out.setIdConyuge(o.getIdConyuge());
 		out.setIndContrato(o.getIndContrato());
 		out.setLugarDoc(o.getLugarDoc());

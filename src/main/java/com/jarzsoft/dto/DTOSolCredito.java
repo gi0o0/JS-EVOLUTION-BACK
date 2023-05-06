@@ -57,6 +57,7 @@ public class DTOSolCredito {
 	private String vehMarcaCod;
 	private String vehValComercialCod;
 	private String vehPigAfavorCod;
+	private String empresaCod;
 	private String codTer;
 	private String codeudor1;
 	private String codterAsesor;
@@ -944,6 +945,14 @@ public class DTOSolCredito {
 
 	public void setSolPagare(String solPagare) {
 		this.solPagare = solPagare;
+	}
+
+	public String getEmpresaCod() {
+		return empresaCod;
+	}
+
+	public void setEmpresaCod(String empresaCod) {
+		this.empresaCod = empresaCod;
 	}
 
 }

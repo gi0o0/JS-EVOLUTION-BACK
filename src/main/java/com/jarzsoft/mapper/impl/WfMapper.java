@@ -93,6 +93,7 @@ public class WfMapper implements IWfMapper {
 			codeu.setCelConyuge(Comunes.stringClean(cod.getCelConyuge()));
 			codeu.setEmailConyuge(Comunes.stringClean(cod.getEmailConyuge()));
 			codeu.setFeExp(cod.getFeExp());
+			codeu.setEmpresaCod(o.getEmpresaCod());
 			if (null != fodaCodeo) {
 
 				

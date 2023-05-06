@@ -57,19 +57,22 @@ public class DTOWFCodeu {
 	private String vehPigAFavor;
 	private String vehValVomercial;
 	private String cargoWf;
+	private String empresaCod;
 
-	public DTOWFCodeu(String doctip, String nitter, String nomTer, String priApellido, String segApellido,
-			String lugarDoc, String mailTer, String dirTerpal, String telTer, String feExp, String paisCodigo,
-			String codiDept, String codiCiud, String barrio, String antiEmpresa, String tipVivienda, String dirTeralt,
-			String barrioTra, String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo, String faxTer,
-			String codProfe, String indContrato, String paramText, String idConyuge, String nomCony,
+	public DTOWFCodeu(String doctip, String codTer, String nitter, String nomTer, String priApellido,
+			String segApellido, String lugarDoc, String mailTer, String dirTerpal, String telTer, String feExp,
+			String paisCodigo, String codiDept, String codiCiud, String barrio, String antiEmpresa, String tipVivienda,
+			String dirTeralt, String barrioTra, String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo,
+			String faxTer, String codProfe, String indContrato, String paramText, String idConyuge, String nomCony,
 			String emailConyuge, String celConyuge, String refNombre1, String refParen1, String refMail1,
 			String refCel1, String refNombre2, String refParen2, String refMail2, String refCel2, String refNombre3,
 			String refParen3, String refMail3, String refCel3, String bienNombre, String bienValor, String bienAfecta,
 			String bienHipoteca, String bienHipAFavor, String vehMarca, String vehClase, String vehModelo,
-			String vehPlaca, String vehPignorado, String vehPigAFavor, String vehValVomercial) {
+			String vehPlaca, String vehPignorado, String vehPigAFavor, String vehValVomercial, String cargoWf,
+			String empresaCod) {
 		super();
 		this.doctip = doctip;
+		this.codTer = codTer;
 		this.nitter = nitter;
 		this.nomTer = nomTer;
 		this.priApellido = priApellido;
@@ -122,11 +125,12 @@ public class DTOWFCodeu {
 		this.vehPignorado = vehPignorado;
 		this.vehPigAFavor = vehPigAFavor;
 		this.vehValVomercial = vehValVomercial;
+		this.cargoWf = cargoWf;
+		this.empresaCod = empresaCod;
 	}
 
 	public DTOWFCodeu() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getDoctip() {
@@ -567,6 +571,14 @@ public class DTOWFCodeu {
 
 	public void setCodTer(String codTer) {
 		this.codTer = codTer;
+	}
+
+	public String getEmpresaCod() {
+		return empresaCod;
+	}
+
+	public void setEmpresaCod(String empresaCod) {
+		this.empresaCod = empresaCod;
 	}
 
 }

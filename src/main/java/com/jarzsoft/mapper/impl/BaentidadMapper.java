@@ -16,7 +16,7 @@ public class BaentidadMapper implements IBaentidadMapper {
 	public List<DTOBaentidad> mapperList(List<Baentida> list) {
 		List<DTOBaentidad> response = new ArrayList<DTOBaentidad>();
 		list.stream().forEach(o -> {
-			response.add(new DTOBaentidad(o.getCodEnt(), null != o.getNoment() ? o.getNoment().trim() : ""));
+			response.add(new DTOBaentidad(o.getCodEnt().trim(), null != o.getNoment() ? o.getNoment().trim() : ""));
 		});
 
 		return response;

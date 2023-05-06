@@ -93,6 +93,7 @@ public class WFStep_2Service implements IStepStrategy {
 			if (null != mov) {
 				String state = EnumStates.TIPO_ESTADO.STATE_4.getName();
 				mov.setEstPaso(state);
+				mov.setComentarios(o.getComments());
 				wWfMovService.create(wWfMovMapper.mapperEntitieToDao(mov));
 				solCreditoService.updateState(numRad, state);
 				solCreditoService.modificarClaveLink(numRad, "");

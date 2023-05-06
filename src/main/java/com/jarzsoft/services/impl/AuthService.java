@@ -122,9 +122,6 @@ public class AuthService implements IAuthService {
 	public UserDto authenticateUser(LoginRequest loginRequest) {
 		
 		LOGGER.info("authenticateUser:" +  loginRequest.getUsuario());
-		LOGGER.info("Info level log message");
-        LOGGER.debug("Debug level log message");
-        LOGGER.error("Error level log message");
 
 		String username = loginRequest.getUsuario();
 

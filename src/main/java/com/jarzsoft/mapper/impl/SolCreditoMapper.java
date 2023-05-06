@@ -65,6 +65,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setRefParen2Cod(o.getRefParen2Cod());
 		out.setRefParen3(o.getRefParen3());
 		out.setRefParen3Cod(o.getRefParen3Cod());
+		out.setEmpresaCod(o.getEmpresaCod());
 		out.setTipoCredito(o.getTipoCredito());
 		out.setValorPres(o.getValorPres());
 		out.setVehClase(o.getVehClase());
@@ -95,7 +96,6 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setFechaSoli(o.getFechaSoli());
 		out.setCodterAsesor(o.getCodterAsesor());
 		out.setTipSolcredito(o.getTipSolcredito());
-
 		out.setSueldo(o.getSueldo());
 		out.setRecargos(o.getRecargos());
 		out.setBonos(o.getBonos());
@@ -241,6 +241,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 			out.setCompraNit4(o.getCompraNit4());
 			out.setPerCuota(o.getPerCuota());
 			out.setIndSolCredito(o.getIndSolCredito());
+			out.setEmpresaCod(o.getEmpresaCod());
 		}
 		return out;
 	}
@@ -323,6 +324,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 			out.setBienHipotecaCod(o.getCodeu().getBienHipoteca());
 			out.setBienNombreCod(o.getCodeu().getBienNombre());
 			out.setBienHipAfavorCod(o.getCodeu().getBienHipAFavor());
+			out.setEmpresaCod(o.getCodeu().getEmpresaCod());
 		}
 
 		out.setSueldo(Comunes.validIsNullNumber(o.getFinancial().getSueldo()));
@@ -364,6 +366,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		return out;
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public DTOSolCredito mapperDaoToDtoFinancial(DTOWF o, DTOSolCredito credito) {
 

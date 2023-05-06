@@ -8,7 +8,6 @@ import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -105,7 +104,7 @@ public class SendEmail {
 
 			Transport.send(message);
 			resultado = "OK";
-		} catch (MessagingException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 

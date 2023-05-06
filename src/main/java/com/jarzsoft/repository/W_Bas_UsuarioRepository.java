@@ -66,7 +66,7 @@ public interface W_Bas_UsuarioRepository extends JpaRepository<W_Bas_Usuario, St
 
 	@Transactional
 	@Modifying
-	@Query(value = "UPDATE W_Bas_Usuario SET clave_global = :clave_global,clave_global_his =:clave_global,clave_link='' WHERE Usuario= :usuario ", nativeQuery = true)
+	@Query(value = "UPDATE W_Bas_Usuario SET clave_global = :clave_global,clave_global_his =:clave_global,clave_link='',clave_umbral='0' WHERE Usuario= :usuario ", nativeQuery = true)
 	public void modificarClaveGlobal(@Param("usuario") String usuario, @Param("clave_global") String clave_global);
 
 	@Transactional
