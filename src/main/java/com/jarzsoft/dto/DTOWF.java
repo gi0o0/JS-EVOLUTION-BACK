@@ -42,6 +42,9 @@ public class DTOWF {
 	private String paisDirTrabajo;
 	private String deptDirTrabajo;
 	private String ciuDirTrabajo;
+	private String dirPaisTer;
+	private String dirDepTer;
+	private String dirCiuTer;
 	private String faxTer;
 	private String codProfe;
 	private String indContrato;
@@ -102,16 +105,17 @@ public class DTOWF {
 			String segApellido, String lugarDoc, String feExp, String mailTer, String dirTerpal, String telTer,
 			String telTer1, String telTer2, String paisCodigo, String codiDept, String codiCiud, String barrio,
 			String fecIngEmpresa, String antiEmpresa, String fecCump, String tipVivienda, String dirTeralt,
-			String barrioTra, String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo, String faxTer,
-			String codProfe, String indContrato, String paramText, String entBan, String tipCta, String numCta,
-			String idConyuge, String nomCony, String emailConyuge, String celConyuge, String nroCuotas,
-			String refNombre1, String refParen1, String refMail1, String refCel1, String refNombre2, String refParen2,
-			String refMail2, String refCel2, String refNombre3, String refParen3, String refMail3, String refCel3,
-			String bienNombre, String bienValor, String bienAfecta, String bienHipoteca, String bienHipAFavor,
-			String vehMarca, String vehClase, String vehModelo, String vehPlaca, String vehPignorado,
-			String vehPigAFavor, String vehValVomercial, String cargoWf, DTOWFCodeu codeu, String comments,
-			String token, String estado, String indSolCredito, String sexo, List<DTOWfDocs> files,
-			Boolean isRequiredFiles, String prefixFile, DTOWFFinancialInfo financial, String solPagare) {
+			String barrioTra, String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo, String dirPaisTer,
+			String dirDepTer, String dirCiuTer, String faxTer, String codProfe, String indContrato, String paramText,
+			String entBan, String tipCta, String numCta, String idConyuge, String nomCony, String emailConyuge,
+			String celConyuge, String nroCuotas, String refNombre1, String refParen1, String refMail1, String refCel1,
+			String refNombre2, String refParen2, String refMail2, String refCel2, String refNombre3, String refParen3,
+			String refMail3, String refCel3, String bienNombre, String bienValor, String bienAfecta,
+			String bienHipoteca, String bienHipAFavor, String vehMarca, String vehClase, String vehModelo,
+			String vehPlaca, String vehPignorado, String vehPigAFavor, String vehValVomercial, String cargoWf,
+			DTOWFCodeu codeu, String comments, String token, String estado, String indSolCredito, String sexo,
+			List<DTOWfDocs> files, Boolean isRequiredFiles, String prefixFile, DTOWFFinancialInfo financial,
+			String solPagare) {
 		super();
 		this.idWf = idWf;
 		this.isUpdate = isUpdate;
@@ -151,6 +155,9 @@ public class DTOWF {
 		this.paisDirTrabajo = paisDirTrabajo;
 		this.deptDirTrabajo = deptDirTrabajo;
 		this.ciuDirTrabajo = ciuDirTrabajo;
+		this.dirPaisTer = dirPaisTer;
+		this.dirDepTer = dirDepTer;
+		this.dirCiuTer = dirCiuTer;
 		this.faxTer = faxTer;
 		this.codProfe = codProfe;
 		this.indContrato = indContrato;
@@ -887,6 +894,30 @@ public class DTOWF {
 
 	public void setSolPagare(String solPagare) {
 		this.solPagare = solPagare;
+	}
+
+	public String getDirPaisTer() {
+		return dirPaisTer;
+	}
+
+	public void setDirPaisTer(String dirPaisTer) {
+		this.dirPaisTer = dirPaisTer;
+	}
+
+	public String getDirDepTer() {
+		return dirDepTer;
+	}
+
+	public void setDirDepTer(String dirDepTer) {
+		this.dirDepTer = dirDepTer;
+	}
+
+	public String getDirCiuTer() {
+		return dirCiuTer;
+	}
+
+	public void setDirCiuTer(String dirCiuTer) {
+		this.dirCiuTer = dirCiuTer;
 	}
 
 }

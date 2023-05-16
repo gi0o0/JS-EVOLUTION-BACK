@@ -54,11 +54,12 @@ public class Fodataso implements Serializable {
 
 	@Column(name = "activo")
 	private String activo;
-	
+
 	@Column(name = "sexo")
 	private String sexo;
-	
-	
+
+	@Column(name = "tip_asoci")
+	private String tipAsoci;
 
 	public Fodataso() {
 	}
@@ -67,12 +68,14 @@ public class Fodataso implements Serializable {
 	public void prePersist() {
 
 		this.activo = "0";
+		this.tipAsoci = "1";
 
 	}
 
 	@PreUpdate
 	public void preUpdate() {
-		 this.activo = "0";
+		this.activo = "0";
+		this.tipAsoci = "1";
 	}
 
 	public String getCodTer() {
@@ -186,7 +189,5 @@ public class Fodataso implements Serializable {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	
-	
 
 }

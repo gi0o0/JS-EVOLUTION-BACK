@@ -41,6 +41,9 @@ public class DTOTerceros {
 	private String nitTer;
 	private String paramId;
 	private String indSecEconomico;
+	private String dirPais;
+	private String dirDep;
+	private String dirCiu;
 
 	public DTOTerceros(BigDecimal codTer, String nomTercero, String priApellido, String segApellido, String lugarDoc,
 			String mailTer, String dirTerpal, String telter, String telter1, String telter2, String feExp,
@@ -381,7 +384,29 @@ public class DTOTerceros {
 	public void setFecExpDoc(String fecExpDoc) {
 		this.fecExpDoc = fecExpDoc;
 	}
-	
-	
+
+	public String getDirPais() {
+		return dirPais;
+	}
+
+	public void setDirPais(String dirPais) {
+		this.dirPais = dirPais;
+	}
+
+	public String getDirDep() {
+		return dirDep;
+	}
+
+	public void setDirDep(String dirDep) {
+		this.dirDep = dirDep;
+	}
+
+	public String getDirCiu() {
+		return dirCiu;
+	}
+
+	public void setDirCiu(String dirCiu) {
+		this.dirCiu = dirCiu;
+	}
 
 }

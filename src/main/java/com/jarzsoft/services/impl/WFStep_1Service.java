@@ -100,6 +100,7 @@ public class WFStep_1Service implements IStepStrategy {
 		}
 
 		o.setNextStep(EnumSteps.TIPO_PASO.STEP_2.getName());
+		o.setNumeroRadicacion(out.getNumeroRadicacion());
 		return o;
 	}
 

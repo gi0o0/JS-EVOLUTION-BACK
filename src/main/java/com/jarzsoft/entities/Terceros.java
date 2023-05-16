@@ -94,10 +94,10 @@ public class Terceros implements Serializable {
 
 	@Column(name = "faxter")
 	private String faxter;
-	
+
 	@Column(name = "fec_exp_doc")
 	private String fecExpDoc;
-	
+
 	@Column(name = "ind_contrato")
 	private String indContrato;
 
@@ -130,6 +130,18 @@ public class Terceros implements Serializable {
 
 	@Column(name = "ind_sec_economico")
 	private String indSecEconomico;
+
+	@Size(max = 8)
+	@Column(name = "dir_pais")
+	private String dirPais;
+
+	@Size(max = 8)
+	@Column(name = "dir_dep")
+	private String dirDep;
+
+	@Size(max = 8)
+	@Column(name = "dir_ciu")
+	private String dirCiu;
 
 	public Terceros() {
 	}
@@ -477,7 +489,29 @@ public class Terceros implements Serializable {
 	public void setFecExpDoc(String fecExpDoc) {
 		this.fecExpDoc = fecExpDoc;
 	}
-	
-	
+
+	public String getDirPais() {
+		return dirPais;
+	}
+
+	public void setDirPais(String dirPais) {
+		this.dirPais = dirPais;
+	}
+
+	public String getDirDep() {
+		return dirDep;
+	}
+
+	public void setDirDep(String dirDep) {
+		this.dirDep = dirDep;
+	}
+
+	public String getDirCiu() {
+		return dirCiu;
+	}
+
+	public void setDirCiu(String dirCiu) {
+		this.dirCiu = dirCiu;
+	}
 
 }

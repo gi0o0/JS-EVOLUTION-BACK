@@ -164,9 +164,7 @@ public class WFStep_3Service implements IStepStrategy {
 
 		total = info.getSalud().add(info.getPension()).add(info.getLibranza()).add(info.getCuota_sindical())
 				.add(info.getCuota_interna()).add(info.getOtros_decuentos1()).add(info.getOtros_decuentos2())
-				.add(info.getOtros_decuentos3()).add(Comunes.validIsNullNumberEmpty(info.getCompra_cartera1()))
-				.add(Comunes.validIsNullNumberEmpty(info.getEntidad_cartera1()))
-				.add(Comunes.validIsNullNumberEmpty(info.getObligacion_cartera1()));
+				.add(info.getOtros_decuentos3()).add(Comunes.validIsNullNumberEmpty(info.getCompra_cartera1()));
 		return total;
 	}
 
@@ -194,18 +192,6 @@ public class WFStep_3Service implements IStepStrategy {
 		info.setCompra_cartera2(info.getCompra_cartera2() != null ? info.getCompra_cartera2() : ValueDefault + "");
 		info.setCompra_cartera3(info.getCompra_cartera3() != null ? info.getCompra_cartera3() : ValueDefault + "");
 		info.setCompra_cartera4(info.getCompra_cartera4() != null ? info.getCompra_cartera4() : ValueDefault + "");
-		info.setObligacion_cartera1(
-				info.getObligacion_cartera1() != null ? info.getObligacion_cartera1() : ValueDefault + "");
-		info.setObligacion_cartera2(
-				info.getObligacion_cartera2() != null ? info.getObligacion_cartera2() : ValueDefault + "");
-		info.setObligacion_cartera3(
-				info.getObligacion_cartera3() != null ? info.getObligacion_cartera3() : ValueDefault + "");
-		info.setObligacion_cartera4(
-				info.getObligacion_cartera4() != null ? info.getObligacion_cartera4() : ValueDefault + "");
-		info.setEntidad_cartera1(info.getEntidad_cartera1() != null ? info.getEntidad_cartera1() : ValueDefault + "");
-		info.setEntidad_cartera2(info.getEntidad_cartera2() != null ? info.getEntidad_cartera2() : ValueDefault + "");
-		info.setEntidad_cartera3(info.getEntidad_cartera3() != null ? info.getEntidad_cartera3() : ValueDefault + "");
-		info.setEntidad_cartera4(info.getEntidad_cartera4() != null ? info.getEntidad_cartera4() : ValueDefault + "");
 
 		return info;
 	}
@@ -216,7 +202,7 @@ public class WFStep_3Service implements IStepStrategy {
 		if (null != credito) {
 
 			String stateMov = EnumStates.TIPO_ESTADO.STATE_9.getName();
-			String stateSol = EnumStates.TIPO_ESTADO.STATE_P.getName();
+			String stateSol = EnumStates.TIPO_ESTADO.STATE_S.getName();
 
 			List<DTOWalletUser> getPortafolio = wFParameterService.getPortafolio(o.getCodTer());
 			Optional<Object> isWallet = getPortafolio.stream()
@@ -231,12 +217,12 @@ public class WFStep_3Service implements IStepStrategy {
 				}
 			}
 
-			
 			if (new BigDecimal(o.getFinancial().getCapacidadEndeudamiento()).compareTo(new BigDecimal("0")) < 0) {
 				stateMov = EnumStates.TIPO_ESTADO.STATE_8.getName();
 				stateSol = EnumStates.TIPO_ESTADO.STATE_I.getName();
-				
-				throw new PageNoFoundException("No cumple con la  Capacidad Endeudamiento -> "+o.getFinancial().getCapacidadEndeudamiento());
+
+				throw new PageNoFoundException(
+						"No cumple con la  Capacidad Endeudamiento -> " + o.getFinancial().getCapacidadEndeudamiento());
 			}
 
 			if (null != o.getFiles()) {
