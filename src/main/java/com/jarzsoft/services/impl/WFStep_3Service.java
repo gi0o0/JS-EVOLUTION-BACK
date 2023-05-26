@@ -164,7 +164,7 @@ public class WFStep_3Service implements IStepStrategy {
 
 		total = info.getSalud().add(info.getPension()).add(info.getLibranza()).add(info.getCuota_sindical())
 				.add(info.getCuota_interna()).add(info.getOtros_decuentos1()).add(info.getOtros_decuentos2())
-				.add(info.getOtros_decuentos3()).add(Comunes.validIsNullNumberEmpty(info.getCompra_cartera1()));
+				.add(info.getOtros_decuentos3());
 		return total;
 	}
 
