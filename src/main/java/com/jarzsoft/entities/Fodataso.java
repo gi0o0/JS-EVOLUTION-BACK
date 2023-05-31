@@ -60,7 +60,10 @@ public class Fodataso implements Serializable {
 
 	@Column(name = "tip_asoci")
 	private String tipAsoci;
-
+	
+	@Column(name = "cla_aso_1")
+	private String claAso1;
+	
 	public Fodataso() {
 	}
 
@@ -69,6 +72,7 @@ public class Fodataso implements Serializable {
 
 		this.activo = "0";
 		this.tipAsoci = "1";
+		this.claAso1 = "1";
 
 	}
 
@@ -76,6 +80,7 @@ public class Fodataso implements Serializable {
 	public void preUpdate() {
 		this.activo = "0";
 		this.tipAsoci = "1";
+		this.claAso1 = "1";
 	}
 
 	public String getCodTer() {

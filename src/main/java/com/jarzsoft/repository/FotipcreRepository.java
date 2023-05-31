@@ -21,4 +21,8 @@ public interface FotipcreRepository extends JpaRepository<Fotipcre, String> {
 
 	@Query(value = "select c.ran_valor from cfi_t_pre_otr_det c, cfi_t_pre_otros cp where c.consecutivo = cp.consecutivo and c.codigo_credito = cp.codigo_credito and cp.ind_desembolso = 'S' and cp.codigo_credito = :linea and ( :monto >= ran_desde and :monto <=ran_hasta )", nativeQuery = true)
 	List<Object[]> findRangueByEntitie(@Param("linea") String linea, @Param("monto") BigDecimal monto);
+
+	@Query(value = "select c.porcentaje from cfi_t_pre_otr_det c, cfi_t_pre_otros cp where c.consecutivo = cp.consecutivo and c.codigo_credito = cp.codigo_credito and cp.ind_desembolso = 'S' and cp.codigo_credito = :linea and ( :monto >= ran_desde and :monto <=ran_hasta )", nativeQuery = true)
+	List<Object[]> findRangueByEntitieP(@Param("linea") String linea, @Param("monto") BigDecimal monto);
+
 }

@@ -101,6 +101,9 @@ public class WFStep_3Service implements IStepStrategy {
 
 		BigDecimal valor1 = new BigDecimal("0");
 		BigDecimal valor2 = new BigDecimal("0");
+		BigDecimal valorPor = new BigDecimal("0");
+		BigDecimal ranIntPor = new BigDecimal("0");
+		
 		BigDecimal valorCuotaEstimada = new BigDecimal("0");
 		BigDecimal DesCuota = new BigDecimal("0");
 		BigDecimal valorFuturo = new BigDecimal("0");
@@ -122,10 +125,14 @@ public class WFStep_3Service implements IStepStrategy {
 		DesCuota = valorCuotaEstimada.multiply(new BigDecimal(o.getPerCuota()));
 		valorFuturo = DesCuota.multiply(numCuotas);
 		List<Object[]> rangos = fotipcreRepository.findRangueByEntitie(o.getFoticrep(), montoSolicitado);
+		
+		List<Object[]> rangosP = fotipcreRepository.findRangueByEntitieP(o.getFoticrep(), montoSolicitado);
 
 		String rangoValue = "0";
 		if (rangos.size() > 0) {
 			rangoValue = String.valueOf(rangos.get(0));
+			ranIntPor = (new BigDecimal(String.valueOf(rangosP.get(0)))).divide(new BigDecimal("100"));
+			valorPor = montoSolicitado.multiply(ranIntPor).round(new MathContext(500, RoundingMode.HALF_UP));
 		}
 
 		BigDecimal ran_valor = new BigDecimal(rangoValue);
@@ -139,7 +146,7 @@ public class WFStep_3Service implements IStepStrategy {
 		BigDecimal compra_cartera4 = Comunes.validIsNullNumberEmpty(o.getFinancial().getCompra_cartera4());
 
 		valorDesembolso = montoSolicitado.subtract(compra_cartera1).subtract(compra_cartera2).subtract(compra_cartera3)
-				.subtract(compra_cartera4).subtract(ran_valor);
+				.subtract(compra_cartera4).subtract(ran_valor).subtract(valorPor);
 		CapacidadEndeudamiento = capacidad.subtract(DesCuota);
 
 		o.getFinancial().setCapacidadEndeudamiento(CapacidadEndeudamiento.toString());
