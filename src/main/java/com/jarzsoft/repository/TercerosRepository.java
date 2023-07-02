@@ -32,5 +32,13 @@ public interface TercerosRepository extends JpaRepository<Terceros, Long> {
 
 	@Query(value = "SELECT * FROM terceros , fotabase f WHERE codter =f.codter_asesor ", nativeQuery = true)
 	List<Terceros> getAsesores();
+	
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE terceros SET clave_link= :hash WHERE nitter= :nitter", nativeQuery = true)
+	public void modificarClaveLink(@Param("nitter") String nitter, @Param("hash") String hash);
+	
+	@Query(value = "SELECT * FROM terceros WHERE clave_link = :hash", nativeQuery = true)
+	Terceros findByHash(@Param("hash") String hash);
 
 }

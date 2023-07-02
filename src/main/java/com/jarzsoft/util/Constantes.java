@@ -24,6 +24,8 @@ public class Constantes {
 	public static final String PATH_ACCOUNT_TYPE = "account_type";
 	public static final String PATH_WFPARAMETER = "/wfparameter";
 	public static final String PATH_WF = "/wf";
+	public static final String PATH_WF_PQR = "/wfpqr";
+	public static final String PATH_WF_LOAN = "/loan";
 	public static final String PATH_FILESUSERS = "/filesusers";
 	public static final String PATH_USERWEB = "/webuser";
 

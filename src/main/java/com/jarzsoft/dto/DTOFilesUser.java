@@ -7,18 +7,20 @@ public class DTOFilesUser {
 	private String user;
 	private String request;
 	private String idDoc;
+	private String path;
 
 	public DTOFilesUser() {
 		super();
 	}
 
-	public DTOFilesUser(String name, String encode, String user, String request, String idDoc) {
+	public DTOFilesUser(String name, String encode, String user, String request, String idDoc, String path) {
 		super();
 		this.name = name;
 		this.encode = encode;
 		this.user = user;
 		this.request = request;
 		this.idDoc = idDoc;
+		this.path = path;
 	}
 
 	public String getName() {
@@ -59,6 +61,14 @@ public class DTOFilesUser {
 
 	public void setIdDoc(String idDoc) {
 		this.idDoc = idDoc;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 }

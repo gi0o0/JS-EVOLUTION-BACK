@@ -51,4 +51,9 @@ public class FoclaasoService implements IFoclaasoService {
 		return foclaasoMapper.mapperList(foclaasoRepository.findAll());
 	}
 
+	@Override
+	public DTOFoclaaso findByCodter(Integer codTer) {
+		return foclaasoMapper.mapperEntitieToDto(foclaasoRepository.findByCodter(codTer));
+	}
+
 }

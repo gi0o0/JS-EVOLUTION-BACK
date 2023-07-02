@@ -241,4 +241,14 @@ public class WFParameterService implements IWFParameterService {
 
 	}
 
+	@Override
+	public List<DTOWalletUser> getPortafolioWk1(String codTer) {
+		return mapperStep.mapperEntitiePortafolioToDto(dao.findPortafolioWf1(codTer));
+	}
+
+	@Override
+	public List<DTOWalletUser> getPortafolioWk2(String codTer) {
+		return mapperStep.mapperEntitiePortafolioToDto(dao.findPortafolioWf2(codTer));
+	}
+
 }

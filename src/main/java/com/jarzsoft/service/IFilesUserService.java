@@ -11,6 +11,8 @@ public interface IFilesUserService {
 
 	List<DTOFilesUser> listAllByIdRedAndStep(String solicitud, String step);
 
+	List<DTOFilesUser> listAllById(String solicitud);
+
 	Boolean create(String idSolicitud, String step, String cedula, DTOWfDocs documento);
 
 }

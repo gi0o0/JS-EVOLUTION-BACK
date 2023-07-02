@@ -57,15 +57,15 @@ public class FilesUserService implements IFilesUserService {
 										e.printStackTrace();
 									}
 									String encodedString = Base64.getEncoder().encodeToString(fileContent);
-									files.add(
-											new DTOFilesUser(name, encodedString, nameIds[0], nameIds[1], nameIds[2]));
+									files.add(new DTOFilesUser(name, encodedString, nameIds[0], nameIds[1], nameIds[2],
+											path + name));
 								}
 							} else {
-								files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2]));
+								files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2], path + name));
 							}
 						}
 					} else {
-						files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2]));
+						files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2], path + name));
 					}
 
 				}
@@ -112,7 +112,8 @@ public class FilesUserService implements IFilesUserService {
 							e.printStackTrace();
 						}
 						String encodedString = Base64.getEncoder().encodeToString(fileContent);
-						files.add(new DTOFilesUser(name,encodedString, nameIds[0], nameIds[1], nameIds[2]));
+						files.add(
+								new DTOFilesUser(name, encodedString, nameIds[0], nameIds[1], nameIds[2], path + name));
 					}
 				}
 			}
@@ -121,6 +122,29 @@ public class FilesUserService implements IFilesUserService {
 
 	}
 
+	@Override
+	public List<DTOFilesUser> listAllById(String solicitud) {
+		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+		File folder = new File(path);
+		List<DTOFilesUser> files = new ArrayList<>();
+		for (File file : folder.listFiles()) {
+			String name = file.getName();
+			String nameIds[] = name.split("_");
+			if (!file.isDirectory()) {
+				if (nameIds[0].startsWith(solicitud)) {
+					byte[] fileContent = null;
+					try {
+						fileContent = FileUtils.readFileToByteArray(new File(file.getAbsolutePath()));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					String encodedString = Base64.getEncoder().encodeToString(fileContent);
+					files.add(new DTOFilesUser(name, encodedString, nameIds[0], nameIds[1], nameIds[2], path + name));
 
+				}
+			}
+		}
+		return files;
+	}
 
 }

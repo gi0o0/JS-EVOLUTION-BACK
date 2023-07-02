@@ -1,6 +1,7 @@
 package com.jarzsoft.mapper;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,9 @@ public interface IWWfMovMapper {
 
 	public DTOWWfMov mapperEntitieToDao(WWfMov o);
 
-	public DTOWWfMov mapperDaoToDto(DTOSolCredito o, W_Wf_Pasos p, String user,Integer idWf,Integer id,String idPaso, HashMap<String, String> users);
+	public List<DTOWWfMov> mapperEntitieLisToDaoList(List<WWfMov> o);
+
+	public DTOWWfMov mapperDaoToDto(DTOSolCredito o, W_Wf_Pasos p, String user, Integer idWf, Integer id, String idPaso,
+			HashMap<String, String> users);
 
 }

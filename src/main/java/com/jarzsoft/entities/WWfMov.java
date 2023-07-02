@@ -23,6 +23,9 @@ public class WWfMov implements Serializable {
 	@Column(name = "id_wf")
 	private Integer idWf;
 
+	@Column(name = "nitter")
+	private String nitTer;
+
 	@Column(name = "id_paso")
 	private String idPaso;
 
@@ -34,6 +37,9 @@ public class WWfMov implements Serializable {
 
 	@Column(name = "est_paso")
 	private String estPaso;
+
+	@Column(name = "est_paso_mov")
+	private String estPasoMov;
 
 	@Column(name = "comentarios")
 	private String comentarios;
@@ -145,19 +151,19 @@ public class WWfMov implements Serializable {
 		this.usuario3Task = "N";
 		this.usuario4Vobo = "N";
 		this.usuario4Task = "N";
-		
-		if(this.usuario1==null) {
-			this.usuario1= "N";
+
+		if (this.usuario1 == null) {
+			this.usuario1 = "N";
 		}
-		if(this.usuario2==null) {
-			this.usuario2= "N";
+		if (this.usuario2 == null) {
+			this.usuario2 = "N";
 		}
-		if(this.usuario3==null) {
-			this.usuario3= "N";
-		}	
-		if(this.usuario4==null) {
-			this.usuario4= "N";
-		}		
+		if (this.usuario3 == null) {
+			this.usuario3 = "N";
+		}
+		if (this.usuario4 == null) {
+			this.usuario4 = "N";
+		}
 
 	}
 
@@ -177,19 +183,19 @@ public class WWfMov implements Serializable {
 		this.usuario3Task = "N";
 		this.usuario4Vobo = "N";
 		this.usuario4Task = "N";
-		
-		if(this.usuario1==null) {
-			this.usuario1= "N";
+
+		if (this.usuario1 == null) {
+			this.usuario1 = "N";
 		}
-		if(this.usuario2==null) {
-			this.usuario2= "N";
+		if (this.usuario2 == null) {
+			this.usuario2 = "N";
 		}
-		if(this.usuario3==null) {
-			this.usuario3= "N";
-		}	
-		if(this.usuario4==null) {
-			this.usuario4= "N";
-		}	
+		if (this.usuario3 == null) {
+			this.usuario3 = "N";
+		}
+		if (this.usuario4 == null) {
+			this.usuario4 = "N";
+		}
 	}
 
 	public Integer getIdWfMov() {
@@ -478,6 +484,22 @@ public class WWfMov implements Serializable {
 
 	public void setIdPaso(String idPaso) {
 		this.idPaso = idPaso;
+	}
+
+	public String getEstPasoMov() {
+		return estPasoMov;
+	}
+
+	public void setEstPasoMov(String estPasoMov) {
+		this.estPasoMov = estPasoMov;
+	}
+
+	public String getNitTer() {
+		return nitTer;
+	}
+
+	public void setNitTer(String nitTer) {
+		this.nitTer = nitTer;
 	}
 
 }

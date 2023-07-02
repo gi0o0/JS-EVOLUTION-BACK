@@ -74,4 +74,15 @@ public class TercerosService implements ITercerosService {
 		return mapper.mapperList(tercerosRepository.getAsesores());
 	}
 
+	@Override
+	public String modificarClaveLink(String nitTer, String hash) {
+		tercerosRepository.modificarClaveLink(nitTer, hash);
+		return hash;
+	}
+
+	@Override
+	public DTOTerceros findByHash(String hash) {
+		return mapper.mapperEntitieToDao(tercerosRepository.findByHash(hash));
+	}
+
 }

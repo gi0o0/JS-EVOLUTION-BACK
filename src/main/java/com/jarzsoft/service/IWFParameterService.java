@@ -41,8 +41,12 @@ public interface IWFParameterService {
 
 	List<DTOWFParameterStep> stepsbyNumRad(Integer numRad);
 
-	DTOWFParameterStepAut validStepByUser(String wf,String step,String user);
-	
+	DTOWFParameterStepAut validStepByUser(String wf, String step, String user);
+
 	List<DTOWalletUser> getPortafolio(String codTer);
+
+	List<DTOWalletUser> getPortafolioWk1(String codTer);
+
+	List<DTOWalletUser> getPortafolioWk2(String codTer);
 
 }
