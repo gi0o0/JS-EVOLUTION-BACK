@@ -1,6 +1,5 @@
 package com.jarzsoft.mapper.impl;
 
-
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOFodataso;
@@ -9,6 +8,7 @@ import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFCodeu;
 import com.jarzsoft.dto.DTOWFFinancialInfo;
+import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.dto.DTOWWfMov;
 import com.jarzsoft.mapper.IWfMapper;
 import com.jarzsoft.util.Comunes;
@@ -19,17 +19,17 @@ public class WfMapper implements IWfMapper {
 
 	@Override
 	public DTOWF mapperDaoToDto(DTOSolCredito o, DTOTerceros u, DTOTerceros cod, DTOWWfMov mov, DTOFodataso foda,
-			DTOFodataso fodaCodeo,Integer stepNow) {
+			DTOFodataso fodaCodeo, Integer stepNow) {
 		DTOWF out = new DTOWF();
 		if (null != u) {
 			out.setAntiEmpresa(Comunes.stringClean(u.getAntiEmpresa()));
 			out.setBarrio(Comunes.stringClean(u.getBarrio()));
 			out.setBarrioTra(Comunes.stringClean(u.getBarrioTra()));
-			
+
 			out.setCiuDirTrabajo(Comunes.stringToInt(u.getCiuDirTrabajo()));
 			out.setCodiCiud(Comunes.stringToInt(u.getCodiCiud()));
 			out.setCodiDept(Comunes.stringToInt(u.getCodiDept()));
-			
+
 			out.setDirPaisTer(Comunes.stringToInt(u.getDirPais()));
 			out.setDirDepTer(Comunes.stringToInt(u.getDirDep()));
 			out.setDirCiuTer(Comunes.stringToInt(u.getDirCiu()));
@@ -238,6 +238,38 @@ public class WfMapper implements IWfMapper {
 		out.setFinancial(financial);
 
 		return out;
+	}
+
+	@Override
+	public DTOWFPqr mapperDaoToDto(DTOWWfMov o) {
+		DTOWFPqr out = new DTOWFPqr();
+
+		out.setIdWf(o.getIdWf() + "");
+		out.setIdSubStep("0");
+		out.setNextStep(o.getIdPaso());
+		out.setIdStep(o.getIdPaso());
+		out.setComments(o.getComentarios());
+		out.setState(o.getEstPaso());
+		out.setNumeroRadicacion(o.getNumeroRadicacion());
+		out.setIdMov(o.getIdWfMov() + "");
+		out.setNitter(o.getNitTer());
+
+		return out;
+	}
+
+	@Override
+	public DTOWFPqr mapperDaoTerceroToDto(DTOTerceros o, DTOWFPqr out) {
+
+		out.setDoctip(o.getDocTip());
+		out.setNomTer(o.getNomTercero());
+		out.setLugarDoc(o.getLugarDoc());
+		out.setFeExp(o.getFeExp());
+		out.setDirTerpal(o.getDirTerpal());
+		out.setCodTer(o.getCodTer().toString());
+		out.setMailTer(o.getMailTer());
+
+		return out;
+
 	}
 
 }

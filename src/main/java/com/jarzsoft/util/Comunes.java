@@ -15,9 +15,6 @@ import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -32,9 +29,7 @@ public class Comunes {
 	private static final Logger LOGGER = LogManager.getLogger(Comunes.class);
 
 	public static String FORMAT_YYY_MM_DD = "yyyy-MM-dd";
-	public static String FORMAT_MM_DD_YYYY = "yyyy-MM-dd";	
-	
-
+	public static String FORMAT_MM_DD_YYYY = "yyyy-MM-dd";
 
 	public static boolean validarNumerico(String cadena) {
 		if (cadena.matches("[0-9]*")) {
@@ -166,7 +161,7 @@ public class Comunes {
 
 		return (value != null) ? value.toString() : "0";
 	}
-	
+
 	public static String validIsNullNumber(String value) {
 
 		return (value != null) ? value.toString() : "0";
@@ -176,13 +171,13 @@ public class Comunes {
 
 		return (value != null) ? value : new BigDecimal("0");
 	}
-	
+
 	public static BigDecimal validIsNullNumberEmpty(String value) {
-		
-        boolean isNumeric = (value != null && value.matches("^\\d+[\\d.]*,?[\\d.]*\\d*$"));
-        if(isNumeric) {
-        	return new BigDecimal(value);
-        }
+
+		boolean isNumeric = (value != null && value.matches("^\\d+[\\d.]*,?[\\d.]*\\d*$"));
+		if (isNumeric) {
+			return new BigDecimal(value);
+		}
 
 		return new BigDecimal("0");
 	}
@@ -245,6 +240,11 @@ public class Comunes {
 			return false;
 		}
 		return true;
+	}
+
+	public static String stateDocs(Boolean value) {
+
+		return (value == null || value == false) ? "N" : "S";
 	}
 
 }

@@ -44,4 +44,9 @@ public class FoclaasoController {
 		return foclaasoService.getAllCompanies();
 	}
 
+	@GetMapping(value = "/{id}/tercero", produces = "application/json")
+	public DTOFoclaaso findByCodter(@PathVariable("id") Integer id) {
+		return foclaasoService.findByCodter(id);
+	}
+
 }

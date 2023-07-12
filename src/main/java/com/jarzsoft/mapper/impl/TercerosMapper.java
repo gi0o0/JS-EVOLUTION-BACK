@@ -203,6 +203,7 @@ public class TercerosMapper implements ITercerosMapper {
 		out.setDirPais(o.getDirPais());
 		out.setDirDep(o.getDirDep());
 		out.setDirCiu(o.getDirCiu());
+		out.setClaveLink(o.getClaveLink());
 		return out;
 	}
 

@@ -10,6 +10,7 @@ import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Pasos;
 import com.jarzsoft.entities.W_Wf_PasosPK;
 import com.jarzsoft.mapper.IWfStepParameterMapper;
+import com.jarzsoft.util.Comunes;
 
 @Service
 public class WfStepParameterMapper implements IWfStepParameterMapper {
@@ -19,8 +20,8 @@ public class WfStepParameterMapper implements IWfStepParameterMapper {
 		List<DTOWFParameterStep> response = new ArrayList<DTOWFParameterStep>();
 		list.stream().forEach(o -> {
 			response.add(new DTOWFParameterStep(o.getW_Wf_PasosPK().getIdWf(), o.getW_Wf_PasosPK().getIdPaso(),
-					o.getNomPaso(), o.getEmail1(), o.getEmail2(), o.getEmail3(), o.getSolAutoriza(),
-					o.getSolDocumentos(), o.getOrdPaso(), o.getEnvCorreoPaso(), o.getEnvCorreoAutoriza(),
+					o.getNomPaso(), o.getEmail1(), o.getEmail2(), o.getEmail3(), Comunes.stringClean(o.getSolAutoriza()),
+					Comunes.stringClean(o.getSolDocumentos()), o.getOrdPaso(), Comunes.stringClean(o.getEnvCorreoPaso()), Comunes.stringClean(o.getEnvCorreoAutoriza()),
 					o.getAsuntoCorreo(), o.getTextoCorreo(), o.getTiempoAlerta1(), o.getTiempoAlerta2(),
 					o.getTiempoAlerta3(), o.getUsuUltMod(), o.getFecUltMod(), o.getFecCrea(), o.getUsuCrea()));
 		});

@@ -9,6 +9,8 @@ public class DTOWWfMov {
 	private String usuMovimiento;
 	private Integer numeroRadicacion;
 	private String estPaso;
+	private String estPasoMov;
+	private String estPasoDescrip;
 	private String comentarios;
 	private String envCorreo;
 	private String adjDocumentos;
@@ -40,6 +42,7 @@ public class DTOWWfMov {
 	private String usuario4Task;
 	private String codTer;
 	private String idPaso;
+	private String nitTer;
 
 	public DTOWWfMov() {
 		super();
@@ -332,5 +335,31 @@ public class DTOWWfMov {
 	public void setIdPaso(String idPaso) {
 		this.idPaso = idPaso;
 	}
+
+	public String getEstPasoMov() {
+		return estPasoMov;
+	}
+
+	public void setEstPasoMov(String estPasoMov) {
+		this.estPasoMov = estPasoMov;
+	}
+
+	public String getNitTer() {
+		return nitTer;
+	}
+
+	public void setNitTer(String nitTer) {
+		this.nitTer = nitTer;
+	}
+
+	public String getEstPasoDescrip() {
+		return estPasoDescrip;
+	}
+
+	public void setEstPasoDescrip(String estPasoDescrip) {
+		this.estPasoDescrip = estPasoDescrip;
+	}
+	
+	
 
 }

@@ -143,20 +143,27 @@ public class Terceros implements Serializable {
 	@Column(name = "dir_ciu")
 	private String dirCiu;
 
+	@Column(name = "clave_link")
+	private String claveLink;
+
 	public Terceros() {
 	}
 
-	public Terceros(BigDecimal codTer, String docTip, String nitTer, String nomTercero, String priApellido,
-			String segApellido, String lugarDoc, @Size(max = 60) String mailTer, String dirTerpal, String telter,
-			String telter1, String telter2, String feExp, String paisCodigo, String codiDept, String codiCiud,
-			String barrio, String antiEmpresa, String tipVivienda, String dirTeralt, String barrioTra,
-			String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo, String faxter, String indContrato,
-			String paramText, String entBan, String tipCta, String numCta, String idConyuge) {
+	public Terceros(BigDecimal codTer, String docTip, String nitTer, String nomTercero, String nomTer,
+			String priApellido, String segApellido, String lugarDoc, @Size(max = 60) String mailTer, String dirTerpal,
+			String telter, String telter1, String telter2, String feExp, String paisCodigo, String codiDept,
+			String codiCiud, String barrio, String antiEmpresa, String tipVivienda, String dirTeralt, String barrioTra,
+			String paisDirTrabajo, String deptDirTrabajo, String ciuDirTrabajo, String faxter, String fecExpDoc,
+			String indContrato, String paramText, String paramId, String entBan, String tipCta, String numCta,
+			String idConyuge, String nomCony, String emailConyuge, String celConyuge, String indSecEconomico,
+			@Size(max = 8) String dirPais, @Size(max = 8) String dirDep, @Size(max = 8) String dirCiu,
+			String claveLink) {
 		super();
 		this.codTer = codTer;
 		this.docTip = docTip;
 		this.nitTer = nitTer;
 		this.nomTercero = nomTercero;
+		this.nomTer = nomTer;
 		this.priApellido = priApellido;
 		this.segApellido = segApellido;
 		this.lugarDoc = lugarDoc;
@@ -178,12 +185,30 @@ public class Terceros implements Serializable {
 		this.deptDirTrabajo = deptDirTrabajo;
 		this.ciuDirTrabajo = ciuDirTrabajo;
 		this.faxter = faxter;
+		this.fecExpDoc = fecExpDoc;
 		this.indContrato = indContrato;
 		this.paramText = paramText;
+		this.paramId = paramId;
 		this.entBan = entBan;
 		this.tipCta = tipCta;
 		this.numCta = numCta;
 		this.idConyuge = idConyuge;
+		this.nomCony = nomCony;
+		this.emailConyuge = emailConyuge;
+		this.celConyuge = celConyuge;
+		this.indSecEconomico = indSecEconomico;
+		this.dirPais = dirPais;
+		this.dirDep = dirDep;
+		this.dirCiu = dirCiu;
+		this.claveLink = claveLink;
+	}
+
+	public BigDecimal getCodTer() {
+		return codTer;
+	}
+
+	public void setCodTer(BigDecimal codTer) {
+		this.codTer = codTer;
 	}
 
 	public String getDocTip() {
@@ -202,20 +227,20 @@ public class Terceros implements Serializable {
 		this.nitTer = nitTer;
 	}
 
-	public BigDecimal getCodTer() {
-		return codTer;
-	}
-
-	public void setCodTer(BigDecimal codTer) {
-		this.codTer = codTer;
-	}
-
 	public String getNomTercero() {
 		return nomTercero;
 	}
 
 	public void setNomTercero(String nomTercero) {
 		this.nomTercero = nomTercero;
+	}
+
+	public String getNomTer() {
+		return nomTer;
+	}
+
+	public void setNomTer(String nomTer) {
+		this.nomTer = nomTer;
 	}
 
 	public String getPriApellido() {
@@ -386,6 +411,14 @@ public class Terceros implements Serializable {
 		this.faxter = faxter;
 	}
 
+	public String getFecExpDoc() {
+		return fecExpDoc;
+	}
+
+	public void setFecExpDoc(String fecExpDoc) {
+		this.fecExpDoc = fecExpDoc;
+	}
+
 	public String getIndContrato() {
 		return indContrato;
 	}
@@ -400,6 +433,14 @@ public class Terceros implements Serializable {
 
 	public void setParamText(String paramText) {
 		this.paramText = paramText;
+	}
+
+	public String getParamId() {
+		return paramId;
+	}
+
+	public void setParamId(String paramId) {
+		this.paramId = paramId;
 	}
 
 	public String getEntBan() {
@@ -434,22 +475,6 @@ public class Terceros implements Serializable {
 		this.idConyuge = idConyuge;
 	}
 
-	public String getNomTer() {
-		return nomTer;
-	}
-
-	public void setNomTer(String nomTer) {
-		this.nomTer = nomTer;
-	}
-
-	public String getParamId() {
-		return paramId;
-	}
-
-	public void setParamId(String paramId) {
-		this.paramId = paramId;
-	}
-
 	public String getNomCony() {
 		return nomCony;
 	}
@@ -482,14 +507,6 @@ public class Terceros implements Serializable {
 		this.indSecEconomico = indSecEconomico;
 	}
 
-	public String getFecExpDoc() {
-		return fecExpDoc;
-	}
-
-	public void setFecExpDoc(String fecExpDoc) {
-		this.fecExpDoc = fecExpDoc;
-	}
-
 	public String getDirPais() {
 		return dirPais;
 	}
@@ -512,6 +529,14 @@ public class Terceros implements Serializable {
 
 	public void setDirCiu(String dirCiu) {
 		this.dirCiu = dirCiu;
+	}
+
+	public String getClaveLink() {
+		return claveLink;
+	}
+
+	public void setClaveLink(String claveLink) {
+		this.claveLink = claveLink;
 	}
 
 }

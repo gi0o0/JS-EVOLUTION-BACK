@@ -13,5 +13,8 @@ public interface ITercerosService {
 	DTOTerceros findByCodter(String codTer);
 
 	List<DTOTerceros> getAsesores();
+	
+	String modificarClaveLink(String nitTer, String hash);
 
+	DTOTerceros findByHash(String hash);
 }

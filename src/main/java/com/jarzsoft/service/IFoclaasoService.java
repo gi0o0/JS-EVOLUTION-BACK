@@ -13,4 +13,6 @@ public interface IFoclaasoService {
 
 	List<DTOFoclaaso> getAllCompanies();
 
+	DTOFoclaaso findByCodter(Integer codTer);
+
 }

@@ -1,7 +1,9 @@
 package com.jarzsoft.mapper.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -53,6 +55,8 @@ public class WWfMovMapper implements IWWfMovMapper {
 		out.setUsuComercialTask(o.getUsuComercialTask());
 		out.setUsuComercialVobo(o.getUsuComercialVobo());
 		out.setUsuMovimiento(o.getUsuMovimiento());
+		out.setEstPasoMov(o.getEstPasoMov());
+		out.setNitTer(o.getNitTer());
 
 		return out;
 	}
@@ -60,50 +64,52 @@ public class WWfMovMapper implements IWWfMovMapper {
 	@Override
 	public DTOWWfMov mapperEntitieToDao(WWfMov o) {
 		DTOWWfMov out = new DTOWWfMov();
-		if(null!=o) {
-		out.setAdjDocumentos(o.getAdjDocumentos());
-		out.setCieSigPaso(o.getCieSigPaso());
-		out.setCifin(o.getCifin());
-		out.setCodTer(o.getCodTer());
-		out.setComentarios(o.getComentarios());
-		out.setDatajuridico(o.getDatajuridico());
-		out.setEmail1(o.getEmail1());
-		out.setEmail2(o.getEmail2());
-		out.setEmail3(o.getEmail3());
-		out.setEmail4(o.getEmail4());
-		out.setEnEspera(o.getEnEspera());
-		out.setEnvCorreo(o.getEnvCorreo());
-		out.setEstPaso(o.getEstPaso());
-		out.setFecEnvio(o.getFecEnvio());
-		out.setIdWf(o.getIdWf());
-		out.setIdWfMov(o.getIdWfMov());
-		out.setIdPaso(o.getIdPaso());
-		out.setNumeroRadicacion(o.getNumeroRadicacion());
-		out.setResCifin(o.getResCifin());
-		out.setResDatajuridico(o.getResDatajuridico());
-		out.setUsuario1(o.getUsuario1());
-		out.setUsuario1Task(o.getUsuario1Task());
-		out.setUsuario1Vobo(o.getUsuario1Vobo());
-		out.setUsuario2(o.getUsuario2());
-		out.setUsuario2Task(o.getUsuario2Task());
-		out.setUsuario2Vobo(o.getUsuario2Vobo());
-		out.setUsuario3(o.getUsuario3());
-		out.setUsuario3Task(o.getUsuario3Task());
-		out.setUsuario3Vobo(o.getUsuario3Vobo());
-		out.setUsuario4(o.getUsuario4());
-		out.setUsuario4Task(o.getUsuario4Task());
-		out.setUsuario4Vobo(o.getUsuario4Vobo());
-		out.setUsuComercial(o.getUsuComercial());
-		out.setUsuComercialTask(o.getUsuComercialTask());
-		out.setUsuComercialVobo(o.getUsuComercialVobo());
-		out.setUsuMovimiento(o.getUsuMovimiento());
+		if (null != o) {
+			out.setAdjDocumentos(o.getAdjDocumentos());
+			out.setCieSigPaso(o.getCieSigPaso());
+			out.setCifin(o.getCifin());
+			out.setCodTer(o.getCodTer());
+			out.setComentarios(o.getComentarios());
+			out.setDatajuridico(o.getDatajuridico());
+			out.setEmail1(o.getEmail1());
+			out.setEmail2(o.getEmail2());
+			out.setEmail3(o.getEmail3());
+			out.setEmail4(o.getEmail4());
+			out.setEnEspera(o.getEnEspera());
+			out.setEnvCorreo(o.getEnvCorreo());
+			out.setEstPaso(o.getEstPaso());
+			out.setFecEnvio(o.getFecEnvio());
+			out.setIdWf(o.getIdWf());
+			out.setIdWfMov(o.getIdWfMov());
+			out.setIdPaso(o.getIdPaso());
+			out.setNumeroRadicacion(o.getNumeroRadicacion());
+			out.setResCifin(o.getResCifin());
+			out.setResDatajuridico(o.getResDatajuridico());
+			out.setUsuario1(o.getUsuario1());
+			out.setUsuario1Task(o.getUsuario1Task());
+			out.setUsuario1Vobo(o.getUsuario1Vobo());
+			out.setUsuario2(o.getUsuario2());
+			out.setUsuario2Task(o.getUsuario2Task());
+			out.setUsuario2Vobo(o.getUsuario2Vobo());
+			out.setUsuario3(o.getUsuario3());
+			out.setUsuario3Task(o.getUsuario3Task());
+			out.setUsuario3Vobo(o.getUsuario3Vobo());
+			out.setUsuario4(o.getUsuario4());
+			out.setUsuario4Task(o.getUsuario4Task());
+			out.setUsuario4Vobo(o.getUsuario4Vobo());
+			out.setUsuComercial(o.getUsuComercial());
+			out.setUsuComercialTask(o.getUsuComercialTask());
+			out.setUsuComercialVobo(o.getUsuComercialVobo());
+			out.setUsuMovimiento(o.getUsuMovimiento());
+			out.setEstPasoMov(o.getEstPasoMov());
+			out.setNitTer(o.getNitTer());
 		}
 		return out;
 	}
 
 	@Override
-	public DTOWWfMov mapperDaoToDto(DTOSolCredito o, W_Wf_Pasos p, String user, Integer idWf, Integer id,
-			String idPaso, HashMap<String, String> users) {
+	public DTOWWfMov mapperDaoToDto(DTOSolCredito o, W_Wf_Pasos p, String user, Integer idWf, Integer id, String idPaso,
+			HashMap<String, String> users) {
 		DTOWWfMov out = new DTOWWfMov();
 		out.setAdjDocumentos(p.getSolDocumentos());
 		out.setCieSigPaso(idPaso);
@@ -113,8 +119,8 @@ public class WWfMovMapper implements IWWfMovMapper {
 		out.setEmail2(p.getEmail2());
 		out.setEmail3(p.getEmail3());
 		out.setEmail4(p.getEmail3());
-		out.setEnEspera(p.getSolAutoriza());
-		out.setEnvCorreo(p.getEnvCorreoPaso());
+		out.setEnEspera(p.getSolAutoriza() == null || p.getSolAutoriza().equals("false") ? "N" : "S");
+		out.setEnvCorreo(p.getEnvCorreoPaso() == null || p.getEnvCorreoPaso().equals("false") ? "N" : "S");
 		out.setEstPaso(o.getEstado());
 		out.setFecEnvio(new Date());
 		out.setIdWf(idWf);
@@ -127,7 +133,19 @@ public class WWfMovMapper implements IWWfMovMapper {
 		out.setUsuario4(users.get("user4"));
 		out.setUsuComercial(user);
 		out.setUsuMovimiento(user);
+		out.setEstPasoMov(o.getTipSolcredito());
+		out.setNitTer(o.getCodTer());
 		return out;
+	}
+
+	@Override
+	public List<DTOWWfMov> mapperEntitieLisToDaoList(List<WWfMov> list) {
+		List<DTOWWfMov> response = new ArrayList<DTOWWfMov>();
+		list.stream().forEach(o -> {
+			response.add(mapperEntitieToDao(o));
+		});
+
+		return response;
 	}
 
 }

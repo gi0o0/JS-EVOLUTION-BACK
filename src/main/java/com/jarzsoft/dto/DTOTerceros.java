@@ -44,7 +44,7 @@ public class DTOTerceros {
 	private String dirPais;
 	private String dirDep;
 	private String dirCiu;
-
+	private String claveLink;
 	public DTOTerceros(BigDecimal codTer, String nomTercero, String priApellido, String segApellido, String lugarDoc,
 			String mailTer, String dirTerpal, String telter, String telter1, String telter2, String feExp,
 			String paisCodigo, String codiDept, String codiCiud, String barrio, String antiEmpresa, String tipVivienda,
@@ -408,5 +408,15 @@ public class DTOTerceros {
 	public void setDirCiu(String dirCiu) {
 		this.dirCiu = dirCiu;
 	}
+
+	public String getClaveLink() {
+		return claveLink;
+	}
+
+	public void setClaveLink(String claveLink) {
+		this.claveLink = claveLink;
+	}
+	
+	
 
 }
