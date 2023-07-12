@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="924"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -120,6 +120,9 @@
 	<parameter name="cargoWf_codeu" class="java.lang.String"/>
 	<parameter name="indContrato_codeu" class="java.lang.String"/>
 	<parameter name="paramText_codeu" class="java.lang.String"/>
+	<parameter name="is_solcre" class="java.lang.String"/>
+	<parameter name="no_solcre" class="java.lang.String"/>
+	<parameter name="empresa_cod" class="java.lang.String"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["C:\\Users\\PC\\Documents\\NetBeansProjects\\reportes2\\src\\reportes\\"]]></defaultValueExpression>
 	</parameter>
@@ -672,7 +675,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[LUGAR DE TRABAJO]]></text>
+				<text><![CDATA[DIRECCION DE TRABAJO]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="16" y="104" width="138" height="9" uuid="b9972bdf-a4e0-4ef6-80a1-ac6598165e9e"/>
@@ -2187,7 +2190,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{dirTeralt_codeu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{empresa_cod}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement key="line-1" x="10" y="608" width="525" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2fd05a52-a3ce-41ba-a832-110df10fa6fe"/>
@@ -2374,6 +2377,14 @@
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{paramText_codeu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="286" width="14" height="9" uuid="3f3b8252-86ac-4890-bdf1-8d5667b55699"/>
+				<textFieldExpression><![CDATA[$P{is_solcre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="286" width="14" height="9" uuid="36d0bd9f-7903-4511-99f4-15871e7ee916"/>
+				<textFieldExpression><![CDATA[$P{no_solcre}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>

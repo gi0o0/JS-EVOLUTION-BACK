@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="118"/>
+	<property name="ireport.x" value="20"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -168,7 +168,7 @@
 				<text><![CDATA[Nombre]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="213" y="580" width="57" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
+				<reportElement x="232" y="580" width="50" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -181,19 +181,19 @@
 				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="49" y="630" width="158" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
+				<reportElement key="line-1" x="46" y="630" width="180" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="308" y="615" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
+				<reportElement key="line-1" x="318" y="615" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="607" width="28" height="10" uuid="f06689b9-a937-444f-9ac3-5b1a0467eb34"/>
+				<reportElement key="staticText-4" x="290" y="607" width="28" height="10" uuid="f06689b9-a937-444f-9ac3-5b1a0467eb34"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
@@ -207,13 +207,13 @@
 				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="316" y="633" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
+				<reportElement key="line-1" x="326" y="633" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<rectangle>
-				<reportElement x="482" y="580" width="55" height="71" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
+				<reportElement x="487" y="580" width="50" height="71" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -225,21 +225,21 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="590" width="28" height="11" uuid="ffce0f45-4cbb-490b-8723-287b58bf5a34"/>
+				<reportElement key="staticText-4" x="290" y="590" width="28" height="11" uuid="ffce0f45-4cbb-490b-8723-287b58bf5a34"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="624" width="46" height="11" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
+				<reportElement key="staticText-4" x="290" y="624" width="46" height="11" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Nombre]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="310" y="600" width="163" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3486364a-227a-470c-ba82-2314ea5cacd0"/>
+				<reportElement key="line-1" x="320" y="600" width="163" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3486364a-227a-470c-ba82-2314ea5cacd0"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -404,6 +404,34 @@ Así mismo doy / damos CONSENTIMIENTO para que desde las instalaciones en la ciu
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="53" y="605" width="83" height="9" uuid="a03b5fb5-1c99-40ce-84b1-2d465e2f3efa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="53" y="621" width="173" height="9" uuid="d4cd79f0-35f2-4a97-adcb-cd82b4dc867d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="328" y="605" width="83" height="9" uuid="818b8ee8-dfaf-4c1b-84c9-5ab3fffd01e3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="327" y="621" width="156" height="9" uuid="a01e6a2b-023a-482f-8e28-8d65d48aa746"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 </jasperReport>

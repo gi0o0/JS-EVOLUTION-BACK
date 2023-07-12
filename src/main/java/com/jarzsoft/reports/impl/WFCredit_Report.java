@@ -133,8 +133,25 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("sol_fe_sol", now);
 		param.put("valorPress", String.valueOf(o.getValorPress()));
 		param.put("perCuota", parameterService.getSingleById(Constantes.PERIODICIDAD,o.getPerCuota()).getValue());
-		param.put("is_cod", "X");
-		param.put("no_cod", "");
+		if (null != o.getCodeu()) {
+			param.put("is_cod", "X");
+			param.put("no_cod", "");	
+		}else {
+			param.put("is_cod", "");
+			param.put("no_cod", "X");
+		}
+		
+		if ("S".equals(o.getIndSolCredito())) {
+			param.put("is_solcre", "X");
+			param.put("no_solcre", "");	
+		}else {
+			param.put("is_solcre", "");
+			param.put("no_solcre", "X");	
+		}
+		
+		
+			
+		
 		param.put("nroCuotas", String.valueOf(o.getNroCuotas()));
 		param.put("monto_aprob", String.valueOf(o.getValorPress()));  
 		param.put("is_soli", "X");
@@ -220,6 +237,8 @@ public class WFCredit_Report implements IReportStrategy {
 					parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getCodeu().getIndContrato()).getValue());
 			param.put("paramText_codeu",
 					parameterService.getSingleById(Constantes.EPS, o.getCodeu().getParamText()).getValue());
+			
+			param.put("empresa_cod", String.valueOf(o.getCodeu().getEmpresaCod()));	
 		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL, param,
