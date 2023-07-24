@@ -19,6 +19,8 @@ public interface IWWfMovMapper {
 
 	public List<DTOWWfMov> mapperEntitieLisToDaoList(List<WWfMov> o);
 
+	public List<DTOWWfMov> mapperEntitieLisToDaoListCustom(List<Object[]> o);
+
 	public DTOWWfMov mapperDaoToDto(DTOSolCredito o, W_Wf_Pasos p, String user, Integer idWf, Integer id, String idPaso,
 			HashMap<String, String> users);
 

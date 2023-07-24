@@ -9,7 +9,6 @@ import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.repository.ParametroRepository;
-import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.SendEmail;
 
 @Component

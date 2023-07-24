@@ -5,8 +5,10 @@ import java.util.List;
 public class DTOWFPqr {
 
 	private String idWf;
+	private String nameWf;
 	private Boolean isUpdate;
 	private String idStep;
+	private String nameStep;
 	private String idStepNow;
 	private String idSubStep;
 	private String idMov;
@@ -38,6 +40,9 @@ public class DTOWFPqr {
 	private Boolean certificado;
 	private Boolean derechoPeticion;
 	private List<String> credtis;
+
+	private String usuComercial;
+	private String fecUltMod;
 
 	public DTOWFPqr() {
 		super();
@@ -331,6 +336,38 @@ public class DTOWFPqr {
 
 	public void setMovs(List<DTOWWfMov> movs) {
 		this.movs = movs;
+	}
+
+	public String getNameWf() {
+		return nameWf;
+	}
+
+	public void setNameWf(String nameWf) {
+		this.nameWf = nameWf;
+	}
+
+	public String getNameStep() {
+		return nameStep;
+	}
+
+	public void setNameStep(String nameStep) {
+		this.nameStep = nameStep;
+	}
+
+	public String getUsuComercial() {
+		return usuComercial;
+	}
+
+	public void setUsuComercial(String usuComercial) {
+		this.usuComercial = usuComercial;
+	}
+
+	public String getFecUltMod() {
+		return fecUltMod;
+	}
+
+	public void setFecUltMod(String fecUltMod) {
+		this.fecUltMod = fecUltMod;
 	}
 
 }

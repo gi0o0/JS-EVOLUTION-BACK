@@ -46,6 +46,7 @@ public class WFPqrService implements IWFPqrService {
 		this.wWfMovService = wWfMovService;
 		this.wpParameterService = wpParameterService;
 		this.userService = userService;
+
 		stepStrategies.forEach(step -> map.put(step.getType(), step));
 	}
 

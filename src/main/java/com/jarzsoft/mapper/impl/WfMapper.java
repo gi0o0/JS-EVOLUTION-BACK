@@ -253,7 +253,12 @@ public class WfMapper implements IWfMapper {
 		out.setNumeroRadicacion(o.getNumeroRadicacion());
 		out.setIdMov(o.getIdWfMov() + "");
 		out.setNitter(o.getNitTer());
-
+		out.setNameWf(o.getNameWf());
+		out.setNameStep(o.getNamePaso());
+		out.setUsuComercial(o.getUsuComercial());
+		out.setFecUltMod(o.getFecUltMod()+"");
+		out.setEntitie(o.getEstPasoMov());
+		
 		return out;
 	}
 

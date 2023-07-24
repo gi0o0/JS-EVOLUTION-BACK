@@ -109,7 +109,7 @@ public class WWfMovService implements IWWfMovService {
 
 	@Override
 	public List<DTOWWfMov> findMovByUser(String user) {
-		return mapper.mapperEntitieLisToDaoList(wWfMovRepository.findMovByUser(user));
+		return mapper.mapperEntitieLisToDaoListCustom(wWfMovRepository.findMovByUserCustom(user));
 	}
 
 	@Override

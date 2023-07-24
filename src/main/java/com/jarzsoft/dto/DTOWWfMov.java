@@ -6,9 +6,11 @@ public class DTOWWfMov {
 
 	private Integer idWfMov;
 	private Integer idWf;
+	private String nameWf;
 	private String usuMovimiento;
 	private Integer numeroRadicacion;
 	private String estPaso;
+	private String namePaso;
 	private String estPasoMov;
 	private String estPasoDescrip;
 	private String comentarios;
@@ -43,6 +45,7 @@ public class DTOWWfMov {
 	private String codTer;
 	private String idPaso;
 	private String nitTer;
+	private Date fecUltMod;
 
 	public DTOWWfMov() {
 		super();
@@ -359,7 +362,30 @@ public class DTOWWfMov {
 	public void setEstPasoDescrip(String estPasoDescrip) {
 		this.estPasoDescrip = estPasoDescrip;
 	}
-	
-	
 
+	public String getNameWf() {
+		return nameWf;
+	}
+
+	public void setNameWf(String nameWf) {
+		this.nameWf = nameWf;
+	}
+
+	public String getNamePaso() {
+		return namePaso;
+	}
+
+	public void setNamePaso(String namePaso) {
+		this.namePaso = namePaso;
+	}
+
+	public Date getFecUltMod() {
+		return fecUltMod;
+	}
+
+	public void setFecUltMod(Date fecUltMod) {
+		this.fecUltMod = fecUltMod;
+	}
+
+	
 }

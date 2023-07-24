@@ -131,71 +131,21 @@ public class WWfMov implements Serializable {
 	@Column(name = "codter")
 	private String codTer;
 
+	@Column(name = "fec_ult_mod")
+	private Date fecUltMod;
+
 	public WWfMov() {
 	}
 
 	@PrePersist
 	public void prePersist() {
-		this.cifin = "N";
-		this.resCifin = " ";
-		this.datajuridico = "N";
-		this.resDatajuridico = " ";
-		this.fecEnvio = new Date();
-		this.usuComercialTask = "N";
-		this.usuComercialVobo = "N";
-		this.usuario1Vobo = "N";
-		this.usuario1Task = "N";
-		this.usuario2Vobo = "N";
-		this.usuario2Task = "N";
-		this.usuario3Vobo = "N";
-		this.usuario3Task = "N";
-		this.usuario4Vobo = "N";
-		this.usuario4Task = "N";
-
-		if (this.usuario1 == null) {
-			this.usuario1 = "N";
-		}
-		if (this.usuario2 == null) {
-			this.usuario2 = "N";
-		}
-		if (this.usuario3 == null) {
-			this.usuario3 = "N";
-		}
-		if (this.usuario4 == null) {
-			this.usuario4 = "N";
-		}
+		defaultValues("I");
 
 	}
 
 	@PreUpdate
 	public void preUpdate() {
-		this.cifin = "N";
-		this.resCifin = " ";
-		this.datajuridico = "N";
-		this.resDatajuridico = " ";
-		this.usuComercialTask = "N";
-		this.usuComercialVobo = "N";
-		this.usuario1Vobo = "N";
-		this.usuario1Task = "N";
-		this.usuario2Vobo = "N";
-		this.usuario2Task = "N";
-		this.usuario3Vobo = "N";
-		this.usuario3Task = "N";
-		this.usuario4Vobo = "N";
-		this.usuario4Task = "N";
-
-		if (this.usuario1 == null) {
-			this.usuario1 = "N";
-		}
-		if (this.usuario2 == null) {
-			this.usuario2 = "N";
-		}
-		if (this.usuario3 == null) {
-			this.usuario3 = "N";
-		}
-		if (this.usuario4 == null) {
-			this.usuario4 = "N";
-		}
+		defaultValues("U");
 	}
 
 	public Integer getIdWfMov() {
@@ -500,6 +450,50 @@ public class WWfMov implements Serializable {
 
 	public void setNitTer(String nitTer) {
 		this.nitTer = nitTer;
+	}
+
+	public Date getFecUltMod() {
+		return fecUltMod;
+	}
+
+	public void setFecUltMod(Date fecUltMod) {
+		this.fecUltMod = fecUltMod;
+	}
+
+	private void defaultValues(String type) {
+
+		if ("I".equals(type)) {
+			this.fecEnvio = new Date();
+		}
+
+		this.cifin = "N";
+		this.resCifin = " ";
+		this.datajuridico = "N";
+		this.resDatajuridico = " ";
+		this.fecUltMod = new Date();
+		this.usuComercialTask = "N";
+		this.usuComercialVobo = "N";
+		this.usuario1Vobo = "N";
+		this.usuario1Task = "N";
+		this.usuario2Vobo = "N";
+		this.usuario2Task = "N";
+		this.usuario3Vobo = "N";
+		this.usuario3Task = "N";
+		this.usuario4Vobo = "N";
+		this.usuario4Task = "N";
+
+		if (this.usuario1 == null) {
+			this.usuario1 = "N";
+		}
+		if (this.usuario2 == null) {
+			this.usuario2 = "N";
+		}
+		if (this.usuario3 == null) {
+			this.usuario3 = "N";
+		}
+		if (this.usuario4 == null) {
+			this.usuario4 = "N";
+		}
 	}
 
 }

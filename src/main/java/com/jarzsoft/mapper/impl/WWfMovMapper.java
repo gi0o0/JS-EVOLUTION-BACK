@@ -103,6 +103,8 @@ public class WWfMovMapper implements IWWfMovMapper {
 			out.setUsuMovimiento(o.getUsuMovimiento());
 			out.setEstPasoMov(o.getEstPasoMov());
 			out.setNitTer(o.getNitTer());
+			out.setUsuComercial(o.getUsuComercial());
+			out.setFecUltMod(o.getFecUltMod());
 		}
 		return out;
 	}
@@ -143,6 +145,32 @@ public class WWfMovMapper implements IWWfMovMapper {
 		List<DTOWWfMov> response = new ArrayList<DTOWWfMov>();
 		list.stream().forEach(o -> {
 			response.add(mapperEntitieToDao(o));
+		});
+
+		return response;
+	}
+
+	@Override
+	public List<DTOWWfMov> mapperEntitieLisToDaoListCustom(List<Object[]> o) {
+
+		List<DTOWWfMov> response = new ArrayList<DTOWWfMov>();
+
+		o.stream().forEach(obj -> {
+			DTOWWfMov mov = new DTOWWfMov();
+			mov.setIdWf(Integer.parseInt(obj[0] + ""));
+			mov.setIdPaso(obj[1] + "");
+			mov.setComentarios(obj[2] + "");
+			mov.setEstPaso(obj[3] + "");
+			mov.setNumeroRadicacion((int) Double.parseDouble(obj[4] + ""));
+			mov.setIdWfMov(Integer.parseInt(obj[5] + ""));
+			mov.setNitTer(obj[6] + "");
+			mov.setNameWf(obj[7] + "");
+			mov.setNamePaso(obj[8] + "");
+		    mov.setFecUltMod((Date) obj[9]);
+		    mov.setUsuComercial(obj[10] + "");
+	
+			response.add(mov);
+
 		});
 
 		return response;

@@ -1,36 +1,5 @@
 package com.jarzsoft;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Scanner;
-import java.util.TimeZone;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
-import org.apache.commons.lang.LocaleUtils;
-
-import com.itextpdf.text.log.SysoCounter;
-import com.jarzsoft.entities.Parametro;
-
 public class dd {
 
 	public static void main(String[] args) {
