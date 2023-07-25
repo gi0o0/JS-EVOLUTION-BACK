@@ -30,7 +30,7 @@ public interface TercerosRepository extends JpaRepository<Terceros, Long> {
 	@Query(value = "SELECT  max (codter ) +1 FROM Terceros", nativeQuery = true)
 	int getKey();
 
-	@Query(value = "SELECT * FROM terceros , fotabase f WHERE codter =f.codter_asesor ", nativeQuery = true)
+	@Query(value = "SELECT * FROM terceros , fotabase f WHERE codter =f.codter_asesor order by nom_tercero ASC  ", nativeQuery = true)
 	List<Terceros> getAsesores();
 	
 	@Transactional

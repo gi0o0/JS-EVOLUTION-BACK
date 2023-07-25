@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.exception.PageNoFoundException;
+import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
 import com.jarzsoft.service.IWWfMovService;
@@ -19,14 +20,19 @@ public class WFStep_6Service implements IStepStrategy {
 
 	private final ISolCreditoService solCreditoService;
 
+	private final IFilesUserService serviceFile;
+
 	@Autowired
-	public WFStep_6Service(IWWfMovService wWfMovService, ISolCreditoService solCreditoService) {
+	public WFStep_6Service(IWWfMovService wWfMovService, ISolCreditoService solCreditoService,
+			IFilesUserService serviceFile) {
 		super();
 
 		this.wWfMovService = wWfMovService;
 
 		this.solCreditoService = solCreditoService;
 
+		this.serviceFile = serviceFile;
+	
 	}
 
 	@Override
@@ -34,10 +40,19 @@ public class WFStep_6Service implements IStepStrategy {
 
 		DTOSolCredito credito = solCreditoService.findBynumeroRadicacion(o.getNumeroRadicacion());
 		if (null != credito) {
+
+			if (null != o.getFiles()) {
+				for (int i = 0; i < o.getFiles().size(); i++) {
+					serviceFile.create(o.getNumeroRadicacion() + "", getType(), o.getNitter(), o.getFiles().get(i));
+				}
+			}
+
 			solCreditoService.updateState(o.getNumeroRadicacion(), EnumStates.TIPO_ESTADO.STATE_9.getName());
-			credito.setEstado(o.getEstado());
+			String state = EnumStates.TIPO_ESTADO.STATE_14.getName();
+			credito.setEstado(state);
 			credito.setObserva(o.getComments());
-			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_6.getName(),o.getIsUpdate(),o.getIdWf());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_6.getName(), o.getIsUpdate(),
+					o.getIdWf());
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_7.getName());
 
 		} else {

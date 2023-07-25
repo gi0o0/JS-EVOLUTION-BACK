@@ -18,5 +18,9 @@ public interface FoclaasoRepository extends JpaRepository<Foclaaso, BigInteger> 
 
 	@Query(value = "select * from foclaaso where cod_inter in ( select fo.cla_asoci  from fodataso fo where fo.cod_ter =:codTer)  ", nativeQuery = true)
 	Foclaaso findByCodter(@Param("codTer") Integer codTer);
+	
+	@Query(value = "select * from foclaaso order by nom_claaso ASC  ", nativeQuery = true)
+	List<Foclaaso> findAll();
+	
 
 }
