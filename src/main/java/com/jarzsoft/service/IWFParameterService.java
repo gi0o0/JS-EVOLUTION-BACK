@@ -2,6 +2,7 @@ package com.jarzsoft.service;
 
 import java.util.List;
 
+import com.jarzsoft.dto.DTOStepsState;
 import com.jarzsoft.dto.DTOWFParameter;
 import com.jarzsoft.dto.DTOWFParameterEst;
 import com.jarzsoft.dto.DTOWFParameterStep;
@@ -48,5 +49,7 @@ public interface IWFParameterService {
 	List<DTOWalletUser> getPortafolioWk1(String codTer);
 
 	List<DTOWalletUser> getPortafolioWk2(String codTer);
+
+	List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf);
 
 }

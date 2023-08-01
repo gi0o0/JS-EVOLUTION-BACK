@@ -190,9 +190,8 @@ public class WfMapper implements IWfMapper {
 		out.setIndSolCredito(o.getIndSolCredito());
 		out.setIdStepNow(stepNow + "");
 		out.setSolPagare(o.getSolPagare());
-
-		if (mov != null) {
-			out.setIdWf(EnumWF.TIPO_WF.IDWF_4.getName());
+		out.setIdWf(EnumWF.TIPO_WF.IDWF_4.getName());
+		if (mov != null) {			
 			out.setIdSubStep("0");
 			out.setNextStep(mov.getIdPaso());
 			out.setIdStep(mov.getIdPaso());

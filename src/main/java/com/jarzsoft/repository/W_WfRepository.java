@@ -281,5 +281,29 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codeudor4  =  :codTer\r\n" + " and p.estado = 'C' and  p.saldo_capital = 0  \r\n"
 			+ " order by t.nomter, p.numero_credito", nativeQuery = true)
 	List<Object[]> findPortafolioWf2(@Param("codTer") String codTer);
+	
+	
+	@Query(value = "select wm.codter as codter, wm.numero_radicacion as numero_radicacion, wm.usu_movimiento as usuario,"
+			+ "wm.usu_comercial as usuarioC,  wm.fec_ult_mod as fecha, "
+			+ "wm.id_paso as id_paso, wm.comentarios as comentarios, wm.est_paso as est_paso, "
+			+ " '' as numero_credito, '' as numdocu, '' as tipodocu "
+			+ "from w_wf_mov wm  "
+			+ "where wm.id_wf = :idWf "
+			+ "and wm.numero_radicacion = :numRad "
+			+ "union all "
+			+ "select p.codter as codter, p.numero_radicacion as numero_radicacion, p.usu_crea  as usuario, "
+			+ "p.usu_ult_mod as usuarioC,  p.fec_ult_mod as fecha, "
+			+ "9  as id_paso, 'Racidaciòn del Crèdito' as comentarios, '99' as est_paso, "
+			+ " p.numero_credito as numero_credito, str(p.tip_doc_cont) as tipodocu, str(p.comprobante_contable) as numdocu "
+			+ "from prestamo p "
+			+ "where p.numero_radicacion = :numRad and p.estado = 'A' union all "
+			+ "select m.tercero as codter, ''  as numero_radicacion, m.usu_crea  as usuario, "
+			+ "m.usu_ult_mod as usuarioC,  m.fec_ult_mod as fecha, "
+			+ "10  as id_paso, m.concepto as comentarios, '99' as est_paso, "
+			+ " m.auxiliar2 as numero_credito, str(m.tipodocu), str(m.numdocu) "
+			+ "from movicon m "
+			+ "where auxiliar2 = (select p.numero_credito from prestamo p where p.numero_radicacion = :numRad and p.estado = 'A') "
+			+ "and tercero = :codTer and creditos > 0 order by id_paso", nativeQuery = true)
+	List<Object[]> findSteptsState(@Param("codTer") String codTer,@Param("numRad") String numRad,@Param("idWf") String idWf);
 
 }

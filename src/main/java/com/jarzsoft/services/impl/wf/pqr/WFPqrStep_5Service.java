@@ -83,9 +83,7 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 
 		ArrayList<String> reportes = new ArrayList<>();
 
-		List<DTOFilesUser> fileByNumRad = serviceFile.listAllById(o.getNumeroRadicacion() + "");
-
-		for (DTOFilesUser file : fileByNumRad)
+		for (DTOFilesUser file : o.getFilesEmail())
 			reportes.add(file.getPath());
 
 		sendEmail.Send(o.getMailTer(), asunto_email, text_email, reportes);

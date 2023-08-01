@@ -25,6 +25,7 @@ public class DTOWFPqr {
 	private String mailTer;
 	private String dirTerpal;
 	private List<DTOWfDocs> files;
+	private List<DTOFilesUser> filesEmail;
 	private Boolean isRequiredFiles;
 	private Boolean isRequiredEmail;
 	private String token;
@@ -368,6 +369,14 @@ public class DTOWFPqr {
 
 	public void setFecUltMod(String fecUltMod) {
 		this.fecUltMod = fecUltMod;
+	}
+
+	public List<DTOFilesUser> getFilesEmail() {
+		return filesEmail;
+	}
+
+	public void setFilesEmail(List<DTOFilesUser> filesEmail) {
+		this.filesEmail = filesEmail;
 	}
 
 }

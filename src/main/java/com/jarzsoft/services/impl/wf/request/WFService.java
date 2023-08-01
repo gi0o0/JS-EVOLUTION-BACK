@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOFodataso;
 import com.jarzsoft.dto.DTOSolCredito;
+import com.jarzsoft.dto.DTOStepsState;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFFilter;
@@ -145,11 +146,12 @@ public class WFService implements IWFService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<DTOWF> listAllByFilters(DTOWFFilter f) {
+	public List<DTOWF> listAllByFilters(DTOWFFilter f, String user) {
 
-		String consulta = "select DISTINCT s.numero_radicacion,s.estado from w_wf_mov w, SOL_CREDITO s where w.id_wf = 4 and w.numero_radicacion = s.numero_radicacion ";
+		String consulta = "select DISTINCT s.numero_radicacion,s.estado from w_wf_mov w, SOL_CREDITO s where w.id_wf = 4 and w.numero_radicacion = s.numero_radicacion and (w.usu_movimiento = '"
+				+ user + "' " + "or exists (select wu.codperfil from W_Bas_Usuario wu where wu.Usuario = '" + user
+				+ "' and wu.codperfil = 1 ) " + ")";
 
-	
 		if (null != f.getEntitie() && !"".equals(f.getEntitie())) {
 			consulta = " select s.* from SOL_CREDITO s ,FODATASO f WHERE s.codter = f.cod_ter  and f.cla_asoci ='"
 					+ f.getEntitie() + "'";
@@ -168,11 +170,11 @@ public class WFService implements IWFService {
 		if (null != f.getAsesor() && !"".equals(f.getAsesor())) {
 			consulta += " AND codter_asesor = '" + f.getAsesor() + "'";
 		}
-		
-		if (null != f.getSector() && !"".equals(f.getSector())) {
-			consulta = " select s.* from SOL_CREDITO s ,FODATASO f where s.codter = f.cod_ter  and f.cla_asoci in (select cod_inter from foclaaso where codsec ='"+ f.getSector() + "')";
-		}
 
+		if (null != f.getSector() && !"".equals(f.getSector())) {
+			consulta = " select s.* from SOL_CREDITO s ,FODATASO f where s.codter = f.cod_ter  and f.cla_asoci in (select cod_inter from foclaaso where codsec ='"
+					+ f.getSector() + "')";
+		}
 
 		Query query = entityManager.createNativeQuery(consulta);
 
@@ -184,6 +186,11 @@ public class WFService implements IWFService {
 		}
 
 		return out;
+	}
+
+	@Override
+	public List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf) {
+		return wpParameterService.getStepsState(codTer, numRad, idWf);
 	}
 
 }

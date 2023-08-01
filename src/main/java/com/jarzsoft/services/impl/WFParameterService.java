@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jarzsoft.dto.DTOStepsState;
 import com.jarzsoft.dto.DTOWFParameter;
 import com.jarzsoft.dto.DTOWFParameterEst;
 import com.jarzsoft.dto.DTOWFParameterStep;
@@ -249,6 +250,11 @@ public class WFParameterService implements IWFParameterService {
 	@Override
 	public List<DTOWalletUser> getPortafolioWk2(String codTer) {
 		return mapperStep.mapperEntitiePortafolioToDto(dao.findPortafolioWf2(codTer));
+	}
+
+	@Override
+	public List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf) {
+		return mapperStep.mapperEntitieSteptStateToDto(dao.findSteptsState(codTer, numRad, idWf));
 	}
 
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jarzsoft.dto.DTOStepsState;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFFilter;
 import com.jarzsoft.dto.DTOWFParameterStep;
@@ -47,10 +48,10 @@ public class WFController {
 	public List<DTOWF> listAllByUser(@RequestAttribute(name = "user") String user) {
 		return service.listAllByUser(user);
 	}
-	
+
 	@PostMapping(value = "/filter", produces = "application/json", consumes = "application/json")
 	public List<DTOWF> listAllByFilters(@RequestBody DTOWFFilter o, @RequestAttribute(name = "user") String user) {
-		return service.listAllByFilters(o);
+		return service.listAllByFilters(o, user);
 	}
 
 	@GetMapping(value = "/{num_rad}/steps", produces = "application/json")
@@ -61,6 +62,12 @@ public class WFController {
 	@GetMapping(value = "/{cod_ter}/portafolio", produces = "application/json")
 	public List<DTOWalletUser> getPortafolio(@PathVariable("cod_ter") String codTer) {
 		return service.getPortafolio(codTer);
+	}
+
+	@GetMapping(value = "/steps/wf/{id_wf}/user/{cod_ter}/rad/{num_rad}/stepstate", produces = "application/json")
+	public List<DTOStepsState> getStepSates(@PathVariable("id_wf") String idWf, @PathVariable("cod_ter") String codTer,
+			@PathVariable("num_rad") String numRad) {
+		return service.getStepsState(codTer, numRad, idWf);
 	}
 
 	@PutMapping(value = "/state", produces = "application/json", consumes = "application/json")

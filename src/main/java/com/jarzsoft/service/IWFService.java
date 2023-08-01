@@ -2,6 +2,7 @@ package com.jarzsoft.service;
 
 import java.util.List;
 
+import com.jarzsoft.dto.DTOStepsState;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFFilter;
 import com.jarzsoft.dto.DTOWFParameterStep;
@@ -23,6 +24,8 @@ public interface IWFService {
 
 	List<DTOWalletUser> getPortafolio(String codTer);
 
-	List<DTOWF> listAllByFilters(DTOWFFilter o);
+	List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf);
+
+	List<DTOWF> listAllByFilters(DTOWFFilter o,String user);
 
 }

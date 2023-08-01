@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.jarzsoft.dto.DTOStepsState;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Pasos;
@@ -58,6 +59,17 @@ public class WfStepParameterMapper implements IWfStepParameterMapper {
 			//response.add(new DTOWalletUser(String.valueOf(obj[3]),String.valueOf(obj[40]),String.valueOf(obj[127]),String.valueOf(obj[128]),String.valueOf(obj[110]),String.valueOf(obj[118]),String.valueOf(obj[121]),String.valueOf(obj[119]),String.valueOf(obj[120]),String.valueOf(obj[16])));
 			response.add(new DTOWalletUser(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[23]),String.valueOf(obj[24]),String.valueOf(obj[6]),String.valueOf(obj[14]),String.valueOf(obj[17]),String.valueOf(obj[15]),String.valueOf(obj[16]),String.valueOf(obj[2])));
 			
+		});
+		
+		return response;
+	}
+
+	@Override
+	public List<DTOStepsState> mapperEntitieSteptStateToDto(List<Object[]> o) {
+	List<DTOStepsState> response = new ArrayList<DTOStepsState>();
+		
+		o.stream().forEach(obj -> {
+			response.add(new DTOStepsState(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[2]),String.valueOf(obj[3]),String.valueOf(obj[4]),String.valueOf(obj[5]),String.valueOf(obj[6]),String.valueOf(obj[7]),String.valueOf(obj[8]),String.valueOf(obj[9]),String.valueOf(obj[10])));	
 		});
 		
 		return response;
