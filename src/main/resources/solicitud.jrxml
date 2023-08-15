@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="924"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -1376,7 +1376,7 @@
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[que todo lo aquí consignado es cierto, realizo(amos) la siguiente declaración de fuente de fondos a la entidad TECNICAS Y GESTIONES S.A.S. dando cumplimiento a la ley 90 de 1995]]></text>
+				<text><![CDATA[que todo lo aquí consignado es cierto, realizo(amos) la siguiente declaración de fuente de fondos a la entidad AVALTITULOS S.A.S. dando cumplimiento a la ley 90 de 1995]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="16" y="323" width="260" height="9" uuid="5ecd873a-c9bd-4bef-8a6a-8d70b7eb7f69"/>
@@ -1846,7 +1846,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[ESPACIO EXCLUSIVO DE TECNICAS Y GESTIONES S.A.S. - CONFIRMAR DATOS]]></text>
+				<text><![CDATA[ESPACIO EXCLUSIVO DE AVALTITULOS S.A.S. - CONFIRMAR DATOS]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="466" width="1" height="39" forecolor="#000000" uuid="088cf716-2fda-404b-8e9e-59da9f69962a"/>

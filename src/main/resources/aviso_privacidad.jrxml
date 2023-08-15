@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="20"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -58,7 +58,7 @@
 				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="130" y="330" width="25" height="9" uuid="41e9d3f9-daab-452e-84f4-6842e53a6780"/>
+				<reportElement key="textField" x="130" y="370" width="25" height="9" uuid="41e9d3f9-daab-452e-84f4-6842e53a6780"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -129,12 +129,10 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Autorizo, almacenar, depurar, usar, analizar, circular, actualizar y cruzar con información propia o de terceros, mis datos de contacto información sobre preferencias de consume, comportamiento en los canales de contacto los cuales fueron obtenidos mediante la prestación del presente servicio. con la finalidad de 1. realizar actividades de mercadeo de sus productos y servicios de sus filiales y/o afiliados comerciales listados en la política de tratamiento de información y 2. las demás finalidades estrechamente asociadas y necesarias para cumplir los fines de mercadeo descritas en la política de información de la privacidad
-(  ). en todo caso el tratamiento de mis datos personales debe estar sujeto a la protección establecida en la ley 1581 de 2012, sus decretos reglamentarios y las normas que los modifiquen así como la política de privacidad publicada en la página web en cualquier momento poder ejercer sus derechos establecidos en estas normas y particularmente renovar la autorización prestada o solicitar la supresión de mis datos personales sean incluidos en nuestra base de datos y sean utilizados de manera directa o indirecta de manera transparente, leal, licita, segura y confiable, entre otras, para las siguientes fatalidades:
-]]></text>
+				<text><![CDATA[Autorizo, almacenar, depurar, usar, analizar, circular, actualizar y cruzar con información propia o de terceros, mis datos de contacto información sobre preferencias de consumo, comportamiento en los canales de contacto los cuales fueron obtenidos mediante la prestación del presente servicio. con la finalidad de 1. realizar actividades de mercadeo de sus productos y servicios de sus filiales y/o afiliados comerciales listados en la política de tratamiento de información y 2. las demás finalidades estrechamente asociadas y necesarias para cumplir los fines de mercadeo descritas en la política de información de la privacidad   ( ). En todo caso el tratamiento de mis datos personales debe estar sujeto a la protección establecida en la ley 1581 de 2012, sus decretos reglamentarios y las normas que los modifiquen así como la política de privacidad publicada en la página web en cualquier momento poder ejercer los derechos establecidos en estas normas y particularmente renovar la autorización prestada o solicitar la supresión de mis datos personales sean incluidos en nuestra base de datos y sean utilizados de manera directa o indirecta de manera transparente, leal, licita, segura y confiable, entre otras, para las siguientes finalidades:]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="130" y="339" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
+				<reportElement key="line-1" x="130" y="379" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -147,14 +145,14 @@
 				<text><![CDATA[Yo/nosotros]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="236" y="330" width="23" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
+				<reportElement key="textField" x="236" y="370" width="23" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{año}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="165" y="239" width="94" height="9" uuid="9b6c1fe4-c4fc-40f0-a2c0-61934b988310"/>
+				<reportElement key="textField" x="165" y="232" width="94" height="9" uuid="9b6c1fe4-c4fc-40f0-a2c0-61934b988310"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -325,81 +323,76 @@ AVALTÍTULOS S.A.S
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[2-Reporte de novedades a las entidades de seguridad social.]]></text>
+				<text><![CDATA[2.Presentación de reportes a los entes de control.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="228" width="533" height="11" uuid="cc2e738c-f2ac-4fdd-8034-0eac23cc814c"/>
+				<reportElement key="staticText-4" x="10" y="231" width="156" height="11" uuid="ec756a8d-93ad-4d1c-8eab-361b5789e8b7"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[3-Presentación de reportes a los entes de control.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="10" y="238" width="156" height="11" uuid="ec756a8d-93ad-4d1c-8eab-361b5789e8b7"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
-				</textElement>
-				<text><![CDATA[4.-Solicitud de información ante la empresa]]></text>
+				<text><![CDATA[3.-Solicitud de información ante la empresa]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="166" y="247" width="94" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b844df3e-ecda-40ea-aee5-80c1a1abccab"/>
+				<reportElement key="line-1" x="166" y="240" width="94" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b844df3e-ecda-40ea-aee5-80c1a1abccab"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="260" y="238" width="283" height="11" uuid="6b8ea238-eea9-4fec-a822-b769f279885b"/>
+				<reportElement key="staticText-4" x="260" y="231" width="283" height="11" uuid="6b8ea238-eea9-4fec-a822-b769f279885b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[acerca de mi estado laboral (ACTIVO O INACTIVO) actualmente, descuentos,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="248" width="533" height="51" uuid="a3aceff9-7c99-4747-927c-ad401d4e4ede"/>
+				<reportElement key="staticText-4" x="10" y="244" width="533" height="90" uuid="a3aceff9-7c99-4747-927c-ad401d4e4ede"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[,(que tipo de descuentos), embargo (en caso de tener un embargo informar quien interpuso la medida, en que juzgado se encuentra y porque porcentaje fue solicitado), y porcentajes de deducciones en mi nómina.
-5.-Contacto telefónico y grabación de llamadas.
-Así mismo doy / damos CONSENTIMIENTO para que desde las instalaciones en la ciudad de Bogotá D.C. se lleve a cabo la grabación de llamadas de contacto telefónico con el fin de suministros y verificación de información de calidad.
+				<text><![CDATA[(que tipo de descuentos), embargo (en caso de tener un embargo informar quien interpuso la medida, en que juzgado se encuentra y porque porcentaje fue solicitado), y porcentajes de deducciones en mi nómina.
+4.	El envío de correspondencia, correos electrónicos, newsletters, WhatsApp, contacto telefónico o cualquier otro método, para recibir información sobre el producto, o en desarrollo de actividades publicitarias, promocionales, de mercadeo o para la prestación de servicios complementarios.  
+5. Contacto telefónico y grabación de llamadas.
+6. Análisis de riesgo crediticio, análisis estadísticos cuando se otorga créditos o plazos para el pago de la obligación.
+7. Reporte y consulta a centrales de riesgo crediticio legalmente constituidas en Colombia, así como para gestiones de cobranzas o reportes de no pago por cuenta propia o a través de tercero y aliados comerciales.
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="329" width="120" height="11" uuid="65afb593-c4e9-46dd-b6d7-ec8abda58135"/>
+				<reportElement key="staticText-4" x="10" y="369" width="120" height="11" uuid="65afb593-c4e9-46dd-b6d7-ec8abda58135"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Para constancia se firma el día]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="155" y="330" width="11" height="10" uuid="8ec07b5c-1063-4ad7-840d-b2a650a5256c"/>
+				<reportElement key="staticText-4" x="155" y="370" width="11" height="10" uuid="8ec07b5c-1063-4ad7-840d-b2a650a5256c"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="166" y="339" width="41" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="485f5103-a9f9-489b-b48a-19c1fb74bacd"/>
+				<reportElement key="line-1" x="166" y="379" width="41" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="485f5103-a9f9-489b-b48a-19c1fb74bacd"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="166" y="330" width="41" height="9" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
+				<reportElement key="textField" x="166" y="370" width="41" height="9" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="207" y="330" width="29" height="10" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
+				<reportElement key="staticText-4" x="207" y="370" width="29" height="10" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[de 202]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="236" y="339" width="23" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>
+				<reportElement key="line-1" x="236" y="379" width="23" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -432,6 +425,13 @@ Así mismo doy / damos CONSENTIMIENTO para que desde las instalaciones en la ciu
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="10" y="335" width="533" height="22" uuid="87842d94-983d-436e-8031-8dc49b62dc42"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Así mismo doy / damos CONSENTIMIENTO para que se lleve a cabo la grabación de llamadas de contacto telefónico con el fin de suministros y verificación de información de calidad]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 </jasperReport>

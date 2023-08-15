@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="931"/>
+	<property name="ireport.x" value="70"/>
+	<property name="ireport.y" value="7"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -49,16 +49,16 @@
 		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="80" splitType="Stretch">
+		<band height="67" splitType="Stretch">
 			<staticText>
-				<reportElement key="staticText-49" x="0" y="59" width="118" height="13" uuid="b67eed20-01fb-4b3c-beac-9c6ff8e23e72"/>
+				<reportElement key="staticText-49" x="0" y="48" width="118" height="13" uuid="b67eed20-01fb-4b3c-beac-9c6ff8e23e72"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
 			</staticText>
 			<image>
-				<reportElement key="image-1" x="2" y="0" width="116" height="59" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
+				<reportElement key="image-1" x="2" y="0" width="116" height="46" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
 				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
@@ -72,7 +72,7 @@
 				<reportElement x="436" y="21" width="100" height="25" forecolor="#CCCCCC" uuid="c86f2d77-ec88-4779-9264-e0fcfe7cad1a"/>
 			</rectangle>
 			<staticText>
-				<reportElement key="staticText-3" x="152" y="58" width="257" height="22" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
+				<reportElement key="staticText-3" x="152" y="44" width="257" height="22" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
@@ -95,23 +95,23 @@
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="672" splitType="Stretch">
+		<band height="685" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="369" y="34" width="168" height="9" uuid="1ad58dc5-a9f2-485e-92d9-d3d5d30a89c8"/>
+				<reportElement key="textField" x="426" y="42" width="108" height="9" uuid="1ad58dc5-a9f2-485e-92d9-d3d5d30a89c8"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{valorPress}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="468" y="44" width="65" height="9" uuid="7264719e-5a79-46b4-9eb2-c6988dc5138a"/>
+				<reportElement key="textField" x="478" y="54" width="39" height="9" uuid="7264719e-5a79-46b4-9eb2-c6988dc5138a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nroCuotas}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="410" y="56" width="65" height="9" uuid="5bee1d43-2e45-4a0d-a845-0a4757756710"/>
+				<reportElement key="textField" x="403" y="63" width="48" height="9" uuid="5bee1d43-2e45-4a0d-a845-0a4757756710"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -160,7 +160,7 @@
 				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" x="42" y="611" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ac7a5949-87d3-473c-b3e4-d012d2d56ac1"/>
+				<reportElement key="line-1" x="42" y="617" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ac7a5949-87d3-473c-b3e4-d012d2d56ac1"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -194,7 +194,7 @@
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="11" width="143" height="11" uuid="e5575a58-4945-4394-b788-628c00ac8586"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Mayores de edad, domiciliados en ]]></text>
 			</staticText>
@@ -207,7 +207,7 @@
 			<staticText>
 				<reportElement key="staticText-4" x="242" y="11" width="212" height="11" uuid="8e819aaa-8835-44f3-89f8-df8f16a557c3"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[identificado (s) con la (s) cedula (s) de Ciudadanía No (s) ]]></text>
 			</staticText>
@@ -220,7 +220,7 @@
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="22" width="17" height="11" uuid="16341f59-3f77-4413-8a55-11ba4a72ed36"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
@@ -253,7 +253,7 @@
 			<staticText>
 				<reportElement key="staticText-4" x="162" y="21" width="17" height="11" uuid="68fa81a2-5616-4943-a950-b4bab06a1e7e"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
@@ -266,527 +266,565 @@
 			<staticText>
 				<reportElement key="staticText-4" x="242" y="21" width="295" height="11" uuid="58ff978c-64d6-4a2f-a716-ab5fbc108de1"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Quien (es) este acto obro (amos) en mi (nuestro) propio nombre, declare (amos) ]]></text>
+				<text><![CDATA[Quien (es) este acto obro (amos) en mi (nuestro) propio nombre, declare (amos)  que por]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="33" width="357" height="11" uuid="4a908dc9-924d-409f-9fcb-dbaade5d59a0"/>
+				<reportElement key="staticText-4" x="12" y="33" width="524" height="9" uuid="4a908dc9-924d-409f-9fcb-dbaade5d59a0"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[soy (somos) deudor (es) de la Sociedad AVALTÍTULOS S.A.S. o al su endosatario en cuantía de,]]></text>
+				<text><![CDATA[virtud del presente título valor, incondicional, solidariamente y comprometiendo ilimitadamente mi (nuestra)  responsabilidad  prometo(mos) que  pagaré(mos), en dinero ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="369" y="43" width="167" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fd68a6e4-8259-4954-b81e-5eb0f0715297"/>
+				<reportElement key="line-1" x="426" y="52" width="110" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fd68a6e4-8259-4954-b81e-5eb0f0715297"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="44" width="462" height="11" uuid="f713cacd-9344-4960-bc46-a95082cb813b"/>
+				<reportElement key="staticText-4" x="12" y="51" width="356" height="11" uuid="f713cacd-9344-4960-bc46-a95082cb813b"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Suma que pagare (mos) incondicionalmente a la sociedad AVALTÍTULOS S.A.S. o al tenedor legítimo de este instrumento en (]]></text>
+				<text><![CDATA[suma que pagaré(mos) solidaria e incondicionalmente como deudores de obligación indivisible, en la ciudad de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="469" y="53" width="60" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="47adda2a-7cb6-4409-8366-85c3c8a8ff67"/>
+				<reportElement key="line-1" x="469" y="63" width="60" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="47adda2a-7cb6-4409-8366-85c3c8a8ff67"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="529" y="44" width="8" height="11" uuid="2e7f2c6f-69bf-4231-8214-c33d16a17a1a"/>
+				<reportElement key="staticText-4" x="529" y="54" width="8" height="11" uuid="2e7f2c6f-69bf-4231-8214-c33d16a17a1a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="54" width="214" height="11" uuid="4e5b3f49-beea-4988-b756-f3512b16f47a"/>
+				<reportElement key="staticText-4" x="12" y="62" width="214" height="11" uuid="4e5b3f49-beea-4988-b756-f3512b16f47a"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[cuotas o instalamentos mensuales sucesivos e iguales de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="225" y="64" width="86" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a4892024-5800-4200-94d6-80b540ad643f"/>
+				<reportElement key="line-1" x="227" y="72" width="75" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a4892024-5800-4200-94d6-80b540ad643f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="226" y="55" width="83" height="9" uuid="05d2117e-4e6d-47bb-844a-3f32f08f3f88"/>
+				<reportElement key="textField" x="226" y="63" width="73" height="9" uuid="05d2117e-4e6d-47bb-844a-3f32f08f3f88"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{vlrCuotas}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="311" y="54" width="99" height="11" uuid="3ed7aa3d-29b1-4c0d-8335-af40ffcc1522"/>
+				<reportElement key="staticText-4" x="305" y="62" width="86" height="11" uuid="3ed7aa3d-29b1-4c0d-8335-af40ffcc1522"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[cada uno, el primero el día]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="409" y="64" width="66" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ed7a5e97-caad-4995-ab4e-e76629ae4936"/>
+				<reportElement key="line-1" x="397" y="72" width="58" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ed7a5e97-caad-4995-ab4e-e76629ae4936"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="474" y="54" width="63" height="11" uuid="77620c19-3c60-4a76-a6a4-b71676e3f074"/>
+				<reportElement key="staticText-4" x="478" y="64" width="55" height="11" uuid="77620c19-3c60-4a76-a6a4-b71676e3f074"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[los siguientes los]]></text>
+				<text><![CDATA[y las demás]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="64" width="525" height="37" uuid="a0175888-89cb-456e-927b-e127c8a2f611"/>
+				<reportElement key="staticText-4" x="12" y="74" width="525" height="73" uuid="a0175888-89cb-456e-927b-e127c8a2f611"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[días de cada mes que subsista. La sociedad AVALTÍTULOS S.A.S. queda facultada en caso de mora en el pago de cualquiera de las cuotas declarar vencido el plazo de este pagare y de todo lo adeudado por mi (clausula aceleratoria) y proceder a su ejecución judicial o extrajudicial y siendo de mi cargo exclusive los gastos y costas de la cobranza, incluyendo honorarios de abogado sin necesidad de requerimiento judicial o extrajudicial sin exceder el 20% del valor total adeudado. Todas las obligaciones emanadas de este documento serán cumplidas en la ciudad de]]></text>
+				<text><![CDATA[serán pagadas el mismo día de cada mes,  sucesivamente  mes a mes, hasta la total cancelación del crédito en la forma acordada. El tenedor de este título podrá declarar insubsistente los plazos de esta obligación y exigir el pago inmediato de la totalidad de crédito, judicial o extrajudicialmente en los siguientes casos: a) Por incumplimiento de cualquiera de las obligaciones que adquirimos por el presente pagaré b) La mora o el simple retardo en el pago de las cuotas pactadas, o en el de las renovaciones del plazo. c)   Cuando a juicio del tenedor las garantías constituidas para respaldar las obligaciones activas de crédito de que se trate no mantengan los niveles de cobertura adecuados, o sufran deterioro o sean perseguidos por cualquier persona en ejercicio de cualquier acción legal.  d) Cuando haya inexactitud o falsedad en los documentos, informes, declaraciones presentadas a la Sociedad AVALTITULOS S.A.S para obtener la aprobación o desembolso del crédito. g) Cuando fallezca cualquiera de los deudores. i) Cuando cualquiera de los obligados en el pagaré solicite le sea iniciado proceso de insolvencia o solicitud de trámite de negociación de deudas o concordato preventivo. J) Cuando cualquiera de los obligados aparece vinculados a investigaciones sobre terrorismo, lavado de activos o delitos contra la fe pública. ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="13" y="109" width="48" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c1199b15-c9e5-4d89-9b9a-55a984e0c295"/>
+				<reportElement key="line-1" x="368" y="60" width="64" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c1199b15-c9e5-4d89-9b9a-55a984e0c295"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="60" y="100" width="477" height="11" uuid="abd8e42f-b796-4d5c-a3d7-a3613988b6cb"/>
+				<reportElement key="staticText-4" x="12" y="157" width="524" height="42" uuid="abd8e42f-b796-4d5c-a3d7-a3613988b6cb"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Adicionalmente,por medio del presente documento autorizo (amos) al tenedor legítimo de este pagare para que por si o por conducto de un mandatario]]></text>
+				<text><![CDATA[Adicionalmente, por medio del presente documento autorizo(amos) al tenedor legítimo de este pagaré para que por sí o por conducto de un mandatario y ante cualquier operador de información de los definidos en la ley, reporte toda información financiera, crediticia, comercial o de servicios que resulte de mi (nuestro) comportamiento (positivo o negativo) en relación con la(s) obligación(es) que mediante este pagaré se contraen, previo aviso y notificación. Así mismo, autorizo(amos) a la sociedad AVALTITULOS S.A.S., mientras sea tenedora legítima de este pagaré, para que los pagos de intereses y abonos a capital que hagamos en este título valor sean anotados por la sociedad AVALTITULOS S.A.S. en sus registros contables en lugar de hacerlo a continuación de este documento.]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="12" y="101" width="49" height="9" uuid="d2d01936-a093-440c-9a61-c6dd63b04049"/>
+				<reportElement key="textField" x="387" y="52" width="49" height="9" uuid="d2d01936-a093-440c-9a61-c6dd63b04049"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="109" width="525" height="66" uuid="09272765-86a5-4513-8982-e657952d4199"/>
+				<reportElement key="staticText-4" x="12" y="200" width="404" height="10" uuid="09272765-86a5-4513-8982-e657952d4199"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[y ante cualquier operador de información de los definidos en la ley; reporte toda información financiera, crediticia, comercial o de servicios que resulte de mi (nuestro) comportamiento (positive o negative) en relación con la (s) obligación (es) que mediante este pagar se contraen previo aviso y notificación. Así mismo, autorizo (amos) a la sociedad AVALTÍTULOS S.A.S. mientras sea tenedora legítima de este pagaré, para que los pagos de intereses y abonos al capital que hagamos en este título valor sean anotados por la sociedad AVALTÍTULOS S.A.S. en sus registros contables en lugar de hacerlo a continuación de este documento.
-Adicionalmente, y solamente como fuente de pago de las obligaciones incorporadas a este título valor, en mi (nuestra) calidad de solicito (amos) de manera permanente e irrevocable que la Entidad pagadora retenga de mi (nuestra) asignación mensual la suma de
-]]></text>
+				<text><![CDATA[Adicionalmente, y solamente como fuente de pago de las obligaciones incorporadas a este título valor, en mi (nuestra) calidad de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="435" y="173" width="102" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e8a93a6f-99d8-4390-8838-d5a943363e7c"/>
+				<reportElement key="line-1" x="435" y="223" width="94" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e8a93a6f-99d8-4390-8838-d5a943363e7c"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="436" y="165" width="101" height="9" uuid="4402253f-4a3e-40df-8df9-c01d755f787d"/>
+				<reportElement key="textField" x="436" y="211" width="81" height="9" uuid="4402253f-4a3e-40df-8df9-c01d755f787d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{AsigMensual}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="174" width="28" height="11" uuid="a43ad06e-b94f-476d-92f7-733ae7319a74"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+				<reportElement key="staticText-4" x="12" y="212" width="420" height="11" uuid="a43ad06e-b94f-476d-92f7-733ae7319a74"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[durante  ]]></text>
+				<text><![CDATA[solicito(amos) de manera permanente e irrevocable que la Entidad Pagadora retenga de mi (nuestra) asignación mensual la suma de (]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="39" y="183" width="62" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="15274b52-1c88-4875-b232-0cf7d349ff7f"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-1" x="104" y="183" width="433" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26bd89fe-3648-4e02-935e-c623faad98cb"/>
+				<reportElement key="line-1" x="42" y="234" width="44" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="15274b52-1c88-4875-b232-0cf7d349ff7f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="185" width="105" height="11" uuid="ed6d05c0-fb8d-4ce6-9429-27a1c566cd7b"/>
+				<reportElement key="staticText-4" x="86" y="224" width="92" height="11" uuid="ed6d05c0-fb8d-4ce6-9429-27a1c566cd7b"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[meses contados a partir de]]></text>
+				<text><![CDATA[) meses contados a partir de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="118" y="195" width="48" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
+				<reportElement key="line-1" x="180" y="234" width="48" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="166" y="185" width="371" height="11" uuid="038e5ca2-afe7-44f5-b3a2-ddc3c0fc1108"/>
+				<reportElement key="staticText-4" x="229" y="225" width="308" height="11" uuid="038e5ca2-afe7-44f5-b3a2-ddc3c0fc1108"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[y que los dineros así retenidos sean pagados de manera mensual a la Sociedad AVALTÍTULOS S.A.S. ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="195" width="524" height="291" uuid="09f8e3e2-48c8-405f-ae8f-70be2128f480"/>
+				<reportElement key="staticText-4" x="13" y="236" width="524" height="234" uuid="09f8e3e2-48c8-405f-ae8f-70be2128f480"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[o a su endosatario (Ley 1527 del 2012 y código sustantivo del trabajo art. 150). En caso de no hacerse efectivo el pago por la pagaduría me comprometo a consignar en Bancolombia Cuenta de Ahorros 03598075637 a nombre de AVALTÍTULOS S.A.S. En caso de mora del deudor principal, se hará el descuento correspondiente al deudor solidario respective previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto, sin prejuicios de que estos instauren acción contra el deudor principal, en concordancia con el Art. 1602 del Código de Comercio.
-Los intereses de corrientes y de mora serán la tasa máxima autorizada según certificación expedida por la Superintendencia Financiera de Colombia.
-De acuerdo y en conformidad con lo dispuesto en el código civil, declaramos y aceptamos que no podemos sin previo estado de cuenta efectuar el pago anticipado, total o parcial de la obligación consignada en este documento.
-En cualquier evento, autorizo a la Sociedad AVALTÍTULOS S.A.S. o a su endosatario para que, si los descuentos por nómina no alcanzaren a cubrir las cuotas del crédito, gastos, costas y honorarios Prejurídicos y Jurídicos previo aviso y notificacion mediante correo electrónico, WhatsApp o mensaje de texto incurridos por mi (nosotros), prolonguen el plazo y ajusten el valor de la cuota de la suma descontable.
-Acepto (amos) que este pagare, que se asimila a la letra de cambio para todos los aspectos legales y ratifico (amos) la autorización de descuento contraída en el presente documento "expresamente autorizo a la sociedad AVALTÍTULOS S.A.S. para que a cualquier título endose el presente pagare o ceda el crédito incorporado en el a favor de cualquier tercero, siendo informado en esta oportunidad que la Notificación o no de esta, no invalida el titulo o nuevo titular del derecho ya que no se requiere del visto bueno teniendo en cuenta que lo que se informa es la ocurrencia del cambio. Este pagare constituye un Título Valor en conformidad con lo establecido en los artículos 619 y s.s. 709, 710 y 711 del Código de Comercio, razón por la cual es negociable.
-En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones y/o responsable por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido de acuerdo con el Art. 6 de la ley Estatutaria 1266 de 2008 y el Art. 6 de la ley 1527 de 2012.
-Así mismo de conformidad con lo preceptuado en los arts. 149.150, 158, 344 del código sustantivo del trabajo y la ley 1527 de 2012 le solicito (amos) que en caso de retiro, mora y/o fallecimiento se sirva descontarme (nos) de cualquier cantidad (es) que haya de pagarme (nos) por razón de sueldos, salarios, pensiones, mesadas, honorarios, primas, comisiones, cesantías, bonificaciones, auxilios, indemnizaciones y demás prestaciones sociales la cantidad necesaria para efectuar el pago total de las obligaciones aquí estipuladas. La Sociedad AVALTÍTULOS S.A.S o su endosatario queda facultad por mi (nosotros) para hacerse pagar el valor adeudado con las remuneraciones que perciba por cualquier otro empleo y ocupación diferente al cargo y empleador que sea tenido en cuenta al momento de realizar el préstamo y desde ahora acepto y autorizo las retenciones o descuentos que la empresa solicite a mi future pagador o empleador por medio del artículo 7 de la ley 1527 de 2012.
-
-Es reentendido que la presente orden de LIBRANZA no me (nos) libera de la obligación de pago a mi (nuestro) cargo, y que la presente instrucción de retención solo podrá ser levantada por el Representante Legal de la Sociedad AVALTÍTULOS S.A.S. o su endosatario.
+				<text><![CDATA[o a su endosatario (Ley 1527 del 2012 y Código Sustantivo del Trabajo art. 150). En caso de no hacerse efectivo el pago por la pagaduría me comprometo a consignar en Bancolombia, Cuenta de Ahorros 74500004823 a nombre de AVALTITULOS S.A.S. En caso de mora del deudor principal, se hará el descuento correspondiente al deudor solidario respectivo previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto, sin prejuicios de que se instaure acción contra el deudor principal.
+Los intereses de corrientes y de mora serán la tasa máxima autorizada según certificación expedida por la Superintendencia Financiera de Colombia. Expresamente declaro (amos) que renunciamos a las formalidades del requerimiento para constituirnos en mora, de la misma manera no será necesario el protesto de este pagaré y el acreedor tiene derecho a dirigirse contra nosotros sin necesidad de recurrir a notificaciones.  
+De acuerdo y en conformidad con lo dispuesto en el Código Civil, declaramos y aceptamos que no podemos sin previo estado de cuenta efectuar el pago anticipado, total o parcial de la obligación consignada en este pagaré.
+En cualquier evento, autorizo a la Sociedad AVALTITULOS S.A.S. o a su endosatario para que, si los descuentos por nómina no alcanzaren a cubrir las cuotas del crédito, gastos, costas y honorarios pre-jurídicos y jurídicos, previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto incurridos por mi (nosotros), prolonguen el plazo y ajusten el valor de la cuota de la suma descontable.
+Acepto (amos) que este pagaré, que se asimila a la letra de cambio para todos los aspectos legales y ratifico (amos) la autorización de descuento contraída en el presente documento, “expresamente autorizo a la sociedad AVALTITULOS S.A.S. para que a cualquier título endose el presente pagaré o ceda el crédito incorporado en él a favor de cualquier tercero, siendo informado en esta oportunidad que la notificación o no de ésta, no invalida el título o nuevo titular del derecho ya que no se requiere del visto bueno, teniendo en cuenta que, lo que se informa es la ocurrencia del cambio. Este pagaré constituye un Título Valor en conformidad con lo establecido en los artículos 619 y s.s., 709, 710 y 711 del Código de Comercio, razón por la cual es negociable.
+En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones y/o responsable por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido, de acuerdo al Art. 6 de la ley 1266 de 2008 y el Art. 6 de la ley 1527 de 2012.
+Así mismo, de conformidad con lo preceptuado en los Arts. 149, 150, 344 del Código Sustantivo del Trabajo y la ley 1527 de 2012 le solicito (amos) que en caso de retiro, mora y/o fallecimiento se sirva descontarme (nos) de cualquier cantidad (es) que haya de pagarme (nos) por razón de sueldos, vacaciones salarios, pensiones, mesadas, honorarios, primas, comisiones, cesantías, bonificaciones, auxilios. Indemnizaciones y demás prestaciones sociales la cantidad necesaria para efectuar el pago total de las obligaciones aquí estipuladas. La Sociedad AVALTITULOS S.A.S. o su endosatario queda facultada por mi (nosotros) para hacerse pagar el valor adeudado con las remuneraciones que perciba por cualquier otro empleo y ocupación diferente al cargo y empleador que sea tenido en cuenta al momento de realizar el préstamo y desde ahora acepto y autorizo las retenciones o descuentos que la empresa solicite a mi futuro pagador o empleador, de conformidad con el artículo 7 de la ley 1527 de 2012.
+Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligación de pago a mi (nuestro) cargo, y que la presente instrucción de retención sólo podrá ser levantada por el Representante Legal de la Sociedad AVALTITULOS S.A.S. o su endosatario.
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="486" width="403" height="11" uuid="1962082e-b6de-463e-864b-f6d48e049283"/>
+				<reportElement key="staticText-4" x="13" y="470" width="403" height="11" uuid="1962082e-b6de-463e-864b-f6d48e049283"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CARTA DE INSTRUCCIONES PARA EL DILIGENCIAMIENTO DEL PAGARE /LIBRANZA EN BLANCO.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="496" width="524" height="58" uuid="ebf8c28e-6799-4263-8b5b-41db440022e0"/>
+				<reportElement key="staticText-4" x="13" y="481" width="524" height="90" uuid="ebf8c28e-6799-4263-8b5b-41db440022e0"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[De conformidad con el art. 622 del código de comercio, autorizo (amos) expresa e irrevocablemente al representante legal de AVALTÍTULOS S.A.S. para diligenciar los espacios en blanco de este pagare a la orden / Libranza que he (mos) otorgado a su favor, el cual será diligenciado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones: 1) El monto será igual el valor, de todas las obligaciones exigibles a mi (nuestro) cargo y en favor de AVALTÍTULOS S.A.S. que exista al momento de ser diligenciados los espacios en blanco. 2) La fecha de vencimiento será aquella cuando se diligencien los espacios en blanco. 3) La tasa de interés moratoria será la máxima autorizada por la ley en la fecha en que se haya diligenciado el pagare. 4) Los espacios en blanco se diligenciaran cuando el tenedor del documento lo considere pertinente.]]></text>
+				<text><![CDATA[De conformidad con el art. con el artículo 622 del Código de Comercio autorizo (amos) expresa e irrevocablemente al representante legal de AVALTITULOS S.A.S. para llenar los espacios en blanco de este pagaré a la orden / Libranza que he (mos) otorgado a su favor, el título será llenado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones: 1) Número del Pagaré: Este espacio podrá ser llenado por Ustedes de acuerdo con la numeración interna que utilicen. 2) El monto será igual al valor de todas las obligacio¬nes exigibles a mi (nuestro) cargo y en favor de AVALTITULOS SA.S., que exista al momento de ser llenados los espacios en blanco, que por cualquier concepto, como por ejemplo contratos de mutuo, renovaciones, ampliaciones  de crédito o retanqueo o crédito rotativo), negociación de títulos valores, avales o cualquier otra clase de garantías y en general por cualquier operación o deuda existente a cargo nuestro y en su favor, presente o futura, que directa o indirectamente, conjunta o separadamente le debemos o lleguemos a deber a usted (es) quienes suscribimos esta carta de instrucciones. 3) La fecha de vencimiento será aquella cuando se llenen los espacios en blanco.  El lugar de cumplimiento del mismo será la ciudad ya indicada en el texto del pagaré. 4) La tasa de interés moratoria será la máxima autorizada por la ley en la fecha en que se halla llenado el pagaré. 5) Los espacios en blanco que existieren se llenarán cuando el tenedor del pagaré lo considere pertinente y el nombre del beneficiario deberá ponerse al tenedor(es) legítimo (s) del pagaré. Declaramos haber recibido copia del Pagaré y de la presente carta de instrucciones.]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="42" y="175" width="58" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
+				<reportElement key="textField" x="45" y="224" width="39" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{AsigMensualDu}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="105" y="175" width="432" height="9" uuid="dbf56487-9117-4676-99bd-7443b89cf013"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{AsigMensualDu2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="118" y="187" width="44" height="9" uuid="9b6c1fe4-c4fc-40f0-a2c0-61934b988310"/>
+				<reportElement key="textField" x="182" y="225" width="44" height="10" uuid="9b6c1fe4-c4fc-40f0-a2c0-61934b988310"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{ApartirDe}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="554" width="217" height="11" uuid="39889b6d-efac-4da0-922d-bd624138b713"/>
+				<reportElement key="staticText-4" x="13" y="569" width="217" height="11" uuid="39889b6d-efac-4da0-922d-bd624138b713"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[En testimonio de todo lo cual se firma el presente pagare a: ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="230" y="563" width="55" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d6ff183e-b061-4d6a-afb4-76b05299bb51"/>
+				<reportElement key="line-1" x="230" y="579" width="55" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d6ff183e-b061-4d6a-afb4-76b05299bb51"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="285" y="553" width="51" height="11" uuid="4b338545-e08d-4317-9271-750042b58210"/>
+				<reportElement key="staticText-4" x="285" y="568" width="51" height="11" uuid="4b338545-e08d-4317-9271-750042b58210"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[días del mes]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="336" y="563" width="55" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7dd5a762-35ac-4384-9dcd-9373bf8431e2"/>
+				<reportElement key="line-1" x="336" y="578" width="55" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7dd5a762-35ac-4384-9dcd-9373bf8431e2"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="391" y="552" width="51" height="11" uuid="6fe99494-5f46-4999-8a8d-921259fd05c6"/>
+				<reportElement key="staticText-4" x="391" y="569" width="51" height="11" uuid="6fe99494-5f46-4999-8a8d-921259fd05c6"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[de dos mil]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="442" y="562" width="33" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c3cc7c4-d17c-4128-8c82-89d1e8e24751"/>
+				<reportElement key="line-1" x="442" y="579" width="33" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c3cc7c4-d17c-4128-8c82-89d1e8e24751"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="475" y="552" width="62" height="11" uuid="edad40ca-8126-4b45-848b-4ddfec15eb87"/>
+				<reportElement key="staticText-4" x="475" y="569" width="62" height="11" uuid="edad40ca-8126-4b45-848b-4ddfec15eb87"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[para los efectos ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="564" width="212" height="11" uuid="6568dbf5-b4f1-4954-9dec-3b475c6e8b8a"/>
+				<reportElement key="staticText-4" x="13" y="581" width="212" height="11" uuid="6568dbf5-b4f1-4954-9dec-3b475c6e8b8a"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[judiciales y extrajudiciales mi dirección de notificacion es : 
 ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="225" y="574" width="312" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c9466a6c-3334-4e07-894b-98138ac0096b"/>
+				<reportElement key="line-1" x="225" y="591" width="312" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c9466a6c-3334-4e07-894b-98138ac0096b"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="574" width="139" height="11" uuid="b708e176-d311-487e-aacb-71ef490360cb"/>
+				<reportElement key="staticText-4" x="13" y="592" width="139" height="11" uuid="b708e176-d311-487e-aacb-71ef490360cb"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="8"/>
+					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Correo electrónico de notificación:]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="152" y="585" width="385" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="af2e7762-36c3-4f21-9240-f5dc4d53ead8"/>
+				<reportElement key="line-1" x="152" y="603" width="385" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="af2e7762-36c3-4f21-9240-f5dc4d53ead8"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="230" y="554" width="55" height="9" uuid="f844c932-89ad-45fb-af21-863ddf8eb4c0"/>
+				<reportElement key="textField" x="227" y="570" width="50" height="9" uuid="f844c932-89ad-45fb-af21-863ddf8eb4c0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{pagar_a}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="336" y="554" width="55" height="9" uuid="8f6f198c-b534-4ecc-9ae2-cb8b71687d60"/>
+				<reportElement key="textField" x="336" y="569" width="55" height="9" uuid="8f6f198c-b534-4ecc-9ae2-cb8b71687d60"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dia_mes}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="442" y="553" width="30" height="9" uuid="87e03221-decf-491d-8528-8b3cca495ed0"/>
+				<reportElement key="textField" x="442" y="569" width="30" height="9" uuid="87e03221-decf-491d-8528-8b3cca495ed0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{año}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="226" y="565" width="310" height="9" uuid="fac852a0-8533-444d-b5b9-39b1342cd36d"/>
+				<reportElement key="textField" x="237" y="581" width="299" height="9" uuid="fac852a0-8533-444d-b5b9-39b1342cd36d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dirTerpal}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="152" y="576" width="385" height="9" uuid="249beb08-9628-4908-92b7-34877299580d"/>
+				<reportElement key="textField" x="162" y="592" width="375" height="9" uuid="249beb08-9628-4908-92b7-34877299580d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{mailTer}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="14" y="601" width="28" height="11" uuid="2bcb7fa0-27c0-4639-ba47-dc753cbf2835"/>
+				<reportElement key="staticText-4" x="14" y="607" width="28" height="11" uuid="2bcb7fa0-27c0-4639-ba47-dc753cbf2835"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Deudor ]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="213" y="601" width="55" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
+				<reportElement x="213" y="607" width="55" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement key="staticText-4" x="14" y="612" width="28" height="11" uuid="0517ee37-7a94-4683-b710-d4083e6c302d"/>
+				<reportElement key="staticText-4" x="14" y="618" width="28" height="11" uuid="0517ee37-7a94-4683-b710-d4083e6c302d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="42" y="621" width="76" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
+				<reportElement key="line-1" x="42" y="627" width="76" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="118" y="612" width="12" height="11" uuid="d6999224-ddd8-4390-8615-3eace1da53d6"/>
+				<reportElement key="staticText-4" x="118" y="618" width="12" height="11" uuid="d6999224-ddd8-4390-8615-3eace1da53d6"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="130" y="621" width="77" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b16a34fb-345f-40b5-8ba4-b0543d517183"/>
+				<reportElement key="line-1" x="130" y="627" width="77" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b16a34fb-345f-40b5-8ba4-b0543d517183"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="14" y="623" width="64" height="11" uuid="58ca5eeb-eaa3-4a8c-a09a-7fb2c5cd942b"/>
+				<reportElement key="staticText-4" x="14" y="629" width="64" height="11" uuid="58ca5eeb-eaa3-4a8c-a09a-7fb2c5cd942b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Dir. Notificación:]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="78" y="633" width="129" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6283fd74-9719-42df-8086-d8802ce74a2d"/>
+				<reportElement key="line-1" x="78" y="639" width="129" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6283fd74-9719-42df-8086-d8802ce74a2d"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="14" y="633" width="46" height="11" uuid="9899dbfb-03f9-48e4-96a6-f9a8bad7d678"/>
+				<reportElement key="staticText-4" x="14" y="639" width="46" height="11" uuid="9899dbfb-03f9-48e4-96a6-f9a8bad7d678"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Télefono:]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="59" y="643" width="148" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fb4d47e9-cd0d-49e8-a9b4-30348e092ec6"/>
+				<reportElement key="line-1" x="59" y="649" width="148" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fb4d47e9-cd0d-49e8-a9b4-30348e092ec6"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="14" y="659" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9314d12a-35e0-4154-8c4e-44808140990c"/>
+				<reportElement key="line-1" x="14" y="665" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9314d12a-35e0-4154-8c4e-44808140990c"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="14" y="660" width="44" height="11" uuid="0c4b9fa9-dfb3-4987-a854-c74b381934da"/>
+				<reportElement key="staticText-4" x="14" y="666" width="44" height="11" uuid="0c4b9fa9-dfb3-4987-a854-c74b381934da"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="601" width="28" height="11" uuid="ddbbe49b-350b-4b84-abb4-013b7babeda8"/>
+				<reportElement key="staticText-4" x="280" y="607" width="28" height="11" uuid="ddbbe49b-350b-4b84-abb4-013b7babeda8"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Deudor ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="308" y="611" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
+				<reportElement key="line-1" x="308" y="617" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="612" width="28" height="11" uuid="f06689b9-a937-444f-9ac3-5b1a0467eb34"/>
+				<reportElement key="staticText-4" x="280" y="618" width="28" height="11" uuid="f06689b9-a937-444f-9ac3-5b1a0467eb34"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="308" y="622" width="76" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e647d1c7-45ee-47de-aaea-5ff9eb7f51df"/>
+				<reportElement key="line-1" x="308" y="628" width="76" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e647d1c7-45ee-47de-aaea-5ff9eb7f51df"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="384" y="612" width="12" height="11" uuid="9e7b4df4-f396-42ed-a680-a45d96338faa"/>
+				<reportElement key="staticText-4" x="384" y="618" width="12" height="11" uuid="9e7b4df4-f396-42ed-a680-a45d96338faa"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="396" y="622" width="77" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fa87b0f9-52f5-48d4-b522-b86205e51a5b"/>
+				<reportElement key="line-1" x="396" y="628" width="77" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fa87b0f9-52f5-48d4-b522-b86205e51a5b"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="623" width="64" height="11" uuid="0f4742e4-2463-4ba7-954e-7c158129900a"/>
+				<reportElement key="staticText-4" x="280" y="629" width="64" height="11" uuid="0f4742e4-2463-4ba7-954e-7c158129900a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Dir. Notificación:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="634" width="46" height="11" uuid="1cc8941e-10de-4e84-b491-39c031a83c4c"/>
+				<reportElement key="staticText-4" x="280" y="640" width="46" height="11" uuid="1cc8941e-10de-4e84-b491-39c031a83c4c"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Télefono:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="280" y="660" width="45" height="11" uuid="8b0bdb51-aa27-4e17-b4de-af96f2ad9e5b"/>
+				<reportElement key="staticText-4" x="280" y="666" width="45" height="11" uuid="8b0bdb51-aa27-4e17-b4de-af96f2ad9e5b"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="280" y="658" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2b1b1d80-ddb3-41cc-8b8b-77e8f11b41db"/>
+				<reportElement key="line-1" x="280" y="664" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2b1b1d80-ddb3-41cc-8b8b-77e8f11b41db"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="325" y="643" width="148" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="726213c7-a998-4896-b185-455b9633a339"/>
+				<reportElement key="line-1" x="325" y="649" width="148" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="726213c7-a998-4896-b185-455b9633a339"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="344" y="633" width="129" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
+				<reportElement key="line-1" x="344" y="639" width="129" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<rectangle>
-				<reportElement x="482" y="600" width="55" height="71" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
+				<reportElement x="482" y="606" width="55" height="71" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</rectangle>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="42" y="602" width="165" height="9" uuid="6e0d15d5-9041-429b-9d4f-8a295f0349ec"/>
+				<reportElement key="textField" x="42" y="608" width="165" height="9" uuid="6e0d15d5-9041-429b-9d4f-8a295f0349ec"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="42" y="612" width="76" height="9" uuid="a70b4b45-8fd8-4690-8e24-eddad8eb3c39"/>
+				<reportElement key="textField" x="42" y="618" width="76" height="9" uuid="a70b4b45-8fd8-4690-8e24-eddad8eb3c39"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="130" y="612" width="77" height="9" uuid="a6b4887f-5704-4526-9b1f-0dbbf69ef828"/>
+				<reportElement key="textField" x="130" y="618" width="77" height="9" uuid="a6b4887f-5704-4526-9b1f-0dbbf69ef828"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="309" y="602" width="161" height="9" uuid="4b3f029e-fc6a-4624-8430-af6bd3e77cf3"/>
+				<reportElement key="textField" x="309" y="608" width="161" height="9" uuid="4b3f029e-fc6a-4624-8430-af6bd3e77cf3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="308" y="613" width="76" height="9" uuid="2176d5b8-2de6-4cfd-9279-261628c6ba08"/>
+				<reportElement key="textField" x="308" y="619" width="76" height="9" uuid="2176d5b8-2de6-4cfd-9279-261628c6ba08"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="446" y="53" width="25" height="11" uuid="150dac3a-d065-497f-92ef-8e88a6a8562e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[en (]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="455" y="146" width="49" height="9" uuid="130b6617-bc23-4897-a820-dd85346b3b4f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="146" width="424" height="11" uuid="18ebda33-8706-418d-bf02-47a889bcb5c9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[k) En los demás casos contemplados en la Ley. Todas las obligaciones emanadas de este documento serán cumplidas en la ciudad de]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="451" y="155" width="79" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0c3f9e2d-65db-48ec-b937-3896993b8530"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="525" y="209" width="8" height="11" uuid="7e6baf1b-e60d-4b2d-9c5a-5380be272e2c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="224" width="29" height="11" uuid="eb9abe52-db74-499b-a43a-7df6ead1dbeb"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[durante (]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="426" y="207" width="110" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="50b0b979-e7de-43e9-841a-6357ebfd7d05"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="43" width="397" height="11" uuid="89aff4a3-bdef-4dd8-b76e-581d448cc1b7"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[efectivo moneda legal colombiana,  a la Sociedad AVALTITULOS S.A.S. o al tenedor legítimo de este instrumento, en cuantía de]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 </jasperReport>

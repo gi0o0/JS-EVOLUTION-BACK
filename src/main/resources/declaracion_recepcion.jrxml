@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="336"/>
+	<property name="ireport.x" value="24"/>
+	<property name="ireport.y" value="899"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -17,6 +17,7 @@
 	<parameter name="nitter_codeu" class="java.lang.String"/>
 	<parameter name="telTer_codeu" class="java.lang.String"/>
 	<parameter name="mailTer_codeu" class="java.lang.String"/>
+	<parameter name="tasa" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="limite" class="java.lang.String"/>
 	<field name="deducible" class="java.lang.String"/>
@@ -188,11 +189,14 @@
 				<text><![CDATA[C.C]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="35" width="525" height="50" uuid="38a8d7cd-aabc-4d2c-9d52-0c7ea26b236f"/>
+				<reportElement key="staticText-4" x="12" y="47" width="525" height="72" uuid="38a8d7cd-aabc-4d2c-9d52-0c7ea26b236f"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Dejo (amos) constancia que la empresa AVALTÍTULOS S.A.S. con N.I.T . 900.181.152-1 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de AVALTÍTULOS S.A.S. ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></text>
+				<text><![CDATA[Dejo (amos) constancia que la empresa AVALTÍTULOS S.A.S. con N.I.T . 900.181.152-1 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de AVALTÍTULOS S.A.S. Declaro (amos) que la cuota mensual a descontar no afecta el mínimo vital para la congrua subsistencia mía y de mi grupo familiar.
+
+
+ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="284" y="658" width="104" height="11" uuid="24011df2-87dc-4794-ba5a-76c1a53d0965"/>
@@ -248,23 +252,75 @@
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="111" width="525" height="189" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
+				<reportElement key="staticText-4" x="12" y="128" width="525" height="12" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<text><![CDATA[	Fui informado de la exigencia del afianzamiento de mi crédito, y así mismo del funcionamiento de la fianza, teniendo claro que en ningún caso me podrán exigir una determinada empresa de afianzamiento, ya que soy libre de escoger la entidad.
-	Monto total del crédito solicitado y aprobado
-	Forma de pago
-	Modalidad de la cuota
-	Valor de la cuota
-	Plazo y sistema de amortización
-	Tasa de interés remuneratoria y moratoria
-	Acceso a información Consulta a centrales de riesgos y listas vinculantes
-	autorización de recaudo 
-	Condiciones de refinanciación
-	Sistema en notificacion según manual de crédito y cartera
-	Valores por concepto de Libranza 
-
+				<text><![CDATA[• Que para la aprobación de mi crédito requiero de un afianzamiento sobre dicha obligación el cual podre contratar ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="226" width="166" height="11" uuid="e619027a-35f4-45d5-912c-e7752cd48d90"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[• Tasa de interés remuneratoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="54" y="240" width="483" height="26" uuid="f5de16ce-7ad3-48d5-b3f7-b03387515a3a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[y moratoria tal como lo indica el Art. 844 de código de comercio “… Si las partes no han estipulado el interés moratorio, será equivalente a una y media veces del bancario corriente…”.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="221" y="228" width="25" height="11" uuid="69cea768-0d31-46d5-88f9-a9d6582ac361"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="12" y="268" width="525" height="71" uuid="90b76dc9-2db7-4122-b705-3fdbb5e1866b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[• Acceso a información consulta a centrales de riesgos y listas vinculantes. 
+• Autorización de descuento y/o recaudo. 
+• Condiciones de refinanciación.
+• Sistema en notificación según manual de crédito y cartera. 
+• Valores por concepto de libranza.
+• Continuidad del descuento de la cuota acordada en caso de que cambie de empleador.]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="181" y="238" width="34" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26131614-a108-4e0a-a401-666c9b20b4ab"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="185" y="226" width="24" height="11" uuid="2139abbb-3c8e-46a3-86ad-3ad77a358ed6"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tasa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-4" x="54" y="140" width="483" height="25" uuid="19533e62-78b4-42e9-921e-32d9749ad3b0"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[con cualquier compañía legalmente constituida en el territorio nacional que preste este servicio, ya que soy libre de escoger la entidad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="167" width="524" height="56" uuid="b2754048-0c64-494e-9957-a75656b2f13a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[• Monto total del crédito solicitado y aprobado.
+• Forma de pago.
+• Modalidad de la cuota.
+• Valor de la cuota.
+• Plazo y sistema de amortización.
 ]]></text>
 			</staticText>
 		</band>

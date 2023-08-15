@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solicitud" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="2.357947691000019"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1550"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="1"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -59,13 +59,13 @@
 	<columnHeader>
 		<band height="752" splitType="Stretch">
 			<rectangle>
-				<reportElement x="10" y="595" width="525" height="116" uuid="8e0d19de-44a2-48c2-9cab-0fdb6342c0cf"/>
+				<reportElement x="10" y="611" width="525" height="116" uuid="8e0d19de-44a2-48c2-9cab-0fdb6342c0cf"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement x="10" y="412" width="525" height="180" uuid="2448684a-e184-456d-baf2-6e01b2d6689c"/>
+				<reportElement x="10" y="412" width="525" height="199" uuid="2448684a-e184-456d-baf2-6e01b2d6689c"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -836,7 +836,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[ESPACIO EXCLUSIVO DE TECNICAS Y GESTIONES S.A.S. - CONFIRMAR DATOS]]></text>
+				<text><![CDATA[ESPACIO EXCLUSIVO DE AVALTITULOS S.A.S. - CONFIRMAR DATOS]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="193" width="1" height="39" forecolor="#000000" uuid="088cf716-2fda-404b-8e9e-59da9f69962a"/>
@@ -927,7 +927,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Autorizo expresa e Irrevocablemente, con carácter permanente y mientras subsista alguna relación comercial con quien representa sus derechos ostente en el futuro la calidad de acreedor y/o Endosataria a través suyo o de realizaciones de negocios financieros y de operaciones activas de crédito, reporte, procese, solicite, consulte o divulgue a las centrales de riesgo establecidas en el país o a cualquier entidad que maneje o administre bases de datos con los mismos fines o cualquier institución sometida a control y vigilancia del estado colombiano todo lo relativo a la generación, modificación y extensión de obligaciones financieras que directa o indirectamente tenga contraídas o vigentes hasta la total extinción de las obligaciones a mi cargo por cualquier medio legal y después de ello durante el plazo máximo que para el efecto autorice la ley y/o La jurisprudencia así mismo autorizo expresamente con el fin de ejercer mi derecho a conocer actualizar y rectificar todos los dates que sobre la presente obligación se generen en especial el reporte de dato financiero negativo, sea notificado per medio de mensaje de texto, correo electrónico, whatsapp y Ilamadas de las cuales quedara la prueba dicha notificación.]]></text>
+				<text><![CDATA[Autorizo expresa e irrevocablemente con carácter permanente, y mientras subsista alguna relación comercial con quien representa sus derechos u ostente en el futuro la calidad de acreedor y/o Endosatario del contrato de mutuo comercial o pagare Libranza, para que reporte, procese, solicite, consulte o divulgue a las centrales de riesgo en el país o a cualquier entidad  que maneje o administre las bases de datos con los mismos fines, o cualquier institución sometida a control y vigilancia del estado colombiano con todo lo relativo a la generación, modificación y extensión de obligaciones financieras que directa o indirectamente tenga contraídas o vigentes hasta la total extinción de las obligaciones a mi cargo, y después de ello durante el plazo máximo que para el efecto autorice la ley y/o la jurisprudencia. Así mismo, autorizo expresamente a que me sea notificado por medio de mensaje de texto, correo electrónico, WhatsApp y llamadas, el reporte del dato financiero negativo, con el fin de ejercer mi derecho a conocer, actualizar y rectificar todos los datos que sobre la presente obligación se generen. ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-6" mode="Opaque" x="10" y="238" width="526" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="ddbc9fd9-68e6-4947-b440-c44dcd6d6ea6"/>
@@ -948,14 +948,14 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Parágrafo: La entidad notificara la Información conforme a los datos suministrados por el cliente en la presente solicitud en el evento de cambiar su información de notificación se compromete a comunicarla oportunamente.]]></text>
+				<text><![CDATA[Se notificará la información conforme a los datos suministrados por el cliente en la presente solicitud. En el evento de cambiar su información el Solicitante del crédito se compromete a comunicarla oportunamente.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="303" width="520" height="33" uuid="53a69680-2c4e-455f-943e-61004972ba1d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que les presento que el estudio de esta solicitud como las declaraciones que hago, son auténticas y fidedignas, y en consecuencia declaro que conozco que el art. 287 del código penal sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriere per la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de la forma tal que esta solicitud libre e informada De igual forma autorizo a TÉCNICAS Y GESTIONES S.A.S. a hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa a la misma. Del mismo modo manifestó que previamente conocí las condiciones del crédito el cual incluye además del capital, los intereses corrientes.]]></text>
+				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a AVALTITULOS S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="16" y="348" width="33" height="9" uuid="b8811dee-e430-41db-858a-05c388c01db6"/>
@@ -1056,29 +1056,29 @@
 					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="4" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[CONDICIONES PARTICULARES DEL CREDITO DE LIBRANZA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="412" width="520" height="180" uuid="e9b3149a-5244-47ca-a8fe-d6a3fab6c980"/>
+				<reportElement key="staticText-4" x="12" y="412" width="520" height="199" uuid="e9b3149a-5244-47ca-a8fe-d6a3fab6c980"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[1. CRÉDITO DE LIBRANZA: El servicio contratado por el cliente se denominará en adelante "Crédito de libranza", el cual es un contrato de mutuo mercantil, instrumentado en un pagare que podrá ser de materializado y una autorización de descuento por nómina para el pago de la cuota periódica respectiva denominada "libranza".
-2. DESTINACIÒN Y MONTO: El crédito de libranza podrá ser de libre inversión y en consecuencia podrá ser utilizado por el cliente para los fines que el mismo determine, hasta per el monto total asignado. El cliente será informado una vez que haya aprobado o desembolsado. El monto desembolsado corresponde al total solicitado. En casos de compra de cartera el cliente deberá presentar paz y salvo de las obligaciones que este cancelando con el desembolso respectivo, antes de que sea acreditado a su favor el saldo restante.
-3. FORMA DE PAGO: El cliente autoriza EL ACREEDOR a realizar el cobro principalmente a través de descuentos por nómina, Lo anterior se entiende sin prejuicio EL ACREEDOR remita un extracto, carta o cualquier otro medio de cobro de la cuota periódica, junto con los intereses remuneratorios o de mora respectivos, el valor de los seguros obligatorios y voluntarios a los que haya lugar. El hecho de que el descuento por nómina no opere, o no remita el extracto o instrumento de cobro correspondiente no exime de responsabilidad al cliente pare cubrir oportunamente el pago de las obligaciones contraídas, En estor casos, el cliente deberá acercarse a las oficinas del Servicio al Cliente de EL ACREEDOR, llamara a la Línea de Servicio al Cliente de EL ACREEDOR o utilizará otro medio que EL ACREEDOR ponga a su disposición para conocer la liquidación de los valores a pagar y la forma de pago.
-4. MORA Y COBRANZA: En caso de mora se causarán intereses moratorios a la tasa máxima permitida por la ley sobre el saldo del capital impagado. Así mismo, a partir de la mora se podrán agregar a le deuda y serán a cargo del cliente los gastos que ocasione el cobro extrajudicial hasta del veinte (20%) más IVA del valor en mora y judicial de conformidad con las disposiciones legales aplicables, si a ello hubiera lugar y cualquier pago que realice se aplicara primeramente a estos gastos. El cliente renuncia a cualquier requerimiento para la constitución en mora.
-5. CLAUSULA ACELERATORIA: EL ACREEDOR podrá declarar vencido (s) él (los) plazo (s) de la obligación o de las cuotas pendientes de pago, y por ende exigir el pago total inmediato cuando se presente alguno de los siguientes eventos a) Incumplimiento de cualquiera de las obligaciones contraídas por el Cliente con EL ACREEDOR o falsedad en sus declaraciones b) Si el cliente fuera demandado por terceros; c) En el evento en que autoridades competentes vinculen al cliente a cualquier tipo de investigación por delitos de lavado de activos u financiación del terrorismo sea incluido en las listas inhibitorias, o condenado por parte de las entidades competentes en cualquier tipo de proceso judicial relacionado con la comisión de dichos delitos; d) En cualquier otra circunstancia que a criterio de EL ACREEDOR implique riesgos legales y comerciales para la entidad y para el cabal cumplimiento de se obligación; e) En caso de muerte del cliente f) En caso de retiro del Cliente de la empresa que efectúa los descuentos de nómina para cubrir pagos periódicos del crédito de libranza; g) En los demás casos autorizados por la ley.
-6. TASA DE INTERÈS VARIABLE: Para cada una de los desembolsos, independientemente que se trate de un Crédito de Libranza simple, la tasa de interés remuneratoria será la que fije el ACREEDOR para el periodo en el cual se haga el respectivo desembolso. Los intereses se causarán a partir de la fecha de desembolso y la tasa de interés estará vigente durante el plazo establecido, la tasa e interés moratoria será la máxima permitida por la ley para el momento de su cobro. Por expresa instrucción de la Superintendencia de Industria y Comercio, se informa a la parte deudora que durante el periodo de financiación la tasa de interés no podrá ser superior el interés bancario corriente que certifica la Superintendencia Financiera de Colombia.
-7. CUOTA FIJA Y PLAZO VARIABLE: El Crédito de Libranza se pagará mediante cuotas mensuales fijas. El plazo del crédito de Libranzas se cuenta a partir del descuento efectivo de la primera cuota y es variable a causa de los ajustes que se requieran realizar durante la vigencia del Crédito de Libranza, o las utilizaciones adicionales pare el caso de Créditos de Libranzas Rotativos. Los pagos que se realicen con posterioridad a cualquier evento de mora serán aplicados prioritariamente a los intereses generados durante el periodo de atraso, el cliente autoriza a EL ACREEDOR a que amplie el plazo del Crédito de Libranza en caso de requerir coma consecuencia de la aplicación mencionada. Si la capacidad de descuento mensual se reduce, el cliente autoriza al ACREEDOR pare reducir el valor de la cuota y modifique el plazo para que puede cubrirse en su totalidad el Crédito de Libranza, En los anteriores eventos EL ACREEDOR notificara vía e-mail al cliente sobre la modificación de la cuota y/o el plazo del Crédito de Libranza.
-8. SALDOS A FAVOR DEL CLIENTE: En caso de que como consecuencia de los ajustes en la tasa de interés o plazo a los que haya lugar, u Opere una cuota adicional exista en remante a favor del cliente este deberá radicar en las oficinas de EL ACREEDOR junto con el soporte que genera este salgo a favor una solicitud para que reintegre el saldo. Una vez hecha la solicitud EL ACREEDOR tendrá hasta (30) días comunes para hacer entrega del mismo.
-9. GARANTÍAS ADICIONALES: EL ACREEDOR podrá exigir en cualquier momento la sustitución de garantías reales a personales, sujetando la constitución en la ejecución del contrato a la construcción de las mismas.
+				<text><![CDATA[1. CRÉDITO DE LIBRANZA: El servicio contratado por el cliente se denominará en adelante "Crédito de libranza ". El cual es un contrato de mutuo comercial con intereses, Instrumentado en un pagaré que podrá ser desmaterializado y una autorización de descuento por nómina para el pago de la cuota periódica respectiva denominada "libranza".
+2. DESTINACIÓN Y MONTO: El crédito de libranza podrá ser de libre inversión y en consecuencia podrá ser utilizado por el cliente para los fines que el mismo determine hasta por el monto total asignado. El cliente será Informado una vez que se haya aprobado y desembolsado. El monto desembolsado corresponde al total aprobado según su capacidad de pago y análisis crediticio. En casos de compra de cartera el cliente deberá presentar el certificado de las obligaciones que esté cancelando con el desembolso respectivo, antes de que sea acreditado a su favor el saldo restante.
+3. FORMA DE PAGO: El cliente autoriza a EL ACREEDOR a realizar el cobro principalmente a través de descuento por nómina por medio del sistema de libranza. Lo anterior sin perjuicio de que EL ACREEDOR remita un extracto, carta o cualquier otro medio de cobro de la cuota periódica, junto con los intereses remuneratorios o de mora respectivos, el valor de los seguros obligatorios y voluntarios, afianzamiento y demás a los que haya lugar, al cliente o pagador del crédito. El hecho de que el descuento por nómina no sea efectivo, o no se remita el extracto o instrumento de cobro correspondiente, no exime de responsabilidad al cliente para cubrir oportunamente el pago de las obligaciones contraídas. En estos casos, el cliente deberá acercarse a las oficinas de Servicio al Cliente de EL ACREEDOR, llamar a la línea de Servicio al Cliente de EL ACREEOOR o utilizar otro medio que EL ACREEDOR ponga a su disposición para conocer la liquidación de los valores a pagar y la forma de pago, según el DECRETO 1074 DE 2015 ARTÍCULO 2.2.2.35.5.
+4.MORA Y COBRANZA: En caso de mora se causarán intereses moratorios a la tasa máxima permitida por la ley sobre el saldo del capital Impagado. Así mismo el cliente renuncia a cualquier requerimiento a la constitución en mora y será reportado en las centrales de riesgo. Dependiendo de las actividades realizadas para el recaudo de la mora, se podrán cobrar honorarios, gastos extrajudiciales hasta el 20% mas IVA del valor en mora según el numeral 14 del Artículo 2.2.2.35.5 del Decreto 1074 de 2015.
+5.CLÁUSULA ACELERATORIA -   EL ACREEDOR: podrá declarar vencidos los plazos de la obligación o de las cuotas pendientes de pago, y por ende exigir el pago total inmediato cuando se presente alguno de los siguientes eventos a) Incumplimiento de cualquiera de las obligaciones contraídas por el Cliente con EL ACREEDOR o falsedad en sus declaraciones; b) La mora o el simple retardo en el pago de las cuotas pactadas, o en el de las renovaciones del plazo. c) si el cliente fuera demandado por terceros; d) En el evento en que las autoridades competentes vinculen al cliente a cualquier tipo de investigación por delitos de lavado de activos o financiación del terrorismo, sea incluido en las listas inhibitorias, o condenado por parte de las entidades competentes en cualquier tipo de proceso judicial relacionado con la comisión de dichos delitos; e) En cualquier otra circunstancia que a criterio del EL ACREEDOR Implique riesgos legales y comerciales para la entidad y para el cabal cumplimiento de su obligación; f) En caso de muerte del cliente g) En caso de retiro del Cliente de la empresa que efectúa los descuentos de nómina pera cubrir pagos periódicos del crédito de Libranza; h) En los demás casos autorizados por la ley.
+6.TASA DE INTERES: Para cada uno de los desembolsos, independientemente que se trate de un Crédito de Libranza simple, la tasa de interés remuneratoria seré la que fije el ACREEDOR para el periodo en el cual se haga el respectivo desembolso. Los intereses se causarán a partir de la fecha de desembolso y la tasa de interés estará vigente durante el plazo establecido. La tasa de Interés moratoria será la tasa máxima permitida por la ley para el momento de su cobro. Por expresa instrucción de la Superintendencia de Industria y Comercio, se informa a la parte deudora que durante el periodo de financiación la tasa de interés no podrá ser superior al interés máximo bancario corriente que certifica la Superintendencia Financiera de Colombia.
+7.CUOTA FIJA Y PLAZO: El Crédito de Libranza se pagará mediante cuotas mensuales fijas. El plazo del crédito de Libranza se cuenta a partir del descuento efectivo de la primera cuota y es variable a causa de los ajustes que se requieran realizar durante la vigencia del crédito de libranza, o las utilizaciones adicionales para el caso de Créditos de Libranzas Rotativos. Los pagos que se realicen con posterioridad a cualquier evento de mora serán aplicados prioritariamente a los intereses generados durante el periodo de atraso. El cliente autoriza a EL ACREEDOR a que amplie el plazo del Crédito de Libranza en caso de requerirse como consecuencia de incumplimiento o atraso de los pagos de las cuotas mensuales pactadas. Si la capacidad de descuento mensual se reduce, el cliente autoriza al ACREEDOR para reducir el valor de la cuota y modifique el plazo para que pueda cubrirse en su totalidad el Crédito de Libranza. En los anteriores eventos EL ACREEDOR notificará al cliente sobre la modificación de la cuota y/o el plazo del Crédito de Libranza.
+8. SALDOS A FAVOR DEL CLIENTE: En caso de que como consecuencia de los ajustes en las cuotas pactadas o plazo a los que haya lugar y se descuente (n) alguna (s) cuota (s) adicional (es) y exista un remanente a favor del cliente, éste deberá radicar en las oficinas de EL ACREEDOR una solicitud junto con los soportes para que se reintegre el saldo correspondiente. Una vez hecha la solicitud EL ACREEDOR tendrá hasta (30) días hábiles para hacer entrega del mismo. 
+9. GARANTIAS ADICIONALES: EL ACREEDOR podrá exigir en cualquier momento la constitución de garantías reales o personales, seguros o Afianzamientos. La aprobación del crédito de libranza estará sujeto a la constitución de las mismas. 
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="595" width="526" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="d35ec141-5319-40a0-a964-7227de6a2d09"/>
+				<reportElement key="staticText-6" mode="Opaque" x="10" y="611" width="522" height="12" forecolor="#FFFFFF" backcolor="#000000" uuid="d35ec141-5319-40a0-a964-7227de6a2d09"/>
 				<box>
 					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
@@ -1086,164 +1086,164 @@
 					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[RESPONSABILIDAD EN EL DILIGENCIAMIENTO DE LA SOLICITUD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="613" width="520" height="16" uuid="8701ecbc-64bd-4f2d-a9a2-84a58c08ceb9"/>
+				<reportElement key="staticText-4" x="12" y="625" width="520" height="20" uuid="8701ecbc-64bd-4f2d-a9a2-84a58c08ceb9"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[En mi calidad de Asesor (s) de negocios del ACREEDOR, declaro que asesoré y atendí personalmente al solicitante. Así mismo, el solicitante diligencio en mi presencia la solicitud adjunta con todos los anexos, que le tomé las huellas dactilares y verifiqué la veracidad de las fotocopias de los documentos de identificaciones que se adjuntan al crédito, con los documentos originales suministrados por el solicitante.]]></text>
+				<text><![CDATA[En mi calidad de corredor (es) de negocios del Solicitante del Crédito, declaro que asesoré, informe en detalle las condiciones del negocio y atendí personalmente al solicitante. Así mismo, el solicitante diligenció en mi presencia la solicitud adjunta con todos los anexos, le tomé las huellas dactilares y verifiqué la veracidad de las fotocopias de los documentos de identificación que se adjuntan al crédito, con los documentos originales suministrados por el solicitante del crédito.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="629" width="520" height="12" uuid="fa195de2-6160-45f6-b755-ecd68d469d4a"/>
+				<reportElement key="staticText-4" x="12" y="645" width="520" height="12" uuid="fa195de2-6160-45f6-b755-ecd68d469d4a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[Para el caso de solicitudes de EMPLEADOS ACTIVOS, declaro y certifico que el solicitante, quien se encontraba vestido con uniforme de la empresa o presento su carnet original de la empresa que le certifica como trabajador de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="12" y="641" width="520" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="686a298f-1c3a-40fa-a4ad-3b6bf25fcf01"/>
+				<reportElement key="line-1" x="12" y="657" width="520" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="686a298f-1c3a-40fa-a4ad-3b6bf25fcf01"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="642" width="133" height="11" uuid="b8022277-99b4-42cd-b63a-e48a9dc82d8d"/>
+				<reportElement key="staticText-4" x="12" y="658" width="133" height="11" uuid="b8022277-99b4-42cd-b63a-e48a9dc82d8d"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[En constancia de lo anterior, se firma en la ciudad de ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="145" y="652" width="67" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c4587ed0-1cb3-45b6-b870-259285770afe"/>
+				<reportElement key="line-1" x="145" y="668" width="67" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c4587ed0-1cb3-45b6-b870-259285770afe"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="212" y="642" width="15" height="11" uuid="3bcfc1c2-1cc4-416a-8cc9-b3ee67b53cac"/>
+				<reportElement key="staticText-4" x="212" y="658" width="15" height="11" uuid="3bcfc1c2-1cc4-416a-8cc9-b3ee67b53cac"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[a los]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="227" y="652" width="67" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2fa25c1b-6cfc-4e61-8542-c4d730c50f83"/>
+				<reportElement key="line-1" x="227" y="668" width="67" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2fa25c1b-6cfc-4e61-8542-c4d730c50f83"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="293" y="642" width="5" height="11" uuid="4f25c223-75dd-442f-bb6b-2daf14ea8b5f"/>
+				<reportElement key="staticText-4" x="293" y="658" width="5" height="11" uuid="4f25c223-75dd-442f-bb6b-2daf14ea8b5f"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[(]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="297" y="652" width="22" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0ac2b647-9944-4e98-9e9b-b7306a17c708"/>
+				<reportElement key="line-1" x="297" y="668" width="22" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0ac2b647-9944-4e98-9e9b-b7306a17c708"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="320" y="642" width="5" height="11" uuid="35788c73-fe01-44b0-aa92-6e07627289f9"/>
+				<reportElement key="staticText-4" x="320" y="658" width="5" height="11" uuid="35788c73-fe01-44b0-aa92-6e07627289f9"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="325" y="642" width="43" height="11" uuid="9b836b5d-4677-4aa0-8c54-00657a1c4729"/>
+				<reportElement key="staticText-4" x="325" y="658" width="43" height="11" uuid="9b836b5d-4677-4aa0-8c54-00657a1c4729"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[días del mes de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="368" y="652" width="72" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f2cde012-7c94-445e-b2c4-8cb5619f7a40"/>
+				<reportElement key="line-1" x="368" y="668" width="72" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f2cde012-7c94-445e-b2c4-8cb5619f7a40"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="440" y="642" width="12" height="11" uuid="7dd316cc-65ef-4278-a514-990081bfbda7"/>
+				<reportElement key="staticText-4" x="440" y="658" width="12" height="11" uuid="7dd316cc-65ef-4278-a514-990081bfbda7"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[año]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="453" y="652" width="79" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5429a69d-e486-4d0f-ad3e-17bdc4bcd21c"/>
+				<reportElement key="line-1" x="453" y="668" width="79" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5429a69d-e486-4d0f-ad3e-17bdc4bcd21c"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="11" y="689" width="62" height="11" uuid="eab189dc-08a5-4fb4-8142-1b30f9b53a56"/>
+				<reportElement key="staticText-4" x="11" y="705" width="62" height="11" uuid="eab189dc-08a5-4fb4-8142-1b30f9b53a56"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[FIRMA DEL ASESOR]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="12" y="665" width="133" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d8bc6289-b734-48a2-adc9-8239533b865a"/>
+				<reportElement key="line-1" x="12" y="681" width="133" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d8bc6289-b734-48a2-adc9-8239533b865a"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="146" y="654" width="5" height="11" uuid="5f067e5d-4f55-495d-8a23-992a179e7373"/>
+				<reportElement key="staticText-4" x="146" y="670" width="5" height="11" uuid="5f067e5d-4f55-495d-8a23-992a179e7373"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[(]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="151" y="665" width="22" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bdec1162-198e-42e1-a6ee-21d01f573499"/>
+				<reportElement key="line-1" x="151" y="681" width="22" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bdec1162-198e-42e1-a6ee-21d01f573499"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="176" y="654" width="5" height="11" uuid="82a9d3b0-2311-47b3-99fc-e9c633a55030"/>
+				<reportElement key="staticText-4" x="176" y="670" width="5" height="11" uuid="82a9d3b0-2311-47b3-99fc-e9c633a55030"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="73" y="700" width="209" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="137c2010-e2a7-471f-a644-2db76e9e9aae"/>
+				<reportElement key="line-1" x="73" y="716" width="209" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="137c2010-e2a7-471f-a644-2db76e9e9aae"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="285" y="666" width="53" height="11" uuid="72732b5f-b583-4ec5-b1e3-7f391407f794"/>
+				<reportElement key="staticText-4" x="285" y="682" width="53" height="11" uuid="72732b5f-b583-4ec5-b1e3-7f391407f794"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[NOMBRE ASESOR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="285" y="689" width="22" height="11" uuid="f46c6a9c-7eab-4092-a78a-f5b8d4ff37c8"/>
+				<reportElement key="staticText-4" x="285" y="705" width="22" height="11" uuid="f46c6a9c-7eab-4092-a78a-f5b8d4ff37c8"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
 				<text><![CDATA[C.C. No.]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="307" y="699" width="225" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c70882ca-929b-4e05-b508-4d7d239a9c3c"/>
+				<reportElement key="line-1" x="307" y="715" width="225" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c70882ca-929b-4e05-b508-4d7d239a9c3c"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="334" y="676" width="198" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f6f838f5-70bc-4b6e-ad3a-a7f1fe8b78d7"/>
+				<reportElement key="line-1" x="334" y="692" width="198" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f6f838f5-70bc-4b6e-ad3a-a7f1fe8b78d7"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -1277,14 +1277,14 @@
 				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="353" y="660" width="170" height="14" uuid="c067781e-4d1a-442f-8571-0223dcea05e7"/>
+				<reportElement x="353" y="676" width="170" height="14" uuid="c067781e-4d1a-442f-8571-0223dcea05e7"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{name_asesor}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="324" y="685" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
+				<reportElement x="324" y="701" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>

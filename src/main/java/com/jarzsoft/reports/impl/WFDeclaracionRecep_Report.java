@@ -39,6 +39,9 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		
 		param.put("nitter", o.getNitter());
+		//jarz 15/08/2023
+		param.put("tasa", "2.5");
+		
 		if (null != o.getCodeu()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			
@@ -47,6 +50,7 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 			param.put("nitter_codeu", o.getCodeu().getNitter());
 			param.put("telTer_codeu", o.getCodeu().getTelTer());
 			param.put("mailTer_codeu", o.getCodeu().getMailTer());
+			
 			
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			
