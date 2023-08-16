@@ -7,6 +7,7 @@ import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.entities.WWfMov;
+import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.IWWfMovMapper;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
@@ -56,6 +57,9 @@ public class WFStep_2Service implements IStepStrategy {
 		if (o.getIdSubStep().equals(EnumSubSteps.TIPO_SUB_PASO.SUB_STEP_2.getName())) {
 			return check(o, user);
 		}
+		if (o.getIdSubStep().equals(EnumSubSteps.TIPO_SUB_PASO.SUB_STEP_3.getName())) {
+			return updateStep(o, user);
+		}
 
 		return o;
 	}
@@ -96,6 +100,21 @@ public class WFStep_2Service implements IStepStrategy {
 		} else {
 			throw new RuntimeException("Email verification error");
 		}
+		return o;
+	}
+
+	private DTOWF updateStep(DTOWF o, String user) {
+
+		DTOSolCredito credito = solCreditoService.findBynumeroRadicacion(o.getNumeroRadicacion());
+		if (null != credito) {
+			credito.setObserva(o.getComments());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_2.getName(), o.getIsUpdate(),
+					o.getIdWf());
+			o.setNextStep(EnumSteps.TIPO_PASO.STEP_3.getName());
+		} else {
+			throw new PageNoFoundException("Solicitud no Existe");
+		}
+
 		return o;
 	}
 

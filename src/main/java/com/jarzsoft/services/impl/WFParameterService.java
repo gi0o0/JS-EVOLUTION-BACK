@@ -223,8 +223,8 @@ public class WFParameterService implements IWFParameterService {
 	}
 
 	@Override
-	public List<DTOWFParameterStep> stepsbyNumRad(Integer numRad) {
-		return mapperStep.mapperList(daoStep.findByWfByNumRad(numRad));
+	public List<DTOWFParameterStep> stepsbyNumRad(Integer wf, Integer numRad) {
+		return mapperStep.mapperList(daoStep.findByWfByNumRad(wf,numRad));
 
 	}
 

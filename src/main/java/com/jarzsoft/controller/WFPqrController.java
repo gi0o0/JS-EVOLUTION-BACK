@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jarzsoft.dto.DTOWF;
+import com.jarzsoft.dto.DTOWFFilter;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.dto.DTOWalletUser;
@@ -48,9 +50,9 @@ public class WFPqrController {
 		return service.listAllByUser(user);
 	}
 
-	@GetMapping(value = "/{num_rad}/steps", produces = "application/json")
-	public List<DTOWFParameterStep> stepsbyNumRad(@PathVariable("num_rad") Integer numRad) {
-		return service.stepsbyNumRad(numRad);
+	@GetMapping(value = "{id_wf}/rad/{num_rad}/steps", produces = "application/json")
+	public List<DTOWFParameterStep> stepsbyNumRad(@PathVariable("id_wf") Integer idWf,@PathVariable("num_rad") Integer numRad) {
+		return service.stepsbyNumRad(idWf,numRad);
 	}
 
 	@GetMapping(value = "/{cod_ter}/portafolio/{wf}", produces = "application/json")
@@ -66,6 +68,11 @@ public class WFPqrController {
 	@PostMapping(produces = "application/json", consumes = "application/json")
 	public DTOWFPqr createEst(@RequestBody DTOWFPqr o, @RequestAttribute(name = "user") String user) {
 		return service.create(o, user);
+	}
+	
+	@PostMapping(value = "/filter", produces = "application/json", consumes = "application/json")
+	public List<DTOWFPqr> listAllByFilters(@RequestBody DTOWFFilter o, @RequestAttribute(name = "user") String user) {
+		return service.listAllByFilters(o, user);
 	}
 
 }

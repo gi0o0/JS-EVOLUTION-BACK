@@ -191,7 +191,7 @@ public class WfMapper implements IWfMapper {
 		out.setIdStepNow(stepNow + "");
 		out.setSolPagare(o.getSolPagare());
 		out.setIdWf(EnumWF.TIPO_WF.IDWF_4.getName());
-		if (mov != null) {			
+		if (mov != null) {
 			out.setIdSubStep("0");
 			out.setNextStep(mov.getIdPaso());
 			out.setIdStep(mov.getIdPaso());
@@ -255,9 +255,9 @@ public class WfMapper implements IWfMapper {
 		out.setNameWf(o.getNameWf());
 		out.setNameStep(o.getNamePaso());
 		out.setUsuComercial(o.getUsuComercial());
-		out.setFecUltMod(o.getFecUltMod()+"");
+		out.setFecUltMod(o.getFecUltMod() + "");
 		out.setEntitie(o.getEstPasoMov());
-		
+
 		return out;
 	}
 
@@ -274,6 +274,33 @@ public class WfMapper implements IWfMapper {
 
 		return out;
 
+	}
+
+	@Override
+	public DTOWFPqr mapperDaoToDto(Object[] in) {
+
+		Integer numRad = (int) (double) in[0];
+		String idStep = String.valueOf(in[1]);
+		String idWf = String.valueOf(in[2]);
+
+		DTOWFPqr out = new DTOWFPqr();
+
+		out.setIdWf(idWf);
+		out.setIdSubStep("0");
+		out.setNextStep(idStep);
+		out.setIdStep(idStep);
+		out.setComments(String.valueOf(in[3]));
+		out.setState(String.valueOf(in[4]));
+		out.setNumeroRadicacion(numRad);
+		out.setIdMov(String.valueOf(in[5]));
+		out.setNitter(String.valueOf(in[6]));
+		out.setNameWf(String.valueOf(in[7]));
+		out.setNameStep(String.valueOf(in[8]));
+		out.setUsuComercial(String.valueOf(in[10]));
+		out.setFecUltMod(String.valueOf(in[9]));
+		out.setEntitie(String.valueOf(in[4]));
+
+		return out;
 	}
 
 }

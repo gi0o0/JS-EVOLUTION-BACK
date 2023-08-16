@@ -54,9 +54,9 @@ public class WFController {
 		return service.listAllByFilters(o, user);
 	}
 
-	@GetMapping(value = "/{num_rad}/steps", produces = "application/json")
-	public List<DTOWFParameterStep> stepsbyNumRad(@PathVariable("num_rad") Integer numRad) {
-		return service.stepsbyNumRad(numRad);
+	@GetMapping(value = "{id_wf}/rad/{num_rad}/steps", produces = "application/json")
+	public List<DTOWFParameterStep> stepsbyNumRad(@PathVariable("id_wf") Integer idWf,@PathVariable("num_rad") Integer numRad) {
+		return service.stepsbyNumRad(idWf,numRad);
 	}
 
 	@GetMapping(value = "/{cod_ter}/portafolio", produces = "application/json")

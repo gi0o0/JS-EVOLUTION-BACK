@@ -134,9 +134,8 @@ public class WFService implements IWFService {
 	}
 
 	@Override
-	public List<DTOWFParameterStep> stepsbyNumRad(Integer numRad) {
-
-		return wpParameterService.stepsbyNumRad(numRad);
+	public List<DTOWFParameterStep> stepsbyNumRad(Integer idWf, Integer numRad) {
+		return wpParameterService.stepsbyNumRad(idWf, numRad);
 	}
 
 	@Override

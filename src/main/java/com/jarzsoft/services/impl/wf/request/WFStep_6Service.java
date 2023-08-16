@@ -32,7 +32,7 @@ public class WFStep_6Service implements IStepStrategy {
 		this.solCreditoService = solCreditoService;
 
 		this.serviceFile = serviceFile;
-	
+
 	}
 
 	@Override
@@ -43,7 +43,8 @@ public class WFStep_6Service implements IStepStrategy {
 
 			if (null != o.getFiles()) {
 				for (int i = 0; i < o.getFiles().size(); i++) {
-					serviceFile.create(o.getNumeroRadicacion() + "", getType(), o.getNitter(), o.getFiles().get(i));
+					serviceFile.create(o.getIdWf() + o.getNumeroRadicacion() + "", getType(), o.getNitter(),
+							o.getFiles().get(i));
 				}
 			}
 

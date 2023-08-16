@@ -16,6 +16,8 @@ public interface IWfMapper {
 			DTOFodataso fodaCodeo, Integer stepNow);
 
 	DTOWFPqr mapperDaoToDto(DTOWWfMov mov);
+	
+	DTOWFPqr mapperDaoToDto(Object[] in);
 
 	DTOWFPqr mapperDaoTerceroToDto(DTOTerceros o , DTOWFPqr out);
 

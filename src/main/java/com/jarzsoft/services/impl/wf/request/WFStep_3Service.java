@@ -103,7 +103,7 @@ public class WFStep_3Service implements IStepStrategy {
 		BigDecimal valor2 = new BigDecimal("0");
 		BigDecimal valorPor = new BigDecimal("0");
 		BigDecimal ranIntPor = new BigDecimal("0");
-		
+
 		BigDecimal valorCuotaEstimada = new BigDecimal("0");
 		BigDecimal DesCuota = new BigDecimal("0");
 		BigDecimal valorFuturo = new BigDecimal("0");
@@ -125,7 +125,7 @@ public class WFStep_3Service implements IStepStrategy {
 		DesCuota = valorCuotaEstimada.multiply(new BigDecimal(o.getPerCuota()));
 		valorFuturo = DesCuota.multiply(numCuotas);
 		List<Object[]> rangos = fotipcreRepository.findRangueByEntitie(o.getFoticrep(), montoSolicitado);
-		
+
 		List<Object[]> rangosP = fotipcreRepository.findRangueByEntitieP(o.getFoticrep(), montoSolicitado);
 
 		String rangoValue = "0";
@@ -154,6 +154,7 @@ public class WFStep_3Service implements IStepStrategy {
 		o.getFinancial().setValorCuotaEstimada(valorCuotaEstimada.toString());
 		o.getFinancial().setDisponible(capacidad.toString());
 		o.getFinancial().setValorDesembolso(valorDesembolso.toString());
+		o.setTasaInt(ranInt1.toString());
 		return o;
 	}
 
@@ -234,7 +235,8 @@ public class WFStep_3Service implements IStepStrategy {
 
 			if (null != o.getFiles()) {
 				for (int i = 0; i < o.getFiles().size(); i++) {
-					serviceFile.create(o.getNumeroRadicacion() + "", getType(), o.getNitter(), o.getFiles().get(i));
+					serviceFile.create(o.getIdWf() + o.getNumeroRadicacion() + "", getType(), o.getNitter(),
+							o.getFiles().get(i));
 				}
 			}
 
@@ -245,11 +247,13 @@ public class WFStep_3Service implements IStepStrategy {
 
 			credito.setEstado(stateSol);
 			credito = solCreditoMapper.mapperDaoToDtoFinancial(o, credito);
+			credito.setTasaInt(o.getTasaInt());
 			solCreditoService.create(credito);
 
 			credito.setEstado(stateMov);
 			credito.setObserva(o.getComments());
-			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_3.getName(), o.getIsUpdate(),o.getIdWf());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_3.getName(), o.getIsUpdate(),
+					o.getIdWf());
 
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_4.getName());
 			if (stateSol.equals(EnumStates.TIPO_ESTADO.STATE_I.getName()))

@@ -43,14 +43,16 @@ public class WFStep_4Service implements IStepStrategy {
 
 			if (null != o.getFiles()) {
 				for (int i = 0; i < o.getFiles().size(); i++) {
-					serviceFile.create(o.getNumeroRadicacion() + "", getType() , o.getNitter(), o.getFiles().get(i));
+					serviceFile.create(o.getIdWf() + o.getNumeroRadicacion() + "", getType(), o.getNitter(),
+							o.getFiles().get(i));
 				}
 			}
 
 			String state = EnumStates.TIPO_ESTADO.STATE_6.getName();
 			credito.setEstado(state);
 			credito.setObserva(o.getComments());
-			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_4.getName(), o.getIsUpdate(),o.getIdWf());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_4.getName(), o.getIsUpdate(),
+					o.getIdWf());
 
 			solCreditoService.updateState(o.getNumeroRadicacion(), state);
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_5.getName());

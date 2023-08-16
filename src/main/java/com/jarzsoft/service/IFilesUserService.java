@@ -13,6 +13,6 @@ public interface IFilesUserService {
 
 	List<DTOFilesUser> listAllById(String solicitud);
 
-	Boolean create(String idSolicitud, String step, String cedula, DTOWfDocs documento);
+	Boolean create(String id, String step, String cedula, DTOWfDocs documento);
 
 }

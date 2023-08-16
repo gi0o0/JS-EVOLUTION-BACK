@@ -215,7 +215,7 @@ public class TercerosMapper implements ITercerosMapper {
 			response.add(new DTOTerceros(o.getCodTer(), o.getNomTercero(), o.getPriApellido(), o.getSegApellido(),
 					o.getLugarDoc(), o.getMailTer(), o.getDirTerpal(), o.getTelter(), o.getTelter1(), o.getTelter2(),
 					o.getFeExp(), o.getPaisCodigo(), o.getCodiDept(), o.getCodiCiud(), o.getBarrio(),
-					o.getAntiEmpresa(), o.getTipVivienda(), "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
+					o.getAntiEmpresa(), o.getTipVivienda(), "", "", "", "", "", "", "", "", "", "", "", "", "",Comunes.stringClean(o.getNitTer())));
 
 		});
 

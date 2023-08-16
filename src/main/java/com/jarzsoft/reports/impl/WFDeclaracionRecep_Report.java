@@ -37,23 +37,19 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
-		
 		param.put("nitter", o.getNitter());
-		//jarz 15/08/2023
-		param.put("tasa", "2.5");
-		
+		param.put("tasa", o.getTasaInt());
+
 		if (null != o.getCodeu()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-			
 			param.put("lugarDoc_codeu",
 					ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
 			param.put("nitter_codeu", o.getCodeu().getNitter());
 			param.put("telTer_codeu", o.getCodeu().getTelTer());
 			param.put("mailTer_codeu", o.getCodeu().getMailTer());
-			
-			
-			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-			
+			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
+					+ o.getCodeu().getSegApellido());
+
 		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_DECLARACION_RECEPCION, param,

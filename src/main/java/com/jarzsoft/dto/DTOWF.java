@@ -93,6 +93,7 @@ public class DTOWF {
 	private String prefixFile;
 	private DTOWFFinancialInfo financial;
 	private String solPagare;
+	private String tasaInt;
 
 	public DTOWF() {
 		super();
@@ -918,6 +919,14 @@ public class DTOWF {
 
 	public void setDirCiuTer(String dirCiuTer) {
 		this.dirCiuTer = dirCiuTer;
+	}
+
+	public String getTasaInt() {
+		return tasaInt;
+	}
+
+	public void setTasaInt(String tasaInt) {
+		this.tasaInt = tasaInt;
 	}
 
 }

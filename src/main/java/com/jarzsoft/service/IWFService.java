@@ -20,12 +20,12 @@ public interface IWFService {
 
 	List<DTOWF> listAllByUser(String user);
 
-	List<DTOWFParameterStep> stepsbyNumRad(Integer numRad);
+	List<DTOWFParameterStep> stepsbyNumRad(Integer idWf, Integer numRad);
 
 	List<DTOWalletUser> getPortafolio(String codTer);
 
 	List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf);
 
-	List<DTOWF> listAllByFilters(DTOWFFilter o,String user);
+	List<DTOWF> listAllByFilters(DTOWFFilter o, String user);
 
 }

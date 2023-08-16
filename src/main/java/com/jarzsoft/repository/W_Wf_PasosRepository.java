@@ -32,7 +32,7 @@ public interface W_Wf_PasosRepository extends JpaRepository<W_Wf_Pasos, W_Wf_Pas
 	@Query(value = "SELECT  max (id_paso ) +1 FROM w_wf_pasos", nativeQuery = true)
 	int getKey();
 
-	@Query(value = "select DISTINCT step.* from w_wf_mov mov inner join w_wf_pasos step on step.id_paso =mov.id_paso and step.id_wf = mov.id_wf where numero_radicacion =:numRad order by id_paso ", nativeQuery = true)
-	public List<W_Wf_Pasos> findByWfByNumRad(@Param("numRad") Integer numRad);
+	@Query(value = "select DISTINCT step.* from w_wf_mov mov inner join w_wf_pasos step on step.id_paso =mov.id_paso and step.id_wf = mov.id_wf where numero_radicacion =:numRad and mov.id_wf =:idWf order by id_paso ", nativeQuery = true)
+	public List<W_Wf_Pasos> findByWfByNumRad(@Param("idWf") Integer idWf, @Param("numRad") Integer numRad);
 
 }

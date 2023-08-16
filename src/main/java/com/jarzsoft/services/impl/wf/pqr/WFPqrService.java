@@ -6,10 +6,12 @@ import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jarzsoft.dto.DTOWFFilter;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.dto.DTOWWfMov;
@@ -99,9 +101,9 @@ public class WFPqrService implements IWFPqrService {
 	}
 
 	@Override
-	public List<DTOWFParameterStep> stepsbyNumRad(Integer numRad) {
+	public List<DTOWFParameterStep> stepsbyNumRad(Integer idWf, Integer numRad) {
 
-		return wpParameterService.stepsbyNumRad(numRad);
+		return wpParameterService.stepsbyNumRad(idWf, numRad);
 	}
 
 	@Override
@@ -112,6 +114,43 @@ public class WFPqrService implements IWFPqrService {
 		}
 
 		return wpParameterService.getPortafolioWk2(codTer);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DTOWFPqr> listAllByFilters(DTOWFFilter f, String user) {
+
+		
+		String consulta = "	select wm.numero_radicacion,wm.id_paso,wm.id_wf,wm.comentarios,wm.est_paso ,wm.id_wf_mov ,wm.nitter ,wf.nom_wf,step.nom_paso ,wm.fec_ult_mod,wm.usu_comercial "
+				+ "from w_wf_mov wm, w_wf wf,w_wf_pasos step " + "where "
+				+ " wm.id_wf = wf.id_wf and (wm.id_wf = step.id_wf and wm.id_paso =step.id_paso ) and wm.id_wf < 4 and  wm.id_wf_mov = "
+				+ " (select MAX(wm1.id_wf_mov) from w_wf_mov wm1 where  wm1.id_wf < 4 and wm.numero_radicacion = wm1.numero_radicacion ) ";
+
+		if (null != f.getIdWf() && !"".equals(f.getIdWf())) {
+			consulta += " AND wm.id_wf = '" + f.getIdWf() + "'";
+		}
+
+		if (null != f.getFechaInit() && !"".equals(f.getFechaInit()) && null != f.getFechaFin()
+				&& !"".equals(f.getFechaFin())) {
+			consulta += " AND wm.fec_envio BETWEEN CONVERT(DATETIME, '" + f.getFechaInit()
+					+ " 00:00:00')  and CONVERT(DATETIME, '" + f.getFechaFin() + " 23:59:59') ";
+		}
+
+		if (null != f.getAsesor() && !"".equals(f.getAsesor())) {
+			consulta += " AND wm.usu_comercial = '" + f.getAsesor() + "'";
+		}
+
+		Query query = entityManager.createNativeQuery(consulta);
+
+		List<DTOWFPqr> out = new ArrayList<>();
+		List<Object[]> o = query.getResultList();
+		
+	
+		for (Object[] in : o) {
+			out.add(mapper.mapperDaoToDto(in));
+		}
+
+		return out;
 	}
 
 }

@@ -40,7 +40,8 @@ public class WFPqrStep_4Service implements IStepPqrStrategy {
 
 		if (null != o.getFiles()) {
 			for (int i = 0; i < o.getFiles().size(); i++) {
-				serviceFile.create(o.getNumeroRadicacion() + "", getType(), o.getNitter(), o.getFiles().get(i));
+				serviceFile.create(o.getIdWf() + o.getNumeroRadicacion() + "", getType(), o.getNitter(),
+						o.getFiles().get(i));
 			}
 		}
 

@@ -31,6 +31,27 @@ public class FilesUserService implements IFilesUserService {
 	}
 
 	@Override
+	public Boolean create( String id, String step, String cedula, DTOWfDocs doc) {
+		Boolean out = false;
+
+		try {
+
+			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+			byte[] decodedImg = Base64.getDecoder()
+					.decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
+			String nameFile = id  + "_" + step + "_" + cedula + "_" + doc.getIdDocumento() + "_"
+					+ doc.getNomDocumento() + ".pdf";
+			Path destinationFile = Paths.get(path, nameFile);
+			Files.write(destinationFile, decodedImg);
+			out = true;
+		} catch (IOException e) {
+			throw new RuntimeException(e.getMessage());
+		}
+
+		return out;
+	}
+
+	@Override
 	public List<DTOFilesUser> listAll(String user, String solicitud, String id) {
 
 		return getFiles(user, solicitud, id);
@@ -72,26 +93,6 @@ public class FilesUserService implements IFilesUserService {
 			}
 		}
 		return files;
-	}
-
-	@Override
-	public Boolean create(String idSolicitud, String step, String cedula, DTOWfDocs doc) {
-		Boolean out = false;
-
-		try {
-
-			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
-			byte[] decodedImg = Base64.getDecoder()
-					.decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
-			Path destinationFile = Paths.get(path, idSolicitud + "_" + step + "_" + cedula + "_" + doc.getIdDocumento()
-					+ "_" + doc.getNomDocumento() + ".pdf");
-			Files.write(destinationFile, decodedImg);
-			out = true;
-		} catch (IOException e) {
-			throw new RuntimeException(e.getMessage());
-		}
-
-		return out;
 	}
 
 	@Override
