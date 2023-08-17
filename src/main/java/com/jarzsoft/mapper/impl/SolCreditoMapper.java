@@ -242,6 +242,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 			out.setPerCuota(o.getPerCuota());
 			out.setIndSolCredito(o.getIndSolCredito());
 			out.setEmpresaCod(o.getEmpresaCod());
+			out.setTasaInt(o.getTasaInt());
 		}
 		return out;
 	}

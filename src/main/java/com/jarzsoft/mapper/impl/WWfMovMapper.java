@@ -168,6 +168,7 @@ public class WWfMovMapper implements IWWfMovMapper {
 			mov.setNamePaso(obj[8] + "");
 		    mov.setFecUltMod((Date) obj[9]);
 		    mov.setUsuComercial(obj[10] + "");
+		    mov.setNomTer(obj[11] + "");
 	
 			response.add(mov);
 

@@ -45,6 +45,7 @@ public class DTOWWfMov {
 	private String codTer;
 	private String idPaso;
 	private String nitTer;
+	private String nomTer;
 	private Date fecUltMod;
 
 	public DTOWWfMov() {
@@ -386,6 +387,16 @@ public class DTOWWfMov {
 	public void setFecUltMod(Date fecUltMod) {
 		this.fecUltMod = fecUltMod;
 	}
+
+	public String getNomTer() {
+		return nomTer;
+	}
+
+	public void setNomTer(String nomTer) {
+		this.nomTer = nomTer;
+	}
+	
+	
 
 	
 }

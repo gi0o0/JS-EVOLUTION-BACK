@@ -191,6 +191,7 @@ public class WfMapper implements IWfMapper {
 		out.setIdStepNow(stepNow + "");
 		out.setSolPagare(o.getSolPagare());
 		out.setIdWf(EnumWF.TIPO_WF.IDWF_4.getName());
+		out.setTasaInt(o.getTasaInt());
 		if (mov != null) {
 			out.setIdSubStep("0");
 			out.setNextStep(mov.getIdPaso());
@@ -257,6 +258,7 @@ public class WfMapper implements IWfMapper {
 		out.setUsuComercial(o.getUsuComercial());
 		out.setFecUltMod(o.getFecUltMod() + "");
 		out.setEntitie(o.getEstPasoMov());
+		out.setNomTer(o.getNomTer());
 
 		return out;
 	}
@@ -299,6 +301,7 @@ public class WfMapper implements IWfMapper {
 		out.setUsuComercial(String.valueOf(in[10]));
 		out.setFecUltMod(String.valueOf(in[9]));
 		out.setEntitie(String.valueOf(in[4]));
+		out.setNomTer(String.valueOf(in[11]));
 
 		return out;
 	}
