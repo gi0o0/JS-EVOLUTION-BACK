@@ -92,7 +92,7 @@ public class WFStep_2Service implements IStepStrategy {
 				mov.setComentarios(o.getComments());
 				wWfMovService.create(wWfMovMapper.mapperEntitieToDao(mov));
 				solCreditoService.updateState(numRad, state);
-				solCreditoService.modificarClaveLink(numRad, "");
+				solCreditoService.modificarClaveLink(numRad, "");							
 			} else {
 				throw new RuntimeException("Email verification error");
 			}
@@ -110,6 +110,7 @@ public class WFStep_2Service implements IStepStrategy {
 			credito.setObserva(o.getComments());
 			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_2.getName(), o.getIsUpdate(),
 					o.getIdWf());
+			solCreditoService.updateState(o.getNumeroRadicacion(),  EnumStates.TIPO_ESTADO.STATE_S.getName());
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_3.getName());
 		} else {
 			throw new PageNoFoundException("Solicitud no Existe");

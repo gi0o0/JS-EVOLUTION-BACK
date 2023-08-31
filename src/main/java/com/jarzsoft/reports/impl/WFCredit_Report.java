@@ -69,11 +69,10 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("nitter", String.valueOf(o.getNitter()));
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
-		
+
 		param.put("name_asesor", userWebService.getUserById((user)).getNom_usuario());
 		param.put("id_asesor", user);
-		
-		
+
 		if (null != o.getCodeu()) {
 			param.put("idConyuge_codeu", o.getCodeu().getIdConyuge());
 			param.put("nomCony_codeu", o.getCodeu().getNomCony());
@@ -107,12 +106,13 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("vehPigAFavor_codeu", o.getCodeu().getVehPigAFavor());
 			param.put("vehValVomercial_codeu", o.getCodeu().getVehValVomercial());
 			param.put("vehValVomercial", String.valueOf(o.getVehValVomercial()));
-			
-		 	param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+
+			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("lugarDoc_codeu", String.valueOf(o.getCodeu().getFeExp()));
 			param.put("nitter_codeu", String.valueOf(o.getCodeu().getNitter()));
-			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
-			
+			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
+					+ o.getCodeu().getSegApellido());
+
 		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL_PAGE_2, param,
@@ -129,31 +129,33 @@ public class WFCredit_Report implements IReportStrategy {
 		Map<String, Object> param = new HashMap<String, Object>();
 
 		param.put("numeroRadicacion", String.valueOf(o.getNumeroRadicacion()));
-		param.put("entitie", foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName());
+		param.put("entitie",
+				(null != o.getEntitie() ? foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName()
+						: ""));
 		param.put("sol_fe_sol", now);
 		param.put("valorPress", String.valueOf(o.getValorPress()));
-		param.put("perCuota", parameterService.getSingleById(Constantes.PERIODICIDAD,o.getPerCuota()).getValue());
+		param.put("perCuota",
+				(null != o.getPerCuota()
+						? parameterService.getSingleById(Constantes.PERIODICIDAD, o.getPerCuota()).getValue()
+						: ""));
 		if (null != o.getCodeu()) {
 			param.put("is_cod", "X");
-			param.put("no_cod", "");	
-		}else {
+			param.put("no_cod", "");
+		} else {
 			param.put("is_cod", "");
 			param.put("no_cod", "X");
 		}
-		
+
 		if ("S".equals(o.getIndSolCredito())) {
 			param.put("is_solcre", "X");
-			param.put("no_solcre", "");	
-		}else {
+			param.put("no_solcre", "");
+		} else {
 			param.put("is_solcre", "");
-			param.put("no_solcre", "X");	
+			param.put("no_solcre", "X");
 		}
-		
-		
-			
-		
+
 		param.put("nroCuotas", String.valueOf(o.getNroCuotas()));
-		param.put("monto_aprob", String.valueOf(o.getValorPress()));  
+		param.put("monto_aprob", String.valueOf(o.getValorPress()));
 		param.put("is_soli", "X");
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer());
@@ -171,15 +173,24 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("tipVivienda", constantes.tipoVivienda.get(o.getTipVivienda()));
 		param.put("dirTeralt", String.valueOf(o.getDirTeralt()));
 		param.put("barrioTra", String.valueOf(o.getBarrioTra()));
-		param.put("ciuDirTrabajo", ciudadesService.getCiudad(Integer.parseInt(o.getCiuDirTrabajo())).getName());
-		param.put("deptDirTrabajo", deptosService.getDep(Integer.parseInt(o.getDeptDirTrabajo())).getName());
+		param.put("ciuDirTrabajo",
+				null != o.getCiuDirTrabajo()
+						? ciudadesService.getCiudad(Integer.parseInt(o.getCiuDirTrabajo())).getName()
+						: "");
+		param.put("deptDirTrabajo",
+				null != o.getDeptDirTrabajo() ? deptosService.getDep(Integer.parseInt(o.getDeptDirTrabajo())).getName()
+						: "");
 		param.put("faxTer", String.valueOf(o.getFaxTer()));
 		param.put("cargoWf", String.valueOf(o.getCargoWf()));
 		param.put("indContrato",
-				parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getIndContrato()).getValue());
-		param.put("paramText", parameterService.getSingleById(Constantes.EPS, o.getParamText()).getValue());
-		param.put("tipCta", basTTipCtaService.getBasTTipCta(o.getTipCta()).getName());
-		param.put("entBan", baEntidadService.getBaentidad(o.getEntBan()).getName());
+				null != o.getIndContrato()
+						? parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getIndContrato()).getValue()
+						: "");
+		param.put("paramText",
+				null != o.getParamText() ? parameterService.getSingleById(Constantes.EPS, o.getParamText()).getValue()
+						: "");
+		param.put("tipCta", null != o.getTipCta() ? basTTipCtaService.getBasTTipCta(o.getTipCta()).getName() : "");
+		param.put("entBan", null != o.getEntBan() ? baEntidadService.getBaentidad(o.getEntBan()).getName() : "");
 		param.put("numCta", String.valueOf(o.getNumCta()));
 		param.put("name_asesor", userWebService.getUserById((user)).getNom_usuario());
 		param.put("sucu_banco", "");
@@ -228,17 +239,25 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("dirTeralt_codeu", String.valueOf(o.getCodeu().getDirTeralt()));
 			param.put("barrioTra_codeu", String.valueOf(o.getCodeu().getBarrioTra()));
 			param.put("deptDirTrabajo_codeu",
-					deptosService.getDep(Integer.parseInt(o.getCodeu().getDeptDirTrabajo())).getName());
+					(null != o.getCodeu().getDeptDirTrabajo()
+							? deptosService.getDep(Integer.parseInt(o.getCodeu().getDeptDirTrabajo())).getName()
+							: ""));
 			param.put("ciuDirTrabajo_codeu",
-					ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCiuDirTrabajo())).getName());
+					(null != o.getCodeu().getCiuDirTrabajo()
+							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCiuDirTrabajo())).getName()
+							: ""));
 			param.put("faxTer_codeu", String.valueOf(o.getCodeu().getFaxTer()));
 			param.put("cargoWf_codeu", String.valueOf(o.getCodeu().getCargoWf()));
 			param.put("indContrato_codeu",
-					parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getCodeu().getIndContrato()).getValue());
+					(null != o.getCodeu().getIndContrato()
+							? parameterService.getSingleById(Constantes.TIPO_CONTRATO, o.getCodeu().getIndContrato())
+									.getValue()
+							: ""));
 			param.put("paramText_codeu",
-					parameterService.getSingleById(Constantes.EPS, o.getCodeu().getParamText()).getValue());
-			
-			param.put("empresa_cod", String.valueOf(o.getCodeu().getEmpresaCod()));	
+					(null != o.getCodeu().getParamText()
+							? parameterService.getSingleById(Constantes.EPS, o.getCodeu().getParamText()).getValue()
+							: ""));
+			param.put("empresa_cod", String.valueOf(o.getCodeu().getEmpresaCod()));
 		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL, param,

@@ -35,6 +35,8 @@ public class Constantes {
 	public static final String MESSAGE_USER_NO_PASSWORD_HIS = "Clave ya registrada en historico";
 
 	public static final String MESSAGE_USER_NO_FOUND = "No se ha podido encontrar tu cuenta";
+	
+	public static final String MESSAGE_USER_WITH_REQUEST_IN_PROCESS = " Cliente ya cuenta con una solicitud de crédito en proceso con el número de radicación :  %s";
 
 	public static final String MESSAGE_EMAIL_NO_FOUND = "No se ha podido encontrar tu email";
 

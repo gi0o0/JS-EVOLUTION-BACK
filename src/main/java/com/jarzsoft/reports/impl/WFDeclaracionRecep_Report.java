@@ -43,7 +43,9 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 		if (null != o.getCodeu()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("lugarDoc_codeu",
-					ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName());
+					(null != o.getCodeu().getCodiCiud()
+							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
+							: ""));
 			param.put("nitter_codeu", o.getCodeu().getNitter());
 			param.put("telTer_codeu", o.getCodeu().getTelTer());
 			param.put("mailTer_codeu", o.getCodeu().getMailTer());

@@ -54,7 +54,6 @@ public class WFStep_4Service implements IStepStrategy {
 			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_4.getName(), o.getIsUpdate(),
 					o.getIdWf());
 
-			solCreditoService.updateState(o.getNumeroRadicacion(), state);
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_5.getName());
 
 		} else {

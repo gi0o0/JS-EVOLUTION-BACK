@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.entities.SolCredito;
+import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.ISolCreditoMapper;
 import com.jarzsoft.repository.SolCreditoRepository;
 import com.jarzsoft.service.ISolCreditoService;
+import com.jarzsoft.util.Constantes;
 
 @Service
 public class SolCreditoService implements ISolCreditoService {
@@ -27,19 +29,22 @@ public class SolCreditoService implements ISolCreditoService {
 
 	@Override
 	public DTOSolCredito create(DTOSolCredito o) {
-		
-		SolCredito credito =null;
-		
-		if(o.getNumeroRadicacion()!=null && o.getNumeroRadicacion()>0) {
-			credito = findTerByNumRad(o.getNumeroRadicacion());			
-		}else {
+
+		SolCredito credito = null;
+
+		if (o.getNumeroRadicacion() != null && o.getNumeroRadicacion() > 0) {
+			credito = findTerByNumRad(o.getNumeroRadicacion());
+		} else {
 			credito = findTerByNiter(o.getCodTer(), o.getTipoCredito());
+			if (credito != null) {
+				throw new PageNoFoundException(
+						String.format(Constantes.MESSAGE_USER_WITH_REQUEST_IN_PROCESS, credito.getNumeroRadicacion()));
+			}
 		}
-		
 
 		if (credito == null) {
 			o.setNumeroRadicacion(solCreditoRepository.getKey());
-		} else {			
+		} else {
 			o.setNumeroRadicacion(credito.getNumeroRadicacion());
 			o.setFechaSoli(credito.getFechaSoli());
 			o.setSolPagare(credito.getSolPagare());
@@ -58,9 +63,9 @@ public class SolCreditoService implements ISolCreditoService {
 	private SolCredito findTerByNiter(String nitTer, String tipoCredito) {
 		return solCreditoRepository.findByNiter(nitTer, tipoCredito);
 	}
-	
+
 	private SolCredito findTerByNumRad(Integer numRad) {
-		return solCreditoRepository.findByNumRad(numRad+"");
+		return solCreditoRepository.findByNumRad(numRad + "");
 	}
 
 	@Override

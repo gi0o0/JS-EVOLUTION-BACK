@@ -132,8 +132,7 @@ public class WFPqrService implements IWFPqrService {
 
 		if (null != f.getFechaInit() && !"".equals(f.getFechaInit()) && null != f.getFechaFin()
 				&& !"".equals(f.getFechaFin())) {
-			consulta += " AND wm.fec_envio BETWEEN CONVERT(DATETIME, '" + f.getFechaInit()
-					+ " 00:00:00')  and CONVERT(DATETIME, '" + f.getFechaFin() + " 23:59:59') ";
+			consulta += " AND wm.fec_envio BETWEEN CONVERT(SMALLDATETIME, '" + f.getFechaInit()+ " 00:00:00' ,120)  and CONVERT(SMALLDATETIME, '" + f.getFechaFin() + " 23:59:59' ,120) ";
 		}
 
 		if (null != f.getAsesor() && !"".equals(f.getAsesor())) {

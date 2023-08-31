@@ -48,7 +48,6 @@ public class WFStep_6Service implements IStepStrategy {
 				}
 			}
 
-			solCreditoService.updateState(o.getNumeroRadicacion(), EnumStates.TIPO_ESTADO.STATE_9.getName());
 			String state = EnumStates.TIPO_ESTADO.STATE_14.getName();
 			credito.setEstado(state);
 			credito.setObserva(o.getComments());

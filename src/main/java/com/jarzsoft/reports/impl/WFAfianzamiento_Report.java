@@ -58,10 +58,11 @@ public class WFAfianzamiento_Report implements IReportStrategy {
 		param.put("mailTer", o.getMailTer());
 		param.put("dirTerpal", o.getDirTerpal());
 		param.put("barrio", o.getBarrio());
-		param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());
-		param.put("tipCta", basTTipCtaService.getBasTTipCta(o.getTipCta()).getName());
-		param.put("entBan", baEntidadService.getBaentidad(o.getEntBan()).getName());
-		param.put("numCta", o.getNumCta());
+		param.put("codiCiud",
+				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
+						: ""));
+		param.put("tipCta", (null != o.getTipCta() ? basTTipCtaService.getBasTTipCta(o.getTipCta()).getName() : ""));
+		param.put("entBan", (null != o.getEntBan() ? baEntidadService.getBaentidad(o.getEntBan()).getName() : ""));
 		param.put("refNombre1", o.getRefNombre1());
 		param.put("refNombre2", o.getRefNombre2());
 		param.put("refNombre3", o.getRefNombre3());
@@ -71,13 +72,13 @@ public class WFAfianzamiento_Report implements IReportStrategy {
 		param.put("refCel1", o.getRefCel1());
 		param.put("refCel2", o.getRefCel2());
 		param.put("refCel3", o.getRefCel3());
-		//dir_ciu  dir_dep  dir_pais
 		param.put("lugar_nacimiento", "");
-		
 		param.put("sex_m", "1".equals(o.getSexo()) ? "X" : "");
 		param.put("sex_f", "2".equals(o.getSexo()) ? "X" : "");
-		
-		param.put("empresa", foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName());
+
+		param.put("empresa",
+				(null != o.getEntitie() ? foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName()
+						: ""));
 		param.put("telTers", o.getFaxTer());
 		param.put("dirTerpalref1", "");
 		param.put("ref1Cel2", "");

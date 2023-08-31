@@ -10,7 +10,9 @@ import com.jarzsoft.dto.DTOFilesUser;
 import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.entities.Parametro;
+import com.jarzsoft.entities.Terceros;
 import com.jarzsoft.repository.ParametroRepository;
+import com.jarzsoft.repository.TercerosRepository;
 import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.IStepPqrStrategy;
 import com.jarzsoft.service.IWWfMovService;
@@ -18,6 +20,7 @@ import com.jarzsoft.services.impl.wf.UtilsWkService;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
 import com.jarzsoft.util.EnumSubSteps;
+import com.jarzsoft.util.EnumWF;
 import com.jarzsoft.util.SendEmail;
 
 @Component
@@ -31,11 +34,14 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 
 	private final ParametroRepository parametroRepository;
 
+	private final TercerosRepository tercerosRepository;
+
 	private final UtilsWkService utilsWkService;
 
 	@Autowired
 	public WFPqrStep_5Service(IWWfMovService wWfMovService, IFilesUserService serviceFile, SendEmail sendEmail,
-			ParametroRepository parametroRepository, UtilsWkService utilsWkService) {
+			ParametroRepository parametroRepository, UtilsWkService utilsWkService,
+			TercerosRepository tercerosRepository) {
 		super();
 
 		this.wWfMovService = wWfMovService;
@@ -43,6 +49,7 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 		this.sendEmail = sendEmail;
 		this.parametroRepository = parametroRepository;
 		this.utilsWkService = utilsWkService;
+		this.tercerosRepository = tercerosRepository;
 
 	}
 
@@ -69,6 +76,7 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 
 		String asunto_email = "";
 		String text_email = "";
+		String emailUser = o.getMailTer();
 
 		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL_WK1_STEP5");
 
@@ -86,7 +94,16 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 		for (DTOFilesUser file : o.getFilesEmail())
 			reportes.add(file.getPath());
 
-		sendEmail.Send(o.getMailTer(), asunto_email, text_email, reportes);
+		if (EnumWF.TIPO_WF.IDWF_1.getName().equals(o.getIdWf())) {
+			Terceros tercero = tercerosRepository.findTerceroByFodaclasoAndPrestamoDP(o.getNumeroRadicacion() + "",
+					o.getIdWf());
+			if (null != tercero) {
+				emailUser =  tercero.getMailTer().trim();
+			}
+
+		}
+
+		sendEmail.Send(emailUser, asunto_email, text_email, reportes);
 
 		return o;
 

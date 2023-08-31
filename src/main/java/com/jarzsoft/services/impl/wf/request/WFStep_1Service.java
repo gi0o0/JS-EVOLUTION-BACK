@@ -92,10 +92,8 @@ public class WFStep_1Service implements IStepStrategy {
 		if (EnumStates.TIPO_ESTADO.STATE_S.getName().equals(out.getEstado()) && !o.getIsUpdate()) {
 			parametroRepository.aumentarConsecutivoPagare("CONSEC_PAGARE","1");
 			out.setEstado(EnumStates.TIPO_ESTADO.STATE_2.getName());
-			wWfMovService.createMovWithSteps(out, user, EnumSteps.TIPO_PASO.STEP_1.getName(), o.getIsUpdate(),o.getIdWf());
-			String state = EnumStates.TIPO_ESTADO.STATE_3.getName();
-			solCreditoService.updateState(out.getNumeroRadicacion(), state);
-			out.setEstado(state);
+			wWfMovService.createMovWithSteps(out, user, EnumSteps.TIPO_PASO.STEP_1.getName(), o.getIsUpdate(),o.getIdWf());		
+			out.setEstado( EnumStates.TIPO_ESTADO.STATE_3.getName());
 			wWfMovService.createMovWithSteps(out, user, EnumSteps.TIPO_PASO.STEP_2.getName(), o.getIsUpdate(),o.getIdWf());
 		}
 

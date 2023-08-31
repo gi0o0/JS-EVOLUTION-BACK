@@ -158,8 +158,8 @@ public class WFService implements IWFService {
 
 		if (null != f.getFechaInit() && !"".equals(f.getFechaInit()) && null != f.getFechaFin()
 				&& !"".equals(f.getFechaFin())) {
-			consulta += " AND fecha_soli BETWEEN CONVERT(DATETIME, '" + f.getFechaInit()
-					+ " 00:00:00')  and CONVERT(DATETIME, '" + f.getFechaFin() + " 23:59:59') ";
+			consulta += " AND fecha_soli BETWEEN CONVERT(SMALLDATETIME, '" + f.getFechaInit() + " 00:00:00'"
+					+ ",120)  and CONVERT(SMALLDATETIME, '" + f.getFechaFin() + " 23:59:59'" + ",120) ";
 		}
 
 		if (null != f.getEstado() && !"".equals(f.getEstado())) {

@@ -112,7 +112,6 @@ public class DTOSolCredito {
 
 	public DTOSolCredito() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getNumeroRadicacion() {

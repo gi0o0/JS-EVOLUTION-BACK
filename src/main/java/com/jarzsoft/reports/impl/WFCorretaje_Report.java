@@ -21,9 +21,9 @@ public class WFCorretaje_Report implements IReportStrategy {
 
 	private final IUserWebService userWebService;
 	private final ICiudadesService ciudadesService;
-	
+
 	@Autowired
-	public WFCorretaje_Report(IUserWebService userWebService,ICiudadesService ciudadesService) {
+	public WFCorretaje_Report(IUserWebService userWebService, ICiudadesService ciudadesService) {
 		super();
 		this.userWebService = userWebService;
 		this.ciudadesService = ciudadesService;
@@ -35,7 +35,6 @@ public class WFCorretaje_Report implements IReportStrategy {
 		return EnumReport.TIPO_REPORTE.REPORT_CORRETAJE.getName();
 	}
 
-	
 	@Override
 	public Boolean create(DTOWF o, String user, String path) {
 
@@ -47,20 +46,21 @@ public class WFCorretaje_Report implements IReportStrategy {
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		if (null != o.getCodeu()) {
-			param.put("nomTer_codeu",o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
+					+ o.getCodeu().getSegApellido());
 		}
 
 		param.put("año", calendar.get(Calendar.YEAR) + "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
 		param.put("mes", calendar.get(Calendar.MONTH) + 1 + "");
 		param.put("mandante", "");
-		
-		
-		param.put("Nitter", o.getNitter() );
+
+		param.put("Nitter", o.getNitter());
 		param.put("name_asesor", userWebService.getUserById((user)).getNom_usuario());
 		param.put("id_asesor", user);
-		param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());
-		
+		param.put("codiCiud",
+				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
+						: ""));
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CORRETAJE, param,
 				EnumReport.TIPO_REPORTE.REPORT_CORRETAJE.getName(), o.getNumeroRadicacion() + "");

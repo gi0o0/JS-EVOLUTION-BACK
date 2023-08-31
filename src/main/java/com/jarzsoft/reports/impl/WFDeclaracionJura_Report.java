@@ -30,7 +30,6 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 		return EnumReport.TIPO_REPORTE.REPORT_DECLARACION_JURA.getName();
 	}
 
-	
 	@Override
 	public Boolean create(DTOWF o, String user, String path) {
 
@@ -38,7 +37,9 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("ciudadautoriza", "");
-		param.put("codiCiud", ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName());
+		param.put("codiCiud",
+				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
+						: ""));
 		param.put("nitter", o.getNitter());
 		param.put("pagare", "");
 		param.put("valorletras", "");

@@ -31,7 +31,7 @@ public class FilesUserService implements IFilesUserService {
 	}
 
 	@Override
-	public Boolean create( String id, String step, String cedula, DTOWfDocs doc) {
+	public Boolean create(String id, String step, String cedula, DTOWfDocs doc) {
 		Boolean out = false;
 
 		try {
@@ -39,8 +39,8 @@ public class FilesUserService implements IFilesUserService {
 			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
 			byte[] decodedImg = Base64.getDecoder()
 					.decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
-			String nameFile = id  + "_" + step + "_" + cedula + "_" + doc.getIdDocumento() + "_"
-					+ doc.getNomDocumento() + ".pdf";
+			String nameFile = id + "_" + step + "_" + cedula + "_" + doc.getIdDocumento() + "_" + doc.getNomDocumento()
+					+ ".pdf";
 			Path destinationFile = Paths.get(path, nameFile);
 			Files.write(destinationFile, decodedImg);
 			out = true;
@@ -54,44 +54,47 @@ public class FilesUserService implements IFilesUserService {
 	@Override
 	public List<DTOFilesUser> listAll(String user, String solicitud, String id) {
 
-		return getFiles(user, solicitud, id);
-	}
-
-	private List<DTOFilesUser> getFiles(String user, String solicitud, String id) {
 		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
 		File folder = new File(path);
 		List<DTOFilesUser> files = new ArrayList<>();
 		for (File file : folder.listFiles()) {
+
 			String name = file.getName();
 			String nameIds[] = name.split("_");
-			if (!file.isDirectory()) {
 
-				if (nameIds[0].startsWith(user)) {
-					if (!"0".equals(solicitud)) {
-						if (nameIds[1].equals(solicitud)) {
-							if (!"0".equals(id)) {
-								if (nameIds[2].equals(id)) {
-									byte[] fileContent = null;
-									try {
-										fileContent = FileUtils.readFileToByteArray(new File(file.getAbsolutePath()));
-									} catch (IOException e) {
-										e.printStackTrace();
-									}
-									String encodedString = Base64.getEncoder().encodeToString(fileContent);
-									files.add(new DTOFilesUser(name, encodedString, nameIds[0], nameIds[1], nameIds[2],
-											path + name));
-								}
-							} else {
-								files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2], path + name));
-							}
-						}
-					} else {
-						files.add(new DTOFilesUser(name, "", nameIds[0], nameIds[1], nameIds[2], path + name));
-					}
-
-				}
+			if (file.isDirectory()) {
+				break;
 			}
+			if (nameIds.length < 4) {
+				break;
+			}
+
+			String numRad = nameIds[0].substring(1, nameIds[0].length());
+			String userFile = nameIds[2];
+			String idFile = nameIds[3];
+
+			if (!"0".equals(id) && idFile.equals(id) & numRad.equals(solicitud) && user.equals(userFile)) {
+				byte[] fileContent = null;
+				try {
+					fileContent = FileUtils.readFileToByteArray(new File(file.getAbsolutePath()));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				String encodedString = Base64.getEncoder().encodeToString(fileContent);
+				files.add(new DTOFilesUser(name, encodedString, userFile, numRad, idFile, path + name));
+				break;
+			}
+
+			if ((userFile.equals(user)) && "0".equals(id) && "0".equals(solicitud)) {
+				files.add(new DTOFilesUser(name, "", userFile, numRad, idFile, path + name));
+			}
+
+			if (userFile.equals(user) && "0".equals(id) && numRad.equals(solicitud)) {
+				files.add(new DTOFilesUser(name, "", userFile, numRad, idFile, path + name));
+			}
+
 		}
+
 		return files;
 	}
 
