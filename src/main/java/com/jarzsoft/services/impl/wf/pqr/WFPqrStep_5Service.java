@@ -98,7 +98,7 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 			Terceros tercero = tercerosRepository.findTerceroByFodaclasoAndPrestamoDP(o.getNumeroRadicacion() + "",
 					o.getIdWf());
 			if (null != tercero) {
-				emailUser =  tercero.getMailTer().trim();
+				emailUser = tercero.getMailTer().trim();
 			}
 
 		}
@@ -111,12 +111,21 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 
 	public DTOWFPqr createMove(DTOWFPqr o, String user) {
 
+		String docAdds = "";
+
 		if (null != o.getFiles()) {
 			for (int i = 0; i < o.getFiles().size(); i++) {
+
+				String nameFile = o.getIdWf() + o.getNumeroRadicacion() + "_" + getType() + "_" + o.getNitter() + "_"
+						+ o.getFiles().get(i).getIdDocumento() + "_" + o.getFiles().get(i).getNomDocumento()
+						+ ".pdf - ";
+				docAdds += nameFile;
 				serviceFile.create(o.getIdWf() + o.getNumeroRadicacion() + "", getType(), o.getNitter(),
 						o.getFiles().get(i));
 			}
 		}
+
+		o.setComments(o.getComments() + " Docs: " + docAdds);
 
 		DTOSolCredito out = utilsWkService.createSolCredito(o, o.getNumeroRadicacion(),
 				EnumStates.TIPO_ESTADO.STATE_5.getName());

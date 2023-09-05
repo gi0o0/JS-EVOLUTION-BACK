@@ -13,13 +13,15 @@ public class DTOStepsState {
 	private String numCredito;
 	private String numDoc;
 	private String tipoDocu;
+	private String fechaCrea;
 
 	public DTOStepsState() {
 		super();
 	}
 
 	public DTOStepsState(String codTer, String numeroRadicacion, String usuario, String usuarioC, String fecha,
-			String idPaso, String comentarios, String estPaso, String numCredito, String numDoc, String tipoDocu) {
+			String idPaso, String comentarios, String estPaso, String numCredito, String numDoc, String tipoDocu,
+			String fechaCrea) {
 		super();
 		this.codTer = codTer;
 		this.numeroRadicacion = numeroRadicacion;
@@ -32,6 +34,7 @@ public class DTOStepsState {
 		this.numCredito = numCredito;
 		this.numDoc = numDoc;
 		this.tipoDocu = tipoDocu;
+		this.fechaCrea = fechaCrea;
 	}
 
 	public String getCodTer() {
@@ -120,6 +123,14 @@ public class DTOStepsState {
 
 	public void setTipoDocu(String tipoDocu) {
 		this.tipoDocu = tipoDocu;
+	}
+
+	public String getFechaCrea() {
+		return fechaCrea;
+	}
+
+	public void setFechaCrea(String fechaCrea) {
+		this.fechaCrea = fechaCrea;
 	}
 
 }
