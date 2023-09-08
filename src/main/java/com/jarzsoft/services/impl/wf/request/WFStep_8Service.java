@@ -48,7 +48,8 @@ public class WFStep_8Service implements IStepStrategy {
 			solCreditoService.updateState(o.getNumeroRadicacion(), EnumStates.TIPO_ESTADO.STATE_P.getName());
 			credito.setEstado(o.getEstado());
 			credito.setObserva(o.getComments());
-			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_8.getName(), o.getIsUpdate(),o.getIdWf());
+			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_8.getName(), o.getIsUpdate(),
+					o.getIdWf());
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_END.getName());
 			sendEmail(o.getMailTer());
 
@@ -70,7 +71,6 @@ public class WFStep_8Service implements IStepStrategy {
 		String asunto_email = "";
 		String text_email = "";
 
-
 		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL_WK4_STEP8");
 
 		for (Parametro parametro : parametroList) {
@@ -79,10 +79,10 @@ public class WFStep_8Service implements IStepStrategy {
 				asunto_email = parametro.getValue();
 			} else if ("TEXT".equals(value)) {
 				text_email = parametro.getValue();
-			} 
+			}
 		}
 
-		sendEmail.Send(email, asunto_email, text_email, null);
+		sendEmail.Send(email, asunto_email, text_email, null, "");
 	}
 
 }

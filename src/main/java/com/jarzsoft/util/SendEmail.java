@@ -34,8 +34,8 @@ public class SendEmail {
 		this.parametroRepository = parametroRepository;
 	}
 
-
-	public String Send(String emailTo, String asunto_email, String text_email, ArrayList<String> adjuntos) {
+	public String Send(String emailTo, String asunto_email, String text_email, ArrayList<String> adjuntos,
+			String emailsCc) {
 
 		String resultado = "NOK";
 		String user_server_email = "";
@@ -87,6 +87,10 @@ public class SendEmail {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(from_email));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));
+
+			if (null != emailsCc && !"".equals(emailsCc))
+				message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(emailsCc));
+
 			message.setSubject(asunto_email);
 			message.setText(text_email);
 

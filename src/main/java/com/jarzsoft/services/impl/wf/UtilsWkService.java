@@ -47,7 +47,7 @@ public class UtilsWkService {
 			}
 		}
 
-		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash + "," + idWk, null);
+		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash + "," + idWk, null, "");
 	}
 
 	public DTOSolCredito createSolCredito(DTOWFPqr o, Integer numRad, String estado) {

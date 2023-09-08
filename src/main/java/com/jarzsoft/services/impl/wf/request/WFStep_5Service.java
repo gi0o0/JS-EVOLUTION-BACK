@@ -116,7 +116,7 @@ public class WFStep_5Service implements IStepStrategy {
 		}
 
 		List<Object[]> usuario = usuarioRepository.findByUsuario(user);
-		sendEmail.Send((String) usuario.get(0)[1], Constantes.EMAIL_ASUNTO, Constantes.EMAIL_TEXTO, reportes);
+		sendEmail.Send((String) usuario.get(0)[1], Constantes.EMAIL_ASUNTO, Constantes.EMAIL_TEXTO, reportes, "");
 
 		return o;
 	}

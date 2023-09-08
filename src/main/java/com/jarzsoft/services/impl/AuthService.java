@@ -15,7 +15,6 @@ import java.util.Objects;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -120,8 +119,8 @@ public class AuthService implements IAuthService {
 
 	@Override
 	public UserDto authenticateUser(LoginRequest loginRequest) {
-		
-		LOGGER.info("authenticateUser:" +  loginRequest.getUsuario());
+
+		LOGGER.info("authenticateUser:" + loginRequest.getUsuario());
 
 		String username = loginRequest.getUsuario();
 
@@ -303,7 +302,7 @@ public class AuthService implements IAuthService {
 			}
 		}
 
-		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash,null);
+		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash, null, "");
 	}
 
 }

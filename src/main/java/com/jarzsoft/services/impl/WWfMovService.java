@@ -74,12 +74,12 @@ public class WWfMovService implements IWWfMovService {
 
 			if (!isUpdate) {
 				if (Constantes.isOK.equals(step.getEnvCorreoPaso())) {
-					sendEmail.Send(step.getEmail1(), step.getAsuntoCorreo(), step.getTextoCorreo(), null);
-					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo(), null);
+					sendEmail.Send(step.getEmail1(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
+					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
 				}
 				if (Constantes.isOK.equals(step.getEnvCorreoAutoriza())) {
-					sendEmail.Send(step.getEmail3(), step.getAsuntoCorreo(), step.getTextoCorreo(), null);
-					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo(), null);
+					sendEmail.Send(step.getEmail3(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
+					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
 				}
 			}
 
