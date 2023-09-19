@@ -61,20 +61,27 @@ public class WFAfianzamiento_Report implements IReportStrategy {
 		param.put("codiCiud",
 				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
 						: ""));
-		param.put("tipCta", (null != o.getTipCta() ? basTTipCtaService.getBasTTipCta(o.getTipCta()).getName() : ""));
-		param.put("entBan", (null != o.getEntBan() ? baEntidadService.getBaentidad(o.getEntBan()).getName() : ""));
-		param.put("refNombre1", o.getRefNombre1());
-		param.put("refNombre2", o.getRefNombre2());
-		param.put("refNombre3", o.getRefNombre3());
-		param.put("refMail1", o.getRefMail1());
-		param.put("refMail2", o.getRefMail2());
-		param.put("refMail3", o.getRefMail3());
-		param.put("refCel1", o.getRefCel1());
-		param.put("refCel2", o.getRefCel2());
-		param.put("refCel3", o.getRefCel3());
+		param.put("tipCta", (null != o.getTipCta() ? basTTipCtaService.getBasTTipCta(o.getTipCta()).getName() : " "));
+		param.put("entBan", (null != o.getEntBan() ? baEntidadService.getBaentidad(o.getEntBan()).getName() : " "));
+		
+		
+		
+		param.put("numCta", (null != o.getNumCta()? o.getNumCta() : " "));
+		param.put("refNombre1", (null !=o.getRefNombre1()? o.getRefNombre1() : " "));
+		param.put("refNombre2", (null !=o.getRefNombre2()? o.getRefNombre2() : " "));
+		param.put("refNombre3", (null !=o.getRefNombre3()? o.getRefNombre3() : " "));
+		
+		param.put("refMail1", (null !=o.getRefMail1()? o.getRefMail1() : " "));
+		param.put("refMail2", (null !=o.getRefMail2()? o.getRefMail2() : " "));
+		param.put("refMail3", (null !=o.getRefMail3()? o.getRefMail3() : " "));
+		
+		param.put("refCel1", (null !=o.getRefCel1()? o.getRefCel1() : " "));
+		param.put("refCel2", (null !=o.getRefCel2()? o.getRefCel2() : " "));
+		param.put("refCel3", (null !=o.getRefCel3()? o.getRefCel3() : " "));
+		
 		param.put("lugar_nacimiento", "");
-		param.put("sex_m", "1".equals(o.getSexo()) ? "X" : "");
-		param.put("sex_f", "2".equals(o.getSexo()) ? "X" : "");
+		param.put("sex_m", "1".equals(o.getSexo()) ? "X" : " ");
+		param.put("sex_f", "2".equals(o.getSexo()) ? "X" : " ");
 
 		param.put("empresa",
 				(null != o.getEntitie() ? foclaasoService.getCompaniesByID(new BigInteger(o.getEntitie())).getName()

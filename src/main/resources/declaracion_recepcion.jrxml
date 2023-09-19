@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="24"/>
-	<property name="ireport.y" value="899"/>
+	<property name="ireport.y" value="515"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -252,35 +252,21 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="128" width="525" height="12" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
+				<reportElement key="staticText-4" x="12" y="128" width="525" height="29" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<text><![CDATA[• Que para la aprobación de mi crédito requiero de un afianzamiento sobre dicha obligación el cual podre contratar ]]></text>
+				<text><![CDATA[• Que para la aprobación de mi crédito requiero de un afianzamiento sobre dicha obligación el cual podre contratar con cualquier compañía legalmente constituida en el territorio nacional que preste este servicio, ya que soy libre de escoger la entidad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="226" width="166" height="11" uuid="e619027a-35f4-45d5-912c-e7752cd48d90"/>
+				<reportElement key="staticText-4" x="13" y="216" width="524" height="28" uuid="e619027a-35f4-45d5-912c-e7752cd48d90"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<text><![CDATA[• Tasa de interés remuneratoria]]></text>
+				<text><![CDATA[• Tasa de interés remuneratoria _____% y moratoria tal como lo indica el Art. 844 de código de comercio “… Si las partes no han estipulado el interés moratorio, será equivalente a una y media veces del bancario corriente…”.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="54" y="240" width="483" height="26" uuid="f5de16ce-7ad3-48d5-b3f7-b03387515a3a"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<text><![CDATA[y moratoria tal como lo indica el Art. 844 de código de comercio “… Si las partes no han estipulado el interés moratorio, será equivalente a una y media veces del bancario corriente…”.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="221" y="228" width="25" height="11" uuid="69cea768-0d31-46d5-88f9-a9d6582ac361"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<text><![CDATA[%]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="12" y="268" width="525" height="71" uuid="90b76dc9-2db7-4122-b705-3fdbb5e1866b"/>
+				<reportElement key="staticText-4" x="12" y="246" width="525" height="71" uuid="90b76dc9-2db7-4122-b705-3fdbb5e1866b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
@@ -291,28 +277,8 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 • Valores por concepto de libranza.
 • Continuidad del descuento de la cuota acordada en caso de que cambie de empleador.]]></text>
 			</staticText>
-			<line>
-				<reportElement key="line-1" x="181" y="238" width="34" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26131614-a108-4e0a-a401-666c9b20b4ab"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<textField>
-				<reportElement x="185" y="226" width="24" height="11" uuid="2139abbb-3c8e-46a3-86ad-3ad77a358ed6"/>
-				<textElement>
-					<font fontName="Arial" size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{tasa}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="54" y="140" width="483" height="25" uuid="19533e62-78b4-42e9-921e-32d9749ad3b0"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<text><![CDATA[con cualquier compañía legalmente constituida en el territorio nacional que preste este servicio, ya que soy libre de escoger la entidad.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="13" y="167" width="524" height="56" uuid="b2754048-0c64-494e-9957-a75656b2f13a"/>
+				<reportElement key="staticText-4" x="13" y="158" width="524" height="56" uuid="b2754048-0c64-494e-9957-a75656b2f13a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>

@@ -52,6 +52,11 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
 							: ""));
 			param.put("nitter_codeu", o.getCodeu().getNitter());
+		}else
+		{
+			param.put("nomTer_codeu", " ");
+			param.put("codiCiud2"," ");
+			param.put("nitter_codeu", " ");
 		}
 
 		param.put("codiCiud",

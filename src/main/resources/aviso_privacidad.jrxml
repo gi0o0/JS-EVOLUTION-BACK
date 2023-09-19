@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="361"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -89,7 +89,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[En el cumplimiento de la ley 1581 de 2012 y capitulo 25 y 26 del decreto 1074 de 2015, es responsable del tratamiento de dates personales y no vulnera el Derecho a la intimidad; en desarrollo de lo anterior. 
+				<text><![CDATA[En el cumplimiento de la ley 1581 de 2012 y capitulo 25 y 26 del decreto 1074 de 2015, es responsable del tratamiento de datos personales y no vulnera el Derecho a la intimidad; en desarrollo de lo anterior. 
 ]]></text>
 			</staticText>
 			<line>
@@ -129,7 +129,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Autorizo, almacenar, depurar, usar, analizar, circular, actualizar y cruzar con información propia o de terceros, mis datos de contacto información sobre preferencias de consumo, comportamiento en los canales de contacto los cuales fueron obtenidos mediante la prestación del presente servicio. con la finalidad de 1. realizar actividades de mercadeo de sus productos y servicios de sus filiales y/o afiliados comerciales listados en la política de tratamiento de información y 2. las demás finalidades estrechamente asociadas y necesarias para cumplir los fines de mercadeo descritas en la política de información de la privacidad   ( ). En todo caso el tratamiento de mis datos personales debe estar sujeto a la protección establecida en la ley 1581 de 2012, sus decretos reglamentarios y las normas que los modifiquen así como la política de privacidad publicada en la página web en cualquier momento poder ejercer los derechos establecidos en estas normas y particularmente renovar la autorización prestada o solicitar la supresión de mis datos personales sean incluidos en nuestra base de datos y sean utilizados de manera directa o indirecta de manera transparente, leal, licita, segura y confiable, entre otras, para las siguientes finalidades:]]></text>
+				<text><![CDATA[Autorizo, almacenar, depurar, usar, analizar, circular, actualizar y cruzar con información propia o de terceros, mis datos de contacto información sobre preferencias de consumo, comportamiento en los canales de contacto los cuales fueron obtenidos mediante la prestación del presente servicio con la finalidad de 1. realizar actividades de mercadeo de sus productos y servicios de sus filiales y/o afiliados comerciales listados en la política de tratamiento de información y 2. las demás finalidades estrechamente asociadas y necesarias para cumplir los fines de mercadeo descritas en la política de información de la privacidad   ( ). En todo caso el tratamiento de mis datos personales debe estar sujeto a la protección establecida en la ley 1581 de 2012, sus decretos reglamentarios y las normas que los modifiquen así como la política de privacidad publicada en la página web en cualquier momento poder ejercer los derechos establecidos en estas normas y particularmente renovar la autorización prestada o solicitar la supresión de mis datos personales sean incluidos en nuestra base de datos y sean utilizados de manera directa o indirecta de manera transparente, leal, licita, segura y confiable, entre otras, para las siguientes finalidades:]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="130" y="379" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
@@ -247,7 +247,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[identificado con cedula de ciudadanía número]]></text>
+				<text><![CDATA[identificado con cédula de ciudadanía número]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="177" y="98" width="83" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0bc30c25-12e5-4eaf-96c8-8a14160609cf"/>
@@ -274,7 +274,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[identificado con cedula de ciudadanía número]]></text>
+				<text><![CDATA[identificado con cédula de ciudadanía número]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="177" y="110" width="83" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b17e8485-17f5-47dd-9b6b-b27e93911363"/>
@@ -351,7 +351,7 @@ AVALTÍTULOS S.A.S
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[(que tipo de descuentos), embargo (en caso de tener un embargo informar quien interpuso la medida, en que juzgado se encuentra y porque porcentaje fue solicitado), y porcentajes de deducciones en mi nómina.
-4.	El envío de correspondencia, correos electrónicos, newsletters, WhatsApp, contacto telefónico o cualquier otro método, para recibir información sobre el producto, o en desarrollo de actividades publicitarias, promocionales, de mercadeo o para la prestación de servicios complementarios.  
+4. El envío de correspondencia, correos electrónicos, newsletters, WhatsApp, contacto telefónico o cualquier otro método, para recibir información sobre el producto, o en desarrollo de actividades publicitarias, promocionales, de mercadeo o para la prestación de servicios complementarios.  
 5. Contacto telefónico y grabación de llamadas.
 6. Análisis de riesgo crediticio, análisis estadísticos cuando se otorga créditos o plazos para el pago de la obligación.
 7. Reporte y consulta a centrales de riesgo crediticio legalmente constituidas en Colombia, así como para gestiones de cobranzas o reportes de no pago por cuenta propia o a través de tercero y aliados comerciales.
@@ -389,7 +389,7 @@ AVALTÍTULOS S.A.S
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[de 202]]></text>
+				<text><![CDATA[de ]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="236" y="379" width="23" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>

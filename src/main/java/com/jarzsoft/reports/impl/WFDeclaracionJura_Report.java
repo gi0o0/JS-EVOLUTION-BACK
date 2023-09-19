@@ -41,7 +41,7 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
 						: ""));
 		param.put("nitter", o.getNitter());
-		param.put("pagare", "");
+		param.put("pagare", o.getSolPagare());
 		param.put("valorletras", "");
 		param.put("valor", "");
 
