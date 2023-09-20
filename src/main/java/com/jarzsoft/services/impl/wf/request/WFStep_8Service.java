@@ -10,6 +10,7 @@ import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.repository.ParametroRepository;
+import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
 import com.jarzsoft.service.IWWfMovService;
@@ -28,15 +29,18 @@ public class WFStep_8Service implements IStepStrategy {
 
 	private final SendEmail sendEmail;
 
+	private final IFilesUserService serviceFile;
+
 	@Autowired
 	public WFStep_8Service(IWWfMovService wWfMovService, ISolCreditoService solCreditoService,
-			ParametroRepository parametroRepository, SendEmail sendEmail) {
+			ParametroRepository parametroRepository, SendEmail sendEmail, IFilesUserService serviceFile) {
 		super();
 
 		this.wWfMovService = wWfMovService;
 		this.solCreditoService = solCreditoService;
 		this.parametroRepository = parametroRepository;
 		this.sendEmail = sendEmail;
+		this.serviceFile = serviceFile;
 
 	}
 
@@ -45,6 +49,14 @@ public class WFStep_8Service implements IStepStrategy {
 
 		DTOSolCredito credito = solCreditoService.findBynumeroRadicacion(o.getNumeroRadicacion());
 		if (null != credito) {
+
+			if (null != o.getFiles()) {
+				for (int i = 0; i < o.getFiles().size(); i++) {
+					serviceFile.create(o.getIdWf() + o.getNumeroRadicacion() + "", getType(), o.getNitter(),
+							o.getFiles().get(i));
+				}
+			}
+
 			solCreditoService.updateState(o.getNumeroRadicacion(), EnumStates.TIPO_ESTADO.STATE_P.getName());
 			credito.setEstado(o.getEstado());
 			credito.setObserva(o.getComments());

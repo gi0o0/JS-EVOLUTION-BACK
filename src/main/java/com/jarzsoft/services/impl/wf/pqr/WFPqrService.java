@@ -120,11 +120,14 @@ public class WFPqrService implements IWFPqrService {
 	@Override
 	public List<DTOWFPqr> listAllByFilters(DTOWFFilter f, String user) {
 
-		
 		String consulta = "	select wm.numero_radicacion,wm.id_paso,wm.id_wf,wm.comentarios,wm.est_paso ,wm.id_wf_mov ,wm.nitter ,wf.nom_wf,step.nom_paso ,wm.fec_ult_mod,wm.usu_comercial, ter.nomTer "
 				+ "from w_wf_mov wm, w_wf wf,w_wf_pasos step , terceros ter where "
 				+ " wm.id_wf = wf.id_wf and (wm.id_wf = step.id_wf and wm.id_paso =step.id_paso ) and wm.id_wf < 4 and  wm.id_wf_mov = "
 				+ " (select MAX(wm1.id_wf_mov) from w_wf_mov wm1 where  wm1.id_wf < 4 and wm.numero_radicacion = wm1.numero_radicacion )  and ter.nitter =wm.nitter ";
+
+		if (null != f.getNitTer() && !"".equals(f.getNitTer())) {
+			consulta += " AND wm.nitter = '" + f.getNitTer() + "'";
+		}
 
 		if (null != f.getIdWf() && !"".equals(f.getIdWf())) {
 			consulta += " AND wm.id_wf = '" + f.getIdWf() + "'";
@@ -132,7 +135,8 @@ public class WFPqrService implements IWFPqrService {
 
 		if (null != f.getFechaInit() && !"".equals(f.getFechaInit()) && null != f.getFechaFin()
 				&& !"".equals(f.getFechaFin())) {
-			consulta += " AND wm.fec_envio BETWEEN CONVERT(SMALLDATETIME, '" + f.getFechaInit()+ " 00:00:00' ,120)  and CONVERT(SMALLDATETIME, '" + f.getFechaFin() + " 23:59:59' ,120) ";
+			consulta += " AND wm.fec_envio BETWEEN CONVERT(SMALLDATETIME, '" + f.getFechaInit()
+					+ " 00:00:00' ,120)  and CONVERT(SMALLDATETIME, '" + f.getFechaFin() + " 23:59:59' ,120) ";
 		}
 
 		if (null != f.getAsesor() && !"".equals(f.getAsesor())) {
@@ -143,8 +147,7 @@ public class WFPqrService implements IWFPqrService {
 
 		List<DTOWFPqr> out = new ArrayList<>();
 		List<Object[]> o = query.getResultList();
-		
-	
+
 		for (Object[] in : o) {
 			out.add(mapper.mapperDaoToDto(in));
 		}

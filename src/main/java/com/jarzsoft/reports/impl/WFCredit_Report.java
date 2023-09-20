@@ -186,7 +186,7 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("sol_fe_sol", now);
 		param.put("valorPress", String.valueOf(o.getValorPress()));
 		param.put("perCuota",
-				(null != o.getPerCuota()
+				(null != o.getPerCuota() && !"0".equals(o.getPerCuota()) 
 						? parameterService.getSingleById(Constantes.PERIODICIDAD, o.getPerCuota()).getValue()
 						: ""));
 		if (null != o.getCodeu()) {

@@ -53,6 +53,7 @@ public class WWfMovService implements IWWfMovService {
 			o.setIdWfMov(wWfMovRepository.getKey());
 		} else {
 			o.setIdWfMov(oldMov.getIdWfMov());
+			o.setUsuComercial(oldMov.getUsuComercial());
 		}
 
 		oldMov = wWfMovRepository.save(mapper.mapperDtoToEntitie(o));

@@ -9,6 +9,7 @@ public class DTOWFFilter {
 	private String estado;
 	private String sector;
 	private String idWf;
+	private String nitTer;
 
 	public DTOWFFilter() {
 		super();
@@ -80,6 +81,14 @@ public class DTOWFFilter {
 
 	public void setIdWf(String idWf) {
 		this.idWf = idWf;
+	}
+
+	public String getNitTer() {
+		return nitTer;
+	}
+
+	public void setNitTer(String nitTer) {
+		this.nitTer = nitTer;
 	}
 
 }
