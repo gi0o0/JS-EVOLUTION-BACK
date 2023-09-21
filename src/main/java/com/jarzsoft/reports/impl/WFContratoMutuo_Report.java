@@ -13,11 +13,10 @@ import com.jarzsoft.util.Constantes;
 import com.jarzsoft.util.EnumReport;
 import com.jarzsoft.service.ICiudadesService;
 
-
 @Component
 public class WFContratoMutuo_Report implements IReportStrategy {
 	private final ICiudadesService ciudadesService;
-	
+
 	@Autowired
 	public WFContratoMutuo_Report(ICiudadesService ciudadesService) {
 		super();
@@ -38,12 +37,10 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
-		// jarz 12/09/2023
 		param.put("codiCiud",
 				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
 						: " "));
-	
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
@@ -52,8 +49,7 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 					(null != o.getCodeu().getCodiCiud()
 							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
 							: " "));
-		}else
-		{
+		} else {
 			param.put("priApellido_codeu", " ");
 			param.put("nomTer_codeu", " ");
 			param.put("nitter_codeu", " ");
@@ -76,7 +72,7 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 		param.put("nroCuotas", " ");
 		param.put("perCuota", " ");
 		param.put("dirTerpal", " ");
-		
+
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CONTRATO_MUTUO, param,
 				EnumReport.TIPO_REPORTE.REPORT_CONTRATO_MUTUO.getName(), o.getNumeroRadicacion() + "");
 

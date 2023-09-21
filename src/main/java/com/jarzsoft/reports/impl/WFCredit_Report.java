@@ -69,39 +69,26 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("nitter", String.valueOf(o.getNitter()));
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
-
 		param.put("name_asesor", userWebService.getUserById((user)).getNom_usuario());
 		param.put("id_asesor", user);
 
-		//jarz
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("idConyuge_codeu", o.getCodeu().getIdConyuge());
 			param.put("nomCony_codeu", o.getCodeu().getNomCony());
 			param.put("emailConyuge_codeu", o.getCodeu().getEmailConyuge());
 			param.put("celConyuge_codeu", o.getCodeu().getCelConyuge());
 			param.put("refNombre1_codeu", o.getCodeu().getRefNombre1());
 			param.put("refNombre2_codeu", o.getCodeu().getRefNombre2());
-			
-			//param.put("refNombre3_codeu", o.getCodeu().getRefNombre3());
-			param.put("refNombre3_codeu", (null !=o.getCodeu().getRefNombre3()? o.getCodeu().getRefNombre3() : " "));
-			
+			param.put("refNombre3_codeu", (null != o.getCodeu().getRefNombre3() ? o.getCodeu().getRefNombre3() : " "));
 			param.put("refParen1_codeu", o.getCodeu().getRefParen1());
 			param.put("refParen2_codeu", o.getCodeu().getRefParen2());
-			//param.put("refParen3_codeu", o.getCodeu().getRefParen3());
-			param.put("refParen3_codeu", (null !=o.getCodeu().getRefParen3()? o.getCodeu().getRefParen3() : " "));
-			
-			
+			param.put("refParen3_codeu", (null != o.getCodeu().getRefParen3() ? o.getCodeu().getRefParen3() : " "));
 			param.put("refMail1_codeu", o.getCodeu().getRefMail1());
 			param.put("refMail2_codeu", o.getCodeu().getRefMail2());
-			//param.put("refMail3_codeu", o.getCodeu().getRefMail3());
-			param.put("refMail3_codeu", (null !=o.getCodeu().getRefMail3()? o.getCodeu().getRefMail3() : " "));
-			
-			
+			param.put("refMail3_codeu", (null != o.getCodeu().getRefMail3() ? o.getCodeu().getRefMail3() : " "));
 			param.put("refCel1_codeu", o.getCodeu().getRefCel1());
 			param.put("refCel2_codeu", o.getCodeu().getRefCel2());
-			//param.put("refCel3_codeu", o.getCodeu().getRefCel3());
-			param.put("refCel3_codeu", (null !=o.getCodeu().getRefCel3()? o.getCodeu().getRefCel3() : " "));
-			
+			param.put("refCel3_codeu", (null != o.getCodeu().getRefCel3() ? o.getCodeu().getRefCel3() : " "));
 			param.put("bienNombre_codeu", o.getCodeu().getBienNombre());
 			param.put("bienValor_codeu", o.getCodeu().getBienValor());
 			param.put("bienAfecta_codeu", "0".equals(o.getCodeu().getBienAfecta()) ? "X" : "");
@@ -118,15 +105,13 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("vehPigAFavor_codeu", o.getCodeu().getVehPigAFavor());
 			param.put("vehValVomercial_codeu", o.getCodeu().getVehValVomercial());
 			param.put("vehValVomercial", String.valueOf(o.getVehValVomercial()));
-
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("lugarDoc_codeu", String.valueOf(o.getCodeu().getFeExp()));
 			param.put("nitter_codeu", String.valueOf(o.getCodeu().getNitter()));
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 
-		} else
-		{
+		} else {
 			param.put("idConyuge_codeu", " ");
 			param.put("nomCony_codeu", " ");
 			param.put("emailConyuge_codeu", " ");
@@ -155,7 +140,7 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("vehModelo_codeu", " ");
 			param.put("vehPlaca_codeu", " ");
 			param.put("vehPignorado_codeu", " ");
-			param.put("vehPignorado_codeuNo",  " ");
+			param.put("vehPignorado_codeuNo", " ");
 			param.put("vehPigAFavor_codeu", " ");
 			param.put("vehValVomercial_codeu", " ");
 			param.put("vehValVomercial", " ");
@@ -186,7 +171,7 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("sol_fe_sol", now);
 		param.put("valorPress", String.valueOf(o.getValorPress()));
 		param.put("perCuota",
-				(null != o.getPerCuota() && !"0".equals(o.getPerCuota()) 
+				(null != o.getPerCuota() && !"0".equals(o.getPerCuota())
 						? parameterService.getSingleById(Constantes.PERIODICIDAD, o.getPerCuota()).getValue()
 						: ""));
 		if (null != o.getCodeu()) {
@@ -250,25 +235,16 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("celConyuge", String.valueOf(o.getCelConyuge()));
 		param.put("refNombre1", String.valueOf(o.getRefNombre1()));
 		param.put("refNombre2", String.valueOf(o.getRefNombre2()));
-		
-		param.put("refNombre3", (null !=o.getRefNombre3()? o.getRefNombre3() : " "));
-		//param.put("refNombre3", String.valueOf(o.getRefNombre3()));
+		param.put("refNombre3", (null != o.getRefNombre3() ? o.getRefNombre3() : " "));
 		param.put("refParen1", String.valueOf(o.getRefParen1()));
 		param.put("refParen2", String.valueOf(o.getRefParen2()));
-		//param.put("refParen3", String.valueOf(o.getRefParen3()));
-		param.put("refParen3", (null !=o.getRefParen3()? o.getRefParen3() : " "));
-		
+		param.put("refParen3", (null != o.getRefParen3() ? o.getRefParen3() : " "));
 		param.put("refMail1", String.valueOf(o.getRefMail1()));
 		param.put("refMail2", String.valueOf(o.getRefMail2()));
-		
-		//param.put("refMail3", String.valueOf(o.getRefMail3()));
-		param.put("refMail3", (null !=o.getRefMail3()? o.getRefMail3() : " "));
-		
+		param.put("refMail3", (null != o.getRefMail3() ? o.getRefMail3() : " "));
 		param.put("refCel1", String.valueOf(o.getRefCel1()));
 		param.put("refCel2", String.valueOf(o.getRefCel2()));
-		//param.put("refCel3", String.valueOf(o.getRefCel3()));
-		param.put("refCel3", (null !=o.getRefCel3()? o.getRefCel3() : " "));
-		
+		param.put("refCel3", (null != o.getRefCel3() ? o.getRefCel3() : " "));
 		param.put("bienNombre", String.valueOf(o.getBienNombre()));
 		param.put("bienValor", String.valueOf(o.getBienValor()));
 		param.put("bienAfecta", "0".equals(o.getBienAfecta()) ? "X" : "");
@@ -284,7 +260,7 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("vehPignoradoNo", "1".equals(o.getVehPignorado()) ? "X" : "");
 		param.put("vehPigAFavor", String.valueOf(o.getVehPigAFavor()));
 		param.put("vehValVomercial", String.valueOf(o.getVehValVomercial()));
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("nomTer_codeu", String.valueOf(o.getCodeu().getNomTer()));
 			param.put("lugarDoc_codeu", String.valueOf(o.getCodeu().getFeExp()));
@@ -318,8 +294,7 @@ public class WFCredit_Report implements IReportStrategy {
 							? parameterService.getSingleById(Constantes.EPS, o.getCodeu().getParamText()).getValue()
 							: ""));
 			param.put("empresa_cod", String.valueOf(o.getCodeu().getEmpresaCod()));
-		} else
-		{
+		} else {
 			param.put("priApellido_codeu", " ");
 			param.put("nomTer_codeu", " ");
 			param.put("lugarDoc_codeu", " ");
@@ -333,14 +308,14 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("telTer_codeu_resi", " ");
 			param.put("dirTeralt_codeu", " ");
 			param.put("barrioTra_codeu", " ");
-			param.put("deptDirTrabajo_codeu"," ");
+			param.put("deptDirTrabajo_codeu", " ");
 			param.put("ciuDirTrabajo_codeu", " ");
 			param.put("faxTer_codeu", " ");
 			param.put("cargoWf_codeu", " ");
-			param.put("indContrato_codeu"," ");
+			param.put("indContrato_codeu", " ");
 			param.put("paramText_codeu", " ");
 			param.put("empresa_cod", " ");
-			
+
 		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CREDITO_SOL, param,

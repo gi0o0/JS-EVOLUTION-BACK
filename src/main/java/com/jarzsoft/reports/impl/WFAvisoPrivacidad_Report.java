@@ -44,7 +44,7 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 			param.put("codiCiud2",
@@ -52,10 +52,9 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
 							: ""));
 			param.put("nitter_codeu", o.getCodeu().getNitter());
-		}else
-		{
+		} else {
 			param.put("nomTer_codeu", " ");
-			param.put("codiCiud2"," ");
+			param.put("codiCiud2", " ");
 			param.put("nitter_codeu", " ");
 		}
 

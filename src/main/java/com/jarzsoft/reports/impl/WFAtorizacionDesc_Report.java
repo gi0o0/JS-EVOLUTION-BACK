@@ -46,7 +46,7 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 		param.put("codiCiud",
 				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
 						: ""));
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 			param.put("nitter_codeu", o.getCodeu().getNitter());
@@ -54,14 +54,12 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 					(null != o.getCodeu().getCodiCiud()
 							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
 							: ""));
-		}else
-		{
+		} else {
 			param.put("nomTer_codeu", " ");
 			param.put("nitter_codeu", " ");
-			param.put("codiCiud2"," ");
+			param.put("codiCiud2", " ");
 		}
 
-		//jarz 15/09/2023 
 		param.put("año", " ");
 		param.put("dia", " ");
 		param.put("mes", " ");
@@ -74,7 +72,6 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 		param.put("mesesletras", " ");
 		param.put("fechainicio", " ");
 		param.put("empresa", " ");
-		
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_AUTO_DESC, param,
 				EnumReport.TIPO_REPORTE.REPORT_AUTO_DESC.getName(), o.getNumeroRadicacion() + "");

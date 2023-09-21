@@ -40,7 +40,7 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 		param.put("nitter", o.getNitter());
 		param.put("tasa", o.getTasaInt());
 
-		if (null != o.getCodeu()) {
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("lugarDoc_codeu",
 					(null != o.getCodeu().getCodiCiud()
@@ -52,10 +52,9 @@ public class WFDeclaracionRecep_Report implements IReportStrategy {
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 
-		}else
-		{
+		} else {
 			param.put("priApellido_codeu", " ");
-			param.put("lugarDoc_codeu"," ");
+			param.put("lugarDoc_codeu", " ");
 			param.put("nitter_codeu", " ");
 			param.put("telTer_codeu", " ");
 			param.put("mailTer_codeu", " ");
