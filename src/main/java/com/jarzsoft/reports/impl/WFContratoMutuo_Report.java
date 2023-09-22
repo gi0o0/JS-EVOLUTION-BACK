@@ -72,6 +72,10 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 		param.put("nroCuotas", " ");
 		param.put("perCuota", " ");
 		param.put("dirTerpal", " ");
+		
+		param.put("mailTer", o.getMailTer());
+		
+		
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_CONTRATO_MUTUO, param,
 				EnumReport.TIPO_REPORTE.REPORT_CONTRATO_MUTUO.getName(), o.getNumeroRadicacion() + "");
