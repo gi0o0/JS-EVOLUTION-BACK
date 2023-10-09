@@ -95,12 +95,13 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("bienAfecta_codeuNo", "1".equals(o.getCodeu().getBienAfecta()) ? "X" : "");
 			param.put("bienHipoteca_codeu", "0".equals(o.getCodeu().getBienHipoteca()) ? "X" : "");
 			param.put("bienHipoteca_codeuNo", "1".equals(o.getCodeu().getBienHipoteca()) ? "X" : "");
-			param.put("bienHipAFavor_codeu", o.getCodeu().getBienHipAFavor());
+			param.put("bienHipAFavor_codeu",(null != o.getCodeu().getBienHipAFavor() ? o.getCodeu().getBienHipAFavor() : " "));
+						
 			param.put("vehMarca_codeu", o.getCodeu().getVehMarca());
 			param.put("vehClase_codeu", o.getCodeu().getVehClase());
 			param.put("vehModelo_codeu", o.getCodeu().getVehModelo());
 			param.put("vehPlaca_codeu", o.getCodeu().getVehPlaca());
-			param.put("vehPignorado_codeu", "o".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
+			param.put("vehPignorado_codeu", "0".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
 			param.put("vehPignorado_codeuNo", "1".equals(o.getCodeu().getVehPignorado()) ? "X" : "");
 			param.put("vehPigAFavor_codeu", o.getCodeu().getVehPigAFavor());
 			param.put("vehValVomercial_codeu", o.getCodeu().getVehValVomercial());
@@ -246,9 +247,9 @@ public class WFCredit_Report implements IReportStrategy {
 		param.put("refCel2", String.valueOf(o.getRefCel2()));
 		param.put("refCel3", (null != o.getRefCel3() ? o.getRefCel3() : " "));
 		
-		param.put("bienNombre", null != String.valueOf(o.getBienNombre()) ? String.valueOf(o.getBienNombre())  : " ");
-		param.put("bienValor", null != String.valueOf(o.getBienValor()) ? String.valueOf(o.getBienValor())  : " ");
-		param.put("bienHipAFavor", null != String.valueOf(o.getBienHipAFavor()) ? String.valueOf(o.getBienHipAFavor())  : " ");
+		param.put("bienNombre", null != o.getBienNombre() ? String.valueOf(o.getBienNombre())  : " ");
+		param.put("bienValor", null != o.getBienValor() ? String.valueOf(o.getBienValor())  : " ");
+		param.put("bienHipAFavor", null != o.getBienHipAFavor() ? String.valueOf(o.getBienHipAFavor())  : " ");
 		
 		if (null != o.getBienNombre()) {
 			param.put("bienAfecta", "0".equals(o.getBienAfecta()) ? "X" : "");
@@ -264,11 +265,11 @@ public class WFCredit_Report implements IReportStrategy {
 			param.put("bienHipotecaNo",  "");
 		}
 						
-		param.put("vehMarca", null != String.valueOf(o.getVehMarca()) ? String.valueOf(o.getVehMarca())  : " ");
-		param.put("vehClase", null != String.valueOf(o.getVehClase()) ? String.valueOf(o.getVehClase())  : " ");
-		param.put("vehModelo", null != String.valueOf(o.getVehModelo()) ? String.valueOf(o.getVehModelo())  : " ");
-		param.put("vehPlaca", null != String.valueOf(o.getVehPlaca()) ? String.valueOf(o.getVehPlaca())  : " ");
-		param.put("vehPigAFavor", null != String.valueOf(o.getVehPigAFavor()) ? String.valueOf(o.getVehPigAFavor())  : " ");
+		param.put("vehMarca", null != o.getVehMarca() ? String.valueOf(o.getVehMarca())  : " ");
+		param.put("vehClase", null != o.getVehClase() ? String.valueOf(o.getVehClase())  : " ");
+		param.put("vehModelo", null != o.getVehModelo() ? String.valueOf(o.getVehModelo())  : " ");
+		param.put("vehPlaca", null != o.getVehPlaca() ? String.valueOf(o.getVehPlaca())  : " ");
+		param.put("vehPigAFavor", null != o.getVehPigAFavor() ? String.valueOf(o.getVehPigAFavor())  : " ");
 		
 		if (null != o.getVehMarca()) {
 			param.put("vehPignorado", "0".equals(o.getVehPignorado()) ? "X" : "");

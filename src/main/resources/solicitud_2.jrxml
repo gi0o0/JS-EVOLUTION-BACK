@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="280"/>
+	<property name="ireport.y" value="433"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -836,7 +836,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[ESPACIO EXCLUSIVO DE AVALTITULOS S.A.S. - CONFIRMAR DATOS]]></text>
+				<text><![CDATA[ESPACIO EXCLUSIVO DE TECNICAS Y GESTIONES S.A.S. - CONFIRMAR DATOS]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="193" width="1" height="39" forecolor="#000000" uuid="088cf716-2fda-404b-8e9e-59da9f69962a"/>
@@ -955,7 +955,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a AVALTITULOS S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
+				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a TECNICAS Y GESTIONES S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="16" y="348" width="33" height="9" uuid="b8811dee-e430-41db-858a-05c388c01db6"/>
@@ -1256,7 +1256,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="56" y="358" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
+				<reportElement x="56" y="363" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -1270,7 +1270,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="321" y="363" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
+				<reportElement x="321" y="364" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -1284,7 +1284,7 @@
 				<textFieldExpression><![CDATA[$P{name_asesor}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="324" y="701" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
+				<reportElement x="324" y="702" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>

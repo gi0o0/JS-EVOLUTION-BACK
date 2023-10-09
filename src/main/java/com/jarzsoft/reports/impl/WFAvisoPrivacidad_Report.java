@@ -61,7 +61,8 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 		param.put("codiCiud",
 				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
 						: ""));
-		param.put("año", year.charAt(year.length() - 1) + "");
+		
+		param.put("año", year);
 		param.put("empresa", "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
 		param.put("mes", calendar.get(Calendar.MONTH) + 1 + "");

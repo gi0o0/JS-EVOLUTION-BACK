@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="590"/>
+	<property name="ireport.x" value="1"/>
+	<property name="ireport.y" value="71"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -40,7 +40,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
+				<text><![CDATA[NIT. 901.184.952-4]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="255" y="249" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="8acf7021-e438-4553-b8e6-678f8d70e15d"/>
@@ -88,7 +88,7 @@
 					<font fontName="Times New Roman" size="9" isBold="false" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[Señores
-AVALTITULOS S.A.S.
+TECNICAS Y GESTIONES S.A.S.
 Bogotá, D.C.
 
 
@@ -96,11 +96,11 @@ Bogotá, D.C.
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="257" width="519" height="65" uuid="a54761de-1f76-40e3-99f2-2b5f7ac4db6c"/>
+				<reportElement key="staticText-4" x="20" y="257" width="519" height="68" uuid="a54761de-1f76-40e3-99f2-2b5f7ac4db6c"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
-				<text><![CDATA[ninguna actividad de tipo crédito que disminuya mi capacidad de endeudamiento, durante el lapso que la sociedad AVALTÍTULOS S.A.S. requiera para la ejecución de la fianza que consiste en el pago total de la obligación anteriormente mencionada, la consecución del Paz y Salvo respectivo.
+				<text><![CDATA[ninguna actividad de tipo crédito que disminuya mi capacidad de endeudamiento, durante el lapso que la sociedad TECNICAS Y GESTIONES S.A.S. requiera para la ejecución de la fianza que consiste en el pago total de la obligación anteriormente mencionada, la consecución del Paz y Salvo respectivo.
 El presente documento se suscribe de conformidad con los preceptuado en el artículo 863 del Código de Comercio. "Las partes deberán proceder de buena fe exenta de culpa en el periodo pre conceptual, so pena de indemnizar los perjuicios que se causen".
 ]]></text>
 			</staticText>
@@ -116,24 +116,24 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				<textFieldExpression><![CDATA[$P{ciudadautoriza}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="39" y="191" width="303" height="11" uuid="a3e80ea1-6c18-49f1-bc35-d27903b11806"/>
+				<reportElement key="textField" x="39" y="191" width="313" height="11" uuid="a3e80ea1-6c18-49f1-bc35-d27903b11806"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" x="43" y="204" width="299" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="10f5e4bc-8d6d-48f4-90c2-65d408075860"/>
+				<reportElement key="line-1" x="43" y="204" width="309" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="10f5e4bc-8d6d-48f4-90c2-65d408075860"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="349" y="193" width="190" height="11" uuid="4cbfa964-c9d8-4633-ad7a-9e711b1e7e71"/>
+				<reportElement key="staticText-4" x="355" y="193" width="192" height="11" uuid="4cbfa964-c9d8-4633-ad7a-9e711b1e7e71"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
-				<text><![CDATA[mayor de edad, domiciliado(s) en la ciudad de]]></text>
+				<text><![CDATA[mayor de edad, domiciliado (s) en la ciudad de]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="21" y="193" width="14" height="11" uuid="5070e814-81f5-4c59-abdb-31dab34d206a"/>
@@ -143,7 +143,7 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				<text><![CDATA[Yo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="182" y="207" width="361" height="11" uuid="047ff1a6-dfe8-49b2-ba9f-a6a202f94060"/>
+				<reportElement key="staticText-4" x="182" y="206" width="361" height="11" uuid="047ff1a6-dfe8-49b2-ba9f-a6a202f94060"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
@@ -176,20 +176,20 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="209" y="221" width="82" height="11" uuid="746ad258-a12e-48dd-9dda-aed0f5c6a94d"/>
+				<reportElement key="staticText-4" x="210" y="221" width="82" height="11" uuid="746ad258-a12e-48dd-9dda-aed0f5c6a94d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
 				<text><![CDATA[suscrita a favor de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="295" y="232" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c85bd32-18b1-4e7e-8601-b5f5db3f6542"/>
+				<reportElement key="line-1" x="296" y="232" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c85bd32-18b1-4e7e-8601-b5f5db3f6542"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="398" y="222" width="149" height="11" uuid="11ec90ff-5818-4bf4-b34a-aa4f6415a093"/>
+				<reportElement key="staticText-4" x="401" y="222" width="146" height="11" uuid="11ec90ff-5818-4bf4-b34a-aa4f6415a093"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
@@ -216,7 +216,7 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				</graphicElement>
 			</rectangle>
 			<line>
-				<reportElement key="line-1" x="21" y="460" width="269" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="16a2d865-a711-439b-9d6c-d223e35ac42f"/>
+				<reportElement key="line-1" x="21" y="460" width="261" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="16a2d865-a711-439b-9d6c-d223e35ac42f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -248,41 +248,41 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="332" width="519" height="14" uuid="2a13418a-316a-4b14-931d-70544854b7bf"/>
+				<reportElement key="staticText-4" x="20" y="330" width="519" height="14" uuid="2a13418a-316a-4b14-931d-70544854b7bf"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
-				<text><![CDATA[El incumplimiento al presente compromiso dará derecho a la Sociedad AVALTÍTULOS S.A.S. para que declare el vencimiento del ]]></text>
+				<text><![CDATA[El incumplimiento al presente compromiso dará derecho a la Sociedad TECNICAS Y GESTIONES S.A.S. para que declare el vencimientopara que declare el vencimiento ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="19" y="345" width="174" height="14" uuid="c2c969da-1061-441a-9a84-12fc42d7ddfd"/>
-				<textElement textAlignment="Justified">
+				<reportElement key="staticText-4" x="19" y="343" width="159" height="14" uuid="c2c969da-1061-441a-9a84-12fc42d7ddfd"/>
+				<textElement>
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
-				<text><![CDATA[plazo pactado en el Pagare Libranza No.]]></text>
+				<text><![CDATA[del plazo pactado en el Pagare Libranza No.]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="193" y="358" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="aa20cc97-41c9-467d-aeee-0dbfe5da2f41"/>
+				<reportElement key="line-1" x="179" y="356" width="91" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="aa20cc97-41c9-467d-aeee-0dbfe5da2f41"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="19" y="363" width="520" height="41" uuid="09cf2d2c-7cd3-4186-9792-b38a93b80de0"/>
+				<reportElement key="staticText-4" x="19" y="360" width="520" height="41" uuid="09cf2d2c-7cd3-4186-9792-b38a93b80de0"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
-				<text><![CDATA[adicionalmente al cobro de las acciones civiles y penales a que hay lugar de conformidad con las leyes preexistentes al momento de la suscripción del presente compromiso, con cuyo caso, asumiré todos las costas y gastos prejurídicas y jurídicos contractuales y extracontractuales.]]></text>
+				<text><![CDATA[adicionalmente al cobro de las acciones civiles y penales a que hay lugar de conformidad con las leyes preexistentes al momento de la suscripción del presente compromiso, con cuyo caso, asumiré todas las costas y gastos pre jurídicas y jurídicos contractuales y extracontractuales.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="296" y="344" width="243" height="14" uuid="7bf3f611-9324-4a72-9ad1-78b4889b10df"/>
+				<reportElement key="staticText-4" x="273" y="342" width="266" height="14" uuid="7bf3f611-9324-4a72-9ad1-78b4889b10df"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
 				<text><![CDATA[tal como lo consagra el artículo 69 de la Ley 45 de 1990, ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="199" y="344" width="91" height="14" uuid="8a42d402-411d-4c13-bc44-c235e3a31bdb"/>
+				<reportElement x="203" y="342" width="67" height="14" uuid="8a42d402-411d-4c13-bc44-c235e3a31bdb"/>
 				<textElement>
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>

@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="361"/>
+	<property name="ireport.y" value="535"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -33,7 +33,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
+				<text><![CDATA[NIT. 901.184.952-4]]></text>
 			</staticText>
 			<image>
 				<reportElement key="image-1" x="2" y="0" width="128" height="63" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
@@ -145,7 +145,7 @@
 				<text><![CDATA[Yo/nosotros]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="236" y="370" width="23" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
+				<reportElement key="textField" x="236" y="370" width="34" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -308,7 +308,7 @@
 					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[AVISO DE PRIVACIDAD, TRATAMIENTO DE DATOS Y CONSENTIMIENTO INFORMADO
-AVALTÍTULOS S.A.S
+TECNICAS Y GESTIONES S.A.S
 ]]></text>
 			</staticText>
 			<staticText>
@@ -316,7 +316,7 @@ AVALTÍTULOS S.A.S
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[1-Cualquiera en el desarrollo en el objeto social de AVALTÍTULOS S.A.S. o su endosatario.]]></text>
+				<text><![CDATA[1-Cualquiera en el desarrollo en el objeto social de TECNICAS Y GESTIONES S.A.S. o su endosatario.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="10" y="218" width="533" height="11" uuid="c6008e64-202a-4693-a609-9c73a97720bb"/>
@@ -351,7 +351,7 @@ AVALTÍTULOS S.A.S
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[(que tipo de descuentos), embargo (en caso de tener un embargo informar quien interpuso la medida, en que juzgado se encuentra y porque porcentaje fue solicitado), y porcentajes de deducciones en mi nómina.
-4. El envío de correspondencia, correos electrónicos, newsletters, WhatsApp, contacto telefónico o cualquier otro método, para recibir información sobre el producto, o en desarrollo de actividades publicitarias, promocionales, de mercadeo o para la prestación de servicios complementarios.  
+4.El envío de correspondencia, correos electrónicos, newsletters, WhatsApp, contacto telefónico o cualquier otro método, para recibir información sobre el producto, o en desarrollo de actividades publicitarias, promocionales, de mercadeo o para la prestación de servicios complementarios.  
 5. Contacto telefónico y grabación de llamadas.
 6. Análisis de riesgo crediticio, análisis estadísticos cuando se otorga créditos o plazos para el pago de la obligación.
 7. Reporte y consulta a centrales de riesgo crediticio legalmente constituidas en Colombia, así como para gestiones de cobranzas o reportes de no pago por cuenta propia o a través de tercero y aliados comerciales.
@@ -378,18 +378,18 @@ AVALTÍTULOS S.A.S
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="166" y="370" width="41" height="9" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
+				<reportElement key="textField" x="171" y="370" width="31" height="9" uuid="ab9cfaed-5c0f-420f-88eb-27dba6d8703a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="207" y="370" width="29" height="10" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
+				<reportElement key="staticText-4" x="210" y="370" width="19" height="10" uuid="072832ee-0cd5-4731-926c-aff28a2706c5"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[de ]]></text>
+				<text><![CDATA[de]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="236" y="379" width="23" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6357b870-445b-43a2-8d45-c6162787aa4d"/>

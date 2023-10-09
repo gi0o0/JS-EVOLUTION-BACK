@@ -56,21 +56,21 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
+				<text><![CDATA[NIT. 901.184.952-4]]></text>
 			</staticText>
 			<image>
 				<reportElement key="image-1" x="2" y="0" width="116" height="46" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
 				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement key="staticText-3" x="416" y="0" width="120" height="21" forecolor="#000000" uuid="ea41dc13-04f7-4cde-9bd2-d039dade60c2"/>
+				<reportElement key="staticText-3" x="436" y="0" width="98" height="21" forecolor="#000000" uuid="ea41dc13-04f7-4cde-9bd2-d039dade60c2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[PAGARE LIBRANZA]]></text>
 			</staticText>
 			<rectangle radius="0">
-				<reportElement x="436" y="21" width="100" height="25" forecolor="#CCCCCC" uuid="c86f2d77-ec88-4779-9264-e0fcfe7cad1a"/>
+				<reportElement x="436" y="21" width="97" height="25" forecolor="#CCCCCC" uuid="c86f2d77-ec88-4779-9264-e0fcfe7cad1a"/>
 			</rectangle>
 			<staticText>
 				<reportElement key="staticText-3" x="152" y="44" width="257" height="22" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
@@ -79,28 +79,8 @@
 				</textElement>
 				<text><![CDATA[CONTRATO MUTUO COMERCIAL CON INTERESES POR : $]]></text>
 			</staticText>
-			<staticText>
-				<reportElement key="staticText-3" x="417" y="21" width="22" height="25" forecolor="#000000" uuid="42d3f4ab-4c0b-4384-885b-3f597fac453f"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="18" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[N]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="471" y="18" width="47" height="25" forecolor="#CC0033" uuid="9e80c68b-4afe-4af8-bca8-502c2ca3d16a"/>
-				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None">
-					<font fontName="Arial" size="20" isUnderline="false"/>
-				</textElement>
-			</staticText>
 			<textField>
-				<reportElement x="446" y="23" width="84" height="20" uuid="3646601c-0c1f-44e4-bff9-00d0c3873c60"/>
-				<box>
-					<pen lineColor="#CC0000"/>
-					<topPen lineColor="#CC0000"/>
-					<leftPen lineColor="#CC0000"/>
-					<bottomPen lineColor="#CC0000"/>
-					<rightPen lineColor="#CC0000"/>
-				</box>
+				<reportElement x="444" y="23" width="83" height="20" uuid="dcd0a8ac-b1d7-415e-a057-4e214e6c3f0b"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
@@ -111,21 +91,21 @@
 	<columnHeader>
 		<band height="685" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="426" y="42" width="108" height="9" uuid="1ad58dc5-a9f2-485e-92d9-d3d5d30a89c8"/>
+				<reportElement key="textField" x="458" y="42" width="76" height="9" uuid="1ad58dc5-a9f2-485e-92d9-d3d5d30a89c8"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{valorPress}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="452" y="54" width="18" height="9" uuid="7264719e-5a79-46b4-9eb2-c6988dc5138a"/>
+				<reportElement key="textField" x="462" y="53" width="15" height="9" uuid="7264719e-5a79-46b4-9eb2-c6988dc5138a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nroCuotas}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="517" y="63" width="15" height="9" uuid="5bee1d43-2e45-4a0d-a845-0a4757756710"/>
+				<reportElement key="textField" x="522" y="63" width="13" height="9" uuid="5bee1d43-2e45-4a0d-a845-0a4757756710"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -292,7 +272,7 @@
 				<text><![CDATA[virtud del presente título valor, incondicional, solidariamente y comprometiendo ilimitadamente mi (nuestra)  responsabilidad  prometo(emos) que  pagaré(mos), en dinero ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="426" y="52" width="110" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fd68a6e4-8259-4954-b81e-5eb0f0715297"/>
+				<reportElement key="line-1" x="458" y="52" width="78" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fd68a6e4-8259-4954-b81e-5eb0f0715297"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -305,17 +285,17 @@
 				<text><![CDATA[suma que pagaré(mos) solidaria e incondicionalmente como deudores de obligación indivisible, en la ciudad de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="469" y="63" width="60" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="47adda2a-7cb6-4409-8366-85c3c8a8ff67"/>
+				<reportElement key="line-1" x="453" y="61" width="31" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="47adda2a-7cb6-4409-8366-85c3c8a8ff67"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="479" y="54" width="38" height="11" uuid="2e7f2c6f-69bf-4231-8214-c33d16a17a1a"/>
+				<reportElement key="staticText-4" x="486" y="53" width="37" height="11" uuid="2e7f2c6f-69bf-4231-8214-c33d16a17a1a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[) cuotas o]]></text>
+				<text><![CDATA[) cuotas o ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="62" width="166" height="11" uuid="4e5b3f49-beea-4988-b756-f3512b16f47a"/>
@@ -325,7 +305,7 @@
 				<text><![CDATA[instalamentos mensuales sucesivos e iguales de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="178" y="72" width="246" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a4892024-5800-4200-94d6-80b540ad643f"/>
+				<reportElement key="line-1" x="162" y="72" width="270" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a4892024-5800-4200-94d6-80b540ad643f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -338,14 +318,14 @@
 				<textFieldExpression><![CDATA[$P{vlrCuotas}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="427" y="63" width="86" height="11" uuid="3ed7aa3d-29b1-4c0d-8335-af40ffcc1522"/>
+				<reportElement key="staticText-4" x="435" y="63" width="86" height="11" uuid="3ed7aa3d-29b1-4c0d-8335-af40ffcc1522"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[cada uno, el primero el día]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="517" y="72" width="14" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ed7a5e97-caad-4995-ab4e-e76629ae4936"/>
+				<reportElement key="line-1" x="517" y="72" width="16" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ed7a5e97-caad-4995-ab4e-e76629ae4936"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -355,10 +335,10 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[y las demás serán pagadas el mismo día de cada mes,  sucesivamente  mes a mes, hasta la total cancelación del crédito en la forma acordada. El tenedor de este título podrá declarar insubsistente los plazos de esta obligación y exigir el pago inmediato de la totalidad del crédito, judicial o extrajudicialmente en los siguientes casos: a) Por incumplimiento de cualquiera de las obligaciones que adquirimos por el presente pagaré b) La mora o el simple retardo en el pago de las cuotas pactadas, o en el de las renovaciones del plazo. c)   Cuando a juicio del tenedor las garantías constituidas para respaldar las obligaciones activas de crédito de que se trate no mantengan los niveles de cobertura adecuados, o sufran deterioro o sean perseguidos por cualquier persona en ejercicio de cualquier acción legal.  d) Cuando haya inexactitud o falsedad en los documentos, informes, declaraciones presentadas a la Sociedad AVALTITULOS S.A.S para obtener la aprobación o desembolso del crédito. g) Cuando fallezca cualquiera de los deudores. i) Cuando cualquiera de los obligados en el pagaré solicite le sea iniciado proceso de insolvencia o solicitud de trámite de negociación de deudas o concordato preventivo. J) Cuando cualquiera de los obligados aparece vinculado a investigaciones sobre terrorismo, lavado de activos o delitos contra la fe pública. ]]></text>
+				<text><![CDATA[y las demás serán pagadas el mismo día de cada mes,  sucesivamente  mes a mes, hasta la total cancelación del crédito en la forma acordada. El tenedor de este título podrá declarar insubsistente los plazos de esta obligación y exigir el pago inmediato de la totalidad del crédito, judicial o extrajudicialmente en los siguientes casos: a) Por incumplimiento de cualquiera de las obligaciones que adquirimos por el presente pagaré b) La mora o el simple retardo en el pago de las cuotas pactadas, o en el de las renovaciones del plazo. c)   Cuando a juicio del tenedor las garantías constituidas para respaldar las obligaciones activas de crédito de que se trate no mantengan los niveles de cobertura adecuados, o sufran deterioro o sean perseguidos por cualquier persona en ejercicio de cualquier acción legal.  d) Cuando haya inexactitud o falsedad en los documentos, informes, declaraciones presentadas a la Sociedad TECNICAS Y GESTIONES S.A.S para obtener la aprobación o desembolso del crédito. g) Cuando fallezca cualquiera de los deudores. i) Cuando cualquiera de los obligados en el pagaré solicite le sea iniciado proceso de insolvencia o solicitud de trámite de negociación de deudas o concordato preventivo. J) Cuando cualquiera de los obligados aparece vinculado a investigaciones sobre terrorismo, lavado de activos o delitos contra la fe pública. ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="368" y="60" width="64" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c1199b15-c9e5-4d89-9b9a-55a984e0c295"/>
+				<reportElement key="line-1" x="358" y="60" width="74" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c1199b15-c9e5-4d89-9b9a-55a984e0c295"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -368,10 +348,10 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Adicionalmente, por medio del presente documento autorizo(amos) al tenedor legítimo de este pagaré para que por sí o por conducto de un mandatario y ante cualquier operador de información de los definidos en la ley, reporte toda información financiera, crediticia, comercial o de servicios que resulte de mi (nuestro) comportamiento (positivo o negativo) en relación con la(s) obligación(es) que mediante este pagaré se contraen, previo aviso y notificación. Así mismo, autorizo(amos) a la sociedad AVALTITULOS S.A.S., mientras sea tenedora legítima de este pagaré, para que los pagos de intereses y abonos a capital que hagamos en este título valor sean anotados por la sociedad AVALTITULOS S.A.S. en sus registros contables en lugar de hacerlo a continuación de este documento.]]></text>
+				<text><![CDATA[Adicionalmente, por medio del presente documento autorizo(amos) al tenedor legítimo de este pagaré para que por sí o por conducto de un mandatario y ante cualquier operador de información de los definidos en la ley, reporte toda información financiera, crediticia, comercial o de servicios que resulte de mi (nuestro) comportamiento (positivo o negativo) en relación con la(s) obligación(es) que mediante este pagaré se contraen, previo aviso y notificación. Así mismo, autorizo(amos) a la sociedad TECNICAS Y GESTIONES S.A.S., mientras sea tenedora legítima de este pagaré, para que los pagos de intereses y abonos a capital que hagamos en este título valor sean anotados por la sociedad TECNICAS Y GESTIONES S.A.S. en sus registros contables en lugar de hacerlo a continuación de este documento.]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="387" y="52" width="49" height="9" uuid="d2d01936-a093-440c-9a61-c6dd63b04049"/>
+				<reportElement key="textField" x="383" y="52" width="49" height="9" uuid="d2d01936-a093-440c-9a61-c6dd63b04049"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -391,18 +371,18 @@
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="436" y="211" width="81" height="9" uuid="4402253f-4a3e-40df-8df9-c01d755f787d"/>
+				<reportElement key="textField" x="441" y="211" width="76" height="9" uuid="4402253f-4a3e-40df-8df9-c01d755f787d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{AsigMensual}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="212" width="420" height="11" uuid="a43ad06e-b94f-476d-92f7-733ae7319a74"/>
+				<reportElement key="staticText-4" x="12" y="212" width="424" height="11" uuid="a43ad06e-b94f-476d-92f7-733ae7319a74"/>
 				<textElement>
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[solicito(amos) de manera permanente e irrevocable que la Entidad Pagadora retenga de mi (nuestra) asignación mensual la suma de (]]></text>
+				<text><![CDATA[solicito(amos) de manera permanente e irrevocable que la Entidad Pagadora retenga de mi (nuestra) asignación mensual la suma de ($]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="42" y="234" width="44" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="15274b52-1c88-4875-b232-0cf7d349ff7f"/>
@@ -424,25 +404,25 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="229" y="225" width="308" height="11" uuid="038e5ca2-afe7-44f5-b3a2-ddc3c0fc1108"/>
+				<reportElement key="staticText-4" x="258" y="225" width="274" height="11" uuid="038e5ca2-afe7-44f5-b3a2-ddc3c0fc1108"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[y que los dineros así retenidos sean pagados de manera mensual a la Sociedad AVALTÍTULOS S.A.S. ]]></text>
+				<text><![CDATA[y que los dineros así retenidos sean pagados de manera mensual a la Sociedad ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="13" y="236" width="524" height="234" uuid="09f8e3e2-48c8-405f-ae8f-70be2128f480"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[o a su endosatario (Ley 1527 del 2012 y Código Sustantivo del Trabajo art. 150). En caso de no hacerse efectivo el pago por la pagaduría me comprometo a consignar en Bancolombia, Cuenta de Ahorros 03598075637 a nombre de AVALTITULOS S.A.S. En caso de mora del deudor principal, se hará el descuento correspondiente al deudor solidario respectivo previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto, sin prejuicios de que se instaure acción contra el deudor principal.
+				<text><![CDATA[TECNICAS Y GESTIONES S.A.S. o a su endosatario (Ley 1527 del 2012 y Código Sustantivo del Trabajo art. 150). En caso de no hacerse efectivo el pago por la pagaduría me comprometo a consignar en Bancolombia, Cuenta de Ahorros 74500004823 a nombre de TECNICAS Y GESTIONES S.A.S. En caso de mora del deudor principal, se hará el descuento correspondiente al deudor solidario respectivo previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto, sin prejuicios de que se instaure acción contra el deudor principal.
 Los intereses de corrientes y de mora serán la tasa máxima autorizada según certificación expedida por la Superintendencia Financiera de Colombia. Expresamente declaro (amos) que renunciamos a las formalidades del requerimiento para constituirnos en mora, de la misma manera no será necesario el protesto de este pagaré y el acreedor tiene derecho a dirigirse contra nosotros sin necesidad de recurrir a notificaciones.  
 De acuerdo y en conformidad con lo dispuesto en el Código Civil, declaramos y aceptamos que no podemos sin previo estado de cuenta efectuar el pago anticipado, total o parcial de la obligación consignada en este pagaré.
-En cualquier evento, autorizo a la Sociedad AVALTITULOS S.A.S. o a su endosatario para que, si los descuentos por nómina no alcanzaren a cubrir las cuotas del crédito, gastos, costas y honorarios pre-jurídicos y jurídicos, previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto incurridos por mi (nosotros), prolonguen el plazo y ajusten el valor de la cuota de la suma descontable.
-Acepto (amos) que este pagaré, que se asimila a la letra de cambio para todos los aspectos legales y ratifico (amos) la autorización de descuento contraída en el presente documento, “expresamente autorizo a la sociedad AVALTITULOS S.A.S. para que a cualquier título endose el presente pagaré o ceda el crédito incorporado en él a favor de cualquier tercero, siendo informado en esta oportunidad que la notificación o no de ésta, no invalida el título o nuevo titular del derecho ya que no se requiere del visto bueno, teniendo en cuenta que, lo que se informa es la ocurrencia del cambio. Este pagaré constituye un Título Valor en conformidad con lo establecido en los artículos 619 y s.s., 709, 710 y 711 del Código de Comercio, razón por la cual es negociable.
+En cualquier evento, autorizo a la Sociedad TECNICAS Y GESTIONES S.A.S. o a su endosatario para que, si los descuentos por nómina no alcanzaren a cubrir las cuotas del crédito, gastos, costas y honorarios pre-jurídicos y jurídicos, previo aviso y notificación mediante correo electrónico, WhatsApp o mensaje de texto incurridos por mi (nosotros), prolonguen el plazo y ajusten el valor de la cuota de la suma descontable.
+Acepto (amos) que este pagaré, que se asimila a la letra de cambio para todos los aspectos legales y ratifico (amos) la autorización de descuento contraída en el presente documento, “expresamente autorizo a la sociedad TECNICAS Y GESTIONES S.A.S. para que a cualquier título endose el presente pagaré o ceda el crédito incorporado en él a favor de cualquier tercero, siendo informado en esta oportunidad que la notificación o no de ésta, no invalida el título o nuevo titular del derecho ya que no se requiere del visto bueno, teniendo en cuenta que, lo que se informa es la ocurrencia del cambio. Este pagaré constituye un Título Valor en conformidad con lo establecido en los artículos 619 y s.s., 709, 710 y 711 del Código de Comercio, razón por la cual es negociable.
 En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones y/o responsable por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido, de acuerdo al Art. 6 de la ley 1266 de 2008 y el Art. 6 de la ley 1527 de 2012.
-Así mismo, de conformidad con lo preceptuado en los Arts. 149, 150, 344 del Código Sustantivo del Trabajo y la ley 1527 de 2012 le solicito (amos) que en caso de retiro, mora y/o fallecimiento se sirva descontarme (nos) de cualquier cantidad (es) que haya de pagarme (nos) por razón de sueldos, vacaciones salarios, pensiones, mesadas, honorarios, primas, comisiones, cesantías, bonificaciones, auxilios. Indemnizaciones y demás prestaciones sociales la cantidad necesaria para efectuar el pago total de las obligaciones aquí estipuladas. La Sociedad AVALTITULOS S.A.S. o su endosatario queda facultada por mi (nosotros) para hacerse pagar el valor adeudado con las remuneraciones que perciba por cualquier otro empleo y ocupación diferente al cargo y empleador que sea tenido en cuenta al momento de realizar el préstamo y desde ahora acepto y autorizo las retenciones o descuentos que la empresa solicite a mi futuro pagador o empleador, de conformidad con el artículo 7 de la ley 1527 de 2012.
-Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligación de pago a mi (nuestro) cargo, y que la presente instrucción de retención sólo podrá ser levantada por el Representante Legal de la Sociedad AVALTITULOS S.A.S. o su endosatario.
+Así mismo, de conformidad con lo preceptuado en los Arts. 149, 150, 344 del Código Sustantivo del Trabajo y la ley 1527 de 2012 le solicito (amos) que en caso de retiro, mora y/o fallecimiento se sirva descontarme (nos) de cualquier cantidad (es) que haya de pagarme (nos) por razón de sueldos, vacaciones salarios, pensiones, mesadas, honorarios, primas, comisiones, cesantías, bonificaciones, auxilios. Indemnizaciones y demás prestaciones sociales la cantidad necesaria para efectuar el pago total de las obligaciones aquí estipuladas. La Sociedad TECNICAS Y GESTIONES S.A.S. o su endosatario queda facultada por mi (nosotros) para hacerse pagar el valor adeudado con las remuneraciones que perciba por cualquier otro empleo y ocupación diferente al cargo y empleador que sea tenido en cuenta al momento de realizar el préstamo y desde ahora acepto y autorizo las retenciones o descuentos que la empresa solicite a mi futuro pagador o empleador, de conformidad con el artículo 7 de la ley 1527 de 2012.
+Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligación de pago a mi (nuestro) cargo, y que la presente instrucción de retención sólo podrá ser levantada por el Representante Legal de la Sociedad TECNICAS Y GESTIONES S.A.S. o su endosatario.
 ]]></text>
 			</staticText>
 			<staticText>
@@ -457,7 +437,7 @@ Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligaci
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[De conformidad con el art. con el artículo 622 del Código de Comercio autorizo (amos) expresa e irrevocablemente al representante legal de AVALTITULOS S.A.S. para llenar los espacios en blanco de este pagaré a la orden / Libranza que he (mos) otorgado a su favor, el título será llenado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones: 1) Número del Pagaré: Este espacio podrá ser llenado por Ustedes de acuerdo con la numeración interna que utilicen. 2) El monto será igual al valor de todas las obligacio¬nes exigibles a mi (nuestro) cargo y en favor de AVALTITULOS SA.S., que exista al momento de ser llenados los espacios en blanco, que por cualquier concepto, como por ejemplo contratos de mutuo, renovaciones, ampliaciones  de crédito o retanqueo o crédito rotativo), negociación de títulos valores, avales o cualquier otra clase de garantías y en general por cualquier operación o deuda existente a cargo nuestro y en su favor, presente o futura, que directa o indirectamente, conjunta o separadamente le debemos o lleguemos a deber a usted (es) quienes suscribimos esta carta de instrucciones. 3) La fecha de vencimiento será aquella cuando se llenen los espacios en blanco.  El lugar de cumplimiento del mismo será la ciudad ya indicada en el texto del pagaré. 4) La tasa de interés moratoria será la máxima autorizada por la ley en la fecha en que se halla llenado el pagaré. 5) Los espacios en blanco que existieren se llenarán cuando el tenedor del pagaré lo considere pertinente y el nombre del beneficiario deberá ponerse al tenedor(es) legítimo (s) del pagaré. Declaramos haber recibido copia del Pagaré y de la presente carta de instrucciones.]]></text>
+				<text><![CDATA[De conformidad con el art. con el artículo 622 del Código de Comercio autorizo (amos) expresa e irrevocablemente al representante legal de TECNICAS Y GESTIONES S.A.S. para llenar los espacios en blanco de este pagaré a la orden / Libranza que he (mos) otorgado a su favor, el título será llenado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones: 1) Número del Pagaré: Este espacio podrá ser llenado por Ustedes de acuerdo con la numeración interna que utilicen. 2) El monto será igual al valor de todas las obligacio¬nes exigibles a mi (nuestro) cargo y en favor de TECNICAS Y GESTIONES SA.S., que exista al momento de ser llenados los espacios en blanco, que por cualquier concepto, como por ejemplo contratos de mutuo, renovaciones, ampliaciones  de crédito o retanqueo o crédito rotativo), negociación de títulos valores, avales o cualquier otra clase de garantías y en general por cualquier operación o deuda existente a cargo nuestro y en su favor, presente o futura, que directa o indirectamente, conjunta o separadamente le debemos o lleguemos a deber a usted (es) quienes suscribimos esta carta de instrucciones. 3) La fecha de vencimiento será aquella cuando se llenen los espacios en blanco.  El lugar de cumplimiento del mismo será la ciudad ya indicada en el texto del pagaré. 4) La tasa de interés moratoria será la máxima autorizada por la ley en la fecha en que se halla llenado el pagaré. 5) Los espacios en blanco que existieren se llenarán cuando el tenedor del pagaré lo considere pertinente y el nombre del beneficiario deberá ponerse al tenedor(es) legítimo (s) del pagaré. Declaramos haber recibido copia del Pagaré y de la presente carta de instrucciones.]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="45" y="224" width="39" height="9" uuid="a7d201b8-db51-49a1-a2be-9d2ad8e3fb9c"/>
@@ -500,11 +480,11 @@ Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligaci
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="391" y="569" width="51" height="11" uuid="6fe99494-5f46-4999-8a8d-921259fd05c6"/>
+				<reportElement key="staticText-4" x="401" y="571" width="25" height="11" uuid="6fe99494-5f46-4999-8a8d-921259fd05c6"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[de dos mil]]></text>
+				<text><![CDATA[de ]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="442" y="579" width="33" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c3cc7c4-d17c-4128-8c82-89d1e8e24751"/>
@@ -561,7 +541,7 @@ Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligaci
 				<textFieldExpression><![CDATA[$P{dia_mes}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="442" y="569" width="30" height="9" uuid="87e03221-decf-491d-8528-8b3cca495ed0"/>
+				<reportElement key="textField" x="442" y="570" width="30" height="9" uuid="87e03221-decf-491d-8528-8b3cca495ed0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -779,7 +759,7 @@ Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligaci
 				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="437" y="53" width="25" height="11" uuid="150dac3a-d065-497f-92ef-8e88a6a8562e"/>
+				<reportElement key="staticText-4" x="441" y="53" width="14" height="11" uuid="150dac3a-d065-497f-92ef-8e88a6a8562e"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
@@ -826,21 +806,21 @@ Es entendido que la presente orden de LIBRANZA no me (nos) libera de la obligaci
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="43" width="404" height="11" uuid="89aff4a3-bdef-4dd8-b76e-581d448cc1b7"/>
+				<reportElement key="staticText-4" x="12" y="43" width="439" height="11" uuid="89aff4a3-bdef-4dd8-b76e-581d448cc1b7"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[efectivo moneda legal colombiana,  a la Sociedad AVALTITULOS S.A.S. o al tenedor legítimo de este instrumento, en cuantía de]]></text>
+				<text><![CDATA[efectivo moneda legal colombiana,  a la Sociedad TECNICAS Y GESTIONES S.A.S. o al tenedor legítimo de este instrumento, en cuantía de]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="383" y="61" width="43" height="11" uuid="c7675591-c90a-4928-ad50-c8aaa9dd5aa7"/>
+				<reportElement key="staticText-4" x="380" y="61" width="56" height="11" uuid="9cf12843-9315-4b4b-9af2-dde61a3bf17b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[$(               )]]></text>
+				<text><![CDATA[ ($                     )]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="405" y="619" width="58" height="9" uuid="e103f05b-2110-4525-a82c-8848d3678da1"/>
+				<reportElement key="textField" x="403" y="620" width="58" height="9" uuid="a4e72592-715b-4640-8754-81f779072e32"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>

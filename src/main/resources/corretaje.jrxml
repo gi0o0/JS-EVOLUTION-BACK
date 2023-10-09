@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.7715610000000137"/>
 	<property name="ireport.x" value="52"/>
-	<property name="ireport.y" value="328"/>
+	<property name="ireport.y" value="1052"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -133,16 +133,16 @@ C.C.]]></text>
 				<text><![CDATA[PRIMERA - OBJETO: el presente contrato tiene como objeto que el corredor asuma  a favor del cliente el cargo de gestionar, promover, facilitar la inclusión financiera, consecución de los servicios de crédito y afianzamiento para el logro del objeto del presente contrato, el corredor podrá acudir a cualquier tipo de organización licita obligándose a asistir y asesorar al firmante del presente documento en la estructuración financiera y la obligación de los servicios ofertados, aclarando que su gestión es de medio y no de resultados.
 
 SEGUNDA- OBLIGACIONES DEL CORREDOR: el corredor se obliga a:
-1. Poner todo su empeño, conocimiento y diligencia para buscar la celebración de un contrato de mutuo entre una entidad crediticia y el cliente.
-2. Asistir y asesorar al cliente en la implementación de estrategias para la preparación de propuestas pendientes a la celebración final del contrato mutuo.
-3. Guardar absoluta reserva y confidencialidad, tanto a nivel personal como respecto a sus empleados o dependientes de toda la información que sea suministrada por el cliente para cumplir con el encargo del objeto de este contrato.
-4. No delegar el presente contrato.
-5. Estudiar la capacidad de endeudamiento del cliente según los requerimientos del otorgante del crédito.
-6. Asesorar al cliente y prestarle acompañamiento en la fase previa a la celebración del contrato de mutuo.
+1.	Poner todo su empeño, conocimiento y diligencia para buscar la celebración de un contrato de mutuo entre una entidad crediticia y el cliente.
+2.	Asistir y asesorar al cliente en la implementación de estrategias para la preparación de propuestas pendientes a la celebración final del contrato mutuo.
+3.	Guardar absoluta reserva y confidencialidad, tanto a nivel personal como respecto a sus empleados o dependientes de toda la información que sea suministrada por el cliente para cumplir con el encargo del objeto de este contrato.
+4.	No delegar el presente contrato.
+5.	Estudiar la capacidad de endeudamiento del cliente según los requerimientos del otorgante del crédito.
+6.	Asesorar al cliente y prestarle acompañamiento en la fase previa a la celebración del contrato de mutuo.
 
 TERCERA- OBLIGACIONES DEL CLIENTE: EL CLIENTE se obliga a:
-1. Suministrar al corredor toda la información que sea solicitada y que sea relevante para el desarrollo y de ejecución de este contrato.
-2. Permitir la consulta en centrales de riesgo e información financiera.
+1.	Suministrar al corredor toda la información que sea solicitada y que sea relevante para el desarrollo y de ejecución de este contrato.
+2.	Permitir la consulta en centrales de riesgo e información financiera.
 Parágrafo: El cliente autoriza al corredor para que con cargo al presente contrato y para el cumplimiento de sus obligaciones, haga las consultas necesarias en bases de datos y centrales de información financiera con la finalidad de viabilizar el crédito u objeto del presente contrato.
 
 CUARTA - PRECIO Y FORMA DE PAGO: para el pago a favor del corredor por la prestación del servicio se establece un porcentaje del 10% que se aplicara sobre el valor del crédito solicitado y aprobado, como costos de los servicios adquiridos por el presente contrato, valor que queda sujeto a la consecución de los servicios requeridos. La forma de pago será de contado y pagadera al corredor una vez se desembolse el total del crédito aprobado, imputándose a favor del corredor un porcentaje aquí pactado.
