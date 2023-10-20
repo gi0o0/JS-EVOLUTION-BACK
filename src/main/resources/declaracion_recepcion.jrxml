@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="21"/>
-	<property name="ireport.y" value="336"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="25"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -193,7 +193,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Dejo (amos) constancia que la empresa TECNICAS Y GESTIONES S.A.S. con N.I.T . 900.181.152-1 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de TECNICAS Y GESTIONES S.A.S. Declaro (amos) que la cuota mensual a descontar no afecta el mínimo vital para la congrua subsistencia mía y de mi grupo familiar.
+				<text><![CDATA[Dejo (amos) constancia que la empresa TECNICAS Y GESTIONES S.A.S. con N.I.T . 901.184.952-4 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de TECNICAS Y GESTIONES S.A.S. Declaro (amos) que la cuota mensual a descontar no afecta el mínimo vital para la congrua subsistencia mía y de mi grupo familiar.
 
 
 ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></text>

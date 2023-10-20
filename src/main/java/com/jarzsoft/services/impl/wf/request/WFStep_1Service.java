@@ -85,7 +85,7 @@ public class WFStep_1Service implements IStepStrategy {
 
 		if (!o.getIsUpdate()) {
 			Parametro parametroList = parametroRepository.findByParamIdAndParamtext("CONSEC_PAGARE", "1");
-			solPagare = parametroList.getValue();
+			solPagare = "E" + parametroList.getValue();
 		}
 
 		DTOSolCredito out = solCreditoService
