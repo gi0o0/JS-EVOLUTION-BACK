@@ -1,5 +1,7 @@
 package com.jarzsoft.mapper.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOFodataso;
@@ -9,6 +11,7 @@ import com.jarzsoft.dto.DTOWF;
 import com.jarzsoft.dto.DTOWFCodeu;
 import com.jarzsoft.dto.DTOWFFinancialInfo;
 import com.jarzsoft.dto.DTOWFPqr;
+import com.jarzsoft.dto.DTOWFPrestamos;
 import com.jarzsoft.dto.DTOWWfMov;
 import com.jarzsoft.mapper.IWfMapper;
 import com.jarzsoft.util.Comunes;
@@ -302,6 +305,29 @@ public class WfMapper implements IWfMapper {
 		out.setFecUltMod(String.valueOf(in[9]));
 		out.setEntitie(String.valueOf(in[4]));
 		out.setNomTer(String.valueOf(in[11]));
+		out.setStateType(String.valueOf(in[12]));
+
+		return out;
+	}
+
+	@Override
+	public DTOWFPqr mapperDaoPrestamoToDto(List<DTOWFPrestamos> prestamos ,  DTOWFPqr out) {
+		
+		if(null!= prestamos && prestamos.size()>0) {
+			DTOWFPrestamos prestamo= prestamos.get(0);			
+			out.setIdArea(prestamo.getArea());
+			out.setCertificado(Comunes.stateDocsBoolean(prestamo.getIndCer()));
+			out.setCertificadoDeuda(Comunes.stateDocsBoolean(prestamo.getIndCerDeu()));
+			out.setDerechoPeticion(Comunes.stateDocsBoolean(prestamo.getIndDp()));
+			out.setEstadoCuenta(Comunes.stateDocsBoolean(prestamo.getIndEst()));
+			out.setPazSalvo(Comunes.stateDocsBoolean(prestamo.getIndPaz()));
+			out.setEntitie(prestamo.getClaAsoci());
+			
+			if(Comunes.stateDocsBoolean(prestamo.getIndDp())) {
+				out.setStateType("2");
+			}
+		
+		}				
 
 		return out;
 	}

@@ -40,6 +40,10 @@ public class W_Wf_Prestamo implements Serializable {
 	@Size(max = 10)
 	@Column(name = "cla_asoci")
 	private String claAsoci;
+	
+	@Size(max = 50)
+	@Column(name = "area")
+	private String area;
 
 	public W_Wf_Prestamo() {
 		super();
@@ -114,5 +118,15 @@ public class W_Wf_Prestamo implements Serializable {
 	public void setClaAsoci(String claAsoci) {
 		this.claAsoci = claAsoci;
 	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+	
+	
 
 }

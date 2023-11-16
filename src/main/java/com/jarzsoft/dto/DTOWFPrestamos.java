@@ -20,22 +20,25 @@ public class DTOWFPrestamos {
 
 	private String claAsoci;
 
+	private String area;
+
 	public DTOWFPrestamos() {
 		super();
 	}
 
 	public DTOWFPrestamos(Long idWf, Long numeroRadicacion, Long numeroCredito, String indEst, String indCer,
-			String indCerDeu, String indPaz, String indDp, String claAsoci) {
+			String indCerDeu, String indPaz, String indDp, String claAsoci, String area) {
 		super();
 		this.idWf = idWf;
 		this.numeroRadicacion = numeroRadicacion;
-		this.numeroCredito = numeroCredito;	
+		this.numeroCredito = numeroCredito;
 		this.indEst = indEst;
 		this.indCer = indCer;
 		this.indCerDeu = indCerDeu;
 		this.indPaz = indPaz;
 		this.indDp = indDp;
 		this.claAsoci = claAsoci;
+		this.area = area;
 	}
 
 	public Long getIdWf() {
@@ -108,6 +111,14 @@ public class DTOWFPrestamos {
 
 	public void setClaAsoci(String claAsoci) {
 		this.claAsoci = claAsoci;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
 	}
 
 }

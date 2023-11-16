@@ -10,13 +10,15 @@ public class DTOWFFilter {
 	private String sector;
 	private String idWf;
 	private String nitTer;
+	private String area;
+	private String state;
 
 	public DTOWFFilter() {
 		super();
 	}
 
 	public DTOWFFilter(String fechaInit, String fechaFin, String entitie, String asesor, String estado, String sector,
-			String idWf) {
+			String idWf, String nitTer, String area, String state) {
 		super();
 		this.fechaInit = fechaInit;
 		this.fechaFin = fechaFin;
@@ -25,6 +27,9 @@ public class DTOWFFilter {
 		this.estado = estado;
 		this.sector = sector;
 		this.idWf = idWf;
+		this.nitTer = nitTer;
+		this.area = area;
+		this.state = state;
 	}
 
 	public String getFechaInit() {
@@ -89,6 +94,22 @@ public class DTOWFFilter {
 
 	public void setNitTer(String nitTer) {
 		this.nitTer = nitTer;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 }

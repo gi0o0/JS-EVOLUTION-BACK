@@ -25,6 +25,7 @@ public class WWfPrestamoMapper implements IWWfPrestamoMapper {
 
 		W_Wf_Prestamo out = new W_Wf_Prestamo();
 		out.setClaAsoci(o.getClaAsoci());
+		out.setArea(o.getArea());
 		out.setIndCer(o.getIndCer());
 		out.setIndCerDeu(o.getIndCerDeu());
 		out.setIndDp(o.getIndDp());
@@ -40,6 +41,7 @@ public class WWfPrestamoMapper implements IWWfPrestamoMapper {
 
 		DTOWFPrestamos out = new DTOWFPrestamos();
 		out.setClaAsoci(o.getClaAsoci());
+		out.setArea(o.getArea());
 		out.setIndCer(o.getIndCer());
 		out.setIndCerDeu(o.getIndCerDeu());
 		out.setIndDp(o.getIndDp());
@@ -64,6 +66,7 @@ public class WWfPrestamoMapper implements IWWfPrestamoMapper {
 		out.setIdWf(Long.parseLong(o.getIdWf()));
 		out.setNumeroRadicacion(o.getNumeroRadicacion().longValue());
 		out.setNumeroCredito(Long.parseLong(numCredito.toString()));
+		out.setArea(o.getIdArea());
 
 		return out;
 	}
@@ -75,7 +78,7 @@ public class WWfPrestamoMapper implements IWWfPrestamoMapper {
 		o.stream().forEach(obj -> {
 			response.add(new DTOWFPrestamos(Long.parseLong(obj[0].toString().trim()), ((Double) obj[1]).longValue(),
 					Long.parseLong(obj[2].toString().trim()), String.valueOf(obj[3]), String.valueOf(obj[4]),
-					String.valueOf(obj[5]), String.valueOf(obj[6]), String.valueOf(obj[7]), String.valueOf(obj[8])));
+					String.valueOf(obj[5]), String.valueOf(obj[6]), String.valueOf(obj[7]), String.valueOf(obj[8]),String.valueOf(obj[9])));
 		});
 
 		return response;

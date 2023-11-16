@@ -247,4 +247,9 @@ public class Comunes {
 		return (value == null || value == false) ? "N" : "S";
 	}
 
+	public static Boolean stateDocsBoolean(String value) {
+
+		return (value == null || "N".equals(value)) ? false : true;
+	}
+
 }

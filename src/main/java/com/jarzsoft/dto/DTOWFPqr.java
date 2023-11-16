@@ -33,6 +33,7 @@ public class DTOWFPqr {
 	private String state;
 	private String walletType;
 	private String stateType;
+	private String idArea;
 	private List<DTOWWfMov> movs;
 
 	private Boolean estadoCuenta;
@@ -378,5 +379,15 @@ public class DTOWFPqr {
 	public void setFilesEmail(List<DTOFilesUser> filesEmail) {
 		this.filesEmail = filesEmail;
 	}
+
+	public String getIdArea() {
+		return idArea;
+	}
+
+	public void setIdArea(String idArea) {
+		this.idArea = idArea;
+	}
+	
+	
 
 }

@@ -21,6 +21,7 @@ import com.jarzsoft.service.IStepPqrStrategy;
 import com.jarzsoft.service.IUserService;
 import com.jarzsoft.service.IWFParameterService;
 import com.jarzsoft.service.IWFPqrService;
+import com.jarzsoft.service.IWFPrestamoService;
 import com.jarzsoft.service.IWWfMovService;
 
 @Service
@@ -39,16 +40,19 @@ public class WFPqrService implements IWFPqrService {
 
 	private final IUserService userService;
 
+	private final IWFPrestamoService prestamoService;
+
 	@Autowired
 	public WFPqrService(List<IStepPqrStrategy> stepStrategies, Map<String, IStepPqrStrategy> map, IWfMapper mapper,
-			IWWfMovService wWfMovService, IWFParameterService wpParameterService, IUserService userService) {
+			IWWfMovService wWfMovService, IWFParameterService wpParameterService, IUserService userService,
+			IWFPrestamoService prestamoService) {
 		super();
 		this.map = map;
 		this.mapper = mapper;
 		this.wWfMovService = wWfMovService;
 		this.wpParameterService = wpParameterService;
 		this.userService = userService;
-
+		this.prestamoService = prestamoService;
 		stepStrategies.forEach(step -> map.put(step.getType(), step));
 	}
 
@@ -71,7 +75,14 @@ public class WFPqrService implements IWFPqrService {
 		List<DTOWWfMov> o = wWfMovService.findMovByUser(user);
 
 		for (DTOWWfMov in : o) {
-			out.add(mapper.mapperDaoToDto(in));
+
+			DTOWFPqr pqr = mapper.mapperDaoToDto(in);
+
+			pqr = mapper.mapperDaoPrestamoToDto(
+					prestamoService.getByWfAndNumRad(in.getIdWf(), in.getNumeroRadicacion()), pqr);
+
+			out.add(pqr);
+
 		}
 
 		return out;
@@ -93,6 +104,8 @@ public class WFPqrService implements IWFPqrService {
 			DTOWWfMov mov = movs.get(0);
 			out = mapper.mapperDaoToDto(mov);
 			out = mapper.mapperDaoTerceroToDto(userService.findByNiter(mov.getNitTer()), out);
+			out = mapper.mapperDaoPrestamoToDto(
+					prestamoService.getByWfAndNumRad(mov.getIdWf(), mov.getNumeroRadicacion()), out);
 			out.setMovs(movs);
 		}
 
@@ -120,10 +133,18 @@ public class WFPqrService implements IWFPqrService {
 	@Override
 	public List<DTOWFPqr> listAllByFilters(DTOWFFilter f, String user) {
 
-		String consulta = "	select wm.numero_radicacion,wm.id_paso,wm.id_wf,wm.comentarios,wm.est_paso ,wm.id_wf_mov ,wm.nitter ,wf.nom_wf,step.nom_paso ,wm.fec_ult_mod,wm.usu_comercial, ter.nomTer "
-				+ "from w_wf_mov wm, w_wf wf,w_wf_pasos step , terceros ter where "
+		String consulta = "	select distinct wm.numero_radicacion,wm.id_paso,wm.id_wf,wm.comentarios,wm.est_paso ,wm.id_wf_mov ,wm.nitter ,wf.nom_wf,step.nom_paso ,wm.fec_ult_mod,wm.usu_comercial, ter.nomTer , wm.est_paso_mov  "
+				+ "from w_wf_mov wm, w_wf wf,w_wf_pasos step , terceros ter , w_wf_prestamo wwp where "
 				+ " wm.id_wf = wf.id_wf and (wm.id_wf = step.id_wf and wm.id_paso =step.id_paso ) and wm.id_wf < 4 and  wm.id_wf_mov = "
 				+ " (select MAX(wm1.id_wf_mov) from w_wf_mov wm1 where  wm1.id_wf < 4 and wm.numero_radicacion = wm1.numero_radicacion )  and ter.nitter =wm.nitter ";
+
+		if (null != f.getArea() && !"".equals(f.getArea())) {
+			consulta += " AND wwp.numero_radicacion = wm.numero_radicacion AND wwp.area='" + f.getArea() + "'";
+		}
+
+		if (null != f.getState() && !"".equals(f.getState())) {
+			consulta += " AND wm.est_paso_mov='" + f.getState() + "'";
+		}
 
 		if (null != f.getNitTer() && !"".equals(f.getNitTer())) {
 			consulta += " AND wm.nitter = '" + f.getNitTer() + "'";
