@@ -23,6 +23,8 @@ public interface IWFService {
 	List<DTOWFParameterStep> stepsbyNumRad(Integer idWf, Integer numRad);
 
 	List<DTOWalletUser> getPortafolio(String codTer);
+	
+	List<DTOWalletUser> getBriefcase(String user);
 
 	List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf);
 

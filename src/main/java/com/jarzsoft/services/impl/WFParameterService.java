@@ -5,20 +5,28 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.jarzsoft.dto.DTOStepsState;
+import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.dto.DTOWFParameter;
 import com.jarzsoft.dto.DTOWFParameterEst;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWFParameterStepAut;
 import com.jarzsoft.dto.DTOWFParameterStepDoc;
+import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Est;
 import com.jarzsoft.entities.W_Wf_EstPK;
 import com.jarzsoft.entities.W_Wf_Pasos;
 import com.jarzsoft.entities.W_Wf_PasosPK;
+import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.exception.UnauthorizedException;
 import com.jarzsoft.mapper.IWfEstParameterMapper;
 import com.jarzsoft.mapper.IWfParameterMapper;
@@ -58,6 +66,15 @@ public class WFParameterService implements IWFParameterService {
 	private final IWfEstParameterMapper mapperEst;
 
 	private final IUserService usuarioService;
+
+	@Value("${database.scheme.1}")
+	private String schemeFirst;
+
+	@Value("${database.scheme.2}")
+	private String schemeSecond;
+
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	@Autowired
 	public WFParameterService(W_WfRepository repository, W_Wf_PasosRepository daoStep, IWfParameterMapper mapper,
@@ -224,7 +241,7 @@ public class WFParameterService implements IWFParameterService {
 
 	@Override
 	public List<DTOWFParameterStep> stepsbyNumRad(Integer wf, Integer numRad) {
-		return mapperStep.mapperList(daoStep.findByWfByNumRad(wf,numRad));
+		return mapperStep.mapperList(daoStep.findByWfByNumRad(wf, numRad));
 
 	}
 
@@ -255,6 +272,27 @@ public class WFParameterService implements IWFParameterService {
 	@Override
 	public List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf) {
 		return mapperStep.mapperEntitieSteptStateToDto(dao.findSteptsState(codTer, numRad, idWf));
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DTOWalletUser> getBriefcase(String user) {
+		DTOTerceros tercero = usuarioService.findByNiter(user);
+		if (tercero == null)
+			throw new PageNoFoundException(Constantes.MESSAGE_USER_NO_FOUND);
+
+		Query querySchemeFirst = entityManager.createNativeQuery(W_WfRepository.getQueryBriefcase(schemeFirst, tercero.getCodTer().toString()));
+		List<Object[]> briefcaseSchemeFirst = querySchemeFirst.getResultList();
+		
+		Query querySchemeSecond = entityManager.createNativeQuery(W_WfRepository.getQueryBriefcase(schemeSecond, tercero.getCodTer().toString()));
+		List<Object[]> briefcaseSchemeSecond = querySchemeSecond.getResultList();
+		
+		List<Object[]> briefcase = new ArrayList<>();
+		briefcase.addAll(briefcaseSchemeFirst);
+		briefcase.addAll(briefcaseSchemeSecond);
+
+
+		return mapperStep.mapperEntitiePortafolioToDto(briefcase);
 	}
 
 }

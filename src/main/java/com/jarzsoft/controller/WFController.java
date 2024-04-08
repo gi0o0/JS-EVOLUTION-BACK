@@ -79,5 +79,10 @@ public class WFController {
 	public DTOWF createEst(@RequestBody DTOWF o, @RequestAttribute(name = "user") String user) {
 		return service.create(o, user);
 	}
+	
+	@GetMapping(value = "/{user}/briefcase", produces = "application/json")
+	public List<DTOWalletUser> getBriefcase(@PathVariable("user") String user) {
+		return service.getBriefcase(user);
+	}
 
 }

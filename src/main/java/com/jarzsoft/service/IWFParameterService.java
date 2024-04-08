@@ -45,6 +45,8 @@ public interface IWFParameterService {
 	DTOWFParameterStepAut validStepByUser(String wf, String step, String user);
 
 	List<DTOWalletUser> getPortafolio(String codTer);
+	
+	List<DTOWalletUser> getBriefcase(String user);
 
 	List<DTOWalletUser> getPortafolioWk1(String codTer);
 

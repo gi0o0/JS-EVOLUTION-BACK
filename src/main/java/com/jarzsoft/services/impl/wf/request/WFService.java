@@ -192,4 +192,9 @@ public class WFService implements IWFService {
 		return wpParameterService.getStepsState(codTer, numRad, idWf);
 	}
 
+	@Override
+	public List<DTOWalletUser> getBriefcase(String user) {
+		return wpParameterService.getBriefcase(user);
+	}
+
 }

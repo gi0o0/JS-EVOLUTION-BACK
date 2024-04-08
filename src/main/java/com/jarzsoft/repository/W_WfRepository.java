@@ -281,29 +281,147 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codeudor4  =  :codTer\r\n" + " and p.estado = 'C' and  p.saldo_capital = 0  \r\n"
 			+ " order by t.nomter, p.numero_credito", nativeQuery = true)
 	List<Object[]> findPortafolioWf2(@Param("codTer") String codTer);
-	
-	
+
 	@Query(value = "select wm.codter as codter, wm.numero_radicacion as numero_radicacion, wm.usu_movimiento as usuario,"
 			+ "wm.usu_comercial as usuarioC,  wm.fec_ult_mod as fecha, "
 			+ "wm.id_paso as id_paso, wm.comentarios as comentarios, wm.est_paso as est_paso, "
-			+ " '' as numero_credito, '' as numdocu, '' as tipodocu , wm.fec_crea "
-			+ "from w_wf_mov wm  "
-			+ "where wm.id_wf = :idWf "
-			+ "and wm.numero_radicacion = :numRad "
-			+ "union all "
+			+ " '' as numero_credito, '' as numdocu, '' as tipodocu , wm.fec_crea " + "from w_wf_mov wm  "
+			+ "where wm.id_wf = :idWf " + "and wm.numero_radicacion = :numRad " + "union all "
 			+ "select p.codter as codter, p.numero_radicacion as numero_radicacion, p.usu_crea  as usuario, "
 			+ "p.usu_ult_mod as usuarioC,  p.fec_ult_mod as fecha, "
 			+ "9  as id_paso, 'Racidaciòn del Crèdito' as comentarios, '99' as est_paso, "
 			+ " p.numero_credito as numero_credito, str(p.tip_doc_cont) as tipodocu, str(p.comprobante_contable) as numdocu , p.fec_crea  "
-			+ "from prestamo p "
-			+ "where p.numero_radicacion = :numRad and p.estado = 'A' union all "
+			+ "from prestamo p " + "where p.numero_radicacion = :numRad and p.estado = 'A' union all "
 			+ "select m.tercero as codter, ''  as numero_radicacion, m.usu_crea  as usuario, "
 			+ "m.usu_ult_mod as usuarioC,  m.fec_ult_mod as fecha, "
 			+ "10  as id_paso, m.concepto as comentarios, '99' as est_paso, "
-			+ " m.auxiliar2 as numero_credito, str(m.tipodocu), str(m.numdocu) , m.fec_crea "
-			+ "from movicon m "
+			+ " m.auxiliar2 as numero_credito, str(m.tipodocu), str(m.numdocu) , m.fec_crea " + "from movicon m "
 			+ "where auxiliar2 = (select p.numero_credito from prestamo p where p.numero_radicacion = :numRad and p.estado = 'A') "
 			+ "and tercero = :codTer and creditos > 0 order by id_paso", nativeQuery = true)
-	List<Object[]> findSteptsState(@Param("codTer") String codTer,@Param("numRad") String numRad,@Param("idWf") String idWf);
+	List<Object[]> findSteptsState(@Param("codTer") String codTer, @Param("numRad") String numRad,
+			@Param("idWf") String idWf);
 
+	static String getQueryBriefcase(String scheme, String codTer) {
+		String query = "select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
+				+ "(select nomter from " + scheme
+				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple, \r\n" + "(select nitter from "
+				+ scheme + "terceros where codter = p.codeudor1) as nitterCod, (select nomter from " + scheme
+				+ "terceros where codter = p.codeudor1) as nomTerCod,\r\n" + "(select fc1.nom_claaso from " + scheme
+				+ "foclaaso fc1, fodataso fod1 where  fc1.cod_inter = fod1.cla_asoci and fod1.cod_ter = p.codeudor1 ) as nom_claasoCod,\r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codter) as est_personaDeu, \r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codeudor1) as est_personaCoDeu, \r\n"
+				+ " CASE marcacion WHEN 'A' THEN 'Al día' WHEN 'P' THEN 'Provisionado' WHEN 'J' THEN 'Jurídico' WHEN 'M' THEN 'Moroso' WHEN 'C' THEN 'Castigado' ELSE 'Sin Marcación' end as marcacionn,\r\n"
+				+ "  p.v_solicita as Valor_moraK, p.v_solicita as Valor_moraI, p.v_solicita as Valor_moraO, p.v_solicita as Valor_mora, p.nro_cuotas as cuoMora,\r\n"
+				+ "  (p.v_solicita -   \r\n"
+				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
+				+ "	from " + scheme
+				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Deudor' as indicador\r\n"
+				+ " from " + scheme
+				+ "prestamo p, terceros t, fodataso f, fotipcre fo, foclaaso fc, fotipaso ft, ciudades c, apo_T_Cla_Aso_1 a\r\n"
+				+ " where p.codter = t.codter\r\n" + " and p.REFINANCIA = 0\r\n" + " and p.codter = f.cod_ter\r\n"
+				+ " and p.tipo_credito = fo.codigo_credito\r\n" + " and fc.cod_inter = f.cla_asoci\r\n"
+				+ " and ft.cod_inter = f.tip_asoci\r\n" + " and t.codiciud = c.codiciud\r\n"
+				+ " and f.cla_aso_1 = a.id_cla_aso_1\r\n" + " and p.codter =  :codTer\r\n"
+				+ " and p.estado = 'A' and  p.saldo_capital > 0  \r\n" + " union all\r\n"
+				+ " select p.numero_credito, p.saldo_capital, p.estado, t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
+				+ " (select nomter from  " + scheme
+				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
+				+ scheme + "terceros where codter = p.codeudor1) as nitterCod, (select nomter from " + scheme
+				+ "terceros where codter = p.codeudor1) as nomTerCod,\r\n" + "(select fc1.nom_claaso from " + scheme
+				+ "foclaaso fc1, fodataso fod1 where  fc1.cod_inter = fod1.cla_asoci and fod1.cod_ter = p.codeudor1 ) as nom_claasoCod,\r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codter) as est_personaDeu, \r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codeudor1) as est_personaCoDeu, \r\n"
+				+ " CASE marcacion WHEN 'A' THEN 'Al día' WHEN 'P' THEN 'Provisionado' WHEN 'J' THEN 'Jurídico' WHEN 'M' THEN 'Moroso' WHEN 'C' THEN 'Castigado' ELSE 'Sin Marcación' end as marcacionn,\r\n"
+				+ "  p.v_solicita as Valor_moraK, p.v_solicita as Valor_moraI, p.v_solicita as Valor_moraO, p.v_solicita as Valor_mora, p.nro_cuotas as cuoMora,\r\n"
+				+ "  (p.v_solicita -   \r\n"
+				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
+				+ "	from " + scheme
+				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador\r\n"
+				+ " from " + scheme
+				+ "prestamo p, terceros t, fodataso f, fotipcre fo, foclaaso fc, fotipaso ft, ciudades c, apo_T_Cla_Aso_1 a\r\n"
+				+ " where p.codter = t.codter and p.codeudor1 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
+				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
+				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
+				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
+				+ " and p.codeudor1  = :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+				+ " union all\r\n"
+				+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
+				+ " (select nomter from  " + scheme
+				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
+				+ scheme + "terceros where codter = p.codeudor2) as nitterCod, (select nomter from " + scheme
+				+ "terceros where codter = p.codeudor2) as nomTerCod,\r\n" + "(select fc1.nom_claaso from " + scheme
+				+ "foclaaso fc1, fodataso fod1 where  fc1.cod_inter = fod1.cla_asoci and fod1.cod_ter = p.codeudor2 ) as nom_claasoCod,\r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codter) as est_personaDeu, \r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codeudor2) as est_personaCoDeu, \r\n"
+				+ " CASE marcacion WHEN 'A' THEN 'Al día' WHEN 'P' THEN 'Provisionado' WHEN 'J' THEN 'Jurídico' WHEN 'M' THEN 'Moroso' WHEN 'C' THEN 'Castigado' ELSE 'Sin Marcación' end as marcacionn,\r\n"
+				+ "  p.v_solicita as Valor_moraK, p.v_solicita as Valor_moraI, p.v_solicita as Valor_moraO, p.v_solicita as Valor_mora, p.nro_cuotas as cuoMora,\r\n"
+				+ "  (p.v_solicita -   \r\n"
+				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
+				+ "	from " + scheme
+				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador\r\n"
+				+ " from " + scheme
+				+ "prestamo p, terceros t, fodataso f, fotipcre fo, foclaaso fc, fotipaso ft, ciudades c, apo_T_Cla_Aso_1 a\r\n"
+				+ " where p.codter = t.codter and p.codeudor2 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
+				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
+				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
+				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
+				+ " and p.codeudor2  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+				+ " union all\r\n"
+				+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
+				+ " (select nomter from  " + scheme
+				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
+				+ scheme + "terceros where codter = p.codeudor3) as nitterCod, (select nomter from " + scheme
+				+ "terceros where codter = p.codeudor3) as nomTerCod,\r\n" + "(select fc1.nom_claaso from " + scheme
+				+ "foclaaso fc1, fodataso fod1 where  fc1.cod_inter = fod1.cla_asoci and fod1.cod_ter = p.codeudor3 ) as nom_claasoCod,\r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codter) as est_personaDeu, \r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codeudor3) as est_personaCoDeu, \r\n"
+				+ " CASE marcacion WHEN 'A' THEN 'Al día' WHEN 'P' THEN 'Provisionado' WHEN 'J' THEN 'Jurídico' WHEN 'M' THEN 'Moroso' WHEN 'C' THEN 'Castigado' ELSE 'Sin Marcación' end as marcacionn,\r\n"
+				+ "  p.v_solicita as Valor_moraK, p.v_solicita as Valor_moraI, p.v_solicita as Valor_moraO, p.v_solicita as Valor_mora, p.nro_cuotas as cuoMora,\r\n"
+				+ "  (p.v_solicita -   \r\n"
+				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
+				+ "	from " + scheme
+				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador\r\n"
+				+ " from " + scheme
+				+ "prestamo p, terceros t, fodataso f, fotipcre fo, foclaaso fc, fotipaso ft, ciudades c, apo_T_Cla_Aso_1 a\r\n"
+				+ " where p.codter = t.codter and p.codeudor3 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
+				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
+				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
+				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
+				+ " and p.codeudor3  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+				+ " union all\r\n"
+				+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
+				+ " (select nomter from  " + scheme
+				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
+				+ scheme + "terceros where codter = p.codeudor4) as nitterCod, (select nomter from " + scheme
+				+ "terceros where codter = p.codeudor4) as nomTerCod,\r\n" + "(select fc1.nom_claaso from " + scheme
+				+ "foclaaso fc1, fodataso fod1 where  fc1.cod_inter = fod1.cla_asoci and fod1.cod_ter = p.codeudor4 ) as nom_claasoCod,\r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codter) as est_personaDeu, \r\n"
+				+ " ( select CASE Ind_est_pesona WHEN '1' THEN 'Activo /Laborando' WHEN '2' THEN 'Retirado' WHEN '3' THEN 'Fallecido' ELSE 'Sin Marcación' end from "
+				+ scheme + "terceros where codter = p.codeudor4) as est_personaCoDeu, \r\n"
+				+ " CASE marcacion WHEN 'A' THEN 'Al día' WHEN 'P' THEN 'Provisionado' WHEN 'J' THEN 'Jurídico' WHEN 'M' THEN 'Moroso' WHEN 'C' THEN 'Castigado' ELSE 'Sin Marcación' end as marcacionn,\r\n"
+				+ "  p.v_solicita as Valor_moraK, p.v_solicita as Valor_moraI, p.v_solicita as Valor_moraO, p.v_solicita as Valor_mora, p.nro_cuotas as cuoMora,\r\n"
+				+ "  (p.v_solicita -   \r\n"
+				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
+				+ "	from " + scheme
+				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador\r\n"
+				+ " from " + scheme
+				+ "prestamo p, terceros t, fodataso f, fotipcre fo, foclaaso fc, fotipaso ft, ciudades c, apo_T_Cla_Aso_1 a\r\n"
+				+ " where p.codter = t.codter and p.codeudor4 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
+				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
+				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
+				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
+				+ " and p.codeudor4  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+				+ " order by t.nomter, p.numero_credito";
+		query = query.replaceAll(":codTer", "'" + codTer + "'");
+		return query;
+	}
 }
