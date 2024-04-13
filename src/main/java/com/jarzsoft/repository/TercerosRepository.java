@@ -43,5 +43,11 @@ public interface TercerosRepository extends JpaRepository<Terceros, Long> {
 
 	@Query(value = "select * from terceros where codter = (select DISTINCT codter from foclaaso f where cod_inter = (select DISTINCT cla_asoci from w_wf_prestamo wwp where numero_radicacion =:numRad and id_wf =:idWf and ind_dp ='S'))", nativeQuery = true)
 	Terceros findTerceroByFodaclasoAndPrestamoDP(@Param("numRad") String numRad, @Param("idWf") String idWf);
+	
+	static String findTerceroByNitterAndScheme(String scheme, String nitter) {
+		String query = "SELECT codter FROM " + scheme + "Terceros WHERE nitter = :nitter";
+		query = query.replaceAll(":nitter", "'" + nitter + "'");
+		return query;
+	}
 
 }

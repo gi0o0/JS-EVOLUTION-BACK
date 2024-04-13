@@ -17,4 +17,6 @@ public interface ITercerosService {
 	String modificarClaveLink(String nitTer, String hash);
 
 	DTOTerceros findByHash(String hash);
+	
+	DTOTerceros findByNiterAndSchema(String scheme, String nitTer);
 }

@@ -1,13 +1,20 @@
 package com.jarzsoft.services.impl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.entities.Cfi_t_sanciones;
+import com.jarzsoft.entities.SolCredito;
 import com.jarzsoft.entities.Terceros;
 import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.ITercerosMapper;
@@ -24,6 +31,9 @@ public class TercerosService implements ITercerosService {
 	private final ITercerosMapper mapper;
 
 	private final Cfi_t_sancionesRepository sancionesRepository;
+
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	@Autowired
 	public TercerosService(TercerosRepository tercerosRepository, ITercerosMapper mapper,
@@ -83,6 +93,22 @@ public class TercerosService implements ITercerosService {
 	@Override
 	public DTOTerceros findByHash(String hash) {
 		return mapper.mapperEntitieToDao(tercerosRepository.findByHash(hash));
+	}
+
+	@Override
+	public DTOTerceros findByNiterAndSchema(String scheme, String nitTer) {
+		DTOTerceros out = null;
+		Query queryScheme = entityManager
+				.createNativeQuery(TercerosRepository.findTerceroByNitterAndScheme(scheme, nitTer));
+		try {
+			BigDecimal codTer = (BigDecimal) queryScheme.getSingleResult();
+			out = new DTOTerceros();
+			out.setCodTer(codTer);
+		} catch (Exception e) {
+			return out;
+		}
+
+		return out;
 	}
 
 }

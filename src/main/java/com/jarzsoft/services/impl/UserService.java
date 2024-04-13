@@ -68,6 +68,11 @@ public class UserService implements IUserService {
 	}
 
 	@Override
+	public DTOTerceros findByNiterAndSchema(String scheme, String nitTer) {
+		return tercerosService.findByNiterAndSchema(scheme, nitTer);
+	}
+
+	@Override
 	public DTOUser create(DTOUser user) {
 
 		Optional<W_Bas_Usuario> oldUser = usuarioRepository.findById(user.getId());

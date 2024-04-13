@@ -10,7 +10,7 @@ public interface IUserService {
 	String getInternalUser(String id);
 
 	List<DTOUser> listAll();
-	
+
 	List<DTOUser> sync();
 
 	DTOUser create(DTOUser user);
@@ -18,5 +18,7 @@ public interface IUserService {
 	DTOUser updateProfile(DTOUser user);
 
 	DTOTerceros findByNiter(String nitTer);
+
+	DTOTerceros findByNiterAndSchema(String scheme, String nitTer);
 
 }

@@ -12,6 +12,8 @@ public class DTOWalletUser {
 	private String estPersonaDeu;
 	private String estPersonaCoDeu;
 	private String estCredito;
+	private String nomTer;
+	private String scheme;
 
 	public DTOWalletUser() {
 		super();
@@ -30,6 +32,40 @@ public class DTOWalletUser {
 		this.estPersonaDeu = estPersonaDeu;
 		this.estPersonaCoDeu = estPersonaCoDeu;
 		this.estCredito = estCredito;
+	}
+
+	public DTOWalletUser(String numeroCredito, String saldoCapital, String saldoK, String indicador, String nomClaaso,
+			String nomClaasoCod, String marcacionn, String estPersonaDeu, String estPersonaCoDeu, String estCredito,
+			String nomTer, String scheme) {
+		super();
+		this.numeroCredito = numeroCredito;
+		this.saldoCapital = saldoCapital;
+		this.saldoK = saldoK;
+		this.indicador = indicador;
+		this.nomClaaso = nomClaaso;
+		this.nomClaasoCod = nomClaasoCod;
+		this.marcacionn = marcacionn;
+		this.estPersonaDeu = estPersonaDeu;
+		this.estPersonaCoDeu = estPersonaCoDeu;
+		this.estCredito = estCredito;
+		this.nomTer = nomTer;
+		this.scheme = scheme;
+	}
+
+	public String getNomTer() {
+		return nomTer;
+	}
+
+	public void setNomTer(String nomTer) {
+		this.nomTer = nomTer;
+	}
+
+	public String getScheme() {
+		return scheme;
+	}
+
+	public void setScheme(String scheme) {
+		this.scheme = scheme;
 	}
 
 	public String getNumeroCredito() {

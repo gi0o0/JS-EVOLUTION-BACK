@@ -20,7 +20,6 @@ import com.jarzsoft.dto.DTOWFParameterEst;
 import com.jarzsoft.dto.DTOWFParameterStep;
 import com.jarzsoft.dto.DTOWFParameterStepAut;
 import com.jarzsoft.dto.DTOWFParameterStepDoc;
-import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.dto.DTOWalletUser;
 import com.jarzsoft.entities.W_Wf_Est;
 import com.jarzsoft.entities.W_Wf_EstPK;
@@ -274,25 +273,28 @@ public class WFParameterService implements IWFParameterService {
 		return mapperStep.mapperEntitieSteptStateToDto(dao.findSteptsState(codTer, numRad, idWf));
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<DTOWalletUser> getBriefcase(String user) {
-		DTOTerceros tercero = usuarioService.findByNiter(user);
+
+		List<Object[]> briefcase = new ArrayList<>();
+		briefcase.addAll(getPortafolioByScheme(schemeFirst, user));
+		briefcase.addAll(getPortafolioByScheme(schemeSecond, user));
+
+		return mapperStep.mapperEntitiePortafolioToDto(briefcase);
+	}
+
+	@SuppressWarnings({ "unchecked" })
+	private List<Object[]> getPortafolioByScheme(String scheme, String user) {
+
+		DTOTerceros tercero = usuarioService.findByNiterAndSchema(scheme, user);
 		if (tercero == null)
 			throw new PageNoFoundException(Constantes.MESSAGE_USER_NO_FOUND);
 
-		Query querySchemeFirst = entityManager.createNativeQuery(W_WfRepository.getQueryBriefcase(schemeFirst, tercero.getCodTer().toString()));
-		List<Object[]> briefcaseSchemeFirst = querySchemeFirst.getResultList();
-		
-		Query querySchemeSecond = entityManager.createNativeQuery(W_WfRepository.getQueryBriefcase(schemeSecond, tercero.getCodTer().toString()));
-		List<Object[]> briefcaseSchemeSecond = querySchemeSecond.getResultList();
-		
-		List<Object[]> briefcase = new ArrayList<>();
-		briefcase.addAll(briefcaseSchemeFirst);
-		briefcase.addAll(briefcaseSchemeSecond);
+		Query querySchemeSecond = entityManager
+				.createNativeQuery(W_WfRepository.getQueryBriefcase(scheme, tercero.getCodTer().toString()));
 
+		return querySchemeSecond.getResultList();
 
-		return mapperStep.mapperEntitiePortafolioToDto(briefcase);
 	}
 
 }
