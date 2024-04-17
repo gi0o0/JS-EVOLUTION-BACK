@@ -286,14 +286,15 @@ public class WFParameterService implements IWFParameterService {
 	@SuppressWarnings({ "unchecked" })
 	private List<Object[]> getPortafolioByScheme(String scheme, String user) {
 
+		List<Object[]> portafolio = new ArrayList<>();
 		DTOTerceros tercero = usuarioService.findByNiterAndSchema(scheme, user);
-		if (tercero == null)
-			throw new PageNoFoundException(Constantes.MESSAGE_USER_NO_FOUND);
+		if (tercero != null) {
+			Query querySchemeSecond = entityManager
+					.createNativeQuery(W_WfRepository.getQueryBriefcase(scheme, tercero.getCodTer().toString()));
+			portafolio = querySchemeSecond.getResultList();
+		}
 
-		Query querySchemeSecond = entityManager
-				.createNativeQuery(W_WfRepository.getQueryBriefcase(scheme, tercero.getCodTer().toString()));
-
-		return querySchemeSecond.getResultList();
+		return portafolio;
 
 	}
 
