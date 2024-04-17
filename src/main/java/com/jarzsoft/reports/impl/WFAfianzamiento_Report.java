@@ -50,7 +50,10 @@ public class WFAfianzamiento_Report implements IReportStrategy {
 
 		param.put("numeroRadicacion", String.valueOf(o.getNumeroRadicacion()));
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
-		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
+		//param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
+		param.put("nomTer"," " );
+		param.put("nom_tercero", o.getNomTer() );
+		
 		param.put("feExp", o.getFeExp());
 		param.put("fecCump", o.getFecCump());
 		param.put("nitter", o.getNitter());
@@ -88,6 +91,17 @@ public class WFAfianzamiento_Report implements IReportStrategy {
 		param.put("ref2Cel2", "");
 		param.put("ref3Cel2", "");
 		param.put("fecha", now);
+		
+		param.put("priApellidoC",  "");
+		param.put("nom_terceroC",  "");
+		param.put("nitterC",  "");
+		
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
+			param.put("priApellidoC", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
+			param.put("nom_terceroC", o.getCodeu().getNomTer() );
+			param.put("nitterC", o.getCodeu().getNitter());
+			
+		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_AFI, param,
 				EnumReport.TIPO_REPORTE.REPORT_AFIANZAMIENTO.getName(), o.getNumeroRadicacion() + "");

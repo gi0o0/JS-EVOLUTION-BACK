@@ -116,7 +116,8 @@ public class WFStep_3Service implements IStepStrategy {
 		BigDecimal ranInt1 = new BigDecimal("0");
 		Fotipcre fotipcre = fotipcreRepository.findByCod(o.getFoticrep());
 		if (null != fotipcre) {
-			ranInt1 = fotipcre.getRanInt1().divide(new BigDecimal("100"));
+			//ranInt1 = fotipcre.getRanInt1().divide(new BigDecimal("100")); //jarz14/04/2024
+			ranInt1 = fotipcre.getDespor1().divide(new BigDecimal("100"));
 		}
 
 		valor1 = montoSolicitado.multiply(ranInt1).round(new MathContext(500, RoundingMode.HALF_UP));

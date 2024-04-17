@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="821"/>
+	<property name="ireport.y" value="458"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -145,7 +145,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement x="213" y="400" width="57" height="63" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
@@ -184,7 +184,7 @@
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="316" y="442" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
@@ -209,14 +209,14 @@
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="280" y="433" width="46" height="11" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="310" y="412" width="163" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3486364a-227a-470c-ba82-2314ea5cacd0"/>
@@ -561,7 +561,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="51" y="430" width="156" height="11" uuid="ce89e2ea-faca-4b8f-b38f-cd5d584e95ef"/>
+				<reportElement key="textField" x="51" y="398" width="156" height="11" uuid="ce89e2ea-faca-4b8f-b38f-cd5d584e95ef"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -575,7 +575,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="320" y="431" width="145" height="11" uuid="510af9e9-4582-440a-9c06-93131c5c2f13"/>
+				<reportElement key="textField" x="320" y="399" width="145" height="11" uuid="510af9e9-4582-440a-9c06-93131c5c2f13"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -623,7 +623,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="61" y="892" width="156" height="11" uuid="a0c09252-7507-451b-9174-6dfc87ec06c8"/>
+				<reportElement key="textField" x="61" y="860" width="156" height="11" uuid="a0c09252-7507-451b-9174-6dfc87ec06c8"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -634,7 +634,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="343" y="597" width="199" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9af5b51c-eb68-40a3-8923-5fff7687fc70"/>
@@ -720,7 +720,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="300" y="542" width="14" height="11" uuid="eb117628-5743-4402-af80-8b965ab414d9"/>
@@ -975,18 +975,18 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[identificados con cedula de ciudadanía número]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="290" y="891" width="46" height="11" uuid="d2774838-ba1d-4cfc-b4fa-fc4fade1e9ac"/>
+				<reportElement key="staticText-4" x="290" y="891" width="30" height="11" uuid="d2774838-ba1d-4cfc-b4fa-fc4fade1e9ac"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="24" y="893" width="46" height="11" uuid="04cf41cb-f3f5-4e90-87b8-934ffad26dd1"/>
+				<reportElement key="staticText-4" x="24" y="893" width="31" height="11" uuid="04cf41cb-f3f5-4e90-87b8-934ffad26dd1"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="282" y="569" width="71" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="c3b45f5f-7277-45b6-a259-b433f4a8b5e3"/>
@@ -1115,7 +1115,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="330" y="889" width="145" height="11" uuid="53e13ce1-94cd-446f-b31e-4bdc6e906a06"/>
+				<reportElement key="textField" x="330" y="863" width="145" height="11" uuid="53e13ce1-94cd-446f-b31e-4bdc6e906a06"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>

@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="25"/>
+	<property name="ireport.y" value="976"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -127,7 +127,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre deudor solidario]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement x="213" y="598" width="55" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
@@ -140,7 +140,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[C.C. deudor solidario]]></text>
+				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="14" y="611" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0807478b-bc98-486f-acac-c0d71e13d590"/>
@@ -159,7 +159,7 @@
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma deudor solidario]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement x="482" y="598" width="55" height="71" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
@@ -203,7 +203,7 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma deudor solidario]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="284" y="657" width="193" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3916c25a-bd58-489b-90cb-e8ece6095ca0"/>
@@ -216,7 +216,7 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[C.C. deudor solidario]]></text>
+				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="284" y="610" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="370e2eff-eb75-4bda-aa48-0826d000057c"/>
@@ -236,7 +236,7 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre deudor solidario]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="284" y="557" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="b881093e-2ca7-454a-a35f-3d5463b9c4ec"/>

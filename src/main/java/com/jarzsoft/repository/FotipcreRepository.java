@@ -13,7 +13,7 @@ import com.jarzsoft.entities.Fotipcre;
 @Repository
 public interface FotipcreRepository extends JpaRepository<Fotipcre, String> {
 
-	@Query(value = "select codigo_credito,nom_evolution,ran_int_1 from fotipcre where Activa = 'S' order by nom_evolution", nativeQuery = true)
+	@Query(value = "select codigo_credito,nom_evolution,ran_int_1,des_por_1 from fotipcre where Activa = 'S' order by nom_evolution", nativeQuery = true)
 	List<Fotipcre> findAll();
 
 	@Query(value = "select * from fotipcre where codigo_credito =:linea", nativeQuery = true)

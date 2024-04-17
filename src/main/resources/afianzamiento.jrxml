@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solicitud" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.948717100000016"/>
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
@@ -43,6 +43,10 @@
 	<parameter name="ref2Cel2" class="java.lang.String"/>
 	<parameter name="ref3Cel2" class="java.lang.String"/>
 	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="nom_tercero" class="java.lang.String"/>
+	<parameter name="nom_terceroC" class="java.lang.String"/>
+	<parameter name="nitterC" class="java.lang.String"/>
+	<parameter name="priApellidoC" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="limite" class="java.lang.String"/>
 	<field name="deducible" class="java.lang.String"/>
@@ -90,7 +94,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="236" y="16" width="1" height="10" forecolor="#000000" uuid="ccc82edc-bdff-4f79-9190-24ba9d2ffdf6"/>
+				<reportElement key="line-2" x="266" y="16" width="1" height="10" forecolor="#000000" uuid="ccc82edc-bdff-4f79-9190-24ba9d2ffdf6"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -105,16 +109,16 @@
 					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[DATOS DEUDOR]]></text>
+				<text><![CDATA[DATOS DEUDORES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="17" width="219" height="9" uuid="35d93fea-5e86-49b7-a804-8a3b6bf8a235"/>
+				<reportElement key="staticText-16" x="15" y="17" width="70" height="9" uuid="35d93fea-5e86-49b7-a804-8a3b6bf8a235"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Número(s) de la(s) solicitud(es) de crédito afianzados(s):]]></text>
+				<text><![CDATA[Nombre (Deudor)]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="16" width="1" height="657" forecolor="#000000" uuid="9221b6ce-c8fe-422a-8fce-090e434732f9"/>
@@ -129,247 +133,35 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="11" y="56" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7a78cffe-8bc7-4766-9c47-12b984d57b7b"/>
+				<reportElement key="line-1" x="11" y="47" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7a78cffe-8bc7-4766-9c47-12b984d57b7b"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="228" y="37" width="1" height="19" forecolor="#000000" uuid="fd02297d-d246-4b11-99a6-edd620cbd442"/>
+				<reportElement key="line-1" x="11" y="60" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ab6b07c0-a403-4ce0-8554-4ee5e1c3a9ab"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="89" y="27" width="431" height="9" uuid="e6bb17e5-3654-4a19-8603-b05d1017a262"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement key="line-2" x="410" y="39" width="1" height="18" forecolor="#000000" uuid="08e78ac9-ee73-4169-8fe8-4d0cae9b5b5d"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="234" y="38" width="91" height="9" uuid="d4503bfd-f8f4-419a-94f3-0406e4be0310"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="7" isStrikeThrough="false"/>
-				</textElement>
-				<text><![CDATA[Fecha Nacimiento:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="234" y="47" width="168" height="9" uuid="882265fb-1d5a-4c37-a64b-1ab0ba3fcf54"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{fecCump}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="60" y="58" width="98" height="9" uuid="b31c7e20-1c1d-4aae-a1b7-928d6e4e0be7"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement key="line-1" x="11" y="67" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ab6b07c0-a403-4ce0-8554-4ee5e1c3a9ab"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-2" x="157" y="57" width="1" height="10" forecolor="#000000" uuid="e16271e0-c09b-4c3e-b2d2-a89993e6a435"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="317" y="68" width="209" height="9" uuid="33187259-d970-4e7d-8c9a-da74da7dd957"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{mailTer}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="241" y="58" width="285" height="9" uuid="624b4358-3d7a-419b-8105-1ac46820b871"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{dirTerpal}]]></textFieldExpression>
-			</textField>
 			<line>
 				<reportElement key="line-1" x="11" y="87" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="915cc8ab-dc3b-4627-85c9-99c721c843cf"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="140" y="78" width="76" height="9" uuid="41e9d3f9-daab-452e-84f4-6842e53a6780"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{barrio}]]></textFieldExpression>
-			</textField>
 			<line>
-				<reportElement key="line-2" x="189" y="68" width="1" height="9" forecolor="#000000" uuid="be22cd6f-efa8-417c-b347-9126b7b1c563"/>
+				<reportElement key="line-1" x="11" y="99" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e67194f8-5865-472a-a77b-c5927fe77637"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="47" y="78" width="62" height="9" uuid="378fc187-519d-44b1-aadc-563907e3a3f3"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{codiCiud}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement key="line-1" x="11" y="96" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e67194f8-5865-472a-a77b-c5927fe77637"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-2" x="249" y="88" width="1" height="8" forecolor="#000000" uuid="9a853f80-f665-47c4-b40b-d96134859ebd"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="358" y="87" width="155" height="9" uuid="4324a4f7-abb8-4df2-a622-21e2c6c9e7c9"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{feExp}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="283" y="113" width="240" height="9" uuid="abb5c9ad-1212-4eaf-952d-b7f6bb8cd241"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{tipCta}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="47" y="113" width="194" height="9" uuid="1b173550-934d-44ed-999f-10f5483f6050"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{entBan}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="97" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="7b9acdc5-5dc9-4c66-9afa-0a9677f6020f"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[INFORMACIÓN BANCARIA]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="205" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="927cf317-16ec-4aea-8365-e8c0f17dc92a"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="154" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="3ce0d422-36df-461f-9635-8a3415b7c6f9"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[REFERENCIAS]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="89" y="186" width="431" height="9" uuid="7126e0c8-bbe4-419f-8b3e-9ec7dea4b1d9"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refNombre1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="277" y="206" width="235" height="9" uuid="c3f609de-d61b-4366-96e1-9a305edd092d"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refMail1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="91" y="196" width="134" height="9" uuid="97de1b21-cb09-41e5-aff1-30f2b14c0fc2"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refCel1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="94" y="231" width="426" height="9" uuid="98db3682-ee5b-44e4-b699-0a6592c50ef6"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refNombre2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="276" y="250" width="236" height="9" uuid="ee9a79e5-acb7-49cd-9fc5-8ae257a00df0"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refMail2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="94" y="241" width="131" height="9" uuid="412c7869-6f13-4b2e-9001-9a13ca9f2cbf"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refCel2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="90" y="276" width="430" height="9" uuid="a6cbfb59-74ab-44ce-a19d-8654e8c52507"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refNombre3}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="276" y="296" width="236" height="9" uuid="080d0739-f097-4868-95ee-fd7e9a65a3b6"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refMail3}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="90" y="286" width="135" height="9" uuid="f108eb6e-a553-444a-a39c-ac5cdd9bb0a9"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{refCel3}]]></textFieldExpression>
-			</textField>
-			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="244" y="16" width="251" height="11" forecolor="#000000" backcolor="#FFFFFF" uuid="158d0a08-cbed-4bf1-8592-038b68630efe"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="Arial" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{numeroRadicacion}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement key="staticText-16" x="15" y="27" width="70" height="9" uuid="3f3d1870-bb1e-44f4-94b3-8fe12cf7c955"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Apellidos y Nombre:]]></text>
+				<text><![CDATA[Apellidos]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="10" y="36" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2462069e-26ce-4159-9ecd-3cd185b407b1"/>
@@ -378,687 +170,50 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="38" width="71" height="18" uuid="f7a28f22-104c-4f0f-8430-ad9b63edb84b"/>
+				<reportElement key="staticText-16" x="15" y="50" width="70" height="9" uuid="1e81815a-824b-478e-9ab2-a2f3623d0009"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Lugar de Nacimiento:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="85" y="38" width="140" height="18" uuid="97b0cae3-26c4-48a1-a154-0b47e38c09a7"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{lugar_nacimiento}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="420" y="38" width="30" height="9" uuid="396ffed3-6948-46d3-8cf1-b206adfec3b6"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="7" isStrikeThrough="false"/>
-				</textElement>
-				<text><![CDATA[Sexo: F]]></text>
+				<text><![CDATA[Operador]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="474" y="38" width="30" height="9" uuid="8187cd29-40c2-4e24-8c30-e8605a2c1fab"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="7" isStrikeThrough="false"/>
-				</textElement>
-				<text><![CDATA[Sexo: M]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="449" y="37" width="11" height="10" uuid="915a248e-311e-4dad-80b9-959df7161783"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</rectangle>
-			<rectangle>
-				<reportElement x="504" y="37" width="11" height="10" uuid="84d3d0a6-9987-4e5b-861a-f0bef396128e"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</rectangle>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="449" y="37" width="11" height="10" uuid="cb1ceba8-8a68-4325-a5a1-beb8d2f921bc"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{sex_f}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="504" y="37" width="11" height="10" uuid="0fb28692-7e82-4a3d-b3bc-b05d61894f14"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{sex_m}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="58" width="44" height="9" uuid="1e81815a-824b-478e-9ab2-a2f3623d0009"/>
+				<reportElement key="staticText-16" x="15" y="63" width="76" height="9" uuid="9e2d5d68-05f9-4371-8a42-2cec08898afe"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[C.C. No.]]></text>
+				<text><![CDATA[Monto Crédito Pesos]]></text>
 			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="160" y="58" width="82" height="9" uuid="ba2e9c0a-8682-4d71-9eb4-a9ca8b7450d9"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Direcciòn de Residencia]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="68" width="76" height="9" uuid="9e2d5d68-05f9-4371-8a42-2cec08898afe"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Teléfono Residencia:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="90" y="68" width="97" height="9" uuid="69ea1583-ea17-4bdb-b2aa-183aa1a8d9fa"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{telTer}]]></textFieldExpression>
-			</textField>
 			<line>
-				<reportElement key="line-1" x="11" y="77" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a674fe7f-f7c9-49e4-a629-2e7babcae144"/>
+				<reportElement key="line-1" x="11" y="74" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a674fe7f-f7c9-49e4-a629-2e7babcae144"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="192" y="68" width="124" height="9" uuid="572e5dbf-146d-4f2a-b8cc-2d159f815847"/>
+				<reportElement key="staticText-16" x="15" y="78" width="76" height="9" uuid="aaa4e15e-b00f-4de1-b3de-10221544332e"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Correo(s) electrónico(s) personal(es)]]></text>
+				<text><![CDATA[Plazo Inicial Meses]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="78" width="33" height="9" uuid="aaa4e15e-b00f-4de1-b3de-10221544332e"/>
+				<reportElement key="staticText-16" x="15" y="88" width="74" height="9" uuid="e824ff3e-a0a2-4105-829f-c6fb17a44d2d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Ciudad:]]></text>
+				<text><![CDATA[Pagaré]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="115" y="78" width="25" height="9" uuid="3dff8e5a-8033-4b27-a7a9-1cc6de8b5997"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Barrio]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="110" y="77" width="1" height="10" forecolor="#000000" uuid="67370205-3c6f-4852-a162-de41b63527bb"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-2" x="220" y="77" width="1" height="11" forecolor="#000000" uuid="f9dffdca-2dcf-46e4-a964-04939aeeb49f"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="222" y="78" width="36" height="9" uuid="2ffdaac7-b491-424f-9ed4-9c849c80eb15"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Empresa]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="258" y="78" width="107" height="9" uuid="e8c8b727-73b2-416d-bd7c-42c9d98ea91c"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="87" width="58" height="9" uuid="e824ff3e-a0a2-4105-829f-c6fb17a44d2d"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[No. de Celulares:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="72" y="87" width="172" height="9" uuid="c0e2d63f-1f6a-46df-b29e-8d11b81a778f"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{telTers}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="252" y="87" width="105" height="9" uuid="ab7f8627-3082-4080-8da6-de319faacfcf"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Fecha expediciòn identificaciòn:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="113" width="32" height="9" uuid="25c9efec-f510-4245-8adb-7facbda6797a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Banco:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="122" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="01cc4bba-0702-4c31-90a0-629456430d9d"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="247" y="113" width="32" height="9" uuid="e6d6ccd2-4351-46b7-8520-14d9f09bf681"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Cuenta:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="243" y="112" width="1" height="41" forecolor="#000000" uuid="5fb23d81-94c8-4062-bc6d-87360a7ca6fb"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="124" width="75" height="9" uuid="42275996-c432-4fc6-a13a-5a0e04842a1d"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Número de Cuenta:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="91" y="124" width="150" height="9" uuid="8dac3b1c-d1ce-4f9a-8dce-3114c92fc1ff"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{numCta}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="247" y="124" width="32" height="9" uuid="ac832547-d59b-4b9b-b564-8c1e356c7509"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Cuenta:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="133" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="51b046ee-6914-4f32-b3e7-d14167c60487"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="134" width="33" height="9" uuid="f455357d-a4d8-4803-a795-629a17a85dde"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Banco:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="247" y="134" width="32" height="9" uuid="38a8d3a4-7ad1-4099-b91a-22f9c46886d5"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Cuenta:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="12" y="143" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="673fe36d-b2ff-45cf-adbc-b44d522dd75c"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="144" width="73" height="9" uuid="d90250c5-cc59-456a-9f01-347eb93beaf4"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Número de Cuenta:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="247" y="144" width="33" height="9" uuid="80dc2c77-8b8d-4fc1-9901-6fe251f14619"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Cuenta:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="153" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bc36d273-b2f0-4903-9cf3-492116a6d297"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="170" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="fe3ab96e-8ec3-4d3a-bc4b-63e60e9ffa83"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[PERSONAL]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="186" width="76" height="9" uuid="e5b9a3c6-0401-43eb-bab7-79f72e403556"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Apellidos y Nombres:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="195" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7ac17dab-91e9-4864-b76e-aa89ccfbdf2c"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="196" width="76" height="9" uuid="3aee97bc-b10e-45c9-985d-9a1be48ebabf"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Teléfono Residencia:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="229" y="196" width="1" height="9" forecolor="#000000" uuid="26c3cb7d-c0b5-4d82-9b96-9659b6a95f87"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="230" y="196" width="82" height="9" uuid="dfaf028b-276c-40b6-80f8-3bad9c1cebc5"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Direcciòn Residencia:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="312" y="196" width="134" height="9" uuid="c5f1949d-ba15-40e2-80bb-de04598d0421"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{dirTerpalref1}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="206" width="33" height="9" uuid="3a236c66-f463-4a3b-8d34-c21f0a573849"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Celular:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="48" y="206" width="134" height="9" uuid="ed4c0792-e84b-43c8-acbf-efae895a47d9"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{ref1Cel2}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="243" y="206" width="33" height="9" uuid="f344d524-2d25-4e6a-8e4a-86776b352f16"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[E-mail:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="215" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="bdba71b2-01ef-4861-a8dd-11aa67f9bde2"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[PERSONAL]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="239" y="206" width="1" height="10" forecolor="#000000" uuid="aeb7ad7c-7dde-49ea-9c1a-d2da3f103f04"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="231" width="76" height="9" uuid="18f0df33-879d-4907-b071-538a4b40c1e1"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Apellidos y Nombres:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="240" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="481a957c-990a-475e-9e1b-505df83ee6e8"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="241" width="76" height="9" uuid="2881e553-b562-4e6f-9092-52a67568748f"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Teléfono Residencia:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="229" y="240" width="1" height="9" forecolor="#000000" uuid="17678462-228b-4dcd-baa6-60503863de6d"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-1" x="11" y="249" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="789f4a82-85f2-4d5f-9be3-cf8ff25f0436"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="230" y="240" width="82" height="9" uuid="c8763649-9db9-4aa0-94c4-78faf51b6365"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Direcciòn Residencia:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="312" y="240" width="134" height="9" uuid="168d4694-946f-4bba-b7e8-ad1c1a6b9c32"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{dirTerpalref2}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="250" width="33" height="9" uuid="74a634f0-fc89-4a3f-ac72-3c25b3f30961"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Celular:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="48" y="250" width="177" height="9" uuid="f6d22ef5-6a77-4ecb-aaed-59b8ec19ce4f"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{ref2Cel2}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="243" y="250" width="33" height="9" uuid="6bf57ea6-10e8-4f9c-95a5-185df638f87f"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[E-mail:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="259" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5f508272-c531-47a7-b04b-66ef118a935b"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-2" x="239" y="250" width="1" height="10" forecolor="#000000" uuid="303ba912-9ae0-402a-9bd7-cfc8ca9ce278"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="260" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="50091dd1-6cef-4510-9cdd-029317fccc1b"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[FAMILIAR]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="276" width="75" height="9" uuid="0721ea00-ad81-4d1c-9e70-641b06f4273b"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Apellidos y Nombres:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="286" width="74" height="9" uuid="ab198234-8581-449b-9f19-ee189a6f7f6e"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Teléfono Residencia:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="229" y="286" width="1" height="9" forecolor="#000000" uuid="2dd76ab0-8c57-4d8e-9020-daf65ce8ec31"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-1" x="11" y="285" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="577256df-05ee-4f52-9862-931e7f248454"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement key="line-1" x="11" y="295" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0f406eb2-3c07-4f83-a32c-d824b7fbb893"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="230" y="286" width="81" height="9" uuid="40d8a7e6-2b1a-4e33-8c69-75d3d9365f4b"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Direcciòn Residencia:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="311" y="286" width="135" height="9" uuid="1f16ba59-8f88-4493-ad1b-a9a08d30d9a3"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{dirTerpalref3}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="296" width="33" height="9" uuid="f8c1cb9f-56ab-4233-9aed-21750d219431"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Celular:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="48" y="296" width="177" height="9" uuid="b0bb5954-09e9-4f99-85db-da99a458c769"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{ref3Cel2}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement key="line-2" x="238" y="296" width="1" height="9" forecolor="#000000" uuid="d7efb01e-ce1f-46b9-940c-46a096792c51"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="242" y="296" width="33" height="9" uuid="15929ea6-a08f-4429-9456-62cbb1832fab"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[E-mail:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="305" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="bdf7a8e1-1f5c-41b3-8f72-127116ca8e9d"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[FAMILIAR]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="321" width="75" height="9" uuid="e16503c0-93fb-4869-8da2-9ce9866257d0"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Apellidos y Nombres:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="330" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="664dc68a-34f6-4e79-8194-ce354f48277c"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="331" width="74" height="9" uuid="ef67f032-b3f6-4c0d-bda0-b6928cbc1cba"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Teléfono Residencia:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="11" y="340" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="24634fdf-510f-455d-a942-968a5f766144"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-16" x="15" y="341" width="33" height="9" uuid="977362a1-60e5-4098-adef-07220150defe"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Celular:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="229" y="331" width="1" height="9" forecolor="#000000" uuid="005fdafa-282f-4cef-afde-504eecc6a5e0"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="350" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="d97cb713-698d-4d39-8057-7fb6716df96d"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[AUTORIZACIÓN DE REPORTE A CENTRALES DE RIESGO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="242" y="341" width="33" height="9" uuid="dc891009-d7b9-459e-9307-cbfaed6dc343"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[E-mail:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="231" y="331" width="81" height="9" uuid="0885ec6d-e03d-4ba0-94c4-0da5cf5ce56a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
-				</textElement>
-				<text><![CDATA[Direcciòn Residencia:]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-2" x="239" y="341" width="1" height="9" forecolor="#000000" uuid="b557d8f7-4248-4fc9-825f-307ed7f761b5"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-4" x="11" y="366" width="520" height="45" uuid="79a16062-db38-467a-b03d-b3fc42c583a3"/>
+				<reportElement key="staticText-4" x="11" y="101" width="523" height="15" uuid="79a16062-db38-467a-b03d-b3fc42c583a3"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5"/>
+					<font fontName="Arial" size="5" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Como deudor de la obligación afianzada por AFIANZA DINÁMICOS SAS., autorizo de manera expresa e irrevocable a AFIANZA DINÁMICOS SAS. o a quien represente sus derechos u ostente en el future a cualquier titulo la calidad de acreedor, a consultar, solicitar, suministrar, reportar, procesar y divulgar toda la información que se refiere a mi comportamiento crediticio, financiero y comercial a las Centrales de Riesgo y Entidades Financieras de Colombia o a quien represente sus derechos. Lo anterior implica que mi comportamiento presente y pasado frente mis obligaciones permanecerá reflejado de manera completa en las mencionadas bases de datos con el objeto de suministrar información suficiente y adecuada al mercado sobre el estado de mis obligaciones financieras. comerciales y crediticias. Por lo tanto, conocerán información quienes se encuentren afiliados a dichas centrales y/o que tengan acceso a esta, de conformidad con la legislación aplicable. La permanencia de mi información en las bases de datos será determinada por el ordenamiento jurídico aplicable, en especial por las normas legales y la jurisprudencia, los cuales contienen mis derechos y obligaciones, que, por ser públicos, conozco plenamente. En caso de que en el futuro, el autorizado en este documento efectúe una venta de cartera o una cesión a cualquier título de las obligaciones a mi cargo a favor de un tercero, los efectos de la presente autorización se extenderán a este, en los mismos términos y condiciones.]]></text>
+				<text><![CDATA[Quien se identifica en la parte superior de la presente solicitud, que en caso de aceptación de la solicitud se denominará como el “AFIANZADO”, solicita a AFIANZA DINÁMICOS S.A.S., sociedad comercial domiciliada en la ciudad de Cali (Valle) identificada con el N.I.T  N° 901.562.752-1,   que en adelante se denominará “FIADOR”, el otorgamiento de una fianza (en adelante la “Fianza”), cuyos términos serán los siguientes:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="11" y="411" width="527" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="83ebb8e4-379d-4ad7-a83e-7f0aaf90d778"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[ACEPTACIÓN DE LA FIANZA, AUTORIZACIÓN DE DESCUENTOS Y DE ENTREGA DE INFORMACIÓN]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="12" y="427" width="522" height="63" uuid="1d257f40-b92d-4f9d-a5ea-79ca6eba713d"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5"/>
-				</textElement>
-				<text><![CDATA[Declaro que conozco y acepto que el crédito otorgado será afianzado por AFIANZA DINÁMICOS SAS., y en consecuencia, de acuerdo con lo establecido en la LEY ESTATUTARIA 1266 de 2008,autorizo expresa e irrevocablemente:
-1.Que el costo de la fianza sea incluido en el valor de la cuota mensual de amortización del préstamo y sea descontado directamente del salario mensual y conforme a la política establecida por el beneficiario de la fianza (acreedor).
-2.Que en el evento en que, al momento de retirarse de la entidad empleadora, quede algún saldo adeudado a favor del beneficiario o en la fianza (acreedor), mi empresa empleadora descuente dicho valor de mi liquidación de prestaciones sociales, indemnizaciones, vacaciones y/o cualquier pago que mi empleador deba hacerme y lo entregue al beneficiario de la fianza (acreedor).
-
-Adicionalmente, autorizo expresa e irrevocablemente a mi empleador para:
-
-1. Que entregue con destine al beneficiario de la fianza (acreedor) y/o a AFIANZA DINÁMICOS SAS., copia simple de mi liquidación de prestaciones así como también de mi documento de identidad en el momento de mi retiro.
-
-2. Que en caso de incapacidad parcial o embargo, envíe copia simple al beneficiario de la fianza (acreedor) y/o a AFIANZA DINÁMICOS SAS., del documento que acredite dicha eventualidad expedido por la autoridad competente.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="490" width="527" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="1100b456-7404-41b2-8bfd-e485de9fd4df"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[AUTORIZACIÓN DE DESCUENTOS A FAVOR DE AFIANZA DINÁMICOS SAS.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="12" y="506" width="522" height="55" uuid="d1b9c279-8f9f-4fbd-9aa6-bf027b28526a"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5"/>
-				</textElement>
-				<text><![CDATA[De conformidad con lo dispuesto en la Ley 1527 de 2012, autorizo expresa e irrevocablemente a mi empleador, para que de mi salario, liquidación de prestaciones sociales, indemnizaciones, vacaciones y cualquier pago que mi empleador deba hacerme, descuente y entregue a AFIANZA DINÁMICOS SAS., en calidad de subrogatorio del beneficiario de la fianza, el valor del saldo del crédito garantizando y pago por ellos, junto a los respectivos intereses corrientes, intereses moratorios a la tasa máxima legal permitida por Superfinanciera y gastos de cobranza judicial y prejudicial causados a la fecha de inicio de los descuentos. Esta orden de descuento y pago se extiende a nuevos empleadores o entidades pagadoras en caso de que mi situación laboral cambie antes de terminar de pagar la totalidad el crédito otorgado.
-En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas será solidariamente responsable por el pago de mis obligaciones y/o responsable por los valores dejados de descontar y por los perjuicios que sen imputables a su descuido. (art. 6 y 7 de la ley 1527 de 2012).
-MORAY COBRANZA: En caso de mora se causara intereses moratorios a la tasa máxima permitida por la ley sobre el saldo del capital impagado. Así mismo el cliente renuncia a cualquier requerimiento para la constitución en mora. Dependiendo de las actividades realizadas para el recaudo de la mora, se podrán cobrar honorarios, 6 gastos extrajudiciales, hasta el 20% más IVA del valor en mora según numeral 14 del Artículo 2.2.2.35.5 del decreto 1074 de 2015.
-]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="561" width="527" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="1e69b6c3-8078-4c51-9bcf-b4006e37120d"/>
-				<box>
-					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[AUTORIZACIÓN Y TRATAMIENTO DE DATOS]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="12" y="577" width="522" height="22" uuid="75343cf5-80e1-4271-a31a-6ad8c4704c03"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5"/>
-				</textElement>
-				<text><![CDATA[Autorizo a la entidad que me otorga el crédito (beneficiario de la fianza) para que, con el fin garantizar mis obligaciones contraídas con ella y de cumplir mis obligaciones como afianzado, comparta mi información personal con AFIANZA DINÁMICOS SAS., adicionalmente autorizo a AFIANZA DINÁMICOS SAS., para el tratamiento de mis datos personales, de conformidad con lo dispuesto en su Política de Protección de Datos.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-16" x="13" y="600" width="157" height="25" uuid="308d459a-a3a9-4012-870a-d83545803659"/>
+				<reportElement key="staticText-16" x="13" y="601" width="178" height="14" uuid="308d459a-a3a9-4012-870a-d83545803659"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="7"/>
+					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[Firma y huella asociado (a) y la fecha de diligenciamiento]]></text>
 			</staticText>
@@ -1075,44 +230,329 @@ MORAY COBRANZA: En caso de mora se causara intereses moratorios a la tasa máxim
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="224" y="600" width="1" height="73" forecolor="#000000" uuid="b5bb07e3-95cc-473d-b121-32b0d3d76634"/>
+				<reportElement key="line-2" x="272" y="600" width="1" height="73" forecolor="#000000" uuid="b5bb07e3-95cc-473d-b121-32b0d3d76634"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="663" width="32" height="9" uuid="6d3bd0a5-3fa9-4b55-96a4-84ef5aa3d5bd"/>
+				<reportElement key="staticText-16" x="13" y="626" width="32" height="9" uuid="6d3bd0a5-3fa9-4b55-96a4-84ef5aa3d5bd"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Fecha:]]></text>
 			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="13" y="638" width="191" height="11" uuid="7eab51f5-23c9-491a-96d8-01765b95d267"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[Organización solidaria. Firma y Sello autorizado :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="298" y="641" width="211" height="8" uuid="463b73a3-9835-4b11-9e90-a6602e7676d2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[Empresa empleadora, Firma y sello autorización y fecha (Visado)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="38" y="626" width="115" height="9" uuid="6a346a56-a6a5-4665-a239-de134a39eed7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-16" x="270" y="17" width="239" height="9" uuid="52b55145-7fbc-4fb2-a152-f94c000646b3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Nombre (Deudor)]]></text>
+			</staticText>
 			<line>
-				<reportElement key="line-2" x="365" y="600" width="1" height="73" forecolor="#000000" uuid="12d0b76f-daa3-475d-ab26-5c567f5f4c46"/>
+				<reportElement key="line-2" x="266" y="26" width="1" height="10" forecolor="#000000" uuid="223d1cc9-7a25-4f68-b468-7049501325b5"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="231" y="600" width="126" height="25" uuid="7eab51f5-23c9-491a-96d8-01765b95d267"/>
+				<reportElement key="staticText-16" x="270" y="26" width="70" height="9" uuid="63f18627-77aa-442d-a7a6-f8e86a7e4423"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Organización solidaria. Firma y Sello autorizado :]]></text>
+				<text><![CDATA[Apellidos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="374" y="600" width="126" height="25" uuid="463b73a3-9835-4b11-9e90-a6602e7676d2"/>
+				<reportElement key="staticText-16" x="15" y="39" width="70" height="9" uuid="2aa23ef2-d884-4de4-b2d0-05e28f6f7874"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Empresa empleadora, Firma y sello autorización y fecha (Visado)]]></text>
+				<text><![CDATA[Identificación]]></text>
 			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="38" y="663" width="115" height="9" uuid="6a346a56-a6a5-4665-a239-de134a39eed7"/>
+			<staticText>
+				<reportElement key="staticText-16" x="270" y="38" width="70" height="9" uuid="19847a50-3a5f-4536-8326-1e20928de104"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Identificación]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-2" x="266" y="37" width="1" height="10" forecolor="#000000" uuid="70637374-1dc9-46f3-851f-35eba03ab25d"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-16" x="94" y="50" width="189" height="9" uuid="65e06e60-e697-462c-a5a4-25cad908ce4c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TÉCNICAS Y GESTIONES S.A.S]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="128" width="523" height="38" uuid="608f5f9d-1436-44f2-a8a6-09dc703e6f13"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NOMBRE_____________________” EL AFIANZADO”, DECLARA Y MANIFIESTA: 1) Que ha recibido información acerca de su derecho para presentar la garantía de fianza para la obtención de su crédito con un tercero o proveedor de servicios de afianzamiento. 2) Que fue informado acerca del costo del servicio y le fue entregado las condiciones del pago mediante el Anexo donde está estipulado la tabla del costo de AFIANZAMIENTO según monto y Plazo aprobado del Crédito, con fundamento en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR. 3) Que desea celebrar en calidad de mutuario un contrato de mutuo mercantil con intereses, en el que actúa como mutuante quien se identifica en el espacio “Operador”. Que por lo anterior, El valor inicial del mencionado contrato de mutuo es el establecido en el espacio “Monto Crédito”, y el plazo inicial es el relacionado en el espacio “Plazo Inicial”. En adelante y para efectos del presente contrato la operación identificada será el “Contrato de Mutuo” u “Obligación Principal”. 4) Que ha recibido copia del presente contrato.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="117" width="189" height="9" uuid="e4df57c7-557c-402a-957b-36bcb149b1e3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1.- DECLARACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="166" width="189" height="9" uuid="08790c0a-5d94-4565-b44c-de8d06b61e69"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2.- OBJETO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="176" width="523" height="21" uuid="ce92f29c-9664-41bf-82ad-30b3d2e1eaec"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[En caso de aceptar la presente solicitud, AFIANZA DINÁMICOS S.A.S., se constituye como fiador del AFIANZADO respecto de la Obligación Principal. AFIANZA DINÁMICOS S.A.S., se obliga frente al OPERADOR, en caso de incumplimiento del AFIANZADO, a cubrir las obligaciones a cargo del AFIANZADO derivadas del Contrato de Mutuo, hasta por el saldo de capital vigente en una fecha determinada, en los términos que estén vigentes para esa fecha en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="197" width="189" height="9" uuid="402aec0a-fc73-4ef8-9359-bd9a67fa7744"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.- REMUNERACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="207" width="523" height="100" uuid="0ea69a58-e4c4-4f54-bc51-9c250a26327f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(A) En caso que la presente solicitud sea aceptada, el AFIANZADO pagará a EL FIADOR como remuneración por la Fianza un valor liquidado en los términos fijados en el ANEXO de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y EL AFIANZADO. Por autorización del AFIANZADO, EL OPERADOR recaudará por cuenta de EL FIADOR el valor de la remuneración a que se refiere la presente cláusula y la entregará directamente a EL FIADOR.
+
+(B) El costo de la fianza será incluido en el valor de la cuota mensual de amortización de la Obligación Principal y será descontado directamente del salario mensual y conforme a la política establecida por el OPERADOR y en el mismo plazo pactado por este, mediante sistema de Libranza ante el empleador del AFIANZADO. 
+
+(C) En caso que el Contrato de Mutuo haya sido otorgado con base en un cupo rotativo y el AFIANZADO solicite desembolsos adicionales durante la vigencia del cupo de crédito, el AFIANZADO deberá pagar a EL FIADOR remuneraciones adicionales para que la fianza cubra en todo momento el valor total de la Obligación Principal, durante el plazo otorgado para su pago. El AFIANZADO reconoce que el OPERADOR recaudará por cuenta de EL FIADOR el valor de las remuneraciones adicionales y que las entregará directamente a EL FIADOR.
+
+(D) El valor de la Remuneración Inicial de la Fianza que EL FIADOR recibirá será la suma prevista en el anexo de información entregado al DEUDOR. El valor de la remuneración adicional será informado al momento en que el AFIANZADO solicite el desembolso adicional otorgado con base en un cupo rotativo.
+
+(E) EL AFIANZADO expresamente reconoce que esta contraprestación es la remuneración por la garantía de sus obligaciones y acepta que no habrá lugar a devolución o reintegro de la remuneración por pago anticipado de la Obligación Principal. En virtud de lo anterior con la firma en el presente documento EL AFIANZADO manifiesta de manera libre, espontanea e incondicionada, que acepta la garantía para respaldar sus obligaciones y se obliga a pagar la remuneración pactada en los términos ya indicados por concepto de la garantía otorgada.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="308" width="189" height="9" uuid="0454596a-455e-433e-9125-f54e623035b9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4.- CONDICIÓN SUSPENSIVA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="15" y="319" width="523" height="15" uuid="c6d5c5ea-0d61-4cf1-b90f-4d8c3e67306d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Las obligaciones derivadas de la Fianza estarán sujetas a: i) El pago por parte del AFIANZADO de los cargos referidos en el punto 3 anterior, y; ii) Que el OPERADOR reporte oportunamente a EL FIADOR el otorgamiento de la Fianza y transfiera la Remuneración.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="336" width="189" height="9" uuid="58ce2d55-3b12-499c-ba90-b39f418df36c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[5.- VIGENCIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="348" width="523" height="12" uuid="3a5e6366-3c7b-4eec-9ba7-b16673749180"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[La Fianza terminará por las causales legalmente establecidas, así como por el vencimiento del plazo establecido en el Contrato de Mutuo y en el cupo rotativo de que trata el literal (C) del numeral 3.
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="362" width="189" height="9" uuid="507190fd-ceaf-4b0d-bcc9-3abdfd82dd30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[6.- DERECHO PRINCIPAL DEL FIADOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="15" y="372" width="523" height="22" uuid="5b8f65cd-969f-4258-bdad-f718a601fa3e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Una vez EL FIADOR cancele por cuenta del aquí EL AFIANZADO, una cuota o la totalidad del crédito que ha garantizado, adquiere el derecho a recuperar o repetir contra él lo efectivamente pagado, ya sea por cuenta propia o a través de un tercero o endosatario del contrato de mutuo, incluido capital, intereses de plazo, intereses de mora, costas judiciales, gastos del proceso, honorarios de abogado. El presente derecho lo podrá ejecutar iniciando la correspondiente acción judicial, sin que haya lugar a manifestación de oposición a través de proponer excepciones de mérito, excepto la de pago, pudiendo perseguir los bienes propios del AFIANZADO.
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="395" width="189" height="9" uuid="4db96ed4-241f-48a0-8883-4acc17fd7555"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[7.- TERMINACIÓN ANTICIPADA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="15" y="406" width="523" height="15" uuid="fe5b339f-d9e5-4cfc-9717-17df2cdf09ed"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[La Fianza terminará de forma anticipada en los siguientes eventos: (i) Que no se logre la incorporación dentro de los noventa (90) días calendario siguientes a la fecha en que fue celebrado el Contrato de Mutuo; (ii) Que EL FIADOR encuentre falencias documentales o irregularidades existentes al momento de otorgamiento del Contrato de Mutuo que lo anulen, o hagan imposible su ejecución.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="422" width="189" height="9" uuid="89270d4d-eee1-4fa4-8eaa-60d379a2c26b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[8.- BENEFICIOS DE EL FIADOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="13" y="432" width="523" height="39" uuid="2eb38713-1618-4e6a-9d6a-19357e37820f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[EL FIADOR se reserva los beneficios de excusión y de división, en los términos de lo dispuesto por los artículos 2383 y siguientes del Código Civil colombiano.  
+
+Por  tanto, EL FIADOR,  en desarrollo del beneficio de excusión podrá exigir al  OPERADOR, en su calidad de ACREEDOR, que inicialmente persiga  los bienes del  AFIANZADO  hasta el pago total de la obligación afianzada.  Igualmente, EL FIADOR, en desarrollo del beneficio de división, en caso de existir otros fiadores, podrá exigir que la obligación afianzada sea cubierta proporcionalmente por los diferentes fiadores del AFIANZADO.
+
+Finalmente, EL FIADOR podrá en caso que la obligación afianzada sea de carácter solidario, perseguir al codeudor o resto de codeudores por el pago de la obligación por él cubierta.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="472" width="232" height="9" uuid="710ed66c-9585-4999-b6de-7b824c45eeab"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[9.- EXCLUSIÓN E INCOMPATIBILIDAD DEL SERVICIO CONTRATADO CON EL SEGURO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="15" y="482" width="523" height="15" uuid="8ed5161c-dc5b-4cfb-a994-68c2d3967328"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reconoce desde ya el AFIANZADO que el servicio tomado con EL FIADOR no se asimila en ningún efecto al contrato de Seguro, por lo tanto, está excluida y es incompatible su normatividad con éste contrato, estando por el contrario siempre presente, que su obligación es pagar.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="498" width="232" height="9" uuid="91cbc375-039a-4ed0-871f-498298f13633"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[10.- CESIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="15" y="508" width="523" height="15" uuid="9f8a3040-2f77-4928-8ad1-b04601795557"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[EL AFIANZADO solo podrá ceder el presente contrato con el consentimiento previo, expreso y por escrito del FIADOR. EL AFIANZADO autoriza y acepta cualquier cesión que haga el FIADOR del presente contrato, pero la misma no surtirá efecto sino hasta cuando ésta se haya notificado al AFIANZADO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="15" y="525" width="232" height="9" uuid="a0fac5a0-08af-43e0-a3dd-cc2bf8a84d84"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[11.- REPORTE CENTRALES DE RIESGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="15" y="535" width="523" height="29" uuid="6bbd2065-6f2c-4bf0-89bb-e7acc2123299"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[EL AFIANZADO autoriza de manera expresa e irrevocable a EL FIADOR o a quien represente sus derechos u ostente en el futuro a cualquier título la calidad de Afianzador, a consultar, solicitar, suministrar, reportar, procesar y divulgar toda la información que se refiere al comportamiento crediticio, financiero y comercial de EL AFIANZADO a las Centrales de Riesgo y Entidades Financieras de Colombia o a quien represente sus derechos. La permanencia de la información en las bases de datos será determinada por el ordenamiento jurídico aplicable, en especial por las normas legales y la jurisprudencia, los cuales contienen mis derechos y obligaciones, que, por ser públicos, EL AFIANZADO conoce plenamente. En caso de que, en el futuro, EL FIADOR en este documento efectúe una cesión a cualquier título de este contrato a favor de un tercero, los efectos de la presente autorización se extenderán a éste, en los mismos términos y condiciones.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="17" y="566" width="232" height="9" uuid="3554b2f2-0f0f-4bcc-b2e8-94af4eb93d4c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[12.- HABEAS DATA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="17" y="576" width="523" height="24" uuid="deb51b87-e4cf-41a6-98b6-6a20dbfc63c8"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[EL FIADOR declara que cuenta con políticas de protección de datos, conforme lo establecido en Ley Estatutaria 1581 y el Decreto 1377 de 2013. Igualmente declara que cuenta con los medios idóneos de protección de datos, con lo cual garantiza de este modo, el adecuado tratamiento de los datos del AFIANZADO. El AFIANZADO podrá solicitar la supresión, modificación o actualización de los datos suministrados.
+
+El AFIANZADO suscribe el presente documento en señal de conocimiento y aceptación de las condiciones de la Fianza.
+]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="13" y="638" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bf62596c-1ed3-4875-9568-f0f16018ca40"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-16" x="298" y="601" width="203" height="14" uuid="13bdc5be-17b5-41a6-9eda-f28dca2be0d0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+				<text><![CDATA[Firma y huella asociado (a) y la fecha de diligenciamiento]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="38" width="75" height="9" uuid="d12bd2be-80eb-4198-b5ae-c8d5d0cdd58e"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="27" width="165" height="8" uuid="0c39246b-f9b2-438a-ac65-1df8001fb464"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{priApellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="17" width="157" height="9" uuid="8f571a08-2cc9-4f51-a066-451eefa2ab88"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_tercero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="17" width="172" height="9" uuid="872a5694-8238-40b6-bfa0-45a87030ec55"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_terceroC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="37" width="106" height="10" uuid="55253e19-8758-4156-b6f2-04ee1ef26a05"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitterC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="26" width="172" height="9" uuid="b316d175-bb10-4888-a912-0e1b89133c59"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{priApellidoC}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>

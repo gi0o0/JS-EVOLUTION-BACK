@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="declaracionjuramentada" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="71"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="304"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -203,46 +203,46 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				<text><![CDATA[me comprometo a no realizar ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="21" y="461" width="38" height="11" uuid="97a25875-5be4-44f2-ae4c-f45ec63f7293"/>
+				<reportElement key="staticText-4" x="21" y="483" width="38" height="11" uuid="97a25875-5be4-44f2-ae4c-f45ec63f7293"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="205" y="505" width="57" height="79" uuid="27228aa5-67aa-452a-9633-a6404d6883b2"/>
+				<reportElement x="222" y="490" width="57" height="79" uuid="27228aa5-67aa-452a-9633-a6404d6883b2"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</rectangle>
 			<line>
-				<reportElement key="line-1" x="21" y="460" width="261" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="16a2d865-a711-439b-9d6c-d223e35ac42f"/>
+				<reportElement key="line-1" x="63" y="492" width="152" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="16a2d865-a711-439b-9d6c-d223e35ac42f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="21" y="505" width="143" height="11" uuid="0e4bd508-5efb-46e7-8e5a-96b481699025"/>
+				<reportElement key="staticText-4" x="21" y="519" width="38" height="11" uuid="0e4bd508-5efb-46e7-8e5a-96b481699025"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
-				<text><![CDATA[Documento de identidad]]></text>
+				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="21" y="504" width="165" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f007e9a7-8e7e-4fb6-ab1c-a551c012f0ba"/>
+				<reportElement key="line-1" x="65" y="530" width="150" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="f007e9a7-8e7e-4fb6-ab1c-a551c012f0ba"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="21" y="573" width="145" height="11" uuid="16095262-a49a-4e76-b3f9-074caaa83ed0"/>
+				<reportElement key="staticText-4" x="21" y="560" width="38" height="11" uuid="16095262-a49a-4e76-b3f9-074caaa83ed0"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
-				<text><![CDATA[Firma y huella índice derecho ]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="21" y="567" width="158" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="737bb80e-169e-4320-a1b4-dac536c3579f"/>
+				<reportElement key="line-1" x="68" y="567" width="147" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="737bb80e-169e-4320-a1b4-dac536c3579f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -289,14 +289,14 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				<textFieldExpression><![CDATA[$P{pagare}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="19" y="449" width="346" height="11" uuid="4d90c57c-9d20-499d-93a2-ec3b7bd95bdc"/>
+				<reportElement key="textField" x="61" y="475" width="154" height="11" uuid="4d90c57c-9d20-499d-93a2-ec3b7bd95bdc"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="26" y="490" width="69" height="11" uuid="3a9a0afb-aeae-465a-80e4-f55394aad26b"/>
+				<reportElement key="textField" x="72" y="516" width="69" height="11" uuid="3a9a0afb-aeae-465a-80e4-f55394aad26b"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
@@ -309,6 +309,51 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				</textElement>
 				<text><![CDATA[Ref.: DECLARACION DE BUENA FE PRE-CONTRACTUAL]]></text>
 			</staticText>
+			<rectangle>
+				<reportElement x="478" y="490" width="57" height="79" uuid="7c3df8ac-4beb-44dc-9a7d-8455602eabf4"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-4" x="289" y="483" width="38" height="11" uuid="e2ef9a2a-96f3-49b1-8d14-96aec32a734f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Deudor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="286" y="519" width="38" height="11" uuid="6c8d3357-afdc-4f11-8942-c981b3f04e6b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="289" y="560" width="38" height="11" uuid="10dd46a5-9a2e-4d15-8fa3-e7c48d7618f9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="332" y="492" width="144" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ca97d04c-eac6-4466-a521-5441fdbc6375"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="332" y="529" width="143" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5431f975-aec0-4061-9996-67d51499c5d9"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" x="336" y="571" width="136" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2b5ca7dd-8099-4cd2-8bcf-33e132e9b5c6"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
 		</band>
 	</columnHeader>
 </jasperReport>

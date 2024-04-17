@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="70"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="976"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -262,7 +262,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Quien (es) este acto obro (amos) en mi (nuestro) propio nombre, declaro (amos)  que por]]></text>
+				<text><![CDATA[Quien (es) en este acto obro (amos) en mi (nuestro) propio nombre, declaro (amos)  que por]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="33" width="524" height="9" uuid="4a908dc9-924d-409f-9fcb-dbaade5d59a0"/>
@@ -348,7 +348,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="7"/>
 				</textElement>
-				<text><![CDATA[Adicionalmente, por medio del presente documento autorizo(amos) al tenedor legítimo de este pagaré para que por sí o por conducto de un mandatario y ante cualquier operador de información de los definidos en la ley, reporte toda información financiera, crediticia, comercial o de servicios que resulte de mi (nuestro) comportamiento (positivo o negativo) en relación con la(s) obligación(es) que mediante este pagaré se contraen, previo aviso y notificación. Así mismo, autorizo(amos) a la sociedad TECNICAS Y GESTIONES S.A.S., mientras sea tenedora legítima de este pagaré, para que los pagos de intereses y abonos a capital que hagamos en este título valor sean anotados por la sociedad TECNICAS Y GESTIONES S.A.S. en sus registros contables en lugar de hacerlo a continuación de este documento.]]></text>
+				<text><![CDATA[Adicionalmente, por medio del presente documento autorizo(amos) al tenedor legítimo de este pagaré para que por sí o por conducto de un mandatario o tercero y ante cualquier operador de información de los definidos en la ley, reporte toda información financiera, crediticia, comercial o de servicios que resulte de mi (nuestro) comportamiento (positivo o negativo) en relación con la(s) obligación(es) que mediante este pagaré se contraen, previo aviso y notificación. Así mismo, autorizo(amos) a la sociedad TECNICAS Y GESTIONES S.A.S., mientras sea tenedora legítima de este pagaré, para que los pagos de intereses y abonos a capital que hagamos en este título valor sean anotados por la sociedad TECNICAS Y GESTIONES S.A.S. en sus registros contables en lugar de hacerlo a continuación de este documento.]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="383" y="52" width="49" height="9" uuid="d2d01936-a093-440c-9a61-c6dd63b04049"/>

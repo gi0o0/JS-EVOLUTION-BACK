@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solicitud" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="720"/>
+	<property name="ireport.y" value="464"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -74,23 +74,23 @@
 				<text><![CDATA[Yo]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="11" y="378" width="196" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
+				<reportElement key="line-1" x="50" y="429" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="12c4fe59-ed88-4afd-9356-66936939f289"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<rectangle>
-				<reportElement x="218" y="416" width="68" height="79" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
+				<reportElement x="218" y="416" width="50" height="78" uuid="d6c460ac-2903-410b-b09c-b99a0e1a2935"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="381" width="90" height="10" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
+				<reportElement key="staticText-4" x="10" y="422" width="32" height="10" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre del cliente]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="10" y="85" width="533" height="48" uuid="82bc1045-a479-47f2-b489-abeb7d049162"/>
@@ -141,40 +141,40 @@ Autorizo que del crédito solicitado y aprobado a mi favor sea descontado y paga
 ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="11" y="431" width="196" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="243c704c-53c6-4813-b27c-99939ecad575"/>
+				<reportElement key="line-1" x="50" y="468" width="150" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="243c704c-53c6-4813-b27c-99939ecad575"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="11" y="432" width="90" height="10" uuid="206659db-1cf4-4a72-9702-01b5c5ecb790"/>
+				<reportElement key="staticText-4" x="10" y="456" width="31" height="10" uuid="206659db-1cf4-4a72-9702-01b5c5ecb790"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[C.C. del cliente]]></text>
+				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="495" width="90" height="10" uuid="f77d7c0b-4d5a-4d15-b2e8-c9e33360f4dc"/>
+				<reportElement key="staticText-4" x="10" y="484" width="32" height="10" uuid="f77d7c0b-4d5a-4d15-b2e8-c9e33360f4dc"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma del cliente]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="11" y="494" width="196" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="42bc8caa-9b49-454b-a56e-f7162d9e74d9"/>
+				<reportElement key="line-1" x="50" y="494" width="150" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="42bc8caa-9b49-454b-a56e-f7162d9e74d9"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="10" y="367" width="208" height="9" uuid="6b66a8d8-2343-4893-8172-b2d9830662a2"/>
+				<reportElement key="textField" x="50" y="418" width="157" height="9" uuid="6b66a8d8-2343-4893-8172-b2d9830662a2"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="12" y="411" width="100" height="15" uuid="de9d71e2-3133-4296-87d7-802cce078bad"/>
+				<reportElement x="54" y="448" width="88" height="15" uuid="de9d71e2-3133-4296-87d7-802cce078bad"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -216,6 +216,51 @@ Autorizo que del crédito solicitado y aprobado a mi favor sea descontado y paga
 			</line>
 			<line>
 				<reportElement key="line-1" x="134" y="318" width="6" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3a374230-2dc1-4828-8a8f-2f98b46fa50d"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<rectangle>
+				<reportElement x="477" y="416" width="50" height="78" uuid="c30c35f5-0fd9-4ee6-8756-d50d18ffe7d4"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-4" x="280" y="484" width="32" height="10" uuid="2a767e24-faba-4133-ac9b-c78ebfb872ab"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="321" y="495" width="150" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="67b4e54a-bd38-4f7f-b968-7bc57286a28d"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="281" y="458" width="31" height="10" uuid="8a8efc20-2b5e-4732-b91c-17f6437da6b8"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Cédula]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="321" y="469" width="150" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="28eb135d-71c4-4b25-a13f-121b50753a7b"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-4" x="280" y="420" width="32" height="10" uuid="84ca3161-7340-48a0-b205-edd724a0e4c2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Deudor]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="316" y="429" width="155" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="18b888fb-9c85-4525-8a5f-42c7be9e1b54"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>

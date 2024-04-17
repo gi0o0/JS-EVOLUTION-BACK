@@ -28,6 +28,9 @@ public class Fotipcre implements Serializable {
 
 	@Column(name = "ran_int_1")
 	private BigDecimal ranInt1;
+	 
+	@Column(name = "des_por_1")
+	private BigDecimal desPor1;
 
 	public Fotipcre() {
 	}
@@ -62,4 +65,11 @@ public class Fotipcre implements Serializable {
 		this.ranInt1 = ranInt1;
 	}
 
+	public BigDecimal getDespor1() {
+		return desPor1;
+	}
+
+	public void setDespor1(BigDecimal desPor1) {
+		this.desPor1 = desPor1;
+	}
 }

@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="535"/>
+	<property name="ireport.y" value="930"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -129,7 +129,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Autorizo, almacenar, depurar, usar, analizar, circular, actualizar y cruzar con información propia o de terceros, mis datos de contacto información sobre preferencias de consumo, comportamiento en los canales de contacto los cuales fueron obtenidos mediante la prestación del presente servicio con la finalidad de 1. realizar actividades de mercadeo de sus productos y servicios de sus filiales y/o afiliados comerciales listados en la política de tratamiento de información y 2. las demás finalidades estrechamente asociadas y necesarias para cumplir los fines de mercadeo descritas en la política de información de la privacidad   ( ). En todo caso el tratamiento de mis datos personales debe estar sujeto a la protección establecida en la ley 1581 de 2012, sus decretos reglamentarios y las normas que los modifiquen así como la política de privacidad publicada en la página web en cualquier momento poder ejercer los derechos establecidos en estas normas y particularmente renovar la autorización prestada o solicitar la supresión de mis datos personales sean incluidos en nuestra base de datos y sean utilizados de manera directa o indirecta de manera transparente, leal, licita, segura y confiable, entre otras, para las siguientes finalidades:]]></text>
+				<text><![CDATA[TECNICAS Y GESTIONES S.A.S. para: Depurar, usar, analizar, circular, almacenar, actualizar, cruzar y consentir para que se me consulte en centrales de riesgo por TECNICAS Y GESTIONES S.A.S. o un tercero que se encuentre autorizado para efectuar las consultas con información propia o de terceros, mis datos de contacto información sobre preferencias de consumo, comportamiento en los canales de contacto los cuales fueron obtenidos mediante la prestación del presente servicio con la finalidad de 1. realizar actividades de mercadeo de sus productos y servicios de sus filiales y/o afiliados comerciales listados en la política de tratamiento de información y 2. las demás finalidades estrechamente asociadas y necesarias para cumplir los fines de mercadeo descritas en la política de información de la privacidad   ( ). En todo caso el tratamiento de mis datos personales debe estar sujeto a la protección establecida en la ley 1581 de 2012, sus decretos reglamentarios y las normas que los modifiquen así como la política de privacidad publicada en la página web en cualquier momento poder ejercer los derechos establecidos en estas normas y particularmente renovar la autorización prestada o solicitar la supresión de mis datos personales sean incluidos en nuestra base de datos y sean utilizados de manera directa o indirecta de manera transparente, leal, licita, segura y confiable, entre otras, para las siguientes finalidades:]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="130" y="379" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
@@ -163,7 +163,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement x="232" y="580" width="50" height="71" uuid="289d0aa9-6556-407b-891c-a17fd5f990ec"/>
@@ -198,11 +198,11 @@
 				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="14" y="589" width="28" height="11" uuid="8b0bdb51-aa27-4e17-b4de-af96f2ad9e5b"/>
+				<reportElement key="staticText-4" x="14" y="588" width="28" height="11" uuid="8b0bdb51-aa27-4e17-b4de-af96f2ad9e5b"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="326" y="633" width="157" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="1d15c446-adac-44f1-a430-e7dcfb3afe98"/>
@@ -227,14 +227,14 @@
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Firma]]></text>
+				<text><![CDATA[Deudor]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="290" y="624" width="46" height="11" uuid="5f01d76a-fdc9-4e1a-a3a6-b57de302e87a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Nombre]]></text>
+				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="320" y="600" width="163" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3486364a-227a-470c-ba82-2314ea5cacd0"/>
@@ -300,7 +300,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[autorizo (amos) expresa, e IRREVOCABLEMENTE.]]></text>
+				<text><![CDATA[autorizo (amos) expresa, e IRREVOCABLEMENTE a]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-3" x="0" y="7" width="552" height="34" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
@@ -316,7 +316,7 @@ TECNICAS Y GESTIONES S.A.S
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[1-Cualquiera en el desarrollo en el objeto social de TECNICAS Y GESTIONES S.A.S. o su endosatario.]]></text>
+				<text><![CDATA[1-Cualquiera en el desarrollo en el objeto social de TECNICAS Y GESTIONES S.A.S.  un tercero o su endosatario.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="10" y="218" width="533" height="11" uuid="c6008e64-202a-4693-a609-9c73a97720bb"/>
@@ -405,7 +405,7 @@ TECNICAS Y GESTIONES S.A.S
 				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="53" y="621" width="173" height="9" uuid="d4cd79f0-35f2-4a97-adcb-cd82b4dc867d"/>
+				<reportElement key="textField" x="53" y="588" width="173" height="9" uuid="d4cd79f0-35f2-4a97-adcb-cd82b4dc867d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -419,7 +419,7 @@ TECNICAS Y GESTIONES S.A.S
 				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="327" y="621" width="156" height="9" uuid="a01e6a2b-023a-482f-8e28-8d65d48aa746"/>
+				<reportElement key="textField" x="327" y="588" width="156" height="9" uuid="a01e6a2b-023a-482f-8e28-8d65d48aa746"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
