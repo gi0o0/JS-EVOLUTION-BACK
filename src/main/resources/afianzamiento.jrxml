@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="39"/>
+	<property name="ireport.y" value="676"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -56,51 +56,58 @@
 		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="40" splitType="Stretch">
+		<band height="28" splitType="Stretch">
 			<rectangle radius="10">
-				<reportElement x="0" y="3" width="552" height="37" forecolor="#CCCCCC" uuid="6c6dd218-78d9-44f9-8d5f-e58e388f2e74"/>
+				<reportElement x="0" y="3" width="552" height="23" forecolor="#CCCCCC" uuid="6c6dd218-78d9-44f9-8d5f-e58e388f2e74"/>
 				<graphicElement>
 					<pen lineColor="#000000"/>
 				</graphicElement>
 			</rectangle>
 			<line>
-				<reportElement mode="Opaque" x="264" y="3" width="1" height="34" forecolor="#CCCCCC" backcolor="#FFFFFF" uuid="8ecf3d90-1e06-475b-90f9-ecbd5d9cd4ca"/>
+				<reportElement mode="Opaque" x="264" y="3" width="1" height="23" forecolor="#CCCCCC" backcolor="#FFFFFF" uuid="8ecf3d90-1e06-475b-90f9-ecbd5d9cd4ca"/>
 				<graphicElement fill="Solid">
 					<pen lineColor="#000000"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-3" x="11" y="3" width="248" height="37" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
+				<reportElement key="staticText-3" x="11" y="3" width="248" height="23" forecolor="#000000" uuid="a8c02d50-6297-481c-9148-5cffce53df83"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="22" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="18" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[Afianza Dinámicos SAS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-3" x="270" y="3" width="282" height="37" forecolor="#000000" uuid="df26a64f-ff57-4b83-b9a1-1d12b2291885"/>
+				<reportElement key="staticText-3" x="270" y="3" width="200" height="23" forecolor="#000000" uuid="df26a64f-ff57-4b83-b9a1-1d12b2291885"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="15" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[AUTORIZACIÓN DE AFIANZAMIENTO]]></text>
+				<text><![CDATA[AUTORIZACIÓN DE AFIANZAMIENTO  No            A-]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="462" y="5" width="51" height="19" uuid="f0e6661a-0876-4291-b7c1-4bc9d9d90d4a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroRadicacion}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="712" splitType="Stretch">
 			<line>
-				<reportElement key="line-1" x="11" y="26" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9793c7f8-bc32-499b-9d15-90f1b4ac1ae2"/>
+				<reportElement key="line-1" x="11" y="22" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9793c7f8-bc32-499b-9d15-90f1b4ac1ae2"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="266" y="16" width="1" height="10" forecolor="#000000" uuid="ccc82edc-bdff-4f79-9190-24ba9d2ffdf6"/>
+				<reportElement key="line-2" x="266" y="12" width="1" height="10" forecolor="#000000" uuid="ccc82edc-bdff-4f79-9190-24ba9d2ffdf6"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-6" mode="Opaque" x="10" y="0" width="528" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="31ff3ea0-4e30-4331-9a89-3730c8a3510a"/>
+				<reportElement key="staticText-6" mode="Opaque" x="10" y="0" width="536" height="12" forecolor="#FFFFFF" backcolor="#000000" uuid="31ff3ea0-4e30-4331-9a89-3730c8a3510a"/>
 				<box>
 					<pen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
@@ -109,255 +116,251 @@
 					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
 				<text><![CDATA[DATOS DEUDORES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="17" width="70" height="9" uuid="35d93fea-5e86-49b7-a804-8a3b6bf8a235"/>
+				<reportElement key="staticText-16" x="15" y="13" width="70" height="9" uuid="35d93fea-5e86-49b7-a804-8a3b6bf8a235"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Nombre (Deudor)]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="10" y="16" width="1" height="657" forecolor="#000000" uuid="9221b6ce-c8fe-422a-8fce-090e434732f9"/>
+				<reportElement key="line-2" x="10" y="12" width="1" height="689" forecolor="#000000" uuid="9221b6ce-c8fe-422a-8fce-090e434732f9"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="537" y="16" width="1" height="657" forecolor="#000000" uuid="938de3bc-b1d4-42ce-908b-eeabc766507f"/>
+				<reportElement key="line-2" x="545" y="12" width="1" height="689" forecolor="#000000" uuid="938de3bc-b1d4-42ce-908b-eeabc766507f"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="11" y="47" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7a78cffe-8bc7-4766-9c47-12b984d57b7b"/>
+				<reportElement key="line-1" x="11" y="43" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7a78cffe-8bc7-4766-9c47-12b984d57b7b"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="11" y="60" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ab6b07c0-a403-4ce0-8554-4ee5e1c3a9ab"/>
+				<reportElement key="line-1" x="11" y="56" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="ab6b07c0-a403-4ce0-8554-4ee5e1c3a9ab"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="11" y="87" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="915cc8ab-dc3b-4627-85c9-99c721c843cf"/>
+				<reportElement key="line-1" x="11" y="82" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="915cc8ab-dc3b-4627-85c9-99c721c843cf"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="11" y="99" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e67194f8-5865-472a-a77b-c5927fe77637"/>
+				<reportElement key="line-1" x="11" y="93" width="535" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="e67194f8-5865-472a-a77b-c5927fe77637"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="27" width="70" height="9" uuid="3f3d1870-bb1e-44f4-94b3-8fe12cf7c955"/>
+				<reportElement key="staticText-16" x="15" y="23" width="70" height="9" uuid="3f3d1870-bb1e-44f4-94b3-8fe12cf7c955"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Apellidos]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="10" y="36" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2462069e-26ce-4159-9ecd-3cd185b407b1"/>
+				<reportElement key="line-1" x="10" y="32" width="535" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="2462069e-26ce-4159-9ecd-3cd185b407b1"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="50" width="70" height="9" uuid="1e81815a-824b-478e-9ab2-a2f3623d0009"/>
+				<reportElement key="staticText-16" x="15" y="46" width="70" height="9" uuid="1e81815a-824b-478e-9ab2-a2f3623d0009"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Operador]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="63" width="76" height="9" uuid="9e2d5d68-05f9-4371-8a42-2cec08898afe"/>
+				<reportElement key="staticText-16" x="15" y="59" width="76" height="9" uuid="9e2d5d68-05f9-4371-8a42-2cec08898afe"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Monto Crédito Pesos]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="11" y="74" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a674fe7f-f7c9-49e4-a629-2e7babcae144"/>
+				<reportElement key="line-1" x="11" y="69" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a674fe7f-f7c9-49e4-a629-2e7babcae144"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="78" width="76" height="9" uuid="aaa4e15e-b00f-4de1-b3de-10221544332e"/>
+				<reportElement key="staticText-16" x="15" y="71" width="76" height="9" uuid="aaa4e15e-b00f-4de1-b3de-10221544332e"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Plazo Inicial Meses]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="88" width="74" height="9" uuid="e824ff3e-a0a2-4105-829f-c6fb17a44d2d"/>
+				<reportElement key="staticText-16" x="15" y="83" width="74" height="9" uuid="e824ff3e-a0a2-4105-829f-c6fb17a44d2d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Pagaré]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="11" y="101" width="523" height="15" uuid="79a16062-db38-467a-b03d-b3fc42c583a3"/>
+				<reportElement key="staticText-4" x="11" y="95" width="534" height="22" uuid="79a16062-db38-467a-b03d-b3fc42c583a3"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Quien se identifica en la parte superior de la presente solicitud, que en caso de aceptación de la solicitud se denominará como el “AFIANZADO”, solicita a AFIANZA DINÁMICOS S.A.S., sociedad comercial domiciliada en la ciudad de Cali (Valle) identificada con el N.I.T  N° 901.562.752-1,   que en adelante se denominará “FIADOR”, el otorgamiento de una fianza (en adelante la “Fianza”), cuyos términos serán los siguientes:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="601" width="178" height="14" uuid="308d459a-a3a9-4012-870a-d83545803659"/>
+				<reportElement key="staticText-16" x="13" y="634" width="178" height="14" uuid="308d459a-a3a9-4012-870a-d83545803659"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[Firma y huella asociado (a) y la fecha de diligenciamiento]]></text>
+				<text><![CDATA[Firma y huella afianzado (a) y la fecha de diligenciamiento]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="11" y="599" width="527" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5ca3bc12-d733-42ee-9657-fb0bac70f372"/>
+				<reportElement key="line-1" x="11" y="632" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5ca3bc12-d733-42ee-9657-fb0bac70f372"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="10" y="673" width="527" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6250768a-0db7-4b02-ae0f-c8cb032f420c"/>
+				<reportElement key="line-1" x="10" y="701" width="535" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="6250768a-0db7-4b02-ae0f-c8cb032f420c"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="272" y="600" width="1" height="73" forecolor="#000000" uuid="b5bb07e3-95cc-473d-b121-32b0d3d76634"/>
+				<reportElement key="line-2" x="272" y="635" width="1" height="66" forecolor="#000000" uuid="b5bb07e3-95cc-473d-b121-32b0d3d76634"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="626" width="32" height="9" uuid="6d3bd0a5-3fa9-4b55-96a4-84ef5aa3d5bd"/>
+				<reportElement key="staticText-16" x="13" y="660" width="32" height="9" uuid="6d3bd0a5-3fa9-4b55-96a4-84ef5aa3d5bd"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Fecha:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="638" width="191" height="11" uuid="7eab51f5-23c9-491a-96d8-01765b95d267"/>
+				<reportElement key="staticText-16" x="13" y="671" width="191" height="11" uuid="7eab51f5-23c9-491a-96d8-01765b95d267"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[Organización solidaria. Firma y Sello autorizado :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="298" y="641" width="211" height="8" uuid="463b73a3-9835-4b11-9e90-a6602e7676d2"/>
+				<reportElement key="staticText-16" x="298" y="672" width="211" height="8" uuid="463b73a3-9835-4b11-9e90-a6602e7676d2"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[Empresa empleadora, Firma y sello autorización y fecha (Visado)]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="38" y="626" width="115" height="9" uuid="6a346a56-a6a5-4665-a239-de134a39eed7"/>
+				<reportElement key="textField" x="38" y="660" width="115" height="9" uuid="6a346a56-a6a5-4665-a239-de134a39eed7"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-16" x="270" y="17" width="239" height="9" uuid="52b55145-7fbc-4fb2-a152-f94c000646b3"/>
+				<reportElement key="staticText-16" x="270" y="13" width="239" height="9" uuid="52b55145-7fbc-4fb2-a152-f94c000646b3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Nombre (Deudor)]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="266" y="26" width="1" height="10" forecolor="#000000" uuid="223d1cc9-7a25-4f68-b468-7049501325b5"/>
+				<reportElement key="line-2" x="266" y="22" width="1" height="10" forecolor="#000000" uuid="223d1cc9-7a25-4f68-b468-7049501325b5"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="270" y="26" width="70" height="9" uuid="63f18627-77aa-442d-a7a6-f8e86a7e4423"/>
+				<reportElement key="staticText-16" x="270" y="22" width="70" height="9" uuid="63f18627-77aa-442d-a7a6-f8e86a7e4423"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Apellidos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="39" width="70" height="9" uuid="2aa23ef2-d884-4de4-b2d0-05e28f6f7874"/>
+				<reportElement key="staticText-16" x="15" y="35" width="70" height="9" uuid="2aa23ef2-d884-4de4-b2d0-05e28f6f7874"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Identificación]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="270" y="38" width="70" height="9" uuid="19847a50-3a5f-4536-8326-1e20928de104"/>
+				<reportElement key="staticText-16" x="270" y="34" width="70" height="9" uuid="19847a50-3a5f-4536-8326-1e20928de104"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Identificación]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="266" y="37" width="1" height="10" forecolor="#000000" uuid="70637374-1dc9-46f3-851f-35eba03ab25d"/>
+				<reportElement key="line-2" x="266" y="33" width="1" height="10" forecolor="#000000" uuid="70637374-1dc9-46f3-851f-35eba03ab25d"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="94" y="50" width="189" height="9" uuid="65e06e60-e697-462c-a5a4-25cad908ce4c"/>
+				<reportElement key="staticText-16" x="94" y="46" width="189" height="9" uuid="65e06e60-e697-462c-a5a4-25cad908ce4c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[TÉCNICAS Y GESTIONES S.A.S]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="128" width="523" height="38" uuid="608f5f9d-1436-44f2-a8a6-09dc703e6f13"/>
+				<reportElement key="staticText-4" x="13" y="127" width="532" height="46" uuid="608f5f9d-1436-44f2-a8a6-09dc703e6f13"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[NOMBRE_____________________” EL AFIANZADO”, DECLARA Y MANIFIESTA: 1) Que ha recibido información acerca de su derecho para presentar la garantía de fianza para la obtención de su crédito con un tercero o proveedor de servicios de afianzamiento. 2) Que fue informado acerca del costo del servicio y le fue entregado las condiciones del pago mediante el Anexo donde está estipulado la tabla del costo de AFIANZAMIENTO según monto y Plazo aprobado del Crédito, con fundamento en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR. 3) Que desea celebrar en calidad de mutuario un contrato de mutuo mercantil con intereses, en el que actúa como mutuante quien se identifica en el espacio “Operador”. Que por lo anterior, El valor inicial del mencionado contrato de mutuo es el establecido en el espacio “Monto Crédito”, y el plazo inicial es el relacionado en el espacio “Plazo Inicial”. En adelante y para efectos del presente contrato la operación identificada será el “Contrato de Mutuo” u “Obligación Principal”. 4) Que ha recibido copia del presente contrato.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="117" width="189" height="9" uuid="e4df57c7-557c-402a-957b-36bcb149b1e3"/>
+				<reportElement key="staticText-16" x="15" y="116" width="189" height="9" uuid="e4df57c7-557c-402a-957b-36bcb149b1e3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[1.- DECLARACIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="166" width="189" height="9" uuid="08790c0a-5d94-4565-b44c-de8d06b61e69"/>
+				<reportElement key="staticText-16" x="15" y="174" width="189" height="9" uuid="08790c0a-5d94-4565-b44c-de8d06b61e69"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[2.- OBJETO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="176" width="523" height="21" uuid="ce92f29c-9664-41bf-82ad-30b3d2e1eaec"/>
+				<reportElement key="staticText-4" x="13" y="181" width="532" height="21" uuid="ce92f29c-9664-41bf-82ad-30b3d2e1eaec"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[En caso de aceptar la presente solicitud, AFIANZA DINÁMICOS S.A.S., se constituye como fiador del AFIANZADO respecto de la Obligación Principal. AFIANZA DINÁMICOS S.A.S., se obliga frente al OPERADOR, en caso de incumplimiento del AFIANZADO, a cubrir las obligaciones a cargo del AFIANZADO derivadas del Contrato de Mutuo, hasta por el saldo de capital vigente en una fecha determinada, en los términos que estén vigentes para esa fecha en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="197" width="189" height="9" uuid="402aec0a-fc73-4ef8-9359-bd9a67fa7744"/>
+				<reportElement key="staticText-16" x="15" y="204" width="189" height="9" uuid="402aec0a-fc73-4ef8-9359-bd9a67fa7744"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[3.- REMUNERACIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="207" width="523" height="100" uuid="0ea69a58-e4c4-4f54-bc51-9c250a26327f"/>
+				<reportElement key="staticText-4" x="13" y="215" width="533" height="91" uuid="0ea69a58-e4c4-4f54-bc51-9c250a26327f"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[(A) En caso que la presente solicitud sea aceptada, el AFIANZADO pagará a EL FIADOR como remuneración por la Fianza un valor liquidado en los términos fijados en el ANEXO de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y EL AFIANZADO. Por autorización del AFIANZADO, EL OPERADOR recaudará por cuenta de EL FIADOR el valor de la remuneración a que se refiere la presente cláusula y la entregará directamente a EL FIADOR.
-
 (B) El costo de la fianza será incluido en el valor de la cuota mensual de amortización de la Obligación Principal y será descontado directamente del salario mensual y conforme a la política establecida por el OPERADOR y en el mismo plazo pactado por este, mediante sistema de Libranza ante el empleador del AFIANZADO. 
-
 (C) En caso que el Contrato de Mutuo haya sido otorgado con base en un cupo rotativo y el AFIANZADO solicite desembolsos adicionales durante la vigencia del cupo de crédito, el AFIANZADO deberá pagar a EL FIADOR remuneraciones adicionales para que la fianza cubra en todo momento el valor total de la Obligación Principal, durante el plazo otorgado para su pago. El AFIANZADO reconoce que el OPERADOR recaudará por cuenta de EL FIADOR el valor de las remuneraciones adicionales y que las entregará directamente a EL FIADOR.
-
 (D) El valor de la Remuneración Inicial de la Fianza que EL FIADOR recibirá será la suma prevista en el anexo de información entregado al DEUDOR. El valor de la remuneración adicional será informado al momento en que el AFIANZADO solicite el desembolso adicional otorgado con base en un cupo rotativo.
-
 (E) EL AFIANZADO expresamente reconoce que esta contraprestación es la remuneración por la garantía de sus obligaciones y acepta que no habrá lugar a devolución o reintegro de la remuneración por pago anticipado de la Obligación Principal. En virtud de lo anterior con la firma en el presente documento EL AFIANZADO manifiesta de manera libre, espontanea e incondicionada, que acepta la garantía para respaldar sus obligaciones y se obliga a pagar la remuneración pactada en los términos ya indicados por concepto de la garantía otorgada.
 ]]></text>
 			</staticText>
@@ -369,55 +372,55 @@
 				<text><![CDATA[4.- CONDICIÓN SUSPENSIVA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="319" width="523" height="15" uuid="c6d5c5ea-0d61-4cf1-b90f-4d8c3e67306d"/>
+				<reportElement key="staticText-4" x="15" y="318" width="530" height="15" uuid="c6d5c5ea-0d61-4cf1-b90f-4d8c3e67306d"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Las obligaciones derivadas de la Fianza estarán sujetas a: i) El pago por parte del AFIANZADO de los cargos referidos en el punto 3 anterior, y; ii) Que el OPERADOR reporte oportunamente a EL FIADOR el otorgamiento de la Fianza y transfiera la Remuneración.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="336" width="189" height="9" uuid="58ce2d55-3b12-499c-ba90-b39f418df36c"/>
+				<reportElement key="staticText-16" x="15" y="334" width="189" height="9" uuid="58ce2d55-3b12-499c-ba90-b39f418df36c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[5.- VIGENCIA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="348" width="523" height="12" uuid="3a5e6366-3c7b-4eec-9ba7-b16673749180"/>
+				<reportElement key="staticText-4" x="13" y="344" width="532" height="14" uuid="3a5e6366-3c7b-4eec-9ba7-b16673749180"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[La Fianza terminará por las causales legalmente establecidas, así como por el vencimiento del plazo establecido en el Contrato de Mutuo y en el cupo rotativo de que trata el literal (C) del numeral 3.
 
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="362" width="189" height="9" uuid="507190fd-ceaf-4b0d-bcc9-3abdfd82dd30"/>
+				<reportElement key="staticText-16" x="15" y="357" width="189" height="9" uuid="507190fd-ceaf-4b0d-bcc9-3abdfd82dd30"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[6.- DERECHO PRINCIPAL DEL FIADOR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="372" width="523" height="22" uuid="5b8f65cd-969f-4258-bdad-f718a601fa3e"/>
+				<reportElement key="staticText-4" x="15" y="366" width="531" height="28" uuid="5b8f65cd-969f-4258-bdad-f718a601fa3e"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Una vez EL FIADOR cancele por cuenta del aquí EL AFIANZADO, una cuota o la totalidad del crédito que ha garantizado, adquiere el derecho a recuperar o repetir contra él lo efectivamente pagado, ya sea por cuenta propia o a través de un tercero o endosatario del contrato de mutuo, incluido capital, intereses de plazo, intereses de mora, costas judiciales, gastos del proceso, honorarios de abogado. El presente derecho lo podrá ejecutar iniciando la correspondiente acción judicial, sin que haya lugar a manifestación de oposición a través de proponer excepciones de mérito, excepto la de pago, pudiendo perseguir los bienes propios del AFIANZADO.
 
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="395" width="189" height="9" uuid="4db96ed4-241f-48a0-8883-4acc17fd7555"/>
+				<reportElement key="staticText-16" x="15" y="394" width="189" height="9" uuid="4db96ed4-241f-48a0-8883-4acc17fd7555"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[7.- TERMINACIÓN ANTICIPADA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="406" width="523" height="15" uuid="fe5b339f-d9e5-4cfc-9717-17df2cdf09ed"/>
+				<reportElement key="staticText-4" x="15" y="403" width="530" height="22" uuid="fe5b339f-d9e5-4cfc-9717-17df2cdf09ed"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[La Fianza terminará de forma anticipada en los siguientes eventos: (i) Que no se logre la incorporación dentro de los noventa (90) días calendario siguientes a la fecha en que fue celebrado el Contrato de Mutuo; (ii) Que EL FIADOR encuentre falencias documentales o irregularidades existentes al momento de otorgamiento del Contrato de Mutuo que lo anulen, o hagan imposible su ejecución.]]></text>
 			</staticText>
@@ -429,9 +432,9 @@
 				<text><![CDATA[8.- BENEFICIOS DE EL FIADOR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="432" width="523" height="39" uuid="2eb38713-1618-4e6a-9d6a-19357e37820f"/>
+				<reportElement key="staticText-4" x="13" y="432" width="533" height="52" uuid="2eb38713-1618-4e6a-9d6a-19357e37820f"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[EL FIADOR se reserva los beneficios de excusión y de división, en los términos de lo dispuesto por los artículos 2383 y siguientes del Código Civil colombiano.  
 
@@ -441,114 +444,113 @@ Finalmente, EL FIADOR podrá en caso que la obligación afianzada sea de caráct
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="472" width="232" height="9" uuid="710ed66c-9585-4999-b6de-7b824c45eeab"/>
+				<reportElement key="staticText-16" x="15" y="484" width="232" height="9" uuid="710ed66c-9585-4999-b6de-7b824c45eeab"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[9.- EXCLUSIÓN E INCOMPATIBILIDAD DEL SERVICIO CONTRATADO CON EL SEGURO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="482" width="523" height="15" uuid="8ed5161c-dc5b-4cfb-a994-68c2d3967328"/>
+				<reportElement key="staticText-4" x="15" y="494" width="531" height="15" uuid="8ed5161c-dc5b-4cfb-a994-68c2d3967328"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Reconoce desde ya el AFIANZADO que el servicio tomado con EL FIADOR no se asimila en ningún efecto al contrato de Seguro, por lo tanto, está excluida y es incompatible su normatividad con éste contrato, estando por el contrario siempre presente, que su obligación es pagar.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="498" width="232" height="9" uuid="91cbc375-039a-4ed0-871f-498298f13633"/>
+				<reportElement key="staticText-16" x="15" y="511" width="232" height="9" uuid="91cbc375-039a-4ed0-871f-498298f13633"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[10.- CESIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="508" width="523" height="15" uuid="9f8a3040-2f77-4928-8ad1-b04601795557"/>
+				<reportElement key="staticText-4" x="15" y="522" width="530" height="16" uuid="9f8a3040-2f77-4928-8ad1-b04601795557"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[EL AFIANZADO solo podrá ceder el presente contrato con el consentimiento previo, expreso y por escrito del FIADOR. EL AFIANZADO autoriza y acepta cualquier cesión que haga el FIADOR del presente contrato, pero la misma no surtirá efecto sino hasta cuando ésta se haya notificado al AFIANZADO.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="525" width="232" height="9" uuid="a0fac5a0-08af-43e0-a3dd-cc2bf8a84d84"/>
+				<reportElement key="staticText-16" x="15" y="540" width="232" height="9" uuid="a0fac5a0-08af-43e0-a3dd-cc2bf8a84d84"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[11.- REPORTE CENTRALES DE RIESGO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="535" width="523" height="29" uuid="6bbd2065-6f2c-4bf0-89bb-e7acc2123299"/>
+				<reportElement key="staticText-4" x="15" y="552" width="530" height="39" uuid="6bbd2065-6f2c-4bf0-89bb-e7acc2123299"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[EL AFIANZADO autoriza de manera expresa e irrevocable a EL FIADOR o a quien represente sus derechos u ostente en el futuro a cualquier título la calidad de Afianzador, a consultar, solicitar, suministrar, reportar, procesar y divulgar toda la información que se refiere al comportamiento crediticio, financiero y comercial de EL AFIANZADO a las Centrales de Riesgo y Entidades Financieras de Colombia o a quien represente sus derechos. La permanencia de la información en las bases de datos será determinada por el ordenamiento jurídico aplicable, en especial por las normas legales y la jurisprudencia, los cuales contienen mis derechos y obligaciones, que, por ser públicos, EL AFIANZADO conoce plenamente. En caso de que, en el futuro, EL FIADOR en este documento efectúe una cesión a cualquier título de este contrato a favor de un tercero, los efectos de la presente autorización se extenderán a éste, en los mismos términos y condiciones.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="17" y="566" width="232" height="9" uuid="3554b2f2-0f0f-4bcc-b2e8-94af4eb93d4c"/>
+				<reportElement key="staticText-16" x="17" y="591" width="232" height="9" uuid="3554b2f2-0f0f-4bcc-b2e8-94af4eb93d4c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[12.- HABEAS DATA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="17" y="576" width="523" height="24" uuid="deb51b87-e4cf-41a6-98b6-6a20dbfc63c8"/>
+				<reportElement key="staticText-4" x="17" y="601" width="528" height="30" uuid="deb51b87-e4cf-41a6-98b6-6a20dbfc63c8"/>
 				<textElement textAlignment="Justified">
-					<font fontName="Arial" size="5" isBold="false"/>
+					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[EL FIADOR declara que cuenta con políticas de protección de datos, conforme lo establecido en Ley Estatutaria 1581 y el Decreto 1377 de 2013. Igualmente declara que cuenta con los medios idóneos de protección de datos, con lo cual garantiza de este modo, el adecuado tratamiento de los datos del AFIANZADO. El AFIANZADO podrá solicitar la supresión, modificación o actualización de los datos suministrados.
-
 El AFIANZADO suscribe el presente documento en señal de conocimiento y aceptación de las condiciones de la Fianza.
 ]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="13" y="638" width="524" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bf62596c-1ed3-4875-9568-f0f16018ca40"/>
+				<reportElement key="line-1" x="13" y="670" width="532" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bf62596c-1ed3-4875-9568-f0f16018ca40"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="298" y="601" width="203" height="14" uuid="13bdc5be-17b5-41a6-9eda-f28dca2be0d0"/>
+				<reportElement key="staticText-16" x="298" y="634" width="203" height="14" uuid="13bdc5be-17b5-41a6-9eda-f28dca2be0d0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[Firma y huella asociado (a) y la fecha de diligenciamiento]]></text>
+				<text><![CDATA[Firma y huella afianzado (a) y la fecha de diligenciamiento]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="93" y="38" width="75" height="9" uuid="d12bd2be-80eb-4198-b5ae-c8d5d0cdd58e"/>
+				<reportElement x="93" y="34" width="75" height="9" uuid="d12bd2be-80eb-4198-b5ae-c8d5d0cdd58e"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nitter}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="93" y="27" width="165" height="8" uuid="0c39246b-f9b2-438a-ac65-1df8001fb464"/>
+				<reportElement x="93" y="23" width="165" height="8" uuid="0c39246b-f9b2-438a-ac65-1df8001fb464"/>
 				<textElement>
 					<font fontName="SansSerif" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{priApellido}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="93" y="17" width="157" height="9" uuid="8f571a08-2cc9-4f51-a066-451eefa2ab88"/>
+				<reportElement x="93" y="13" width="157" height="9" uuid="8f571a08-2cc9-4f51-a066-451eefa2ab88"/>
 				<textElement>
 					<font fontName="SansSerif" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nom_tercero}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="17" width="172" height="9" uuid="872a5694-8238-40b6-bfa0-45a87030ec55"/>
+				<reportElement x="352" y="13" width="172" height="9" uuid="872a5694-8238-40b6-bfa0-45a87030ec55"/>
 				<textElement>
 					<font fontName="SansSerif" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nom_terceroC}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="37" width="106" height="10" uuid="55253e19-8758-4156-b6f2-04ee1ef26a05"/>
+				<reportElement x="352" y="33" width="106" height="10" uuid="55253e19-8758-4156-b6f2-04ee1ef26a05"/>
 				<textElement>
 					<font fontName="SansSerif" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nitterC}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="26" width="172" height="9" uuid="b316d175-bb10-4888-a912-0e1b89133c59"/>
+				<reportElement x="352" y="22" width="172" height="9" uuid="b316d175-bb10-4888-a912-0e1b89133c59"/>
 				<textElement>
 					<font fontName="SansSerif" size="6"/>
 				</textElement>
