@@ -318,15 +318,15 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 				+ "  (p.v_solicita -   \r\n"
 				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
 				+ "	from " + scheme + "apo_not_cre_prestamo a, " + scheme
-				+ "apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Deudor' as indicador,:scheme as schemaDb \r\n" 
-				+ " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme
-				+ "fodataso f, " + scheme + "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, "
-				+ scheme + "ciudades c, " + scheme + "apo_T_Cla_Aso_1 a\r\n" + " where p.codter = t.codter\r\n"
-				+ " and p.REFINANCIA = 0\r\n" + " and p.codter = f.cod_ter\r\n"
-				+ " and p.tipo_credito = fo.codigo_credito\r\n" + " and fc.cod_inter = f.cla_asoci\r\n"
-				+ " and ft.cod_inter = f.tip_asoci\r\n" + " and t.codiciud = c.codiciud\r\n"
-				+ " and f.cla_aso_1 = a.id_cla_aso_1\r\n" + " and p.codter =  :codTer\r\n"
-				+ " and p.estado = 'A' and  p.saldo_capital > 0  \r\n" + " union all\r\n"
+				+ "apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Deudor' as indicador,:scheme as schemaDb , p.valor_cuot , p.v_solicita  , p.nro_cuotas \r\n"
+				+ " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme + "fodataso f, " + scheme
+				+ "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, " + scheme + "ciudades c, "
+				+ scheme + "apo_T_Cla_Aso_1 a\r\n" + " where p.codter = t.codter\r\n" + " and p.REFINANCIA = 0\r\n"
+				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
+				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
+				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
+				+ " and p.codter =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+				+ " union all\r\n"
 				+ " select p.numero_credito, p.saldo_capital, p.estado, t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 				+ " (select nomter from  " + scheme
 				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
@@ -343,15 +343,15 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 				+ "  (p.v_solicita -   \r\n"
 				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
 				+ "	from " + scheme + "apo_not_cre_prestamo a," + scheme
-				+ " apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb \r\n" + " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme
-				+ "fodataso f, " + scheme + "fotipcre fo, " + scheme + "foclaaso fc," + scheme + " fotipaso ft, "
-				+ scheme + "ciudades c, " + scheme + "apo_T_Cla_Aso_1 a\r\n"
-				+ " where p.codter = t.codter and p.codeudor1 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
-				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
-				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
-				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-				+ " and p.codeudor1  = :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
-				+ " union all\r\n"
+				+ " apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb , p.valor_cuot , p.v_solicita  , p.nro_cuotas  \r\n"
+				+ " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme + "fodataso f, " + scheme
+				+ "fotipcre fo, " + scheme + "foclaaso fc," + scheme + " fotipaso ft, " + scheme + "ciudades c, "
+				+ scheme + "apo_T_Cla_Aso_1 a\r\n" + " where p.codter = t.codter and p.codeudor1 <> 0\r\n"
+				+ " and p.REFINANCIA = 0\r\n" + " and p.codter = f.cod_ter\r\n"
+				+ " and p.tipo_credito = fo.codigo_credito\r\n" + " and fc.cod_inter = f.cla_asoci\r\n"
+				+ " and ft.cod_inter = f.tip_asoci\r\n" + " and t.codiciud = c.codiciud\r\n"
+				+ " and f.cla_aso_1 = a.id_cla_aso_1\r\n" + " and p.codeudor1  = :codTer\r\n"
+				+ " and p.estado = 'A' and  p.saldo_capital > 0  \r\n" + " union all\r\n"
 				+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 				+ " (select nomter from  " + scheme
 				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
@@ -368,15 +368,15 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 				+ "  (p.v_solicita -   \r\n"
 				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
 				+ "	from " + scheme + "apo_not_cre_prestamo a, " + scheme
-				+ "apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb \r\n" + " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme
-				+ "fodataso f, " + scheme + "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, "
-				+ scheme + "ciudades c, " + scheme + "apo_T_Cla_Aso_1 a\r\n"
-				+ " where p.codter = t.codter and p.codeudor2 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
-				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
-				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
-				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-				+ " and p.codeudor2  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
-				+ " union all\r\n"
+				+ "apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb , p.valor_cuot , p.v_solicita  , p.nro_cuotas  \r\n"
+				+ " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme + "fodataso f, " + scheme
+				+ "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, " + scheme + "ciudades c, "
+				+ scheme + "apo_T_Cla_Aso_1 a\r\n" + " where p.codter = t.codter and p.codeudor2 <> 0\r\n"
+				+ " and p.REFINANCIA = 0\r\n" + " and p.codter = f.cod_ter\r\n"
+				+ " and p.tipo_credito = fo.codigo_credito\r\n" + " and fc.cod_inter = f.cla_asoci\r\n"
+				+ " and ft.cod_inter = f.tip_asoci\r\n" + " and t.codiciud = c.codiciud\r\n"
+				+ " and f.cla_aso_1 = a.id_cla_aso_1\r\n" + " and p.codeudor2  =  :codTer\r\n"
+				+ " and p.estado = 'A' and  p.saldo_capital > 0  \r\n" + " union all\r\n"
 				+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 				+ " (select nomter from  " + scheme
 				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
@@ -392,15 +392,15 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 				+ "  (p.v_solicita -   \r\n"
 				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
 				+ "	from " + scheme
-				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb \r\n" + " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme
-				+ "fodataso f, " + scheme + "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, "
-				+ scheme + "ciudades c, " + scheme + "apo_T_Cla_Aso_1 a\r\n"
-				+ " where p.codter = t.codter and p.codeudor3 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
-				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
-				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
-				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-				+ " and p.codeudor3  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
-				+ " union all\r\n"
+				+ "apo_not_cre_prestamo a, apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb , p.valor_cuot , p.v_solicita  , p.nro_cuotas  \r\n"
+				+ " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme + "fodataso f, " + scheme
+				+ "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, " + scheme + "ciudades c, "
+				+ scheme + "apo_T_Cla_Aso_1 a\r\n" + " where p.codter = t.codter and p.codeudor3 <> 0\r\n"
+				+ " and p.REFINANCIA = 0\r\n" + " and p.codter = f.cod_ter\r\n"
+				+ " and p.tipo_credito = fo.codigo_credito\r\n" + " and fc.cod_inter = f.cla_asoci\r\n"
+				+ " and ft.cod_inter = f.tip_asoci\r\n" + " and t.codiciud = c.codiciud\r\n"
+				+ " and f.cla_aso_1 = a.id_cla_aso_1\r\n" + " and p.codeudor3  =  :codTer\r\n"
+				+ " and p.estado = 'A' and  p.saldo_capital > 0  \r\n" + " union all\r\n"
 				+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 				+ " (select nomter from  " + scheme
 				+ "terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n" + "(select nitter from "
@@ -416,17 +416,33 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 				+ "  (p.v_solicita -   \r\n"
 				+ "  ( select isnull(sum(a.valor_capital_caja + a.valor_capital_nomina + a.valor_extra + a.valor_prima ),0) as valor\r\n"
 				+ "	from " + scheme + "apo_not_cre_prestamo a, " + scheme
-				+ "apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb \r\n" + " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme
-				+ "fodataso f, " + scheme + "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, "
-				+ scheme + "ciudades c, " + scheme + "apo_T_Cla_Aso_1 a\r\n"
-				+ " where p.codter = t.codter and p.codeudor4 <> 0\r\n" + " and p.REFINANCIA = 0\r\n"
-				+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
-				+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
-				+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-				+ " and p.codeudor4  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
-				+ " order by t.nomter, p.numero_credito";
+				+ "apo_not_credito an  where a.num_nota = an.num_nota and a.tip_comp = an.tip_comp and an.anu_nota <> 'A' and a.nro_credito = p.numero_credito)  ) as saldoK, 'Codeudor' as indicador,:scheme as schemaDb , p.valor_cuot , p.v_solicita  , p.nro_cuotas  \r\n"
+				+ " from " + scheme + "prestamo p, " + scheme + "terceros t, " + scheme + "fodataso f, " + scheme
+				+ "fotipcre fo, " + scheme + "foclaaso fc, " + scheme + "fotipaso ft, " + scheme + "ciudades c, "
+				+ scheme + "apo_T_Cla_Aso_1 a\r\n" + " where p.codter = t.codter and p.codeudor4 <> 0\r\n"
+				+ " and p.REFINANCIA = 0\r\n" + " and p.codter = f.cod_ter\r\n"
+				+ " and p.tipo_credito = fo.codigo_credito\r\n" + " and fc.cod_inter = f.cla_asoci\r\n"
+				+ " and ft.cod_inter = f.tip_asoci\r\n" + " and t.codiciud = c.codiciud\r\n"
+				+ " and f.cla_aso_1 = a.id_cla_aso_1\r\n" + " and p.codeudor4  =  :codTer\r\n"
+				+ " and p.estado = 'A' and  p.saldo_capital > 0  \r\n" + " order by t.nomter, p.numero_credito";
 		query = query.replaceAll(":codTer", "'" + codTer + "'");
 		query = query.replaceAll(":scheme", "'" + scheme + "'");
+		return query;
+	}
+
+	static String getFeesCaused(String scheme, String numcredito, String fpivote) {
+		String query = "select count(1) CuoCau from " + scheme
+				+ "cart_est where refinancia = 0 and numero_credito = :numcredito and fecha_pivote <= :fpivote";
+		query = query.replaceAll(":numcredito", "'" + numcredito + "'");
+		query = query.replaceAll(":fpivote", "'" + fpivote + "'");
+		return query;
+	}
+	
+	static String getFeesCollected(String scheme, String numcredito, String fpivote) {
+		String query = "  Select COUNT(1) as CuoPag from ( select distinct an.numcuo from "+scheme+"APO_NOT_CRE_PRESTAMO AN, "+scheme+"APO_NOT_CREDITO A "
+				+ " where AN.nro_CREDITO = :numcredito AND AN.num_NOTA = A.num_NOTA AND AN.tip_comp = A.tip_comp AND A.fec_NOTA <= :fpivote) x";
+		query = query.replaceAll(":numcredito", "'" + numcredito + "'");
+		query = query.replaceAll(":fpivote", "'" + fpivote + "'");
 		return query;
 	}
 }

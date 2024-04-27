@@ -55,7 +55,7 @@ public class WfStepParameterMapper implements IWfStepParameterMapper {
 		List<DTOWalletUser> response = new ArrayList<DTOWalletUser>();
 		
 		o.stream().forEach(obj -> {
-			response.add(new DTOWalletUser(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[23]),String.valueOf(obj[24]),String.valueOf(obj[6]),String.valueOf(obj[14]),String.valueOf(obj[17]),String.valueOf(obj[15]),String.valueOf(obj[16]),String.valueOf(obj[2]),String.valueOf(obj[5]),String.valueOf(obj[25])));
+			response.add(new DTOWalletUser(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[23]),String.valueOf(obj[24]),String.valueOf(obj[6]),String.valueOf(obj[14]),String.valueOf(obj[17]),String.valueOf(obj[15]),String.valueOf(obj[16]),String.valueOf(obj[2]),String.valueOf(obj[5]),String.valueOf(obj[25]),String.valueOf(obj[26]),String.valueOf(obj[27]),String.valueOf(obj[28])));
 			
 		});
 		

@@ -1,5 +1,7 @@
 package com.jarzsoft.services.impl;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +27,6 @@ import com.jarzsoft.entities.W_Wf_Est;
 import com.jarzsoft.entities.W_Wf_EstPK;
 import com.jarzsoft.entities.W_Wf_Pasos;
 import com.jarzsoft.entities.W_Wf_PasosPK;
-import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.exception.UnauthorizedException;
 import com.jarzsoft.mapper.IWfEstParameterMapper;
 import com.jarzsoft.mapper.IWfParameterMapper;
@@ -279,8 +280,8 @@ public class WFParameterService implements IWFParameterService {
 		List<Object[]> briefcase = new ArrayList<>();
 		briefcase.addAll(getPortafolioByScheme(schemeFirst, user));
 		briefcase.addAll(getPortafolioByScheme(schemeSecond, user));
-
-		return mapperStep.mapperEntitiePortafolioToDto(briefcase);
+		List<DTOWalletUser> portafoleoBeforeFees = mapperStep.mapperEntitiePortafolioToDto(briefcase);
+		return addDues(portafoleoBeforeFees);
 	}
 
 	@SuppressWarnings({ "unchecked" })
@@ -298,4 +299,29 @@ public class WFParameterService implements IWFParameterService {
 
 	}
 
-}
+	private List<DTOWalletUser> addDues(List<DTOWalletUser> wallet) {
+		LocalDateTime ahora = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		String now = ahora.format(formatter);
+
+		for (DTOWalletUser w : wallet) {
+			Query query = entityManager.createNativeQuery(W_WfRepository.getFeesCaused(w.getScheme(), w.getNumeroCredito(), now));
+			long cuoCau = ((Number) query.getSingleResult()).longValue();
+			w.setCuoCau(cuoCau + "");
+			
+			Query queryFeesCollected = entityManager.createNativeQuery(W_WfRepository.getFeesCollected(w.getScheme(), w.getNumeroCredito(), now));
+			long cuoPag = ((Number) queryFeesCollected.getSingleResult()).longValue();
+			w.setCuoPag(cuoPag + "");
+		
+			long cuoMora=0;
+			if(cuoPag<cuoCau) {
+				cuoMora =cuoCau - cuoPag;
+			}
+			
+			w.setCuoMora(cuoMora+"");
+			
+	
+			
+		}
+		return wallet;
+	}}

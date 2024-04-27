@@ -14,6 +14,12 @@ public class DTOWalletUser {
 	private String estCredito;
 	private String nomTer;
 	private String scheme;
+	private String valorCuot;
+	private String vSolicita;
+	private String nroCuotas;
+	private String cuoCau;
+	private String cuoPag;
+	private String cuoMora;
 
 	public DTOWalletUser() {
 		super();
@@ -36,7 +42,7 @@ public class DTOWalletUser {
 
 	public DTOWalletUser(String numeroCredito, String saldoCapital, String saldoK, String indicador, String nomClaaso,
 			String nomClaasoCod, String marcacionn, String estPersonaDeu, String estPersonaCoDeu, String estCredito,
-			String nomTer, String scheme) {
+			String nomTer, String scheme, String valorCuot, String vSolicita, String nroCuotas) {
 		super();
 		this.numeroCredito = numeroCredito;
 		this.saldoCapital = saldoCapital;
@@ -50,6 +56,9 @@ public class DTOWalletUser {
 		this.estCredito = estCredito;
 		this.nomTer = nomTer;
 		this.scheme = scheme;
+		this.valorCuot = valorCuot;
+		this.vSolicita = vSolicita;
+		this.nroCuotas = nroCuotas;
 	}
 
 	public String getNomTer() {
@@ -147,5 +156,54 @@ public class DTOWalletUser {
 	public void setEstCredito(String estCredito) {
 		this.estCredito = estCredito;
 	}
+
+	public String getValorCuot() {
+		return valorCuot;
+	}
+
+	public void setValorCuot(String valorCuot) {
+		this.valorCuot = valorCuot;
+	}
+
+	public String getvSolicita() {
+		return vSolicita;
+	}
+
+	public void setvSolicita(String vSolicita) {
+		this.vSolicita = vSolicita;
+	}
+
+	public String getNroCuotas() {
+		return nroCuotas;
+	}
+
+	public void setNroCuotas(String nroCuotas) {
+		this.nroCuotas = nroCuotas;
+	}
+
+	public String getCuoCau() {
+		return cuoCau;
+	}
+
+	public void setCuoCau(String cuoCau) {
+		this.cuoCau = cuoCau;
+	}
+
+	public String getCuoPag() {
+		return cuoPag;
+	}
+
+	public void setCuoPag(String cuoPag) {
+		this.cuoPag = cuoPag;
+	}
+
+	public String getCuoMora() {
+		return cuoMora;
+	}
+
+	public void setCuoMora(String cuoMora) {
+		this.cuoMora = cuoMora;
+	}
+
 
 }
