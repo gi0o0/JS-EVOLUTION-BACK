@@ -55,8 +55,7 @@ public class WfStepParameterMapper implements IWfStepParameterMapper {
 		List<DTOWalletUser> response = new ArrayList<DTOWalletUser>();
 		
 		o.stream().forEach(obj -> {
-			response.add(new DTOWalletUser(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[23]),String.valueOf(obj[24]),String.valueOf(obj[6]),String.valueOf(obj[14]),String.valueOf(obj[17]),String.valueOf(obj[15]),String.valueOf(obj[16]),String.valueOf(obj[2]),String.valueOf(obj[5]),String.valueOf(obj[25]),String.valueOf(obj[26]),String.valueOf(obj[27]),String.valueOf(obj[28])));
-			
+			response.add(new DTOWalletUser(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[23]),String.valueOf(obj[24]),String.valueOf(obj[6]),String.valueOf(obj[14]),String.valueOf(obj[17]),String.valueOf(obj[15]),String.valueOf(obj[16]),String.valueOf(obj[2])));			
 		});
 		
 		return response;
@@ -68,6 +67,18 @@ public class WfStepParameterMapper implements IWfStepParameterMapper {
 		
 		o.stream().forEach(obj -> {
 			response.add(new DTOStepsState(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[2]),String.valueOf(obj[3]),String.valueOf(obj[4]),String.valueOf(obj[5]),String.valueOf(obj[6]),String.valueOf(obj[7]),String.valueOf(obj[8]),String.valueOf(obj[9]),String.valueOf(obj[10]),String.valueOf(obj[11])));	
+		});
+		
+		return response;
+	}
+
+	@Override
+	public List<DTOWalletUser> mapperEntitiePortafolioToDtoFull(List<Object[]> o) {
+		List<DTOWalletUser> response = new ArrayList<DTOWalletUser>();
+		
+		o.stream().forEach(obj -> {
+			response.add(new DTOWalletUser(String.valueOf(obj[0]),String.valueOf(obj[1]),String.valueOf(obj[23]),String.valueOf(obj[24]),String.valueOf(obj[6]),String.valueOf(obj[14]),String.valueOf(obj[17]),String.valueOf(obj[15]),String.valueOf(obj[16]),String.valueOf(obj[2]),String.valueOf(obj[5]),String.valueOf(obj[25]),String.valueOf(obj[26]),String.valueOf(obj[27]),String.valueOf(obj[28])));
+			
 		});
 		
 		return response;

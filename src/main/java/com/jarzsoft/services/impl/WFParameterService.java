@@ -280,7 +280,7 @@ public class WFParameterService implements IWFParameterService {
 		List<Object[]> briefcase = new ArrayList<>();
 		briefcase.addAll(getPortafolioByScheme(schemeFirst, user));
 		briefcase.addAll(getPortafolioByScheme(schemeSecond, user));
-		List<DTOWalletUser> portafoleoBeforeFees = mapperStep.mapperEntitiePortafolioToDto(briefcase);
+		List<DTOWalletUser> portafoleoBeforeFees = mapperStep.mapperEntitiePortafolioToDtoFull(briefcase);
 		return addDues(portafoleoBeforeFees);
 	}
 

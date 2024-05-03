@@ -16,7 +16,9 @@ public interface IWfStepParameterMapper {
 	public W_Wf_Pasos mapperDtoToDao(DTOWFParameterStep o);
 
 	public List<DTOWalletUser> mapperEntitiePortafolioToDto(List<Object[]> o);
-	
+
 	public List<DTOStepsState> mapperEntitieSteptStateToDto(List<Object[]> o);
+
+	public List<DTOWalletUser> mapperEntitiePortafolioToDtoFull(List<Object[]> o);
 
 }
