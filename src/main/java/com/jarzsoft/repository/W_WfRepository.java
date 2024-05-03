@@ -432,17 +432,18 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 
 	static String getFeesCaused(String scheme, String numcredito, String fpivote) {
 		String query = "select count(1) CuoCau from " + scheme
-				+ "cart_est where refinancia = 0 and numero_credito = :numcredito and fecha_pivote <= :fpivote";
-		query = query.replaceAll(":numcredito", "'" + numcredito + "'");
-		query = query.replaceAll(":fpivote", "'" + fpivote + "'");
+				+ "cart_est where refinancia = 0 and numero_credito = :numcredito and fecha_pivote <= " + "CONVERT(SMALLDATETIME, '" + ":fpivote" + "',120)";
+		  
+		query = query.replaceAll(":numcredito",   "'" + numcredito  + "'");
+		query = query.replaceAll(":fpivote",   fpivote  );
 		return query;
 	}
 	
 	static String getFeesCollected(String scheme, String numcredito, String fpivote) {
 		String query = "  Select COUNT(1) as CuoPag from ( select distinct an.numcuo from "+scheme+"APO_NOT_CRE_PRESTAMO AN, "+scheme+"APO_NOT_CREDITO A "
-				+ " where AN.nro_CREDITO = :numcredito AND AN.num_NOTA = A.num_NOTA AND AN.tip_comp = A.tip_comp AND A.fec_NOTA <= :fpivote) x";
-		query = query.replaceAll(":numcredito", "'" + numcredito + "'");
-		query = query.replaceAll(":fpivote", "'" + fpivote + "'");
+				+ " where AN.nro_CREDITO = :numcredito AND AN.num_NOTA = A.num_NOTA AND AN.tip_comp = A.tip_comp AND A.fec_NOTA <= "+ "CONVERT(SMALLDATETIME, '" + ":fpivote" + "',120)"+") x";
+		query = query.replaceAll(":numcredito",  "'" + numcredito + "'"  );
+		query = query.replaceAll(":fpivote",   fpivote  );
 		return query;
 	}
 }
