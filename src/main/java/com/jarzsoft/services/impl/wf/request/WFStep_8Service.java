@@ -63,7 +63,7 @@ public class WFStep_8Service implements IStepStrategy {
 			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_8.getName(), o.getIsUpdate(),
 					o.getIdWf());
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_END.getName());
-			sendEmail(o.getMailTer());
+			sendEmail(o.getMailTer(), o.getNumeroRadicacion()+"");
 
 		} else {
 			throw new PageNoFoundException("Solicitud no Existe");
@@ -78,7 +78,7 @@ public class WFStep_8Service implements IStepStrategy {
 		return EnumSteps.TIPO_PASO.STEP_8.getName();
 	}
 
-	private void sendEmail(String email) {
+	private void sendEmail(String email, String idWf) {
 
 		String asunto_email = "";
 		String text_email = "";
@@ -93,8 +93,8 @@ public class WFStep_8Service implements IStepStrategy {
 				text_email = parametro.getValue();
 			}
 		}
-
-		sendEmail.Send(email, asunto_email, text_email, null, "");
+		String asunto = String.format(asunto_email, idWf);
+		sendEmail.Send(email, asunto, text_email, null, "");
 	}
 
 }

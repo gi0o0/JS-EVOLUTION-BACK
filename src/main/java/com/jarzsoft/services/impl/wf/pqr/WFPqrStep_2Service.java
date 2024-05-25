@@ -55,7 +55,7 @@ public class WFPqrStep_2Service implements IStepPqrStrategy {
 	private DTOWFPqr signature(DTOWFPqr o, String user) {
 		String codeLink = comunes.generarHashPassword(o.getNumeroRadicacion() + "");
 		tercerosService.modificarClaveLink(o.getNitter(), codeLink);
-		utilsWkService.sendEmail(o.getMailTer(), codeLink, o.getIdWf());
+		utilsWkService.sendEmail(o.getMailTer(), codeLink, o.getIdWf(), o.getNumeroRadicacion() + "");
 		return o;
 	}
 
@@ -73,7 +73,7 @@ public class WFPqrStep_2Service implements IStepPqrStrategy {
 
 	private DTOWFPqr createMove(DTOWFPqr o, String user) {
 
-		if (null!=o.getIsRequiredEmail() && o.getIsRequiredEmail()) {
+		if (null != o.getIsRequiredEmail() && o.getIsRequiredEmail()) {
 			DTOTerceros externalUser = tercerosService.findByNiter(o.getNitter());
 			if (!"S".equals(externalUser.getClaveLink())) {
 				o.setState("4");

@@ -92,10 +92,14 @@ public class SendEmail {
 				message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(emailsCc));
 
 			message.setSubject(asunto_email);
-			message.setText(text_email);
-
+			
+			MimeBodyPart mimeBodyPart = new MimeBodyPart();
+            mimeBodyPart.setContent(text_email,"text/html; charset=utf-8");
+        	Multipart multipart = new MimeMultipart();
+        	multipart.addBodyPart(mimeBodyPart);
+        	
 			if (null != adjuntos && adjuntos.size() > 0) {
-				Multipart multipart = new MimeMultipart();
+			
 				for (String pathFile : adjuntos) {
 					MimeBodyPart messageBodyPart = new MimeBodyPart();
 					DataSource source = new FileDataSource(pathFile);
@@ -103,9 +107,9 @@ public class SendEmail {
 					messageBodyPart.setFileName(pathFile);
 					multipart.addBodyPart(messageBodyPart);
 				}
-				message.setContent(multipart);
+				
 			}
-
+			message.setContent(multipart);
 			Transport.send(message);
 			resultado = "OK";
 		} catch (Exception e) {

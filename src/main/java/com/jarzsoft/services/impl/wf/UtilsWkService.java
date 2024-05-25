@@ -28,7 +28,7 @@ public class UtilsWkService {
 
 	}
 
-	public void sendEmail(String email, String hash, String idWk) {
+	public void sendEmail(String email, String hash, String idWk, String numRad) {
 
 		String asunto_email = "";
 		String text_email = "";
@@ -46,8 +46,9 @@ public class UtilsWkService {
 				link_email = parametro.getValue();
 			}
 		}
-
-		sendEmail.Send(email, asunto_email, text_email + "\n\n" + link_email + hash + "," + idWk, null, "");
+		link_email = link_email + hash;
+		String asunto = String.format(asunto_email, numRad);
+		sendEmail.Send(email, asunto, String.format(text_email, link_email) + idWk, null, "");
 	}
 
 	public DTOSolCredito createSolCredito(DTOWFPqr o, Integer numRad, String estado) {

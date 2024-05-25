@@ -78,8 +78,13 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 		String text_email = "";
 		String emailUser = o.getMailTer();
 		String emailsCc = "";
+		String paramaterEmail = "EMAIL_WK1_STEP5";
 
-		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL_WK1_STEP5");
+		if (EnumWF.TIPO_WF.IDWF_2.getName().equals(o.getIdWf())) {
+			paramaterEmail = "EMAIL_WK2_STEP5";
+		}
+
+		List<Parametro> parametroList = parametroRepository.findByParamId(paramaterEmail);
 
 		for (Parametro parametro : parametroList) {
 			String value = parametro.getParametroKey().getParam_text();
@@ -100,13 +105,13 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 					o.getIdWf());
 			if (null != tercero) {
 				Parametro emailsCcDp = parametroRepository.findByParamIdAndParamtext("EMAILS_CC_DP", "CC");
-				emailsCc=emailsCcDp.getValue();
+				emailsCc = emailsCcDp.getValue();
 				emailUser = tercero.getMailTer().trim();
 			}
 
 		}
-
-		sendEmail.Send(emailUser, asunto_email, text_email, reportes,emailsCc);
+		String asunto = String.format(asunto_email, o.getNumeroRadicacion() + "");
+		sendEmail.Send(emailUser, asunto, text_email, reportes, emailsCc);
 
 		return o;
 
