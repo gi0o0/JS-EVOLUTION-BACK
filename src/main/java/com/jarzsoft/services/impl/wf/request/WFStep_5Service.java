@@ -106,7 +106,7 @@ public class WFStep_5Service implements IStepStrategy {
 	}
 
 	private DTOWF callReports(DTOWF o, String user) {
-		String path = parameterService.getSingleById("PATH", "FILES_USERS").getValue();
+		String path = parameterService.getSingleById("PATH", "FILES_USERS").getValue().trim();
 		ArrayList<String> reportes = new ArrayList<>();
 		Constantes constantes = new Constantes();
 

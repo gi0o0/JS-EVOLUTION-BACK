@@ -36,7 +36,7 @@ public class FilesUserService implements IFilesUserService {
 
 		try {
 
-			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
 			byte[] decodedImg = Base64.getDecoder()
 					.decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
 			String nameFile = id + "_" + step + "_" + cedula + "_" + doc.getIdDocumento() + "_" + doc.getNomDocumento()
@@ -54,7 +54,7 @@ public class FilesUserService implements IFilesUserService {
 	@Override
 	public List<DTOFilesUser> listAll(String user, String solicitud, String id) {
 
-		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
 		File folder = new File(path);
 		List<DTOFilesUser> files = new ArrayList<>();
 		for (File file : folder.listFiles()) {
@@ -100,7 +100,7 @@ public class FilesUserService implements IFilesUserService {
 
 	@Override
 	public List<DTOFilesUser> listAllByIdRedAndStep(String solicitud, String step) {
-		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
 		File folder = new File(path);
 		List<DTOFilesUser> files = new ArrayList<>();
 		for (File file : folder.listFiles()) {
@@ -128,7 +128,7 @@ public class FilesUserService implements IFilesUserService {
 
 	@Override
 	public List<DTOFilesUser> listAllById(String solicitud) {
-		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue();
+		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
 		File folder = new File(path);
 		List<DTOFilesUser> files = new ArrayList<>();
 		for (File file : folder.listFiles()) {

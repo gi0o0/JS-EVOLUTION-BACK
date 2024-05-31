@@ -54,15 +54,15 @@ public class SendEmail {
 		for (Parametro parametro : parametroList) {
 			String value = parametro.getParametroKey().getParam_text();
 			if ("USER_SERVER".equals(value)) {
-				user_server_email = parametro.getValue();
+				user_server_email = parametro.getValue().trim();
 			} else if ("PASS_SERVER".equals(value)) {
-				pass_server_email = parametro.getValue();
+				pass_server_email = parametro.getValue().trim();
 			} else if ("SERVER".equals(value)) {
-				server_email = parametro.getValue();
+				server_email = parametro.getValue().trim();
 			} else if ("PORT".equals(value)) {
-				port_email = parametro.getValue();
+				port_email = parametro.getValue().trim();
 			} else if ("FROM".equals(value)) {
-				from_email = parametro.getValue();
+				from_email = parametro.getValue().trim();
 			}
 		}
 

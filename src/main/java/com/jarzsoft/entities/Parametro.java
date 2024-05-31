@@ -18,14 +18,14 @@ public class Parametro implements Serializable {
 	private ParametroKey parametroKey;
 
 	@NotBlank
-	@Size(max = 200)
+	@Size(max = 8000)
 	private String value;
 
 	public Parametro() {
 		super();
 	}
 
-	public Parametro(ParametroKey parametroKey, @NotBlank @Size(max = 200) String value) {
+	public Parametro(ParametroKey parametroKey, @NotBlank @Size(max = 8000) String value) {
 		super();
 		this.parametroKey = parametroKey;
 		this.value = value;
