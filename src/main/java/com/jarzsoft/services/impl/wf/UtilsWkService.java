@@ -46,7 +46,7 @@ public class UtilsWkService {
 				link_email = parametro.getValue();
 			}
 		}
-		link_email = link_email + hash;
+		link_email = link_email + hash + "," + idWk;
 		String asunto = String.format(asunto_email, numRad);
 		sendEmail.Send(email, asunto, String.format(text_email, link_email) + idWk, null, "");
 	}

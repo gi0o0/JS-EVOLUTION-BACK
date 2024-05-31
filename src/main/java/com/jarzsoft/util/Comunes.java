@@ -147,10 +147,10 @@ public class Comunes {
 		return hash;
 	}
 
-	public String generarHashPassword(String passwordActual) {
+	public String generarHashPassword(String value) {
 		String hashGenerate = "";
 		try {
-			hashGenerate = (getStringMessageDigest(passwordActual, Constantes.SHA256));
+			hashGenerate = (getStringMessageDigest(value, Constantes.SHA256));
 		} catch (Exception e) {
 			LOGGER.info("EXCEPTION:" + e.getMessage());
 		}
