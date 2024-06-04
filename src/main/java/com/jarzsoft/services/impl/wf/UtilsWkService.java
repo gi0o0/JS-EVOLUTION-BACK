@@ -40,11 +40,11 @@ public class UtilsWkService {
 		for (Parametro parametro : parametroList) {
 			String value = parametro.getParametroKey().getParam_text();
 			if ("ASUNTO".equals(value)) {
-				asunto_email = parametro.getValue();
+				asunto_email = parametro.getValue().trim();
 			} else if ("TEXT".equals(value)) {
-				text_email = parametro.getValue();
+				text_email = parametro.getValue().trim();
 			} else if ("LINK".equals(value)) {
-				link_email = parametro.getValue();
+				link_email = parametro.getValue().trim();
 			}
 		}
 		link_email = link_email + hash + "," + idWk;
