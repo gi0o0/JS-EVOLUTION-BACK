@@ -17,6 +17,7 @@ import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.IStepPqrStrategy;
 import com.jarzsoft.service.IWWfMovService;
 import com.jarzsoft.services.impl.wf.UtilsWkService;
+import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
 import com.jarzsoft.util.EnumSubSteps;
@@ -111,7 +112,7 @@ public class WFPqrStep_5Service implements IStepPqrStrategy {
 
 		}
 		String asunto = String.format(asunto_email, o.getNumeroRadicacion() + "");
-		sendEmail.Send(emailUser, asunto, text_email, reportes, emailsCc);
+		sendEmail.Send(emailUser, asunto, Comunes.getTextoFormat(text_email, ""), reportes, emailsCc);
 
 		return o;
 

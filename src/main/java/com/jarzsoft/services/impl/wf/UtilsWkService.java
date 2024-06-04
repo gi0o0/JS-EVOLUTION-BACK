@@ -9,6 +9,7 @@ import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOWFPqr;
 import com.jarzsoft.entities.Parametro;
 import com.jarzsoft.repository.ParametroRepository;
+import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.SendEmail;
 
 @Component
@@ -48,7 +49,8 @@ public class UtilsWkService {
 		}
 		link_email = link_email + hash + "," + idWk;
 		String asunto = String.format(asunto_email, numRad);
-		sendEmail.Send(email, asunto, String.format(text_email, link_email) + idWk, null, "");
+
+		sendEmail.Send(email, asunto, Comunes.getTextoFormat(text_email, link_email), null, "");
 	}
 
 	public DTOSolCredito createSolCredito(DTOWFPqr o, Integer numRad, String estado) {

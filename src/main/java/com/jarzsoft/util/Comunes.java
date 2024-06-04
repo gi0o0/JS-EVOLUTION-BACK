@@ -252,4 +252,9 @@ public class Comunes {
 		return (value == null || "N".equals(value)) ? false : true;
 	}
 
+	public static String getTextoFormat(String text, String dynamicText) {
+		return String.format(text.replaceAll("%", "%%").replaceAll("dynamic_text", "%s"), dynamicText);
+
+	}
+
 }

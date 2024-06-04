@@ -14,6 +14,7 @@ import com.jarzsoft.service.IFilesUserService;
 import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
 import com.jarzsoft.service.IWWfMovService;
+import com.jarzsoft.util.Comunes;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
 import com.jarzsoft.util.SendEmail;
@@ -94,7 +95,7 @@ public class WFStep_8Service implements IStepStrategy {
 			}
 		}
 		String asunto = String.format(asunto_email, idWf);
-		sendEmail.Send(email, asunto, text_email, null, "");
+		sendEmail.Send(email, asunto, Comunes.getTextoFormat(text_email, "") , null, "");
 	}
 
 }
