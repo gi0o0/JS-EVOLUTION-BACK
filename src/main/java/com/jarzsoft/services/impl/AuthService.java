@@ -232,8 +232,9 @@ public class AuthService implements IAuthService {
 	@Override
 	public ResponseEntity<Object> signUpBytoken(SignupTokenRequest signupTokenRequest) {
 		LOGGER.info("signUpBytoken:" + signupTokenRequest.getToken());
+		
 
-		Object[] user = usuarioRepository.findByUsuarioAndClaveLink(signupTokenRequest.getToken());
+		Object[] user = usuarioRepository.findByUsuarioAndClaveLink(signupTokenRequest.getToken().trim());
 		if (user.length == 0)
 			throw new PageNoFoundException(Constantes.MESSAGE_USER_NO_FOUND);
 
