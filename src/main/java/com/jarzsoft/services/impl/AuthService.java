@@ -295,11 +295,11 @@ public class AuthService implements IAuthService {
 		for (Parametro parametro : parametroList) {
 			String value = parametro.getParametroKey().getParam_text();
 			if ("ASUNTO".equals(value)) {
-				asunto_email = parametro.getValue();
+				asunto_email = parametro.getValue().trim();
 			} else if ("TEXT".equals(value)) {
 				text_email = parametro.getValue();
 			} else if ("LINK".equals(value)) {
-				link_email = parametro.getValue();
+				link_email = parametro.getValue().trim();
 			}
 		}
 
