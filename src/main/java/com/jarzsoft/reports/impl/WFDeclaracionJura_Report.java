@@ -44,6 +44,18 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 		param.put("pagare", o.getSolPagare());
 		param.put("valorletras", "");
 		param.put("valor", "");
+		
+		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
+			
+			param.put("nitter_codeu", o.getCodeu().getNitter());
+			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
+					+ o.getCodeu().getSegApellido());
+
+		} else {
+			
+			param.put("nitter_codeu", " ");
+			param.put("nomTer_codeu", " ");
+		}
 
 		Comunes.crearJasperReport(path, Constantes.REPORTE_DECLARACION_JURA, param,
 				EnumReport.TIPO_REPORTE.REPORT_DECLARACION_JURA.getName(), o.getNumeroRadicacion() + "");

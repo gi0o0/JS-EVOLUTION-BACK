@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solicitud" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="460a3111-3c9f-471e-8389-1bdc8d97af2f">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="464"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="75"/>
+	<property name="ireport.y" value="524"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -15,6 +15,8 @@
 	<parameter name="dia" class="java.lang.String"/>
 	<parameter name="mes" class="java.lang.String"/>
 	<parameter name="codiCiud" class="java.lang.String"/>
+	<parameter name="nitter_codeu" class="java.lang.String"/>
+	<parameter name="nomTer_codeu" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="limite" class="java.lang.String"/>
 	<field name="deducible" class="java.lang.String"/>
@@ -265,6 +267,20 @@ Autorizo que del crédito solicitado y aprobado a mi favor sea descontado y paga
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
+			<textField>
+				<reportElement x="321" y="416" width="150" height="12" uuid="25c674d0-8ead-4190-90a5-1194ea74e423"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="452" width="60" height="15" uuid="f41ce007-0b17-4a12-97df-958d959bcef5"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nitter_codeu}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 </jasperReport>
