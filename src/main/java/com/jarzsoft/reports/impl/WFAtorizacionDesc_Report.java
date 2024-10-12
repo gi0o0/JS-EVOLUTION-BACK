@@ -43,17 +43,22 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
-		param.put("codiCiud",
-				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
-						: ""));
+		//param.put("codiCiud",
+		//		(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
+		//				: ""));
+		
+		param.put("codiCiud",(null != o.getLugarDoc() ? o.getLugarDoc()	: " "));
+		
 		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 			param.put("nitter_codeu", o.getCodeu().getNitter());
-			param.put("codiCiud2",
-					(null != o.getCodeu().getCodiCiud()
-							? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
-							: ""));
+			//param.put("codiCiud2",
+			//		(null != o.getCodeu().getCodiCiud()
+			//				? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
+			//				: ""));
+			param.put("codiCiud_codeu", (null != o.getCodeu().getLugarDoc()  ? o.getCodeu().getLugarDoc() : " "));
+			
 		} else {
 			param.put("nomTer_codeu", " ");
 			param.put("nitter_codeu", " ");
