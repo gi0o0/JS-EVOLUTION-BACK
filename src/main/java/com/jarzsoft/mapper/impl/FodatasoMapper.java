@@ -18,8 +18,8 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setCodProfe(o.getCodProfe());
 		out.setCodTer(o.getCodTer());
 		out.setEmailConyuge(o.getEmailConyuge());
-		out.setFec_cump(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFec_cump()));
-		out.setFecIngEmpresa(FechaUtils.getFechaActualStringAStringYYYYDDMM(o.getFecIngEmpresa()));
+		out.setFec_cump(o.getFec_cump());
+		out.setFecIngEmpresa(o.getFecIngEmpresa());
 		out.setIndContrato(o.getIndContrato());
 		out.setNomCony(o.getNomCony());
 		out.setClaAsoci(o.getClaAsoci());

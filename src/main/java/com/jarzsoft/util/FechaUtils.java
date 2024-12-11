@@ -31,7 +31,7 @@ public class FechaUtils {
 		if(null==fecha) 
 			return null;
 		SimpleDateFormat parseador = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat formateador = new SimpleDateFormat("yyyy-dd-MM");
+		SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		Date date = null;
 		String response = "";
 		try {
