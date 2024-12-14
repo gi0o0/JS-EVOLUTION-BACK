@@ -6,7 +6,7 @@ import com.jarzsoft.dto.DTOTerceros;
 
 public interface ITercerosService {
 
-	DTOTerceros create(DTOTerceros o, String user);
+	DTOTerceros create(DTOTerceros o, String user, boolean isCodeo);
 
 	DTOTerceros findByNiter(String nitTer);
 

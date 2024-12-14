@@ -1,20 +1,14 @@
 package com.jarzsoft.services.impl;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.jarzsoft.dto.DTOSolCredito;
 import com.jarzsoft.dto.DTOTerceros;
 import com.jarzsoft.entities.Cfi_t_sanciones;
-import com.jarzsoft.entities.SolCredito;
 import com.jarzsoft.entities.Terceros;
 import com.jarzsoft.exception.PageNoFoundException;
 import com.jarzsoft.mapper.ITercerosMapper;
@@ -27,9 +21,7 @@ import com.jarzsoft.util.Constantes;
 public class TercerosService implements ITercerosService {
 
 	private final TercerosRepository tercerosRepository;
-
 	private final ITercerosMapper mapper;
-
 	private final Cfi_t_sancionesRepository sancionesRepository;
 
 	@PersistenceContext
@@ -45,7 +37,7 @@ public class TercerosService implements ITercerosService {
 	}
 
 	@Override
-	public DTOTerceros create(DTOTerceros o, String user) {
+	public DTOTerceros create(DTOTerceros o, String user, boolean isCodeo) {
 		Terceros externalUser = findTerByNiter(o.getNitTer());
 
 		if (externalUser == null) {
@@ -57,6 +49,14 @@ public class TercerosService implements ITercerosService {
 				throw new PageNoFoundException(Constantes.MESSAGE_USER_WITH_SANCTION + " " + o.getNitTer());
 
 			o.setCodTer(externalUser.getCodTer());
+			if(isCodeo) { //ADD FIELDS CODEO
+				o.setTelter(externalUser.getTelter());
+				o.setTelter1(externalUser.getTelter1());
+				o.setTelter2(externalUser.getTelter2());
+				o.setEntBan(externalUser.getEntBan());
+				o.setNumCta(externalUser.getNumCta());
+				o.setTipCta(externalUser.getTipCta());				
+			}
 
 		}
 

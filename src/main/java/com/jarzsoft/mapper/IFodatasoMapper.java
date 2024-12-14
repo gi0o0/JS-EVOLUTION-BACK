@@ -15,6 +15,6 @@ public interface IFodatasoMapper {
 
 	public DTOFodataso mapperDaoToDto(DTOWF o, String codTer);
 	
-	public DTOFodataso mapperDaoToDtoCodeo(DTOWF o, String codTer);
+	public DTOFodataso mapperDaoToDtoCodeo(DTOWF o, String codTer,DTOFodataso codeoFodataso);
 
 }

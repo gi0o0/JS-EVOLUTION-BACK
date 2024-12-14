@@ -69,7 +69,7 @@ public class FodatasoMapper implements IFodatasoMapper {
 	}
 
 	@Override
-	public DTOFodataso mapperDaoToDtoCodeo(DTOWF o, String codTer) {
+	public DTOFodataso mapperDaoToDtoCodeo(DTOWF o, String codTer, DTOFodataso codeoFodataso ) {
 		DTOFodataso out = new DTOFodataso();
 		out.setCelConyuge(o.getCodeu().getCelConyuge());
 	//	out.setCodProfe(o.getCodeu().getCodProfe());
@@ -81,6 +81,11 @@ public class FodatasoMapper implements IFodatasoMapper {
 		out.setCodEmple(o.getCodeu().getNitter());
 		out.setCargoCodWf(o.getCodeu().getCargoWf());
 		out.setSexo(o.getSexo());
+		
+		if(null!=codeoFodataso) {
+			out.setFecIngEmpresa(FechaUtils.getFechaActualStringAStringYYYYDDMM(codeoFodataso.getFecIngEmpresa()));	
+		}
+		
 		return out;
 	}
 

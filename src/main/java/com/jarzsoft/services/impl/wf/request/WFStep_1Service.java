@@ -65,19 +65,19 @@ public class WFStep_1Service implements IStepStrategy {
 	@Override
 	public DTOWF apply(DTOWF o, String user) {
 
-		DTOTerceros userCredit = tercerosService.create(tercerosMapper.mapperDaoToDtoUser(o), user);
+		DTOTerceros userCredit = tercerosService.create(tercerosMapper.mapperDaoToDtoUser(o), user,false);
 		o.setCodTer(userCredit.getCodTer() + "");
 		String idCodeudor = "";
 		fodatasoService.create(fodatasoMapper.mapperDaoToDto(o, userCredit.getCodTer().toString()));
 
 		if (null != o.getCodeu() && o.getCodeu().getNitter() != null) {
-			DTOTerceros userCodeo = tercerosService.create(tercerosMapper.mapperDaoToDtoCodeo(o), user);
+			DTOTerceros userCodeo = tercerosService.create(tercerosMapper.mapperDaoToDtoCodeo(o), user,true);
 			idCodeudor = userCodeo.getCodTer().toString();
 			o.getCodeu().setCodTer(idCodeudor);
 			DTOFodataso codeoFodataso = fodatasoService.getByCodTer(idCodeudor);
-			if (null == codeoFodataso.getCodTer()) {
-				fodatasoService.create(fodatasoMapper.mapperDaoToDtoCodeo(o, idCodeudor));
-			}
+	//		if (null == codeoFodataso.getCodTer()) {// REMOVE FILTER FODATASO TERCERO
+				fodatasoService.create(fodatasoMapper.mapperDaoToDtoCodeo(o, idCodeudor,codeoFodataso));
+	//		}
 		}
 		List<Object[]> usuario = usuarioRepository.findByUsuario(user);
 
