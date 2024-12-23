@@ -15,6 +15,7 @@ import com.jarzsoft.service.ISolCreditoService;
 import com.jarzsoft.service.IStepStrategy;
 import com.jarzsoft.service.IWWfMovService;
 import com.jarzsoft.util.Comunes;
+import com.jarzsoft.util.Constantes;
 import com.jarzsoft.util.EnumStates;
 import com.jarzsoft.util.EnumSteps;
 import com.jarzsoft.util.SendEmail;
@@ -64,7 +65,7 @@ public class WFStep_8Service implements IStepStrategy {
 			wWfMovService.createMovWithSteps(credito, user, EnumSteps.TIPO_PASO.STEP_8.getName(), o.getIsUpdate(),
 					o.getIdWf());
 			o.setNextStep(EnumSteps.TIPO_PASO.STEP_END.getName());
-			sendEmail(o.getMailTer(), o.getNumeroRadicacion()+"");
+			sendEmail(o.getMailTer(), o.getNumeroRadicacion() + "", o.getEstado());
 
 		} else {
 			throw new PageNoFoundException("Solicitud no Existe");
@@ -79,10 +80,14 @@ public class WFStep_8Service implements IStepStrategy {
 		return EnumSteps.TIPO_PASO.STEP_8.getName();
 	}
 
-	private void sendEmail(String email, String idWf) {
+	private void sendEmail(String email, String idWf, String estado) {
 
 		String asunto_email = "";
 		String text_email = "";
+
+		String stateRequest = Constantes.STATUS_APPROVED;
+		if ("10".equals(estado))
+			stateRequest = Constantes.STATUS_DENIED;
 
 		List<Parametro> parametroList = parametroRepository.findByParamId("EMAIL_WK4_STEP8");
 
@@ -95,7 +100,7 @@ public class WFStep_8Service implements IStepStrategy {
 			}
 		}
 		String asunto = String.format(asunto_email, idWf);
-		sendEmail.Send(email, asunto, Comunes.getTextoFormat(text_email, "") , null, "");
+		sendEmail.Send(email, asunto, Comunes.getTextoFormat(text_email, stateRequest), null, "");
 	}
 
 }

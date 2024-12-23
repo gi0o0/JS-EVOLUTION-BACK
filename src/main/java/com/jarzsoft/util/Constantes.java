@@ -133,6 +133,11 @@ public class Constantes {
 	public final HashMap<String, String> tipoVivienda = new HashMap<String, String>();
 
 	public final ArrayList<String> REPORTS_OF_WF_4 = new ArrayList<String>();
+	
+	public static final String STATUS_APPROVED  ="Aprobado";
+	public static final String STATUS_DENIED  ="Negado";
+	
+	
 
 	public Constantes() {
 
