@@ -24,7 +24,6 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 	public WFAvisoPrivacidad_Report(ICiudadesService ciudadesService) {
 		super();
 		this.ciudadesService = ciudadesService;
-
 	}
 
 	@Override
@@ -57,11 +56,7 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 			param.put("codiCiud2", " ");
 			param.put("nitter_codeu", " ");
 		}
-
-		param.put("codiCiud",
-				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
-						: ""));
-		
+		param.put("codiCiud",(null != o.getLugarDoc() ? o.getLugarDoc()	: " "));	
 		param.put("año", year);
 		param.put("empresa", "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
