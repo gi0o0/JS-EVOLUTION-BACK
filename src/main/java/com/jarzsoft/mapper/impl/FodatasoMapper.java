@@ -84,8 +84,10 @@ public class FodatasoMapper implements IFodatasoMapper {
 		
 		if(null!=codeoFodataso) {
 			out.setFecIngEmpresa(FechaUtils.getFechaActualStringAStringYYYYDDMM(codeoFodataso.getFecIngEmpresa()));	
+			out.setClaAsoci(codeoFodataso.getClaAsoci());
+			out.setCargoDeuWf(codeoFodataso.getCargoDeuWf());	
 		}
-		
+			
 		return out;
 	}
 

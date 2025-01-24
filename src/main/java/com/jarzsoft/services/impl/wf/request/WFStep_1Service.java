@@ -75,9 +75,8 @@ public class WFStep_1Service implements IStepStrategy {
 			idCodeudor = userCodeo.getCodTer().toString();
 			o.getCodeu().setCodTer(idCodeudor);
 			DTOFodataso codeoFodataso = fodatasoService.getByCodTer(idCodeudor);
-	//		if (null == codeoFodataso.getCodTer()) {// REMOVE FILTER FODATASO TERCERO
-				fodatasoService.create(fodatasoMapper.mapperDaoToDtoCodeo(o, idCodeudor,codeoFodataso));
-	//		}
+			fodatasoService.create(fodatasoMapper.mapperDaoToDtoCodeo(o, idCodeudor,codeoFodataso));
+
 		}
 		List<Object[]> usuario = usuarioRepository.findByUsuario(user);
 
