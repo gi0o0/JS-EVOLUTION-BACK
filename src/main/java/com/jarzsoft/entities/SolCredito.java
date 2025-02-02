@@ -389,6 +389,12 @@ public class SolCredito implements Serializable {
 	@Column(name = "sol_pagare")
 	private String solPagare;
 
+	@Column(name = "cargo_deu_wf")
+	private String cargoDeuWf;
+
+	@Column(name = "cargo_cod_wf")
+	private String cargoCodWf;
+
 	public SolCredito() {
 	}
 
@@ -404,19 +410,20 @@ public class SolCredito implements Serializable {
 			String refParen1Cod, String refMail1Cod, String refCel1Cod, String refNombre2Cod, String refParen2Cod,
 			String refMail2Cod, String refCel2Cod, String refNombre3Cod, String refParen3Cod, String refMail3Cod,
 			String refCel3Cod, String bienNombreCod, String bienValorCod, String bienHipAfavorCod, String vehClaseCod,
-			String vehPlacaCod, String vehValComercialCod, String vehPigAfavorCod, String codTer, String codeudor1,
-			Date fechaSoli, Date fechaIni, Date fechaFin, String modalidad, String codeudor2, String codeudor3,
-			String codeudor4, String vSolicita, Date fechaApr, String maxSoli, String prometri, String porAdmin,
-			String creditoMinimo, String creditoMaximo, String formaPago, String nroOficina, String observa,
-			String garantias, String tipGarantia, String claveLink, String sueldo, String recargos, String bonos,
-			String compensatorios, String bonificacion, String horasExtras, String otrosPagos1, String otrosPagos2,
-			String otrosPagos3, String salud, String pension, String libranza, String cuotaSindical,
+			String vehPlacaCod, String vehValComercialCod, String vehPigAfavorCod, String empresaCod, String codTer,
+			String codeudor1, Date fechaSoli, Date fechaIni, Date fechaFin, String modalidad, String codeudor2,
+			String codeudor3, String codeudor4, String vSolicita, Date fechaApr, String maxSoli, String prometri,
+			String porAdmin, String creditoMinimo, String creditoMaximo, String formaPago, String nroOficina,
+			String observa, String garantias, String tipGarantia, String claveLink, String sueldo, String recargos,
+			String bonos, String compensatorios, String bonificacion, String horasExtras, String otrosPagos1,
+			String otrosPagos2, String otrosPagos3, String salud, String pension, String libranza, String cuotaSindical,
 			String cuotaInterna, String otrosDecuentos1, String otrosDecuentos2, String otrosDecuentos3,
 			String compraCartera1, String entidadCartera1, String obligacionCartera1, String compraNit1,
 			String compraCartera2, String entidadCartera2, String compraNit2, String obligacionCartera2,
 			String compraCartera3, String entidadCartera3, String compraNit3, String obligacionCartera3,
 			String compraCartera4, String entidadCartera4, String compraNit4, String obligacionCartera4,
-			String perCuota, String numWeb, String indSolCredito, String solPagare) {
+			String perCuota, String numWeb, String indSolCredito, String solPagare, String cargoDeuWf,
+			String cargoCodWf) {
 		super();
 		this.numeroRadicacion = numeroRadicacion;
 		this.saldo = saldo;
@@ -482,6 +489,7 @@ public class SolCredito implements Serializable {
 		this.vehPlacaCod = vehPlacaCod;
 		this.vehValComercialCod = vehValComercialCod;
 		this.vehPigAfavorCod = vehPigAfavorCod;
+		this.empresaCod = empresaCod;
 		this.codTer = codTer;
 		this.codeudor1 = codeudor1;
 		this.fechaSoli = fechaSoli;
@@ -541,6 +549,8 @@ public class SolCredito implements Serializable {
 		this.numWeb = numWeb;
 		this.indSolCredito = indSolCredito;
 		this.solPagare = solPagare;
+		this.cargoDeuWf = cargoDeuWf;
+		this.cargoCodWf = cargoCodWf;
 	}
 
 	@PrePersist
@@ -1580,6 +1590,22 @@ public class SolCredito implements Serializable {
 
 	public void setEmpresaCod(String empresaCod) {
 		this.empresaCod = empresaCod;
+	}
+
+	public String getCargoDeuWf() {
+		return cargoDeuWf;
+	}
+
+	public void setCargoDeuWf(String cargoDeuWf) {
+		this.cargoDeuWf = cargoDeuWf;
+	}
+
+	public String getCargoCodWf() {
+		return cargoCodWf;
+	}
+
+	public void setCargoCodWf(String cargoCodWf) {
+		this.cargoCodWf = cargoCodWf;
 	}
 
 }

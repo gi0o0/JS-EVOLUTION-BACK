@@ -42,12 +42,8 @@ public class WfMapper implements IWfMapper {
 			out.setDirTerpal(Comunes.stringClean(u.getDirTerpal()));
 			out.setEntBan(Comunes.stringClean(u.getEntBan()));
 			out.setFaxTer(Comunes.stringClean(u.getFaxter()));
-
-			String fecExpDoc = Comunes.stringClean(u.getFecExpDoc());
+	
 			String feExp = Comunes.stringClean(u.getFeExp());
-
-			out.setFecCump(fecExpDoc.length() >= 10 ? Comunes.cambiarFormatoFechaDinamic(fecExpDoc.substring(0, 10),
-					Comunes.FORMAT_YYY_MM_DD, Comunes.FORMAT_MM_DD_YYYY) : fecExpDoc);
 			out.setFeExp(feExp.length() >= 10 ? Comunes.cambiarFormatoFechaDinamic(feExp.substring(0, 10),
 					Comunes.FORMAT_YYY_MM_DD, Comunes.FORMAT_MM_DD_YYYY) : feExp);
 			out.setIdConyuge(Comunes.stringClean(u.getIdConyuge()));
@@ -72,6 +68,7 @@ public class WfMapper implements IWfMapper {
 			out.setNomCony(Comunes.stringClean(u.getNomCony()));
 			out.setCelConyuge(Comunes.stringClean(u.getCelConyuge()));
 			out.setEmailConyuge(Comunes.stringClean(u.getEmailConyuge()));
+			out.setCargoWf(o.getCargoDeuWf());
 		}
 		if (null != cod) {
 			DTOWFCodeu codeu = new DTOWFCodeu();
@@ -111,7 +108,7 @@ public class WfMapper implements IWfMapper {
 				codeu.setNomCony(Comunes.stringClean(fodaCodeo.getNomCony()));
 				codeu.setEmailConyuge(Comunes.stringClean(fodaCodeo.getEmailConyuge()));
 				codeu.setCelConyuge(Comunes.stringClean(fodaCodeo.getCelConyuge()));
-				codeu.setCargoWf(Comunes.stringClean(fodaCodeo.getCargoCodWf()));
+			//	codeu.setCargoWf(Comunes.stringClean(fodaCodeo.getCargoCodWf()));
 			}
 
 			codeu.setRefCel1(Comunes.stringClean(o.getRefCel1Cod()));
@@ -140,8 +137,9 @@ public class WfMapper implements IWfMapper {
 			codeu.setBienHipoteca(Comunes.stringClean(o.getBienHipotecaCod()));
 			codeu.setBienNombre(Comunes.stringClean(o.getBienNombreCod()));
 			codeu.setBienValor(Comunes.stringToInt(o.getBienValorCod()));
-
+			codeu.setCargoWf(o.getCargoCodWf());
 			out.setCodeu(codeu);
+			
 
 		}
 
@@ -154,8 +152,12 @@ public class WfMapper implements IWfMapper {
 			out.setNomCony(Comunes.stringClean(foda.getNomCony()));
 			out.setEmailConyuge(Comunes.stringClean(foda.getEmailConyuge()));
 			out.setCelConyuge(Comunes.stringClean(foda.getCelConyuge()));
-			out.setCargoWf(Comunes.stringClean(foda.getCargoDeuWf()));
+		//	out.setCargoWf(Comunes.stringClean(foda.getCargoDeuWf()));
 			out.setSexo(foda.getSexo() != null && !foda.getSexo().equals("0") ? foda.getSexo() : null);
+			
+			String fecCump = Comunes.stringClean(foda.getFec_cump());
+			out.setFecCump(fecCump.length() >= 10 ? Comunes.cambiarFormatoFechaDinamic(fecCump.substring(0, 10),
+					Comunes.FORMAT_YYY_MM_DD, Comunes.FORMAT_MM_DD_YYYY) : fecCump);
 		}
 
 		out.setNumeroRadicacion(o.getNumeroRadicacion());

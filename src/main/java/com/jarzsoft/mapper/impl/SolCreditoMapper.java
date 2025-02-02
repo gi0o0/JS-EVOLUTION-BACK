@@ -132,6 +132,8 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setPerCuota(o.getPerCuota());
 		out.setIndSolCredito(o.getIndSolCredito());
 		out.setSolPagare(o.getSolPagare());
+		out.setCargoDeuWf(o.getCargoDeuWf());
+		out.setCargoCodWf(o.getCargoCodWf());
 		return out;
 	}
 
@@ -244,6 +246,8 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 			out.setEmpresaCod(o.getEmpresaCod());
 			out.setTasaInt(o.getTasaInt());
 			out.setSolPagare(Comunes.stringClean(o.getSolPagare()));
+			out.setCargoCodWf(o.getCargoCodWf());
+			out.setCargoDeuWf(o.getCargoDeuWf());
 		}
 		return out;
 	}
@@ -285,6 +289,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 		out.setVehPignorado(o.getVehPignorado());
 		out.setVehPlaca(o.getVehPlaca());
 		out.setSolPagare(solPagare);
+		out.setCargoDeuWf(o.getCargoWf());
 
 		out.setVehValComercial(Comunes.stringToInt(o.getVehValVomercial()));
 
@@ -327,6 +332,7 @@ public class SolCreditoMapper implements ISolCreditoMapper {
 			out.setBienNombreCod(o.getCodeu().getBienNombre());
 			out.setBienHipAfavorCod(o.getCodeu().getBienHipAFavor());
 			out.setEmpresaCod(o.getCodeu().getEmpresaCod());
+			out.setCargoCodWf(o.getCodeu().getCargoWf());
 		}
 
 		out.setSueldo(Comunes.validIsNullNumber(o.getFinancial().getSueldo()));

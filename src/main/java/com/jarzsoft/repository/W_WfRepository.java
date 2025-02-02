@@ -133,7 +133,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor1  = :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+			+ " and p.codeudor1  = :codTer "
 			+ " union all\r\n"
 			+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 			+ " (select nomter from  terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n"
@@ -151,7 +151,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor2  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+			+ " and p.codeudor2  =  :codTer "
 			+ " union all\r\n"
 			+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 			+ " (select nomter from  terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n"
@@ -169,7 +169,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor3  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+			+ " and p.codeudor3  =  :codTer "
 			+ " union all\r\n"
 			+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 			+ " (select nomter from  terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n"
@@ -187,7 +187,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor4  =  :codTer\r\n" + " and p.estado = 'A' and  p.saldo_capital > 0  \r\n"
+			+ " and p.codeudor4  =  :codTer "
 			+ " order by t.nomter, p.numero_credito", nativeQuery = true)
 	List<Object[]> findPortafolioWf1(@Param("codTer") String codTer);
 
@@ -224,7 +224,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor1  = :codTer\r\n" + " and p.estado = 'C' and  p.saldo_capital = 0  \r\n"
+			+ " and p.codeudor1  = :codTer "
 			+ " union all\r\n"
 			+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 			+ " (select nomter from  terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n"
@@ -242,7 +242,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor2  =  :codTer\r\n" + " and p.estado = 'C' and  p.saldo_capital = 0  \r\n"
+			+ " and p.codeudor2  =  :codTer "
 			+ " union all\r\n"
 			+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 			+ " (select nomter from  terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n"
@@ -260,7 +260,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor3  =  :codTer\r\n" + " and p.estado = 'C' and  p.saldo_capital = 0  \r\n"
+			+ " and p.codeudor3  =  :codTer "
 			+ " union all\r\n"
 			+ " select p.numero_credito, p.saldo_capital, p.estado,t.nitter as nitterPro, fo.nombre_credito, t.nomter as nomTerPro, fc.nom_claaso, ft.nom_tipaso, c.nombciud, a.nom_clase,\r\n"
 			+ " (select nomter from  terceros where codter = p.codter_asesor) as asesor, f.cod_emple,\r\n"
@@ -278,7 +278,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 			+ " and p.codter = f.cod_ter\r\n" + " and p.tipo_credito = fo.codigo_credito\r\n"
 			+ " and fc.cod_inter = f.cla_asoci\r\n" + " and ft.cod_inter = f.tip_asoci\r\n"
 			+ " and t.codiciud = c.codiciud\r\n" + " and f.cla_aso_1 = a.id_cla_aso_1\r\n"
-			+ " and p.codeudor4  =  :codTer\r\n" + " and p.estado = 'C' and  p.saldo_capital = 0  \r\n"
+			+ " and p.codeudor4  =  :codTer "
 			+ " order by t.nomter, p.numero_credito", nativeQuery = true)
 	List<Object[]> findPortafolioWf2(@Param("codTer") String codTer);
 

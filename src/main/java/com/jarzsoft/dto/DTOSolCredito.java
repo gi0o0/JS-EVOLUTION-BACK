@@ -109,6 +109,8 @@ public class DTOSolCredito {
 	private String perCuota;
 	private String indSolCredito;
 	private String solPagare;
+	private String cargoDeuWf;
+	private String cargoCodWf;
 
 	public DTOSolCredito() {
 		super();
@@ -952,6 +954,22 @@ public class DTOSolCredito {
 
 	public void setEmpresaCod(String empresaCod) {
 		this.empresaCod = empresaCod;
+	}
+
+	public String getCargoDeuWf() {
+		return cargoDeuWf;
+	}
+
+	public void setCargoDeuWf(String cargoDeuWf) {
+		this.cargoDeuWf = cargoDeuWf;
+	}
+
+	public String getCargoCodWf() {
+		return cargoCodWf;
+	}
+
+	public void setCargoCodWf(String cargoCodWf) {
+		this.cargoCodWf = cargoCodWf;
 	}
 
 }
