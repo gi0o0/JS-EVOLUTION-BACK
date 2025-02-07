@@ -52,7 +52,7 @@ public class FilesUserService implements IFilesUserService {
 	}
 
 	@Override
-	public List<DTOFilesUser> listAll(String user, String solicitud, String id) {
+	public List<DTOFilesUser> listAll(String user, String solicitud, String id, String nameFile) {
 
 		String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
 		File folder = new File(path);
@@ -73,8 +73,10 @@ public class FilesUserService implements IFilesUserService {
 			String userFile = nameIds[2];
 			String idFile = nameIds[3];
 
-			if (!"0".equals(id) && idFile.equals(id) & numRad.equals(solicitud) && user.equals(userFile)) {
-				byte[] fileContent = null;
+			//if (!"0".equals(id) && idFile.equals(id) & numRad.equals(solicitud) && user.equals(userFile)) {
+			if (!"0".equals(id) && idFile.equals(id) & numRad.equals(solicitud) && name.equals(nameFile)) {
+				
+			byte[] fileContent = null;
 				try {
 					fileContent = FileUtils.readFileToByteArray(new File(file.getAbsolutePath()));
 				} catch (IOException e) {

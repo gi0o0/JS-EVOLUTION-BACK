@@ -27,10 +27,10 @@ public class FilesUserController {
 
 	}
 
-	@GetMapping(value = "/{user}/application/{idapplication}/doc/{id}", produces = "application/json")
+	@GetMapping(value = "/{user}/application/{idapplication}/doc/{id}/name/{name}", produces = "application/json")
 	public List<DTOFilesUser> listFiles(@PathVariable("user") String user,
-			@PathVariable("idapplication") String idapplication, @PathVariable("id") String id) {
-		return service.listAll(user, idapplication, id);
+			@PathVariable("idapplication") String idapplication, @PathVariable("id") String id,@PathVariable("name") String name) {
+		return service.listAll(user, idapplication, id,name);
 	}
 
 	@GetMapping(value = "/{id}/application/{step}", produces = "application/json")

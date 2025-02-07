@@ -7,7 +7,7 @@ import com.jarzsoft.dto.DTOWfDocs;
 
 public interface IFilesUserService {
 
-	List<DTOFilesUser> listAll(String user, String solicitud, String id);
+	List<DTOFilesUser> listAll(String user, String solicitud, String id, String name);
 
 	List<DTOFilesUser> listAllByIdRedAndStep(String solicitud, String step);
 
