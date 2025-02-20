@@ -445,7 +445,7 @@ public interface W_WfRepository extends JpaRepository<W_Wf, Long> {
 		//jarz 25/01/2025
 		
 		String query = "Select COUNT(numcuo) as CuoPag from ( select numcuo, valpag, valcuota from ( select an.numcuo, SUM(an.valpag) as valpag, MAX(c.valor_cuota_nomina) as valcuota from  "
-				+scheme+"APO_NOT_CRE_PRESTAMO AN, "+scheme+"APO_NOT_CREDITO A, CART_EST C "
+				+scheme+"APO_NOT_CRE_PRESTAMO AN, "+scheme+"APO_NOT_CREDITO A," +scheme+ "CART_EST C "
 				+ " where AN.nro_CREDITO = :numcredito AND AN.num_NOTA = A.num_NOTA AND AN.tip_comp = A.tip_comp AND A.fec_NOTA <= "+ "CONVERT(SMALLDATETIME, '" + ":fpivote" + "',120) "
 				+ " and c.numero_credito = AN.nro_CREDITO and c.nro_cuota = an.numcuo and c.REFINANCIA =0  group by numcuo ) x where  x.valcuota = x.valpag ) y	";
 		
