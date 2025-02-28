@@ -301,7 +301,8 @@ public class WFParameterService implements IWFParameterService {
 
 	private List<DTOWalletUser> addDues(List<DTOWalletUser> wallet) {
 		LocalDateTime ahora = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String now = ahora.format(formatter);
 
 		for (DTOWalletUser w : wallet) {

@@ -1,5 +1,8 @@
 package com.jarzsoft;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class dd {
 
 	public static void main(String[] args) {
@@ -114,10 +117,19 @@ public class dd {
 		 * 
 		 * 
 		 * }
-		 */
+		 
 		  Integer s = 1032888511;
 	
 		  System.out.println(new Long(s));
+		  
+		  */
+		
+		LocalDateTime ahora = LocalDateTime.now();
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String now = ahora.format(formatter);
+		
+		
 
 	}
 
