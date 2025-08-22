@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="761"/>
+	<property name="ireport.y" value="783"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -141,7 +141,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[NIT. 901.184.952-4]]></text>
+				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
 			</staticText>
 			<image>
 				<reportElement key="image-1" x="2" y="0" width="153" height="73" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
@@ -194,7 +194,7 @@
 				<text><![CDATA[ENTIDAD:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="234" y="75" width="155" height="22" uuid="77bdf3fc-2229-4e2f-b25f-e935d9c97a23"/>
+				<reportElement key="textField" x="232" y="75" width="157" height="22" uuid="77bdf3fc-2229-4e2f-b25f-e935d9c97a23"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="7" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
@@ -1369,7 +1369,7 @@
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[que todo lo aquí consignado es cierto, realizo(amos) la siguiente declaración de fuente de fondos a la entidad TECNICAS Y GESTIONES S.A.S. dando cumplimiento a la ley 90 de 1995]]></text>
+				<text><![CDATA[que todo lo aquí consignado es cierto, realizo(amos) la siguiente declaración de fuente de fondos a la entidad AVALTITULOS S.A.S. dando cumplimiento a la ley 90 de 1995]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="16" y="323" width="260" height="9" uuid="5ecd873a-c9bd-4bef-8a6a-8d70b7eb7f69"/>
@@ -1839,7 +1839,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[ESPACIO EXCLUSIVO DE TECNICAS Y GESTIONES S.A.S. - CONFIRMAR DATOS]]></text>
+				<text><![CDATA[PERSONAS A CARGO]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="466" width="1" height="39" forecolor="#000000" uuid="088cf716-2fda-404b-8e9e-59da9f69962a"/>
@@ -1852,10 +1852,10 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CONFIRMA]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="10" y="484" width="212" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26b25db5-9ed3-448f-bff6-90c878cf2cad"/>
+				<reportElement key="line-1" x="10" y="484" width="525" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26b25db5-9ed3-448f-bff6-90c878cf2cad"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -1867,7 +1867,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="221" y="466" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
+				<reportElement key="line-2" x="307" y="466" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -1883,7 +1883,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CONFIRMA]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="11" y="505" width="525" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3ca63e27-eee0-4050-98b0-57399ecf8dd5"/>
@@ -1896,34 +1896,34 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[FIRMA]]></text>
+				<text><![CDATA[EDAD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="227" y="466" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
+				<reportElement key="staticText-16" x="310" y="466" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[OBSERVACIONES]]></text>
+				<text><![CDATA[PARENTESCO]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="119" y="466" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
+				<reportElement key="line-2" x="224" y="466" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="127" y="466" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
+				<reportElement key="staticText-16" x="228" y="466" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CARGO]]></text>
+				<text><![CDATA[No.DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="127" y="485" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
+				<reportElement key="staticText-16" x="228" y="485" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CARGO]]></text>
+				<text><![CDATA[No. DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-6" mode="Opaque" x="10" y="517" width="526" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="f60fda42-2420-4e69-9f8b-ddc12b32a948"/>
@@ -2380,19 +2380,33 @@
 				<textFieldExpression><![CDATA[$P{no_solcre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="223" y="287" width="16" height="8" uuid="944690c5-39f3-4aa9-b3cd-4f91d7062154"/>
+				<reportElement x="220" y="286" width="21" height="9" uuid="2e7bb85a-4894-4a15-86b7-e72628c7aba5"/>
 				<textElement>
-					<font size="6"/>
+					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{is_solcre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="254" y="287" width="25" height="8" uuid="8efed37f-7511-4d69-b10f-81404e33544d"/>
+				<reportElement x="253" y="286" width="17" height="8" uuid="73e26e9e-f3a2-467d-8072-1bb15aa52e29"/>
 				<textElement>
-					<font size="6"/>
+					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{no_solcre}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement key="staticText-16" x="476" y="486" width="50" height="9" uuid="2a556e98-988d-4de1-93e1-f9dd71eb42eb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[EDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="311" y="486" width="71" height="9" uuid="17c09619-d883-4fbc-bfaf-09b41b53d0e5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[PARENTESCO]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 </jasperReport>

@@ -3,10 +3,14 @@ package com.jarzsoft;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+ 
+
 public class dd {
+	
+ 
+		public static void main(String[] args) {
 
-	public static void main(String[] args) {
-
+			
 		/*
 		 * String FORMAT_UTC = "yyyy-MM-dd'T'HH:mm:ss.SSS-ssss"; //RES
 		 * 2022-09-30T21:59:59.999-0500 String FORMAT_DEFAULT =
@@ -124,12 +128,20 @@ public class dd {
 		  
 		  */
 		
-		LocalDateTime ahora = LocalDateTime.now();
-		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String now = ahora.format(formatter);
+//		LocalDateTime ahora = LocalDateTime.now();
+//		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		String now = ahora.format(formatter);
+//		
 		
-		
+		String solPagare;
+		String schemeFirst;
+		schemeFirst = "aval.dbo.";
+		if (schemeFirst.equals("tecnicas.dbo.") ) {
+			solPagare = "E" ;
+		}else {
+			solPagare = "AV" ;
+		}
 
 	}
 

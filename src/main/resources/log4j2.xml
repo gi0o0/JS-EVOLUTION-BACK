@@ -2,7 +2,7 @@
 	<Properties>
 		<Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n
 		</Property>
-		<Property name="APP_LOG_ROOT">c:/APP/log</Property>
+		<Property name="APP_LOG_ROOT">c:/APP/logpruebas</Property>
 	</Properties>
 
 

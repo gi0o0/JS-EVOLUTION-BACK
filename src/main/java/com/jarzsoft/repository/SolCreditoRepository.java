@@ -23,7 +23,7 @@ public interface SolCreditoRepository extends JpaRepository<SolCredito, Integer>
 
 	@Query(value = "select DISTINCT s.numero_radicacion,s.estado from w_wf_mov w, SOL_CREDITO s where w.id_wf = 4 and w.numero_radicacion = s.numero_radicacion "
 			+ "and (w.usu_comercial = :user or w.usu_movimiento = :user or w.usuario1 = :user or w.usuario2 = :user or w.usuario3 = :user or w.usuario4 = :user "
-			+ "or exists (select wu.codperfil from W_Bas_Usuario wu where wu.Usuario = :user and wu.codperfil = 2 ) ) and (w.id_paso <>'8' and s.estado not in ('P', 'A', 'D', 'N', 'C')) ", nativeQuery = true)
+			+ "or exists (select wu.codperfil from W_Bas_Usuario wu where wu.Usuario = :user and wu.codperfil in (1,3) ) ) and (w.id_paso <>'8' and s.estado not in ('P', 'A', 'D', 'N', 'C')) ", nativeQuery = true)
 	List<Object[]> findByUser(@Param("user") String user);
 
 	@Query(value = "SELECT CASE WHEN max(NUMERO_RADICACION) IS NULL THEN 1 ELSE  max (NUMERO_RADICACION )+1 END FROM SOL_CREDITO", nativeQuery = true)

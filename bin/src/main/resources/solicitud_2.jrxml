@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="433"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -836,7 +836,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[ESPACIO EXCLUSIVO DE TECNICAS Y GESTIONES S.A.S. - CONFIRMAR DATOS]]></text>
+				<text><![CDATA[PERSONAS A CARGO]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="193" width="1" height="39" forecolor="#000000" uuid="088cf716-2fda-404b-8e9e-59da9f69962a"/>
@@ -849,10 +849,10 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CONFIRMA]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="10" y="211" width="212" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26b25db5-9ed3-448f-bff6-90c878cf2cad"/>
+				<reportElement key="line-1" x="10" y="211" width="526" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26b25db5-9ed3-448f-bff6-90c878cf2cad"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -864,7 +864,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="221" y="193" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
+				<reportElement key="line-2" x="315" y="193" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -880,7 +880,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CONFIRMA]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="11" y="232" width="525" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3ca63e27-eee0-4050-98b0-57399ecf8dd5"/>
@@ -893,41 +893,41 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[FIRMA]]></text>
+				<text><![CDATA[EDAD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="227" y="193" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
+				<reportElement key="staticText-16" x="329" y="193" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[OBSERVACIONES]]></text>
+				<text><![CDATA[PARENTESCO]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="119" y="193" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
+				<reportElement key="line-2" x="227" y="193" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="127" y="193" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
+				<reportElement key="staticText-16" x="235" y="193" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CARGO]]></text>
+				<text><![CDATA[No.DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="127" y="212" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
+				<reportElement key="staticText-16" x="237" y="212" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CARGO]]></text>
+				<text><![CDATA[No. DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="254" width="520" height="38" uuid="7ba5cf2d-f9ca-40a1-9d94-37c62639666b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Autorizo expresa e irrevocablemente con carácter permanente, y mientras subsista alguna relación comercial con quien representa sus derechos u ostente en el futuro la calidad de acreedor y/o Endosatario del contrato de mutuo comercial o pagare Libranza, para que reporte, procese, solicite, consulte o divulgue a las centrales de riesgo en el país o a cualquier entidad  que maneje o administre las bases de datos con los mismos fines, o cualquier institución sometida a control y vigilancia del estado colombiano con todo lo relativo a la generación, modificación y extensión de obligaciones financieras que directa o indirectamente tenga contraídas o vigentes hasta la total extinción de las obligaciones a mi cargo, y después de ello durante el plazo máximo que para el efecto autorice la ley y/o la jurisprudencia. Así mismo, autorizo expresamente a que me sea notificado por medio de mensaje de texto, correo electrónico, WhatsApp y llamadas, el reporte del dato financiero negativo, con el fin de ejercer mi derecho a conocer, actualizar y rectificar todos los datos que sobre la presente obligación se generen. ]]></text>
+				<text><![CDATA[Autorizo expresa e irrevocablemente con carácter permanente, y mientras subsista alguna relación comercial con quien representa sus derechos u ostente en el futuro la calidad de acreedor y/o Endosatario del contrato de mutuo comercial o pagare Libranza, para que por sí mismo o mediante un tercero que se encuentre autorizado, reporte, procese, solicite, consulte o divulgue a las centrales de riesgo en el país o a cualquier entidad  que maneje o administre las bases de datos con los mismos fines, o cualquier institución sometida a control y vigilancia del estado colombiano con todo lo relativo a la generación, modificación y extensión de obligaciones financieras que directa o indirectamente tenga contraídas o vigentes hasta la total extinción de las obligaciones a mi cargo, y después de ello durante el plazo máximo que para el efecto autorice la ley y/o la jurisprudencia. Así mismo, autorizo expresamente a que me sea notificado por medio de mensaje de texto, correo electrónico, WhatsApp, llamadas y demás canales de comunicación, el reporte del dato financiero negativo, con el fin de ejercer mi derecho a conocer, actualizar y rectificar todos los datos que sobre la presente obligación se generen, Adicionalmente a que se genere gestión de cobranza por los medios de comunicación antes mencionados. ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-6" mode="Opaque" x="10" y="238" width="526" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="ddbc9fd9-68e6-4947-b440-c44dcd6d6ea6"/>
@@ -955,14 +955,14 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a TECNICAS Y GESTIONES S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
+				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a AVALTITULOS S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="16" y="348" width="33" height="9" uuid="b8811dee-e430-41db-858a-05c388c01db6"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[Nombre:]]></text>
+				<text><![CDATA[Deudor:]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement x="206" y="337" width="55" height="62" uuid="584f2d7b-cffa-4dbc-a8db-9a6b7293b18e"/>
@@ -1019,7 +1019,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[Nombre:]]></text>
+				<text><![CDATA[Deudor:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="282" y="370" width="33" height="9" uuid="8d4b28f1-343c-4bbd-8478-4ee34f2a6446"/>
@@ -1188,7 +1188,7 @@
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[FIRMA DEL ASESOR]]></text>
+				<text><![CDATA[FIRMA DEL CORREDOR]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="12" y="681" width="133" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="d8bc6289-b734-48a2-adc9-8239533b865a"/>
@@ -1217,17 +1217,17 @@
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="73" y="716" width="209" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="137c2010-e2a7-471f-a644-2db76e9e9aae"/>
+				<reportElement key="line-1" x="85" y="716" width="206" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="137c2010-e2a7-471f-a644-2db76e9e9aae"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="285" y="682" width="53" height="11" uuid="72732b5f-b583-4ec5-b1e3-7f391407f794"/>
+				<reportElement key="staticText-4" x="266" y="682" width="59" height="11" uuid="72732b5f-b583-4ec5-b1e3-7f391407f794"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[NOMBRE ASESOR:]]></text>
+				<text><![CDATA[NOMBRE CORREDOR:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="285" y="705" width="22" height="11" uuid="f46c6a9c-7eab-4092-a78a-f5b8d4ff37c8"/>
@@ -1256,7 +1256,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="56" y="363" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
+				<reportElement x="56" y="364" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -1270,7 +1270,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="321" y="364" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
+				<reportElement x="321" y="365" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -1284,12 +1284,26 @@
 				<textFieldExpression><![CDATA[$P{name_asesor}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="324" y="702" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
+				<reportElement x="324" y="701" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{id_asesor}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement key="staticText-16" x="330" y="212" width="71" height="9" uuid="215a1a8b-6558-419e-b086-858befbb788a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[PARENTESCO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="478" y="212" width="50" height="9" uuid="5dfb269f-563c-47f4-afe0-472bf62ab2ae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[EDAD]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 </jasperReport>

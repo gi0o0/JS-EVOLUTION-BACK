@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="39"/>
-	<property name="ireport.y" value="326"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -836,7 +836,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[ESPACIO EXCLUSIVO DE TECNICAS Y GESTIONES S.A.S. - CONFIRMAR DATOS]]></text>
+				<text><![CDATA[PERSONAS A CARGO]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-2" x="10" y="193" width="1" height="39" forecolor="#000000" uuid="088cf716-2fda-404b-8e9e-59da9f69962a"/>
@@ -849,10 +849,10 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CONFIRMA]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="10" y="211" width="212" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26b25db5-9ed3-448f-bff6-90c878cf2cad"/>
+				<reportElement key="line-1" x="10" y="211" width="526" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="26b25db5-9ed3-448f-bff6-90c878cf2cad"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -864,7 +864,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="221" y="193" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
+				<reportElement key="line-2" x="310" y="193" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -880,7 +880,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CONFIRMA]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="11" y="232" width="525" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3ca63e27-eee0-4050-98b0-57399ecf8dd5"/>
@@ -893,41 +893,41 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[FIRMA]]></text>
+				<text><![CDATA[EDAD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="227" y="193" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
+				<reportElement key="staticText-16" x="314" y="193" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[OBSERVACIONES]]></text>
+				<text><![CDATA[PARENTESCO]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="119" y="193" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
+				<reportElement key="line-2" x="224" y="193" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="127" y="193" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
+				<reportElement key="staticText-16" x="229" y="193" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CARGO]]></text>
+				<text><![CDATA[No. DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="127" y="212" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
+				<reportElement key="staticText-16" x="229" y="212" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[CARGO]]></text>
+				<text><![CDATA[No. DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="12" y="254" width="520" height="38" uuid="7ba5cf2d-f9ca-40a1-9d94-37c62639666b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Autorizo expresa e irrevocablemente con carácter permanente, y mientras subsista alguna relación comercial con quien representa sus derechos u ostente en el futuro la calidad de acreedor y/o Endosatario del contrato de mutuo comercial o pagare Libranza,para que por sí mismo o mediante un tercero que se encuentre autorizado, reporte, procese, solicite, consulte o divulgue a las centrales de riesgo en el país o a cualquier entidad  que maneje o administre las bases de datos con los mismos fines, o cualquier institución sometida a control y vigilancia del estado colombiano con todo lo relativo a la generación, modificación y extensión de obligaciones financieras que directa o indirectamente tenga contraídas o vigentes hasta la total extinción de las obligaciones a mi cargo, y después de ello durante el plazo máximo que para el efecto autorice la ley y/o la jurisprudencia. Así mismo, autorizo expresamente a que me sea notificado por medio de mensaje de texto, correo electrónico, WhatsApp y llamadas, el reporte del dato financiero negativo, con el fin de ejercer mi derecho a conocer, actualizar y rectificar todos los datos que sobre la presente obligación se generen. ]]></text>
+				<text><![CDATA[Autorizo expresa e irrevocablemente con carácter permanente, y mientras subsista alguna relación comercial con quien representa sus derechos u ostente en el futuro la calidad de acreedor y/o Endosatario del contrato de mutuo comercial o pagare Libranza, para que por sí mismo o mediante un tercero que se encuentre autorizado, reporte, procese, solicite, consulte o divulgue a las centrales de riesgo en el país o a cualquier entidad  que maneje o administre las bases de datos con los mismos fines, o cualquier institución sometida a control y vigilancia del estado colombiano con todo lo relativo a la generación, modificación y extensión de obligaciones financieras que directa o indirectamente tenga contraídas o vigentes hasta la total extinción de las obligaciones a mi cargo, y después de ello durante el plazo máximo que para el efecto autorice la ley y/o la jurisprudencia. Así mismo, autorizo expresamente a que me sea notificado por medio de mensaje de texto, correo electrónico, WhatsApp, llamadas y demás canales de comunicación, el reporte del dato financiero negativo, con el fin de ejercer mi derecho a conocer, actualizar y rectificar todos los datos que sobre la presente obligación se generen, Adicionalmente a que se genere gestión de cobranza por los medios de comunicación antes mencionados. ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-6" mode="Opaque" x="10" y="238" width="526" height="16" forecolor="#FFFFFF" backcolor="#000000" uuid="ddbc9fd9-68e6-4947-b440-c44dcd6d6ea6"/>
@@ -1290,6 +1290,20 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{id_asesor}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement key="staticText-16" x="314" y="213" width="71" height="9" uuid="a370ddc1-5bd8-4b9a-aa0b-e579454c55ba"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[PARENTESCO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" x="478" y="213" width="50" height="9" uuid="838645c7-a43a-4e5c-8598-de64c90b9592"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[EDAD]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 </jasperReport>

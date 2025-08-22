@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="39"/>
-	<property name="ireport.y" value="676"/>
+	<property name="ireport.x" value="21"/>
+	<property name="ireport.y" value="628"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -81,7 +81,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[AUTORIZACIÓN DE AFIANZAMIENTO  No            A-]]></text>
+				<text><![CDATA[CONTRATO DE AFIANZAMIENTO  No            A-]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="462" y="5" width="51" height="19" uuid="f0e6661a-0876-4291-b7c1-4bc9d9d90d4a"/>
@@ -218,14 +218,14 @@
 				<text><![CDATA[Quien se identifica en la parte superior de la presente solicitud, que en caso de aceptación de la solicitud se denominará como el “AFIANZADO”, solicita a AFIANZA DINÁMICOS S.A.S., sociedad comercial domiciliada en la ciudad de Cali (Valle) identificada con el N.I.T  N° 901.562.752-1,   que en adelante se denominará “FIADOR”, el otorgamiento de una fianza (en adelante la “Fianza”), cuyos términos serán los siguientes:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="634" width="178" height="14" uuid="308d459a-a3a9-4012-870a-d83545803659"/>
+				<reportElement key="staticText-16" x="13" y="641" width="178" height="14" uuid="308d459a-a3a9-4012-870a-d83545803659"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[Firma y huella afianzado (a) y la fecha de diligenciamiento]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="11" y="632" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5ca3bc12-d733-42ee-9657-fb0bac70f372"/>
+				<reportElement key="line-1" x="11" y="641" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="5ca3bc12-d733-42ee-9657-fb0bac70f372"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -237,34 +237,34 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="272" y="635" width="1" height="66" forecolor="#000000" uuid="b5bb07e3-95cc-473d-b121-32b0d3d76634"/>
+				<reportElement key="line-2" x="272" y="642" width="1" height="59" forecolor="#000000" uuid="b5bb07e3-95cc-473d-b121-32b0d3d76634"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="660" width="32" height="9" uuid="6d3bd0a5-3fa9-4b55-96a4-84ef5aa3d5bd"/>
+				<reportElement key="staticText-16" x="13" y="663" width="32" height="9" uuid="6d3bd0a5-3fa9-4b55-96a4-84ef5aa3d5bd"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="7"/>
 				</textElement>
 				<text><![CDATA[Fecha:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="13" y="671" width="191" height="11" uuid="7eab51f5-23c9-491a-96d8-01765b95d267"/>
+				<reportElement key="staticText-16" x="13" y="676" width="191" height="11" uuid="7eab51f5-23c9-491a-96d8-01765b95d267"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[Organización solidaria. Firma y Sello autorizado :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="298" y="672" width="211" height="8" uuid="463b73a3-9835-4b11-9e90-a6602e7676d2"/>
+				<reportElement key="staticText-16" x="298" y="676" width="211" height="8" uuid="463b73a3-9835-4b11-9e90-a6602e7676d2"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[Empresa empleadora, Firma y sello autorización y fecha (Visado)]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="38" y="660" width="115" height="9" uuid="6a346a56-a6a5-4665-a239-de134a39eed7"/>
+				<reportElement key="textField" x="38" y="662" width="115" height="9" uuid="6a346a56-a6a5-4665-a239-de134a39eed7"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -318,11 +318,11 @@
 				<text><![CDATA[TÉCNICAS Y GESTIONES S.A.S]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="127" width="532" height="46" uuid="608f5f9d-1436-44f2-a8a6-09dc703e6f13"/>
+				<reportElement key="staticText-4" x="13" y="126" width="532" height="46" uuid="608f5f9d-1436-44f2-a8a6-09dc703e6f13"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
-				<text><![CDATA[NOMBRE_____________________” EL AFIANZADO”, DECLARA Y MANIFIESTA: 1) Que ha recibido información acerca de su derecho para presentar la garantía de fianza para la obtención de su crédito con un tercero o proveedor de servicios de afianzamiento. 2) Que fue informado acerca del costo del servicio y le fue entregado las condiciones del pago mediante el Anexo donde está estipulado la tabla del costo de AFIANZAMIENTO según monto y Plazo aprobado del Crédito, con fundamento en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR. 3) Que desea celebrar en calidad de mutuario un contrato de mutuo mercantil con intereses, en el que actúa como mutuante quien se identifica en el espacio “Operador”. Que por lo anterior, El valor inicial del mencionado contrato de mutuo es el establecido en el espacio “Monto Crédito”, y el plazo inicial es el relacionado en el espacio “Plazo Inicial”. En adelante y para efectos del presente contrato la operación identificada será el “Contrato de Mutuo” u “Obligación Principal”. 4) Que ha recibido copia del presente contrato.]]></text>
+				<text><![CDATA[NOMBRE_______________________________” EL AFIANZADO”, DECLARA Y MANIFIESTA: 1) Que ha recibido información acerca de su derecho para presentar la garantía de fianza para la obtención de su crédito con un tercero o proveedor de servicios de afianzamiento. 2) Que fue informado acerca del costo del servicio y le fue entregado las condiciones del pago mediante el Anexo donde está estipulado la tabla del costo de AFIANZAMIENTO según monto y Plazo aprobado del Crédito, con fundamento en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR. 3) Que desea celebrar en calidad de mutuario un contrato de mutuo mercantil con intereses, en el que actúa como mutuante quien se identifica en el espacio “Operador”. Que por lo anterior, El valor inicial del mencionado contrato de mutuo es el establecido en el espacio “Monto Crédito”, y el plazo inicial es el relacionado en el espacio “Plazo Inicial”. En adelante y para efectos del presente contrato la operación identificada será el “Contrato de Mutuo” u “Obligación Principal”. 4) Que ha recibido copia del presente contrato.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="15" y="116" width="189" height="9" uuid="e4df57c7-557c-402a-957b-36bcb149b1e3"/>
@@ -332,32 +332,32 @@
 				<text><![CDATA[1.- DECLARACIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="174" width="189" height="9" uuid="08790c0a-5d94-4565-b44c-de8d06b61e69"/>
+				<reportElement key="staticText-16" x="15" y="172" width="189" height="9" uuid="08790c0a-5d94-4565-b44c-de8d06b61e69"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[2.- OBJETO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="181" width="532" height="21" uuid="ce92f29c-9664-41bf-82ad-30b3d2e1eaec"/>
+				<reportElement key="staticText-4" x="13" y="180" width="532" height="21" uuid="ce92f29c-9664-41bf-82ad-30b3d2e1eaec"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[En caso de aceptar la presente solicitud, AFIANZA DINÁMICOS S.A.S., se constituye como fiador del AFIANZADO respecto de la Obligación Principal. AFIANZA DINÁMICOS S.A.S., se obliga frente al OPERADOR, en caso de incumplimiento del AFIANZADO, a cubrir las obligaciones a cargo del AFIANZADO derivadas del Contrato de Mutuo, hasta por el saldo de capital vigente en una fecha determinada, en los términos que estén vigentes para esa fecha en el acuerdo marco de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y el OPERADOR.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="204" width="189" height="9" uuid="402aec0a-fc73-4ef8-9359-bd9a67fa7744"/>
+				<reportElement key="staticText-16" x="15" y="203" width="189" height="9" uuid="402aec0a-fc73-4ef8-9359-bd9a67fa7744"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[3.- REMUNERACIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="215" width="533" height="91" uuid="0ea69a58-e4c4-4f54-bc51-9c250a26327f"/>
+				<reportElement key="staticText-4" x="13" y="212" width="533" height="91" uuid="0ea69a58-e4c4-4f54-bc51-9c250a26327f"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
-				<text><![CDATA[(A) En caso que la presente solicitud sea aceptada, el AFIANZADO pagará a EL FIADOR como remuneración por la Fianza un valor liquidado en los términos fijados en el ANEXO de fianza suscrito entre AFIANZA DINÁMICOS S.A.S., y EL AFIANZADO. Por autorización del AFIANZADO, EL OPERADOR recaudará por cuenta de EL FIADOR el valor de la remuneración a que se refiere la presente cláusula y la entregará directamente a EL FIADOR.
+				<text><![CDATA[(A) En caso que la presente solicitud sea aceptada, el AFIANZADO pagará a EL FIADOR como remuneración por la Fianza un valor liquidado en los términos fijados en el ANEXO de fianza, ANEXO que hace parte integral de este contrato de afianzamiento entre AFIANZA DINÁMICOS S.A.S., y EL AFIANZADO. Por autorización del AFIANZADO, EL OPERADOR recaudará por cuenta de EL FIADOR el valor de la remuneración a que se refiere la presente cláusula y la entregará directamente a EL FIADOR.
 (B) El costo de la fianza será incluido en el valor de la cuota mensual de amortización de la Obligación Principal y será descontado directamente del salario mensual y conforme a la política establecida por el OPERADOR y en el mismo plazo pactado por este, mediante sistema de Libranza ante el empleador del AFIANZADO. 
 (C) En caso que el Contrato de Mutuo haya sido otorgado con base en un cupo rotativo y el AFIANZADO solicite desembolsos adicionales durante la vigencia del cupo de crédito, el AFIANZADO deberá pagar a EL FIADOR remuneraciones adicionales para que la fianza cubra en todo momento el valor total de la Obligación Principal, durante el plazo otorgado para su pago. El AFIANZADO reconoce que el OPERADOR recaudará por cuenta de EL FIADOR el valor de las remuneraciones adicionales y que las entregará directamente a EL FIADOR.
 (D) El valor de la Remuneración Inicial de la Fianza que EL FIADOR recibirá será la suma prevista en el anexo de información entregado al DEUDOR. El valor de la remuneración adicional será informado al momento en que el AFIANZADO solicite el desembolso adicional otorgado con base en un cupo rotativo.
@@ -365,28 +365,28 @@
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="308" width="189" height="9" uuid="0454596a-455e-433e-9125-f54e623035b9"/>
+				<reportElement key="staticText-16" x="15" y="305" width="189" height="9" uuid="0454596a-455e-433e-9125-f54e623035b9"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[4.- CONDICIÓN SUSPENSIVA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="318" width="530" height="15" uuid="c6d5c5ea-0d61-4cf1-b90f-4d8c3e67306d"/>
+				<reportElement key="staticText-4" x="15" y="315" width="530" height="15" uuid="c6d5c5ea-0d61-4cf1-b90f-4d8c3e67306d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Las obligaciones derivadas de la Fianza estarán sujetas a: i) El pago por parte del AFIANZADO de los cargos referidos en el punto 3 anterior, y; ii) Que el OPERADOR reporte oportunamente a EL FIADOR el otorgamiento de la Fianza y transfiera la Remuneración.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="334" width="189" height="9" uuid="58ce2d55-3b12-499c-ba90-b39f418df36c"/>
+				<reportElement key="staticText-16" x="15" y="331" width="189" height="9" uuid="58ce2d55-3b12-499c-ba90-b39f418df36c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[5.- VIGENCIA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="344" width="532" height="14" uuid="3a5e6366-3c7b-4eec-9ba7-b16673749180"/>
+				<reportElement key="staticText-4" x="13" y="341" width="532" height="14" uuid="3a5e6366-3c7b-4eec-9ba7-b16673749180"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
@@ -395,14 +395,14 @@
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="357" width="189" height="9" uuid="507190fd-ceaf-4b0d-bcc9-3abdfd82dd30"/>
+				<reportElement key="staticText-16" x="15" y="354" width="189" height="9" uuid="507190fd-ceaf-4b0d-bcc9-3abdfd82dd30"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[6.- DERECHO PRINCIPAL DEL FIADOR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="366" width="531" height="28" uuid="5b8f65cd-969f-4258-bdad-f718a601fa3e"/>
+				<reportElement key="staticText-4" x="15" y="363" width="531" height="28" uuid="5b8f65cd-969f-4258-bdad-f718a601fa3e"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
@@ -411,104 +411,101 @@
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="394" width="189" height="9" uuid="4db96ed4-241f-48a0-8883-4acc17fd7555"/>
+				<reportElement key="staticText-16" x="15" y="391" width="189" height="9" uuid="4db96ed4-241f-48a0-8883-4acc17fd7555"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[7.- TERMINACIÓN ANTICIPADA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="403" width="530" height="22" uuid="fe5b339f-d9e5-4cfc-9717-17df2cdf09ed"/>
+				<reportElement key="staticText-4" x="15" y="400" width="530" height="22" uuid="fe5b339f-d9e5-4cfc-9717-17df2cdf09ed"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[La Fianza terminará de forma anticipada en los siguientes eventos: (i) Que no se logre la incorporación dentro de los noventa (90) días calendario siguientes a la fecha en que fue celebrado el Contrato de Mutuo; (ii) Que EL FIADOR encuentre falencias documentales o irregularidades existentes al momento de otorgamiento del Contrato de Mutuo que lo anulen, o hagan imposible su ejecución.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="422" width="189" height="9" uuid="89270d4d-eee1-4fa4-8eaa-60d379a2c26b"/>
+				<reportElement key="staticText-16" x="15" y="420" width="189" height="9" uuid="89270d4d-eee1-4fa4-8eaa-60d379a2c26b"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[8.- BENEFICIOS DE EL FIADOR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="432" width="533" height="52" uuid="2eb38713-1618-4e6a-9d6a-19357e37820f"/>
+				<reportElement key="staticText-4" x="13" y="429" width="533" height="44" uuid="2eb38713-1618-4e6a-9d6a-19357e37820f"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[EL FIADOR se reserva los beneficios de excusión y de división, en los términos de lo dispuesto por los artículos 2383 y siguientes del Código Civil colombiano.  
-
 Por  tanto, EL FIADOR,  en desarrollo del beneficio de excusión podrá exigir al  OPERADOR, en su calidad de ACREEDOR, que inicialmente persiga  los bienes del  AFIANZADO  hasta el pago total de la obligación afianzada.  Igualmente, EL FIADOR, en desarrollo del beneficio de división, en caso de existir otros fiadores, podrá exigir que la obligación afianzada sea cubierta proporcionalmente por los diferentes fiadores del AFIANZADO.
-
 Finalmente, EL FIADOR podrá en caso que la obligación afianzada sea de carácter solidario, perseguir al codeudor o resto de codeudores por el pago de la obligación por él cubierta.
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="484" width="232" height="9" uuid="710ed66c-9585-4999-b6de-7b824c45eeab"/>
+				<reportElement key="staticText-16" x="15" y="470" width="232" height="9" uuid="710ed66c-9585-4999-b6de-7b824c45eeab"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[9.- EXCLUSIÓN E INCOMPATIBILIDAD DEL SERVICIO CONTRATADO CON EL SEGURO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="494" width="531" height="15" uuid="8ed5161c-dc5b-4cfb-a994-68c2d3967328"/>
+				<reportElement key="staticText-4" x="15" y="480" width="531" height="15" uuid="8ed5161c-dc5b-4cfb-a994-68c2d3967328"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Reconoce desde ya el AFIANZADO que el servicio tomado con EL FIADOR no se asimila en ningún efecto al contrato de Seguro, por lo tanto, está excluida y es incompatible su normatividad con éste contrato, estando por el contrario siempre presente, que su obligación es pagar.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="511" width="232" height="9" uuid="91cbc375-039a-4ed0-871f-498298f13633"/>
+				<reportElement key="staticText-16" x="15" y="495" width="232" height="9" uuid="91cbc375-039a-4ed0-871f-498298f13633"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[10.- CESIÓN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="522" width="530" height="16" uuid="9f8a3040-2f77-4928-8ad1-b04601795557"/>
+				<reportElement key="staticText-4" x="15" y="504" width="530" height="16" uuid="9f8a3040-2f77-4928-8ad1-b04601795557"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[EL AFIANZADO solo podrá ceder el presente contrato con el consentimiento previo, expreso y por escrito del FIADOR. EL AFIANZADO autoriza y acepta cualquier cesión que haga el FIADOR del presente contrato, pero la misma no surtirá efecto sino hasta cuando ésta se haya notificado al AFIANZADO.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="15" y="540" width="232" height="9" uuid="a0fac5a0-08af-43e0-a3dd-cc2bf8a84d84"/>
+				<reportElement key="staticText-16" x="15" y="521" width="232" height="9" uuid="a0fac5a0-08af-43e0-a3dd-cc2bf8a84d84"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[11.- REPORTE CENTRALES DE RIESGO:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="15" y="552" width="530" height="39" uuid="6bbd2065-6f2c-4bf0-89bb-e7acc2123299"/>
+				<reportElement key="staticText-4" x="15" y="529" width="530" height="39" uuid="6bbd2065-6f2c-4bf0-89bb-e7acc2123299"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
-				<text><![CDATA[EL AFIANZADO autoriza de manera expresa e irrevocable a EL FIADOR o a quien represente sus derechos u ostente en el futuro a cualquier título la calidad de Afianzador, a consultar, solicitar, suministrar, reportar, procesar y divulgar toda la información que se refiere al comportamiento crediticio, financiero y comercial de EL AFIANZADO a las Centrales de Riesgo y Entidades Financieras de Colombia o a quien represente sus derechos. La permanencia de la información en las bases de datos será determinada por el ordenamiento jurídico aplicable, en especial por las normas legales y la jurisprudencia, los cuales contienen mis derechos y obligaciones, que, por ser públicos, EL AFIANZADO conoce plenamente. En caso de que, en el futuro, EL FIADOR en este documento efectúe una cesión a cualquier título de este contrato a favor de un tercero, los efectos de la presente autorización se extenderán a éste, en los mismos términos y condiciones.]]></text>
+				<text><![CDATA[EL AFIANZADO autoriza de manera expresa e irrevocable a EL FIADOR o a quien represente sus derechos u ostente en el futuro a cualquier título la calidad de Afianzador, a consultar, solicitar, suministrar, reportar, procesar y divulgar toda la información que se refiere al comportamiento crediticio, financiero y comercial de EL AFIANZADO a las Centrales de Riesgo y Entidades Financieras de Colombia o a quien represente sus derechos. La permanencia de la información en las bases de datos será determinada por el ordenamiento jurídico aplicable, en especial por las normas legales y la jurisprudencia, los cuales contienen mis derechos y obligaciones, que, por ser públicos, EL AFIANZADO conoce plenamente. En caso de que, en el futuro, EL FIADOR en este documento efectúe una cesión a cualquier título de este contrato a favor de un tercero, los efectos del presente contrato se extenderán a éste, en los mismos términos y condiciones.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="17" y="591" width="232" height="9" uuid="3554b2f2-0f0f-4bcc-b2e8-94af4eb93d4c"/>
+				<reportElement key="staticText-16" x="17" y="567" width="232" height="9" uuid="3554b2f2-0f0f-4bcc-b2e8-94af4eb93d4c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="5" isBold="true"/>
 				</textElement>
 				<text><![CDATA[12.- HABEAS DATA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="17" y="601" width="528" height="30" uuid="deb51b87-e4cf-41a6-98b6-6a20dbfc63c8"/>
+				<reportElement key="staticText-4" x="17" y="577" width="528" height="64" uuid="deb51b87-e4cf-41a6-98b6-6a20dbfc63c8"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="6" isBold="false"/>
 				</textElement>
-				<text><![CDATA[EL FIADOR declara que cuenta con políticas de protección de datos, conforme lo establecido en Ley Estatutaria 1581 y el Decreto 1377 de 2013. Igualmente declara que cuenta con los medios idóneos de protección de datos, con lo cual garantiza de este modo, el adecuado tratamiento de los datos del AFIANZADO. El AFIANZADO podrá solicitar la supresión, modificación o actualización de los datos suministrados.
-El AFIANZADO suscribe el presente documento en señal de conocimiento y aceptación de las condiciones de la Fianza.
-]]></text>
+				<text><![CDATA[EL FIADOR declara que cuenta con políticas de protección de datos, conforme lo establecido en Ley Estatutaria 1581 y el Decreto 1377 de 2013. Igualmente declara que cuenta con los medios idóneos de protección de datos, con lo cual garantiza de este modo, el adecuado tratamiento de los datos del AFIANZADO. El AFIANZADO podrá solicitar la supresión, modificación o actualización de los datos suministrados. También el AFIANZADO autoriza expresa e Irrevocablemente para que sus datos personales, de contacto y financieros sean utilizados de manera directa o indirecta de forma transparente, leal, licita, segura y confiable, entre otras, para las siguientes finalidades: Cualquiera en el desarrollo del objeto social del FIADOR, un tercero y/o aliado comercial, o su endosatario; Presentación de reportes a los entes de control; El envío de correspondencia, correos electrónicos, newsletters, WhatsApp, contacto telefónico o cualquier otro método, para recibir información sobre el producto, o en desarrollo de actividades publicitarias, promocionales, de mercadeo o para la prestación de servicios complementarios; Contacto telefónico y grabación de llamadas; Análisis de riesgo crediticio y análisis estadísticos cuando se otorgan créditos o plazos para el pago de la obligación; gestiones de cobranzas o reportes de no pago por cuenta propia o a través de terceros autorizados y aliados comerciales.
+El AFIANZADO suscribe el presente documento en señal de conocimiento y aceptación de las condiciones de la Fianza.]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="13" y="670" width="532" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bf62596c-1ed3-4875-9568-f0f16018ca40"/>
+				<reportElement key="line-1" x="13" y="674" width="532" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="bf62596c-1ed3-4875-9568-f0f16018ca40"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="298" y="634" width="203" height="14" uuid="13bdc5be-17b5-41a6-9eda-f28dca2be0d0"/>
+				<reportElement key="staticText-16" x="298" y="642" width="203" height="14" uuid="13bdc5be-17b5-41a6-9eda-f28dca2be0d0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>

@@ -3,6 +3,8 @@ package com.jarzsoft.services.impl;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ import com.jarzsoft.repository.WWfMovRepository;
 import com.jarzsoft.repository.W_Wf_Pas_AutRepository;
 import com.jarzsoft.repository.W_Wf_PasosRepository;
 import com.jarzsoft.service.IWWfMovService;
+import com.jarzsoft.services.impl.wf.request.WFStep_1Service;
 import com.jarzsoft.util.Constantes;
 import com.jarzsoft.util.SendEmail;
 
@@ -31,6 +34,8 @@ public class WWfMovService implements IWWfMovService {
 	private final SendEmail sendEmail;
 
 	private final W_Wf_Pas_AutRepository w_Wf_Pas_AutRepository;
+	
+	private static final Logger LOGGER = LogManager.getLogger(WFStep_1Service.class);
 
 	@Autowired
 	public WWfMovService(WWfMovRepository wWfMovRepository, IWWfMovMapper mapper,
@@ -69,31 +74,40 @@ public class WWfMovService implements IWWfMovService {
 	public DTOWWfMov createMovWithSteps(DTOSolCredito out, String user, String stepValue, Boolean isUpdate,
 			String idWF) {
 
+		LOGGER.info("Paso 10-1");
+		
 		W_Wf_Pasos step = wWfPasosRepository.findByIdStep(stepValue, idWF);
 		DTOWWfMov mov = null;
+		LOGGER.info("Paso 10-2");
 		if (null != step) {
 
 			if (!isUpdate) {
+				LOGGER.info("Paso 10-3");
 				if (Constantes.isOK.equals(step.getEnvCorreoPaso())) {
+					LOGGER.info("Paso 10-4");
 					sendEmail.Send(step.getEmail1(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
 					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
 				}
 				if (Constantes.isOK.equals(step.getEnvCorreoAutoriza())) {
+					LOGGER.info("Paso 10-5");
 					sendEmail.Send(step.getEmail3(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
 					sendEmail.Send(step.getEmail2(), step.getAsuntoCorreo(), step.getTextoCorreo(), null, "");
 				}
 			}
 
+			LOGGER.info("Paso 10-6");
 			List<W_Wf_Pas_Aut> auts = w_Wf_Pas_AutRepository.findByWfAndStep(idWF, stepValue);
 			HashMap<String, String> users = new HashMap<String, String>();
 
+			LOGGER.info("Paso 10-7");
 			for (int i = 0; i < auts.size(); i++) {
 				int j = i + 1;
 				users.put("user" + j, auts.get(i).getW_Wf_Pas_AutPK().getUsuario());
 			}
 
+			LOGGER.info("Paso 10-8");
 			mov = create(mapper.mapperDaoToDto(out, step, user, Integer.parseInt(idWF), null, stepValue, users));
-
+			LOGGER.info("Paso 10-9");
 		}
 		return mov;
 	}

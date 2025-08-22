@@ -3,8 +3,8 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="1"/>
-	<property name="ireport.y" value="458"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="824"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -107,11 +107,11 @@
 				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="10" y="137" width="533" height="24" uuid="ed6d05c0-fb8d-4ce6-9429-27a1c566cd7b"/>
+				<reportElement key="staticText-4" x="10" y="137" width="533" height="31" uuid="ed6d05c0-fb8d-4ce6-9429-27a1c566cd7b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[retenga, de mi (nuestra) asignación mensual por razón de los siguientes conceptos: sueldos, salarios, pensiones, vacaciones, mesadas, honorarios, prima e indemnizaciones, comisiones, cesantías, bonificaciones, auxilios y demás prestaciones sociales la suma de:]]></text>
+				<text><![CDATA[retenga, de mi (nuestra) asignación mensual por razón de los siguientes conceptos: sueldos, salarios, pensiones, vacaciones, mesadas, honorarios, prima e indemnizaciones, comisiones, cesantías, bonificaciones, auxilios, compensaciones, aportes voluntarios por_____________ o de otros conceptos  y demás prestaciones sociales la suma de:]]></text>
 			</staticText>
 			<line>
 				<reportElement key="line-1" x="269" y="78" width="25" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="edda42f0-c34f-4537-a6b8-e7c130398077"/>
@@ -289,7 +289,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8" isBold="false"/>
 				</textElement>
-				<text><![CDATA[de acuerdo al Art. 7 del Oficio 220-0002840 del 19 de enero de 2015 de la Superintendencia de Sociedades enfocado a la ley 1527 de 2012 (art. 6 y 7 ) y Código sustantivo del trabajo art. 150.  Así mismo, autorizo (amos) expresamente a la entidad pagadora que en caso de mora, retiro o fallecimiento retenga y cobre de mi liquidación final de prestaciones sociales, salarios, vacaciones,  primas e indemnizaciones o de otros conceptos, los saldos que este adeudando si llegase a finalizar mi contrato de trabajo antes de completar el pago total de este préstamo, Adicionalmente en caso de retiro de esta entidad, según el Art. 7 de la Ley 1527 de 2012, faculto a TECNICAS Y GESTIONES S.A.S. o a su endosatario para que SOLICITE A CUALQUIER EMPLEADOR FUTURO LA DEDUCCIÓN DE LA CUOTA DE MI NÓMINA.
+				<text><![CDATA[de acuerdo al Art. 7 del Oficio 220-0002840 del 19 de enero de 2015 de la Superintendencia de Sociedades enfocado a la ley 1527 de 2012 (art. 6 y 7 ) y Código sustantivo del trabajo art. 150. Así mismo, autorizo (amos) expresamente a la entidad pagadora que en caso de mora, retiro o fallecimiento retenga y cobre de mi liquidación final  prestaciones sociales, salarios, vacaciones,  primas e indemnizaciones, compensaciones, aportes voluntarios por _________  o de otros conceptos, los saldos que este adeudando si llegase a finalizar mi contrato de trabajo antes de completar el pago total de este préstamo, Adicionalmente en caso de retiro de esta entidad, según el Art. 7 de la Ley 1527 de 2012, faculto a TECNICAS Y GESTIONES S.A.S. o a su endosatario para que SOLICITE A CUALQUIER EMPLEADOR FUTURO LA DEDUCCIÓN DE LA CUOTA DE MI NÓMINA.
 De encontrarse vencido el crédito o no haber (se) atendido oportunamente autorizo para que previa revisión detallada de TECNICAS Y GESTIONES SAS, de las cuotas recibidas, se efectúen descuentos adicionales necesarios para que la deuda se normalice y se regularicen los pagos que fueron inicialmente acordados.
 En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones, por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido de acuerdo al Art. 6 de la ley Estatutaria 1266 de 2008 y el art. 6 de la Ley 1527 de 2012.
 De conformidad con el Art. 622 del Código de comercio, AUTORIZO (AMOS) EXPRESA E IRREVOCABLEMENTE al representante legal de TECNICAS Y GESTIONES S.A.S para diligenciar los espacios en blanco de este documento a la orden que he (mos) otorgado a su favor, el cual será diligenciado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones. 1)El monto será igual al valor de todas las obligaciones exigibles a mi (nuestro) cargo y en favor de TECNICAS Y GESTIONES SAS que exista al momento de ser diligenciados los espacios en blanco. 2) La fecha será aquella cuando se diligencien los espacios en blanco. 3) Los espacios en blanco se diligenciarán cuando el tenedor del documento lo considere pertinente. 4) La entidad pagadora será el empleador al cual me encuentre vinculado al momento del diligenciamiento de los espacios en blanco del presente documento.
@@ -344,88 +344,88 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textFieldExpression><![CDATA[$P{pagare}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" x="12" y="176" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="072b9420-24c0-485a-80e7-0014e679433e"/>
+				<reportElement key="line-1" x="12" y="180" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="072b9420-24c0-485a-80e7-0014e679433e"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="11" y="164" width="217" height="11" uuid="0d6fa789-c0bb-49c7-a905-1e862efbce98"/>
+				<reportElement x="11" y="168" width="217" height="11" uuid="0d6fa789-c0bb-49c7-a905-1e862efbce98"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{valorletras}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="228" y="164" width="14" height="11" uuid="fccf52f1-9a20-4b9b-8cb3-e5c7afe1f10a"/>
+				<reportElement key="staticText-4" x="228" y="168" width="14" height="11" uuid="fccf52f1-9a20-4b9b-8cb3-e5c7afe1f10a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<text><![CDATA[$(]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="245" y="176" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0b029891-de61-4100-930c-a52509d00d32"/>
+				<reportElement key="line-1" x="245" y="180" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="0b029891-de61-4100-930c-a52509d00d32"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="248" y="164" width="94" height="12" uuid="0fbf0115-b463-4d0d-bcd3-ae6655b9a026"/>
+				<reportElement x="248" y="168" width="94" height="12" uuid="0fbf0115-b463-4d0d-bcd3-ae6655b9a026"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{valor}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="348" y="164" width="5" height="11" uuid="08363303-a710-4b03-b77e-2129664817ab"/>
+				<reportElement key="staticText-4" x="348" y="168" width="5" height="11" uuid="08363303-a710-4b03-b77e-2129664817ab"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="358" y="164" width="32" height="11" uuid="f2196630-f40e-4e66-a4fa-5492bfcab2a3"/>
+				<reportElement key="staticText-4" x="358" y="168" width="32" height="11" uuid="f2196630-f40e-4e66-a4fa-5492bfcab2a3"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<text><![CDATA[durante ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="393" y="164" width="100" height="11" uuid="04b95198-dd3e-4fb7-887c-362e41249b91"/>
+				<reportElement x="393" y="168" width="100" height="11" uuid="04b95198-dd3e-4fb7-887c-362e41249b91"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{mesesletras}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" x="397" y="176" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4e63ec2c-5c86-4323-8c7f-f25c643354d8"/>
+				<reportElement key="line-1" x="397" y="180" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4e63ec2c-5c86-4323-8c7f-f25c643354d8"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="503" y="164" width="5" height="11" uuid="c5c596e1-7538-4cf0-927a-21ddbddf80fa"/>
+				<reportElement key="staticText-4" x="503" y="168" width="5" height="11" uuid="c5c596e1-7538-4cf0-927a-21ddbddf80fa"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<text><![CDATA[(]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="535" y="164" width="5" height="11" uuid="65e20a70-3cda-4463-acf2-4da940a684a2"/>
+				<reportElement key="staticText-4" x="535" y="168" width="5" height="11" uuid="65e20a70-3cda-4463-acf2-4da940a684a2"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="512" y="164" width="16" height="11" uuid="ca5f82da-a3ab-48ba-837b-bb3bd042f65d"/>
+				<reportElement x="512" y="168" width="16" height="11" uuid="ca5f82da-a3ab-48ba-837b-bb3bd042f65d"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{meses}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" x="513" y="176" width="19" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="25a0783b-726d-415c-a9e1-ea33a511bf63"/>
+				<reportElement key="line-1" x="513" y="180" width="19" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="25a0783b-726d-415c-a9e1-ea33a511bf63"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -437,27 +437,27 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="178" width="108" height="11" uuid="0200e79f-16f5-4573-acd5-a445d7120bd0"/>
+				<reportElement key="staticText-4" x="12" y="182" width="108" height="11" uuid="0200e79f-16f5-4573-acd5-a445d7120bd0"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<text><![CDATA[meses contados a partir de]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="123" y="189" width="84" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="791cb6da-5abf-45f1-9014-5edfc249b588"/>
+				<reportElement key="line-1" x="123" y="193" width="84" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="791cb6da-5abf-45f1-9014-5edfc249b588"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="126" y="178" width="81" height="11" uuid="273ef115-c499-44f0-8ead-e45478fe4bfe"/>
+				<reportElement x="126" y="182" width="81" height="11" uuid="273ef115-c499-44f0-8ead-e45478fe4bfe"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{fechainicio}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="207" y="178" width="333" height="11" uuid="081cb1e9-d952-4692-8d22-b217ba7c7b31"/>
+				<reportElement key="staticText-4" x="207" y="182" width="333" height="11" uuid="081cb1e9-d952-4692-8d22-b217ba7c7b31"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -536,13 +536,6 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-49" x="17" y="515" width="118" height="13" uuid="1e489d3d-5b3f-44c6-adef-169e3c73c800"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="7" isBold="false" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<text><![CDATA[NIT. 901.184.952-4]]></text>
-			</staticText>
-			<staticText>
 				<reportElement key="staticText-3" x="187" y="489" width="355" height="22" forecolor="#000000" uuid="4dac82c0-b1aa-47c3-8bfc-3484c16c0fce"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
@@ -550,10 +543,6 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[AUTORIZACION DE DESCUENTO
 ]]></text>
 			</staticText>
-			<image>
-				<reportElement key="image-1" x="10" y="472" width="128" height="43" uuid="b926981c-a168-470f-acb3-aa9bd8f928e9"/>
-				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
-			</image>
 			<line>
 				<reportElement key="line-1" x="15" y="468" width="523" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="9641a2d0-caba-4166-96df-bd93d3cfc7c5"/>
 				<graphicElement>
@@ -617,7 +606,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textFieldExpression><![CDATA[$P{ciudadautoriza}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-1" x="22" y="642" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7c28d216-a234-4758-87b2-d1a6ad5ebd56"/>
+				<reportElement key="line-1" x="22" y="649" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7c28d216-a234-4758-87b2-d1a6ad5ebd56"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -656,7 +645,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[autorizo (amos)  de manera    permanente e  irrevocable, que como fuente   de    pago de las obligaciones   incorporadas en  título valor   Libranza ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="368" y="630" width="32" height="11" uuid="05fc63b6-5f87-4a3f-a4eb-c76d5af99aeb"/>
+				<reportElement key="staticText-4" x="368" y="637" width="32" height="11" uuid="05fc63b6-5f87-4a3f-a4eb-c76d5af99aeb"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -676,7 +665,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textFieldExpression><![CDATA[$P{dia}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="545" y="630" width="5" height="11" uuid="b4f8f099-6994-49cb-8284-7aee71ebc038"/>
+				<reportElement key="staticText-4" x="545" y="637" width="5" height="11" uuid="b4f8f099-6994-49cb-8284-7aee71ebc038"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -696,7 +685,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[Mes]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="407" y="642" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fa072277-1a5c-4da0-9ae1-73a2de650c28"/>
+				<reportElement key="line-1" x="407" y="649" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="fa072277-1a5c-4da0-9ae1-73a2de650c28"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -730,7 +719,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[y]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="21" y="630" width="217" height="11" uuid="a7db5955-3bdc-4a4d-93a0-80ee651ecc0e"/>
+				<reportElement x="21" y="637" width="217" height="11" uuid="a7db5955-3bdc-4a4d-93a0-80ee651ecc0e"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -762,18 +751,18 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</rectangle>
 			<textField>
-				<reportElement x="522" y="630" width="16" height="11" uuid="f9ef752b-2323-4fae-9578-91b807a4b400"/>
+				<reportElement x="522" y="637" width="16" height="11" uuid="f9ef752b-2323-4fae-9578-91b807a4b400"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{meses}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="217" y="644" width="333" height="11" uuid="d87e0182-2b91-47dd-a6b1-1af667a85820"/>
+				<reportElement key="staticText-4" x="214" y="651" width="333" height="11" uuid="d87e0182-2b91-47dd-a6b1-1af667a85820"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[y que los dineros así retenidos sean pagados a la sociedad TECNICAS Y GESTIONES S.A.S. ]]></text>
+				<text><![CDATA[y que los dineros así retenidos sean pagadas a la sociedad _______________________]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-4" x="253" y="557" width="20" height="11" uuid="5d42db8b-336e-4bd9-a7a1-fd142ff1d123"/>
@@ -796,15 +785,15 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[Ciudad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="665" width="533" height="186" uuid="173e88c7-594c-4d4e-ae75-d7977ee20369"/>
+				<reportElement key="staticText-4" x="20" y="665" width="533" height="195" uuid="173e88c7-594c-4d4e-ae75-d7977ee20369"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8" isBold="false"/>
 				</textElement>
-				<text><![CDATA[de acuerdo al Art. 7 del Oficio 220-0002840 del 19 de enero de 2015 de la Superintendencia de Sociedades enfocado a la ley 1527 de 2012 (art. 6 y 7 ) y Código sustantivo del trabajo art. 150.  Así mismo, autorizo (amos) expresamente a la entidad pagadora que en caso de mora, retiro o fallecimiento retenga y cobre de mi liquidación final de prestaciones sociales, salarios, vacaciones,  primas e indemnizaciones o de otros conceptos, los saldos que este adeudando si llegase a finalizar mi contrato de trabajo antes de completar el pago total de este préstamo, Adicionalmente en caso de retiro de esta entidad, según el Art. 7 de la Ley 1527 de 2012, faculto a TECNICAS Y GESTIONES S.A.S. o a su endosatario para que SOLICITE A CUALQUIER EMPLEADOR FUTURO LA DEDUCCIÓN DE LA CUOTA DE MI NÓMINA.
-De encontrarse vencido el crédito o no haber (se) atendido oportunamente autorizo para que previa revisión detallada de TECNICAS Y GESTIONES SAS, de las cuotas recibidas, se efectúen descuentos adicionales necesarios para que la deuda se normalice y se regularicen los pagos que fueron inicialmente acordados.
+				<text><![CDATA[de acuerdo al Art. 7 del Oficio 220-0002840 del 19 de enero de 2015 de la Superintendencia de Sociedades enfocado a la ley 1527 de 2012 (art. 6 y 7 ) y Código sustantivo del trabajo art. 150. Así mismo, autorizo (amos) expresamente a la entidad pagadora que en caso de mora, retiro o fallecimiento retenga y cobre de mi liquidación final  prestaciones sociales, salarios, vacaciones,  primas e indemnizaciones, compensaciones, aportes voluntarios por _________  o de otros conceptos, los saldos que este adeudando si llegase a finalizar mi contrato de trabajo antes de completar el pago total de este préstamo, Adicionalmente en caso de retiro de esta entidad, según el Art. 7 de la Ley 1527 de 2012, faculto a  _____________________________ o a su endosatario para que SOLICITE A CUALQUIER EMPLEADOR FUTURO LA DEDUCCIÓN DE LA CUOTA DE MI NÓMINA.
+De encontrarse vencido el crédito o no haber (se) atendido oportunamente autorizo para que previa revisión detallada de _____________________________, de las cuotas recibidas, se efectúen descuentos adicionales necesarios para que la deuda se normalice y se regularicen los pagos que fueron inicialmente acordados.
 En caso de que mi empleador incumpla o desconozca las autorizaciones de descuento aquí dadas, será solidariamente responsable por el pago de mis obligaciones, por los valores dejados de descontar y por los perjuicios que sean imputables a su descuido de acuerdo al Art. 6 de la ley Estatutaria 1266 de 2008 y el art. 6 de la Ley 1527 de 2012.
-De conformidad con el Art. 622 del Código de comercio, AUTORIZO (AMOS) EXPRESA E IRREVOCABLEMENTE al representante legal de TECNICAS Y GESTIONES S.A.S para diligenciar los espacios en blanco de este documento a la orden que he (mos) otorgado a su favor, el cual será diligenciado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones. 1)El monto será igual al valor de todas las obligaciones exigibles a mi (nuestro) cargo y en favor de TECNICAS Y GESTIONES SAS que exista al momento de ser diligenciados los espacios en blanco. 2) La fecha será aquella cuando se diligencien los espacios en blanco. 3) Los espacios en blanco se diligenciarán cuando el tenedor del documento lo considere pertinente. 4) La entidad pagadora será el empleador al cual me encuentre vinculado al momento del diligenciamiento de los espacios en blanco del presente documento.
-Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES SAS indique sobre el saldo debido a mi cargo 
+De conformidad con el Art. 622 del Código de comercio, AUTORIZO (AMOS) EXPRESA E IRREVOCABLEMENTE al representante legal de _____________________________ para diligenciar los espacios en blanco de este documento a la orden que he (mos) otorgado a su favor, el cual será diligenciado sin previo aviso y requerimiento alguno de acuerdo con las siguientes instrucciones. 1)El monto será igual al valor de todas las obligaciones exigibles a mi (nuestro) cargo y en favor de _____________________________ que exista al momento de ser diligenciados los espacios en blanco. 2) La fecha será aquella cuando se diligencien los espacios en blanco. 3) Los espacios en blanco se diligenciarán cuando el tenedor del documento lo considere pertinente. 4) La entidad pagadora será el empleador al cual me encuentre vinculado al momento del diligenciamiento de los espacios en blanco del presente documento.
+Declaro (amos) suficiente la certificación o soportes que _____________________________ indique sobre el saldo debido a mi cargo
 ]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
@@ -856,7 +845,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="403" y="630" width="100" height="11" uuid="560a6380-62f9-4f03-abad-6c340e6213ca"/>
+				<reportElement x="403" y="637" width="100" height="11" uuid="560a6380-62f9-4f03-abad-6c340e6213ca"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -877,7 +866,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<textFieldExpression><![CDATA[$P{codiCiud2}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="22" y="644" width="108" height="11" uuid="e4059383-5484-4ed6-b630-2f2cdfe34a49"/>
+				<reportElement key="staticText-4" x="22" y="651" width="108" height="11" uuid="e4059383-5484-4ed6-b630-2f2cdfe34a49"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -890,7 +879,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="136" y="644" width="81" height="11" uuid="99cf7ffc-9d80-4875-82ee-706d33b3fa17"/>
+				<reportElement x="132" y="651" width="81" height="11" uuid="99cf7ffc-9d80-4875-82ee-706d33b3fa17"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -910,7 +899,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-1" x="255" y="642" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="42d1978c-7b35-46c5-b822-25f675003fba"/>
+				<reportElement key="line-1" x="255" y="649" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="42d1978c-7b35-46c5-b822-25f675003fba"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -935,7 +924,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="358" y="630" width="5" height="11" uuid="5b5c6ebd-9e0e-4e9c-bfe6-dc9c4218eed7"/>
+				<reportElement key="staticText-4" x="358" y="637" width="5" height="11" uuid="5b5c6ebd-9e0e-4e9c-bfe6-dc9c4218eed7"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -995,7 +984,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="238" y="629" width="14" height="11" uuid="793d205f-6035-4433-bd99-3928dc989497"/>
+				<reportElement key="staticText-4" x="238" y="636" width="14" height="11" uuid="793d205f-6035-4433-bd99-3928dc989497"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -1009,7 +998,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[Yo/nosotros]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="513" y="631" width="5" height="11" uuid="820c34de-2248-4fdd-bedb-23cc02ff9f00"/>
+				<reportElement key="staticText-4" x="513" y="638" width="5" height="11" uuid="820c34de-2248-4fdd-bedb-23cc02ff9f00"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -1036,7 +1025,7 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="258" y="628" width="94" height="12" uuid="40878c77-d130-4a68-969d-ad67d18f887c"/>
+				<reportElement x="258" y="636" width="94" height="12" uuid="40878c77-d130-4a68-969d-ad67d18f887c"/>
 				<textElement>
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
@@ -1082,14 +1071,14 @@ Declaro (amos) suficiente la certificación o soportes que TECNICAS Y GESTIONES 
 				<text><![CDATA[Cédula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="601" width="533" height="24" uuid="16d650b4-abae-4aa6-afb1-1a744111d42d"/>
+				<reportElement key="staticText-4" x="20" y="601" width="533" height="35" uuid="16d650b4-abae-4aa6-afb1-1a744111d42d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="8"/>
 				</textElement>
-				<text><![CDATA[retenga, de mi (nuestra) asignación mensual por razón de los siguientes conceptos: sueldos, salarios, pensiones, vacaciones, mesadas, honorarios, prima e indemnizaciones, comisiones, cesantías, bonificaciones, auxilios y demás prestaciones sociales la suma de:]]></text>
+				<text><![CDATA[retenga, de mi (nuestra) asignación mensual por razón de los siguientes conceptos: sueldos, salarios, pensiones, vacaciones, mesadas, honorarios, prima e indemnizaciones, comisiones, cesantías, bonificaciones, auxilios, compensaciones, aportes voluntarios por_____________ o de otros conceptos  y demás prestaciones sociales la suma de:]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="523" y="643" width="19" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="51415f23-a784-4aa1-b3c5-3a4ea545eb77"/>
+				<reportElement key="line-1" x="523" y="650" width="19" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="51415f23-a784-4aa1-b3c5-3a4ea545eb77"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
