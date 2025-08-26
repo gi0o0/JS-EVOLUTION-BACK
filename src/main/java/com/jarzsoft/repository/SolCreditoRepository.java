@@ -42,4 +42,11 @@ public interface SolCreditoRepository extends JpaRepository<SolCredito, Integer>
 	@Query(value = "SELECT * FROM SOL_CREDITO WHERE clave_link = :hash", nativeQuery = true)
 	SolCredito findByHash(@Param("hash") String hash);
 
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE SOL_CREDITO " + "SET estado = :estado "
+			+ "WHERE DATEDIFF(DAY, fecha_soli, GETDATE()) > :dias "
+			+ "AND estado NOT IN ('P', 'A', 'D', 'N', 'C')", nativeQuery = true)
+	public void modificarEstadoExDias(@Param("estado") String nuevoEstado, @Param("dias") int dias);
+
 }

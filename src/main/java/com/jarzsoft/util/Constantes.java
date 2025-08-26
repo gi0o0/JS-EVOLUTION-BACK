@@ -137,6 +137,9 @@ public class Constantes {
 	public static final String STATUS_APPROVED  ="Aprobado";
 	public static final String STATUS_DENIED  ="Negado";
 	
+	public static final String ADMIN_SOLICITUD  ="ADMIN_SOLICITUD";
+	public static final String DIAS_EXPIRACION_SOLI  ="DIAS_EXPIRACION_SOLI";
+	
 	
 
 	public Constantes() {
