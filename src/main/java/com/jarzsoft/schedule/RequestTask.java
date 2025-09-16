@@ -36,7 +36,7 @@ public class RequestTask {
 			Parametro param = parametroRepository.findByParamIdAndParamtext(Constantes.ADMIN_SOLICITUD,
 					Constantes.DIAS_EXPIRACION_SOLI);
 
-			int diasExpiracion = Integer.parseInt(param.getValue());
+			int diasExpiracion = Integer.parseInt(param.getValue().trim());
 			LOGGER.info("Valor del parámetro Dias Expiración: " + diasExpiracion);
 
 			solCreditoRepository.modificarEstadoExDias(EnumStates.TIPO_ESTADO.STATE_C.getName(), diasExpiracion);

@@ -31,9 +31,9 @@ public class CORS implements Filter {
 		
 		response.setHeader("Access-Control-Allow-Credentials", "true");
 		//response.setHeader("Access-Control-Allow-Origin", "https://comercial-avaltitulos.com:1156");
-		response.setHeader("Access-Control-Allow-Origin", "https://comercial-tecnicas.com:1158");
+		//response.setHeader("Access-Control-Allow-Origin", "https://comercial-tecnicas.com:1158");
 	    //response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
-		//response.setHeader("Access-Control-Allow-Origin", "http://localhost:4202");
+		response.setHeader("Access-Control-Allow-Origin", "http://localhost:4202");
 	    
 		response.setHeader("Access-Control-Allow-Methods", "DELETE, GET, OPTIONS, PATCH, POST, PUT");
 		response.setHeader("Access-Control-Max-Age", "3600");
