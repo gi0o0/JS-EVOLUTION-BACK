@@ -45,8 +45,12 @@ public class TercerosService implements ITercerosService {
 		} else {
 
 			List<Cfi_t_sanciones> sancionesUser = sancionesRepository.getUserSanciones(externalUser.getCodTer() + "");
+			String message=Constantes.MESSAGE_USER_WITH_SANCTION ;
+			if(isCodeo)
+				message=Constantes.MESSAGE_USER_WITH_SANCTION_CODEO ;
+			
 			if (sancionesUser.size() > 0)
-				throw new PageNoFoundException(Constantes.MESSAGE_USER_WITH_SANCTION + " " + o.getNitTer());
+				throw new PageNoFoundException(message+ " " + o.getNitTer());
 
 			o.setCodTer(externalUser.getCodTer());
 			if(isCodeo) { //ADD FIELDS CODEO
