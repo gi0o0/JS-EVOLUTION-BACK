@@ -138,9 +138,11 @@ public class AuthService implements IAuthService {
 			throw new UnauthorizedException(Constantes.MESSAGE_PASSWPRD_EXPIRED);
 
 		String tipoAut = user.getTipoAut();
+		String decodedPassword = new String(Base64.getDecoder().decode(loginRequest.getPassword()));
+		loginRequest.setPassword(decodedPassword);
 
 		if ("1".equals(tipoAut)) {
-
+			
 			String existLdap = ldap.validateLdap(username, loginRequest.getPassword());
 
 			if (!existLdap.equals(""))
