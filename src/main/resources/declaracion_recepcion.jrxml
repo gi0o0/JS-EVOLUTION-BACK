@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.6105100000000119"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="24"/>
 	<property name="ireport.y" value="976"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -33,7 +33,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[NIT. 901.184.952-4]]></text>
+				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
 			</staticText>
 			<image>
 				<reportElement key="image-1" x="2" y="0" width="116" height="59" uuid="65c2e3f7-f8a9-4c5b-8f1c-abc0a39de2aa"/>
@@ -193,7 +193,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Dejo (amos) constancia que la empresa TECNICAS Y GESTIONES S.A.S. con N.I.T . 901.184.952-4 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de TECNICAS Y GESTIONES S.A.S. Declaro (amos) que la cuota mensual a descontar no afecta el mínimo vital para la congrua subsistencia mía y de mi grupo familiar.
+				<text><![CDATA[Dejo (amos) constancia que la empresa AVALTÍTULOS S.A.S. con N.I.T . 900.181.152-1 me (nos) ha suministrado información clara, completa y precisa por escrito de las condiciones del servicio de crédito que he (mos) solicitado y he (mos) entendido los términos condiciones, derechos y obligaciones estatutarias en mi (nuestra) condición de deudor (es) de AVALTÍTULOS S.A.S. Declaro (amos) que la cuota mensual a descontar no afecta el mínimo vital para la congrua subsistencia mía y de mi grupo familiar.
 
 
 ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></text>
@@ -252,21 +252,21 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="128" width="525" height="27" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
+				<reportElement key="staticText-4" x="12" y="128" width="525" height="29" uuid="11ea1185-31ee-4e31-9542-326d23e8455d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<text><![CDATA[• Que para la aprobación de mi crédito requiero de un afianzamiento sobre dicha obligación el cual podre contratar con cualquier compañía legalmente constituida en el territorio nacional que preste este servicio, ya que soy libre de escoger la entidad.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="219" width="524" height="31" uuid="e619027a-35f4-45d5-912c-e7752cd48d90"/>
+				<reportElement key="staticText-4" x="13" y="216" width="524" height="28" uuid="e619027a-35f4-45d5-912c-e7752cd48d90"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<text><![CDATA[• Tasa de interés remuneratoria _____% y moratoria tal como lo indica el Art. 844 de código de comercio “… Si las partes no han estipulado el interés moratorio, será equivalente a una y media veces del bancario corriente…”.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="12" y="256" width="525" height="71" uuid="90b76dc9-2db7-4122-b705-3fdbb5e1866b"/>
+				<reportElement key="staticText-4" x="12" y="246" width="525" height="71" uuid="90b76dc9-2db7-4122-b705-3fdbb5e1866b"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>
@@ -278,7 +278,7 @@ ASÍ MISMO DECLARO (AMOS) QUE HE (MOS) RECIBIDO LA SIGUIENTE INFORMACIÓN :]]></
 • Continuidad del descuento de la cuota acordada en caso de que cambie de empleador.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="13" y="157" width="524" height="56" uuid="b2754048-0c64-494e-9957-a75656b2f13a"/>
+				<reportElement key="staticText-4" x="13" y="158" width="524" height="56" uuid="b2754048-0c64-494e-9957-a75656b2f13a"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="9"/>
 				</textElement>

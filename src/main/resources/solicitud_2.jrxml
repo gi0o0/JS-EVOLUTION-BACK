@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -864,7 +864,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement key="line-2" x="310" y="193" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
+				<reportElement key="line-2" x="315" y="193" width="1" height="39" forecolor="#000000" uuid="be883520-e44b-4196-ba3e-4c3ee085a452"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
@@ -896,27 +896,27 @@
 				<text><![CDATA[EDAD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="314" y="193" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
+				<reportElement key="staticText-16" x="329" y="193" width="71" height="9" uuid="87cb8d25-a633-44e1-a3b5-a97a8a4b2d6d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[PARENTESCO]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-2" x="224" y="193" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
+				<reportElement key="line-2" x="227" y="193" width="1" height="39" forecolor="#000000" uuid="97286470-4cc6-4690-b90b-d03d98d394a5"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-16" x="229" y="193" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
+				<reportElement key="staticText-16" x="235" y="193" width="75" height="9" uuid="ba7fa1f1-90ee-4217-9219-e8dd91c21c72"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
-				<text><![CDATA[No. DOCUMENTO]]></text>
+				<text><![CDATA[No.DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="229" y="212" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
+				<reportElement key="staticText-16" x="237" y="212" width="75" height="9" uuid="7d034d91-0e94-4573-8140-83221f6d5104"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -955,7 +955,7 @@
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="5"/>
 				</textElement>
-				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a TECNICAS Y GESTIONES S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
+				<text><![CDATA[Bajo la gravedad de juramento declaro que tanto la documentación que presento en esta solicitud, como las declaraciones que hago, son auténticas y fidedignas y en consecuencia declaro que conozco el art. 287 del código penal que sanciona con pena privativa de la libertad cualquier falsedad o inexactitud que haya declarado o soportado documentalmente, y además acepto la responsabilidad civil en que incurriré por la misma causa. Declaro además que conozco toda la información pertinente sobre los requisitos y condiciones del crédito de forma tal que esta solicitud es libre e informada. De igual forma autorizo a AVALTITULOS S.A.S a Hacer la verificación de toda la información consignada en esta solicitud y la documentación anexa de la misma. Del mismo modo manifiesto que previamente conocí y acepté bajo libre voluntad las condiciones del crédito el cual incluye además del capital, los intereses corrientes.     ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-16" x="16" y="348" width="33" height="9" uuid="b8811dee-e430-41db-858a-05c388c01db6"/>
@@ -1184,7 +1184,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="11" y="705" width="74" height="11" uuid="eab189dc-08a5-4fb4-8142-1b30f9b53a56"/>
+				<reportElement key="staticText-4" x="11" y="705" width="62" height="11" uuid="eab189dc-08a5-4fb4-8142-1b30f9b53a56"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
@@ -1217,13 +1217,13 @@
 				<text><![CDATA[)]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="85" y="716" width="197" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="137c2010-e2a7-471f-a644-2db76e9e9aae"/>
+				<reportElement key="line-1" x="85" y="716" width="206" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="137c2010-e2a7-471f-a644-2db76e9e9aae"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="282" y="682" width="63" height="11" uuid="72732b5f-b583-4ec5-b1e3-7f391407f794"/>
+				<reportElement key="staticText-4" x="266" y="682" width="59" height="11" uuid="72732b5f-b583-4ec5-b1e3-7f391407f794"/>
 				<textElement textAlignment="Justified" verticalAlignment="Bottom">
 					<font fontName="Arial" size="5"/>
 				</textElement>
@@ -1256,7 +1256,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="56" y="363" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
+				<reportElement x="56" y="364" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -1270,7 +1270,7 @@
 				<textFieldExpression><![CDATA[$P{nomTer_codeu}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="321" y="364" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
+				<reportElement x="321" y="365" width="136" height="13" uuid="46729a83-2c14-4fcf-ba1d-9271614c594b"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
@@ -1284,21 +1284,21 @@
 				<textFieldExpression><![CDATA[$P{name_asesor}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="324" y="702" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
+				<reportElement x="324" y="701" width="100" height="12" uuid="b9b1034a-4e2a-4928-8fb0-76bd4b6b3a82"/>
 				<textElement>
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{id_asesor}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="staticText-16" x="314" y="213" width="71" height="9" uuid="a370ddc1-5bd8-4b9a-aa0b-e579454c55ba"/>
+				<reportElement key="staticText-16" x="330" y="212" width="71" height="9" uuid="215a1a8b-6558-419e-b086-858befbb788a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
 				<text><![CDATA[PARENTESCO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-16" x="478" y="213" width="50" height="9" uuid="838645c7-a43a-4e5c-8598-de64c90b9592"/>
+				<reportElement key="staticText-16" x="478" y="212" width="50" height="9" uuid="5dfb269f-563c-47f4-afe0-472bf62ab2ae"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="6"/>
 				</textElement>
