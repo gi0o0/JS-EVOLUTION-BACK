@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="390"/>
+	<property name="ireport.y" value="365"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -42,46 +42,6 @@
 				</textElement>
 				<text><![CDATA[NIT. 900.181.152 - 1]]></text>
 			</staticText>
-			<line>
-				<reportElement key="line-1" x="255" y="249" width="97" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="8acf7021-e438-4553-b8e6-678f8d70e15d"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement key="staticText-4" x="352" y="237" width="5" height="11" uuid="8aa86d00-dde3-4601-b76d-15de4eefcd1b"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="9"/>
-				</textElement>
-				<text><![CDATA[)]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="21" y="237" width="217" height="11" uuid="af97f0b4-9b64-46c2-9d97-d92e99651874"/>
-				<textElement>
-					<font fontName="Times New Roman" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{valorletras}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="staticText-4" x="238" y="237" width="14" height="11" uuid="26ae6962-179f-4e13-b508-98492fa47a0b"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="9"/>
-				</textElement>
-				<text><![CDATA[$(]]></text>
-			</staticText>
-			<line>
-				<reportElement key="line-1" x="22" y="249" width="216" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="7932b215-535c-4feb-8a88-4c68307a5314"/>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<textField>
-				<reportElement x="256" y="237" width="94" height="12" uuid="8dbbef79-7ab9-4352-b868-a75828dfa34f"/>
-				<textElement>
-					<font fontName="Times New Roman" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{valor}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement key="staticText-4" x="20" y="94" width="533" height="39" uuid="ecf0d440-0e8b-46b1-91dc-4953a985a78c"/>
 				<textElement textAlignment="Justified">
@@ -96,12 +56,12 @@ Bogotá, D.C.
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="365" width="519" height="55" uuid="a54761de-1f76-40e3-99f2-2b5f7ac4db6c"/>
+				<reportElement key="staticText-4" x="20" y="365" width="519" height="47" uuid="a54761de-1f76-40e3-99f2-2b5f7ac4db6c"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Adicionalmente me compromento a no realizar ninguna actividad de tipo crediticio  que disminuya mi capacidad de endeudamiento, durante el lapso que la sociedad AVALTÍTULOS S.A.S. requiera para la ejecución de la fianza que consiste en el pago total de la obligación anteriormente mencionada, la consecución del Paz y Salvo respectivo.
-El presente documento se suscribe de conformidad con los preceptuado en el artículo 863 del Código de Comercio. 
+				<text><![CDATA[Adicionalmente me comprometo a no realizar ninguna actividad de tipo crediticio  que disminuya mi capacidad de pago, durante el lapso que la sociedad AVALTÍTULOS S.A.S. requiera para la ejecución de la deuda que consiste en el pago total de la obligación anteriormente mencionada.
+El presente documento se suscribe de conformidad con los preceptuado en el artículo 863 del Código de Comercio.
 ]]></text>
 			</staticText>
 			<image>
@@ -176,27 +136,20 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="209" y="221" width="82" height="11" uuid="746ad258-a12e-48dd-9dda-aed0f5c6a94d"/>
+				<reportElement key="staticText-4" x="209" y="221" width="315" height="11" uuid="746ad258-a12e-48dd-9dda-aed0f5c6a94d"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
-				<text><![CDATA[suscrita a favor de]]></text>
+				<text><![CDATA[suscrita a favor de                    AVALTÍTULOS S.A.S.]]></text>
 			</staticText>
 			<line>
-				<reportElement key="line-1" x="295" y="232" width="98" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c85bd32-18b1-4e7e-8601-b5f5db3f6542"/>
+				<reportElement key="line-1" x="273" y="233" width="244" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="4c85bd32-18b1-4e7e-8601-b5f5db3f6542"/>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement key="staticText-4" x="398" y="222" width="149" height="11" uuid="11ec90ff-5818-4bf4-b34a-aa4f6415a093"/>
-				<textElement textAlignment="Justified">
-					<font fontName="Times New Roman" size="9"/>
-				</textElement>
-				<text><![CDATA[que a la fecha presenta un saldo de]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="staticText-4" x="358" y="239" width="185" height="11" uuid="ddd41e5e-5252-43c3-8e67-65df4c202aeb"/>
+				<reportElement key="staticText-4" x="27" y="239" width="209" height="11" uuid="ddd41e5e-5252-43c3-8e67-65df4c202aeb"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
@@ -209,11 +162,11 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="459" width="519" height="44" uuid="2a13418a-316a-4b14-931d-70544854b7bf"/>
+				<reportElement key="staticText-4" x="20" y="450" width="519" height="44" uuid="2a13418a-316a-4b14-931d-70544854b7bf"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
-				<text><![CDATA[El incumplimiento al presente compromiso dará derecho a la Sociedad AVALTÍTULOS S.A.S. al cobro de las acciones civiles y penales a que hay lugar de conformidad con las leyes preexistentes al momento de la suscripción del presente compromiso, con cuyo caso, asumiré todos las costas y gastos prejurídicas y jurídicos contractuales y extracontractuales.]]></text>
+				<text><![CDATA[El incumplimiento al presente compromiso dará derecho a la Sociedad AVALTÍTULOS S.A.S., al inicio de las acciones civiles y penales a que haya lugar de conformidad con las leyes colombianas vigentes, en cuyo caso, asumiré todas las costas y gastos pre jurídicos y jurídicos contractuales y extracontractuales.]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="75" y="547" width="158" height="11" uuid="4d90c57c-9d20-499d-93a2-ec3b7bd95bdc"/>
@@ -340,16 +293,15 @@ El presente documento se suscribe de conformidad con los preceptuado en el artí
 					<font fontName="Times New Roman" size="9" isBold="false"/>
 				</textElement>
 				<text><![CDATA[
-• Con el salario que devengo puedo responder por todas las Acreencias que tengo actualmente incluyendo la que estoy adquiriendo con AVALTÍTULOS S.A.S.
+• Con el salario que devengo puedo responder por todas las Acreencias que tengo actualmente, incluyendo la que estoy adquiriendo con AVALTÍTULOS S.A.S.
 • No poseo deudas con más de 90 días en mora.
-• El valor porcentual de mis obligaciones no representa más del 30% del pasivo a mi cargo.
-• Actualmente el valor total de mis obligaciones no supera los 40 (SMMLV) Salarios Mínimos Mensuales Legales Vigentes.
-• En caso de realizar alguna conciliación tendré en cuenta el cumplimiento de los valores pactados en esta Acreencia.
-• Al día de hoy no he solicitado, no estoy inmerso y no estoy en trámite de iniciar un proceso de reorganización económica.
+• Actualmente el valor total de mis obligaciones en mora no supera los 40 (SMMLV) Salarios Mínimos Mensuales Legales Vigentes.
+• Actualmente el valor total de mis obligaciones no supera los 60 (SMMLV) Salarios Mínimos Mensuales Legales Vigentes.
+• Al día de hoy no he solicitado, ni he sido admitido, en ningún proceso de reorganización económica o insolvencia de persona natural comerciante o no comerciante.
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-4" x="20" y="422" width="519" height="37" uuid="e8da08f8-526c-421d-852a-6a0ee5cee661"/>
+				<reportElement key="staticText-4" x="20" y="416" width="519" height="26" uuid="e8da08f8-526c-421d-852a-6a0ee5cee661"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="9" isBold="false" isUnderline="true"/>
 				</textElement>

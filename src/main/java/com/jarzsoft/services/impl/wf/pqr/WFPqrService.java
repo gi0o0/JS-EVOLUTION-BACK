@@ -133,8 +133,9 @@ public class WFPqrService implements IWFPqrService {
 	@Override
 	public List<DTOWFPqr> listAllByFilters(DTOWFFilter f, String user) {
 
+		// --13/03/26 + "from w_wf_mov wm, w_wf wf,w_wf_pasos step , terceros ter , w_wf_prestamo wwp where " 
 		String consulta = "	select distinct wm.numero_radicacion,wm.id_paso,wm.id_wf,wm.comentarios,wm.est_paso ,wm.id_wf_mov ,wm.nitter ,wf.nom_wf,step.nom_paso ,wm.fec_ult_mod,wm.usu_comercial, ter.nomTer , wm.est_paso_mov  "
-				+ "from w_wf_mov wm, w_wf wf,w_wf_pasos step , terceros ter , w_wf_prestamo wwp where "
+				+ " from w_wf_mov wm, w_wf wf,w_wf_pasos step , terceros ter where "
 				+ " wm.id_wf = wf.id_wf and (wm.id_wf = step.id_wf and wm.id_paso =step.id_paso ) and wm.id_wf < 4 and  wm.id_wf_mov = "
 				+ " (select MAX(wm1.id_wf_mov) from w_wf_mov wm1 where  wm1.id_wf < 4 and wm.numero_radicacion = wm1.numero_radicacion )  and ter.nitter =wm.nitter ";
 
