@@ -49,4 +49,9 @@ public class FoclaasoController {
 		return foclaasoService.findByCodter(id);
 	}
 
+	@GetMapping(value = "/{id}/nit", produces = "application/json")
+	public List<DTOFoclaaso> findByNit(@PathVariable("id") String id) {
+		return foclaasoService.findByNit(id);
+	}
+
 }

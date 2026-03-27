@@ -22,5 +22,8 @@ public interface FoclaasoRepository extends JpaRepository<Foclaaso, BigInteger> 
 	@Query(value = "select * from foclaaso order by nom_claaso ASC  ", nativeQuery = true)
 	List<Foclaaso> findAll();
 	
+	@Query(value = "select foc.* from foclaaso foc , terceros ter where ter.nitter =:nit and ter.codter = foc.codter ", nativeQuery = true)
+	List<Foclaaso> findByNit(@Param("nit") String nit);
+	
 
 }

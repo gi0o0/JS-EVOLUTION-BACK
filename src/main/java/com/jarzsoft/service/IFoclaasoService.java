@@ -15,4 +15,6 @@ public interface IFoclaasoService {
 
 	DTOFoclaaso findByCodter(Integer codTer);
 
+	List<DTOFoclaaso> findByNit(String nit);
+
 }

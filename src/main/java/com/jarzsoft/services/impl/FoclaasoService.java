@@ -56,4 +56,9 @@ public class FoclaasoService implements IFoclaasoService {
 		return foclaasoMapper.mapperEntitieToDto(foclaasoRepository.findByCodter(codTer));
 	}
 
+	@Override
+	public List<DTOFoclaaso> findByNit(String nit) {
+		return foclaasoMapper.mapperList(foclaasoRepository.findByNit(nit));
+	}
+
 }
