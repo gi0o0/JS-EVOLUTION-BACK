@@ -32,23 +32,41 @@ public class FilesUserService implements IFilesUserService {
 
 	@Override
 	public Boolean create(String id, String step, String cedula, DTOWfDocs doc) {
-		Boolean out = false;
-
-		try {
-
-			String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
-			byte[] decodedImg = Base64.getDecoder()
-					.decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
-			String nameFile = id + "_" + step + "_" + cedula + "_" + doc.getIdDocumento() + "_" + doc.getNomDocumento()
-					+ ".pdf";
-			Path destinationFile = Paths.get(path, nameFile);
-			Files.write(destinationFile, decodedImg);
-			out = true;
-		} catch (IOException e) {
-			throw new RuntimeException(e.getMessage());
-		}
-
-		return out;
+	    Boolean out = false;
+	    try {
+	        String path = parametroRepository.findByParamIdAndParamtext("PATH", "FILES_USERS").getValue().trim();
+	        byte[] decodedImg = Base64.getDecoder()
+	                .decode(doc.getValue().split(",")[1].getBytes(StandardCharsets.UTF_8));
+	        String nameFile = id + "_" + step + "_" + cedula + "_" + doc.getIdDocumento() + "_" + doc.getNomDocumento()
+	                + ".pdf";
+	        Path destinationFile = Paths.get(path, nameFile);
+	        
+	        int maxRetries = 3;
+	        int retryCount = 0;
+	        long delayMs = 500;
+	        
+	        while (retryCount < maxRetries) {
+	            try {
+	                Files.write(destinationFile, decodedImg, 
+	                    StandardOpenOption.CREATE, 
+	                    StandardOpenOption.TRUNCATE_EXISTING,
+	                    StandardOpenOption.WRITE);
+	                out = true;
+	                break;
+	            } catch (IOException e) {
+	                retryCount++;
+	                if (retryCount < maxRetries) {
+	                    Thread.sleep(delayMs);
+	                    delayMs *= 2;
+	                } else {
+	                    throw new RuntimeException("No se pudo escribir el archivo después de " + maxRetries + " intentos: " + e.getMessage());
+	                }
+	            }
+	        }
+	    } catch (InterruptedException e) {
+	        throw new RuntimeException(e.getMessage());
+	    }
+	    return out;
 	}
 
 	@Override
