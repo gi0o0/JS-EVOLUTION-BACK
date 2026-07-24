@@ -85,7 +85,7 @@ public class FilesUserService implements IFilesUserService {
 				break;
 			}
 			if (nameIds.length < 4) {
-				break;
+				continue;
 			}
 
 			String numRad = nameIds[0].substring(1, nameIds[0].length());
