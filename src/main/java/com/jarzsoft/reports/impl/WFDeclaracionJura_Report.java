@@ -31,7 +31,7 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String path) {
+	public Boolean create(DTOWF o, String user, String path, String pathReports) {
 
 		Map<String, Object> param = new HashMap<String, Object>();
 
@@ -57,7 +57,7 @@ public class WFDeclaracionJura_Report implements IReportStrategy {
 			param.put("nomTer_codeu", " ");
 		}
 
-		Comunes.crearJasperReport(path, Constantes.REPORTE_DECLARACION_JURA, param,
+		Comunes.crearJasperReport(path, pathReports + Constantes.REPORTE_DECLARACION_JURA, param,
 				EnumReport.TIPO_REPORTE.REPORT_DECLARACION_JURA.getName(), o.getNumeroRadicacion() + "");
 
 		return true;

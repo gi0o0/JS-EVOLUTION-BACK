@@ -32,7 +32,7 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String path) {
+	public Boolean create(DTOWF o, String user, String path, String pathReports) {
 
 		Date now = new Date();
 		Calendar calendar = Calendar.getInstance();
@@ -45,21 +45,21 @@ public class WFAvisoPrivacidad_Report implements IReportStrategy {
 		param.put("nitter", o.getNitter());
 		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
-					+ o.getCodeu().getSegApellido());		
-			param.put("codiCiud2",(null != o.getCodeu().getLugarDoc() ? o.getCodeu().getLugarDoc()	: " "));			
+					+ o.getCodeu().getSegApellido());
+			param.put("codiCiud2", (null != o.getCodeu().getLugarDoc() ? o.getCodeu().getLugarDoc() : " "));
 			param.put("nitter_codeu", o.getCodeu().getNitter());
 		} else {
 			param.put("nomTer_codeu", " ");
 			param.put("codiCiud2", " ");
 			param.put("nitter_codeu", " ");
 		}
-		param.put("codiCiud",(null != o.getLugarDoc() ? o.getLugarDoc()	: " "));	
+		param.put("codiCiud", (null != o.getLugarDoc() ? o.getLugarDoc() : " "));
 		param.put("año", year);
 		param.put("empresa", "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
 		param.put("mes", calendar.get(Calendar.MONTH) + 1 + "");
 
-		Comunes.crearJasperReport(path, Constantes.REPORTE_AVISO_PRI, param,
+		Comunes.crearJasperReport(path, pathReports + Constantes.REPORTE_AVISO_PRI, param,
 				EnumReport.TIPO_REPORTE.REPORT_AVISO_PRI.getName(), o.getNumeroRadicacion() + "");
 
 		return true;

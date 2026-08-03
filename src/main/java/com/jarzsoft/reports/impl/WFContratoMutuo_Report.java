@@ -29,7 +29,7 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String path) {
+	public Boolean create(DTOWF o, String user, String path, String pathReports) {
 
 		Map<String, Object> param = new HashMap<String, Object>();
 
@@ -37,25 +37,26 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 		param.put("priApellido", o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
-		//param.put("codiCiud",
-		//		(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
-		//				: " "));
-		//jarz
-		param.put("codiCiud",(null != o.getLugarDoc() ? o.getLugarDoc()	: " "));
-		
-		
+		// param.put("codiCiud",
+		// (null != o.getCodiCiud() ?
+		// ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
+		// : " "));
+		// jarz
+		param.put("codiCiud", (null != o.getLugarDoc() ? o.getLugarDoc() : " "));
+
 		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("priApellido_codeu", o.getCodeu().getPriApellido() + " " + o.getCodeu().getSegApellido());
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 			param.put("nitter_codeu", o.getCodeu().getNitter());
-			//param.put("codiCiud_codeu",
-			//		(null != o.getCodeu().getCodiCiud()
-			//				? ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
-			//				: " "));
-			
-			param.put("codiCiud_codeu", (null != o.getCodeu().getLugarDoc()  ? o.getCodeu().getLugarDoc() : " "));
-			
+			// param.put("codiCiud_codeu",
+			// (null != o.getCodeu().getCodiCiud()
+			// ?
+			// ciudadesService.getCiudad(Integer.parseInt(o.getCodeu().getCodiCiud())).getName()
+			// : " "));
+
+			param.put("codiCiud_codeu", (null != o.getCodeu().getLugarDoc() ? o.getCodeu().getLugarDoc() : " "));
+
 		} else {
 			param.put("priApellido_codeu", " ");
 			param.put("nomTer_codeu", " ");
@@ -79,12 +80,10 @@ public class WFContratoMutuo_Report implements IReportStrategy {
 		param.put("nroCuotas", " ");
 		param.put("perCuota", " ");
 		param.put("dirTerpal", " ");
-		
-		param.put("mailTer", o.getMailTer());
-		
-		
 
-		Comunes.crearJasperReport(path, Constantes.REPORTE_CONTRATO_MUTUO, param,
+		param.put("mailTer", o.getMailTer());
+
+		Comunes.crearJasperReport(path, pathReports + Constantes.REPORTE_CONTRATO_MUTUO, param,
 				EnumReport.TIPO_REPORTE.REPORT_CONTRATO_MUTUO.getName(), o.getNumeroRadicacion() + "");
 
 		return true;

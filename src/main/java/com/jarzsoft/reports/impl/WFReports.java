@@ -22,9 +22,9 @@ public class WFReports implements IReportesService {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String typeReport,String path) {
+	public Boolean create(DTOWF o, String user, String typeReport,String path, String pathReports) {
 
-		return this.map.get(typeReport).create(o, user,path);
+		return this.map.get(typeReport).create(o, user,path, pathReports);
 	}
 
 	@Override

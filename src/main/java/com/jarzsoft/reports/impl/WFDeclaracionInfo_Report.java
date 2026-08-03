@@ -33,7 +33,7 @@ public class WFDeclaracionInfo_Report implements IReportStrategy {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String path) {
+	public Boolean create(DTOWF o, String user, String path, String pathReports) {
 
 		Date now = new Date();
 		Calendar calendar = Calendar.getInstance();
@@ -50,20 +50,20 @@ public class WFDeclaracionInfo_Report implements IReportStrategy {
 		param.put("año", calendar.get(Calendar.YEAR) + "");
 		param.put("dia", calendar.get(Calendar.DAY_OF_MONTH) + "");
 		param.put("mes", calendar.get(Calendar.MONTH) + 1 + "");
-		
+
 		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
-			
+
 			param.put("nitter_codeu", o.getCodeu().getNitter());
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 
 		} else {
-			
+
 			param.put("nitter_codeu", " ");
 			param.put("nomTer_codeu", " ");
 		}
 
-		Comunes.crearJasperReport(path, Constantes.REPORTE_DECLARACION_INFO, param,
+		Comunes.crearJasperReport(path, pathReports + Constantes.REPORTE_DECLARACION_INFO, param,
 				EnumReport.TIPO_REPORTE.REPORT_DECLARACION_INFO.getName(), o.getNumeroRadicacion() + "");
 		return true;
 	}

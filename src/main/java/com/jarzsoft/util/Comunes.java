@@ -1,5 +1,6 @@
 package com.jarzsoft.util;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,8 +16,6 @@ import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
@@ -226,19 +225,30 @@ public class Comunes {
 
 	}
 
+	/*
+	 * public static boolean crearJasperReport(String path, String pathReport,
+	 * Map<String, Object> param, String name, String id) { Resource resource = new
+	 * ClassPathResource(pathReport); InputStream input; try { input =
+	 * resource.getInputStream(); byte[] bytes =
+	 * JasperRunManager.runReportToPdf(input, param, new JREmptyDataSource());
+	 * String nombreArchivo = name + "_" + id + ".pdf"; construirGuardarArchivo(path
+	 * + nombreArchivo, bytes); } catch (IOException | JRException e) {
+	 * e.printStackTrace(); return false; } return true; }
+	 */
+
 	public static boolean crearJasperReport(String path, String pathReport, Map<String, Object> param, String name,
 			String id) {
-		Resource resource = new ClassPathResource(pathReport);
-		InputStream input;
-		try {
-			input = resource.getInputStream();
+
+		try (InputStream input = new FileInputStream(pathReport)) {
 			byte[] bytes = JasperRunManager.runReportToPdf(input, param, new JREmptyDataSource());
 			String nombreArchivo = name + "_" + id + ".pdf";
 			construirGuardarArchivo(path + nombreArchivo, bytes);
+
 		} catch (IOException | JRException e) {
 			e.printStackTrace();
 			return false;
 		}
+
 		return true;
 	}
 

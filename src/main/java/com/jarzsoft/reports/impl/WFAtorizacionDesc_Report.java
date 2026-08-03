@@ -17,7 +17,6 @@ import com.jarzsoft.util.EnumReport;
 @Component
 public class WFAtorizacionDesc_Report implements IReportStrategy {
 
-
 	@Autowired
 	public WFAtorizacionDesc_Report() {
 		super();
@@ -29,7 +28,7 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String path) {
+	public Boolean create(DTOWF o, String user, String path, String pathReports) {
 
 		Date now = new Date();
 		Calendar calendar = Calendar.getInstance();
@@ -39,15 +38,15 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 
 		param.put("nomTer", o.getNomTer() + " " + o.getPriApellido() + " " + o.getSegApellido());
 		param.put("nitter", o.getNitter());
-		param.put("codiCiud",(null != o.getLugarDoc() ? o.getLugarDoc()	: " "));
-		
+		param.put("codiCiud", (null != o.getLugarDoc() ? o.getLugarDoc() : " "));
+
 		if (null != o.getCodeu() && null != o.getCodeu().getNitter()) {
 			param.put("nomTer_codeu", o.getCodeu().getNomTer() + " " + o.getCodeu().getPriApellido() + " "
 					+ o.getCodeu().getSegApellido());
 			param.put("nitter_codeu", o.getCodeu().getNitter());
-			param.put("codiCiud_codeu", (null != o.getCodeu().getLugarDoc()  ? o.getCodeu().getLugarDoc() : " "));
-			param.put("codiCiud2", (null != o.getCodeu().getLugarDoc()  ? o.getCodeu().getLugarDoc() : " "));
-			
+			param.put("codiCiud_codeu", (null != o.getCodeu().getLugarDoc() ? o.getCodeu().getLugarDoc() : " "));
+			param.put("codiCiud2", (null != o.getCodeu().getLugarDoc() ? o.getCodeu().getLugarDoc() : " "));
+
 		} else {
 			param.put("nomTer_codeu", " ");
 			param.put("nitter_codeu", " ");
@@ -67,7 +66,7 @@ public class WFAtorizacionDesc_Report implements IReportStrategy {
 		param.put("fechainicio", " ");
 		param.put("empresa", " ");
 
-		Comunes.crearJasperReport(path, Constantes.REPORTE_AUTO_DESC, param,
+		Comunes.crearJasperReport(path, pathReports + Constantes.REPORTE_AUTO_DESC, param,
 				EnumReport.TIPO_REPORTE.REPORT_AUTO_DESC.getName(), o.getNumeroRadicacion() + "");
 
 		return true;

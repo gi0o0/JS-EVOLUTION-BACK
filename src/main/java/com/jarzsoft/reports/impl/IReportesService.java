@@ -4,7 +4,7 @@ import com.jarzsoft.dto.DTOWF;
 
 public interface IReportesService {
 
-	Boolean create(DTOWF o, String user,String typeReport,String path);
+	Boolean create(DTOWF o, String user,String typeReport,String path, String pathReports);
 
 	Boolean join();
 

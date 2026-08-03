@@ -36,7 +36,7 @@ public class WFCorretaje_Report implements IReportStrategy {
 	}
 
 	@Override
-	public Boolean create(DTOWF o, String user, String path) {
+	public Boolean create(DTOWF o, String user, String path, String pathReports) {
 
 		Date now = new Date();
 		Calendar calendar = Calendar.getInstance();
@@ -62,7 +62,7 @@ public class WFCorretaje_Report implements IReportStrategy {
 				(null != o.getCodiCiud() ? ciudadesService.getCiudad(Integer.parseInt(o.getCodiCiud())).getName()
 						: ""));
 
-		Comunes.crearJasperReport(path, Constantes.REPORTE_CORRETAJE, param,
+		Comunes.crearJasperReport(path, pathReports + Constantes.REPORTE_CORRETAJE, param,
 				EnumReport.TIPO_REPORTE.REPORT_CORRETAJE.getName(), o.getNumeroRadicacion() + "");
 
 		return true;
