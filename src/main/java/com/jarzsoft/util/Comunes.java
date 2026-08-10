@@ -22,6 +22,10 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperRunManager;
 
+import java.io.File;
+import net.sf.jasperreports.engine.JRParameter;
+import net.sf.jasperreports.engine.util.SimpleFileResolver;
+
 @Service
 public class Comunes {
 
@@ -237,19 +241,23 @@ public class Comunes {
 	 */
 
 	public static boolean crearJasperReport(String path, String pathReport, Map<String, Object> param, String name,
-			String id) {
+	        String id) {
 
-		try (InputStream input = new FileInputStream(pathReport)) {
-			byte[] bytes = JasperRunManager.runReportToPdf(input, param, new JREmptyDataSource());
-			String nombreArchivo = name + "_" + id + ".pdf";
-			construirGuardarArchivo(path + nombreArchivo, bytes);
+	    try (InputStream input = new FileInputStream(pathReport)) {
 
-		} catch (IOException | JRException e) {
-			e.printStackTrace();
-			return false;
-		}
+	        param.put(JRParameter.REPORT_FILE_RESOLVER,
+	                new SimpleFileResolver(new File(pathReport).getParentFile()));
 
-		return true;
+	        byte[] bytes = JasperRunManager.runReportToPdf(input, param, new JREmptyDataSource());
+	        String nombreArchivo = name + "_" + id + ".pdf";
+	        construirGuardarArchivo(path + nombreArchivo, bytes);
+
+	    } catch (IOException | JRException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+
+	    return true;
 	}
 
 	public static String stateDocs(Boolean value) {
