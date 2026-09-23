@@ -29,5 +29,5 @@ public interface IWFService {
 	List<DTOStepsState> getStepsState(String codTer, String numRad, String idWf);
 
 	List<DTOWF> listAllByFilters(DTOWFFilter o, String user);
-
+	
 }

@@ -25,5 +25,7 @@ public interface IWfMapper {
 	DTOWFPqr mapperDaoTerceroToDto(DTOTerceros o , DTOWFPqr out);
 	
 	DTOWFPqr mapperDaoPrestamoToDto(List<DTOWFPrestamos> prestamos,  DTOWFPqr out);
+	
+	 DTOWF mapperRowToDto(Object[] r);
 
 }

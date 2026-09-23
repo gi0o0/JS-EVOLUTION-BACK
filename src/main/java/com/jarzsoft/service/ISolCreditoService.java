@@ -19,5 +19,9 @@ public interface ISolCreditoService {
 	DTOSolCredito findByHash(String hash);
 
 	String modificarClaveLink(Integer numeroRadicacion, String hash);
+	
+	List<Object[]> findAllByUserFull(String user);
+	
+	List<Object[]> findAllByIdsFull(List<Integer> ids);
 
 }

@@ -95,4 +95,15 @@ public class SolCreditoService implements ISolCreditoService {
 		return mapper.mapperEntitiesToDaos(solCreditoRepository.findByUser(user));
 	}
 
+	@Override
+	public List<Object[]> findAllByUserFull(String user) {
+	    return solCreditoRepository.findAllByUserFull(user);
+	}
+	
+	@Override
+	public List<Object[]> findAllByIdsFull(List<Integer> ids) {
+	    return solCreditoRepository.findAllByIdsFull(ids);
+	}
+	
+
 }

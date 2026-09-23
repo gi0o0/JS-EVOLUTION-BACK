@@ -83,7 +83,7 @@ public class WFService implements IWFService {
 		return mapper.mapperDaoToDto(solCredito, null, null, null, null, null, null);
 	}
 
-	@Override
+	/*@Override
 	public List<DTOWF> listAllByUser(String user) {
 
 		List<DTOWF> out = new ArrayList<>();
@@ -94,6 +94,15 @@ public class WFService implements IWFService {
 
 		return out;
 
+	}*/
+	
+	
+	@Override
+	public List<DTOWF> listAllByUser(String user) {
+	    List<Object[]> rows = solCreditoService.findAllByUserFull(user);
+	    List<DTOWF> out = new ArrayList<>();
+	    for (Object[] r : rows) out.add(mapper.mapperRowToDto(r));
+	    return out;
 	}
 
 	@Override
@@ -143,7 +152,7 @@ public class WFService implements IWFService {
 		return wpParameterService.getPortafolio(codTer);
 	}
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	@Override
 	public List<DTOWF> listAllByFilters(DTOWFFilter f, String user) {
 
@@ -185,6 +194,58 @@ public class WFService implements IWFService {
 		}
 
 		return out;
+	}*/
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DTOWF> listAllByFilters(DTOWFFilter f, String user) {
+
+	    String consulta = "select DISTINCT s.numero_radicacion,s.estado from w_wf_mov w, SOL_CREDITO s where w.id_wf = 4 and w.numero_radicacion = s.numero_radicacion and (w.usu_movimiento = '"
+	            + user + "' " + "or exists (select wu.codperfil from W_Bas_Usuario wu where wu.Usuario = '" + user
+	            + "' and wu.codperfil = 1 ) " + ")";
+
+	    if (null != f.getEntitie() && !"".equals(f.getEntitie())) {
+	        consulta = " select s.* from SOL_CREDITO s ,FODATASO f WHERE s.codter = f.cod_ter  and f.cla_asoci ='"
+	                + f.getEntitie() + "'";
+	    }
+
+	    if (null != f.getFechaInit() && !"".equals(f.getFechaInit()) && null != f.getFechaFin()
+	            && !"".equals(f.getFechaFin())) {
+	        consulta += " AND fecha_soli BETWEEN CONVERT(SMALLDATETIME, '" + f.getFechaInit() + " 00:00:00'"
+	                + ",120)  and CONVERT(SMALLDATETIME, '" + f.getFechaFin() + " 23:59:59'" + ",120) ";
+	    }
+
+	    if (null != f.getEstado() && !"".equals(f.getEstado())) {
+	        consulta += " AND estado = '" + f.getEstado() + "'";
+	    }
+
+	    if (null != f.getAsesor() && !"".equals(f.getAsesor())) {
+	        consulta += " AND codter_asesor = '" + f.getAsesor() + "'";
+	    }
+
+	    if (null != f.getSector() && !"".equals(f.getSector())) {
+	        consulta = " select s.* from SOL_CREDITO s ,FODATASO f where s.codter = f.cod_ter  and f.cla_asoci in (select cod_inter from foclaaso where codsec ='"
+	                + f.getSector() + "')";
+	    }
+
+	    Query query = entityManager.createNativeQuery(consulta);
+
+	    List<DTOWF> out = new ArrayList<>();
+	    List<Object[]> resultado = query.getResultList();
+
+	    List<Integer> ids = new ArrayList<>();
+	    for (Object[] fila : resultado) {
+	        ids.add(((Number) fila[0]).intValue());
+	    }
+
+	    if (!ids.isEmpty()) {
+	        List<Object[]> rows = solCreditoService.findAllByIdsFull(ids);
+	        for (Object[] r : rows) {
+	            out.add(mapper.mapperRowToDto(r));
+	        }
+	    }
+
+	    return out;
 	}
 
 	@Override

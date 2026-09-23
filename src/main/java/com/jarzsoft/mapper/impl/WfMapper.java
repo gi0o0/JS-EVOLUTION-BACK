@@ -1,5 +1,6 @@
 package com.jarzsoft.mapper.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -332,6 +333,257 @@ public class WfMapper implements IWfMapper {
 		}				
 
 		return out;
+	}
+
+	
+	
+	
+	public DTOWF mapperRowToDto(Object[] r) {
+	    DTOWF out = new DTOWF();
+
+	    Integer numRad = (int) (double) r[0];
+	    String estado = str(r[1]);
+	    String tasaInt = str(r[2]);
+	    String tipoCredito = str(r[3]);
+	    String tipSolcredito = str(r[4]);
+	    String bienAfecta = str(r[5]);
+	    String bienHipoteca = str(r[6]);
+	    String bienHipAfavor = str(r[7]);
+	    String bienNombre = str(r[8]);
+	    String bienValor = str(r[9]);
+	    String vehPignorado = str(r[10]);
+	    String vehMarca = str(r[11]);
+	    String vehClase = str(r[12]);
+	    String vehModelo = str(r[13]);
+	    String vehPlaca = str(r[14]);
+	    String vehPigAfavor = str(r[15]);
+	    String vehValComercial = str(r[16]);
+	    String valorPres = str(r[17]);
+	    String nroCuotas = str(r[18]);
+	    String nroCuenta = str(r[19]);
+	    String refNombre1 = str(r[20]);
+	    String refParen1 = str(r[21]);
+	    String refMail1 = str(r[22]);
+	    String refCel1 = str(r[23]);
+	    String refNombre2 = str(r[24]);
+	    String refParen2 = str(r[25]);
+	    String refMail2 = str(r[26]);
+	    String refCel2 = str(r[27]);
+	    String refNombre3 = str(r[28]);
+	    String refParen3 = str(r[29]);
+	    String refMail3 = str(r[30]);
+	    String refCel3 = str(r[31]);
+	    Object codTerSol = r[32];
+	    String observa = str(r[33]);
+	    String perCuota = str(r[34]);
+	    String indSolCredito = str(r[35]);
+	    String solPagare = str(r[36]);
+	    String cargoDeuWf = str(r[37]);
+
+	    BigDecimal sueldo = toBigDecimal(r[38]);
+	    BigDecimal recargos = toBigDecimal(r[39]);
+	    BigDecimal bonos = toBigDecimal(r[40]);
+	    BigDecimal compensatorios = toBigDecimal(r[41]);
+	    BigDecimal bonificacion = toBigDecimal(r[42]);
+	    BigDecimal horasExtras = toBigDecimal(r[43]);
+	    BigDecimal otrosPagos1 = toBigDecimal(r[44]);
+	    BigDecimal otrosPagos2 = toBigDecimal(r[45]);
+	    BigDecimal otrosPagos3 = toBigDecimal(r[46]);
+	    BigDecimal salud = toBigDecimal(r[47]);
+	    BigDecimal pension = toBigDecimal(r[48]);
+	    BigDecimal libranza = toBigDecimal(r[49]);
+	    BigDecimal cuotaSindical = toBigDecimal(r[50]);
+	    BigDecimal cuotaInterna = toBigDecimal(r[51]);
+	    BigDecimal otrosDecuentos1 = toBigDecimal(r[52]);
+	    BigDecimal otrosDecuentos2 = toBigDecimal(r[53]);
+	    BigDecimal otrosDecuentos3 = toBigDecimal(r[54]);
+
+	    String compraCartera1 = str(r[55]);
+	    String entidadCartera1 = str(r[56]);
+	    String obligacionCartera1 = str(r[57]);
+	    String compraNit1 = str(r[58]);
+	    String compraCartera2 = str(r[59]);
+	    String entidadCartera2 = str(r[60]);
+	    String obligacionCartera2 = str(r[61]);
+	    String compraNit2 = str(r[62]);
+	    String compraCartera3 = str(r[63]);
+	    String entidadCartera3 = str(r[64]);
+	    String obligacionCartera3 = str(r[65]);
+	    String compraNit3 = str(r[66]);
+	    String compraCartera4 = str(r[67]);
+	    String entidadCartera4 = str(r[68]);
+	    String obligacionCartera4 = str(r[69]);
+	    String compraNit4 = str(r[70]);
+
+	    String doctip = str(r[71]);
+	    String nitter = str(r[72]);
+	    String nomTercero = str(r[73]);
+	    String priApellido = str(r[74]);
+	    String segApellido = str(r[75]);
+	    String lugarDoc = str(r[76]);
+	    String mailTer = str(r[77]);
+	    String dirTerpal = str(r[78]);
+	    String telTer = str(r[79]);
+	    String telTer1 = str(r[80]);
+	    String telTer2 = str(r[81]);
+	    String feExp = str(r[82]);
+	    String paisCodigo = str(r[83]);
+	    String codiDept = str(r[84]);
+	    String codiCiud = str(r[85]);
+	    String barrio = str(r[86]);
+	    String antiEmpresa = str(r[87]);
+	    String tipVivienda = str(r[88]);
+	    String dirTeralt = str(r[89]);
+	    String barrioTra = str(r[90]);
+	    String paisDirTrabajo = str(r[91]);
+	    String deptDirTrabajo = str(r[92]);
+	    String ciuDirTrabajo = str(r[93]);
+	    String faxTer = str(r[94]);
+	    String indContrato = str(r[95]);
+	    String paramText = str(r[96]);
+	    String entBan = str(r[97]);
+	    String tipCta = str(r[98]);
+	    String idConyuge = str(r[99]);
+	    String nomCony = str(r[100]);
+	    String emailConyuge = str(r[101]);
+	    String celConyuge = str(r[102]);
+	    String dirPaisTer = str(r[103]);
+	    String dirDepTer = str(r[104]);
+	    String dirCiuTer = str(r[105]);
+	    Object codTerTer = r[106];
+
+	    Integer pasoActual = r[107] != null ? Integer.valueOf(r[107].toString()) : null;
+
+	    boolean hayTercero = codTerTer != null;
+
+	    if (hayTercero) {
+	        out.setAntiEmpresa(Comunes.stringClean(antiEmpresa));
+	        out.setBarrio(Comunes.stringClean(barrio));
+	        out.setBarrioTra(Comunes.stringClean(barrioTra));
+	        out.setCiuDirTrabajo(Comunes.stringToInt(ciuDirTrabajo));
+	        out.setCodiCiud(Comunes.stringToInt(codiCiud));
+	        out.setCodiDept(Comunes.stringToInt(codiDept));
+	        out.setDirPaisTer(Comunes.stringToInt(dirPaisTer));
+	        out.setDirDepTer(Comunes.stringToInt(dirDepTer));
+	        out.setDirCiuTer(Comunes.stringToInt(dirCiuTer));
+	        out.setDeptDirTrabajo(Comunes.stringToInt(deptDirTrabajo));
+	        out.setDirTeralt(Comunes.stringClean(dirTeralt));
+	        out.setDirTerpal(Comunes.stringClean(dirTerpal));
+	        out.setEntBan(Comunes.stringClean(entBan));
+	        out.setFaxTer(Comunes.stringClean(faxTer));
+
+	        String feExpClean = Comunes.stringClean(feExp);
+	        out.setFeExp(feExpClean.length() >= 10
+	                ? Comunes.cambiarFormatoFechaDinamic(feExpClean.substring(0, 10), Comunes.FORMAT_YYY_MM_DD, Comunes.FORMAT_MM_DD_YYYY)
+	                : feExpClean);
+	        out.setIdConyuge(Comunes.stringClean(idConyuge));
+	        out.setIndContrato(Comunes.stringClean(indContrato));
+	        out.setLugarDoc(Comunes.stringClean(lugarDoc));
+	        out.setMailTer(Comunes.stringClean(mailTer));
+	        out.setNomTer(Comunes.stringClean(nomTercero));
+	        out.setPaisCodigo(Comunes.stringToInt(paisCodigo));
+	        out.setPaisDirTrabajo(Comunes.stringToInt(paisDirTrabajo));
+	        out.setParamText(Comunes.stringClean(paramText));
+	        out.setPriApellido(Comunes.stringClean(priApellido));
+	        out.setSegApellido(Comunes.stringClean(segApellido));
+	        out.setTelTer(Comunes.stringClean(telTer));
+	        out.setTelTer1(Comunes.stringClean(telTer1));
+	        out.setTelTer2(Comunes.stringClean(telTer2));
+	        out.setTipCta(Comunes.stringClean(tipCta));
+	        out.setTipVivienda(Comunes.stringClean(tipVivienda));
+	        out.setDoctip(Comunes.stringToInt(doctip));
+	        out.setNitter(Comunes.stringClean(nitter));
+	        out.setCodTer(Comunes.stringClean(codTerTer + ""));
+	        out.setNomCony(Comunes.stringClean(nomCony));
+	        out.setCelConyuge(Comunes.stringClean(celConyuge));
+	        out.setEmailConyuge(Comunes.stringClean(emailConyuge));
+	        out.setCargoWf(cargoDeuWf);
+	    }
+
+	    out.setNumeroRadicacion(numRad);
+	    out.setEstado(estado);
+	    out.setBienAfecta(bienAfecta);
+	    out.setBienHipAFavor(bienHipAfavor);
+	    out.setBienHipoteca(bienHipoteca);
+	    out.setBienNombre(bienNombre);
+	    out.setBienValor(Comunes.stringToInt(bienValor));
+	    out.setNroCuotas(Comunes.stringToInt(nroCuotas));
+	    out.setRefCel1(refCel1);
+	    out.setRefCel2(refCel2);
+	    out.setRefCel3(refCel3);
+	    out.setRefMail1(refMail1);
+	    out.setRefMail2(refMail2);
+	    out.setRefMail3(refMail3);
+	    out.setRefNombre1(refNombre1);
+	    out.setRefNombre2(refNombre2);
+	    out.setRefNombre3(refNombre3);
+	    out.setRefParen1(refParen1);
+	    out.setRefParen2(refParen2);
+	    out.setRefParen3(refParen3);
+	    out.setTipSolCredito(tipSolcredito);
+	    out.setValorPress(Comunes.stringToInt(valorPres));
+	    out.setVehClase(vehClase);
+	    out.setVehMarca(vehMarca);
+	    out.setVehModelo(vehModelo);
+	    out.setVehPigAFavor(vehPigAfavor);
+	    out.setVehPignorado(vehPignorado);
+	    out.setVehPlaca(vehPlaca);
+	    out.setVehValVomercial(Comunes.stringToInt(vehValComercial));
+	    out.setNumCta(Comunes.stringClean(nroCuenta));
+	    out.setComments(observa);
+	    out.setIndSolCredito(indSolCredito);
+	    out.setIdStepNow(pasoActual + "");
+	    out.setSolPagare(solPagare);
+	    out.setIdWf(EnumWF.TIPO_WF.IDWF_4.getName());
+	    out.setTasaInt(tasaInt);
+	    out.setPerCuota(perCuota);
+	    out.setFoticrep(Comunes.stringClean(tipoCredito));
+
+	    DTOWFFinancialInfo financial = new DTOWFFinancialInfo();
+	    financial.setSueldo(sueldo);
+	    financial.setRecargos(recargos);
+	    financial.setBonos(bonos);
+	    financial.setCompensatorios(compensatorios);
+	    financial.setBonificacion(bonificacion);
+	    financial.setHoras_extras(horasExtras);
+	    financial.setOtros_pagos1(otrosPagos1);
+	    financial.setOtros_pagos2(otrosPagos2);
+	    financial.setOtros_pagos3(otrosPagos3);
+	    financial.setSalud(salud);
+	    financial.setPension(pension);
+	    financial.setLibranza(libranza);
+	    financial.setCuota_sindical(cuotaSindical);
+	    financial.setCuota_interna(cuotaInterna);
+	    financial.setOtros_decuentos1(otrosDecuentos1);
+	    financial.setOtros_decuentos2(otrosDecuentos2);
+	    financial.setOtros_decuentos3(otrosDecuentos3);
+	    financial.setCompra_cartera1(compraCartera1);
+	    financial.setEntidad_cartera1(entidadCartera1);
+	    financial.setObligacion_cartera1(obligacionCartera1);
+	    financial.setCompra_nit1(compraNit1);
+	    financial.setCompra_cartera2(compraCartera2);
+	    financial.setEntidad_cartera2(entidadCartera2);
+	    financial.setObligacion_cartera2(obligacionCartera2);
+	    financial.setCompra_nit2(compraNit2);
+	    financial.setCompra_cartera3(compraCartera3);
+	    financial.setEntidad_cartera3(entidadCartera3);
+	    financial.setObligacion_cartera3(obligacionCartera3);
+	    financial.setCompra_nit3(compraNit3);
+	    financial.setCompra_cartera4(compraCartera4);
+	    financial.setEntidad_cartera4(entidadCartera4);
+	    financial.setObligacion_cartera4(obligacionCartera4);
+	    financial.setCompra_nit4(compraNit4);
+	    out.setFinancial(financial);
+
+	    return out;
+	}
+
+	private String str(Object o) {
+	    return o == null ? null : o.toString();
+	}
+
+	private BigDecimal toBigDecimal(Object o) {
+	    return Comunes.validIsNullStringTonumber(o == null ? null : o.toString());
 	}
 
 }
